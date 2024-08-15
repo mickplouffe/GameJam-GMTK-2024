@@ -64,6 +64,30 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+# Wwise
+.backup*
+.cache*
+*.akd
+*.prof
+*.validationcache
+*.wsettings
+IncrementalSoundBankData.xml
+
+# Ignore Wwise binaries and build artifacts
+Assets/Wwise/API/Runtime/Plugins/
+
+# WWise Picker (editor)
+Assets/Wwise/Editor/ProjectData/AkWwiseProjectData.asset*
+
+# temp install files
+WwiseUnityIntegration_*_Src.zip
+
+# Originals (Wavs)
+#*.wav
+
+# Mac stuff
+.DS_store
+
 # Packed Addressables
 /[Aa]ssets/[Aa]ddressable[Aa]ssets[Dd]ata/*/*.bin*
 
