@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace EventTriggerSystem.EventActions
 {
-    [CreateAssetMenu(fileName = "ControlsLock", menuName = "EventActions/ControlsLock")]
+    //[CreateAssetMenu(fileName = "ControlsLock", menuName = "EventActions/ControlsLock")]
     public class AtControlsLock : EventActionSettings
     {
         [SerializeField] private bool lockControls;

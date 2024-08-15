@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace EventTriggerSystem.EventActions
 {
-    [CreateAssetMenu(fileName = "PauseGame", menuName = "EventActions/PauseGame")]
+    // [CreateAssetMenu(fileName = "PauseGame", menuName = "EventActions/PauseGame")]
     public class AtPauseGame : EventActionSettings
     {
         [SerializeField] private bool pauseGame;

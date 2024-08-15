@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace EventTriggerSystem.EventActions
 {
-    public class EventActionSettings : ScriptableObject
+    public class EventActionSettings : MonoBehaviour
     {
         public virtual void Trigger()
         {

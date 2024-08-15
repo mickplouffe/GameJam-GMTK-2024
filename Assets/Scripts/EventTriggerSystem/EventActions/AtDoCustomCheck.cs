@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace EventTriggerSystem.EventActions
 {
-    [CreateAssetMenu(fileName = "DoCustomCheck", menuName = "EventActions/DoCustomCheck")]
+    // [CreateAssetMenu(fileName = "DoCustomCheck", menuName = "EventActions/DoCustomCheck")]
     public class AtDoCustomCheck : EventActionSettings
     {
         public override void Trigger()

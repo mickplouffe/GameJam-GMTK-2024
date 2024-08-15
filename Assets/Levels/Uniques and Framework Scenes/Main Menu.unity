@@ -138,7 +138,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &237211598
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -786,7 +786,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 7482667652216324306, guid: 17eea5cf52266d34691d758af36e2bc9, type: 3}
+  m_Sprite: {fileID: 7482667652216324306, guid: 17eea5cf52266d34691d758af36e2bc9,
+    type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -863,8 +864,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'MR.CHEESE WAS MURDERED USING A FIRE POKER, POLICE ARRESTED THE BUTLER '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f7bc44ab0502df4e87456eddbab3af7, type: 2}
-  m_sharedMaterial: {fileID: 5927417307550736279, guid: 8f7bc44ab0502df4e87456eddbab3af7, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1349,8 +1350,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Ending 1 out of 3
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f7bc44ab0502df4e87456eddbab3af7, type: 2}
-  m_sharedMaterial: {fileID: 5927417307550736279, guid: 8f7bc44ab0502df4e87456eddbab3af7, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1436,7 +1437,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1001266885}
   - component: {fileID: 1001266884}
-  - component: {fileID: 1001266886}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -1474,36 +1474,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1001266886
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1001266882}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01614664b831546d2ae94a42149d80ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SendPointerHoverToParent: 1
-  m_MoveRepeatDelay: 0.5
-  m_MoveRepeatRate: 0.1
-  m_XRTrackingOrigin: {fileID: 0}
-  m_ActionsAsset: {fileID: -944628639613478452, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_PointAction: {fileID: -1654692200621890270, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_MoveAction: {fileID: -8784545083839296357, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_SubmitAction: {fileID: 392368643174621059, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_CancelAction: {fileID: 7727032971491509709, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_LeftClickAction: {fileID: 3001919216989983466, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_MiddleClickAction: {fileID: -2185481485913320682, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_RightClickAction: {fileID: -4090225696740746782, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_ScrollWheelAction: {fileID: 6240969308177333660, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_TrackedDevicePositionAction: {fileID: 6564999863303420839, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_TrackedDeviceOrientationAction: {fileID: 7970375526676320489, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_DeselectOnBackgroundClick: 1
-  m_PointerBehavior: 0
-  m_CursorLockBehavior: 0
 --- !u!1 &1029512396
 GameObject:
   m_ObjectHideFlags: 0
@@ -1571,8 +1541,10 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: -449762060, guid: 5d25ce43094a9ca43a7114fec73f86e1, type: 3}
-    m_PressedSprite: {fileID: -449762060, guid: 5d25ce43094a9ca43a7114fec73f86e1, type: 3}
+    m_HighlightedSprite: {fileID: -449762060, guid: 5d25ce43094a9ca43a7114fec73f86e1,
+      type: 3}
+    m_PressedSprite: {fileID: -449762060, guid: 5d25ce43094a9ca43a7114fec73f86e1,
+      type: 3}
     m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
@@ -1637,12 +1609,7 @@ GameObject:
   - component: {fileID: 1035895794}
   - component: {fileID: 1035895793}
   - component: {fileID: 1035895797}
-  - component: {fileID: 1035895798}
-  - component: {fileID: 1035895800}
-  - component: {fileID: 1035895799}
   - component: {fileID: 1035895801}
-  - component: {fileID: 1035895802}
-  - component: {fileID: 1035895803}
   m_Layer: 5
   m_Name: Main Menu UI
   m_TagString: Untagged
@@ -1756,86 +1723,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &1035895798
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1035895792}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4653c83760693654b8a528ffedb2812f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  triggerList: ae8d9d44
-  useOtherObject: 0
-  data:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 47f83a148484ba24f9b40c5b1f6e035c, type: 2}
-  decodeBank: 0
-  overrideLoadSetting: 0
-  loadAsynchronous: 0
-  saveDecodedBank: 0
-  unloadTriggerList: 958ca0ea
-  bankNameInternal: 
-  valueGuidInternal: 
---- !u!114 &1035895799
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1035895792}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fda063f7e1639f140b2833259477cd8d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  triggerList: f7e1664c
-  useOtherObject: 0
-  actionOnEventType: 0
-  curveInterpolation: 4
-  enableActionOnEvent: 0
-  data:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 1404f22155c44e44b94236f5a7808010, type: 2}
-  useCallbacks: 0
-  Callbacks: []
-  soundEmitterObject: {fileID: 0}
-  transitionDuration: 0
-  eventIdInternal: 0
-  valueGuidInternal: 
-  m_callbackDataInternal: {fileID: 0}
-  MultiPositionType: 1
-  multiPositionTypeLabel: 0
-  attenuationSphereColor: {r: 1, g: 0, b: 0, a: 0.1}
-  LargeModePositions: []
-  multiPositionArray: []
---- !u!114 &1035895800
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1035895792}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a09da4a778ff1b459dbf3a35216e788, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_listeners:
-    initialListenerList: []
-    useDefaultListeners: 1
-  isEnvironmentAware: 1
-  isStaticObject: 0
-  m_positionOffsetData:
-    KeepMe: 0
-    positionOffset: {x: 0, y: 0, z: 0}
-  m_posOffsetData: {fileID: 0}
-  listenerMask: 1
 --- !u!54 &1035895801
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1863,32 +1750,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1035895802
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1035895792}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c4345c1548146f4d82cd9709aa37248, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isDefaultListener: 1
-  listenerId: 0
---- !u!114 &1035895803
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1035895792}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 351953c9423c35442a53ad9563624665, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1167338679
 GameObject:
   m_ObjectHideFlags: 0
@@ -2728,8 +2589,10 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: -1331288219, guid: 70cff1a287ecf2046b115803e9661975, type: 3}
-    m_PressedSprite: {fileID: -1331288219, guid: 70cff1a287ecf2046b115803e9661975, type: 3}
+    m_HighlightedSprite: {fileID: -1331288219, guid: 70cff1a287ecf2046b115803e9661975,
+      type: 3}
+    m_PressedSprite: {fileID: -1331288219, guid: 70cff1a287ecf2046b115803e9661975,
+      type: 3}
     m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
@@ -2923,8 +2786,10 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: -303284052, guid: e8aa455f90ab5ab43b2cb9f33997b5a2, type: 3}
-    m_PressedSprite: {fileID: -303284052, guid: e8aa455f90ab5ab43b2cb9f33997b5a2, type: 3}
+    m_HighlightedSprite: {fileID: -303284052, guid: e8aa455f90ab5ab43b2cb9f33997b5a2,
+      type: 3}
+    m_PressedSprite: {fileID: -303284052, guid: e8aa455f90ab5ab43b2cb9f33997b5a2,
+      type: 3}
     m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
@@ -3043,8 +2908,10 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: -1988789086, guid: 390ae69a37ff2984196918cbf751bee4, type: 3}
-    m_PressedSprite: {fileID: -1988789086, guid: 390ae69a37ff2984196918cbf751bee4, type: 3}
+    m_HighlightedSprite: {fileID: -1988789086, guid: 390ae69a37ff2984196918cbf751bee4,
+      type: 3}
+    m_PressedSprite: {fileID: -1988789086, guid: 390ae69a37ff2984196918cbf751bee4,
+      type: 3}
     m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
@@ -3058,7 +2925,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1035895803}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: MainMenuManager, Assembly-CSharp
         m_MethodName: PlayFirstLevel
         m_Mode: 1

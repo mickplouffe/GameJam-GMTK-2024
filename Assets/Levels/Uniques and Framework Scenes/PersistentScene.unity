@@ -93,7 +93,8 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000004, guid: e3bb8bb761bdd654bb44bf1a98fc7f58, type: 2}
+  m_LightingDataAsset: {fileID: 112000004, guid: e3bb8bb761bdd654bb44bf1a98fc7f58,
+    type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -167,6 +168,16 @@ MonoBehaviour:
   debugScenes:
   - Debug And Stats
   isPaused: 0
+  isGameOver: 0
+  isGameWon: 0
+  isGameLost: 0
+  isGameRestarting: 0
+  isGameResuming: 0
+  isGameStarting: 0
+  isGameQuitting: 0
+  isGameLoading: 0
+  isGameSaving: 0
+  isGameLoadingScene: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

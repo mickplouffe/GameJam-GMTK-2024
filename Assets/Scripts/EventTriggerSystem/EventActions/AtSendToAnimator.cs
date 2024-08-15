@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace EventTriggerSystem.EventActions
 {
-    [CreateAssetMenu(fileName = "SendTriggerToAnimator", menuName = "EventActions/SendTriggerToAnimator")]
+    // [CreateAssetMenu(fileName = "SendTriggerToAnimator", menuName = "EventActions/SendTriggerToAnimator")]
     public class AtSendToAnimator : EventActionSettings
     {
         [SerializeField] private Animator animator;

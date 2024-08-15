@@ -5,7 +5,7 @@ using UnityEngine.Serialization;
 
 namespace EventTriggerSystem.EventActions
 {
-    [CreateAssetMenu(fileName = "ChangeScene", menuName = "EventActions/ChangeScene")]
+    //[CreateAssetMenu(fileName = "ChangeScene", menuName = "EventActions/ChangeScene")]
     public class AtChangeScene : EventActionSettings
     {
         [SerializeField] private string sceneName;

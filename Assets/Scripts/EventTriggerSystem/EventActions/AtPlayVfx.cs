@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace EventTriggerSystem.EventActions
 {
-    [CreateAssetMenu(fileName = "PlayVfx", menuName = "EventActions/PlayVfx")]
+    // [CreateAssetMenu(fileName = "PlayVfx", menuName = "EventActions/PlayVfx")]
     public class AtPlayVfx : EventActionSettings
     {
         [SerializeField] private GameObject vfx;

@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace EventTriggerSystem.EventActions
 {
-    [CreateAssetMenu(fileName = "PlayDialogue", menuName = "EventActions/PlayDialogue")]
+    // [CreateAssetMenu(fileName = "PlayDialogue", menuName = "EventActions/PlayDialogue")]
     public class AtPlayDialogue : EventActionSettings
     {
         [SerializeField] private AudioClip dialogue;

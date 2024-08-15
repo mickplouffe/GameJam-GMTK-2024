@@ -6,7 +6,7 @@ namespace EventTriggerSystem
     {
         public void Trigger()
         {
-            Debug.LogWarning(gameObject.name + " Action Trigger as been Triggered, but no logic is implemented.");
+            Debug.LogWarning(gameObject.name + " Action Trigger as been Triggered, but no logic is implemented."); 
         }
     }
 

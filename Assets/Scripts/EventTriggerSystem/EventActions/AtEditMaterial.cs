@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace EventTriggerSystem.EventActions
 {
-    [CreateAssetMenu(fileName = "EditMaterial", menuName = "EventActions/EditMaterial")]
+    // [CreateAssetMenu(fileName = "EditMaterial", menuName = "EventActions/EditMaterial")]
     public class AtEditMaterial : EventActionSettings
     {
         [SerializeField] private Material material;

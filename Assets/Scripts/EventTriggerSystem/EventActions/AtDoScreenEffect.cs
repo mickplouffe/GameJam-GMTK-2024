@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace EventTriggerSystem.EventActions
 {
-    [CreateAssetMenu(fileName = "DoScreenEffect", menuName = "EventActions/DoScreenEffect")]
+    // [CreateAssetMenu(fileName = "DoScreenEffect", menuName = "EventActions/DoScreenEffect")]
     public class AtDoScreenEffect : EventActionSettings
     {
         [SerializeField] private bool doScreenEffect;

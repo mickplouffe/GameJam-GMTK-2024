@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace EventTriggerSystem.EventActions
 {
-    [CreateAssetMenu(fileName = "PlayAnimation", menuName = "EventActions/PlayAnimation")]
+    // [CreateAssetMenu(fileName = "PlayAnimation", menuName = "EventActions/PlayAnimation")]
     public class AtPlayAnimation : EventActionSettings
     {
         [SerializeField] private Animator animator;
