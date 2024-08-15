@@ -1,0 +1,6 @@
+Event	ID	Name			Wwise Object Path	Notes
+	2172329993	Play_AMBIENT___Beer_Garden_Large_Crowd_Talk_On_Benches_Exterior___02			\AMB\Play_AMBIENT___Beer_Garden_Large_Crowd_Talk_On_Benches_Exterior___02	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	1052969118	AMBIENT - Beer Garden Large Crowd Talk On Benches Exterior - 02	D:\UnityProjects\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Windows\SFX\AMBIENT - Beer Garden Large Crowd Talk On Benches Exterior - 02_14E21738.wem		\Actor-Mixer Hierarchy\AMB\AMB\AMBIENT - Beer Garden Large Crowd Talk On Benches Exterior - 02		4001416
+

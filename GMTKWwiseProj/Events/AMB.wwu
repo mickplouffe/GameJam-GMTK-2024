@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{5B7760E9-4ED5-4FFF-B405-DA13419EEECE}" SchemaVersion="119">
+	<Events>
+		<WorkUnit Name="AMB" ID="{5B7760E9-4ED5-4FFF-B405-DA13419EEECE}" PersistMode="Standalone">
+			<PropertyList>
+				<Property Name="Color" Type="int16" Value="8"/>
+				<Property Name="OverrideColor" Type="bool" Value="True"/>
+			</PropertyList>
+			<ChildrenList>
+				<Event Name="Play_AMBIENT___Beer_Garden_Large_Crowd_Talk_On_Benches_Exterior___02" ID="{E323B49E-BB5D-415B-8D03-1D1E41440B09}">
+					<ChildrenList>
+						<Action Name="" ID="{8E7225E2-3AE2-46EF-A05E-741C224FB8D9}" ShortID="6038019">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="AMBIENT - Beer Garden Large Crowd Talk On Benches Exterior - 02" ID="{F5F08EE2-F3F4-412D-8B80-5F4B9C6D16D6}" WorkUnitID="{D8F591D3-77D3-47F8-8A8B-3A5E4A41F2F7}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

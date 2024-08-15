@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{A18A767C-056E-4285-8372-9DA6AC23FB6D}" SchemaVersion="119">
 	<AudioObjects>
-		<WorkUnit Name="Default Work Unit" ID="{A18A767C-056E-4285-8372-9DA6AC23FB6D}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{A18A767C-056E-4285-8372-9DA6AC23FB6D}" PersistMode="Standalone">
+			<ChildrenList>
+				<WorkUnit Name="Factory Soundseed Air Objects" ID="{BB5DD793-F285-4F74-8D1D-DF7A4B893280}" PersistMode="Reference"/>
+				<WorkUnit Name="Factory Synth One" ID="{D9329DB3-E4D7-45AA-BD40-6EB28C6C4D39}" PersistMode="Reference"/>
+			</ChildrenList>
+		</WorkUnit>
 	</AudioObjects>
 </WwiseDocument>
