@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{89A28AF4-738C-4E2F-BDAA-356BB3C5C72C}" SchemaVersion="119">
+	<SoundBanks>
+		<WorkUnit Name="UI" ID="{89A28AF4-738C-4E2F-BDAA-356BB3C5C72C}" PersistMode="Standalone">
+			<PropertyList>
+				<Property Name="Color" Type="int16" Value="6"/>
+				<Property Name="OverrideColor" Type="bool" Value="True"/>
+			</PropertyList>
+			<ChildrenList>
+				<SoundBank Name="UI" ID="{D70BBE13-7566-4995-B523-46822B62A1A6}">
+					<ObjectInclusionList/>
+					<ObjectExclusionList/>
+					<GameSyncExclusionList/>
+				</SoundBank>
+			</ChildrenList>
+		</WorkUnit>
+	</SoundBanks>
+</WwiseDocument>

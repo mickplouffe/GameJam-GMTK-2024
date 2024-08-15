@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{4334D963-132A-4CB4-850E-18A56F2E2947}" SchemaVersion="119">
+	<SoundBanks>
+		<WorkUnit Name="SFX" ID="{4334D963-132A-4CB4-850E-18A56F2E2947}" PersistMode="Standalone">
+			<PropertyList>
+				<Property Name="Color" Type="int16" Value="4"/>
+				<Property Name="OverrideColor" Type="bool" Value="True"/>
+			</PropertyList>
+			<ChildrenList>
+				<SoundBank Name="SFX" ID="{F7F0A189-6FB4-4FB4-B112-784E34501122}">
+					<ObjectInclusionList/>
+					<ObjectExclusionList/>
+					<GameSyncExclusionList/>
+				</SoundBank>
+			</ChildrenList>
+		</WorkUnit>
+	</SoundBanks>
+</WwiseDocument>

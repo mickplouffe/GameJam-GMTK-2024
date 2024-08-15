@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{44EF5028-F23C-448C-BEC5-271E73A1269C}" SchemaVersion="119">
+	<Events>
+		<WorkUnit Name="SFX" ID="{44EF5028-F23C-448C-BEC5-271E73A1269C}" PersistMode="Standalone">
+			<PropertyList>
+				<Property Name="Color" Type="int16" Value="4"/>
+				<Property Name="OverrideColor" Type="bool" Value="True"/>
+			</PropertyList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

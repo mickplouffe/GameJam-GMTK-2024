@@ -1,6 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{287E4018-43D8-4442-BFA5-31398B8E3AD6}" SchemaVersion="119">
 	<Events>
-		<WorkUnit Name="Default Work Unit" ID="{287E4018-43D8-4442-BFA5-31398B8E3AD6}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{287E4018-43D8-4442-BFA5-31398B8E3AD6}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="Stop_All" ID="{7CD7C746-2107-4F8E-9FCE-C51C4DBEE417}">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="10"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+					</PropertyList>
+					<ChildrenList>
+						<Action Name="" ID="{EB1FCCD9-1E9B-445C-B82D-2B4F7A6572A0}" ShortID="609116814">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="3"/>
+							</PropertyList>
+							<ReferenceList/>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
 	</Events>
 </WwiseDocument>

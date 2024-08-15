@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{FA68491F-0D86-4E3C-BE71-4FC07F1FAE26}" SchemaVersion="119">
+	<SoundBanks>
+		<WorkUnit Name="AMB" ID="{FA68491F-0D86-4E3C-BE71-4FC07F1FAE26}" PersistMode="Standalone">
+			<PropertyList>
+				<Property Name="Color" Type="int16" Value="8"/>
+				<Property Name="OverrideColor" Type="bool" Value="True"/>
+			</PropertyList>
+			<ChildrenList>
+				<SoundBank Name="AMB" ID="{8F07869F-A835-4F86-B6AC-24919440F765}">
+					<ObjectInclusionList>
+						<ObjectRef Name="AMB" ID="{5B7760E9-4ED5-4FFF-B405-DA13419EEECE}" WorkUnitID="{5B7760E9-4ED5-4FFF-B405-DA13419EEECE}" Origin="Manual" Filter="7"/>
+					</ObjectInclusionList>
+					<ObjectExclusionList/>
+					<GameSyncExclusionList/>
+				</SoundBank>
+			</ChildrenList>
+		</WorkUnit>
+	</SoundBanks>
+</WwiseDocument>
