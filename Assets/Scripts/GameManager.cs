@@ -123,7 +123,6 @@ public class GameManager : MonoBehaviourSingletonPersistent<GameManager>
     public static UnityAction OnSettingsCancel; // When the settings / Options menu is canceled
     public static UnityAction OnSettingsReset; // When the settings / Options menu is reset to default
     
-    
     public static UnityAction OnAudioChange; // When any audio setting is changed
     public static UnityAction OnAudioMute; // When audio is muted
     public static UnityAction OnAudioUnmute; // When audio is unmuted
@@ -145,12 +144,6 @@ public class GameManager : MonoBehaviourSingletonPersistent<GameManager>
     public static UnityAction OnInputLoseControl; // Disable Player Input Application Wide
     public static UnityAction OnInputRegainControl; // Enable Player Input Application Wide
     public static UnityAction OnInputForceRegainControl; // Force Enable Player Input In Application and Game
-    
-    
-    
-    
-    
-    
     
 
     void Start()

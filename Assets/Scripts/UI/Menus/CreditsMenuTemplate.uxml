@@ -1,0 +1,3 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <Style src="project://database/Assets/Scripts/UI/Menus/CreditsStyle.uss?fileID=7433441132597879392&amp;guid=6a8986b72f484ab408bc942768546a31&amp;type=3#CreditsStyle" />
+</engine:UXML>

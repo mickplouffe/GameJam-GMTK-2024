@@ -1,0 +1,41 @@
+.menuTitle {
+    padding-bottom: 0;
+    margin-bottom: 70px;
+    font-size: 120px;
+    -unity-font-style: bold;
+}
+
+.buttonsPanel {
+    justify-content: space-between;
+    align-self: auto;
+    align-items: center;
+    min-width: 200px;
+    min-height: 400px;
+}
+
+.menuButton {
+    position: relative;
+    font-size: 32px;
+    -unity-font-style: bold;
+    max-height: 140px;
+    width: 500px;
+    height: 130px;
+}
+
+.buttonsPanel {
+    justify-content: space-between;
+    align-self: auto;
+    align-items: center;
+    min-width: 200px;
+    min-height: 400px;
+    width: 600px;
+    height: 600px;
+}
+
+.menuContainer {
+    align-self: auto;
+    align-items: center;
+    justify-content: center;
+    flex-basis: 100%;
+    background-color: rgba(140, 140, 140, 0.9);
+}
