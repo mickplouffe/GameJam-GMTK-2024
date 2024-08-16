@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{99728221-02FC-4D5B-8DB8-E3ADD1D05779}" SchemaVersion="119">
+	<GameParameters>
+		<WorkUnit Name="Mixer" ID="{99728221-02FC-4D5B-8DB8-E3ADD1D05779}" PersistMode="Standalone">
+			<PropertyList>
+				<Property Name="Color" Type="int16" Value="10"/>
+				<Property Name="OverrideColor" Type="bool" Value="True"/>
+			</PropertyList>
+			<ChildrenList>
+				<GameParameter Name="AMB" ID="{3118625E-3C84-410F-AC07-E9A4188D16C3}">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="8"/>
+						<Property Name="InitialValue" Type="Real64" Value="80"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+						<Property Name="RTPCRamping" Type="int16" Value="1"/>
+					</PropertyList>
+				</GameParameter>
+				<GameParameter Name="MASTER" ID="{7BFC7C52-FB4F-4156-8F1D-87F2A2277935}">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="10"/>
+						<Property Name="InitialValue" Type="Real64" Value="80"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+						<Property Name="RTPCRamping" Type="int16" Value="1"/>
+					</PropertyList>
+				</GameParameter>
+				<GameParameter Name="SFX" ID="{98EDC772-7538-4B9A-A9FE-3697609A1F41}">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="4"/>
+						<Property Name="InitialValue" Type="Real64" Value="80"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+						<Property Name="RTPCRamping" Type="int16" Value="1"/>
+					</PropertyList>
+				</GameParameter>
+				<GameParameter Name="MX" ID="{55C1CEB3-B47D-4C8D-964F-DBF1B5459E10}">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="2"/>
+						<Property Name="InitialValue" Type="Real64" Value="80"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+						<Property Name="RTPCRamping" Type="int16" Value="1"/>
+					</PropertyList>
+				</GameParameter>
+				<GameParameter Name="VO" ID="{8EADD676-A726-4C92-89C5-D39C98E13E52}">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="12"/>
+						<Property Name="InitialValue" Type="Real64" Value="80"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+						<Property Name="RTPCRamping" Type="int16" Value="1"/>
+					</PropertyList>
+				</GameParameter>
+				<GameParameter Name="UI" ID="{2A39A71F-152E-4013-9BFA-1AB051DD89D6}">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="6"/>
+						<Property Name="InitialValue" Type="Real64" Value="80"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+						<Property Name="RTPCRamping" Type="int16" Value="1"/>
+					</PropertyList>
+				</GameParameter>
+			</ChildrenList>
+		</WorkUnit>
+	</GameParameters>
+</WwiseDocument>

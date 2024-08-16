@@ -14,7 +14,32 @@
 							<Position X="1" Y="0"/>
 						</Module>
 					</ModuleList>
-					<RTPCValueList ShowAll="true"/>
+					<RTPCValueList ShowAll="true">
+						<RTPCValue>
+							<GameParameterRef Name="UI" ID="{2A39A71F-152E-4013-9BFA-1AB051DD89D6}"/>
+							<Value>0</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="AMB" ID="{3118625E-3C84-410F-AC07-E9A4188D16C3}"/>
+							<Value>0</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="MASTER" ID="{7BFC7C52-FB4F-4156-8F1D-87F2A2277935}"/>
+							<Value>0</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="SFX" ID="{98EDC772-7538-4B9A-A9FE-3697609A1F41}"/>
+							<Value>0</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="MX" ID="{55C1CEB3-B47D-4C8D-964F-DBF1B5459E10}"/>
+							<Value>0</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="VO" ID="{8EADD676-A726-4C92-89C5-D39C98E13E52}"/>
+							<Value>0</Value>
+						</RTPCValue>
+					</RTPCValueList>
 					<CurrentStateList ShowAll="true"/>
 					<CurrentSwitchList ShowAll="true"/>
 				</SoundcasterSession>
