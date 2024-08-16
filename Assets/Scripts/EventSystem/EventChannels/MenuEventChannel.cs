@@ -1,34 +1,45 @@
 using System.Collections;
 using System.Collections.Generic;
+using NaughtyAttributes;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UIElements;
 
 [CreateAssetMenu(menuName = "EventChannels/Menu Event Channel")]
 public class MenuEventChannel: ScriptableObject
 {
     public UnityAction OnPlayButtonPressed;
-    public UnityAction OnOptionsButtonPressed;
-    public UnityAction OnCreditsButtonPressed;
-    public UnityAction OnBackButtonPressed;
+    public UnityAction<VisualElement> OnOptionsButtonPressed;
+    public UnityAction<VisualElement> OnCreditsButtonPressed;
+    public UnityAction<VisualElement> OnBackButtonPressed;
     public UnityAction OnExitButtonPressed;
     
+    // Pause Menu Events
+    public UnityAction OnPauseGame;
+    public UnityAction OnResumeButtonPressed;
+
+    public UnityAction OnRestartButtonPressed;
+    
+    
+    [Button]
     public void RaisePlayButtonPressed()
     {
         OnPlayButtonPressed?.Invoke();
     } 
-    public void RaiseOptionsButtonPressedEvent()
+    
+    public void RaiseOptionsButtonPressedEvent(VisualElement prevContainer)
     {
-        OnOptionsButtonPressed?.Invoke();
+        OnOptionsButtonPressed?.Invoke(prevContainer);
     }
     
-    public void RaiseCreditsButtonPressed()
+    public void RaiseCreditsButtonPressed(VisualElement prevContainer)
     {
-        OnCreditsButtonPressed?.Invoke();
+        OnCreditsButtonPressed?.Invoke(prevContainer);
     }
     
-    public void RaiseBackButtonPressed()
+    public void RaiseBackButtonPressed(VisualElement prevContainer)
     {
-        OnBackButtonPressed?.Invoke();
+        OnBackButtonPressed?.Invoke(prevContainer);
     }
     
     public void RaiseExitButtonPressed()
@@ -36,4 +47,18 @@ public class MenuEventChannel: ScriptableObject
         OnExitButtonPressed?.Invoke();
     }
 
+    public void RaisePauseGame()
+    {
+        OnPauseGame?.Invoke();
+    }
+
+    public void RaiseResumeButtonPressed()
+    {
+        OnResumeButtonPressed?.Invoke();
+    }
+
+    public void RaiseRestartButtonPressed()
+    {
+        OnRestartButtonPressed?.Invoke();
+    }
 }

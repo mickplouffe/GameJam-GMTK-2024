@@ -1,18 +1,18 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-[System.Serializable]
+[Serializable]
 public struct CreditEntry
 {
     public string role;
     public List<string> names;
 }
 
-public class CreditsMenuController : MonoBehaviour
+[RequireComponent(typeof(UIDocument))]
+public class CreditsMenuController : BaseMenu
 {
     [SerializeField] private MenuEventChannel _menuEventChannel; 
     
@@ -21,6 +21,7 @@ public class CreditsMenuController : MonoBehaviour
 
     private VisualElement _creditsMenuContainer;
     private Button _backButton;
+    private VisualElement _prevContainer;
     
     private void OnEnable()
     {
@@ -28,7 +29,7 @@ public class CreditsMenuController : MonoBehaviour
         _menuEventChannel.OnCreditsButtonPressed += HandleCreditsButtonPressed;
         _backButton.clicked += HandleBackButtonPressed;
         
-        _creditsMenuContainer.visible = false;
+        _creditsMenuContainer.visible = _isVisible;
     }
     
     private void OnDisable()
@@ -37,15 +38,16 @@ public class CreditsMenuController : MonoBehaviour
         _backButton.clicked -= HandleBackButtonPressed;
     }
     
-    private void HandleCreditsButtonPressed()
+    private void HandleCreditsButtonPressed(VisualElement prevContainer)
     {
+        _prevContainer = prevContainer;
         _creditsMenuContainer.visible = true;
     }
     
     private void HandleBackButtonPressed()
     {
         _creditsMenuContainer.visible = false;
-        _menuEventChannel.RaiseBackButtonPressed();
+        _menuEventChannel.RaiseBackButtonPressed(_prevContainer);
     }
     
     private void InitCreditsUI()

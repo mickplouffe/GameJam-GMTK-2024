@@ -1,84 +1,71 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.UIElements;
 
-[RequireComponent(typeof(UIDocument))]
-public class MainMenuController : BaseMenu
+public class GameOverMenuController : BaseMenu
 {
     [SerializeField] private MenuEventChannel _menuEventChannel; 
         
     private UIDocument _ui;
     
-    private Button _playButton;
+    private Button _restartButton;
     private Button _optionsButton;
-    private Button _creditsButton;
     private Button _exitButton;
 
-    private VisualElement _mainMenuContainer;
+    private VisualElement _gameOverMenuContainer;
     
     private void OnEnable()
     {
         _ui = GetComponent<UIDocument>();
 
-        _playButton = _ui.rootVisualElement.Q<Button>("PlayButton");
+        _restartButton = _ui.rootVisualElement.Q<Button>("RestartButton");
         _optionsButton = _ui.rootVisualElement.Q<Button>("OptionsButton");
-        _creditsButton = _ui.rootVisualElement.Q<Button>("CreditsButton");
         _exitButton = _ui.rootVisualElement.Q<Button>("ExitButton");
 
-        _mainMenuContainer = _ui.rootVisualElement.Q<VisualElement>("MainMenuContainer");
-        
-        _playButton.clicked += HandlePlayButtonPressed;
+        _gameOverMenuContainer = _ui.rootVisualElement.Q<VisualElement>("GameOverMenuContainer");
+
+        _restartButton.clicked += HandleRestartButtonPressed;
         _optionsButton.clicked += HandleOptionsButtonPressed;
-        _creditsButton.clicked += HandleCreditsButtonPressed;
         _exitButton.clicked += HandleExitButtonPressed;
 
         _menuEventChannel.OnBackButtonPressed += HandleBackButtonPressed;
         
-        _mainMenuContainer.visible = _isVisible;
+        _gameOverMenuContainer.visible = _isVisible;
     }
 
     private void OnDisable()
     {
-        _playButton.clicked -= HandlePlayButtonPressed;
+        _restartButton.clicked -= HandleRestartButtonPressed;
         _optionsButton.clicked -= HandleOptionsButtonPressed;
-        _creditsButton.clicked -= HandleCreditsButtonPressed;
         _exitButton.clicked -= HandleExitButtonPressed;
 
         _menuEventChannel.OnBackButtonPressed -= HandleBackButtonPressed;
     }
     
-    private void HandlePlayButtonPressed()
+    private void HandleRestartButtonPressed()
     {
-        throw new NotImplementedException();
+        _gameOverMenuContainer.visible = false;
+        _menuEventChannel.RaiseRestartButtonPressed();
     }
 
     private void HandleOptionsButtonPressed()
     {
-        _mainMenuContainer.visible = false;
-        _menuEventChannel.RaiseOptionsButtonPressedEvent(_mainMenuContainer);
+        _gameOverMenuContainer.visible = false;
+        _menuEventChannel.RaiseOptionsButtonPressedEvent(_gameOverMenuContainer);
     }
 
     private void HandleBackButtonPressed(VisualElement prevContainer)
     {
-        if (_mainMenuContainer != prevContainer)
+        if (_gameOverMenuContainer != prevContainer)
             return;
-        
-        _mainMenuContainer.visible = true;
+        _gameOverMenuContainer.visible = true;
     }
-    
-    private void HandleCreditsButtonPressed()
-    {
-        _mainMenuContainer.visible = false;
-        _menuEventChannel.RaiseCreditsButtonPressed(_mainMenuContainer);
-    }
-    
     
     private void HandleExitButtonPressed()
     {
+        // TODO: For not this exits the game but it should transition to the Main Menu UI in some way
 #if UNITY_EDITOR
         // Exit play mode in the editor
         EditorApplication.isPlaying = false;
@@ -87,6 +74,4 @@ public class MainMenuController : BaseMenu
             Application.Quit();
 #endif
     }
-
-
 }
