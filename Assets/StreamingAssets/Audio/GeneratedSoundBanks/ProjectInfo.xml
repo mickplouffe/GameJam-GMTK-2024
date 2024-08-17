@@ -3,10 +3,12 @@
 	<Project Name="GMTKWwiseProj" GUID="{EA51926B-2DD9-4DDF-8B6F-B18E7FDB1268}" Generator="2023.1.6.8555"/>
 	<CacheRoot>../../../../GMTKWwiseProj/.cache</CacheRoot>
 	<Platforms>
+		<Platform Name="Linux" GUID="{133A5BC7-5FC8-4673-99B0-68286A2D3412}" BasePlatform="Linux" BasePlatformGUID="{BD0BDF13-3125-454F-8BFD-319537169F81}" Path="../../../../GMTKWwiseProj/GeneratedSoundBanks/Linux"/>
+		<Platform Name="Mac" GUID="{FD17FF1A-C15C-4D57-8D30-ECFE6856487F}" BasePlatform="Mac" BasePlatformGUID="{9C6217D5-DD11-4795-87C1-6CE02853C540}" Path="../../../../GMTKWwiseProj/GeneratedSoundBanks/Mac"/>
 		<Platform Name="Windows" GUID="{72826E47-FCD0-4A25-8917-F8D6C4383C2D}" BasePlatform="Windows" BasePlatformGUID="{6E0CB257-C6C8-4C5C-8366-2740DFC441EB}" Path="../../../../GMTKWwiseProj/GeneratedSoundBanks/Windows"/>
 	</Platforms>
 	<Languages>
 		<Language Name="English(US)" Id="684519430" GUID="{EFECE31D-5E13-4A7A-8C75-32E8D685521C}" Default="true" UseAsStandIn="true"/>
 	</Languages>
-	<FileHash>{578CA593-35AE-A57E-6FF8-93D10462C201}</FileHash>
+	<FileHash>{E19E372E-C615-BC9D-804A-3D733C290BAC}</FileHash>
 </ProjectInfo>
