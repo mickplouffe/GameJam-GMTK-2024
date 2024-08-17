@@ -8,7 +8,9 @@
 			</PropertyList>
 			<ChildrenList>
 				<SoundBank Name="SFX" ID="{F7F0A189-6FB4-4FB4-B112-784E34501122}">
-					<ObjectInclusionList/>
+					<ObjectInclusionList>
+						<ObjectRef Name="SFX" ID="{44EF5028-F23C-448C-BEC5-271E73A1269C}" WorkUnitID="{44EF5028-F23C-448C-BEC5-271E73A1269C}" Origin="Manual" Filter="7"/>
+					</ObjectInclusionList>
 					<ObjectExclusionList/>
 					<GameSyncExclusionList/>
 				</SoundBank>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{DF7DA44B-041C-491F-8F0C-16B8D501A6C9}" SchemaVersion="119">
+	<GameParameters>
+		<WorkUnit Name="RTPCs" ID="{DF7DA44B-041C-491F-8F0C-16B8D501A6C9}" PersistMode="Standalone">
+			<ChildrenList>
+				<GameParameter Name="Tension" ID="{F6A3C4B6-1FF7-4AFB-9579-F97816261FC6}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="0"/>
+						<Property Name="RTPCRamping" Type="int16" Value="1"/>
+						<Property Name="SlewRateDown" Type="Real64" Value="30"/>
+					</PropertyList>
+				</GameParameter>
+			</ChildrenList>
+		</WorkUnit>
+	</GameParameters>
+</WwiseDocument>

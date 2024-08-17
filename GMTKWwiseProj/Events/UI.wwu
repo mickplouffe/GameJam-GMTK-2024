@@ -6,6 +6,97 @@
 				<Property Name="Color" Type="int16" Value="6"/>
 				<Property Name="OverrideColor" Type="bool" Value="True"/>
 			</PropertyList>
+			<ChildrenList>
+				<Folder Name="Menu" ID="{64617674-FCCA-4E0C-8162-072E4E7F35A4}" ShortID="64945631">
+					<ChildrenList>
+						<Event Name="Play_UIClick" ID="{F70B055A-6807-47AD-BE1D-9AE92EEB1692}">
+							<ChildrenList>
+								<Action Name="" ID="{76B973C1-C69E-420C-A3A3-A94503E9AAE7}" ShortID="512543892">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Click" ID="{F9364A9C-1AD8-475C-9DB2-644643570077}" WorkUnitID="{BA9CF1CD-975F-4A67-9444-5CFB7BA6A64A}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_UIHover" ID="{7F000FFE-DBB8-42CC-AA34-BFE19AA5F797}">
+							<ChildrenList>
+								<Action Name="" ID="{2D408FB2-E476-4D68-9026-2F7B92615921}" ShortID="439227307">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Hover" ID="{BAC9EAB7-1301-4C87-8BBE-5A81B7E84966}" WorkUnitID="{BA9CF1CD-975F-4A67-9444-5CFB7BA6A64A}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="Gold" ID="{5BC854AD-CC0F-4F04-B9CA-3E5938E349C5}" ShortID="577404729">
+					<ChildrenList>
+						<Event Name="Play_UIGoldLoss" ID="{848D2BCA-F9C4-404B-8D21-93AFDB2D13D3}">
+							<ChildrenList>
+								<Action Name="" ID="{9641ED66-3451-4B93-A783-AC1579F75B54}" ShortID="1019784023">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="GoldLoss" ID="{D2C7FED1-49B2-48F6-A9CA-E2B0291454FC}" WorkUnitID="{BA9CF1CD-975F-4A67-9444-5CFB7BA6A64A}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_UIGoldGain" ID="{BFCACDBC-23C7-45C4-A972-E2CA69B1F2C6}">
+							<ChildrenList>
+								<Action Name="" ID="{089B875D-4849-4894-924A-5AAAC117FDB7}" ShortID="562806192">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="GoldGain" ID="{26667534-F59A-4FD5-A458-B386DDA8CE81}" WorkUnitID="{BA9CF1CD-975F-4A67-9444-5CFB7BA6A64A}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="GameAlerts" ID="{F4C0DB5F-27E1-42D4-9CF1-05FAC86A3604}" ShortID="522945271">
+					<ChildrenList>
+						<Event Name="Play_WaveCountdown" ID="{4FF8909E-4AD5-45B8-994B-F6EAB25CFD03}">
+							<ChildrenList>
+								<Action Name="" ID="{25D8D95C-3CC9-45FD-9827-583FD53FB405}" ShortID="840845123">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="WaveCountdown" ID="{3D3C0070-02CC-4524-9F1E-E75AC6B89149}" WorkUnitID="{BA9CF1CD-975F-4A67-9444-5CFB7BA6A64A}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_WaveEnded" ID="{94000B1C-7D80-4227-B241-703FF81F6CF9}">
+							<ChildrenList>
+								<Action Name="" ID="{65B83E26-C3EC-455F-8FE0-EAE7E9E9DE23}" ShortID="671843477">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="WaveEnded" ID="{9B7C2345-2465-435A-B498-4D45F2A06E91}" WorkUnitID="{BA9CF1CD-975F-4A67-9444-5CFB7BA6A64A}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_WaveStarted" ID="{E1427F21-94BF-456D-852B-F29AAF7C3B9D}">
+							<ChildrenList>
+								<Action Name="" ID="{A96F1C7D-A470-48E9-B0A8-F8529334A883}" ShortID="870401937">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="WaveStarted" ID="{3CBCBFFA-DBE8-4C02-A1BD-D2577336C525}" WorkUnitID="{BA9CF1CD-975F-4A67-9444-5CFB7BA6A64A}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
+			</ChildrenList>
 		</WorkUnit>
 	</Events>
 </WwiseDocument>

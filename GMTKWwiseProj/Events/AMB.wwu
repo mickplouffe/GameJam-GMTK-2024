@@ -7,12 +7,12 @@
 				<Property Name="OverrideColor" Type="bool" Value="True"/>
 			</PropertyList>
 			<ChildrenList>
-				<Event Name="Play_AMBIENT___Beer_Garden_Large_Crowd_Talk_On_Benches_Exterior___02" ID="{E323B49E-BB5D-415B-8D03-1D1E41440B09}">
+				<Event Name="Play_Wind" ID="{96C6EE84-923E-41FD-8FD2-52F025B6EA11}">
 					<ChildrenList>
-						<Action Name="" ID="{8E7225E2-3AE2-46EF-A05E-741C224FB8D9}" ShortID="6038019">
+						<Action Name="" ID="{C82B5E95-15D6-4A1B-90AE-4E4D4B0ACD84}" ShortID="29487234">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="AMBIENT - Beer Garden Large Crowd Talk On Benches Exterior - 02" ID="{F5F08EE2-F3F4-412D-8B80-5F4B9C6D16D6}" WorkUnitID="{D8F591D3-77D3-47F8-8A8B-3A5E4A41F2F7}"/>
+									<ObjectRef Name="Wind" ID="{5C5697E5-ED6E-4BE9-BE59-FB2C20CF64BB}" WorkUnitID="{D8F591D3-77D3-47F8-8A8B-3A5E4A41F2F7}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
