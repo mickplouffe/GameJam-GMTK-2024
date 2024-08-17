@@ -25,6 +25,8 @@ public class TiltObject : MonoBehaviour
 
     [SerializeField] float tileweight;
     [SerializeField] float enemyweight;
+
+    public Vector3 SlideDirection;
     void Update()
     { 
        
@@ -79,8 +81,10 @@ public class TiltObject : MonoBehaviour
         float tiltAroundZ = -transform.position.x + center.x;
 
         target = Quaternion.Euler(tiltAroundX * TiltMultiplier, 0, -tiltAroundZ * TiltMultiplier);
+
+        //Debug.Log(transform.eulerAngles.x);
+        SlideDirection = transform.position - center;
         
-        Debug.Log(transform.eulerAngles.x);
         if (Mathf.Abs(transform.eulerAngles.x) <= Slideangle || Mathf.Abs(transform.eulerAngles.z) <= Slideangle)
         {
             //Debug.Log("hi");
