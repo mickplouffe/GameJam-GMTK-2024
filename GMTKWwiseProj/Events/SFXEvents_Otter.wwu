@@ -33,6 +33,21 @@
 						</Event>
 					</ChildrenList>
 				</Folder>
+				<Folder Name="Tower" ID="{FAA4D5F0-E5C5-475F-9E69-7F36C1B7628A}" ShortID="604499222">
+					<ChildrenList>
+						<Event Name="Play_SFXTowerPlace" ID="{F6BBF08E-2F33-4870-9A49-A02B42EC8F12}">
+							<ChildrenList>
+								<Action Name="" ID="{C9000AAD-99DF-4B25-AE08-7A820B5B4B20}" ShortID="686956731">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="towerPlace" ID="{10FEFE4D-10D8-4D89-8BEB-C4A9741D49D7}" WorkUnitID="{A57A593A-B9DE-4277-A3EF-672CA80E8992}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>
