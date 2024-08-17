@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="16" SoundBankVersion="150">
+<SoundBanksInfo Platform="Linux" BasePlatform="Linux" SchemaVersion="16" SoundBankVersion="150">
 	<RootPaths>
 		<ProjectRoot>../..</ProjectRoot>
-		<SourceFilesRoot>../../.cache/Windows</SourceFilesRoot>
+		<SourceFilesRoot>../../.cache/Linux</SourceFilesRoot>
 		<SoundBanksRoot>.</SoundBanksRoot>
 		<ExternalSourcesInputFile></ExternalSourcesInputFile>
 		<ExternalSourcesOutputRoot>.</ExternalSourcesOutputRoot>
@@ -67,7 +67,7 @@
 				<Event Id="1215763740" Name="Play_AMBWind" DurationType="Infinite"/>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{4F213B2A-D831-F183-567F-96981623AD65}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{2E8C2093-AA9A-20A9-D7A9-4A36D82B31F2}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -266,5 +266,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{0AFCE5F7-6357-CE38-5208-C3FCA75C5B3D}</FileHash>
+	<FileHash>{54F4F4A6-576C-26C2-EC3A-C9C1587FE1A5}</FileHash>
 </SoundBanksInfo>

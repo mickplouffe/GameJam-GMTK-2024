@@ -200,6 +200,7 @@
 						</Event>
 					</ChildrenList>
 				</Folder>
+				<WorkUnit Name="SFXEvents_Otter" ID="{0A7A0CEB-234F-4544-9DAA-DD6728515385}" PersistMode="Reference"/>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>
