@@ -20,6 +20,7 @@
 						<ObjectRef Name="SFXEvents_Otter" ID="{0A7A0CEB-234F-4544-9DAA-DD6728515385}" WorkUnitID="{0A7A0CEB-234F-4544-9DAA-DD6728515385}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_SFXCyclopsSpawn" ID="{11CD0FCB-868F-4583-81B3-9754CF23CB39}" WorkUnitID="{44EF5028-F23C-448C-BEC5-271E73A1269C}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_SFXGorgonDeath" ID="{6A1DEDFA-FF80-476F-A541-A1EE98E7E539}" WorkUnitID="{44EF5028-F23C-448C-BEC5-271E73A1269C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_SFXTowerPlace" ID="{F6BBF08E-2F33-4870-9A49-A02B42EC8F12}" WorkUnitID="{0A7A0CEB-234F-4544-9DAA-DD6728515385}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_SFXGorgonSpawn" ID="{C1F50FB4-DA34-4AC9-8F75-81C12F78B3C9}" WorkUnitID="{44EF5028-F23C-448C-BEC5-271E73A1269C}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_SFXDestroyed" ID="{718999EE-04B2-4B00-A550-4232D3722287}" WorkUnitID="{44EF5028-F23C-448C-BEC5-271E73A1269C}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_SFXMinotaurSpawn" ID="{7E69CAA6-B774-4BC7-9228-375F7EB7727B}" WorkUnitID="{44EF5028-F23C-448C-BEC5-271E73A1269C}" Origin="Manual" Filter="7"/>
