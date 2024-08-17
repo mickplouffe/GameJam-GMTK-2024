@@ -8,7 +8,9 @@
 			</PropertyList>
 			<ChildrenList>
 				<SoundBank Name="MX" ID="{9C86C296-038E-4813-B61E-AB136A1F6AC0}">
-					<ObjectInclusionList/>
+					<ObjectInclusionList>
+						<ObjectRef Name="MX" ID="{77FDA983-7133-480C-9FE7-A80469AEB806}" WorkUnitID="{77FDA983-7133-480C-9FE7-A80469AEB806}" Origin="Manual" Filter="7"/>
+					</ObjectInclusionList>
 					<ObjectExclusionList/>
 					<GameSyncExclusionList/>
 				</SoundBank>
