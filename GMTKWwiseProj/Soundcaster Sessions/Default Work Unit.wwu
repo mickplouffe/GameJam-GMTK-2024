@@ -10,54 +10,18 @@
 							<Position X="0" Y="0"/>
 						</Module>
 						<Module>
-							<ObjectRef Name="Play_SFXGroundTileSpawn" ID="{E869B14E-1621-4ED1-89AC-65DE7A7EC898}" WorkUnitID="{0A7A0CEB-234F-4544-9DAA-DD6728515385}"/>
+							<ObjectRef Name="Play_SFXPortalsForm" ID="{F4801C66-34A1-4013-9455-676370BE719D}" WorkUnitID="{0A7A0CEB-234F-4544-9DAA-DD6728515385}"/>
 							<Position X="0" Y="1"/>
 						</Module>
 						<Module>
-							<ObjectRef Name="StartGame" ID="{70783A5B-9D9B-4725-A1FA-E906A89AF09D}" WorkUnitID="{0BD70790-4A2A-42B0-81A1-0D3B3BF71E15}"/>
-							<Position X="0" Y="2"/>
-						</Module>
-						<Module>
-							<ObjectRef Name="SetState_ActiveWave" ID="{3B91EA0B-15E1-43CA-8747-01B17B6E2808}" WorkUnitID="{0BD70790-4A2A-42B0-81A1-0D3B3BF71E15}"/>
-							<Position X="0" Y="3"/>
-						</Module>
-						<Module>
-							<ObjectRef Name="Play_SFXTowerPlace" ID="{F6BBF08E-2F33-4870-9A49-A02B42EC8F12}" WorkUnitID="{0A7A0CEB-234F-4544-9DAA-DD6728515385}"/>
-							<Position X="1" Y="0"/>
-						</Module>
-						<Module>
-							<ObjectRef Name="Play_SFXSpawnerTileSpawn" ID="{CC3C517E-D109-44C5-8243-67F08A28976D}" WorkUnitID="{0A7A0CEB-234F-4544-9DAA-DD6728515385}"/>
-							<Position X="1" Y="1"/>
-						</Module>
-						<Module>
-							<ObjectRef Name="towerUpgrade" ID="{046B7029-0E57-4915-8E30-4D70177E3CD3}" WorkUnitID="{A57A593A-B9DE-4277-A3EF-672CA80E8992}"/>
-							<Position X="1" Y="2"/>
-						</Module>
-						<Module>
-							<ObjectRef Name="SetState_BetweenWaves" ID="{566FB362-ECF2-4416-933B-0FE84D1386B2}" WorkUnitID="{0BD70790-4A2A-42B0-81A1-0D3B3BF71E15}"/>
-							<Position X="1" Y="3"/>
-						</Module>
-						<Module>
-							<ObjectRef Name="Play_SFXTowerSell" ID="{D656D3F4-3ECF-4658-AB6C-9DAFE7B7718F}" WorkUnitID="{0A7A0CEB-234F-4544-9DAA-DD6728515385}"/>
-							<Position X="2" Y="0"/>
-						</Module>
-						<Module>
-							<ObjectRef Name="Play_SFXTowerSlide" ID="{173A8F5F-6F65-4B07-B66B-693D99C18196}" WorkUnitID="{0A7A0CEB-234F-4544-9DAA-DD6728515385}"/>
-							<Position X="2" Y="1"/>
-						</Module>
-						<Module>
-							<ObjectRef Name="Stop_SFXTowerSlide" ID="{BAAA6E50-4D1A-4E70-98D9-B0371F5F49BA}" WorkUnitID="{0A7A0CEB-234F-4544-9DAA-DD6728515385}"/>
-							<Position X="2" Y="2"/>
-						</Module>
-						<Module>
 							<ObjectRef Name="Stop_All" ID="{7CD7C746-2107-4F8E-9FCE-C51C4DBEE417}" WorkUnitID="{287E4018-43D8-4442-BFA5-31398B8E3AD6}"/>
-							<Position X="3" Y="0"/>
+							<Position X="1" Y="0"/>
 						</Module>
 					</ModuleList>
 					<RTPCValueList ShowAll="true">
 						<RTPCValue>
 							<GameParameterRef Name="UI" ID="{2A39A71F-152E-4013-9BFA-1AB051DD89D6}"/>
-							<Value>80</Value>
+							<Value>0</Value>
 						</RTPCValue>
 						<RTPCValue>
 							<GameParameterRef Name="AMB" ID="{3118625E-3C84-410F-AC07-E9A4188D16C3}"/>
@@ -68,211 +32,19 @@
 							<Value>80</Value>
 						</RTPCValue>
 						<RTPCValue>
-							<GameParameterRef Name="Tension" ID="{F6A3C4B6-1FF7-4AFB-9579-F97816261FC6}"/>
-							<Value>100</Value>
-						</RTPCValue>
-						<RTPCValue>
 							<GameParameterRef Name="SFX" ID="{98EDC772-7538-4B9A-A9FE-3697609A1F41}"/>
 							<Value>80</Value>
 						</RTPCValue>
 						<RTPCValue>
 							<GameParameterRef Name="MX" ID="{55C1CEB3-B47D-4C8D-964F-DBF1B5459E10}"/>
-							<Value>80</Value>
+							<Value>0</Value>
 						</RTPCValue>
 						<RTPCValue>
 							<GameParameterRef Name="VO" ID="{8EADD676-A726-4C92-89C5-D39C98E13E52}"/>
 							<Value>0</Value>
 						</RTPCValue>
 					</RTPCValueList>
-					<CurrentStateList ShowAll="true">
-						<CurrentStateRef Name="ActiveWave" ID="{5F8E6FC5-07CA-486A-9592-5DD2E231C2E2}"/>
-					</CurrentStateList>
-					<CurrentSwitchList ShowAll="true"/>
-				</SoundcasterSession>
-				<SoundcasterSession Name="ZachTest" ID="{4087033D-56B3-4501-8442-CD2DF9D31394}">
-					<ModuleList>
-						<Module>
-							<ObjectRef Name="Play_SFXCyclopsDeath" ID="{753A1E7C-C50C-4FFA-BA3C-567D1C5DFA47}" WorkUnitID="{44EF5028-F23C-448C-BEC5-271E73A1269C}"/>
-							<Position X="0" Y="0"/>
-						</Module>
-						<Module>
-							<ObjectRef Name="Play_SFXGorgonDeath" ID="{6A1DEDFA-FF80-476F-A541-A1EE98E7E539}" WorkUnitID="{44EF5028-F23C-448C-BEC5-271E73A1269C}"/>
-							<Position X="0" Y="1"/>
-						</Module>
-						<Module>
-							<ObjectRef Name="Play_SFXMinotaurDeath" ID="{E977C255-21AC-4039-B34D-7720A024D8D8}" WorkUnitID="{44EF5028-F23C-448C-BEC5-271E73A1269C}"/>
-							<Position X="0" Y="2"/>
-						</Module>
-						<Module>
-							<ObjectRef Name="Play_SFXCyclopsEnterTower" ID="{11CD0FCB-868F-4583-81B3-9754CF23CB39}" WorkUnitID="{44EF5028-F23C-448C-BEC5-271E73A1269C}"/>
-							<Position X="1" Y="0"/>
-						</Module>
-						<Module>
-							<ObjectRef Name="Play_SFXGorgonEnterTower" ID="{C1F50FB4-DA34-4AC9-8F75-81C12F78B3C9}" WorkUnitID="{44EF5028-F23C-448C-BEC5-271E73A1269C}"/>
-							<Position X="1" Y="1"/>
-						</Module>
-						<Module>
-							<ObjectRef Name="Play_SFXMinotaurEnterTower" ID="{7E69CAA6-B774-4BC7-9228-375F7EB7727B}" WorkUnitID="{44EF5028-F23C-448C-BEC5-271E73A1269C}"/>
-							<Position X="1" Y="2"/>
-						</Module>
-						<Module>
-							<ObjectRef Name="Attack" ID="{85640160-D919-471F-A0D1-5023E83063D3}" WorkUnitID="{B5461995-40B4-48D8-B88A-3E895957C2F0}"/>
-							<Position X="2" Y="0"/>
-						</Module>
-						<Module>
-							<ObjectRef Name="Play_UIGoldGain" ID="{BFCACDBC-23C7-45C4-A972-E2CA69B1F2C6}" WorkUnitID="{0161E5E5-78F8-4E54-949B-0AC218A10565}"/>
-							<Position X="3" Y="0"/>
-						</Module>
-						<Module>
-							<ObjectRef Name="Play_UIGoldLoss" ID="{848D2BCA-F9C4-404B-8D21-93AFDB2D13D3}" WorkUnitID="{0161E5E5-78F8-4E54-949B-0AC218A10565}"/>
-							<Position X="3" Y="1"/>
-						</Module>
-					</ModuleList>
-					<RTPCValueList ShowAll="true">
-						<RTPCValue>
-							<GameParameterRef Name="UI" ID="{2A39A71F-152E-4013-9BFA-1AB051DD89D6}"/>
-							<Value>80</Value>
-						</RTPCValue>
-						<RTPCValue>
-							<GameParameterRef Name="MASTER" ID="{7BFC7C52-FB4F-4156-8F1D-87F2A2277935}"/>
-							<Value>80</Value>
-						</RTPCValue>
-						<RTPCValue>
-							<GameParameterRef Name="SFX" ID="{98EDC772-7538-4B9A-A9FE-3697609A1F41}"/>
-							<Value>80</Value>
-						</RTPCValue>
-					</RTPCValueList>
 					<CurrentStateList ShowAll="true"/>
-					<CurrentSwitchList ShowAll="true"/>
-				</SoundcasterSession>
-				<SoundcasterSession Name="AudioBranchTest" ID="{39ACD286-0855-413D-B8F7-3835FB158466}">
-					<ModuleList>
-						<Module>
-							<ObjectRef Name="Play_MXTitleTheme" ID="{BC8A9745-2AB8-452D-B805-15E760D59A15}" WorkUnitID="{0BD70790-4A2A-42B0-81A1-0D3B3BF71E15}"/>
-							<Position X="0" Y="0"/>
-						</Module>
-						<Module>
-							<ObjectRef Name="StartGame" ID="{70783A5B-9D9B-4725-A1FA-E906A89AF09D}" WorkUnitID="{0BD70790-4A2A-42B0-81A1-0D3B3BF71E15}"/>
-							<Position X="0" Y="1"/>
-						</Module>
-						<Module>
-							<ObjectRef Name="SetState_ActiveWave" ID="{3B91EA0B-15E1-43CA-8747-01B17B6E2808}" WorkUnitID="{0BD70790-4A2A-42B0-81A1-0D3B3BF71E15}"/>
-							<Position X="0" Y="2"/>
-						</Module>
-						<Module>
-							<ObjectRef Name="SetState_BetweenWaves" ID="{566FB362-ECF2-4416-933B-0FE84D1386B2}" WorkUnitID="{0BD70790-4A2A-42B0-81A1-0D3B3BF71E15}"/>
-							<Position X="0" Y="3"/>
-						</Module>
-						<Module>
-							<ObjectRef Name="Stop_All" ID="{7CD7C746-2107-4F8E-9FCE-C51C4DBEE417}" WorkUnitID="{287E4018-43D8-4442-BFA5-31398B8E3AD6}"/>
-							<Position X="0" Y="4"/>
-						</Module>
-						<Module>
-							<ObjectRef Name="Play_Wind" ID="{FEC89844-829D-4954-AAEB-9FC5355CDFD0}" WorkUnitID="{5B7760E9-4ED5-4FFF-B405-DA13419EEECE}"/>
-							<Position X="0" Y="5"/>
-						</Module>
-						<Module>
-							<ObjectRef Name="Play_Attack" ID="{F31137F4-909F-49DE-B7E1-00AB32F9417D}" WorkUnitID="{44EF5028-F23C-448C-BEC5-271E73A1269C}"/>
-							<Position X="1" Y="0"/>
-						</Module>
-						<Module>
-							<ObjectRef Name="Play_Fall" ID="{496E4765-B51F-4117-8620-273BBD96CD5B}" WorkUnitID="{44EF5028-F23C-448C-BEC5-271E73A1269C}"/>
-							<Position X="1" Y="1"/>
-						</Module>
-						<Module>
-							<ObjectRef Name="Play_UIGoldGain" ID="{BFCACDBC-23C7-45C4-A972-E2CA69B1F2C6}" WorkUnitID="{0161E5E5-78F8-4E54-949B-0AC218A10565}"/>
-							<Position X="1" Y="2"/>
-						</Module>
-						<Module>
-							<ObjectRef Name="Play_SFXSpawnCyclops" ID="{223FCFA0-59D2-4F2F-96E2-94373C4978BE}" WorkUnitID="{44EF5028-F23C-448C-BEC5-271E73A1269C}"/>
-							<Position X="1" Y="3"/>
-						</Module>
-						<Module>
-							<ObjectRef Name="Play_SFXSpawnGorgon" ID="{39DE17FB-1F8A-4EC6-B8B4-63673F9E43BD}" WorkUnitID="{44EF5028-F23C-448C-BEC5-271E73A1269C}"/>
-							<Position X="1" Y="4"/>
-						</Module>
-						<Module>
-							<ObjectRef Name="Play_SFXSpawnMinotaur" ID="{2B97CE45-4546-46B5-8A62-D0E22E6396BB}" WorkUnitID="{44EF5028-F23C-448C-BEC5-271E73A1269C}"/>
-							<Position X="1" Y="5"/>
-						</Module>
-						<Module>
-							<ObjectRef Name="Play_SFXGroundTileSpawn" ID="{E869B14E-1621-4ED1-89AC-65DE7A7EC898}" WorkUnitID="{0A7A0CEB-234F-4544-9DAA-DD6728515385}"/>
-							<Position X="1" Y="6"/>
-						</Module>
-						<Module>
-							<ObjectRef Name="Play_SFXTowerPlace" ID="{F6BBF08E-2F33-4870-9A49-A02B42EC8F12}" WorkUnitID="{0A7A0CEB-234F-4544-9DAA-DD6728515385}"/>
-							<Position X="2" Y="0"/>
-						</Module>
-						<Module>
-							<ObjectRef Name="Play_SFXTowerSlide" ID="{173A8F5F-6F65-4B07-B66B-693D99C18196}" WorkUnitID="{0A7A0CEB-234F-4544-9DAA-DD6728515385}"/>
-							<Position X="2" Y="1"/>
-						</Module>
-						<Module>
-							<ObjectRef Name="Play_UIGoldLoss" ID="{848D2BCA-F9C4-404B-8D21-93AFDB2D13D3}" WorkUnitID="{0161E5E5-78F8-4E54-949B-0AC218A10565}"/>
-							<Position X="2" Y="2"/>
-						</Module>
-						<Module>
-							<ObjectRef Name="Play_SFXCyclopsEnterTower" ID="{11CD0FCB-868F-4583-81B3-9754CF23CB39}" WorkUnitID="{44EF5028-F23C-448C-BEC5-271E73A1269C}"/>
-							<Position X="2" Y="3"/>
-						</Module>
-						<Module>
-							<ObjectRef Name="Play_SFXGorgonEnterTower" ID="{C1F50FB4-DA34-4AC9-8F75-81C12F78B3C9}" WorkUnitID="{44EF5028-F23C-448C-BEC5-271E73A1269C}"/>
-							<Position X="2" Y="4"/>
-						</Module>
-						<Module>
-							<ObjectRef Name="Play_SFXMinotaurEnterTower" ID="{7E69CAA6-B774-4BC7-9228-375F7EB7727B}" WorkUnitID="{44EF5028-F23C-448C-BEC5-271E73A1269C}"/>
-							<Position X="2" Y="5"/>
-						</Module>
-						<Module>
-							<ObjectRef Name="Play_SFXSpawnerTileSpawn" ID="{CC3C517E-D109-44C5-8243-67F08A28976D}" WorkUnitID="{0A7A0CEB-234F-4544-9DAA-DD6728515385}"/>
-							<Position X="2" Y="6"/>
-						</Module>
-						<Module>
-							<ObjectRef Name="Play_SFXTowerSell" ID="{D656D3F4-3ECF-4658-AB6C-9DAFE7B7718F}" WorkUnitID="{0A7A0CEB-234F-4544-9DAA-DD6728515385}"/>
-							<Position X="3" Y="0"/>
-						</Module>
-						<Module>
-							<ObjectRef Name="Stop_SFXTowerSlide" ID="{BAAA6E50-4D1A-4E70-98D9-B0371F5F49BA}" WorkUnitID="{0A7A0CEB-234F-4544-9DAA-DD6728515385}"/>
-							<Position X="3" Y="1"/>
-						</Module>
-						<Module>
-							<ObjectRef Name="Play_UIClick" ID="{F70B055A-6807-47AD-BE1D-9AE92EEB1692}" WorkUnitID="{0161E5E5-78F8-4E54-949B-0AC218A10565}"/>
-							<Position X="3" Y="2"/>
-						</Module>
-						<Module>
-							<ObjectRef Name="Play_SFXCyclopsDeath" ID="{753A1E7C-C50C-4FFA-BA3C-567D1C5DFA47}" WorkUnitID="{44EF5028-F23C-448C-BEC5-271E73A1269C}"/>
-							<Position X="3" Y="3"/>
-						</Module>
-						<Module>
-							<ObjectRef Name="Play_SFXGorgonDeath" ID="{6A1DEDFA-FF80-476F-A541-A1EE98E7E539}" WorkUnitID="{44EF5028-F23C-448C-BEC5-271E73A1269C}"/>
-							<Position X="3" Y="4"/>
-						</Module>
-						<Module>
-							<ObjectRef Name="Play_SFXMinotaurDeath" ID="{E977C255-21AC-4039-B34D-7720A024D8D8}" WorkUnitID="{44EF5028-F23C-448C-BEC5-271E73A1269C}"/>
-							<Position X="3" Y="5"/>
-						</Module>
-						<Module>
-							<ObjectRef Name="Play_SFXTowerUpgrade" ID="{DD1D6AD9-9699-4D4A-BE61-E33239F99BE2}" WorkUnitID="{0A7A0CEB-234F-4544-9DAA-DD6728515385}"/>
-							<Position X="4" Y="0"/>
-						</Module>
-						<Module>
-							<ObjectRef Name="Play_SFXPlaceRock" ID="{D199897C-3D6D-4076-BB8C-3F368D7C3417}" WorkUnitID="{0A7A0CEB-234F-4544-9DAA-DD6728515385}"/>
-							<Position X="4" Y="1"/>
-						</Module>
-						<Module>
-							<ObjectRef Name="Play_UIHover" ID="{7F000FFE-DBB8-42CC-AA34-BFE19AA5F797}" WorkUnitID="{0161E5E5-78F8-4E54-949B-0AC218A10565}"/>
-							<Position X="4" Y="2"/>
-						</Module>
-					</ModuleList>
-					<RTPCValueList ShowAll="true">
-						<RTPCValue>
-							<GameParameterRef Name="MX" ID="{55C1CEB3-B47D-4C8D-964F-DBF1B5459E10}"/>
-							<Value>80</Value>
-						</RTPCValue>
-					</RTPCValueList>
-					<CurrentStateList ShowAll="true">
-						<CurrentStateRef Name="ActiveWave" ID="{5F8E6FC5-07CA-486A-9592-5DD2E231C2E2}"/>
-					</CurrentStateList>
 					<CurrentSwitchList ShowAll="true"/>
 				</SoundcasterSession>
 			</ChildrenList>

@@ -8,22 +8,6 @@
 			</PropertyList>
 			<ChildrenList>
 				<ActorMixer Name="SFX" ID="{8BE910E0-45D4-48D7-AA29-659B0E55FFF4}" ShortID="101513282">
-					<PropertyList>
-						<Property Name="3DSpatialization" Type="int16" Value="2"/>
-						<Property Name="EnableAttenuation" Type="bool" Value="False"/>
-						<Property Name="IsGlobalLimit" Type="int16" Value="1"/>
-						<Property Name="MakeUpGain" Type="Real64">
-							<ValueList>
-								<Value>3</Value>
-							</ValueList>
-						</Property>
-						<Property Name="MaxSoundPerInstance" Type="int16">
-							<ValueList>
-								<Value>9</Value>
-							</ValueList>
-						</Property>
-						<Property Name="SpeakerPanning" Type="int16" Value="1"/>
-					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
@@ -43,16 +27,7 @@
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
-								<BlendContainer Name="Attack" ID="{85640160-D919-471F-A0D1-5023E83063D3}" ShortID="523896305">
-									<PropertyList>
-										<Property Name="Volume" Type="Real64">
-											<ModifierList>
-												<ModifierInfo>
-													<Modifier Name="" ID="{399BF139-D994-45A2-874C-E573345BF296}"/>
-												</ModifierInfo>
-											</ModifierList>
-										</Property>
-									</PropertyList>
+								<RandomSequenceContainer Name="Attack" ID="{B5969A98-927B-44A4-B73D-246406FB95CE}" ShortID="307012704">
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
@@ -61,465 +36,34 @@
 											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{7F62BABC-0C6C-4DAD-ACF1-E77615B460FB}"/>
 										</Reference>
 									</ReferenceList>
-									<ChildrenList>
-										<RandomSequenceContainer Name="High" ID="{3408384D-790B-4AB0-BE38-EFF242E8BA89}" ShortID="806994999">
-											<PropertyList>
-												<Property Name="3DSpatialization" Type="int16" Value="2"/>
-												<Property Name="EnableAttenuation" Type="bool" Value="False"/>
-												<Property Name="GlobalOrPerObject" Type="int16" Value="0"/>
-												<Property Name="RandomAvoidRepeating" Type="bool" Value="False"/>
-												<Property Name="SpeakerPanning" Type="int16" Value="1"/>
-												<Property Name="Volume" Type="Real64">
-													<ModifierList>
-														<ModifierInfo>
-															<Modifier Name="" ID="{F6C7AA6D-6835-42F3-A882-523EAC94B89B}">
-																<PropertyList>
-																	<Property Name="Enabled" Type="bool" Value="True"/>
-																	<Property Name="Max" Type="Real64" Value="3"/>
-																	<Property Name="Min" Type="Real64" Value="-3"/>
-																</PropertyList>
-															</Modifier>
-														</ModifierInfo>
-													</ModifierList>
-												</Property>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="SFX" ID="{B2321CDD-8250-446B-9608-2183E25145B9}" WorkUnitID="{7F62BABC-0C6C-4DAD-ACF1-E77615B460FB}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<Sound Name="GMTK2024_SFX_towerAttack01_high_-11_v1" ID="{6E4BA043-51BE-484C-B488-686ED43AA5F7}" ShortID="1022009652">
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{7F62BABC-0C6C-4DAD-ACF1-E77615B460FB}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="GMTK2024_SFX_towerAttack01_high_-11_v1" ID="{8A8E706F-5CCF-472B-B559-E6FB3F2F2D4D}">
-															<PropertyList>
-																<Property Name="FadeOutDuration" Type="Real64" Value="0.85"/>
-																<Property Name="FadeOutShape" Type="int16" Value="6"/>
-																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-																<Property Name="TrimBegin" Type="Real64" Value="0.4"/>
-																<Property Name="TrimEnd" Type="Real64" Value="1.5"/>
-																<Property Name="VolumeOffset" Type="Real64">
-																	<ValueList>
-																		<Value>9</Value>
-																	</ValueList>
-																</Property>
-															</PropertyList>
-															<Language>SFX</Language>
-															<AudioFile>GMTK2024_SFX_towerAttack01_high_-11_v1.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="232753778"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="GMTK2024_SFX_towerAttack01_high_-11_v1" ID="{8A8E706F-5CCF-472B-B559-E6FB3F2F2D4D}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="GMTK2024_SFX_towerAttack02_high_-11_v1" ID="{1595D9CB-6F3C-4B30-B6FB-354ACB1A766D}" ShortID="57814647">
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{7F62BABC-0C6C-4DAD-ACF1-E77615B460FB}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="GMTK2024_SFX_towerAttack02_high_-11_v1" ID="{EBB618FC-C817-4FB8-AEC9-2423A58B137C}">
-															<PropertyList>
-																<Property Name="FadeOutDuration" Type="Real64" Value="0.85"/>
-																<Property Name="LoopBegin" Type="Real64" Value="0.4"/>
-																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-																<Property Name="TrimBegin" Type="Real64" Value="0.4"/>
-																<Property Name="TrimEnd" Type="Real64" Value="1.5"/>
-																<Property Name="VolumeOffset" Type="Real64">
-																	<ValueList>
-																		<Value>9</Value>
-																	</ValueList>
-																</Property>
-															</PropertyList>
-															<Language>SFX</Language>
-															<AudioFile>GMTK2024_SFX_towerAttack02_high_-11_v1.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="847879273"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="GMTK2024_SFX_towerAttack02_high_-11_v1" ID="{EBB618FC-C817-4FB8-AEC9-2423A58B137C}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="GMTK2024_SFX_towerAttack03_high_-11_v1" ID="{5D2F88D8-378E-494C-B074-6D111FB33859}" ShortID="402816103">
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{7F62BABC-0C6C-4DAD-ACF1-E77615B460FB}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="GMTK2024_SFX_towerAttack03_high_-11_v1" ID="{706113BE-9F88-4BE5-962B-AAB23F961B36}">
-															<PropertyList>
-																<Property Name="CrossfadeShape" Type="int16" Value="8"/>
-																<Property Name="FadeOutDuration" Type="Real64" Value="0.85"/>
-																<Property Name="FadeOutShape" Type="int16" Value="6"/>
-																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-																<Property Name="TrimBegin" Type="Real64" Value="0.4"/>
-																<Property Name="TrimEnd" Type="Real64" Value="1.5"/>
-																<Property Name="VolumeOffset" Type="Real64">
-																	<ValueList>
-																		<Value>9</Value>
-																	</ValueList>
-																</Property>
-															</PropertyList>
-															<Language>SFX</Language>
-															<AudioFile>GMTK2024_SFX_towerAttack03_high_-11_v1.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="877437290"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="GMTK2024_SFX_towerAttack03_high_-11_v1" ID="{706113BE-9F88-4BE5-962B-AAB23F961B36}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-											</ChildrenList>
-											<PositioningInfo>
-												<Panner Name="" ID="{9A9217C5-DE67-4690-A47F-F486A3388BC4}"/>
-											</PositioningInfo>
-										</RandomSequenceContainer>
-										<RandomSequenceContainer Name="Low" ID="{1539AECF-BF62-466D-A598-64BA067E68BB}" ShortID="91607003">
-											<PropertyList>
-												<Property Name="3DSpatialization" Type="int16" Value="2"/>
-												<Property Name="EnableAttenuation" Type="bool" Value="False"/>
-												<Property Name="GlobalOrPerObject" Type="int16" Value="0"/>
-												<Property Name="RandomAvoidRepeating" Type="bool" Value="False"/>
-												<Property Name="SpeakerPanning" Type="int16" Value="1"/>
-												<Property Name="Volume" Type="Real64">
-													<ModifierList>
-														<ModifierInfo>
-															<Modifier Name="" ID="{7378D8C1-0C89-48E1-B628-6E010BECDAA0}">
-																<PropertyList>
-																	<Property Name="Enabled" Type="bool" Value="True"/>
-																	<Property Name="Max" Type="Real64" Value="3"/>
-																	<Property Name="Min" Type="Real64" Value="-3"/>
-																</PropertyList>
-															</Modifier>
-														</ModifierInfo>
-													</ModifierList>
-												</Property>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="SFX" ID="{B2321CDD-8250-446B-9608-2183E25145B9}" WorkUnitID="{7F62BABC-0C6C-4DAD-ACF1-E77615B460FB}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<Sound Name="GMTK2024_SFX_towerAttack01_low_-11_v1" ID="{F6F35527-52D0-4179-A5E4-C4ADB2E52D53}" ShortID="1018403040">
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{7F62BABC-0C6C-4DAD-ACF1-E77615B460FB}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="GMTK2024_SFX_towerAttack01_low_-11_v1" ID="{8D8003F1-D3EB-4DD3-9FA1-3F6527AE4C6A}">
-															<PropertyList>
-																<Property Name="FadeOutDuration" Type="Real64" Value="0.940813452617627"/>
-																<Property Name="FadeOutShape" Type="int16" Value="6"/>
-																<Property Name="LoopBegin" Type="Real64" Value="0.30142478462558"/>
-																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-																<Property Name="TrimBegin" Type="Real64" Value="0.3"/>
-																<Property Name="TrimEnd" Type="Real64" Value="1.65258449304175"/>
-																<Property Name="VolumeOffset" Type="Real64">
-																	<ValueList>
-																		<Value>6</Value>
-																	</ValueList>
-																</Property>
-															</PropertyList>
-															<Language>SFX</Language>
-															<AudioFile>GMTK2024_SFX_towerAttack01_low_-11_v1.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="723944443"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="GMTK2024_SFX_towerAttack01_low_-11_v1" ID="{8D8003F1-D3EB-4DD3-9FA1-3F6527AE4C6A}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="GMTK2024_SFX_towerAttack02_low_-11_v1" ID="{B2D21671-0D94-4990-94B8-BD363CEBF063}" ShortID="131028096">
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{7F62BABC-0C6C-4DAD-ACF1-E77615B460FB}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="GMTK2024_SFX_towerAttack02_low_-11_v1" ID="{0533FF35-8E4D-473F-9418-EAA842E3143F}">
-															<PropertyList>
-																<Property Name="FadeOutDuration" Type="Real64" Value="0.94226308813784"/>
-																<Property Name="FadeOutShape" Type="int16" Value="6"/>
-																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-																<Property Name="TrimBegin" Type="Real64" Value="0.3"/>
-																<Property Name="TrimEnd" Type="Real64" Value="1.64968522200132"/>
-																<Property Name="VolumeOffset" Type="Real64">
-																	<ValueList>
-																		<Value>6</Value>
-																	</ValueList>
-																</Property>
-															</PropertyList>
-															<Language>SFX</Language>
-															<AudioFile>GMTK2024_SFX_towerAttack02_low_-11_v1.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="934633238"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="GMTK2024_SFX_towerAttack02_low_-11_v1" ID="{0533FF35-8E4D-473F-9418-EAA842E3143F}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="GMTK2024_SFX_towerAttack03_low_-11_v1" ID="{052B61A6-1951-49E2-B886-81FC84651B43}" ShortID="524421915">
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{7F62BABC-0C6C-4DAD-ACF1-E77615B460FB}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="GMTK2024_SFX_towerAttack03_low_-11_v1" ID="{4B93A5F2-9AF6-482D-BFFA-4522E43E987F}">
-															<PropertyList>
-																<Property Name="FadeOutDuration" Type="Real64" Value="0.943712723658052"/>
-																<Property Name="FadeOutShape" Type="int16" Value="6"/>
-																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-																<Property Name="TrimBegin" Type="Real64" Value="0.3"/>
-																<Property Name="TrimEnd" Type="Real64" Value="1.64968522200133"/>
-																<Property Name="VolumeOffset" Type="Real64">
-																	<ValueList>
-																		<Value>6</Value>
-																	</ValueList>
-																</Property>
-															</PropertyList>
-															<Language>SFX</Language>
-															<AudioFile>GMTK2024_SFX_towerAttack03_low_-11_v1.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="506364536"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="GMTK2024_SFX_towerAttack03_low_-11_v1" ID="{4B93A5F2-9AF6-482D-BFFA-4522E43E987F}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-											</ChildrenList>
-											<PositioningInfo>
-												<Panner Name="" ID="{891CB173-204F-4A72-9529-178CF2AFC9F8}"/>
-											</PositioningInfo>
-										</RandomSequenceContainer>
-										<RandomSequenceContainer Name="Mid" ID="{6FC1187B-A9F9-48EE-AD6D-A75476C1787B}" ShortID="441917723">
-											<PropertyList>
-												<Property Name="3DSpatialization" Type="int16" Value="2"/>
-												<Property Name="EnableAttenuation" Type="bool" Value="False"/>
-												<Property Name="GlobalOrPerObject" Type="int16" Value="0"/>
-												<Property Name="RandomAvoidRepeating" Type="bool" Value="False"/>
-												<Property Name="SpeakerPanning" Type="int16" Value="1"/>
-												<Property Name="Volume" Type="Real64">
-													<ModifierList>
-														<ModifierInfo>
-															<Modifier Name="" ID="{F9772AD6-AA35-4E4A-925F-A3FD2B74A67D}">
-																<PropertyList>
-																	<Property Name="Enabled" Type="bool" Value="True"/>
-																	<Property Name="Max" Type="Real64" Value="3"/>
-																	<Property Name="Min" Type="Real64" Value="-3"/>
-																</PropertyList>
-															</Modifier>
-														</ModifierInfo>
-													</ModifierList>
-												</Property>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="SFX" ID="{B2321CDD-8250-446B-9608-2183E25145B9}" WorkUnitID="{7F62BABC-0C6C-4DAD-ACF1-E77615B460FB}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<Sound Name="GMTK2024_SFX_towerAttack01_mid_-11_v1" ID="{79020747-7B00-4C49-A0D3-8BD1A6CA3244}" ShortID="984213127">
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{7F62BABC-0C6C-4DAD-ACF1-E77615B460FB}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="GMTK2024_SFX_towerAttack01_mid_-11_v1" ID="{5F2D9A79-7F68-4917-BFB9-293A67A4A273}">
-															<PropertyList>
-																<Property Name="FadeOutDuration" Type="Real64" Value="0.919068919814444"/>
-																<Property Name="FadeOutShape" Type="int16" Value="6"/>
-																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-																<Property Name="TrimBegin" Type="Real64" Value="0.2"/>
-																<Property Name="TrimEnd" Type="Real64" Value="1.54966037110669"/>
-																<Property Name="VolumeOffset" Type="Real64">
-																	<ValueList>
-																		<Value>12</Value>
-																	</ValueList>
-																</Property>
-															</PropertyList>
-															<Language>SFX</Language>
-															<AudioFile>GMTK2024_SFX_towerAttack01_mid_-11_v1.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="888382889"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="GMTK2024_SFX_towerAttack01_mid_-11_v1" ID="{5F2D9A79-7F68-4917-BFB9-293A67A4A273}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="GMTK2024_SFX_towerAttack02_mid_-11_v1" ID="{33F14D3E-98D8-43C1-8356-F56865F205B4}" ShortID="871537300">
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{7F62BABC-0C6C-4DAD-ACF1-E77615B460FB}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="GMTK2024_SFX_towerAttack02_mid_-11_v1" ID="{7F4A0361-593F-4068-A64B-D117FDEB2140}">
-															<PropertyList>
-																<Property Name="FadeOutDuration" Type="Real64" Value="0.956759443339958"/>
-																<Property Name="FadeOutShape" Type="int16" Value="6"/>
-																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-																<Property Name="TrimBegin" Type="Real64" Value="0.2"/>
-																<Property Name="TrimEnd" Type="Real64" Value="1.52066766070245"/>
-																<Property Name="VolumeOffset" Type="Real64">
-																	<ValueList>
-																		<Value>12</Value>
-																	</ValueList>
-																</Property>
-															</PropertyList>
-															<Language>SFX</Language>
-															<AudioFile>GMTK2024_SFX_towerAttack02_mid_-11_v1.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="684628303"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="GMTK2024_SFX_towerAttack02_mid_-11_v1" ID="{7F4A0361-593F-4068-A64B-D117FDEB2140}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="GMTK2024_SFX_towerAttack03_mid_-11_v1" ID="{FC49E751-E267-4ED4-A632-0BE9FC9FC36D}" ShortID="237926401">
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{7F62BABC-0C6C-4DAD-ACF1-E77615B460FB}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="GMTK2024_SFX_towerAttack03_mid_-11_v1" ID="{9A975875-90C0-4EBF-9B48-D83EA949782F}">
-															<PropertyList>
-																<Property Name="FadeOutDuration" Type="Real64" Value="0.642188535453942"/>
-																<Property Name="FadeOutShape" Type="int16" Value="6"/>
-																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-																<Property Name="TrimBegin" Type="Real64" Value="0.2"/>
-																<Property Name="TrimEnd" Type="Real64" Value="1.51196984758118"/>
-																<Property Name="VolumeOffset" Type="Real64">
-																	<ValueList>
-																		<Value>12</Value>
-																	</ValueList>
-																</Property>
-															</PropertyList>
-															<Language>SFX</Language>
-															<AudioFile>GMTK2024_SFX_towerAttack03_mid_-11_v1.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="117618669"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="GMTK2024_SFX_towerAttack03_mid_-11_v1" ID="{9A975875-90C0-4EBF-9B48-D83EA949782F}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-											</ChildrenList>
-											<PositioningInfo>
-												<Panner Name="" ID="{142BD66C-4596-40DA-8EDB-7180DAA15A04}"/>
-											</PositioningInfo>
-										</RandomSequenceContainer>
-									</ChildrenList>
-									<BlendTrackList>
-										<BlendTrack Name="High" ID="{57C4A0EB-FA38-45EA-83DE-414B498ED6C8}" ShortID="505891447">
-											<BlendTrackAssocList>
-												<BlendTrackAssoc>
-													<ItemRef Name="High" ID="{3408384D-790B-4AB0-BE38-EFF242E8BA89}"/>
-												</BlendTrackAssoc>
-											</BlendTrackAssocList>
-										</BlendTrack>
-										<BlendTrack Name="Mid" ID="{F8201ADA-FD61-4C9A-BAAC-927A53C544A2}" ShortID="1024554824">
-											<BlendTrackAssocList>
-												<BlendTrackAssoc>
-													<ItemRef Name="Mid" ID="{6FC1187B-A9F9-48EE-AD6D-A75476C1787B}"/>
-												</BlendTrackAssoc>
-											</BlendTrackAssocList>
-										</BlendTrack>
-										<BlendTrack Name="Low" ID="{0FA16D23-E53F-4DFC-9E41-754ABB2F07B9}" ShortID="16805097">
-											<BlendTrackAssocList>
-												<BlendTrackAssoc>
-													<ItemRef Name="Low" ID="{1539AECF-BF62-466D-A598-64BA067E68BB}"/>
-												</BlendTrackAssoc>
-											</BlendTrackAssocList>
-										</BlendTrack>
-									</BlendTrackList>
-								</BlendContainer>
+								</RandomSequenceContainer>
+								<RandomSequenceContainer Name="AttackHit" ID="{934DC960-68B0-4E18-8953-501E5A734856}" ShortID="1020049959">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{7F62BABC-0C6C-4DAD-ACF1-E77615B460FB}"/>
+										</Reference>
+									</ReferenceList>
+								</RandomSequenceContainer>
+								<RandomSequenceContainer Name="Slide" ID="{DCAF870A-3EE8-48B7-A7D3-CAD099CF905B}" ShortID="979379369">
+									<PropertyList>
+										<Property Name="Color" Type="int16" Value="4"/>
+										<Property Name="OverrideColor" Type="bool" Value="True"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="SFX" ID="{B2321CDD-8250-446B-9608-2183E25145B9}" WorkUnitID="{7F62BABC-0C6C-4DAD-ACF1-E77615B460FB}"/>
+										</Reference>
+									</ReferenceList>
+								</RandomSequenceContainer>
 							</ChildrenList>
 						</ActorMixer>
 						<ActorMixer Name="Enemy" ID="{E7B9B013-EC1F-423A-951B-28A012AFBA9E}" ShortID="736589997">
-							<PropertyList>
-								<Property Name="BelowThresholdBehavior" Type="int16" Value="3"/>
-								<Property Name="IsGlobalLimit" Type="int16" Value="1"/>
-								<Property Name="MaxSoundPerInstance" Type="int16">
-									<ValueList>
-										<Value>9</Value>
-									</ValueList>
-								</Property>
-								<Property Name="OverLimitBehavior" Type="int16" Value="1"/>
-								<Property Name="OverrideEffect" Type="bool" Value="True"/>
-								<Property Name="OverrideVirtualVoice" Type="bool" Value="True"/>
-								<Property Name="UseMaxSoundPerInstance" Type="bool">
-									<ValueList>
-										<Value>True</Value>
-									</ValueList>
-								</Property>
-							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
@@ -530,19 +74,6 @@
 							</ReferenceList>
 							<ChildrenList>
 								<ActorMixer Name="Gorgon" ID="{F549251C-5E8A-437D-9D21-939B0940A841}" ShortID="433114276">
-									<PropertyList>
-										<Property Name="MakeUpGain" Type="Real64">
-											<ValueList>
-												<Value>-2</Value>
-											</ValueList>
-										</Property>
-										<Property Name="OverridePriority" Type="bool" Value="True"/>
-										<Property Name="Priority" Type="int16">
-											<ValueList>
-												<Value>52</Value>
-											</ValueList>
-										</Property>
-									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
@@ -553,18 +84,6 @@
 									</ReferenceList>
 									<ChildrenList>
 										<RandomSequenceContainer Name="Death" ID="{764C81F6-807A-4054-9C4C-365487B75398}" ShortID="717782096">
-											<PropertyList>
-												<Property Name="MakeUpGain" Type="Real64">
-													<ValueList>
-														<Value>5</Value>
-													</ValueList>
-												</Property>
-												<Property Name="Volume" Type="Real64">
-													<ValueList>
-														<Value>-5</Value>
-													</ValueList>
-												</Property>
-											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
@@ -573,88 +92,8 @@
 													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{7F62BABC-0C6C-4DAD-ACF1-E77615B460FB}"/>
 												</Reference>
 											</ReferenceList>
-											<ChildrenList>
-												<Sound Name="GMTK2024_SFX_enemyDies_gorgon_-7_v1" ID="{CC4A08D4-7AD6-470A-9F97-254D355C3DE7}" ShortID="507679649">
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{7F62BABC-0C6C-4DAD-ACF1-E77615B460FB}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="GMTK2024_SFX_enemyDies_gorgon_-7_v1" ID="{2BDDFA95-AD02-4CA9-BAED-08761CDCFF14}">
-															<Language>SFX</Language>
-															<AudioFile>GMTK2024_SFX_enemyDies_gorgon_-7_v1.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="567128080"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="GMTK2024_SFX_enemyDies_gorgon_-7_v1" ID="{2BDDFA95-AD02-4CA9-BAED-08761CDCFF14}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="GMTK2024_SFX_enemyDies_gorgon_-11_v2" ID="{7DF6367D-2589-41D2-B996-A98088B06D93}" ShortID="1046159711">
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{7F62BABC-0C6C-4DAD-ACF1-E77615B460FB}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="GMTK2024_SFX_enemyDies_gorgon_-11_v2" ID="{B40AF844-BCA5-4A60-BDEA-918AB6E7E09A}">
-															<Language>SFX</Language>
-															<AudioFile>GMTK2024_SFX_enemyDies_gorgon_-11_v2.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="196280731"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="GMTK2024_SFX_enemyDies_gorgon_-11_v2" ID="{B40AF844-BCA5-4A60-BDEA-918AB6E7E09A}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="GMTK2024_SFX_enemyDies_gorgon_-11_v3" ID="{B8E8EC7A-96FB-4A2E-B829-FB3CF068C11C}" ShortID="603229433">
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{7F62BABC-0C6C-4DAD-ACF1-E77615B460FB}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="GMTK2024_SFX_enemyDies_gorgon_-11_v3" ID="{E422DCCD-E241-4C1C-9EA0-1A01011B9921}">
-															<Language>SFX</Language>
-															<AudioFile>GMTK2024_SFX_enemyDies_gorgon_-11_v3.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="957881645"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="GMTK2024_SFX_enemyDies_gorgon_-11_v3" ID="{E422DCCD-E241-4C1C-9EA0-1A01011B9921}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-											</ChildrenList>
 										</RandomSequenceContainer>
-										<RandomSequenceContainer Name="EnterTower" ID="{18E46E49-6C37-4B8B-8500-2A78D82D0387}" ShortID="1060820732">
-											<PropertyList>
-												<Property Name="MakeUpGain" Type="Real64">
-													<ValueList>
-														<Value>7</Value>
-													</ValueList>
-												</Property>
-												<Property Name="Volume" Type="Real64">
-													<ValueList>
-														<Value>-5</Value>
-													</ValueList>
-												</Property>
-											</PropertyList>
+										<RandomSequenceContainer Name="Spawn" ID="{18E46E49-6C37-4B8B-8500-2A78D82D0387}" ShortID="1060820732">
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
@@ -663,132 +102,10 @@
 													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{7F62BABC-0C6C-4DAD-ACF1-E77615B460FB}"/>
 												</Reference>
 											</ReferenceList>
-											<ChildrenList>
-												<Sound Name="GMTK2024_SFX_enemyEntersTower_gorgon_-10_v1" ID="{8D61E6A7-219B-4BE9-AC06-1C954E39803A}" ShortID="732888019">
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{7F62BABC-0C6C-4DAD-ACF1-E77615B460FB}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="GMTK2024_SFX_enemyEntersTower_gorgon_-10_v1" ID="{C6DECF0C-9F9D-4F0E-B19B-0379C1537DF0}">
-															<Language>SFX</Language>
-															<AudioFile>GMTK2024_SFX_enemyEntersTower_gorgon_-10_v1.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="160864451"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="GMTK2024_SFX_enemyEntersTower_gorgon_-10_v1" ID="{C6DECF0C-9F9D-4F0E-B19B-0379C1537DF0}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-											</ChildrenList>
-										</RandomSequenceContainer>
-										<RandomSequenceContainer Name="Spawn" ID="{FD1C793F-C844-4453-9B9F-98978A4B9AF4}" ShortID="711824603">
-											<PropertyList>
-												<Property Name="MakeUpGain" Type="Real64">
-													<ValueList>
-														<Value>-1</Value>
-													</ValueList>
-												</Property>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{7F62BABC-0C6C-4DAD-ACF1-E77615B460FB}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<Sound Name="GMTK2024_SFX_enemySpawn_gorgon_-7_v1" ID="{D84F59B4-2B5D-44C3-A76C-6CAB17BFB879}" ShortID="930263625">
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{7F62BABC-0C6C-4DAD-ACF1-E77615B460FB}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="GMTK2024_SFX_enemySpawn_gorgon_-7_v1" ID="{3669C7C7-0574-4A60-9EAA-EB63B3C352BB}">
-															<Language>SFX</Language>
-															<AudioFile>GMTK2024_SFX_enemySpawn_gorgon_-7_v1.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="225128032"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="GMTK2024_SFX_enemySpawn_gorgon_-7_v1" ID="{3669C7C7-0574-4A60-9EAA-EB63B3C352BB}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="GMTK2024_SFX_enemySpawn_gorgon_-7_v2" ID="{35F43B27-EAF1-426A-BCAB-31582FFE8DD2}" ShortID="18918163">
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{7F62BABC-0C6C-4DAD-ACF1-E77615B460FB}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="GMTK2024_SFX_enemySpawn_gorgon_-7_v2" ID="{EE6C482B-72B1-4BEF-8E52-33AC5E305C8C}">
-															<Language>SFX</Language>
-															<AudioFile>GMTK2024_SFX_enemySpawn_gorgon_-7_v2.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="387002697"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="GMTK2024_SFX_enemySpawn_gorgon_-7_v2" ID="{EE6C482B-72B1-4BEF-8E52-33AC5E305C8C}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="GMTK2024_SFX_enemySpawn_gorgon_-7_v3" ID="{381474C6-7D51-4414-ACC7-3796BCF59276}" ShortID="3752891">
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{7F62BABC-0C6C-4DAD-ACF1-E77615B460FB}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="GMTK2024_SFX_enemySpawn_gorgon_-7_v3" ID="{BB047EAC-8328-434C-A50D-5F18CC57707A}">
-															<Language>SFX</Language>
-															<AudioFile>GMTK2024_SFX_enemySpawn_gorgon_-7_v3.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="868790198"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="GMTK2024_SFX_enemySpawn_gorgon_-7_v3" ID="{BB047EAC-8328-434C-A50D-5F18CC57707A}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-											</ChildrenList>
 										</RandomSequenceContainer>
 									</ChildrenList>
 								</ActorMixer>
 								<ActorMixer Name="Minotaur" ID="{1FE1D831-F155-4797-93DD-94BEC3A99C03}" ShortID="969830765">
-									<PropertyList>
-										<Property Name="MakeUpGain" Type="Real64">
-											<ValueList>
-												<Value>-5</Value>
-											</ValueList>
-										</Property>
-										<Property Name="OverridePriority" Type="bool" Value="True"/>
-										<Property Name="Priority" Type="int16">
-											<ValueList>
-												<Value>51</Value>
-											</ValueList>
-										</Property>
-									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
@@ -799,13 +116,6 @@
 									</ReferenceList>
 									<ChildrenList>
 										<RandomSequenceContainer Name="Death" ID="{80C88B50-11B9-46AF-9399-2EAB73465DC4}" ShortID="902261660">
-											<PropertyList>
-												<Property Name="MakeUpGain" Type="Real64">
-													<ValueList>
-														<Value>8</Value>
-													</ValueList>
-												</Property>
-											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
@@ -814,90 +124,8 @@
 													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{7F62BABC-0C6C-4DAD-ACF1-E77615B460FB}"/>
 												</Reference>
 											</ReferenceList>
-											<ChildrenList>
-												<Sound Name="GMTK2024_SFX_enemyDies_minotaur_-13_v1" ID="{6DF26C16-FF52-4BAE-A2F7-9A88699039F5}" ShortID="1042465771">
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{7F62BABC-0C6C-4DAD-ACF1-E77615B460FB}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="GMTK2024_SFX_enemyDies_minotaur_-13_v1" ID="{C87245C1-0969-4F8D-BF0D-8B4A6622B897}">
-															<Language>SFX</Language>
-															<AudioFile>GMTK2024_SFX_enemyDies_minotaur_-13_v1.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="973307517"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="GMTK2024_SFX_enemyDies_minotaur_-13_v1" ID="{C87245C1-0969-4F8D-BF0D-8B4A6622B897}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="GMTK2024_SFX_enemyDies_minotaur_-14_v2" ID="{53DF0F50-72C8-4B3D-B3B2-EAE75A87872D}" ShortID="46096193">
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{7F62BABC-0C6C-4DAD-ACF1-E77615B460FB}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="GMTK2024_SFX_enemyDies_minotaur_-14_v2" ID="{F1D554C9-EFB0-49C6-9B28-ACB8C33619EB}">
-															<Language>SFX</Language>
-															<AudioFile>GMTK2024_SFX_enemyDies_minotaur_-14_v2.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="596698888"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="GMTK2024_SFX_enemyDies_minotaur_-14_v2" ID="{F1D554C9-EFB0-49C6-9B28-ACB8C33619EB}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="GMTK2024_SFX_enemyDies_minotaur_-14_v3" ID="{94D8732B-66BB-425E-92C0-E5FB1AC897C0}" ShortID="705814077">
-													<PropertyList>
-														<Property Name="MakeUpGain" Type="Real64">
-															<ValueList>
-																<Value>-2</Value>
-															</ValueList>
-														</Property>
-													</PropertyList>
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{7F62BABC-0C6C-4DAD-ACF1-E77615B460FB}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="GMTK2024_SFX_enemyDies_minotaur_-14_v3" ID="{3F3F6B3E-FE95-4D04-9743-E0E3D4090002}">
-															<Language>SFX</Language>
-															<AudioFile>GMTK2024_SFX_enemyDies_minotaur_-14_v3.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="371977938"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="GMTK2024_SFX_enemyDies_minotaur_-14_v3" ID="{3F3F6B3E-FE95-4D04-9743-E0E3D4090002}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-											</ChildrenList>
 										</RandomSequenceContainer>
-										<RandomSequenceContainer Name="EnterTower" ID="{963D36A2-5F03-4343-A18F-7F89637DF173}" ShortID="686866408">
-											<PropertyList>
-												<Property Name="MakeUpGain" Type="Real64">
-													<ValueList>
-														<Value>5</Value>
-													</ValueList>
-												</Property>
-											</PropertyList>
+										<RandomSequenceContainer Name="Spawn" ID="{963D36A2-5F03-4343-A18F-7F89637DF173}" ShortID="686866408">
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
@@ -906,120 +134,10 @@
 													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{7F62BABC-0C6C-4DAD-ACF1-E77615B460FB}"/>
 												</Reference>
 											</ReferenceList>
-											<ChildrenList>
-												<Sound Name="GMTK2024_SFX_enemyEntersTower_minotaur_-10_v1" ID="{1654CC5D-3413-4BB7-9AA0-32A66C02CC5D}" ShortID="285293888">
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{7F62BABC-0C6C-4DAD-ACF1-E77615B460FB}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="GMTK2024_SFX_enemyEntersTower_minotaur_-10_v1" ID="{075AD74F-E8B8-4A8C-AB4A-59B722CC7F5B}">
-															<Language>SFX</Language>
-															<AudioFile>GMTK2024_SFX_enemyEntersTower_minotaur_-10_v1.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="265388241"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="GMTK2024_SFX_enemyEntersTower_minotaur_-10_v1" ID="{075AD74F-E8B8-4A8C-AB4A-59B722CC7F5B}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-											</ChildrenList>
-										</RandomSequenceContainer>
-										<RandomSequenceContainer Name="Spawn" ID="{7CC9CF32-9709-4B90-A6FC-99B9BA193F14}" ShortID="247989107">
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{7F62BABC-0C6C-4DAD-ACF1-E77615B460FB}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<Sound Name="GMTK2024_SFX_enemySpawn_minotaur_-6_v1" ID="{BB456EDD-81EE-4879-9535-01261F283845}" ShortID="591992362">
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{7F62BABC-0C6C-4DAD-ACF1-E77615B460FB}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="GMTK2024_SFX_enemySpawn_minotaur_-6_v1" ID="{E63B507C-D0C5-421F-8F98-7F7661F0FACE}">
-															<Language>SFX</Language>
-															<AudioFile>GMTK2024_SFX_enemySpawn_minotaur_-6_v1.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="206161987"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="GMTK2024_SFX_enemySpawn_minotaur_-6_v1" ID="{E63B507C-D0C5-421F-8F98-7F7661F0FACE}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="GMTK2024_SFX_enemySpawn_minotaur_-6_v2" ID="{953F42FE-C959-4ABB-B1FF-AE30B457391C}" ShortID="726214631">
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{7F62BABC-0C6C-4DAD-ACF1-E77615B460FB}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="GMTK2024_SFX_enemySpawn_minotaur_-6_v2" ID="{1B049316-8FE4-41FC-BF2B-0E5F0DA5A7D3}">
-															<Language>SFX</Language>
-															<AudioFile>GMTK2024_SFX_enemySpawn_minotaur_-6_v2.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="266236380"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="GMTK2024_SFX_enemySpawn_minotaur_-6_v2" ID="{1B049316-8FE4-41FC-BF2B-0E5F0DA5A7D3}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="GMTK2024_SFX_enemySpawn_minotaur_-6_v3" ID="{1BD479EC-2640-4B53-B9C5-CCFBB7EA5C8B}" ShortID="410092015">
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{7F62BABC-0C6C-4DAD-ACF1-E77615B460FB}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="GMTK2024_SFX_enemySpawn_minotaur_-6_v3" ID="{28BFBA6C-3FB4-4687-A0DF-7FCA12B09765}">
-															<Language>SFX</Language>
-															<AudioFile>GMTK2024_SFX_enemySpawn_minotaur_-6_v3.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="285911206"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="GMTK2024_SFX_enemySpawn_minotaur_-6_v3" ID="{28BFBA6C-3FB4-4687-A0DF-7FCA12B09765}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-											</ChildrenList>
 										</RandomSequenceContainer>
 									</ChildrenList>
 								</ActorMixer>
 								<ActorMixer Name="Cyclops" ID="{1EBE0033-4FFF-47DA-8324-B7AB582F8528}" ShortID="71298483">
-									<PropertyList>
-										<Property Name="MakeUpGain" Type="Real64">
-											<ValueList>
-												<Value>-7</Value>
-											</ValueList>
-										</Property>
-										<Property Name="OverridePriority" Type="bool" Value="True"/>
-									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
@@ -1029,19 +147,7 @@
 										</Reference>
 									</ReferenceList>
 									<ChildrenList>
-										<RandomSequenceContainer Name="EnterTower" ID="{579547F2-D7F4-4395-8CC5-8D57B9A2253E}" ShortID="698290452">
-											<PropertyList>
-												<Property Name="MakeUpGain" Type="Real64">
-													<ValueList>
-														<Value>10</Value>
-													</ValueList>
-												</Property>
-												<Property Name="Volume" Type="Real64">
-													<ValueList>
-														<Value>-9</Value>
-													</ValueList>
-												</Property>
-											</PropertyList>
+										<RandomSequenceContainer Name="Spawn" ID="{579547F2-D7F4-4395-8CC5-8D57B9A2253E}" ShortID="698290452">
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
@@ -1050,44 +156,8 @@
 													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{7F62BABC-0C6C-4DAD-ACF1-E77615B460FB}"/>
 												</Reference>
 											</ReferenceList>
-											<ChildrenList>
-												<Sound Name="GMTK2024_SFX_enemyEntersTower_cyclops_-5_v1" ID="{44FCFD60-5136-4471-ABED-316000C9C2AF}" ShortID="1009553314">
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{7F62BABC-0C6C-4DAD-ACF1-E77615B460FB}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="GMTK2024_SFX_enemyEntersTower_cyclops_-5_v1" ID="{F06DEA72-37AE-4BF0-BF8A-9B85C9CEC2F5}">
-															<Language>SFX</Language>
-															<AudioFile>GMTK2024_SFX_enemyEntersTower_cyclops_-5_v1.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="322104273"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="GMTK2024_SFX_enemyEntersTower_cyclops_-5_v1" ID="{F06DEA72-37AE-4BF0-BF8A-9B85C9CEC2F5}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-											</ChildrenList>
 										</RandomSequenceContainer>
 										<RandomSequenceContainer Name="Death" ID="{5757E17A-F516-49B4-87F5-72EE65D859C5}" ShortID="462832415">
-											<PropertyList>
-												<Property Name="MakeUpGain" Type="Real64">
-													<ValueList>
-														<Value>7</Value>
-													</ValueList>
-												</Property>
-												<Property Name="Volume" Type="Real64">
-													<ValueList>
-														<Value>-9</Value>
-													</ValueList>
-												</Property>
-											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
@@ -1096,152 +166,6 @@
 													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{7F62BABC-0C6C-4DAD-ACF1-E77615B460FB}"/>
 												</Reference>
 											</ReferenceList>
-											<ChildrenList>
-												<Sound Name="GMTK2024_SFX_enemyDies_cyclops_-3_v1" ID="{40733A5E-973F-48BF-92B7-48A06623A77A}" ShortID="940305405">
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{7F62BABC-0C6C-4DAD-ACF1-E77615B460FB}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="GMTK2024_SFX_enemyDies_cyclops_-3_v1" ID="{59C4E1EE-F00E-4D7C-A322-9E354541EE09}">
-															<Language>SFX</Language>
-															<AudioFile>GMTK2024_SFX_enemyDies_cyclops_-3_v1.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="839132535"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="GMTK2024_SFX_enemyDies_cyclops_-3_v1" ID="{59C4E1EE-F00E-4D7C-A322-9E354541EE09}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="GMTK2024_SFX_enemyDies_cyclops_-3_v2" ID="{81828B9C-F799-4459-AFEE-98C748A0153D}" ShortID="616694289">
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{7F62BABC-0C6C-4DAD-ACF1-E77615B460FB}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="GMTK2024_SFX_enemyDies_cyclops_-3_v2" ID="{B096EDCC-FA20-455D-8C6B-47A03FB3F196}">
-															<Language>SFX</Language>
-															<AudioFile>GMTK2024_SFX_enemyDies_cyclops_-3_v2.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="985081344"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="GMTK2024_SFX_enemyDies_cyclops_-3_v2" ID="{B096EDCC-FA20-455D-8C6B-47A03FB3F196}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="GMTK2024_SFX_enemyDies_cyclops_-3_v3" ID="{CD73D269-BF4E-4CB2-943A-E738DEA61C0C}" ShortID="944810578">
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{7F62BABC-0C6C-4DAD-ACF1-E77615B460FB}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="GMTK2024_SFX_enemyDies_cyclops_-3_v3" ID="{3D43BF2C-F21B-4653-8513-11C0642E48E0}">
-															<Language>SFX</Language>
-															<AudioFile>GMTK2024_SFX_enemyDies_cyclops_-3_v3.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="161617009"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="GMTK2024_SFX_enemyDies_cyclops_-3_v3" ID="{3D43BF2C-F21B-4653-8513-11C0642E48E0}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-											</ChildrenList>
-										</RandomSequenceContainer>
-										<RandomSequenceContainer Name="Spawn" ID="{9E3D0D8A-50B9-4EC0-BF03-BC61C0588207}" ShortID="447579291">
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{7F62BABC-0C6C-4DAD-ACF1-E77615B460FB}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<Sound Name="GMTK2024_SFX_enemySpawn_cyclops_-4_v1" ID="{48905E80-007A-4404-9160-44C50BD7E170}" ShortID="702752107">
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{7F62BABC-0C6C-4DAD-ACF1-E77615B460FB}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="GMTK2024_SFX_enemySpawn_cyclops_-4_v1" ID="{0948306C-3520-46B7-A257-5DB692D90E80}">
-															<Language>SFX</Language>
-															<AudioFile>GMTK2024_SFX_enemySpawn_cyclops_-4_v1.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="179106015"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="GMTK2024_SFX_enemySpawn_cyclops_-4_v1" ID="{0948306C-3520-46B7-A257-5DB692D90E80}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="GMTK2024_SFX_enemySpawn_cyclops_-4_v2" ID="{4C8BC357-9E0F-4112-BFD2-5A7A5D7D3DC6}" ShortID="302755299">
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{7F62BABC-0C6C-4DAD-ACF1-E77615B460FB}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="GMTK2024_SFX_enemySpawn_cyclops_-4_v2" ID="{C930C095-AE67-45CF-9858-044182E43FF0}">
-															<Language>SFX</Language>
-															<AudioFile>GMTK2024_SFX_enemySpawn_cyclops_-4_v2.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="418416713"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="GMTK2024_SFX_enemySpawn_cyclops_-4_v2" ID="{C930C095-AE67-45CF-9858-044182E43FF0}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="GMTK2024_SFX_enemySpawn_cyclops_-4_v3" ID="{5CAC1335-234A-4ED5-94E9-7CA8CF8A5338}" ShortID="769307076">
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{7F62BABC-0C6C-4DAD-ACF1-E77615B460FB}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="GMTK2024_SFX_enemySpawn_cyclops_-4_v3" ID="{F1A876D8-EEFB-492E-A079-26C00DD7048A}">
-															<Language>SFX</Language>
-															<AudioFile>GMTK2024_SFX_enemySpawn_cyclops_-4_v3.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="1054400563"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="GMTK2024_SFX_enemySpawn_cyclops_-4_v3" ID="{F1A876D8-EEFB-492E-A079-26C00DD7048A}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-											</ChildrenList>
 										</RandomSequenceContainer>
 									</ChildrenList>
 								</ActorMixer>
@@ -1256,44 +180,8 @@
 									</ReferenceList>
 								</RandomSequenceContainer>
 							</ChildrenList>
-							<ObjectLists>
-								<ObjectList Name="Effects">
-									<Reference>
-										<Local>
-											<EffectSlot Name="" ID="{AED20B6A-AD17-46BD-86B1-6BC40CF2D34B}" ShortID="152897654">
-												<ReferenceList>
-													<Reference Name="Effect">
-														<Custom>
-															<Effect Name="Gain (Custom)" ID="{DC866B71-DE3D-4DE8-B348-C5AD5AACE566}" ShortID="696289122" PluginName="Wwise Gain" CompanyID="0" PluginID="139" PluginType="3">
-																<PropertyList>
-																	<Property Name="FullBandGain" Type="Real32" Value="6"/>
-																</PropertyList>
-															</Effect>
-														</Custom>
-													</Reference>
-												</ReferenceList>
-											</EffectSlot>
-										</Local>
-									</Reference>
-								</ObjectList>
-							</ObjectLists>
 						</ActorMixer>
-						<WorkUnit Name="SFX_Otter" ID="{A57A593A-B9DE-4277-A3EF-672CA80E8992}" PersistMode="Reference"/>
-						<RandomSequenceContainer Name="Fall" ID="{15EA3FED-DBDA-4BB6-9B05-5E53609CEC85}" ShortID="613270432">
-							<PropertyList>
-								<Property Name="IsGlobalLimit" Type="int16" Value="1"/>
-								<Property Name="MaxSoundPerInstance" Type="int16">
-									<ValueList>
-										<Value>5</Value>
-									</ValueList>
-								</Property>
-								<Property Name="RandomAvoidRepeating" Type="bool" Value="False"/>
-								<Property Name="UseMaxSoundPerInstance" Type="bool">
-									<ValueList>
-										<Value>True</Value>
-									</ValueList>
-								</Property>
-							</PropertyList>
+						<ActorMixer Name="Platform" ID="{470C0EBD-808F-46DC-AF8D-018C5BBF84CA}" ShortID="331973218">
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
@@ -1303,14 +191,7 @@
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
-								<Sound Name="Wilhelm" ID="{56962B69-1BE1-4B33-B946-2A55E8CB979A}" ShortID="774096129">
-									<PropertyList>
-										<Property Name="Weight" Type="Real64">
-											<ValueList>
-												<Value>1</Value>
-											</ValueList>
-										</Property>
-									</PropertyList>
+								<RandomSequenceContainer Name="GroundTileSpawn" ID="{CB386ECA-6FA7-44D2-9A11-F07BF9BEF7DD}" ShortID="701827125">
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
@@ -1319,27 +200,8 @@
 											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{7F62BABC-0C6C-4DAD-ACF1-E77615B460FB}"/>
 										</Reference>
 									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="VOXScrm_Wilhelm scream (ID 0477)_BSB" ID="{24162EDA-1D79-4EB6-B285-0AAFB1C116BE}">
-											<Language>SFX</Language>
-											<AudioFile>VOXScrm_Wilhelm scream (ID 0477)_BSB.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="315686258"/>
-											</MediaIDList>
-										</AudioFileSource>
-									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="VOXScrm_Wilhelm scream (ID 0477)_BSB" ID="{24162EDA-1D79-4EB6-B285-0AAFB1C116BE}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
-								<Sound Name="WHISTLE Down Long" ID="{E0A18831-C1F6-41B7-8AA6-7F9B9FE7330A}" ShortID="345605814">
-									<PropertyList>
-										<Property Name="Weight" Type="Real64">
-											<ValueList>
-												<Value>99</Value>
-											</ValueList>
-										</Property>
-									</PropertyList>
+								</RandomSequenceContainer>
+								<RandomSequenceContainer Name="SpawnerTileSpawn" ID="{E450D19A-89EE-4D57-9633-18348DD61275}" ShortID="432193967">
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
@@ -1348,32 +210,53 @@
 											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{7F62BABC-0C6C-4DAD-ACF1-E77615B460FB}"/>
 										</Reference>
 									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="WHISTLE Down Long" ID="{EA15EC63-B439-45AA-B68F-886B5A96B082}">
-											<PropertyList>
-												<Property Name="FadeInDuration" Type="Real64" Value="0.075439695162359"/>
-												<Property Name="FadeOutDuration" Type="Real64" Value="0.809984095427437"/>
-												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-												<Property Name="TrimBegin" Type="Real64" Value="1.20107935719019"/>
-												<Property Name="TrimEnd" Type="Real64" Value="2.75950463883366"/>
-											</PropertyList>
-											<Language>SFX</Language>
-											<AudioFile>WHISTLE Down Long.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="988960913"/>
-											</MediaIDList>
-										</AudioFileSource>
-									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="WHISTLE Down Long" ID="{EA15EC63-B439-45AA-B68F-886B5A96B082}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
+								</RandomSequenceContainer>
+								<RandomSequenceContainer Name="TiltingTiles" ID="{F97BAB51-8403-4F25-81C3-B9541E5BE579}" ShortID="805191324">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{7F62BABC-0C6C-4DAD-ACF1-E77615B460FB}"/>
+										</Reference>
+									</ReferenceList>
+								</RandomSequenceContainer>
 							</ChildrenList>
-						</RandomSequenceContainer>
+						</ActorMixer>
+						<ActorMixer Name="MainSpire" ID="{6A8345C7-06AC-4BF4-9FC7-84E83ED3C1FE}" ShortID="281643003">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{7F62BABC-0C6C-4DAD-ACF1-E77615B460FB}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<RandomSequenceContainer Name="Damaged" ID="{0979974E-4CAD-475D-93BA-27A6B6A78813}" ShortID="131350248">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{7F62BABC-0C6C-4DAD-ACF1-E77615B460FB}"/>
+										</Reference>
+									</ReferenceList>
+								</RandomSequenceContainer>
+								<RandomSequenceContainer Name="Destroyed" ID="{D6534D8E-64D2-4B6C-9069-236D1AA7C85E}" ShortID="964263490">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{7F62BABC-0C6C-4DAD-ACF1-E77615B460FB}"/>
+										</Reference>
+									</ReferenceList>
+								</RandomSequenceContainer>
+							</ChildrenList>
+						</ActorMixer>
+						<WorkUnit Name="SFX_Otter" ID="{A57A593A-B9DE-4277-A3EF-672CA80E8992}" PersistMode="Reference"/>
 					</ChildrenList>
-					<PositioningInfo>
-						<Panner Name="" ID="{F92F5DCE-C603-4757-89C2-3561298016FD}"/>
-					</PositioningInfo>
 				</ActorMixer>
 			</ChildrenList>
 		</WorkUnit>

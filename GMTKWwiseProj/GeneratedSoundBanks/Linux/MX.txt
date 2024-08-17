@@ -1,22 +1,3 @@
 Event	ID	Name			Wwise Object Path	Notes
-	1020223172	Play_Wind			\AMB\Play_Wind	
-	1258886508	Play_MXTitleTheme			\MX\MXEvents_Otter\Play_MXTitleTheme	
-	1521187885	StartGame			\MX\MXEvents_Otter\StartGame	
-	2339243207	SetState_BetweenWaves			\MX\MXEvents_Otter\SetState_BetweenWaves	
-	3038968348	SetState_ActiveWave			\MX\MXEvents_Otter\SetState_ActiveWave	
-
-State Group	ID	Name			Wwise Object Path	Notes
-	832974869	MX_Waves			\GameStates\MX_Waves	
-
-State	ID	Name	State Group			Notes
-	748895195	None	MX_Waves			
-	2071144875	BetweenWaves	MX_Waves			
-	2447589688	ActiveWave	MX_Waves			
-
-In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
-	88759647	Wind	D:\UnityProjects\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Linux\SFX\GMTK2024_SFX_AMB_-20dB_v02_F4E969E3.wem		\Actor-Mixer Hierarchy\AMB\AMB\Wind		401784
-	340045983	highIntensity	D:\UnityProjects\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Linux\SFX\Scales of Olympus Game Loop v2_05A4D402.wem		\Interactive Music Hierarchy\MX\MX_Otter\MX\GameplayLoop\GameplayLoop_segment\highIntensity		1481832
-	464818347	Scales of Olympus Intro v1	D:\UnityProjects\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Linux\SFX\Scales of Olympus Intro v2_05A4D402.wem		\Interactive Music Hierarchy\MX\MX_Otter\Transitions\Scales of Olympus Intro v1\Scales of Olympus Intro v1		121799
-	624318979	lowIntensity	D:\UnityProjects\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Linux\SFX\Scales of Olympus Layer 2 v1_05A4D402.wem		\Interactive Music Hierarchy\MX\MX_Otter\MX\BetweenWaves\BetweenWaves_segment\lowIntensity		1367267
-	795776314	Scales of Olympus Transition out of loop -starts beat 4- v1	D:\UnityProjects\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Linux\SFX\Scales of Olympus Transition Out v2_05A4D402.wem		\Interactive Music Hierarchy\MX\MX_Otter\Transitions\Scales of Olympus Transition out of loop -starts beat 4- v1\Scales of Olympus Transition out of loop -starts beat 4- v1		68349
+	1258886508	Play_MXTitleTheme			\MX\Play_MXTitleTheme	
 
