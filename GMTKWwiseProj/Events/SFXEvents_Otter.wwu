@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{0A7A0CEB-234F-4544-9DAA-DD6728515385}" SchemaVersion="119" RootDocumentID="{44EF5028-F23C-448C-BEC5-271E73A1269C}" ParentDocumentID="{44EF5028-F23C-448C-BEC5-271E73A1269C}">
+	<Events>
+		<WorkUnit Name="SFXEvents_Otter" ID="{0A7A0CEB-234F-4544-9DAA-DD6728515385}" OwnerID="{44EF5028-F23C-448C-BEC5-271E73A1269C}" PersistMode="Nested">
+			<ChildrenList>
+				<Folder Name="Rock" ID="{A790DDB9-E3AA-4C5D-89FF-DBEEE295B850}" ShortID="751535717">
+					<ChildrenList>
+						<Event Name="Play_SFXPlaceRock" ID="{D199897C-3D6D-4076-BB8C-3F368D7C3417}">
+							<ChildrenList>
+								<Action Name="" ID="{7AB26CBB-A66F-49F5-815A-7F2FDBFE8D78}" ShortID="871143229">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="placeRock" ID="{90B37B99-4C09-4021-AA67-A7B95AAEEFF2}" WorkUnitID="{A57A593A-B9DE-4277-A3EF-672CA80E8992}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="Portal" ID="{6CBAEF6E-53C6-4BE5-9B06-011566335EA0}" ShortID="198975145">
+					<ChildrenList>
+						<Event Name="Play_SFXPortalsForm" ID="{F4801C66-34A1-4013-9455-676370BE719D}">
+							<ChildrenList>
+								<Action Name="" ID="{C0CB9291-3F51-4E1E-8790-8299179F7016}" ShortID="905326443">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="GMTK2024_SFX_portals_-4dB_v01" ID="{562FFD9A-7429-4D23-B7AB-9218C20844E3}" WorkUnitID="{A57A593A-B9DE-4277-A3EF-672CA80E8992}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

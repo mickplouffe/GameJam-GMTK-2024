@@ -61,7 +61,7 @@
 				</Folder>
 				<Folder Name="GameAlerts" ID="{F4C0DB5F-27E1-42D4-9CF1-05FAC86A3604}" ShortID="522945271">
 					<ChildrenList>
-						<Event Name="Play_WaveCountdown" ID="{4FF8909E-4AD5-45B8-994B-F6EAB25CFD03}">
+						<Event Name="Play_UIWaveCountdown" ID="{4FF8909E-4AD5-45B8-994B-F6EAB25CFD03}">
 							<ChildrenList>
 								<Action Name="" ID="{25D8D95C-3CC9-45FD-9827-583FD53FB405}" ShortID="840845123">
 									<ReferenceList>
@@ -72,7 +72,7 @@
 								</Action>
 							</ChildrenList>
 						</Event>
-						<Event Name="Play_WaveEnded" ID="{94000B1C-7D80-4227-B241-703FF81F6CF9}">
+						<Event Name="Play_UIWaveEnded" ID="{94000B1C-7D80-4227-B241-703FF81F6CF9}">
 							<ChildrenList>
 								<Action Name="" ID="{65B83E26-C3EC-455F-8FE0-EAE7E9E9DE23}" ShortID="671843477">
 									<ReferenceList>
@@ -83,7 +83,7 @@
 								</Action>
 							</ChildrenList>
 						</Event>
-						<Event Name="Play_WaveStarted" ID="{E1427F21-94BF-456D-852B-F29AAF7C3B9D}">
+						<Event Name="Play_UIWaveStarted" ID="{E1427F21-94BF-456D-852B-F29AAF7C3B9D}">
 							<ChildrenList>
 								<Action Name="" ID="{A96F1C7D-A470-48E9-B0A8-F8529334A883}" ShortID="870401937">
 									<ReferenceList>

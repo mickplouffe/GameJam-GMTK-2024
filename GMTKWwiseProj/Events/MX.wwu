@@ -6,6 +6,9 @@
 				<Property Name="Color" Type="int16" Value="2"/>
 				<Property Name="OverrideColor" Type="bool" Value="True"/>
 			</PropertyList>
+			<ChildrenList>
+				<Event Name="Play_MXTitleTheme" ID="{BC8A9745-2AB8-452D-B805-15E760D59A15}"/>
+			</ChildrenList>
 		</WorkUnit>
 	</Events>
 </WwiseDocument>

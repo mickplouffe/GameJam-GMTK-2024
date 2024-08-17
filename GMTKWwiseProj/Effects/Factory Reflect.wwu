@@ -5,10 +5,13 @@
 			<ChildrenList>
 				<Effect Name="Reflect" ID="{37779A87-4754-4420-8175-3236FA46AA12}" PluginName="Wwise Reflect" CompanyID="0" PluginID="171" PluginType="3">
 					<PropertyList>
-						<Property Name="CurveUsageMask" Type="Uint32" Value="127"/>
+						<Property Name="CurveUsageMask" Type="Uint32">
+							<ValueList>
+								<Value>127</Value>
+							</ValueList>
+						</Property>
 					</PropertyList>
-					<PluginData>
-	<ReflectData>
+					<PluginData><ReflectData>
 		<CurveList Version="4">
 			<CurveInfo Name="Diffraction Attenuation">
 				<Curve Name="">
@@ -170,11 +173,9 @@
 				</Curve>
 			</CurveInfo>
 		</CurveList>
-	</ReflectData>
-</PluginData>
+	</ReflectData></PluginData>
 				</Effect>
-				<Effect Name="Reflect_Simplified" ID="{26D1B778-1690-400C-9DBA-3B2CDEE9B3AE}" PluginName="Wwise Reflect" CompanyID="0" PluginID="171" PluginType="3">					<PluginData>
-	<ReflectData>
+				<Effect Name="Reflect_Simplified" ID="{26D1B778-1690-400C-9DBA-3B2CDEE9B3AE}" PluginName="Wwise Reflect" CompanyID="0" PluginID="171" PluginType="3">					<PluginData><ReflectData>
 		<CurveList Version="4">
 			<CurveInfo Name="Diffraction Attenuation">
 				<Curve Name="">
@@ -336,8 +337,7 @@
 				</Curve>
 			</CurveInfo>
 		</CurveList>
-	</ReflectData>
-</PluginData>
+	</ReflectData></PluginData>
 				</Effect>
 			</ChildrenList>
 		</WorkUnit>

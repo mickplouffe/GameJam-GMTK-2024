@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{A57A593A-B9DE-4277-A3EF-672CA80E8992}" SchemaVersion="119" RootDocumentID="{B5461995-40B4-48D8-B88A-3E895957C2F0}" ParentDocumentID="{B5461995-40B4-48D8-B88A-3E895957C2F0}">
+	<AudioObjects>
+		<WorkUnit Name="SFX_Otter" ID="{A57A593A-B9DE-4277-A3EF-672CA80E8992}" OwnerID="{8BE910E0-45D4-48D7-AA29-659B0E55FFF4}" PersistMode="Nested">
+			<ChildrenList>
+				<ActorMixer Name="Rock" ID="{D5BA065D-0812-4554-9B55-739D63730C44}" ShortID="302976594">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{7F62BABC-0C6C-4DAD-ACF1-E77615B460FB}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<RandomSequenceContainer Name="placeRock" ID="{90B37B99-4C09-4021-AA67-A7B95AAEEFF2}" ShortID="357432834">
+							<PropertyList>
+								<Property Name="RandomAvoidRepeating" Type="bool" Value="False"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{7F62BABC-0C6C-4DAD-ACF1-E77615B460FB}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="GMTK2024_SFX_placeRock01_-7dB_v01" ID="{7EC6542E-5FC2-4E50-AD3E-635CB8BF73AF}" ShortID="374128351">
+									<PropertyList>
+										<Property Name="Pitch" Type="int32">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{82CED3FE-72D0-49D8-B6B7-955218BC0599}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Max" Type="Real64" Value="76"/>
+															<Property Name="Min" Type="Real64" Value="-50"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{7F62BABC-0C6C-4DAD-ACF1-E77615B460FB}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="GMTK2024_SFX_placeRock01_-7dB_v01" ID="{3969A10A-5C04-4CCA-BEF5-D38A042ED268}">
+											<Language>SFX</Language>
+											<AudioFile>GMTK2024_SFX_placeRock01_-7dB_v01.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="139776857"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="GMTK2024_SFX_placeRock01_-7dB_v01" ID="{3969A10A-5C04-4CCA-BEF5-D38A042ED268}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="GMTK2024_SFX_placeRock02_-7dB_v01" ID="{620D3C17-C096-4F47-B7D9-850E66B07EFE}" ShortID="700731108">
+									<PropertyList>
+										<Property Name="Pitch" Type="int32">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{D812BC46-6F92-4EF4-9BC1-24D49516B0FE}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Max" Type="Real64" Value="76"/>
+															<Property Name="Min" Type="Real64" Value="-75"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{7F62BABC-0C6C-4DAD-ACF1-E77615B460FB}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="GMTK2024_SFX_placeRock02_-7dB_v01" ID="{9A616243-ED3F-42A6-9CE2-DF56D536BB66}">
+											<Language>SFX</Language>
+											<AudioFile>GMTK2024_SFX_placeRock02_-7dB_v01.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="397978699"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="GMTK2024_SFX_placeRock02_-7dB_v01" ID="{9A616243-ED3F-42A6-9CE2-DF56D536BB66}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="GMTK2024_SFX_placeRock03_-7dB_v01" ID="{17A0ED99-23EE-4178-AD47-6D22865E6A52}" ShortID="941279748">
+									<PropertyList>
+										<Property Name="Pitch" Type="int32">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{8D76EB24-542F-44C3-8827-83923AAB0805}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Max" Type="Real64" Value="50"/>
+															<Property Name="Min" Type="Real64" Value="-50"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{7F62BABC-0C6C-4DAD-ACF1-E77615B460FB}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="GMTK2024_SFX_placeRock03_-7dB_v01" ID="{CA9C8E18-4BF4-4E7C-A12B-4A9270ADD196}">
+											<Language>SFX</Language>
+											<AudioFile>GMTK2024_SFX_placeRock03_-7dB_v01.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="393633432"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="GMTK2024_SFX_placeRock03_-7dB_v01" ID="{CA9C8E18-4BF4-4E7C-A12B-4A9270ADD196}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</RandomSequenceContainer>
+					</ChildrenList>
+				</ActorMixer>
+				<ActorMixer Name="Portal" ID="{31BA8761-8CCC-4850-9B20-C76D20CBDA25}" ShortID="976648228">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{7F62BABC-0C6C-4DAD-ACF1-E77615B460FB}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="GMTK2024_SFX_portals_-4dB_v01" ID="{562FFD9A-7429-4D23-B7AB-9218C20844E3}" ShortID="143621306">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{7F62BABC-0C6C-4DAD-ACF1-E77615B460FB}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="GMTK2024_SFX_portals_-4dB_v01" ID="{52176154-8288-4640-8517-E6F42F7B4B7F}">
+									<Language>SFX</Language>
+									<AudioFile>GMTK2024_SFX_portals_-4dB_v01.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="863132956"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="GMTK2024_SFX_portals_-4dB_v01" ID="{52176154-8288-4640-8517-E6F42F7B4B7F}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</ActorMixer>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>

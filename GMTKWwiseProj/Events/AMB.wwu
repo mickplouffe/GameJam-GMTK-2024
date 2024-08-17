@@ -7,7 +7,7 @@
 				<Property Name="OverrideColor" Type="bool" Value="True"/>
 			</PropertyList>
 			<ChildrenList>
-				<Event Name="Play_Wind" ID="{96C6EE84-923E-41FD-8FD2-52F025B6EA11}">
+				<Event Name="Play_AMBWind" ID="{96C6EE84-923E-41FD-8FD2-52F025B6EA11}">
 					<ChildrenList>
 						<Action Name="" ID="{C82B5E95-15D6-4A1B-90AE-4E4D4B0ACD84}" ShortID="29487234">
 							<ReferenceList>
