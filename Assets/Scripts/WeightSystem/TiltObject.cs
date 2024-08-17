@@ -22,6 +22,9 @@ public class TiltObject : MonoBehaviour
 
     public List<GameObject> Tiles = new List<GameObject>();
     public List<GameObject> Enemies = new List<GameObject>();
+
+    [SerializeField] float tileweight;
+    [SerializeField] float enemyweight;
     void Update()
     { 
        
@@ -52,7 +55,10 @@ public class TiltObject : MonoBehaviour
             }
             foreach (GameObject g in Tiles)
             {
-                //add weight for gaem tiles
+                center.x += tileweight * (g.transform.position.x - transform.position.x);
+                //center.y += wo.weight * (wo.transform.position.y - transform.position.y);
+                center.z += tileweight * (g.transform.position.z - transform.position.z);
+                totalweight += tileweight;
             }
 
             foreach (GameObject g in Enemies)
