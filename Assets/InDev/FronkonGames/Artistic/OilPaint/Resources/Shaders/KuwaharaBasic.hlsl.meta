@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: cc484c65a908ac4478e1cfb211d2ff98
+ShaderIncludeImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 264134
+  packageName: 'Artistic: Oil Paint'
+  packageVersion: 1.2.0
+  assetPath: Assets/FronkonGames/Artistic/OilPaint/Resources/Shaders/KuwaharaBasic.hlsl
+  uploadId: 678134

@@ -8,3 +8,7 @@
 *.wsettings
 AkWwiseProjectData.asset
 IncrementalSoundBankData.xml
+
+
+# Originals (Wavs)
+Originals/*.wav

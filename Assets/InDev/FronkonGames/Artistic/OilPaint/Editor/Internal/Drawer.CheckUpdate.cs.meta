@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 79c398ee305bed246af8c4e54cce3c5f
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 264134
+  packageName: 'Artistic: Oil Paint'
+  packageVersion: 1.2.0
+  assetPath: Assets/FronkonGames/Artistic/OilPaint/Editor/Internal/Drawer.CheckUpdate.cs
+  uploadId: 678134

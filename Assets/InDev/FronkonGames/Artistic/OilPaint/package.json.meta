@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 0e5c70c9179145741b598a5add964fe1
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 264134
+  packageName: 'Artistic: Oil Paint'
+  packageVersion: 1.2.0
+  assetPath: Assets/FronkonGames/Artistic/OilPaint/package.json
+  uploadId: 678134
