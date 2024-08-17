@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="393239870" Type="User" Language="SFX" Hash="{D60302B4-EC5A-9261-08D2-FA131C0149EA}">
+		<SoundBank Id="393239870" Type="User" Language="SFX" Hash="{43D77B10-7C0E-7745-66C7-9D2967CB2FC7}">
 			<ShortName>SFX</ShortName>
 			<Path>SFX.bnk</Path>
 			<Media>
@@ -25,9 +25,25 @@
 					<ShortName>GMTK2024_SFX_placeRock02_-7dB_v01.wav</ShortName>
 					<CachePath>SFX/GMTK2024_SFX_placeRock02_-7dB_v01_14E21738.wem</CachePath>
 				</File>
+				<File Id="402597209" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GMTK2024_towerPlace04_-7dB_v01.wav</ShortName>
+					<CachePath>SFX/GMTK2024_towerPlace04_-7dB_v01_14E21738.wem</CachePath>
+				</File>
 				<File Id="863132956" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>GMTK2024_SFX_portals_-4dB_v01.wav</ShortName>
 					<CachePath>SFX/GMTK2024_SFX_portals_-4dB_v01_14E21738.wem</CachePath>
+				</File>
+				<File Id="879976025" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GMTK2024_towerPlace02_-7dB_v01.wav</ShortName>
+					<CachePath>SFX/GMTK2024_towerPlace02_-7dB_v01_14E21738.wem</CachePath>
+				</File>
+				<File Id="934825369" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GMTK2024_towerPlace01_-7dB_v01.wav</ShortName>
+					<CachePath>SFX/GMTK2024_towerPlace01_-7dB_v01_14E21738.wem</CachePath>
+				</File>
+				<File Id="946140780" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GMTK2024_towerPlace03_-7dB_v01.wav</ShortName>
+					<CachePath>SFX/GMTK2024_towerPlace03_-7dB_v01_14E21738.wem</CachePath>
 				</File>
 			</Media>
 			<Events>
@@ -57,6 +73,14 @@
 				<Event Id="86987433" Name="Play_SFXTiltingTiles" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="3616277950" Name="Play_SFXTowerAttack" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="4103541689" Name="Play_SFXTowerAttackHit" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="2094922267" Name="Play_SFXTowerPlace" DurationType="OneShot" DurationMin="0.65797204" DurationMax="0.71835303">
+					<MediaRefs>
+						<MediaRef Id="402597209"/>
+						<MediaRef Id="879976025"/>
+						<MediaRef Id="934825369"/>
+						<MediaRef Id="946140780"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="2225251985" Name="Play_SFXTowerSlide" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 			</Events>
 		</SoundBank>
@@ -266,5 +290,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{545C332D-6E64-4969-A3DD-D4B6E4DE0C99}</FileHash>
+	<FileHash>{8EB0A966-E9E6-B13A-29AE-97315F55E298}</FileHash>
 </SoundBanksInfo>
