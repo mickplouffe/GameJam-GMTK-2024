@@ -7,10 +7,21 @@ using UnityEngine;
 public class Tower : ScriptableObject
 {
     public String name;
-    public  int damage;
+
+    public float maxWeight;
+    public float weight;
+
+    public int maxDamage;
+    public int damage;
+
+    public float maxRange;
     public float range;
+    
+    public int cost;
+    
     public Material selectedMaterial;
     public Material defaultMaterial;
-    public GameObject prefab;
     
+    public bool isUpgradable;
+    public bool isStatic;
 }
