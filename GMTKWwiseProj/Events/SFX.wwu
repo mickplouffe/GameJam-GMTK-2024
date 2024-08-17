@@ -6,6 +6,201 @@
 				<Property Name="Color" Type="int16" Value="4"/>
 				<Property Name="OverrideColor" Type="bool" Value="True"/>
 			</PropertyList>
+			<ChildrenList>
+				<Folder Name="Enemies" ID="{B73D3C5C-FBFD-4A1E-8DBB-9B3B5BBDC1B6}" ShortID="318958538">
+					<ChildrenList>
+						<Folder Name="Gorgon" ID="{BFCD07CC-9AE2-4DA4-9E99-2963E77C644F}" ShortID="253534211">
+							<ChildrenList>
+								<Event Name="Play_SFXGorgonDeath" ID="{6A1DEDFA-FF80-476F-A541-A1EE98E7E539}">
+									<ChildrenList>
+										<Action Name="" ID="{10B38767-FF42-4A23-9A70-0F0160F5ACFC}" ShortID="104560471">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Death" ID="{764C81F6-807A-4054-9C4C-365487B75398}" WorkUnitID="{B5461995-40B4-48D8-B88A-3E895957C2F0}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_SFXGorgonSpawn" ID="{C1F50FB4-DA34-4AC9-8F75-81C12F78B3C9}">
+									<ChildrenList>
+										<Action Name="" ID="{1B9801AD-9E6F-4350-A8BA-9CD399FED22E}" ShortID="1029220321">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Spawn" ID="{18E46E49-6C37-4B8B-8500-2A78D82D0387}" WorkUnitID="{B5461995-40B4-48D8-B88A-3E895957C2F0}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+							</ChildrenList>
+						</Folder>
+						<Folder Name="Minotaur" ID="{1860BFB4-3589-43CB-9AAF-97BAE7415BD1}" ShortID="635753912">
+							<ChildrenList>
+								<Event Name="Play_SFXMinotaurSpawn" ID="{7E69CAA6-B774-4BC7-9228-375F7EB7727B}">
+									<ChildrenList>
+										<Action Name="" ID="{F80061A7-E7C0-4BE9-8A56-566F4249DE10}" ShortID="688113597">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Spawn" ID="{963D36A2-5F03-4343-A18F-7F89637DF173}" WorkUnitID="{B5461995-40B4-48D8-B88A-3E895957C2F0}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_SFXMinotaurDeath" ID="{E977C255-21AC-4039-B34D-7720A024D8D8}">
+									<ChildrenList>
+										<Action Name="" ID="{3D7FB602-2049-4033-B210-B8C3D50DB623}" ShortID="570489902">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Death" ID="{80C88B50-11B9-46AF-9399-2EAB73465DC4}" WorkUnitID="{B5461995-40B4-48D8-B88A-3E895957C2F0}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+							</ChildrenList>
+						</Folder>
+						<Folder Name="Cyclops" ID="{FDA86AF2-80DA-4DFD-BE57-1DA616372549}" ShortID="511805668">
+							<ChildrenList>
+								<Event Name="Play_SFXCyclopsSpawn" ID="{11CD0FCB-868F-4583-81B3-9754CF23CB39}">
+									<ChildrenList>
+										<Action Name="" ID="{DBCA265D-DF77-4E51-A42C-C460F4F762EC}" ShortID="877398675">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Spawn" ID="{579547F2-D7F4-4395-8CC5-8D57B9A2253E}" WorkUnitID="{B5461995-40B4-48D8-B88A-3E895957C2F0}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_SFXCyclopsDeath" ID="{753A1E7C-C50C-4FFA-BA3C-567D1C5DFA47}">
+									<ChildrenList>
+										<Action Name="" ID="{3752C4AE-7970-4A1D-817B-50F627F69B47}" ShortID="834421044">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Death" ID="{5757E17A-F516-49B4-87F5-72EE65D859C5}" WorkUnitID="{B5461995-40B4-48D8-B88A-3E895957C2F0}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+							</ChildrenList>
+						</Folder>
+						<Event Name="Play_SFXEnemySlide" ID="{6207066F-9359-4E10-9874-4AC98C406D17}">
+							<ChildrenList>
+								<Action Name="" ID="{5833D4A5-56BB-4874-B0C0-332FC246034A}" ShortID="727718586">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Slide" ID="{466A4714-0B00-45B7-89DB-C17793DF1781}" WorkUnitID="{B5461995-40B4-48D8-B88A-3E895957C2F0}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="Tower" ID="{8C595FEA-CF0B-4E69-AB2B-0B3A5A054CC9}" ShortID="696093352">
+					<ChildrenList>
+						<Event Name="Play_SFXTowerAttackHit" ID="{3FD2FD50-D4A9-4452-BB55-24AAC8E2A0AA}">
+							<ChildrenList>
+								<Action Name="" ID="{0D8E5044-65E8-4FFA-84BD-A52A66BB62D9}" ShortID="1013243181">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="AttackHit" ID="{934DC960-68B0-4E18-8953-501E5A734856}" WorkUnitID="{B5461995-40B4-48D8-B88A-3E895957C2F0}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_SFXTowerSlide" ID="{01DDC3A1-414C-4E8A-AED7-15A2D84D2ABF}">
+							<ChildrenList>
+								<Action Name="" ID="{90A7223D-A416-4173-8DED-C9D0987988B6}" ShortID="35327237">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Slide" ID="{DCAF870A-3EE8-48B7-A7D3-CAD099CF905B}" WorkUnitID="{B5461995-40B4-48D8-B88A-3E895957C2F0}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_SFXTowerAttack" ID="{775C1543-7B8D-4E56-8933-F1E696F9BD4E}">
+							<ChildrenList>
+								<Action Name="" ID="{D9FF6628-ACA9-40A8-BCF0-19532BF11F32}" ShortID="942400991">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Attack" ID="{B5969A98-927B-44A4-B73D-246406FB95CE}" WorkUnitID="{B5461995-40B4-48D8-B88A-3E895957C2F0}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="MainSpire" ID="{FA195365-BDD1-4C30-9287-3558A9343D5D}" ShortID="848084107">
+					<ChildrenList>
+						<Event Name="Play_SFXDamaged" ID="{48C3A254-D7E8-40B4-AD34-7A5D67A1397A}">
+							<ChildrenList>
+								<Action Name="" ID="{6A3C0672-5BE2-4ED4-AAF1-10DDF1D62ECE}" ShortID="785042838">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Damaged" ID="{0979974E-4CAD-475D-93BA-27A6B6A78813}" WorkUnitID="{B5461995-40B4-48D8-B88A-3E895957C2F0}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_SFXDestroyed" ID="{718999EE-04B2-4B00-A550-4232D3722287}">
+							<ChildrenList>
+								<Action Name="" ID="{5C2F1CBB-C2A7-4CC4-AF09-039A68548531}" ShortID="956707583">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Destroyed" ID="{D6534D8E-64D2-4B6C-9069-236D1AA7C85E}" WorkUnitID="{B5461995-40B4-48D8-B88A-3E895957C2F0}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="Platforms" ID="{242CC404-9006-4213-A428-78ED25FDB4BC}" ShortID="153968962">
+					<ChildrenList>
+						<Event Name="Play_SFXSpawnerTileSpawn" ID="{CC3C517E-D109-44C5-8243-67F08A28976D}">
+							<ChildrenList>
+								<Action Name="" ID="{B3138884-F1C5-4B4B-9508-5AD0B32773E0}" ShortID="461310055">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="SpawnerTileSpawn" ID="{E450D19A-89EE-4D57-9633-18348DD61275}" WorkUnitID="{B5461995-40B4-48D8-B88A-3E895957C2F0}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_SFXGroundTileSpawn" ID="{E869B14E-1621-4ED1-89AC-65DE7A7EC898}">
+							<ChildrenList>
+								<Action Name="" ID="{6AA45C5C-D9A6-4C87-A3C6-FC28D86A314F}" ShortID="535537531">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="GroundTileSpawn" ID="{CB386ECA-6FA7-44D2-9A11-F07BF9BEF7DD}" WorkUnitID="{B5461995-40B4-48D8-B88A-3E895957C2F0}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_SFXTiltingTiles" ID="{8BA29D0A-B136-41AC-88E6-391682C7D488}">
+							<ChildrenList>
+								<Action Name="" ID="{DF2C319F-47F6-4E63-9D46-D51D4A07D37D}" ShortID="190664015">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="TiltingTiles" ID="{F97BAB51-8403-4F25-81C3-B9541E5BE579}" WorkUnitID="{B5461995-40B4-48D8-B88A-3E895957C2F0}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
+			</ChildrenList>
 		</WorkUnit>
 	</Events>
 </WwiseDocument>
