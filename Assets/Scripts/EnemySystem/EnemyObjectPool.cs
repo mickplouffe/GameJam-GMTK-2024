@@ -15,7 +15,7 @@ public class EnemyObjectPool : MonoBehaviourSingletonPersistent<EnemyObjectPool>
 
         for (int i = 0; i < initialPoolSize; i++)
         {
-            GameObject obj = Instantiate(prefab);
+            GameObject obj = Instantiate(prefab, HexGridManager.Instance.transform);
             obj.SetActive(false);
             poolQueue.Enqueue(obj);
         }
@@ -31,7 +31,7 @@ public class EnemyObjectPool : MonoBehaviourSingletonPersistent<EnemyObjectPool>
         }
         else
         {
-            GameObject obj = Instantiate(prefab);
+            GameObject obj = Instantiate(prefab, HexGridManager.Instance.transform);
             return obj;
         }
     }

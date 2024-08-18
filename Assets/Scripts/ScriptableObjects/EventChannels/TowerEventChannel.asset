@@ -9,12 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c6e6ab9ec9481f40964bb04acf0310a, type: 3}
-  m_Name: Wave 1
+  m_Script: {fileID: 11500000, guid: 83ef879a8f46e784a883a6c5c8302d34, type: 3}
+  m_Name: TowerEventChannel
   m_EditorClassIdentifier: 
-  enemyPrefabs:
-  - {fileID: 334518757737957131, guid: c4cb20163a2e63144adaa9b393985a8c, type: 3}
-  enemyCounts: 05000000
-  spawnInterval: 2
-  waveDelay: 20
-  numberOfSpawnPoints: 3

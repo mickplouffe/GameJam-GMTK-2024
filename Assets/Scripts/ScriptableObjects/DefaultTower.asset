@@ -13,13 +13,14 @@ MonoBehaviour:
   m_Name: DefaultTower
   m_EditorClassIdentifier: 
   name: Default Tower
+  maxWeight: 10
   weight: 5
+  maxDamage: 10
   damage: 2
-  range: 10
-  cost: 5
+  maxRange: 10
+  range: 5
+  cost: 10
   selectedMaterial: {fileID: 2100000, guid: 5abb3d18170c7cc4b8ce3577ef8b5ed8, type: 2}
   defaultMaterial: {fileID: 2100000, guid: 6615f1708a4932646adcdc55932feefa, type: 2}
-  prefab: {fileID: 4711356743005891950, guid: 0f4605ec2f4cad84e879f2eca26a4e14, type: 3}
-  rockPrefab: {fileID: 0}
   isUpgradable: 1
   isStatic: 0

@@ -15,30 +15,42 @@ public class HexTileController : MonoBehaviour
 
     private Renderer _tileRenderer;
 
-    private bool _fleshStarted;
-
+    private bool _isFlashing;
+    private float _flashTimeElapsed;
+    private float _flashDuration;
     private void OnEnable()
     {
-        enemyEventChennl.OnTileFlashing += HandleTileFlashing;
+        enemyEventChennl.OnWaveStart += HandleTileFlashing;
     }
 
     private void OnDisable()
     {
-        enemyEventChennl.OnTileFlashing -= HandleTileFlashing;
+        enemyEventChennl.OnWaveStart -= HandleTileFlashing;
     }
 
     private void Start()
     {
-        _tileRenderer = GetComponent<Renderer>();
-        _originalTileColor = _tileRenderer.material.color;
+        _tileRenderer = GetComponentInChildren<Renderer>();
+        _originalTileColor = _tileRenderer.materials[1].color;
     }
 
     private void Update()
     {
-        if (!_fleshStarted)
+        if (!_isFlashing)
             return;
 
-        _tileRenderer.material.color = Color.Lerp(_originalTileColor, flashColor, Mathf.Sin(Time.time * flashSpeed));
+        _flashTimeElapsed += Time.deltaTime;
+
+        // Calculate the flashing effect
+        float t = Mathf.Sin(Time.time * flashSpeed);
+        _tileRenderer.materials[1].color = Color.Lerp(_originalTileColor, flashColor, t);
+
+        // Stop flashing after the duration
+        if (_flashTimeElapsed < _flashDuration) 
+            return;
+        
+        _isFlashing = false;
+        _tileRenderer.materials[1].color = _originalTileColor;
     }
 
     private void HandleTileFlashing(HexTileController tile, float flashDuration)
@@ -46,17 +58,9 @@ public class HexTileController : MonoBehaviour
         if (!Equals(tile))
             return;
 
-        StartCoroutine(FlashTile(flashDuration));
+        _isFlashing = true;
+        _flashTimeElapsed = 0.0f;
+        _flashDuration = flashDuration;
     }
-
-    private IEnumerator FlashTile(float flashDuration)
-    {
-        _fleshStarted = true;
-
-        yield return new WaitForSeconds(flashDuration);
-
-        _fleshStarted = false;
-        _tileRenderer.material.color = _originalTileColor;
-
-    }
+    
 }

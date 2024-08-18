@@ -8,6 +8,8 @@ public class UIEventChannel : ScriptableObject
 {
     public UnityAction OnActivateBuildMenu;
     public UnityAction OnActivateActionsMenu;
+    public UnityAction<int> OnCoinsValueChanged;
+    public UnityAction OnCantBuy;
 
     public void RaiseActivateBuildMenu()
     {
@@ -17,5 +19,15 @@ public class UIEventChannel : ScriptableObject
     public void RaiseActivateActionsMenu()
     {
         OnActivateActionsMenu?.Invoke();
+    }
+
+    public void RaiseCoinsValueChanged(int value)
+    {
+        OnCoinsValueChanged?.Invoke(value);
+    }
+
+    public void RaiseCantBuy()
+    {
+        OnCantBuy?.Invoke();
     }
 }

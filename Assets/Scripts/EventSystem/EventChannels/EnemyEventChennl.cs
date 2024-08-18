@@ -9,7 +9,7 @@ public class EnemyEventChennl : ScriptableObject
     public UnityAction<GameObject> OnEnemyKilled;
     public UnityAction OnWaveCompleted;
     public UnityAction OnAllWaveCompleted;
-    public UnityAction<HexTileController, float> OnTileFlashing;
+    public UnityAction<HexTileController, float> OnWaveStart;
 
     public void RaiseEnemyKilled(GameObject enemy)
     {
@@ -26,8 +26,8 @@ public class EnemyEventChennl : ScriptableObject
         OnAllWaveCompleted?.Invoke();
     }
 
-    public void RaiseTileFlashing(HexTileController tile, float flashDuration)
+    public void RaiseWaveStart(HexTileController tile, float waveDelay)
     {
-        OnTileFlashing?.Invoke(tile, flashDuration);
+        OnWaveStart?.Invoke(tile, waveDelay);
     }
 }

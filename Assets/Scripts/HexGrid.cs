@@ -122,12 +122,7 @@ public class HexGrid
             AddTile(pos.q, pos.r, hexPrefab, gridOrigin, yOffset);
         }
     }
-
-
-
     
-    
-
     public void AddTile(int q, int r, GameObject hexPrefab, Transform parent = null, float yOffset = 0f)
     {
         if (!IsTile(q, r))
