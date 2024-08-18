@@ -22,12 +22,12 @@
 										</Action>
 									</ChildrenList>
 								</Event>
-								<Event Name="Play_SFXGorgonSpawn" ID="{C1F50FB4-DA34-4AC9-8F75-81C12F78B3C9}">
+								<Event Name="Play_SFXGorgonEnterTower" ID="{C1F50FB4-DA34-4AC9-8F75-81C12F78B3C9}">
 									<ChildrenList>
 										<Action Name="" ID="{1B9801AD-9E6F-4350-A8BA-9CD399FED22E}" ShortID="1029220321">
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="Spawn" ID="{18E46E49-6C37-4B8B-8500-2A78D82D0387}" WorkUnitID="{B5461995-40B4-48D8-B88A-3E895957C2F0}"/>
+													<ObjectRef Name="EnterTower" ID="{18E46E49-6C37-4B8B-8500-2A78D82D0387}" WorkUnitID="{B5461995-40B4-48D8-B88A-3E895957C2F0}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -37,12 +37,12 @@
 						</Folder>
 						<Folder Name="Minotaur" ID="{1860BFB4-3589-43CB-9AAF-97BAE7415BD1}" ShortID="635753912">
 							<ChildrenList>
-								<Event Name="Play_SFXMinotaurSpawn" ID="{7E69CAA6-B774-4BC7-9228-375F7EB7727B}">
+								<Event Name="Play_SFXMinotaurEnterTower" ID="{7E69CAA6-B774-4BC7-9228-375F7EB7727B}">
 									<ChildrenList>
 										<Action Name="" ID="{F80061A7-E7C0-4BE9-8A56-566F4249DE10}" ShortID="688113597">
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="Spawn" ID="{963D36A2-5F03-4343-A18F-7F89637DF173}" WorkUnitID="{B5461995-40B4-48D8-B88A-3E895957C2F0}"/>
+													<ObjectRef Name="EnterTower" ID="{963D36A2-5F03-4343-A18F-7F89637DF173}" WorkUnitID="{B5461995-40B4-48D8-B88A-3E895957C2F0}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -63,12 +63,12 @@
 						</Folder>
 						<Folder Name="Cyclops" ID="{FDA86AF2-80DA-4DFD-BE57-1DA616372549}" ShortID="511805668">
 							<ChildrenList>
-								<Event Name="Play_SFXCyclopsSpawn" ID="{11CD0FCB-868F-4583-81B3-9754CF23CB39}">
+								<Event Name="Play_SFXCyclopsEnterTower" ID="{11CD0FCB-868F-4583-81B3-9754CF23CB39}">
 									<ChildrenList>
 										<Action Name="" ID="{DBCA265D-DF77-4E51-A42C-C460F4F762EC}" ShortID="877398675">
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="Spawn" ID="{579547F2-D7F4-4395-8CC5-8D57B9A2253E}" WorkUnitID="{B5461995-40B4-48D8-B88A-3E895957C2F0}"/>
+													<ObjectRef Name="EnterTower" ID="{579547F2-D7F4-4395-8CC5-8D57B9A2253E}" WorkUnitID="{B5461995-40B4-48D8-B88A-3E895957C2F0}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
