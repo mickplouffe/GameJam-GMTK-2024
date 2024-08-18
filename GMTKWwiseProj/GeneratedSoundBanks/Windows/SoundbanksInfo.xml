@@ -9,28 +9,80 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="393239870" Type="User" Language="SFX" Hash="{1964E9AC-8E66-B01E-91A4-AE0839EAC3E9}">
+		<SoundBank Id="393239870" Type="User" Language="SFX" Hash="{1CCDA568-CD7D-982F-C7D5-3C2B1765D01B}">
 			<ShortName>SFX</ShortName>
 			<Path>SFX.bnk</Path>
-		</SoundBank>
-		<SoundBank Id="1117531639" Type="User" Language="SFX" Hash="{31B88A13-691F-C441-8F07-44976075EE46}">
-			<ShortName>AMB</ShortName>
-			<Path>AMB.bnk</Path>
 			<Media>
-				<File Id="1052969118" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>AMBIENT - Beer Garden Large Crowd Talk On Benches Exterior - 02.wav</ShortName>
-					<CachePath>SFX/AMBIENT - Beer Garden Large Crowd Talk On Benches Exterior - 02_14E21738.wem</CachePath>
+				<File Id="139776857" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GMTK2024_SFX_placeRock01_-7dB_v01.wav</ShortName>
+					<CachePath>SFX/GMTK2024_SFX_placeRock01_-7dB_v01_14E21738.wem</CachePath>
+				</File>
+				<File Id="393633432" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GMTK2024_SFX_placeRock03_-7dB_v01.wav</ShortName>
+					<CachePath>SFX/GMTK2024_SFX_placeRock03_-7dB_v01_14E21738.wem</CachePath>
+				</File>
+				<File Id="397978699" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GMTK2024_SFX_placeRock02_-7dB_v01.wav</ShortName>
+					<CachePath>SFX/GMTK2024_SFX_placeRock02_-7dB_v01_14E21738.wem</CachePath>
+				</File>
+				<File Id="402597209" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GMTK2024_towerPlace04_-7dB_v01.wav</ShortName>
+					<CachePath>SFX/GMTK2024_towerPlace04_-7dB_v01_14E21738.wem</CachePath>
+				</File>
+				<File Id="879976025" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GMTK2024_towerPlace02_-7dB_v01.wav</ShortName>
+					<CachePath>SFX/GMTK2024_towerPlace02_-7dB_v01_14E21738.wem</CachePath>
+				</File>
+				<File Id="934825369" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GMTK2024_towerPlace01_-7dB_v01.wav</ShortName>
+					<CachePath>SFX/GMTK2024_towerPlace01_-7dB_v01_14E21738.wem</CachePath>
+				</File>
+				<File Id="946140780" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GMTK2024_towerPlace03_-7dB_v01.wav</ShortName>
+					<CachePath>SFX/GMTK2024_towerPlace03_-7dB_v01_14E21738.wem</CachePath>
 				</File>
 			</Media>
 			<Events>
-				<Event Id="2172329993" Name="Play_AMBIENT___Beer_Garden_Large_Crowd_Talk_On_Benches_Exterior___02" DurationType="OneShot" DurationMin="253.44533" DurationMax="253.44533">
+				<Event Id="2528304328" Name="Play_SFXCyclopsDeath" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="503721771" Name="Play_SFXCyclopsSpawn" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="1738512528" Name="Play_SFXDamaged" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="3453436408" Name="Play_SFXDestroyed" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="457896984" Name="Play_SFXEnemySlide" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="2127355" Name="Play_SFXGorgonDeath" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="1693188748" Name="Play_SFXGorgonSpawn" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="1804201887" Name="Play_SFXGroundTileSpawn" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="355266998" Name="Play_SFXMinotaurDeath" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="3648291989" Name="Play_SFXMinotaurSpawn" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="1624231291" Name="Play_SFXPlaceRock" DurationType="OneShot" DurationMin="0.6711115" DurationMax="0.7322752">
 					<MediaRefs>
-						<MediaRef Id="1052969118"/>
+						<MediaRef Id="139776857"/>
+						<MediaRef Id="393633432"/>
+						<MediaRef Id="397978699"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="2186760998" Name="Play_SFXSpawnerTileSpawn" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="86987433" Name="Play_SFXTiltingTiles" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="3616277950" Name="Play_SFXTowerAttack" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="4103541689" Name="Play_SFXTowerAttackHit" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="2094922267" Name="Play_SFXTowerPlace" DurationType="OneShot" DurationMin="0.65797204" DurationMax="0.71835303">
+					<MediaRefs>
+						<MediaRef Id="402597209"/>
+						<MediaRef Id="879976025"/>
+						<MediaRef Id="934825369"/>
+						<MediaRef Id="946140780"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2225251985" Name="Play_SFXTowerSlide" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{78EB8412-7AD6-2610-F91D-641FA9B7AFD6}">
+		<SoundBank Id="1117531639" Type="User" Language="SFX" Hash="{9848BC59-C286-F314-7EFB-C33A64546430}">
+			<ShortName>AMB</ShortName>
+			<Path>AMB.bnk</Path>
+			<Events>
+				<Event Id="1215763740" Name="Play_AMBWind" DurationType="Infinite"/>
+			</Events>
+		</SoundBank>
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{4F213B2A-D831-F183-567F-96981623AD65}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -44,21 +96,37 @@
 				<Bus Id="1117531639" Name="AMB"/>
 				<Bus Id="1534528548" Name="VO"/>
 				<Bus Id="1551306167" Name="UI"/>
+				<Bus Id="1685527054" Name="MX"/>
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
-				<Bus Id="3991942870" Name="Music"/>
 			</Busses>
 			<GameParameters>
+				<GameParameter Id="393239870" Name="SFX"/>
 				<GameParameter Id="822163944" Name="SS_Air_RPM"/>
 				<GameParameter Id="1029930033" Name="SS_Air_Fury"/>
+				<GameParameter Id="1117531639" Name="AMB"/>
 				<GameParameter Id="1351367891" Name="SS_Air_Fear"/>
+				<GameParameter Id="1534528548" Name="VO"/>
+				<GameParameter Id="1551306167" Name="UI"/>
+				<GameParameter Id="1571361561" Name="Tension"/>
+				<GameParameter Id="1685527054" Name="MX"/>
 				<GameParameter Id="2648548617" Name="SS_Air_Month"/>
 				<GameParameter Id="3002758120" Name="SS_Air_Freefall"/>
 				<GameParameter Id="3074696722" Name="SS_Air_Size"/>
 				<GameParameter Id="3203397129" Name="SS_Air_TimeOfDay"/>
 				<GameParameter Id="3715662592" Name="SS_Air_Storm"/>
 				<GameParameter Id="3847924954" Name="SS_Air_Presence"/>
+				<GameParameter Id="4056684167" Name="MASTER"/>
 				<GameParameter Id="4160247818" Name="SS_Air_Turbulence"/>
 			</GameParameters>
+			<StateGroups>
+				<StateGroup Id="832974869" Name="MX_Waves">
+					<States>
+						<State Id="748895195" Name="None"/>
+						<State Id="2071144875" Name="BetweenWaves"/>
+						<State Id="2447589688" Name="ActiveWave"/>
+					</States>
+				</StateGroup>
+			</StateGroups>
 			<AcousticTextures>
 				<AcousticTexture Id="504532776" Name="Brick">
 					<Properties>
@@ -192,14 +260,95 @@
 			<ShortName>VO</ShortName>
 			<Path>VO.bnk</Path>
 		</SoundBank>
-		<SoundBank Id="1551306167" Type="User" Language="SFX" Hash="{4DAAF1AA-AC05-2700-7B3E-41076F4BB1CA}">
+		<SoundBank Id="1551306167" Type="User" Language="SFX" Hash="{FFBE5975-5916-050E-4637-FC7AFECB4CA2}">
 			<ShortName>UI</ShortName>
 			<Path>UI.bnk</Path>
+			<Events>
+				<Event Id="1615720664" Name="Play_UIClick" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="3581364067" Name="Play_UIGoldGain" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="2262228835" Name="Play_UIGoldLoss" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="2502251926" Name="Play_UIHover" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="2754069948" Name="Play_UIWaveCountdown" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="2290267373" Name="Play_UIWaveEnded" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="3869623766" Name="Play_UIWaveStarted" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+			</Events>
 		</SoundBank>
-		<SoundBank Id="1685527054" Type="User" Language="SFX" Hash="{B25EA16C-7D7E-C29E-9735-245AFC812769}">
+		<SoundBank Id="1685527054" Type="User" Language="SFX" Hash="{A4A6947B-0C18-0502-3AB6-B6AF1C273A3C}">
 			<ShortName>MX</ShortName>
 			<Path>MX.bnk</Path>
+			<Media>
+				<File Id="153486832" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Scales of Olympus Transition out of loop -starts beat 4- v1.wav</ShortName>
+					<CachePath>SFX/Scales of Olympus Transition out of loop -starts beat 4- v1_05A4D402.wem</CachePath>
+				</File>
+				<File Id="495404542" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Scales of Olympus Intro v1.wav</ShortName>
+					<CachePath>SFX/Scales of Olympus Intro v1_05A4D402.wem</CachePath>
+				</File>
+				<File Id="624318979" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Scales of Olympus Layer 2 v1.wav</ShortName>
+					<CachePath>SFX/Scales of Olympus Layer 2 v1_05A4D402.wem</CachePath>
+				</File>
+				<File Id="902048449" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Scales of Olympus Game Loop v1.wav</ShortName>
+					<CachePath>SFX/Scales of Olympus Game Loop v1_05A4D402.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="1258886508" Name="Play_MXTitleTheme" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="3038968348" Name="SetState_ActiveWave" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0">
+					<ActionSetState>
+						<ActionSetStateEntry GroupId="832974869" Id="2447589688" Name="ActiveWave"/>
+					</ActionSetState>
+				</Event>
+				<Event Id="2339243207" Name="SetState_BetweenWaves" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0">
+					<ActionSetState>
+						<ActionSetStateEntry GroupId="832974869" Id="2071144875" Name="BetweenWaves"/>
+					</ActionSetState>
+				</Event>
+				<Event Id="1521187885" Name="StartGame" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="153486832"/>
+						<MediaRef Id="495404542"/>
+					</MediaRefs>
+					<SwitchContainers>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="832974869" Id="2447589688"/>
+							<MediaRefs>
+								<MediaRef Id="902048449"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="832974869" Id="2071144875"/>
+							<MediaRefs>
+								<MediaRef Id="624318979"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="832974869" Id="2447589688"/>
+							<MediaRefs>
+								<MediaRef Id="902048449"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="832974869" Id="2071144875"/>
+							<MediaRefs>
+								<MediaRef Id="624318979"/>
+							</MediaRefs>
+						</SwitchContainer>
+					</SwitchContainers>
+				</Event>
+			</Events>
+			<StateGroups>
+				<StateGroup Id="832974869" Name="MX_Waves">
+					<States>
+						<State Id="748895195" Name="None"/>
+						<State Id="2071144875" Name="BetweenWaves"/>
+						<State Id="2447589688" Name="ActiveWave"/>
+					</States>
+				</StateGroup>
+			</StateGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{25FFFED6-CB37-781C-1A98-86F6B1E17F09}</FileHash>
+	<FileHash>{E10C0C9F-9011-4EA7-32CA-25FCD16400FB}</FileHash>
 </SoundBanksInfo>
