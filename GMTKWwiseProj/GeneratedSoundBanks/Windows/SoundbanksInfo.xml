@@ -99,11 +99,21 @@
 				<Event Id="2225251985" Name="Play_SFXTowerSlide" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="1117531639" Type="User" Language="SFX" Hash="{9848BC59-C286-F314-7EFB-C33A64546430}">
+		<SoundBank Id="1117531639" Type="User" Language="SFX" Hash="{0B61ACBB-376A-9E2C-CD6D-9654AC603F7C}">
 			<ShortName>AMB</ShortName>
 			<Path>AMB.bnk</Path>
+			<Media>
+				<File Id="56926738" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GMTK2024_SFX_AMB_-20dB_v01.wav</ShortName>
+					<CachePath>SFX/GMTK2024_SFX_AMB_-20dB_v01_475869E0.wem</CachePath>
+				</File>
+			</Media>
 			<Events>
-				<Event Id="1215763740" Name="Play_AMBWind" DurationType="Infinite"/>
+				<Event Id="1215763740" Name="Play_AMBWind" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="56926738"/>
+					</MediaRefs>
+				</Event>
 			</Events>
 		</SoundBank>
 		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{4F213B2A-D831-F183-567F-96981623AD65}">
@@ -374,5 +384,5 @@
 			</StateGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{497F7FA5-A11C-0E6E-4046-71CE5521045A}</FileHash>
+	<FileHash>{17EFF6C0-1C4F-92DA-2EB9-9D5BF7D7E903}</FileHash>
 </SoundBanksInfo>
