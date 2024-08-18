@@ -59,7 +59,7 @@ public class HexTileController : MonoBehaviour
             return;
 
         _isFlashing = true;
-        _flashTimeElapsed = 0f;
+        _flashTimeElapsed = 0.0f;
         _flashDuration = flashDuration;
     }
     

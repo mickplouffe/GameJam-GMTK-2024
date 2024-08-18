@@ -9,7 +9,6 @@ public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] private WaveConfig[] waves;
     [SerializeField] private List<HexTile> allPossibleSpawnPoints;
-    [SerializeField] private HexTileController targetTile;
 
     [SerializeField] private EnemyEventChennl enemyEventChannel;
     

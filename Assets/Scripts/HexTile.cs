@@ -19,4 +19,9 @@ public class HexTile
     {
         return TowerObject != null;
     }
+
+    public void DetachTower()
+    {
+        TowerObject = null;
+    }
 }

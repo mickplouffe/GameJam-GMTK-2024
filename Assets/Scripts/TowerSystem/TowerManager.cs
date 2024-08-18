@@ -23,7 +23,8 @@ public class TowerManager : MonoBehaviourSingletonPersistent<TowerManager>
     [SerializeField] private UIEventChannel uiEventChannel;
     [SerializeField] private WeightEventChannel weightEventChannel;
     [SerializeField] private CoinsEventChannel coinsEventChannel;
-
+    [SerializeField] private TowerEventChannel towerEventChannel;
+    
     [SerializeField] private float waitTimeBeforeCanSelect = 0.2f;
     private List<Transform> _activeTowers;
 
@@ -33,6 +34,18 @@ public class TowerManager : MonoBehaviourSingletonPersistent<TowerManager>
     {
         base.Awake();
         _activeTowers = new List<Transform>();
+    }
+
+    private void OnEnable()
+    {
+        towerEventChannel.OnTowerDestroyed += UnregisterTower;
+        towerEventChannel.OnSnapToNewTile += ForceSnapTowerToTile;
+    }
+
+    private void OnDisable()
+    {
+        towerEventChannel.OnTowerDestroyed += UnregisterTower;
+        towerEventChannel.OnSnapToNewTile -= ForceSnapTowerToTile;
     }
 
     // Update is called once per frame
@@ -77,14 +90,12 @@ public class TowerManager : MonoBehaviourSingletonPersistent<TowerManager>
 
                 activeTowerSelected = null;
                 
-                
                 // TODO: RaiseActivateActionsMenu
                 uiEventChannel.RaiseActivateBuildMenu();
             }
             // TODO: maybe deselect when user presses e.g. escape. If we de-select based on hit or no hit then there is 
             // the problem that when pressing one of the buttons it will first deselect the item and then do the action associated to the button which will not do anything in the end
         }
-        
         
         if (Input.GetMouseButtonDown(0) && _placementMode)
         {
@@ -97,6 +108,9 @@ public class TowerManager : MonoBehaviourSingletonPersistent<TowerManager>
             }
             else
             {
+                if(!CoinsManager.Instance.CanBuy(selectedTower.GetComponent<TowerController>().instanceData.currentCost))
+                    uiEventChannel.RaiseCantBuy();
+                
                 Destroy(selectedTower);
             }
             _placementMode = false;
@@ -183,6 +197,7 @@ public class TowerManager : MonoBehaviourSingletonPersistent<TowerManager>
 
         if (!preview)
         {
+            // Check if a tower already on the tile
             if (!selectedTower.GetComponent<TowerController>().Tile.HasTower())
                 selectedTower.GetComponent<TowerController>().Tile.TowerObject = selectedTower.gameObject;
             else
@@ -203,12 +218,24 @@ public class TowerManager : MonoBehaviourSingletonPersistent<TowerManager>
 
         return true;
     }
+    
+    private void ForceSnapTowerToTile(Transform tower, HexTile tile)
+    {
+        Bounds towerBounds = selectedTower.GetComponent<Collider>().bounds;
+
+        selectedTower.transform.position =
+            selectedTower.GetComponent<TowerController>().Tile.TileObject.transform.position +
+            selectedTower.GetComponent<TowerController>().Tile.TileObject.transform.up *
+            (towerBounds.size.y + yOffset) * 0.5f;
+        
+        selectedTower.transform.rotation =
+            selectedTower.GetComponent<TowerController>().Tile.TileObject.transform.rotation;
+        
+        selectedTower.transform.parent = HexGridManager.Instance.transform;
+    }
 
     private void RegisterTower(Transform tower)
     {
-        if (tower.GetComponent<TowerController>().Tile == null) 
-            return;
-        
         // Register new tower
         _activeTowers.Add(tower);
         
@@ -217,15 +244,20 @@ public class TowerManager : MonoBehaviourSingletonPersistent<TowerManager>
         // TODO: Send event to let tiles now a new tower was added
         // RaiseTowerAddedToTileEvent(Transform tower)
     }
-    
     private void UnregisterTower(Transform tower)
     {
-        if (tower.GetComponent<TowerController>().Tile == null) 
-            return;
-        
         // Register new tower
         _activeTowers.Remove(tower);
-        weightEventChannel.RaiseWeightRemoved( tower.GetComponent<TowerController>().instanceData.weight, tower.GetComponent<TowerController>().Tile);
+        weightEventChannel.RaiseWeightRemoved(tower.GetComponent<TowerController>().instanceData.weight, tower.GetComponent<TowerController>().Tile);
+        
+        if (tower.GetComponent<TowerController>().Tile != null)
+        {
+            tower.GetComponent<TowerController>().Tile.DetachTower();
+            tower.GetComponent<TowerController>().Tile = null;
+        }
+
+        
+        Destroy(tower.gameObject, 1.0f);
         // TODO: Send event to let tiles now a new tower was removed
         // RaiseTowerAddedToTileEvent(Transform tower)
     }

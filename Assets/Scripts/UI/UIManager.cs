@@ -12,6 +12,14 @@ public class UIManager : MonoBehaviourSingletonPersistent<UIManager>
 
     [SerializeField] private UIEventChannel uitEventChannel;
     [SerializeField] private EnemyEventChennl enemyEventChannel;
+    [SerializeField] private Color textFlashColor = Color.red;
+    [SerializeField] private float textFlashSpeed = 1.0f;
+    [SerializeField] private float _flashDuration = 2.0f;
+    
+    private bool _isFlashing;
+    private Coroutine _flashCoroutine; // To manage the coroutine
+    
+    private Color _originalTextColor = Color.black;
     
     private UIDocument _ui;
     private Label _waveTimerLabel;
@@ -26,6 +34,7 @@ public class UIManager : MonoBehaviourSingletonPersistent<UIManager>
         uitEventChannel.OnActivateBuildMenu += HandleActivateBuildMenu;
         uitEventChannel.OnActivateActionsMenu += HandleActivateActionsMenu;
         uitEventChannel.OnCoinsValueChanged += HandleCoinsValueChanged;
+        uitEventChannel.OnCantBuy += HandleCantBuy;
 
         enemyEventChannel.OnWaveStart += HandleWaveStart;
     }
@@ -35,9 +44,11 @@ public class UIManager : MonoBehaviourSingletonPersistent<UIManager>
         uitEventChannel.OnActivateBuildMenu -= HandleActivateBuildMenu;
         uitEventChannel.OnActivateActionsMenu -= HandleActivateActionsMenu;
         uitEventChannel.OnCoinsValueChanged -= HandleCoinsValueChanged;
+        uitEventChannel.OnCantBuy -= HandleCantBuy;
         
         enemyEventChannel.OnWaveStart -= HandleWaveStart;
     }
+
 
     public override void Awake()
     {
@@ -47,6 +58,18 @@ public class UIManager : MonoBehaviourSingletonPersistent<UIManager>
         _coinsLabel = _ui.rootVisualElement.Q<Label>("CoinsLabel");
     }
 
+    private void HandleCantBuy()
+    {
+        // If a flash is already ongoing, stop it
+        if (_flashCoroutine != null)
+        {
+            StopCoroutine(_flashCoroutine);
+        }
+
+        // Start the flashing coroutine
+        _flashCoroutine = StartCoroutine(FlashText());
+    }
+    
     private void HandleCoinsValueChanged(int value)
     {
         _coinsLabel.text = $"Coins: {value}";
@@ -61,6 +84,34 @@ public class UIManager : MonoBehaviourSingletonPersistent<UIManager>
             StopCoroutine(_timerCoroutine);
         }
         _timerCoroutine = StartCoroutine(StartCountdown(waveDelay));
+    }
+    
+// Coroutine to handle the flashing effect
+    private IEnumerator FlashText()
+    {
+        float elapsedTime = 0f;
+        bool isFlashing = true;
+
+        while (elapsedTime < _flashDuration)
+        {
+            // Alternate between the original color and the flash color
+            _coinsLabel.style.color = isFlashing ? textFlashColor : _originalTextColor;
+
+            // Wait for the next flash change
+            yield return new WaitForSeconds(textFlashSpeed);
+
+            // Toggle the flashing state
+            isFlashing = !isFlashing;
+
+            // Increment the elapsed time
+            elapsedTime += textFlashSpeed;
+        }
+
+        // Ensure the label color returns to the original color after flashing
+        _coinsLabel.style.color = _originalTextColor;
+
+        // Clear the coroutine reference
+        _flashCoroutine = null;
     }
     
     private IEnumerator StartCountdown(float duration)
@@ -84,8 +135,6 @@ public class UIManager : MonoBehaviourSingletonPersistent<UIManager>
         TimeSpan time = TimeSpan.FromSeconds(remainingTime);
         _waveTimerLabel.text = $"Next Wave In: {time:mm\\:ss}";
     }
-    
-    
     
     private void HandleActivateActionsMenu()
     {
