@@ -137,32 +137,6 @@
 						</Event>
 					</ChildrenList>
 				</Folder>
-				<Folder Name="MainSpire" ID="{FA195365-BDD1-4C30-9287-3558A9343D5D}" ShortID="848084107">
-					<ChildrenList>
-						<Event Name="Play_SFXDamaged" ID="{48C3A254-D7E8-40B4-AD34-7A5D67A1397A}">
-							<ChildrenList>
-								<Action Name="" ID="{6A3C0672-5BE2-4ED4-AAF1-10DDF1D62ECE}" ShortID="785042838">
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="Damaged" ID="{0979974E-4CAD-475D-93BA-27A6B6A78813}" WorkUnitID="{B5461995-40B4-48D8-B88A-3E895957C2F0}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-							</ChildrenList>
-						</Event>
-						<Event Name="Play_SFXDestroyed" ID="{718999EE-04B2-4B00-A550-4232D3722287}">
-							<ChildrenList>
-								<Action Name="" ID="{5C2F1CBB-C2A7-4CC4-AF09-039A68548531}" ShortID="956707583">
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="Destroyed" ID="{D6534D8E-64D2-4B6C-9069-236D1AA7C85E}" WorkUnitID="{B5461995-40B4-48D8-B88A-3E895957C2F0}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-							</ChildrenList>
-						</Event>
-					</ChildrenList>
-				</Folder>
 				<Folder Name="Platforms" ID="{242CC404-9006-4213-A428-78ED25FDB4BC}" ShortID="153968962">
 					<ChildrenList>
 						<Event Name="Play_SFXSpawnerTileSpawn" ID="{CC3C517E-D109-44C5-8243-67F08A28976D}">

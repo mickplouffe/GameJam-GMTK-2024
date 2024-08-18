@@ -7,3 +7,11 @@ Event	ID	Name			Wwise Object Path	Notes
 	3581364067	Play_UIGoldGain			\UI\Gold\Play_UIGoldGain	
 	3869623766	Play_UIWaveStarted			\UI\GameAlerts\Play_UIWaveStarted	
 
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	70575173	GMTK2024_SFX_goldGain_-7_v1	D:\UnityProjects\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Mac\SFX\GMTK2024_SFX_goldGain_-7_v1_14E21738.wem		\Actor-Mixer Hierarchy\UI\UI\Gold\GoldGain\GMTK2024_SFX_goldGain_-7_v1		16006
+	110314636	GMTK2024_SFX_goldGain_-7_v2	D:\UnityProjects\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Mac\SFX\GMTK2024_SFX_goldGain_-7_v2_14E21738.wem		\Actor-Mixer Hierarchy\UI\UI\Gold\GoldGain\GMTK2024_SFX_goldGain_-7_v2		13378
+	659071609	GMTK2024_SFX_goldGain_-5_v3	D:\UnityProjects\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Mac\SFX\GMTK2024_SFX_goldGain_-5_v3_14E21738.wem		\Actor-Mixer Hierarchy\UI\UI\Gold\GoldGain\GMTK2024_SFX_goldGain_-5_v3		21962
+	925787453	GMTK2024_SFX_goldLose_-6_v2	D:\UnityProjects\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Mac\SFX\GMTK2024_SFX_goldLose_-6_v2_14E21738.wem		\Actor-Mixer Hierarchy\UI\UI\Gold\GoldLoss\GMTK2024_SFX_goldLose_-6_v2		19644
+	929219650	GMTK2024_SFX_goldLose_-8_v1	D:\UnityProjects\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Mac\SFX\GMTK2024_SFX_goldLose_-8_v1_14E21738.wem		\Actor-Mixer Hierarchy\UI\UI\Gold\GoldLoss\GMTK2024_SFX_goldLose_-8_v1		22756
+	1022782546	GMTK2024_SFX_goldLose_-5_v3	D:\UnityProjects\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Mac\SFX\GMTK2024_SFX_goldLose_-5_v3_14E21738.wem		\Actor-Mixer Hierarchy\UI\UI\Gold\GoldLoss\GMTK2024_SFX_goldLose_-5_v3		23877
+

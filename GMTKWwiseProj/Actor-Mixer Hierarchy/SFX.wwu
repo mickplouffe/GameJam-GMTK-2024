@@ -574,6 +574,90 @@
 							</ChildrenList>
 						</ActorMixer>
 						<WorkUnit Name="SFX_Otter" ID="{A57A593A-B9DE-4277-A3EF-672CA80E8992}" PersistMode="Reference"/>
+						<RandomSequenceContainer Name="Fall" ID="{15EA3FED-DBDA-4BB6-9B05-5E53609CEC85}" ShortID="613270432">
+							<PropertyList>
+								<Property Name="IsGlobalLimit" Type="int16" Value="1"/>
+								<Property Name="MaxSoundPerInstance" Type="int16">
+									<ValueList>
+										<Value>5</Value>
+									</ValueList>
+								</Property>
+								<Property Name="RandomAvoidRepeating" Type="bool" Value="False"/>
+								<Property Name="UseMaxSoundPerInstance" Type="bool">
+									<ValueList>
+										<Value>True</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{7F62BABC-0C6C-4DAD-ACF1-E77615B460FB}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Wilhelm" ID="{56962B69-1BE1-4B33-B946-2A55E8CB979A}" ShortID="774096129">
+									<PropertyList>
+										<Property Name="Weight" Type="Real64">
+											<ValueList>
+												<Value>1</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{7F62BABC-0C6C-4DAD-ACF1-E77615B460FB}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="VOXScrm_Wilhelm scream (ID 0477)_BSB" ID="{24162EDA-1D79-4EB6-B285-0AAFB1C116BE}">
+											<Language>SFX</Language>
+											<AudioFile>VOXScrm_Wilhelm scream (ID 0477)_BSB.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="315686258"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="VOXScrm_Wilhelm scream (ID 0477)_BSB" ID="{24162EDA-1D79-4EB6-B285-0AAFB1C116BE}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="WHISTLE Down Long" ID="{E0A18831-C1F6-41B7-8AA6-7F9B9FE7330A}" ShortID="345605814">
+									<PropertyList>
+										<Property Name="Weight" Type="Real64">
+											<ValueList>
+												<Value>99</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{7F62BABC-0C6C-4DAD-ACF1-E77615B460FB}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="WHISTLE Down Long" ID="{EA15EC63-B439-45AA-B68F-886B5A96B082}">
+											<Language>SFX</Language>
+											<AudioFile>WHISTLE Down Long.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="988960913"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="WHISTLE Down Long" ID="{EA15EC63-B439-45AA-B68F-886B5A96B082}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</RandomSequenceContainer>
 					</ChildrenList>
 					<PositioningInfo>
 						<Panner Name="" ID="{F92F5DCE-C603-4757-89C2-3561298016FD}"/>
