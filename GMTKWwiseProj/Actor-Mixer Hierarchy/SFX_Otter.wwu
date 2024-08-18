@@ -141,40 +141,6 @@
 						</RandomSequenceContainer>
 					</ChildrenList>
 				</ActorMixer>
-				<ActorMixer Name="Portal" ID="{31BA8761-8CCC-4850-9B20-C76D20CBDA25}" ShortID="976648228">
-					<ReferenceList>
-						<Reference Name="Conversion">
-							<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
-						</Reference>
-						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{7F62BABC-0C6C-4DAD-ACF1-E77615B460FB}"/>
-						</Reference>
-					</ReferenceList>
-					<ChildrenList>
-						<Sound Name="GMTK2024_SFX_portals_-4dB_v01" ID="{562FFD9A-7429-4D23-B7AB-9218C20844E3}" ShortID="143621306">
-							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{7F62BABC-0C6C-4DAD-ACF1-E77615B460FB}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<AudioFileSource Name="GMTK2024_SFX_portals_-4dB_v01" ID="{52176154-8288-4640-8517-E6F42F7B4B7F}">
-									<Language>SFX</Language>
-									<AudioFile>GMTK2024_SFX_portals_-4dB_v01.wav</AudioFile>
-									<MediaIDList>
-										<MediaID ID="863132956"/>
-									</MediaIDList>
-								</AudioFileSource>
-							</ChildrenList>
-							<ActiveSourceList>
-								<ActiveSource Name="GMTK2024_SFX_portals_-4dB_v01" ID="{52176154-8288-4640-8517-E6F42F7B4B7F}" Platform="Linked"/>
-							</ActiveSourceList>
-						</Sound>
-					</ChildrenList>
-				</ActorMixer>
 				<ActorMixer Name="Tower" ID="{8BE1C11A-3FEB-415D-9149-4CC1BE9CF66C}" ShortID="205572223">
 					<ReferenceList>
 						<Reference Name="Conversion">

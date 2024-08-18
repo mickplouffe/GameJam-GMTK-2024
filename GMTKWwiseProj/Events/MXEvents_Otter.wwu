@@ -20,36 +20,10 @@
 				</Event>
 				<Event Name="StartGame" ID="{70783A5B-9D9B-4725-A1FA-E906A89AF09D}">
 					<ChildrenList>
-						<Action Name="" ID="{DCCF5C72-1818-452F-9EEA-BF7205F1D3F8}" ShortID="777576719">
-							<PropertyList>
-								<Property Name="ActionType" Type="int16" Value="3"/>
-							</PropertyList>
-							<ReferenceList/>
-						</Action>
-						<Action Name="" ID="{60DB8FBF-C006-4D86-8A3E-DE973E6F3645}" ShortID="27277782">
-							<PropertyList>
-								<Property Name="ActionType" Type="int16" Value="22"/>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="None" ID="{0778EDAC-60DA-4D97-92E7-C81B509D6EFC}" WorkUnitID="{A8C0A2BE-0965-4AC0-9566-86D7B39A75B2}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
 						<Action Name="" ID="{8AFE2264-736D-4075-B1AE-C7122193A4ED}" ShortID="1019696705">
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="MX" ID="{36E46A61-56C8-4D08-9A58-DE8F1607464E}" WorkUnitID="{FCCA7E9F-D0AC-482C-A731-FDE3D338A535}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
-						<Action Name="" ID="{6E2F8C80-1671-4CE9-8BE1-2837A4A553C8}" ShortID="764563869">
-							<PropertyList>
-								<Property Name="ActionType" Type="int16" Value="41"/>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="Play_Wind" ID="{FEC89844-829D-4954-AAEB-9FC5355CDFD0}" WorkUnitID="{5B7760E9-4ED5-4FFF-B405-DA13419EEECE}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
