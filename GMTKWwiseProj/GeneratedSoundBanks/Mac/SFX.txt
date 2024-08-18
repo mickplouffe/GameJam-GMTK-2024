@@ -10,7 +10,8 @@ Event	ID	Name			Wwise Object Path	Notes
 	1804201887	Play_SFXGroundTileSpawn			\SFX\Platforms\Play_SFXGroundTileSpawn	
 	2094922267	Play_SFXTowerPlace			\SFX\SFXEvents_Otter\Tower\Play_SFXTowerPlace	
 	2186760998	Play_SFXSpawnerTileSpawn			\SFX\Platforms\Play_SFXSpawnerTileSpawn	
-	2225251985	Play_SFXTowerSlide			\SFX\Tower\Play_SFXTowerSlide	
+	2225251985	Play_SFXTowerSlide			\SFX\SFXEvents_Otter\Tower\Play_SFXTowerSlide	
+	2237095779	Stop_SFXTowerSlide			\SFX\SFXEvents_Otter\Tower\Stop_SFXTowerSlide	
 	2528304328	Play_SFXCyclopsDeath			\SFX\Enemies\Cyclops\Play_SFXCyclopsDeath	
 	3453436408	Play_SFXDestroyed			\SFX\MainSpire\Play_SFXDestroyed	
 	3616277950	Play_SFXTowerAttack			\SFX\Tower\Play_SFXTowerAttack	
@@ -26,8 +27,11 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	397978699	GMTK2024_SFX_placeRock02_-7dB_v01	Z:\Volumes\LaCie SSD\Old Projects\2024\GMTK_2024\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Mac\SFX\GMTK2024_SFX_placeRock02_-7dB_v01_14E21738.wem		\Actor-Mixer Hierarchy\SFX\SFX\SFX_Otter\Rock\placeRock\GMTK2024_SFX_placeRock02_-7dB_v01		0
 	402597209	GMTK2024_towerPlace04_-7dB_v01	Z:\Volumes\LaCie SSD\Old Projects\2024\GMTK_2024\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Mac\SFX\GMTK2024_towerPlace04_-7dB_v01_14E21738.wem		\Actor-Mixer Hierarchy\SFX\SFX\SFX_Otter\Tower\towerPlace\GMTK2024_towerPlace04_-7dB_v01		0
 	652416591	GMTK2024_SFX_towerSell04_-7dB_v01	Z:\Volumes\LaCie SSD\Old Projects\2024\GMTK_2024\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Mac\SFX\GMTK2024_SFX_towerSell04_-7dB_v01_14E21738.wem		\Actor-Mixer Hierarchy\SFX\SFX\SFX_Otter\Tower\towerSell\GMTK2024_SFX_towerSell04_-7dB_v01		0
+	835854000	GMTK2024_SFX_towerSlide02_v01	Z:\Volumes\LaCie SSD\Old Projects\2024\GMTK_2024\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Mac\SFX\GMTK2024_SFX_towerSlide02_v01_AA6A26FA.wem		\Actor-Mixer Hierarchy\SFX\SFX\SFX_Otter\Tower\towerSlide\GMTK2024_SFX_towerSlide02_v01		0
 	879976025	GMTK2024_towerPlace02_-7dB_v01	Z:\Volumes\LaCie SSD\Old Projects\2024\GMTK_2024\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Mac\SFX\GMTK2024_towerPlace02_-7dB_v01_14E21738.wem		\Actor-Mixer Hierarchy\SFX\SFX\SFX_Otter\Tower\towerPlace\GMTK2024_towerPlace02_-7dB_v01		0
 	882246771	GMTK2024_SFX_towerSell03_-7dB_v01	Z:\Volumes\LaCie SSD\Old Projects\2024\GMTK_2024\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Mac\SFX\GMTK2024_SFX_towerSell03_-7dB_v01_14E21738.wem		\Actor-Mixer Hierarchy\SFX\SFX\SFX_Otter\Tower\towerSell\GMTK2024_SFX_towerSell03_-7dB_v01		0
+	904288813	GMTK2024_SFX_towerSlide01_v01	Z:\Volumes\LaCie SSD\Old Projects\2024\GMTK_2024\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Mac\SFX\GMTK2024_SFX_towerSlide01_v01_95EFA936.wem		\Actor-Mixer Hierarchy\SFX\SFX\SFX_Otter\Tower\towerSlide\GMTK2024_SFX_towerSlide01_v01		0
 	934825369	GMTK2024_towerPlace01_-7dB_v01	Z:\Volumes\LaCie SSD\Old Projects\2024\GMTK_2024\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Mac\SFX\GMTK2024_towerPlace01_-7dB_v01_14E21738.wem		\Actor-Mixer Hierarchy\SFX\SFX\SFX_Otter\Tower\towerPlace\GMTK2024_towerPlace01_-7dB_v01		0
+	945879634	GMTK2024_SFX_towerSlide03_v01	Z:\Volumes\LaCie SSD\Old Projects\2024\GMTK_2024\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Mac\SFX\GMTK2024_SFX_towerSlide03_v01_F9432CDB.wem		\Actor-Mixer Hierarchy\SFX\SFX\SFX_Otter\Tower\towerSlide\GMTK2024_SFX_towerSlide03_v01		0
 	946140780	GMTK2024_towerPlace03_-7dB_v01	Z:\Volumes\LaCie SSD\Old Projects\2024\GMTK_2024\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Mac\SFX\GMTK2024_towerPlace03_-7dB_v01_14E21738.wem		\Actor-Mixer Hierarchy\SFX\SFX\SFX_Otter\Tower\towerPlace\GMTK2024_towerPlace03_-7dB_v01		0
 
