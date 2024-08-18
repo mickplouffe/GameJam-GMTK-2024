@@ -26,7 +26,6 @@ namespace AK
         static const AkUniqueID PLAY_SFXMINOTAURDEATH = 355266998U;
         static const AkUniqueID PLAY_SFXMINOTAURSPAWN = 3648291989U;
         static const AkUniqueID PLAY_SFXPLACEROCK = 1624231291U;
-        static const AkUniqueID PLAY_SFXPORTALSFORM = 2435900478U;
         static const AkUniqueID PLAY_SFXSPAWNERTILESPAWN = 2186760998U;
         static const AkUniqueID PLAY_SFXTILTINGTILES = 86987433U;
         static const AkUniqueID PLAY_SFXTOWERATTACK = 3616277950U;
@@ -40,6 +39,9 @@ namespace AK
         static const AkUniqueID PLAY_UIWAVECOUNTDOWN = 2754069948U;
         static const AkUniqueID PLAY_UIWAVEENDED = 2290267373U;
         static const AkUniqueID PLAY_UIWAVESTARTED = 3869623766U;
+        static const AkUniqueID SETSTATE_ACTIVEWAVE = 3038968348U;
+        static const AkUniqueID SETSTATE_BETWEENWAVES = 2339243207U;
+        static const AkUniqueID STARTGAME = 1521187885U;
     } // namespace EVENTS
 
     namespace STATES
