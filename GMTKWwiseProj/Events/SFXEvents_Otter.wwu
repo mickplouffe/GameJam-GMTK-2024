@@ -18,21 +18,6 @@
 						</Event>
 					</ChildrenList>
 				</Folder>
-				<Folder Name="Portal" ID="{6CBAEF6E-53C6-4BE5-9B06-011566335EA0}" ShortID="198975145">
-					<ChildrenList>
-						<Event Name="Play_SFXPortalsForm" ID="{F4801C66-34A1-4013-9455-676370BE719D}">
-							<ChildrenList>
-								<Action Name="" ID="{C0CB9291-3F51-4E1E-8790-8299179F7016}" ShortID="905326443">
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="GMTK2024_SFX_portals_-4dB_v01" ID="{562FFD9A-7429-4D23-B7AB-9218C20844E3}" WorkUnitID="{A57A593A-B9DE-4277-A3EF-672CA80E8992}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-							</ChildrenList>
-						</Event>
-					</ChildrenList>
-				</Folder>
 				<Folder Name="Tower" ID="{FAA4D5F0-E5C5-475F-9E69-7F36C1B7628A}" ShortID="604499222">
 					<ChildrenList>
 						<Event Name="Play_SFXTowerPlace" ID="{F6BBF08E-2F33-4870-9A49-A02B42EC8F12}">

@@ -4,6 +4,9 @@
 		<WorkUnit Name="GameStates" ID="{A8C0A2BE-0965-4AC0-9566-86D7B39A75B2}" PersistMode="Standalone">
 			<ChildrenList>
 				<StateGroup Name="MX_Waves" ID="{29E28070-1663-4341-804D-B1C4AF551842}">
+					<PropertyList>
+						<Property Name="DefaultTransitionTime" Type="Real64" Value="1.5"/>
+					</PropertyList>
 					<ChildrenList>
 						<State Name="None" ID="{0778EDAC-60DA-4D97-92E7-C81B509D6EFC}"/>
 						<State Name="ActiveWave" ID="{5F8E6FC5-07CA-486A-9592-5DD2E231C2E2}"/>
