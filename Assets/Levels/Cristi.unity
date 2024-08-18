@@ -1329,6 +1329,7 @@ GameObject:
   - component: {fileID: 726442130}
   - component: {fileID: 726442129}
   - component: {fileID: 726442131}
+  - component: {fileID: 726442132}
   m_Layer: 0
   m_Name: Virtual Camera
   m_TagString: Untagged
@@ -1406,6 +1407,20 @@ MonoBehaviour:
   m_Offset: {x: 0, y: -6.59, z: 0}
   m_ApplyAfter: 0
   m_PreserveComposition: 1
+--- !u!114 &726442132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 726442128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9707eab5f7a73ad44856d17c02df7107, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 326608834}
+  rotationStep: 45
 --- !u!1 &830075510
 GameObject:
   m_ObjectHideFlags: 0
