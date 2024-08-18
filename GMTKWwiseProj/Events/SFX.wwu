@@ -175,6 +175,17 @@
 					</ChildrenList>
 				</Folder>
 				<WorkUnit Name="SFXEvents_Otter" ID="{0A7A0CEB-234F-4544-9DAA-DD6728515385}" PersistMode="Reference"/>
+				<Event Name="Play_Fall" ID="{496E4765-B51F-4117-8620-273BBD96CD5B}">
+					<ChildrenList>
+						<Action Name="" ID="{DAF815C1-FF6F-4359-BE6D-C91949FE2260}" ShortID="826330797">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Fall" ID="{15EA3FED-DBDA-4BB6-9B05-5E53609CEC85}" WorkUnitID="{B5461995-40B4-48D8-B88A-3E895957C2F0}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>
