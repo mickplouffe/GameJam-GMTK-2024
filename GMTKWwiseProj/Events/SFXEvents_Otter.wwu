@@ -31,6 +31,17 @@
 								</Action>
 							</ChildrenList>
 						</Event>
+						<Event Name="Play_SFXTowerSell" ID="{D656D3F4-3ECF-4658-AB6C-9DAFE7B7718F}">
+							<ChildrenList>
+								<Action Name="" ID="{87CE63E2-07FB-44E1-BA7F-99A3A0021A15}" ShortID="443075208">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="towerSell" ID="{DCF81620-06E4-4FCA-A7CF-8B84F3A1F91D}" WorkUnitID="{A57A593A-B9DE-4277-A3EF-672CA80E8992}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 			</ChildrenList>
