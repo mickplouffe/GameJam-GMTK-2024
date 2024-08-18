@@ -156,45 +156,45 @@ public class HexGridManager : MonoBehaviourSingleton<HexGridManager>
     
     
     
-    // void Update()
-    // {
-    //     // Add 1 random tile where there is none
-    //     if (Input.GetKeyDown(KeyCode.Space))
-    //     {
-    //         hexGrid.AddTile(Random.Range(hexGrid.MinQ(), hexGrid.MaxQ()), Random.Range(hexGrid.MinQ(), hexGrid.MaxQ()), hexPrefab, this.transform);
-    //         HighlightTrueEdgeTiles();
-    //
-    //     }
-    //     
-    //     // Remove 1 random tile
-    //     if (Input.GetKeyDown(KeyCode.R))
-    //     {
-    //         hexGrid.RemoveTile(Random.Range(hexGrid.MinQ(), hexGrid.MaxQ()), Random.Range(hexGrid.MinQ(), hexGrid.MaxQ()));
-    //         HighlightTrueEdgeTiles();
-    //
-    //     }
-    //     
-    //     // Add group of X tiles to Selected true edge tile
-    //     if (Input.GetKeyDown(KeyCode.G))
-    //     {
-    //         List<HexTile> edgeTiles = hexGrid.GetTrueEdgeTiles();
-    //         HexTile selectedTile = edgeTiles[Random.Range(0, edgeTiles.Count)];
-    //         hexGrid.AddCircularBlob(selectedTile.Q, selectedTile.R, amountBlobToAdd, hexPrefab);
-    //
-    //         HighlightTrueEdgeTiles();
-    //     }
-    //
-    //     // Example of getting and printing neighbors of a tile
-    //     if (Input.GetKeyDown(KeyCode.N))
-    //     {
-    //         HexTile tile = hexGrid.GetTile(0, 0);
-    //         if (tile != null)
-    //         {
-    //             List<HexTile> neighbors = hexGrid.GetNeighbors(tile.Q, tile.R);
-    //             Debug.Log("Neighbors: " + neighbors.Count);
-    //         }
-    //     }
-    // }
+    void Update()
+    {
+        // Add 1 random tile where there is none
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            hexGrid.AddTile(Random.Range(hexGrid.MinQ(), hexGrid.MaxQ()), Random.Range(hexGrid.MinQ(), hexGrid.MaxQ()), hexPrefab, this.transform);
+            HighlightTrueEdgeTiles();
+    
+        }
+        
+        // Remove 1 random tile
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            hexGrid.RemoveTile(Random.Range(hexGrid.MinQ(), hexGrid.MaxQ()), Random.Range(hexGrid.MinQ(), hexGrid.MaxQ()));
+            HighlightTrueEdgeTiles();
+    
+        }
+        
+        // Add group of X tiles to Selected true edge tile
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            List<HexTile> edgeTiles = hexGrid.GetTrueEdgeTiles();
+            HexTile selectedTile = edgeTiles[Random.Range(0, edgeTiles.Count)];
+            hexGrid.AddCircularBlob(selectedTile.Q, selectedTile.R, amountBlobToAdd, hexPrefab);
+    
+            HighlightTrueEdgeTiles();
+        }
+    
+        // Example of getting and printing neighbors of a tile
+        if (Input.GetKeyDown(KeyCode.N))
+        {
+            HexTile tile = hexGrid.GetTile(0, 0);
+            if (tile != null)
+            {
+                List<HexTile> neighbors = hexGrid.GetNeighbors(tile.Q, tile.R);
+                Debug.Log("Neighbors: " + neighbors.Count);
+            }
+        }
+    }
 
     //[Button("Disable")]
     private void DisableHexGrid()
