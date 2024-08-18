@@ -42,6 +42,36 @@
 								</Action>
 							</ChildrenList>
 						</Event>
+						<Event Name="Play_SFXTowerSlide" ID="{01DDC3A1-414C-4E8A-AED7-15A2D84D2ABF}">
+							<ChildrenList>
+								<Action Name="" ID="{90A7223D-A416-4173-8DED-C9D0987988B6}" ShortID="35327237">
+									<PropertyList>
+										<Property Name="FadeTime" Type="Real64" Value="0.5"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="towerSlide" ID="{110D8DD8-08F5-4C85-A4D3-D7A466215043}" WorkUnitID="{A57A593A-B9DE-4277-A3EF-672CA80E8992}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Stop_SFXTowerSlide" ID="{BAAA6E50-4D1A-4E70-98D9-B0371F5F49BA}">
+							<ChildrenList>
+								<Action Name="" ID="{57F66A70-4079-4441-8D1F-83BF5A779240}" ShortID="256601903">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+										<Property Name="FadeOutCurve" Type="int16" Value="6"/>
+										<Property Name="FadeTime" Type="Real64" Value="0.25"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="towerSlide" ID="{110D8DD8-08F5-4C85-A4D3-D7A466215043}" WorkUnitID="{A57A593A-B9DE-4277-A3EF-672CA80E8992}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 			</ChildrenList>

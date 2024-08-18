@@ -43,6 +43,7 @@ namespace AK
         static const AkUniqueID SETSTATE_ACTIVEWAVE = 3038968348U;
         static const AkUniqueID SETSTATE_BETWEENWAVES = 2339243207U;
         static const AkUniqueID STARTGAME = 1521187885U;
+        static const AkUniqueID STOP_SFXTOWERSLIDE = 2237095779U;
     } // namespace EVENTS
 
     namespace STATES
