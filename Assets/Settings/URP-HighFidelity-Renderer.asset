@@ -15,20 +15,20 @@ MonoBehaviour:
   m_Active: 1
   settings:
     intensity: 0
-    kuwahara: 0
+    kuwahara: 4
     passes: 1
-    radius: 10
+    radius: 7
     blur: 2
     sharpness: 8
     hardness: 8
     alpha: 1
     zeroCrossing: 0.58
     detail: 0
-    detailStrength: 0.159
-    embossStrength: 1.7
-    embossAngle: 143
-    waterColor: 0
-    processDepth: 0
+    detailStrength: 0.101
+    embossStrength: 13.49
+    embossAngle: 72
+    waterColor: 0.971
+    processDepth: 1
     depthCurve:
       serializedVersion: 2
       m_Curve:
@@ -62,7 +62,7 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    depthPower: 0.472
+    depthPower: 0.348
     sampleSky: 1
     viewDepthCurve: 0
     renderSize: 1

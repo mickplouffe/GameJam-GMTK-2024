@@ -2,8 +2,25 @@ using System.Collections.Generic;
 using NaughtyAttributes;
 using UnityEngine;
 
-public class HexGridManager : MonoBehaviourSingleton<HexGridManager>
+public class HexGridManager : MonoBehaviour // MonoBehaviourSingleton<HexGridManager>
 {
+    
+    public static HexGridManager Instance { get; private set; }
+
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject); // Optional: if you want the Singleton to persist across scenes
+        }
+        else
+        {
+            Destroy(gameObject); // Ensure there's only one instance
+        }
+    }
+    
+    
     public GameObject hexPrefab;
     private HexGrid hexGrid;
     private readonly float _hexTileSize = 1;
@@ -17,12 +34,17 @@ public class HexGridManager : MonoBehaviourSingleton<HexGridManager>
     [OnValueChanged("GenerateHexGrid")] private float noiseScale = 1f; // Extra
     
     public int amountBlobToAdd = 3;
+    
+    [SerializeField] private TiltObject tiltObject;
 
     [Button]
     void Start()
     {
         hexGrid = new HexGrid(_hexTileSize, this.transform);
         GenerateInitialGrid();
+        List<HexTile> edgeTiles = hexGrid.GetTrueEdgeTiles();
+        HexTile selectedTile = edgeTiles[Random.Range(0, edgeTiles.Count)];
+        //hexGrid.AddCircularBlob(selectedTile.Q, selectedTile.R, amountBlobToAdd, hexPrefab);
     }
 
     void GenerateInitialGrid()
@@ -63,6 +85,11 @@ public class HexGridManager : MonoBehaviourSingleton<HexGridManager>
         GenerateHexGrid();
     }
     
+    public string SayHello()
+    {
+        return "Hello from HexGridManager!";
+    }
+    
     
     
     
@@ -91,6 +118,16 @@ public class HexGridManager : MonoBehaviourSingleton<HexGridManager>
     public HexTile GetTile(int q, int r)
     {
         return hexGrid.GetTile(q, r);
+    }
+    
+    public GameObject GetTileObject(int q, int r)
+    {
+        return hexGrid.GetTile(q, r).TileObject;
+    }
+    
+    public GameObject GetTileObject(HexTile hexTile)
+    {
+        return hexTile.TileObject;
     }
     
     public List<HexTile> GetNeighbors(int q, int r)
@@ -194,6 +231,10 @@ public class HexGridManager : MonoBehaviourSingleton<HexGridManager>
                 Debug.Log("Neighbors: " + neighbors.Count);
             }
         }
+
+        tiltObject.tiles = hexGrid.GetTilesObjects();
+
+
     }
 
     //[Button("Disable")]

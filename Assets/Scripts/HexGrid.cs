@@ -135,6 +135,7 @@ public class HexGrid
             Vector3 position = HexToWorld(q, r, yOffset);
             GameObject hex = PoolGetTile(q, r, hexPrefab, parent);
             hex.transform.position = position;
+            hex.transform.rotation = gridOrigin.rotation;
             hex.name = "HexTile " + q + "x" + r;
             hex.SetActive(true);
             
@@ -146,6 +147,7 @@ public class HexGrid
             {
                 Vector3 position = HexToWorld(q, r, yOffset);
                 hex.transform.position = position;
+                hex.transform.rotation = gridOrigin.rotation;
                 hex.name = "HexTile " + q + "x" + r;
                 hex.SetActive(true);
                 
@@ -319,6 +321,37 @@ public class HexGrid
         }
         return null;
     }
+    
+    public List<HexTile> GetTiles(bool activeOnly = true)
+    {
+        List<HexTile> tiles = new List<HexTile>();
+        foreach (var tile in hexTiles.Values)
+        {
+            if (!activeOnly || tile.TileObject.activeInHierarchy)
+            {
+                tiles.Add(tile);
+            }
+        }
+
+        return tiles;
+    }
+
+    public List<GameObject> GetTilesObjects(bool activeOnly = true)
+    {
+        List<GameObject> tiles = new List<GameObject>();
+        foreach (var tile in hexTiles.Values)
+        {
+            if (!activeOnly || tile.TileObject.activeInHierarchy)
+            {
+                tiles.Add(tile.TileObject);
+            }
+        }
+
+        return tiles;
+        
+    }
+    
+    
 
     public List<HexTile> GetNeighbors(int q, int r)
     {
@@ -357,21 +390,36 @@ public class HexGrid
         hexTiles.Clear();
     }
     
+    // Scuffed method to get the closest tile to a position
     public HexTile GetTileAtPosition(Vector3 position)
     {
+        HexTile closestTile = null;
+        float closestDistanceSqr = float.MaxValue;
+        float thresholdSqr = 1.5f * 1.5f;
+
         foreach (var tile in hexTiles.Values)
         {
             if (tile.TileObject.activeInHierarchy)
             {
-                if (Vector3.Distance(tile.TileObject.transform.position, position) < 0.1f)
+                Vector3 tilePosition = tile.TileObject.transform.position;
+                float distanceSqr = (tilePosition - position).sqrMagnitude;
+
+                if (distanceSqr < closestDistanceSqr && distanceSqr < thresholdSqr)
                 {
-                    return tile;
+                    closestDistanceSqr = distanceSqr;
+                    closestTile = tile;
+
+
+                    if (distanceSqr < 0.01f) 
+                    {
+                        break;
+                    }
                 }
             }
         }
-
-        return null;
+        return closestTile;
     }
+    
     
     public void Disable()
     {
@@ -480,7 +528,10 @@ public class HexGrid
     {
         float x = hexSize * (Mathf.Sqrt(3) * q + Mathf.Sqrt(3) / 2 * r);
         float z = hexSize * (3f / 2f * r);
-        return gridOrigin.position + new Vector3(x, yOffset, z);
+        Vector3 localPosition = new Vector3(x, yOffset, z);
+
+        // Transform the local position according to the grid's tilt
+        return gridOrigin.TransformPoint(localPosition);
     }
     
     public bool IsTile(int q, int r)
