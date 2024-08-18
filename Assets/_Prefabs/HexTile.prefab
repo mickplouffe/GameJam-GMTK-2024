@@ -122,4 +122,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyEventChennl: {fileID: 11400000, guid: 58c4683592b42784c91a64e98e2ccbc1, type: 2}
   flashColor: {r: 0.9811321, g: 0.29156283, b: 0.29156283, a: 0}
-  flashSpeed: 10
+  flashSpeed: 2

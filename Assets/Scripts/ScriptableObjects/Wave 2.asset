@@ -16,5 +16,5 @@ MonoBehaviour:
   - {fileID: 334518757737957131, guid: c4cb20163a2e63144adaa9b393985a8c, type: 3}
   enemyCounts: 0a000000
   spawnInterval: 1
-  waveDelay: 2
+  waveDelay: 20
   numberOfSpawnPoints: 2

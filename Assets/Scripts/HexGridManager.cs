@@ -2,25 +2,8 @@ using System.Collections.Generic;
 using NaughtyAttributes;
 using UnityEngine;
 
-public class HexGridManager : MonoBehaviour // MonoBehaviourSingleton<HexGridManager>
+public class HexGridManager : MonoBehaviourSingletonPersistent<HexGridManager>
 {
-    
-    public static HexGridManager Instance { get; private set; }
-
-    private void Awake()
-    {
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject); // Optional: if you want the Singleton to persist across scenes
-        }
-        else
-        {
-            Destroy(gameObject); // Ensure there's only one instance
-        }
-    }
-    
-    
     public GameObject hexPrefab;
     private HexGrid hexGrid;
     private readonly float _hexTileSize = 1;
@@ -113,6 +96,29 @@ public class HexGridManager : MonoBehaviour // MonoBehaviourSingleton<HexGridMan
     public List<HexTile> GetEdgeTiles()
     {
         return hexGrid.GetTrueEdgeTiles();
+    }
+    
+    public HexTile GetNextTile(HexTile currentTile, Vector3 direction)
+    {
+        Vector2Int nextGridPos = new Vector2Int(Mathf.RoundToInt(currentTile.Q + direction.x), Mathf.RoundToInt(currentTile.R + direction.z));
+        return hexGrid.GetTile(nextGridPos.x, nextGridPos.y);
+    }
+    
+    public List<HexTile> GetRandomEdgeTiles(int numberOfTiles)
+    {
+        List<HexTile> edgeTiles = hexGrid.GetTrueEdgeTiles();
+        // Shuffle the list to ensure randomness
+        for (int i = 0; i < edgeTiles.Count; i++)
+        {
+            HexTile temp = edgeTiles[i];
+            int randomIndex = Random.Range(i, edgeTiles.Count);
+            edgeTiles[i] = edgeTiles[randomIndex];
+            edgeTiles[randomIndex] = temp;
+        }
+        
+        // Return the specified number of random edge tiles
+        numberOfTiles = Mathf.Clamp(numberOfTiles, 0, edgeTiles.Count);
+        return edgeTiles.GetRange(0, numberOfTiles);
     }
     
     public HexTile GetTile(int q, int r)
@@ -233,7 +239,6 @@ public class HexGridManager : MonoBehaviour // MonoBehaviourSingleton<HexGridMan
         }
 
         tiltObject.tiles = hexGrid.GetTilesObjects();
-
 
     }
 

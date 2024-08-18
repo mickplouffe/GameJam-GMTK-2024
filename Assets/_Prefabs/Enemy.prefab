@@ -122,8 +122,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc98c07a8bb464b43b98d27d4e04bcd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tileLayerMask:
-    serializedVersion: 2
-    m_Bits: 8
   tilesPerSecond: 1
   enemyEventChannel: {fileID: 11400000, guid: 58c4683592b42784c91a64e98e2ccbc1, type: 2}
+  weightEventChannel: {fileID: 11400000, guid: 1c11f8eaadf261d449e9f3f048895711, type: 2}
+  coinsEventChannel: {fileID: 11400000, guid: bd788a866bdd906438a624d0a722e871, type: 2}
+  enemyWeight: 8
+  enemyKillCost: 5

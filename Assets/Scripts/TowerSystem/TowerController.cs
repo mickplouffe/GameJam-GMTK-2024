@@ -8,7 +8,7 @@ public class TowerInstanceData
     public int damage;
     public float range;
     public float weight;
-    public float currentCost;
+    public int currentCost;
     public TowerInstanceData(Tower towerData)
     {
         damage = towerData.damage;
@@ -24,6 +24,8 @@ public class TowerController : MonoBehaviour
     public TowerInstanceData instanceData;
 
     private bool _hasUpgrade;
+    
+    public HexTile Tile { get; set; }
 
     void Awake()
     {

@@ -8,7 +8,7 @@ using Random = UnityEngine.Random;
 public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] private WaveConfig[] waves;
-    [SerializeField] private List<HexTileController> allPossibleSpawnPoints;
+    [SerializeField] private List<HexTile> allPossibleSpawnPoints;
     [SerializeField] private HexTileController targetTile;
 
     [SerializeField] private EnemyEventChennl enemyEventChannel;
@@ -36,10 +36,10 @@ public class EnemySpawner : MonoBehaviour
         while (_currentWaveIndex < waves.Length)
         {
             var currentWave = waves[_currentWaveIndex];
-            allPossibleSpawnPoints = TileManager.Instance.GetRandomEdgeTiles(currentWave.numberOfSpawnPoints);
+            allPossibleSpawnPoints = HexGridManager.Instance.GetRandomEdgeTiles(currentWave.numberOfSpawnPoints);
             foreach (var spawnPoint in allPossibleSpawnPoints)
             {
-                enemyEventChannel.RaiseTileFlashing(spawnPoint, currentWave.waveDelay);
+                enemyEventChannel.RaiseWaveStart(spawnPoint.TileObject.GetComponent<HexTileController>(), currentWave.waveDelay);
             }
             yield return new WaitForSeconds(currentWave.waveDelay);
             
@@ -58,7 +58,7 @@ public class EnemySpawner : MonoBehaviour
         {
             for (int j = 0; j < waveConfig.enemyCounts[i]; j++)
             {
-                HexTileController spawnPoint = allPossibleSpawnPoints[Random.Range(0, allPossibleSpawnPoints.Count)];
+                HexTile spawnPoint = allPossibleSpawnPoints[Random.Range(0, allPossibleSpawnPoints.Count)];
                 GameObject enemy = SpawnEnemy(spawnPoint);
 
                 _activeEnemies.Add(enemy); // Track the spawned enemy
@@ -68,11 +68,11 @@ public class EnemySpawner : MonoBehaviour
         }
     }
 
-    private GameObject SpawnEnemy(HexTileController spawnTile)
+    private GameObject SpawnEnemy(HexTile spawnTile)
     {
         GameObject enemy = EnemyObjectPool.Instance.GetEnemyObject();
         
-        enemy.transform.position = spawnTile.transform.position;
+        enemy.transform.position = spawnTile.TileObject.transform.position;
         enemy.transform.rotation = Quaternion.identity;
         enemy.GetComponent<EnemyController>().SetupEnemy(spawnTile);
 
