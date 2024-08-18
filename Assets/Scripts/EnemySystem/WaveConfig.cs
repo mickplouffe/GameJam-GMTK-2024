@@ -7,7 +7,5 @@ public class WaveConfig : ScriptableObject
     public int[] enemyCounts;
     public float spawnInterval;
     public float waveDelay;
-    public bool randomizeSpawnPoints;
-
-    public Transform[] spawnPoints;
+    public int numberOfSpawnPoints;
 }

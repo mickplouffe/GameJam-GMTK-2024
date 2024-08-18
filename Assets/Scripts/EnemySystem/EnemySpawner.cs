@@ -1,15 +1,30 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] private WaveConfig[] waves;
-    [SerializeField] private Transform[] allPossibleSpawnPoints;
+    [SerializeField] private List<HexTileController> allPossibleSpawnPoints;
+    [SerializeField] private HexTileController targetTile;
 
+    [SerializeField] private EnemyEventChennl enemyEventChannel;
+    
     private int _currentWaveIndex;
-        
+    private List<GameObject> _activeEnemies = new();
+
+    private void OnEnable()
+    {
+        enemyEventChannel.OnEnemyKilled += HandleEnemyDestroyed;
+    }
+
+    private void OnDisable()
+    {
+        enemyEventChannel.OnEnemyKilled -= HandleEnemyDestroyed;
+    }
 
     private void Start()
     {
@@ -21,20 +36,20 @@ public class EnemySpawner : MonoBehaviour
         while (_currentWaveIndex < waves.Length)
         {
             var currentWave = waves[_currentWaveIndex];
+            allPossibleSpawnPoints = TileManager.Instance.GetRandomEdgeTiles(currentWave.numberOfSpawnPoints);
+            foreach (var spawnPoint in allPossibleSpawnPoints)
+            {
+                enemyEventChannel.RaiseTileFlashing(spawnPoint, currentWave.waveDelay);
+            }
             yield return new WaitForSeconds(currentWave.waveDelay);
+            
+            yield return StartCoroutine(SpawnEnemiesInWave(currentWave));
 
-            if (currentWave.randomizeSpawnPoints)
-                RandomizeSpawnPoints(currentWave);
+            // Wait until all enemies from the current wave are destroyed
+            yield return new WaitUntil(() => _activeEnemies.Count == 0);
 
-            StartCoroutine(SpawnEnemiesInWave(currentWave));
             _currentWaveIndex++;
         }
-    }
-
-    private void RandomizeSpawnPoints(WaveConfig waveConfig)
-    {
-        // You can implement logic to randomize spawn points or select tiles
-        waveConfig.spawnPoints =  allPossibleSpawnPoints;
     }
 
     private IEnumerator SpawnEnemiesInWave(WaveConfig waveConfig)
@@ -43,17 +58,30 @@ public class EnemySpawner : MonoBehaviour
         {
             for (int j = 0; j < waveConfig.enemyCounts[i]; j++)
             {
-                Transform spawnPoint = waveConfig.spawnPoints[Random.Range(0, waveConfig.spawnPoints.Length)];
-                SpawnEnemy(waveConfig.enemyPrefabs[i], spawnPoint);
+                HexTileController spawnPoint = allPossibleSpawnPoints[Random.Range(0, allPossibleSpawnPoints.Count)];
+                GameObject enemy = SpawnEnemy(spawnPoint);
+
+                _activeEnemies.Add(enemy); // Track the spawned enemy
+
                 yield return new WaitForSeconds(waveConfig.spawnInterval);
             }
         }
     }
 
-    private void SpawnEnemy(GameObject enemyPrefab, Transform spawnPoint)
+    private GameObject SpawnEnemy(HexTileController spawnTile)
     {
         GameObject enemy = EnemyObjectPool.Instance.GetEnemyObject();
-        enemy.transform.position = spawnPoint.position;
+        
+        enemy.transform.position = spawnTile.transform.position;
         enemy.transform.rotation = Quaternion.identity;
+        enemy.GetComponent<EnemyController>().SetupEnemy(spawnTile);
+
+        return enemy;
+    }
+
+    private void HandleEnemyDestroyed(GameObject enemy)
+    {
+        _activeEnemies.Remove(enemy);
+        EnemyObjectPool.Instance.ReturnEnemyObject(enemy);
     }
 }
