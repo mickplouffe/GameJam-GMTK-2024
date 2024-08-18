@@ -31,7 +31,7 @@ public class MonoBehaviourSingleton<T> : MonoBehaviour
 public class MonoBehaviourSingletonPersistent<T> : MonoBehaviour
     where T : Component
 {
-    private static T Instance { get; set; }
+    public static T Instance { get; set; }
 	
     public virtual void Awake ()
     {
