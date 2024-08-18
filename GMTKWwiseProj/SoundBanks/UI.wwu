@@ -9,13 +9,6 @@
 			<ChildrenList>
 				<SoundBank Name="UI" ID="{D70BBE13-7566-4995-B523-46822B62A1A6}">
 					<ObjectInclusionList>
-						<ObjectRef Name="Play_UIGoldLoss" ID="{848D2BCA-F9C4-404B-8D21-93AFDB2D13D3}" WorkUnitID="{0161E5E5-78F8-4E54-949B-0AC218A10565}" Origin="Manual" Filter="7"/>
-						<ObjectRef Name="Play_UIWaveEnded" ID="{94000B1C-7D80-4227-B241-703FF81F6CF9}" WorkUnitID="{0161E5E5-78F8-4E54-949B-0AC218A10565}" Origin="Manual" Filter="7"/>
-						<ObjectRef Name="Play_UIHover" ID="{7F000FFE-DBB8-42CC-AA34-BFE19AA5F797}" WorkUnitID="{0161E5E5-78F8-4E54-949B-0AC218A10565}" Origin="Manual" Filter="7"/>
-						<ObjectRef Name="Play_UIWaveStarted" ID="{E1427F21-94BF-456D-852B-F29AAF7C3B9D}" WorkUnitID="{0161E5E5-78F8-4E54-949B-0AC218A10565}" Origin="Manual" Filter="7"/>
-						<ObjectRef Name="Play_UIWaveCountdown" ID="{4FF8909E-4AD5-45B8-994B-F6EAB25CFD03}" WorkUnitID="{0161E5E5-78F8-4E54-949B-0AC218A10565}" Origin="Manual" Filter="7"/>
-						<ObjectRef Name="Play_UIGoldGain" ID="{BFCACDBC-23C7-45C4-A972-E2CA69B1F2C6}" WorkUnitID="{0161E5E5-78F8-4E54-949B-0AC218A10565}" Origin="Manual" Filter="7"/>
-						<ObjectRef Name="Play_UIClick" ID="{F70B055A-6807-47AD-BE1D-9AE92EEB1692}" WorkUnitID="{0161E5E5-78F8-4E54-949B-0AC218A10565}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="UI" ID="{0161E5E5-78F8-4E54-949B-0AC218A10565}" WorkUnitID="{0161E5E5-78F8-4E54-949B-0AC218A10565}" Origin="Manual" Filter="7"/>
 					</ObjectInclusionList>
 					<ObjectExclusionList/>

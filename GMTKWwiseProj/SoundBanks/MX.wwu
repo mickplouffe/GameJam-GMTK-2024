@@ -9,11 +9,7 @@
 			<ChildrenList>
 				<SoundBank Name="MX" ID="{9C86C296-038E-4813-B61E-AB136A1F6AC0}">
 					<ObjectInclusionList>
-						<ObjectRef Name="SetState_ActiveWave" ID="{3B91EA0B-15E1-43CA-8747-01B17B6E2808}" WorkUnitID="{0BD70790-4A2A-42B0-81A1-0D3B3BF71E15}" Origin="Manual" Filter="7"/>
-						<ObjectRef Name="SetState_BetweenWaves" ID="{566FB362-ECF2-4416-933B-0FE84D1386B2}" WorkUnitID="{0BD70790-4A2A-42B0-81A1-0D3B3BF71E15}" Origin="Manual" Filter="7"/>
-						<ObjectRef Name="StartGame" ID="{70783A5B-9D9B-4725-A1FA-E906A89AF09D}" WorkUnitID="{0BD70790-4A2A-42B0-81A1-0D3B3BF71E15}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="MX" ID="{77FDA983-7133-480C-9FE7-A80469AEB806}" WorkUnitID="{77FDA983-7133-480C-9FE7-A80469AEB806}" Origin="Manual" Filter="7"/>
-						<ObjectRef Name="MX_Otter" ID="{FCCA7E9F-D0AC-482C-A731-FDE3D338A535}" WorkUnitID="{FCCA7E9F-D0AC-482C-A731-FDE3D338A535}" Origin="Manual" Filter="7"/>
 					</ObjectInclusionList>
 					<ObjectExclusionList/>
 					<GameSyncExclusionList/>
