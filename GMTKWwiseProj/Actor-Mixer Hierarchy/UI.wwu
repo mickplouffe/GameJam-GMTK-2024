@@ -8,6 +8,24 @@
 			</PropertyList>
 			<ChildrenList>
 				<ActorMixer Name="UI" ID="{3B6E0AF9-0DFA-4E34-8A21-4646C9E59624}" ShortID="809765718">
+					<PropertyList>
+						<Property Name="EnableAttenuation" Type="bool" Value="False"/>
+						<Property Name="MaxSoundPerInstance" Type="int16">
+							<ValueList>
+								<Value>25</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Priority" Type="int16">
+							<ValueList>
+								<Value>25</Value>
+							</ValueList>
+						</Property>
+						<Property Name="UseMaxSoundPerInstance" Type="bool">
+							<ValueList>
+								<Value>True</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
@@ -36,6 +54,74 @@
 											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{7F62BABC-0C6C-4DAD-ACF1-E77615B460FB}"/>
 										</Reference>
 									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="GMTK2024_SFX_goldLose_-5_v3" ID="{C623046E-DCC7-466B-81BC-1FC1E811048B}" ShortID="442946074">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{7F62BABC-0C6C-4DAD-ACF1-E77615B460FB}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="GMTK2024_SFX_goldLose_-5_v3" ID="{797694D8-961C-4DFD-8C08-FB9D7263210D}">
+													<Language>SFX</Language>
+													<AudioFile>GMTK2024_SFX_goldLose_-5_v3.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="1022782546"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="GMTK2024_SFX_goldLose_-5_v3" ID="{797694D8-961C-4DFD-8C08-FB9D7263210D}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="GMTK2024_SFX_goldLose_-6_v2" ID="{A9046A63-5987-4354-9258-F4DBC17B3C1B}" ShortID="907799293">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{7F62BABC-0C6C-4DAD-ACF1-E77615B460FB}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="GMTK2024_SFX_goldLose_-6_v2" ID="{95BD0D01-9B99-43C3-A94C-853D4720684A}">
+													<Language>SFX</Language>
+													<AudioFile>GMTK2024_SFX_goldLose_-6_v2.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="925787453"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="GMTK2024_SFX_goldLose_-6_v2" ID="{95BD0D01-9B99-43C3-A94C-853D4720684A}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="GMTK2024_SFX_goldLose_-8_v1" ID="{AFFFAED0-1E39-4884-B01D-FF8EC18C5F13}" ShortID="360433571">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{7F62BABC-0C6C-4DAD-ACF1-E77615B460FB}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="GMTK2024_SFX_goldLose_-8_v1" ID="{E7DF54FC-1467-46E1-A874-69C5838C321B}">
+													<Language>SFX</Language>
+													<AudioFile>GMTK2024_SFX_goldLose_-8_v1.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="929219650"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="GMTK2024_SFX_goldLose_-8_v1" ID="{E7DF54FC-1467-46E1-A874-69C5838C321B}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
 								</RandomSequenceContainer>
 								<RandomSequenceContainer Name="GoldGain" ID="{26667534-F59A-4FD5-A458-B386DDA8CE81}" ShortID="72027741">
 									<ReferenceList>
@@ -46,6 +132,74 @@
 											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{7F62BABC-0C6C-4DAD-ACF1-E77615B460FB}"/>
 										</Reference>
 									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="GMTK2024_SFX_goldGain_-5_v3" ID="{61DE9391-8614-4F96-A8D1-021958A4E44E}" ShortID="826300393">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{7F62BABC-0C6C-4DAD-ACF1-E77615B460FB}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="GMTK2024_SFX_goldGain_-5_v3" ID="{6D2E4251-2116-4EE0-BADD-DF0536BF34E8}">
+													<Language>SFX</Language>
+													<AudioFile>GMTK2024_SFX_goldGain_-5_v3.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="659071609"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="GMTK2024_SFX_goldGain_-5_v3" ID="{6D2E4251-2116-4EE0-BADD-DF0536BF34E8}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="GMTK2024_SFX_goldGain_-7_v1" ID="{3B8EF7C4-60D7-4BEB-8833-741B35DC916B}" ShortID="657229646">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{7F62BABC-0C6C-4DAD-ACF1-E77615B460FB}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="GMTK2024_SFX_goldGain_-7_v1" ID="{82956067-50A4-4C35-A23C-287FBDC0EE1B}">
+													<Language>SFX</Language>
+													<AudioFile>GMTK2024_SFX_goldGain_-7_v1.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="70575173"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="GMTK2024_SFX_goldGain_-7_v1" ID="{82956067-50A4-4C35-A23C-287FBDC0EE1B}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="GMTK2024_SFX_goldGain_-7_v2" ID="{2A726D0E-5D71-4D5E-9BAA-D11B84F2F128}" ShortID="229479850">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{7F62BABC-0C6C-4DAD-ACF1-E77615B460FB}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="GMTK2024_SFX_goldGain_-7_v2" ID="{D3C726E9-9A7D-428D-9791-CDC619731775}">
+													<Language>SFX</Language>
+													<AudioFile>GMTK2024_SFX_goldGain_-7_v2.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="110314636"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="GMTK2024_SFX_goldGain_-7_v2" ID="{D3C726E9-9A7D-428D-9791-CDC619731775}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
 								</RandomSequenceContainer>
 							</ChildrenList>
 						</ActorMixer>
