@@ -1,7 +1,9 @@
 <engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <Style src="project://database/Assets/MenuUI/MenuStyle.uss?fileID=7433441132597879392&amp;guid=772ae586c66164644b27dab80cfe5f2d&amp;type=3#MenuStyle" />
-    <engine:VisualElement name="PauseMenuContainer" class="menuContainer" style="flex-grow: 1;">
-        <engine:Label text="Game Paused" name="PauseMenuTitle" class="menuTitle" />
+    <Style src="project://database/Assets/Scripts/UI/Menus/MenuStyle.uss?fileID=7433441132597879392&amp;guid=772ae586c66164644b27dab80cfe5f2d&amp;type=3#MenuStyle" />
+    <engine:VisualElement name="PauseMenuContainer" class="menuContainer">
+        <engine:VisualElement name="TitleContainer" class="titleContainer" style="flex-grow: 1; height: 20%;">
+            <engine:Label text="Game Paused" name="PauseMenuTitle" class="menuTitle" />
+        </engine:VisualElement>
         <engine:VisualElement name="ButtonsPanel" class="buttonsPanel menuButton" style="justify-content: space-around;">
             <engine:Button text="Resume" name="ResumeButton" class="menuButton" />
             <engine:Button text="Options" name="OptionsButton" class="menuButton" />
