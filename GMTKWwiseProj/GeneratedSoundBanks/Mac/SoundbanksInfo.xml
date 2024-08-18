@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="393239870" Type="User" Language="SFX" Hash="{C60196A1-FF7A-93EA-9466-B3F4154DF2D6}">
+		<SoundBank Id="393239870" Type="User" Language="SFX" Hash="{A989B2BA-8B1E-9779-0B51-97E5E459D274}">
 			<ShortName>SFX</ShortName>
 			<Path>SFX.bnk</Path>
 			<Media>
@@ -32,6 +32,10 @@
 				<File Id="265388241" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>GMTK2024_SFX_enemyEntersTower_minotaur_-10_v1.wav</ShortName>
 					<CachePath>SFX/GMTK2024_SFX_enemyEntersTower_minotaur_-10_v1_14E21738.wem</CachePath>
+				</File>
+				<File Id="315686258" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>VOXScrm_Wilhelm scream (ID 0477)_BSB.wav</ShortName>
+					<CachePath>SFX/VOXScrm_Wilhelm scream (ID 0477)_BSB_14E21738.wem</CachePath>
 				</File>
 				<File Id="322104273" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>GMTK2024_SFX_enemyEntersTower_cyclops_-5_v1.wav</ShortName>
@@ -89,8 +93,18 @@
 					<ShortName>GMTK2024_SFX_enemyDies_cyclops_-3_v2.wav</ShortName>
 					<CachePath>SFX/GMTK2024_SFX_enemyDies_cyclops_-3_v2_14E21738.wem</CachePath>
 				</File>
+				<File Id="988960913" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>WHISTLE Down Long.wav</ShortName>
+					<CachePath>SFX/WHISTLE Down Long_14E21738.wem</CachePath>
+				</File>
 			</Media>
 			<Events>
+				<Event Id="2712047697" Name="Play_Fall" DurationType="OneShot" DurationMin="1.1168481" DurationMax="2.99575">
+					<MediaRefs>
+						<MediaRef Id="315686258"/>
+						<MediaRef Id="988960913"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="2528304328" Name="Play_SFXCyclopsDeath" DurationType="OneShot" DurationMin="1.375" DurationMax="1.5">
 					<MediaRefs>
 						<MediaRef Id="161617009"/>
@@ -151,12 +165,9 @@
 				<Event Id="2225251985" Name="Play_SFXTowerSlide" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="1117531639" Type="User" Language="SFX" Hash="{9848BC59-C286-F314-7EFB-C33A64546430}">
+		<SoundBank Id="1117531639" Type="User" Language="SFX" Hash="{51CDA230-BAA0-389C-7F26-AB6926A73F67}">
 			<ShortName>AMB</ShortName>
 			<Path>AMB.bnk</Path>
-			<Events>
-				<Event Id="1215763740" Name="Play_AMBWind" DurationType="Infinite"/>
-			</Events>
 		</SoundBank>
 		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{B83CD168-6FDF-CCB5-E3B9-C02F1FCC4FE9}">
 			<ShortName>Init</ShortName>
@@ -387,7 +398,7 @@
 				<Event Id="3869623766" Name="Play_UIWaveStarted" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="1685527054" Type="User" Language="SFX" Hash="{1930ACD9-77F7-B640-493C-0ACFE1485E5F}">
+		<SoundBank Id="1685527054" Type="User" Language="SFX" Hash="{2BDD23DB-6442-FE6D-8A6E-24AC8CBBA8C0}">
 			<ShortName>MX</ShortName>
 			<Path>MX.bnk</Path>
 			<Media>
@@ -438,18 +449,6 @@
 								<MediaRef Id="624318979"/>
 							</MediaRefs>
 						</SwitchContainer>
-						<SwitchContainer>
-							<SwitchValue GroupType="State" GroupId="832974869" Id="2447589688"/>
-							<MediaRefs>
-								<MediaRef Id="902048449"/>
-							</MediaRefs>
-						</SwitchContainer>
-						<SwitchContainer>
-							<SwitchValue GroupType="State" GroupId="832974869" Id="2071144875"/>
-							<MediaRefs>
-								<MediaRef Id="624318979"/>
-							</MediaRefs>
-						</SwitchContainer>
 					</SwitchContainers>
 				</Event>
 			</Events>
@@ -464,5 +463,5 @@
 			</StateGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{D4888DFA-1DB2-7D25-41F6-41F2946AA9AF}</FileHash>
+	<FileHash>{1AE21030-50CF-D4F8-9FFB-5DDE9C2DEC41}</FileHash>
 </SoundBanksInfo>
