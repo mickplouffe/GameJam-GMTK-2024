@@ -26,8 +26,12 @@
 							<Position X="1" Y="2"/>
 						</Module>
 						<Module>
-							<ObjectRef Name="Stop_All" ID="{7CD7C746-2107-4F8E-9FCE-C51C4DBEE417}" WorkUnitID="{287E4018-43D8-4442-BFA5-31398B8E3AD6}"/>
+							<ObjectRef Name="Play_SFXTowerSell" ID="{D656D3F4-3ECF-4658-AB6C-9DAFE7B7718F}" WorkUnitID="{0A7A0CEB-234F-4544-9DAA-DD6728515385}"/>
 							<Position X="2" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Stop_All" ID="{7CD7C746-2107-4F8E-9FCE-C51C4DBEE417}" WorkUnitID="{287E4018-43D8-4442-BFA5-31398B8E3AD6}"/>
+							<Position X="3" Y="0"/>
 						</Module>
 					</ModuleList>
 					<RTPCValueList ShowAll="true">
