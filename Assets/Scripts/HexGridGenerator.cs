@@ -150,7 +150,7 @@ public class HexGridGenerator : MonoBehaviour
 }
 // Enum GridShape
     
-public enum GridShape
+public enum GridShapess
 {
     Rectangle,
     Hexagon,
