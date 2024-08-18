@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="393239870" Type="User" Language="SFX" Hash="{43D77B10-7C0E-7745-66C7-9D2967CB2FC7}">
+		<SoundBank Id="393239870" Type="User" Language="SFX" Hash="{1CCDA568-CD7D-982F-C7D5-3C2B1765D01B}">
 			<ShortName>SFX</ShortName>
 			<Path>SFX.bnk</Path>
 			<Media>
@@ -28,10 +28,6 @@
 				<File Id="402597209" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>GMTK2024_towerPlace04_-7dB_v01.wav</ShortName>
 					<CachePath>SFX/GMTK2024_towerPlace04_-7dB_v01_14E21738.wem</CachePath>
-				</File>
-				<File Id="863132956" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>GMTK2024_SFX_portals_-4dB_v01.wav</ShortName>
-					<CachePath>SFX/GMTK2024_SFX_portals_-4dB_v01_14E21738.wem</CachePath>
 				</File>
 				<File Id="879976025" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>GMTK2024_towerPlace02_-7dB_v01.wav</ShortName>
@@ -62,11 +58,6 @@
 						<MediaRef Id="139776857"/>
 						<MediaRef Id="393633432"/>
 						<MediaRef Id="397978699"/>
-					</MediaRefs>
-				</Event>
-				<Event Id="2435900478" Name="Play_SFXPortalsForm" DurationType="OneShot" DurationMin="1.6109375" DurationMax="1.6109375">
-					<MediaRefs>
-						<MediaRef Id="863132956"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="2186760998" Name="Play_SFXSpawnerTileSpawn" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
@@ -282,13 +273,82 @@
 				<Event Id="3869623766" Name="Play_UIWaveStarted" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="1685527054" Type="User" Language="SFX" Hash="{8A2DECB2-A19E-1662-E609-84FF2672EDD1}">
+		<SoundBank Id="1685527054" Type="User" Language="SFX" Hash="{A4A6947B-0C18-0502-3AB6-B6AF1C273A3C}">
 			<ShortName>MX</ShortName>
 			<Path>MX.bnk</Path>
+			<Media>
+				<File Id="153486832" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Scales of Olympus Transition out of loop -starts beat 4- v1.wav</ShortName>
+					<CachePath>SFX/Scales of Olympus Transition out of loop -starts beat 4- v1_05A4D402.wem</CachePath>
+				</File>
+				<File Id="495404542" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Scales of Olympus Intro v1.wav</ShortName>
+					<CachePath>SFX/Scales of Olympus Intro v1_05A4D402.wem</CachePath>
+				</File>
+				<File Id="624318979" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Scales of Olympus Layer 2 v1.wav</ShortName>
+					<CachePath>SFX/Scales of Olympus Layer 2 v1_05A4D402.wem</CachePath>
+				</File>
+				<File Id="902048449" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Scales of Olympus Game Loop v1.wav</ShortName>
+					<CachePath>SFX/Scales of Olympus Game Loop v1_05A4D402.wem</CachePath>
+				</File>
+			</Media>
 			<Events>
 				<Event Id="1258886508" Name="Play_MXTitleTheme" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="3038968348" Name="SetState_ActiveWave" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0">
+					<ActionSetState>
+						<ActionSetStateEntry GroupId="832974869" Id="2447589688" Name="ActiveWave"/>
+					</ActionSetState>
+				</Event>
+				<Event Id="2339243207" Name="SetState_BetweenWaves" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0">
+					<ActionSetState>
+						<ActionSetStateEntry GroupId="832974869" Id="2071144875" Name="BetweenWaves"/>
+					</ActionSetState>
+				</Event>
+				<Event Id="1521187885" Name="StartGame" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="153486832"/>
+						<MediaRef Id="495404542"/>
+					</MediaRefs>
+					<SwitchContainers>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="832974869" Id="2447589688"/>
+							<MediaRefs>
+								<MediaRef Id="902048449"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="832974869" Id="2071144875"/>
+							<MediaRefs>
+								<MediaRef Id="624318979"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="832974869" Id="2447589688"/>
+							<MediaRefs>
+								<MediaRef Id="902048449"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="832974869" Id="2071144875"/>
+							<MediaRefs>
+								<MediaRef Id="624318979"/>
+							</MediaRefs>
+						</SwitchContainer>
+					</SwitchContainers>
+				</Event>
 			</Events>
+			<StateGroups>
+				<StateGroup Id="832974869" Name="MX_Waves">
+					<States>
+						<State Id="748895195" Name="None"/>
+						<State Id="2071144875" Name="BetweenWaves"/>
+						<State Id="2447589688" Name="ActiveWave"/>
+					</States>
+				</StateGroup>
+			</StateGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{8EB0A966-E9E6-B13A-29AE-97315F55E298}</FileHash>
+	<FileHash>{7DFC0FC4-2B01-8D5B-FBA0-2DE966A3BBE7}</FileHash>
 </SoundBanksInfo>
