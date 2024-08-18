@@ -20,7 +20,7 @@ public class HexGridManager : MonoBehaviour // MonoBehaviourSingleton<HexGridMan
         }
     }
     
-    
+    [SerializeField] public float gridSpan = 5; // Getting the furthest distance from the center of the grid
     public GameObject hexPrefab;
     private HexGrid hexGrid;
     private readonly float _hexTileSize = 1;
@@ -233,8 +233,32 @@ public class HexGridManager : MonoBehaviour // MonoBehaviourSingleton<HexGridMan
         }
 
         tiltObject.tiles = hexGrid.GetTilesObjects();
+        CalculateGridSpan();
 
+    }
+    
+    private void CalculateGridSpan()
+    {
+        // Get the center point then find the hex tile that is the furthest away from the center
+        Vector3 center = Vector3.zero;
+        foreach (var tile in hexGrid.GetTiles())
+        {
+            center += tile.TileObject.transform.position;
+        }
+        center /= hexGrid.GetTiles().Count;
+        
+        foreach (var tile in hexGrid.GetTiles())
+        {
+            float distance = Vector3.Distance(center, tile.TileObject.transform.position);
+            if (distance > gridSpan)
+            {
+                gridSpan = distance;
+            }
+        }
+        
+        
 
+        
     }
 
     //[Button("Disable")]
