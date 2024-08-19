@@ -1,0 +1,6 @@
+Event	ID	Name			Wwise Object Path	Notes
+	1020223172	Play_Wind			\AMB\Play_Wind	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	56926738	Wind	D:\UnityProjects\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Mac\SFX\GMTK2024_SFX_AMB_-20dB_v01_475869E0.wem		\Actor-Mixer Hierarchy\AMB\AMB\Wind		398534
+
