@@ -32,6 +32,7 @@ public class HexGridManager : MonoBehaviourSingletonPersistent<HexGridManager>
     [HideInInspector] public float gridSpan = 5; // Getting the furthest distance from the center of the grid
     public GameObject hexPrefab;
     private HexGrid hexGrid;
+    public readonly float _hexTileSize = 1;
     [SerializeField] private Transform hexTileParent;
     public readonly float _hexTileSize = 1;
 
@@ -46,6 +47,8 @@ public class HexGridManager : MonoBehaviourSingletonPersistent<HexGridManager>
     public int amountBlobToAdd = 3;
     
     [SerializeField] private TiltObject tiltObject;
+
+    public Transform mainUnit;
 
     [Button]
     void Start()

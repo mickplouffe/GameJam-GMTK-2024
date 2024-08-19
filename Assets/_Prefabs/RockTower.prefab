@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5310858862563959325}
   - component: {fileID: 5905420921485886728}
   - component: {fileID: 7212957566427928804}
+  - component: {fileID: 1682688747339359383}
   m_Layer: 6
   m_Name: RockTower
   m_TagString: Untagged
@@ -131,3 +132,24 @@ MonoBehaviour:
   tiltAllowanceThreshold: 25
   slipSpeedMultiplier: 0.5
   tiltEventChannel: {fileID: 11400000, guid: c5f3187fb688eeb4e8c0f8e60b04cca8, type: 2}
+--- !u!135 &1682688747339359383
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1646090916493889858}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}

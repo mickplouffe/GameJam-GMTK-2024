@@ -42,9 +42,9 @@
 								</Action>
 							</ChildrenList>
 						</Event>
-						<Event Name="Play_SFXTowerSlide" ID="{21517C71-1641-4442-9EA1-C24713BCB5D7}">
+						<Event Name="Play_SFXTowerSlide" ID="{173A8F5F-6F65-4B07-B66B-693D99C18196}">
 							<ChildrenList>
-								<Action Name="" ID="{5DDA0DA4-9140-400D-A28C-8CA0C1ABFF86}" ShortID="35327238">
+								<Action Name="" ID="{CB25F36E-1415-4797-BF1C-5C81037E4E83}" ShortID="35327238">
 									<PropertyList>
 										<Property Name="FadeTime" Type="Real64" Value="0.5"/>
 									</PropertyList>
@@ -67,6 +67,43 @@
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="towerSlide" ID="{110D8DD8-08F5-4C85-A4D3-D7A466215043}" WorkUnitID="{A57A593A-B9DE-4277-A3EF-672CA80E8992}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_SFXTowerUpgrade" ID="{DD1D6AD9-9699-4D4A-BE61-E33239F99BE2}">
+							<ChildrenList>
+								<Action Name="" ID="{C0363B36-2597-4AD9-9A51-C9338A20E57C}" ShortID="344034379">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="towerUpgrade" ID="{046B7029-0E57-4915-8E30-4D70177E3CD3}" WorkUnitID="{A57A593A-B9DE-4277-A3EF-672CA80E8992}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="Tiles" ID="{7E2C6B64-E6B2-4B97-B346-0860CCC522F2}" ShortID="536179011">
+					<ChildrenList>
+						<Event Name="Play_SFXSpawnerTileSpawn" ID="{CC3C517E-D109-44C5-8243-67F08A28976D}">
+							<ChildrenList>
+								<Action Name="" ID="{B3138884-F1C5-4B4B-9508-5AD0B32773E0}" ShortID="461310055">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="SpawnerTileSpawn" ID="{E450D19A-89EE-4D57-9633-18348DD61275}" WorkUnitID="{A57A593A-B9DE-4277-A3EF-672CA80E8992}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_SFXGroundTileSpawn" ID="{E869B14E-1621-4ED1-89AC-65DE7A7EC898}">
+							<ChildrenList>
+								<Action Name="" ID="{6AA45C5C-D9A6-4C87-A3C6-FC28D86A314F}" ShortID="535537531">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="GroundTileSpawn" ID="{CB386ECA-6FA7-44D2-9A11-F07BF9BEF7DD}" WorkUnitID="{A57A593A-B9DE-4277-A3EF-672CA80E8992}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>

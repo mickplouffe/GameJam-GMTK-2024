@@ -442,6 +442,12 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!4 &28978803 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3140408939529290803, guid: 2004caea60e459841a4b3c04e8c2282d,
+    type: 3}
+  m_PrefabInstance: {fileID: 349442146}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &30102637
 GameObject:
   m_ObjectHideFlags: 0
@@ -2803,8 +2809,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7ed2b84b58c24e41ae9d5e3da33a78d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 334518757737957131, guid: c4cb20163a2e63144adaa9b393985a8c, type: 3}
-  initialPoolSize: 10
+  enemyPools:
+  - prefab: {fileID: 334518757737957131, guid: c4cb20163a2e63144adaa9b393985a8c, type: 3}
+    initialPoolSize: 10
 --- !u!4 &320261903
 Transform:
   m_ObjectHideFlags: 0
@@ -3009,6 +3016,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 2031525989783012233, guid: 2004caea60e459841a4b3c04e8c2282d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2368657997387439753, guid: 2004caea60e459841a4b3c04e8c2282d,
         type: 3}
       propertyPath: m_IsActive
@@ -3054,6 +3066,11 @@ PrefabInstance:
       propertyPath: width
       value: 12
       objectReference: {fileID: 0}
+    - target: {fileID: 4187979405556943893, guid: 2004caea60e459841a4b3c04e8c2282d,
+        type: 3}
+      propertyPath: mainUnit
+      value: 
+      objectReference: {fileID: 28978803}
     - target: {fileID: 4187979405556943893, guid: 2004caea60e459841a4b3c04e8c2282d,
         type: 3}
       propertyPath: gridShape
@@ -5812,6 +5829,7 @@ MonoBehaviour:
   coinsEventChannel: {fileID: 11400000, guid: bd788a866bdd906438a624d0a722e871, type: 2}
   towerEventChannel: {fileID: 11400000, guid: ff6c5cff4a2a17d45b58cbd1fcdb1a0a, type: 2}
   waitTimeBeforeCanSelect: 0.2
+  _placementMode: 0
 --- !u!4 &644076625
 Transform:
   m_ObjectHideFlags: 0
@@ -7224,6 +7242,7 @@ MonoBehaviour:
   tiltEventChannel: {fileID: 11400000, guid: c5f3187fb688eeb4e8c0f8e60b04cca8, type: 2}
   tiltAmount: 0.05
   rotationSpeed: 2
+  currentTiltAngle: 0
 --- !u!4 &869148797
 Transform:
   m_ObjectHideFlags: 0

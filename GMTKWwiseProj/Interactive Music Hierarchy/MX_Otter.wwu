@@ -160,7 +160,12 @@
 							<ChildrenList>
 								<MusicSegment Name="GameplayLoop_segment" ID="{7DE8AB0F-38B4-4D12-88AD-B0C8180C362A}" ShortID="464453633">
 									<PropertyList>
-										<Property Name="EndPosition" Type="Real64" Value="88396.5431998251"/>
+										<Property Name="EndPosition" Type="Real64" Value="92591.9862739115"/>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>5</Value>
+											</ValueList>
+										</Property>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
@@ -188,11 +193,11 @@
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<AudioFileSource Name="Scales of Olympus Game Loop v1" ID="{8AB9269D-E9F5-4855-8A6B-E85D62A3BE7F}">
+												<AudioFileSource Name="Scales of Olympus Game Loop v2" ID="{19A36B7C-7960-439D-87AA-DF05C1A4C800}">
 													<Language>SFX</Language>
-													<AudioFile>Scales of Olympus Game Loop v1.wav</AudioFile>
+													<AudioFile>Scales of Olympus Game Loop v2.wav</AudioFile>
 													<MediaIDList>
-														<MediaID ID="902048449"/>
+														<MediaID ID="340045983"/>
 													</MediaIDList>
 												</AudioFileSource>
 											</ChildrenList>
@@ -205,13 +210,13 @@
 																	<ObjectList Name="Clips">
 																		<Reference>
 																			<Local>
-																				<MusicClip Name="Scales of Olympus Game Loop v1" ID="{E47CC76F-6BDF-46B0-BEA1-F20D3E31D021}">
+																				<MusicClip Name="Scales of Olympus Game Loop v2" ID="{5C43951A-D9CB-4CAE-A789-FF7EE83981AB}">
 																					<PropertyList>
-																						<Property Name="EndTrimOffset" Type="Real64" Value="86000"/>
+																						<Property Name="EndTrimOffset" Type="Real64" Value="85500"/>
 																						<Property Name="FadeInMode" Type="int16" Value="0"/>
 																						<Property Name="FadeOutMode" Type="int16" Value="0"/>
 																					</PropertyList>
-																					<AudioSourceRef Name="Scales of Olympus Game Loop v1" ID="{8AB9269D-E9F5-4855-8A6B-E85D62A3BE7F}"/>
+																					<AudioSourceRef Name="Scales of Olympus Game Loop v2" ID="{19A36B7C-7960-439D-87AA-DF05C1A4C800}"/>
 																				</MusicClip>
 																			</Local>
 																		</Reference>
@@ -295,7 +300,7 @@
 							<ChildrenList>
 								<MusicSegment Name="BetweenWaves_segment" ID="{34F95F84-01A8-4FCD-A434-9834F8790086}" ShortID="607972799">
 									<PropertyList>
-										<Property Name="EndPosition" Type="Real64" Value="86000"/>
+										<Property Name="EndPosition" Type="Real64" Value="86893.0092692161"/>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
@@ -363,7 +368,6 @@
 																				<MusicClip Name="Scales of Olympus Layer 2 v1" ID="{DE418A5A-448E-4875-90AE-3251C0822772}">
 																					<PropertyList>
 																						<Property Name="EndTrimOffset" Type="Real64" Value="86000"/>
-																						<Property Name="FadeInMode" Type="int16" Value="0"/>
 																						<Property Name="FadeOutMode" Type="int16" Value="0"/>
 																					</PropertyList>
 																					<AudioSourceRef Name="Scales of Olympus Layer 2 v1" ID="{A80D1320-B540-4642-9BF2-9FA74145CAF6}"/>
@@ -452,7 +456,7 @@
 					<ChildrenList>
 						<MusicSegment Name="Scales of Olympus Intro v1" ID="{CBF4A9FC-F16F-40C1-821F-BA3463D5D896}" ShortID="556922758">
 							<PropertyList>
-								<Property Name="EndPosition" Type="Real64" Value="8000"/>
+								<Property Name="EndPosition" Type="Real64" Value="8625"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
@@ -480,11 +484,11 @@
 										</Reference>
 									</ReferenceList>
 									<ChildrenList>
-										<AudioFileSource Name="Scales of Olympus Intro v1" ID="{5BEB1DE4-85CF-44C1-AB68-C6315E33D763}">
+										<AudioFileSource Name="Scales of Olympus Intro v2" ID="{CE0A5319-8A7E-4BAB-B458-953C27F89AA2}">
 											<Language>SFX</Language>
-											<AudioFile>Scales of Olympus Intro v1.wav</AudioFile>
+											<AudioFile>Scales of Olympus Intro v2.wav</AudioFile>
 											<MediaIDList>
-												<MediaID ID="495404542"/>
+												<MediaID ID="464818347"/>
 											</MediaIDList>
 										</AudioFileSource>
 									</ChildrenList>
@@ -497,16 +501,16 @@
 															<ObjectList Name="Clips">
 																<Reference>
 																	<Local>
-																		<MusicClip Name="Scales of Olympus Intro v1" ID="{333ECD19-8491-4C3F-9305-D7F96EC758B1}">
+																		<MusicClip Name="Scales of Olympus Intro v2" ID="{8C60C73D-2109-452A-A61D-20D7CADB786C}">
 																			<PropertyList>
-																				<Property Name="EndTrimOffset" Type="Real64" Value="7250"/>
+																				<Property Name="EndTrimOffset" Type="Real64" Value="7125"/>
 																				<Property Name="FadeInMode" Type="int16" Value="0"/>
-																				<Property Name="FadeOutDuration" Type="Real64" Value="1136.29842180775"/>
+																				<Property Name="FadeOutDuration" Type="Real64" Value="975.609756097562"/>
 																			</PropertyList>
-																			<AudioSourceRef Name="Scales of Olympus Intro v1" ID="{5BEB1DE4-85CF-44C1-AB68-C6315E33D763}"/>
+																			<AudioSourceRef Name="Scales of Olympus Intro v2" ID="{CE0A5319-8A7E-4BAB-B458-953C27F89AA2}"/>
 																			<PropertyCurveList>
 																				<PropertyCurve PropertyName="Highpass">
-																					<Curve Name="" ID="{627AF367-4459-400A-9DD7-0B14A3A0627D}">
+																					<Curve Name="" ID="{0563360A-38D0-4B5D-9FDD-B1A00BD66951}">
 																						<PropertyList>
 																							<Property Name="Flags" Type="int32" Value="1"/>
 																						</PropertyList>
@@ -517,7 +521,7 @@
 																								<Flags>5</Flags>
 																							</Point>
 																							<Point>
-																								<XPos>7.25</XPos>
+																								<XPos>7.125</XPos>
 																								<YPos>0</YPos>
 																								<Flags>37</Flags>
 																							</Point>
@@ -525,7 +529,7 @@
 																					</Curve>
 																				</PropertyCurve>
 																				<PropertyCurve PropertyName="Lowpass">
-																					<Curve Name="" ID="{65F462FF-5D2F-4498-A029-6AFDC4CE63D1}">
+																					<Curve Name="" ID="{A1800F18-D5CE-4121-845A-71B485EA713A}">
 																						<PropertyList>
 																							<Property Name="Flags" Type="int32" Value="1"/>
 																						</PropertyList>
@@ -536,7 +540,7 @@
 																								<Flags>5</Flags>
 																							</Point>
 																							<Point>
-																								<XPos>7.25</XPos>
+																								<XPos>7.125</XPos>
 																								<YPos>0</YPos>
 																								<Flags>37</Flags>
 																							</Point>
@@ -544,7 +548,7 @@
 																					</Curve>
 																				</PropertyCurve>
 																				<PropertyCurve PropertyName="Volume">
-																					<Curve Name="" ID="{A3D709FE-2386-4D2E-AD60-0E0DAE662C87}">
+																					<Curve Name="" ID="{5D84BD9E-DBEE-484B-B439-833D63493488}">
 																						<PropertyList>
 																							<Property Name="Flags" Type="int32" Value="3"/>
 																						</PropertyList>
@@ -555,7 +559,7 @@
 																								<Flags>5</Flags>
 																							</Point>
 																							<Point>
-																								<XPos>7.25</XPos>
+																								<XPos>7.125</XPos>
 																								<YPos>0</YPos>
 																								<Flags>37</Flags>
 																							</Point>
@@ -597,7 +601,7 @@
 						</MusicSegment>
 						<MusicSegment Name="Scales of Olympus Transition out of loop -starts beat 4- v1" ID="{5AB2141A-0BB2-41B9-A5F6-F401D25E32FD}" ShortID="466303896">
 							<PropertyList>
-								<Property Name="EndPosition" Type="Real64" Value="4500"/>
+								<Property Name="EndPosition" Type="Real64" Value="4625"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
@@ -625,11 +629,11 @@
 										</Reference>
 									</ReferenceList>
 									<ChildrenList>
-										<AudioFileSource Name="Scales of Olympus Transition out of loop -starts beat 4- v1" ID="{068FE3C1-89AD-42DF-888C-055A8D3A7E6B}">
+										<AudioFileSource Name="Scales of Olympus Transition Out v2" ID="{49F240F7-34D0-42A6-89A2-861AD221ACF7}">
 											<Language>SFX</Language>
-											<AudioFile>Scales of Olympus Transition out of loop -starts beat 4- v1.wav</AudioFile>
+											<AudioFile>Scales of Olympus Transition Out v2.wav</AudioFile>
 											<MediaIDList>
-												<MediaID ID="153486832"/>
+												<MediaID ID="795776314"/>
 											</MediaIDList>
 										</AudioFileSource>
 									</ChildrenList>
@@ -642,16 +646,16 @@
 															<ObjectList Name="Clips">
 																<Reference>
 																	<Local>
-																		<MusicClip Name="Scales of Olympus Transition out of loop -starts beat 4- v1" ID="{36C5DF8A-DF59-4173-BC1B-9054DB545D91}">
+																		<MusicClip Name="Scales of Olympus Transition Out v2" ID="{B107FC73-1190-4B02-81BF-A127811164C3}">
 																			<PropertyList>
 																				<Property Name="EndTrimOffset" Type="Real64" Value="3500"/>
-																				<Property Name="FadeInMode" Type="int16" Value="0"/>
+																				<Property Name="FadeInDuration" Type="Real64" Value="63.1276901004304"/>
 																				<Property Name="FadeOutDuration" Type="Real64" Value="941.176470588235"/>
 																			</PropertyList>
-																			<AudioSourceRef Name="Scales of Olympus Transition out of loop -starts beat 4- v1" ID="{068FE3C1-89AD-42DF-888C-055A8D3A7E6B}"/>
+																			<AudioSourceRef Name="Scales of Olympus Transition Out v2" ID="{49F240F7-34D0-42A6-89A2-861AD221ACF7}"/>
 																			<PropertyCurveList>
 																				<PropertyCurve PropertyName="Highpass">
-																					<Curve Name="" ID="{D9E3CF83-77FE-4FE2-A4D5-88A0DCDED0F7}">
+																					<Curve Name="" ID="{2F18F88C-3429-4681-92AC-29AAD5841C67}">
 																						<PropertyList>
 																							<Property Name="Flags" Type="int32" Value="1"/>
 																						</PropertyList>
@@ -670,7 +674,7 @@
 																					</Curve>
 																				</PropertyCurve>
 																				<PropertyCurve PropertyName="Lowpass">
-																					<Curve Name="" ID="{20BE911A-3E90-4436-A834-DFE20C77BE05}">
+																					<Curve Name="" ID="{BABA0D67-2E8D-4358-9B5B-8C944749B568}">
 																						<PropertyList>
 																							<Property Name="Flags" Type="int32" Value="1"/>
 																						</PropertyList>
@@ -689,7 +693,7 @@
 																					</Curve>
 																				</PropertyCurve>
 																				<PropertyCurve PropertyName="Volume">
-																					<Curve Name="" ID="{38E40F47-9F62-411A-87F9-64597D8D29FD}">
+																					<Curve Name="" ID="{D70F66EF-2D9F-4C56-964B-D428EB00D70C}">
 																						<PropertyList>
 																							<Property Name="Flags" Type="int32" Value="3"/>
 																						</PropertyList>

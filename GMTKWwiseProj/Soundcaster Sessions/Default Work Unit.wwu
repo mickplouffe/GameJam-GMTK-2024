@@ -10,35 +10,51 @@
 							<Position X="0" Y="0"/>
 						</Module>
 						<Module>
-							<ObjectRef Name="StartGame" ID="{70783A5B-9D9B-4725-A1FA-E906A89AF09D}" WorkUnitID="{0BD70790-4A2A-42B0-81A1-0D3B3BF71E15}"/>
+							<ObjectRef Name="Play_SFXGroundTileSpawn" ID="{E869B14E-1621-4ED1-89AC-65DE7A7EC898}" WorkUnitID="{0A7A0CEB-234F-4544-9DAA-DD6728515385}"/>
 							<Position X="0" Y="1"/>
 						</Module>
 						<Module>
-							<ObjectRef Name="SetState_ActiveWave" ID="{3B91EA0B-15E1-43CA-8747-01B17B6E2808}" WorkUnitID="{0BD70790-4A2A-42B0-81A1-0D3B3BF71E15}"/>
+							<ObjectRef Name="StartGame" ID="{70783A5B-9D9B-4725-A1FA-E906A89AF09D}" WorkUnitID="{0BD70790-4A2A-42B0-81A1-0D3B3BF71E15}"/>
 							<Position X="0" Y="2"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="SetState_ActiveWave" ID="{3B91EA0B-15E1-43CA-8747-01B17B6E2808}" WorkUnitID="{0BD70790-4A2A-42B0-81A1-0D3B3BF71E15}"/>
+							<Position X="0" Y="3"/>
 						</Module>
 						<Module>
 							<ObjectRef Name="Play_SFXTowerPlace" ID="{F6BBF08E-2F33-4870-9A49-A02B42EC8F12}" WorkUnitID="{0A7A0CEB-234F-4544-9DAA-DD6728515385}"/>
 							<Position X="1" Y="0"/>
 						</Module>
 						<Module>
-							<ObjectRef Name="SetState_BetweenWaves" ID="{566FB362-ECF2-4416-933B-0FE84D1386B2}" WorkUnitID="{0BD70790-4A2A-42B0-81A1-0D3B3BF71E15}"/>
+							<ObjectRef Name="Play_SFXSpawnerTileSpawn" ID="{CC3C517E-D109-44C5-8243-67F08A28976D}" WorkUnitID="{0A7A0CEB-234F-4544-9DAA-DD6728515385}"/>
+							<Position X="1" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="towerUpgrade" ID="{046B7029-0E57-4915-8E30-4D70177E3CD3}" WorkUnitID="{A57A593A-B9DE-4277-A3EF-672CA80E8992}"/>
 							<Position X="1" Y="2"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="SetState_BetweenWaves" ID="{566FB362-ECF2-4416-933B-0FE84D1386B2}" WorkUnitID="{0BD70790-4A2A-42B0-81A1-0D3B3BF71E15}"/>
+							<Position X="1" Y="3"/>
 						</Module>
 						<Module>
 							<ObjectRef Name="Play_SFXTowerSell" ID="{D656D3F4-3ECF-4658-AB6C-9DAFE7B7718F}" WorkUnitID="{0A7A0CEB-234F-4544-9DAA-DD6728515385}"/>
 							<Position X="2" Y="0"/>
 						</Module>
 						<Module>
-							<ObjectRef Name="Play_SFXTowerSlide_01" ID="{01DDC3A1-414C-4E8A-AED7-15A2D84D2ABF}" WorkUnitID="{44EF5028-F23C-448C-BEC5-271E73A1269C}"/>
+							<ObjectRef Name="Play_SFXTowerSlide" ID="{173A8F5F-6F65-4B07-B66B-693D99C18196}" WorkUnitID="{0A7A0CEB-234F-4544-9DAA-DD6728515385}"/>
 							<Position X="2" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Stop_SFXTowerSlide" ID="{BAAA6E50-4D1A-4E70-98D9-B0371F5F49BA}" WorkUnitID="{0A7A0CEB-234F-4544-9DAA-DD6728515385}"/>
+							<Position X="2" Y="2"/>
 						</Module>
 						<Module>
 							<ObjectRef Name="Stop_All" ID="{7CD7C746-2107-4F8E-9FCE-C51C4DBEE417}" WorkUnitID="{287E4018-43D8-4442-BFA5-31398B8E3AD6}"/>
 							<Position X="3" Y="0"/>
 						</Module>
 						<Module>
-							<ObjectRef Name="Stop_SFXTowerSlide" ID="{BAAA6E50-4D1A-4E70-98D9-B0371F5F49BA}" WorkUnitID="{0A7A0CEB-234F-4544-9DAA-DD6728515385}"/>
+							<ObjectRef Name="Play_AMBWind" ID="{96C6EE84-923E-41FD-8FD2-52F025B6EA11}" WorkUnitID="{5B7760E9-4ED5-4FFF-B405-DA13419EEECE}"/>
 							<Position X="3" Y="1"/>
 						</Module>
 					</ModuleList>
@@ -176,10 +192,6 @@
 							<Position X="2" Y="0"/>
 						</Module>
 						<Module>
-							<ObjectRef Name="Play_SFXTowerSlide" ID="{21517C71-1641-4442-9EA1-C24713BCB5D7}" WorkUnitID="{0A7A0CEB-234F-4544-9DAA-DD6728515385}"/>
-							<Position X="2" Y="1"/>
-						</Module>
-						<Module>
 							<ObjectRef Name="Play_SFXCyclopsEnterTower" ID="{11CD0FCB-868F-4583-81B3-9754CF23CB39}" WorkUnitID="{44EF5028-F23C-448C-BEC5-271E73A1269C}"/>
 							<Position X="2" Y="3"/>
 						</Module>
@@ -214,10 +226,6 @@
 						<Module>
 							<ObjectRef Name="Stop_All" ID="{7CD7C746-2107-4F8E-9FCE-C51C4DBEE417}" WorkUnitID="{287E4018-43D8-4442-BFA5-31398B8E3AD6}"/>
 							<Position X="5" Y="0"/>
-						</Module>
-						<Module>
-							<ObjectRef Name="Play_Wind" ID="{FEC89844-829D-4954-AAEB-9FC5355CDFD0}" WorkUnitID="{5B7760E9-4ED5-4FFF-B405-DA13419EEECE}"/>
-							<Position X="5" Y="2"/>
 						</Module>
 					</ModuleList>
 					<RTPCValueList ShowAll="true">

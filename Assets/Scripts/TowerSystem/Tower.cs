@@ -16,7 +16,7 @@ public class Tower : ScriptableObject
 
     public float maxRange;
     public float range;
-    
+    public float fireRate;  
     public int cost;
     
     public Material selectedMaterial;

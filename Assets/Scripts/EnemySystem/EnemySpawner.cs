@@ -58,7 +58,7 @@ public class EnemySpawner : MonoBehaviour
             for (int j = 0; j < waveConfig.enemyCounts[i]; j++)
             {
                 HexTile spawnPoint = allPossibleSpawnPoints[Random.Range(0, allPossibleSpawnPoints.Count)];
-                GameObject enemy = SpawnEnemy(spawnPoint);
+                GameObject enemy = SpawnEnemy(spawnPoint, waveConfig.enemyPrefabs[i]);
 
                 _activeEnemies.Add(enemy); // Track the spawned enemy
 
@@ -67,20 +67,32 @@ public class EnemySpawner : MonoBehaviour
         }
     }
 
-    private GameObject SpawnEnemy(HexTile spawnTile)
+    private GameObject SpawnEnemy(HexTile spawnTile, GameObject enemyPrefab)
     {
-        GameObject enemy = EnemyObjectPool.Instance.GetEnemyObject();
-        
+        // Get a pooled enemy or instantiate a new one
+        GameObject enemy = EnemyObjectPool.Instance.GetEnemyObject(enemyPrefab);
+
+        // Set the prefab reference in the EnemyController to the original prefab, not the instantiated object
+        EnemyController enemyController = enemy.GetComponent<EnemyController>();
+        enemyController.Prefab = enemyPrefab; // Set the original prefab, not the instantiated clone
+
+        // Position and initialize the enemy
         enemy.transform.position = spawnTile.TileObject.transform.position;
         enemy.transform.rotation = Quaternion.identity;
-        enemy.GetComponent<EnemyController>().SetupEnemy(spawnTile);
+        enemyController.SetupEnemy(spawnTile);
 
         return enemy;
     }
 
     private void HandleEnemyDestroyed(GameObject enemy)
     {
+        // Assuming EnemyController knows its prefab type, otherwise pass the prefab type to the event.
+        EnemyController enemyController = enemy.GetComponent<EnemyController>();
+        if (enemyController != null)
+        {
+            EnemyObjectPool.Instance.ReturnEnemyObject(enemyController.Prefab, enemy);
+        }
+
         _activeEnemies.Remove(enemy);
-        EnemyObjectPool.Instance.ReturnEnemyObject(enemy);
     }
 }
