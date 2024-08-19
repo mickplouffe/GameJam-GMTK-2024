@@ -62,4 +62,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5ac3e0715afde34d8e1d82af07ac939, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isVisible: 0
   _menuEventChannel: {fileID: 11400000, guid: 8add3fae60bdfd540a41853d8b64ac69, type: 2}
+  gameManagerEventChannel: {fileID: 11400000, guid: 6509d5e4e0033de4bbfb99b33ecd3255,
+    type: 2}
