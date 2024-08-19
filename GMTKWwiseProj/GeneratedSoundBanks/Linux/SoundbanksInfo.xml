@@ -9,10 +9,14 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="393239870" Type="User" Language="SFX" Hash="{A989B2BA-8B1E-9779-0B51-97E5E459D274}">
+		<SoundBank Id="393239870" Type="User" Language="SFX" Hash="{69C67446-7CF2-E26E-0C09-622FFE1BDB9A}">
 			<ShortName>SFX</ShortName>
 			<Path>SFX.bnk</Path>
 			<Media>
+				<File Id="117618669" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GMTK2024_SFX_towerAttack03_mid_-11_v1.wav</ShortName>
+					<CachePath>SFX/GMTK2024_SFX_towerAttack03_mid_-11_v1_7EB59DBC.wem</CachePath>
+				</File>
 				<File Id="139776857" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>GMTK2024_SFX_placeRock01_-7dB_v01.wav</ShortName>
 					<CachePath>SFX/GMTK2024_SFX_placeRock01_-7dB_v01_14E21738.wem</CachePath>
@@ -28,6 +32,10 @@
 				<File Id="196280731" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>GMTK2024_SFX_enemyDies_gorgon_-11_v2.wav</ShortName>
 					<CachePath>SFX/GMTK2024_SFX_enemyDies_gorgon_-11_v2_14E21738.wem</CachePath>
+				</File>
+				<File Id="232753778" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GMTK2024_SFX_towerAttack01_high_-11_v1.wav</ShortName>
+					<CachePath>SFX/GMTK2024_SFX_towerAttack01_high_-11_v1_B93EE9A2.wem</CachePath>
 				</File>
 				<File Id="265388241" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>GMTK2024_SFX_enemyEntersTower_minotaur_-10_v1.wav</ShortName>
@@ -57,6 +65,10 @@
 					<ShortName>GMTK2024_towerPlace04_-7dB_v01.wav</ShortName>
 					<CachePath>SFX/GMTK2024_towerPlace04_-7dB_v01_14E21738.wem</CachePath>
 				</File>
+				<File Id="506364536" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GMTK2024_SFX_towerAttack03_low_-11_v1.wav</ShortName>
+					<CachePath>SFX/GMTK2024_SFX_towerAttack03_low_-11_v1_E0997E4E.wem</CachePath>
+				</File>
 				<File Id="567128080" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>GMTK2024_SFX_enemyDies_gorgon_-7_v1.wav</ShortName>
 					<CachePath>SFX/GMTK2024_SFX_enemyDies_gorgon_-7_v1_14E21738.wem</CachePath>
@@ -65,13 +77,37 @@
 					<ShortName>GMTK2024_SFX_enemyDies_minotaur_-14_v2.wav</ShortName>
 					<CachePath>SFX/GMTK2024_SFX_enemyDies_minotaur_-14_v2_14E21738.wem</CachePath>
 				</File>
+				<File Id="684628303" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GMTK2024_SFX_towerAttack02_mid_-11_v1.wav</ShortName>
+					<CachePath>SFX/GMTK2024_SFX_towerAttack02_mid_-11_v1_E4E87C43.wem</CachePath>
+				</File>
+				<File Id="723944443" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GMTK2024_SFX_towerAttack01_low_-11_v1.wav</ShortName>
+					<CachePath>SFX/GMTK2024_SFX_towerAttack01_low_-11_v1_8DFDF74C.wem</CachePath>
+				</File>
 				<File Id="839132535" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>GMTK2024_SFX_enemyDies_cyclops_-3_v1.wav</ShortName>
 					<CachePath>SFX/GMTK2024_SFX_enemyDies_cyclops_-3_v1_14E21738.wem</CachePath>
 				</File>
+				<File Id="847879273" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GMTK2024_SFX_towerAttack02_high_-11_v1.wav</ShortName>
+					<CachePath>SFX/GMTK2024_SFX_towerAttack02_high_-11_v1_22BC59AC.wem</CachePath>
+				</File>
+				<File Id="877437290" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GMTK2024_SFX_towerAttack03_high_-11_v1.wav</ShortName>
+					<CachePath>SFX/GMTK2024_SFX_towerAttack03_high_-11_v1_B93EE9A2.wem</CachePath>
+				</File>
 				<File Id="879976025" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>GMTK2024_towerPlace02_-7dB_v01.wav</ShortName>
 					<CachePath>SFX/GMTK2024_towerPlace02_-7dB_v01_14E21738.wem</CachePath>
+				</File>
+				<File Id="888382889" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GMTK2024_SFX_towerAttack01_mid_-11_v1.wav</ShortName>
+					<CachePath>SFX/GMTK2024_SFX_towerAttack01_mid_-11_v1_9938A83B.wem</CachePath>
+				</File>
+				<File Id="934633238" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GMTK2024_SFX_towerAttack02_low_-11_v1.wav</ShortName>
+					<CachePath>SFX/GMTK2024_SFX_towerAttack02_low_-11_v1_0F60026A.wem</CachePath>
 				</File>
 				<File Id="934825369" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>GMTK2024_towerPlace01_-7dB_v01.wav</ShortName>
@@ -98,7 +134,25 @@
 					<CachePath>SFX/WHISTLE Down Long_14E21738.wem</CachePath>
 				</File>
 			</Media>
+			<Plugins>
+				<Custom>
+					<Plugin Id="696289122" Name="Gain (Custom)" LibName="Wwise Gain" LibId="9109507"/>
+				</Custom>
+			</Plugins>
 			<Events>
+				<Event Id="1519321238" Name="Play_Attack" DurationType="OneShot" DurationMin="1.3496852" DurationMax="1.3525845">
+					<MediaRefs>
+						<MediaRef Id="117618669"/>
+						<MediaRef Id="232753778"/>
+						<MediaRef Id="506364536"/>
+						<MediaRef Id="684628303"/>
+						<MediaRef Id="723944443"/>
+						<MediaRef Id="847879273"/>
+						<MediaRef Id="877437290"/>
+						<MediaRef Id="888382889"/>
+						<MediaRef Id="934633238"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="2712047697" Name="Play_Fall" DurationType="OneShot" DurationMin="1.1168481" DurationMax="2.99575">
 					<MediaRefs>
 						<MediaRef Id="315686258"/>
@@ -111,11 +165,21 @@
 						<MediaRef Id="839132535"/>
 						<MediaRef Id="985081344"/>
 					</MediaRefs>
+					<PluginRefs>
+						<Custom>
+							<PluginRef Id="696289122"/>
+						</Custom>
+					</PluginRefs>
 				</Event>
 				<Event Id="1488573387" Name="Play_SFXCyclopsEnterTower" DurationType="OneShot" DurationMin="3" DurationMax="3">
 					<MediaRefs>
 						<MediaRef Id="322104273"/>
 					</MediaRefs>
+					<PluginRefs>
+						<Custom>
+							<PluginRef Id="696289122"/>
+						</Custom>
+					</PluginRefs>
 				</Event>
 				<Event Id="457896984" Name="Play_SFXEnemySlide" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="2127355" Name="Play_SFXGorgonDeath" DurationType="OneShot" DurationMin="1.078125" DurationMax="1.6875">
@@ -124,11 +188,21 @@
 						<MediaRef Id="567128080"/>
 						<MediaRef Id="957881645"/>
 					</MediaRefs>
+					<PluginRefs>
+						<Custom>
+							<PluginRef Id="696289122"/>
+						</Custom>
+					</PluginRefs>
 				</Event>
 				<Event Id="3454470586" Name="Play_SFXGorgonEnterTower" DurationType="OneShot" DurationMin="1.75" DurationMax="1.75">
 					<MediaRefs>
 						<MediaRef Id="160864451"/>
 					</MediaRefs>
+					<PluginRefs>
+						<Custom>
+							<PluginRef Id="696289122"/>
+						</Custom>
+					</PluginRefs>
 				</Event>
 				<Event Id="1804201887" Name="Play_SFXGroundTileSpawn" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="355266998" Name="Play_SFXMinotaurDeath" DurationType="OneShot" DurationMin="1.375" DurationMax="2.25">
@@ -137,11 +211,21 @@
 						<MediaRef Id="596698888"/>
 						<MediaRef Id="973307517"/>
 					</MediaRefs>
+					<PluginRefs>
+						<Custom>
+							<PluginRef Id="696289122"/>
+						</Custom>
+					</PluginRefs>
 				</Event>
 				<Event Id="4233038817" Name="Play_SFXMinotaurEnterTower" DurationType="OneShot" DurationMin="1.53125" DurationMax="1.53125">
 					<MediaRefs>
 						<MediaRef Id="265388241"/>
 					</MediaRefs>
+					<PluginRefs>
+						<Custom>
+							<PluginRef Id="696289122"/>
+						</Custom>
+					</PluginRefs>
 				</Event>
 				<Event Id="1624231291" Name="Play_SFXPlaceRock" DurationType="OneShot" DurationMin="0.6711115" DurationMax="0.7322752">
 					<MediaRefs>
@@ -152,7 +236,6 @@
 				</Event>
 				<Event Id="2186760998" Name="Play_SFXSpawnerTileSpawn" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="86987433" Name="Play_SFXTiltingTiles" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
-				<Event Id="3616277950" Name="Play_SFXTowerAttack" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="4103541689" Name="Play_SFXTowerAttackHit" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="2094922267" Name="Play_SFXTowerPlace" DurationType="OneShot" DurationMin="0.65797204" DurationMax="0.71835303">
 					<MediaRefs>
@@ -169,23 +252,43 @@
 			<ShortName>AMB</ShortName>
 			<Path>AMB.bnk</Path>
 		</SoundBank>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{2E8C2093-AA9A-20A9-D7A9-4A36D82B31F2}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{8283C706-5FAC-433C-65B7-F642456775B1}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
+				<ShareSets>
+					<Plugin Id="48620415" Name="Have_U_Ever_Been_Outside" LibName="Wwise RoomVerb" LibId="7733251"/>
+				</ShareSets>
 				<AudioDevices>
 					<Plugin Id="2317455096" Name="No_Output" LibName="No Output" LibId="11862023"/>
 					<Plugin Id="3859886410" Name="System" LibName="System" LibId="11403271"/>
 				</AudioDevices>
 			</Plugins>
 			<Busses>
-				<Bus Id="393239870" Name="SFX"/>
-				<Bus Id="1117531639" Name="AMB"/>
+				<Bus Id="393239870" Name="SFX">
+					<AuxBusRefs>
+						<AuxBusRef Id="3657263530" Name="Verb"/>
+					</AuxBusRefs>
+				</Bus>
+				<Bus Id="1117531639" Name="AMB">
+					<AuxBusRefs>
+						<AuxBusRef Id="3657263530" Name="Verb"/>
+					</AuxBusRefs>
+				</Bus>
 				<Bus Id="1534528548" Name="VO"/>
 				<Bus Id="1551306167" Name="UI"/>
 				<Bus Id="1685527054" Name="MX"/>
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
 			</Busses>
+			<AuxBusses>
+				<AuxBus Id="3657263530" Name="Verb">
+					<PluginRefs>
+						<ShareSets>
+							<PluginRef Id="48620415"/>
+						</ShareSets>
+					</PluginRefs>
+				</AuxBus>
+			</AuxBusses>
 			<GameParameters>
 				<GameParameter Id="393239870" Name="SFX"/>
 				<GameParameter Id="822163944" Name="SS_Air_RPM"/>
@@ -463,5 +566,5 @@
 			</StateGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{8494B3DE-4C86-DE5E-6772-6F774061C682}</FileHash>
+	<FileHash>{79264606-9FDE-DC2F-D8C5-266C151816AA}</FileHash>
 </SoundBanksInfo>
