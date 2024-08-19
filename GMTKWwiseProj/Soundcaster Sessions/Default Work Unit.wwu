@@ -22,6 +22,10 @@
 							<Position X="1" Y="0"/>
 						</Module>
 						<Module>
+							<ObjectRef Name="Play_AMBWind" ID="{96C6EE84-923E-41FD-8FD2-52F025B6EA11}" WorkUnitID="{5B7760E9-4ED5-4FFF-B405-DA13419EEECE}"/>
+							<Position X="1" Y="1"/>
+						</Module>
+						<Module>
 							<ObjectRef Name="SetState_BetweenWaves" ID="{566FB362-ECF2-4416-933B-0FE84D1386B2}" WorkUnitID="{0BD70790-4A2A-42B0-81A1-0D3B3BF71E15}"/>
 							<Position X="1" Y="2"/>
 						</Module>

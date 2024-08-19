@@ -476,9 +476,14 @@
 						</RandomSequenceContainer>
 						<BlendContainer Name="towerSlide" ID="{110D8DD8-08F5-4C85-A4D3-D7A466215043}" ShortID="701752668">
 							<PropertyList>
+								<Property Name="Pitch" Type="int32">
+									<ValueList>
+										<Value>300</Value>
+									</ValueList>
+								</Property>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>2</Value>
+										<Value>-3</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -562,7 +567,7 @@
 										<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
 										<Property Name="Volume" Type="Real64">
 											<ValueList>
-												<Value>-2</Value>
+												<Value>-6</Value>
 											</ValueList>
 										</Property>
 									</PropertyList>
