@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 503510511901747026}
   - component: {fileID: 300005719581464607}
   - component: {fileID: 3062633049102332989}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Hex Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 8106389380479194866}
   - component: {fileID: 806753097699326633}
   - component: {fileID: 7954819331230258298}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: HexGridTile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -130,7 +130,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5533128708796113739}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 53caabdba07a9514ab307793431c2aab, type: 2}
   m_CullingMode: 0
@@ -192,7 +192,7 @@ GameObject:
   - component: {fileID: 6043043257708689506}
   - component: {fileID: 6027389535478017978}
   - component: {fileID: 6017881762976620738}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: SM_Primitive_Cylander_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}

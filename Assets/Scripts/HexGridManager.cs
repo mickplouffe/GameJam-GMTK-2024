@@ -18,12 +18,22 @@ public class HexGridManager : MonoBehaviourSingletonPersistent<HexGridManager>
         {
             Destroy(gameObject); // Ensure there's only one instance
         }
+        
+        if (!hexTileParent)
+        {
+            // Create new GameObject to hold the hex tiles that is a child of the HexGridManager
+            hexTileParent = new GameObject("HexTiles").transform;
+            hexTileParent.SetParent(transform);
+            
+            
+        }
     }
     
-    [SerializeField] public float gridSpan = 5; // Getting the furthest distance from the center of the grid
+    [HideInInspector] public float gridSpan = 5; // Getting the furthest distance from the center of the grid
     public GameObject hexPrefab;
     private HexGrid hexGrid;
     private readonly float _hexTileSize = 1;
+    [SerializeField] private Transform hexTileParent;
 
     /* [OnValueChanged("GenerateHexGrid")] */ public GridShape gridShape;
     [OnValueChanged("GenerateHexGrid"), Label("Width/Diameter"), Range(0, 40)] public int width = 10;
@@ -40,7 +50,7 @@ public class HexGridManager : MonoBehaviourSingletonPersistent<HexGridManager>
     [Button]
     void Start()
     {
-        hexGrid = new HexGrid(_hexTileSize, this.transform);
+        hexGrid = new HexGrid(_hexTileSize, hexTileParent);
         GenerateInitialGrid();
         List<HexTile> edgeTiles = hexGrid.GetTrueEdgeTiles();
         HexTile selectedTile = edgeTiles[Random.Range(0, edgeTiles.Count)];
@@ -58,12 +68,13 @@ public class HexGridManager : MonoBehaviourSingletonPersistent<HexGridManager>
         //     int r2 = Mathf.Min(gridRadius, -q + gridRadius);
         //     for (int r = r1; r <= r2; r++)
         //     {
-        //         hexGrid.AddTile(q, r, hexPrefab, this.transform, GetHeightFromNoiseTexture(new Vector2(q, r)), gridShape);
+        //         hexGrid.AddTile(q, r, hexPrefab, hexTileParent, GetHeightFromNoiseTexture(new Vector2(q, r)), gridShape);
         //     }
         // }
         HighlightTrueEdgeTiles();
     }
-
+    
+    
     [Button("Generate")]
     private void GenerateHexGrid()
     {
@@ -160,12 +171,12 @@ public class HexGridManager : MonoBehaviourSingletonPersistent<HexGridManager>
     
     public void AddTile(int q, int r)
     {
-        hexGrid.AddTile(q, r, hexPrefab, this.transform);
+        hexGrid.AddTile(q, r, hexPrefab, hexTileParent);
     }
     
     public void AddTile(int q, int r, GameObject hexPrefabToUse)
     {
-        hexGrid.AddTile(q, r, hexPrefabToUse, this.transform);
+        hexGrid.AddTile(q, r, hexPrefabToUse, hexTileParent);
     }
     
     public void RemoveTile(int q, int r)
@@ -221,7 +232,7 @@ public class HexGridManager : MonoBehaviourSingletonPersistent<HexGridManager>
         // Add 1 random tile where there is none
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            hexGrid.AddTile(Random.Range(hexGrid.MinQ(), hexGrid.MaxQ()), Random.Range(hexGrid.MinQ(), hexGrid.MaxQ()), hexPrefab, this.transform);
+            hexGrid.AddTile(Random.Range(hexGrid.MinQ(), hexGrid.MaxQ()), Random.Range(hexGrid.MinQ(), hexGrid.MaxQ()), hexPrefab, hexTileParent);
             HighlightTrueEdgeTiles();
     
         }
@@ -307,7 +318,7 @@ public class HexGridManager : MonoBehaviourSingletonPersistent<HexGridManager>
     //         }
     //     }
     //
-    //     GameObject hexTile = Instantiate(hexPrefab, this.transform, true);
+    //     GameObject hexTile = Instantiate(hexPrefab, hexTileParent, true);
     //     hexTiles.Add(hexTile);
     //
     //     return hexTile;
