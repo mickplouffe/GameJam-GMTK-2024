@@ -189,7 +189,7 @@ public class TowerManager : MonoBehaviourSingletonPersistent<TowerManager>
     private bool FindTransformBasedOnLayer(LayerMask layerMask, out RaycastHit hit)
     {
         Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
-        return Physics.Raycast(ray, out hit, Mathf.Infinity, layerMask) ? hit.transform : null;
+        return Physics.Raycast(ray, out hit, Mathf.Infinity, layerMask,  QueryTriggerInteraction.Ignore) ? hit.transform : null;
     }
 
     private bool SnapTowerToTile(Vector3 hitPoint, bool preview = false)
