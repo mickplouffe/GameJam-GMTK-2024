@@ -104,6 +104,10 @@
 							<Position X="1" Y="2"/>
 						</Module>
 						<Module>
+							<ObjectRef Name="Attack" ID="{85640160-D919-471F-A0D1-5023E83063D3}" WorkUnitID="{B5461995-40B4-48D8-B88A-3E895957C2F0}"/>
+							<Position X="2" Y="0"/>
+						</Module>
+						<Module>
 							<ObjectRef Name="Play_UIGoldGain" ID="{BFCACDBC-23C7-45C4-A972-E2CA69B1F2C6}" WorkUnitID="{0161E5E5-78F8-4E54-949B-0AC218A10565}"/>
 							<Position X="3" Y="0"/>
 						</Module>
@@ -115,6 +119,14 @@
 					<RTPCValueList ShowAll="true">
 						<RTPCValue>
 							<GameParameterRef Name="UI" ID="{2A39A71F-152E-4013-9BFA-1AB051DD89D6}"/>
+							<Value>80</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="MASTER" ID="{7BFC7C52-FB4F-4156-8F1D-87F2A2277935}"/>
+							<Value>80</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="SFX" ID="{98EDC772-7538-4B9A-A9FE-3697609A1F41}"/>
 							<Value>80</Value>
 						</RTPCValue>
 					</RTPCValueList>
