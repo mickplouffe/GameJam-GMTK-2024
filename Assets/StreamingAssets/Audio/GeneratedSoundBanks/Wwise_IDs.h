@@ -13,6 +13,7 @@ namespace AK
 {
     namespace EVENTS
     {
+        static const AkUniqueID PLAY_AMBWIND = 1215763740U;
         static const AkUniqueID PLAY_ATTACK = 1519321238U;
         static const AkUniqueID PLAY_FALL = 2712047697U;
         static const AkUniqueID PLAY_MXTITLETHEME = 1258886508U;
@@ -39,7 +40,6 @@ namespace AK
         static const AkUniqueID PLAY_UIWAVECOUNTDOWN = 2754069948U;
         static const AkUniqueID PLAY_UIWAVEENDED = 2290267373U;
         static const AkUniqueID PLAY_UIWAVESTARTED = 3869623766U;
-        static const AkUniqueID PLAY_WIND = 1020223172U;
         static const AkUniqueID SETSTATE_ACTIVEWAVE = 3038968348U;
         static const AkUniqueID SETSTATE_BETWEENWAVES = 2339243207U;
         static const AkUniqueID STARTGAME = 1521187885U;
