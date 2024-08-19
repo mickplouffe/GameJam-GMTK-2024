@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2158446135583762448}
   - component: {fileID: 4483572339153971011}
-  - component: {fileID: 2845067558631948617}
-  - component: {fileID: 1347913115866342140}
+  - component: {fileID: 734937766322194431}
+  - component: {fileID: 9162152548946616567}
   m_Layer: 0
   m_Name: Medusa
   m_TagString: Untagged
@@ -88,7 +88,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!60 &2845067558631948617
+--- !u!60 &734937766322194431
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1134,7 +1134,7 @@ PolygonCollider2D:
       - {x: -0.30381253, y: 0.19677703}
       - {x: -0.30474734, y: 0.19771184}
   m_UseDelaunayMesh: 0
---- !u!114 &1347913115866342140
+--- !u!114 &9162152548946616567
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
