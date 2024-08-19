@@ -34,7 +34,6 @@ public class HexGridManager : MonoBehaviourSingletonPersistent<HexGridManager>
     private HexGrid hexGrid;
     public readonly float _hexTileSize = 1;
     [SerializeField] private Transform hexTileParent;
-    public readonly float _hexTileSize = 1;
 
     /* [OnValueChanged("GenerateHexGrid")] */ public GridShape gridShape;
     [OnValueChanged("GenerateHexGrid"), Label("Width/Diameter"), Range(0, 40)] public int width = 10;
