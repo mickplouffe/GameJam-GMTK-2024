@@ -124,12 +124,42 @@
 								</Action>
 							</ChildrenList>
 						</Event>
-						<Event Name="Play_SFXTowerAttack" ID="{775C1543-7B8D-4E56-8933-F1E696F9BD4E}">
+						<Event Name="Play_Attack" ID="{F31137F4-909F-49DE-B7E1-00AB32F9417D}">
 							<ChildrenList>
-								<Action Name="" ID="{D9FF6628-ACA9-40A8-BCF0-19532BF11F32}" ShortID="942400991">
+								<Action Name="" ID="{247E2EAA-DABF-476C-B0BA-41C2DC14092C}" ShortID="1052813016">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="16"/>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Target">
-											<ObjectRef Name="Attack" ID="{B5969A98-927B-44A4-B73D-246406FB95CE}" WorkUnitID="{B5461995-40B4-48D8-B88A-3E895957C2F0}"/>
+											<ObjectRef Name="High" ID="{3408384D-790B-4AB0-BE38-EFF242E8BA89}" WorkUnitID="{B5461995-40B4-48D8-B88A-3E895957C2F0}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{D2470A08-ED2C-414B-B6DD-9FFC8D88B3A3}" ShortID="135405806">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="16"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Low" ID="{1539AECF-BF62-466D-A598-64BA067E68BB}" WorkUnitID="{B5461995-40B4-48D8-B88A-3E895957C2F0}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{8BB1971E-67F6-43D4-95B6-CA7A283A4F81}" ShortID="708056526">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="16"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Mid" ID="{6FC1187B-A9F9-48EE-AD6D-A75476C1787B}" WorkUnitID="{B5461995-40B4-48D8-B88A-3E895957C2F0}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{0C3D2456-29BB-446C-95AE-E65326A4D81C}" ShortID="1030540619">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Attack" ID="{85640160-D919-471F-A0D1-5023E83063D3}" WorkUnitID="{B5461995-40B4-48D8-B88A-3E895957C2F0}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
