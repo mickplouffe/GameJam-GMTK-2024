@@ -1,37 +1,82 @@
 Event	ID	Name			Wwise Object Path	Notes
 	2127355	Play_SFXGorgonDeath			\SFX\Enemies\Gorgon\Play_SFXGorgonDeath	
-	86987433	Play_SFXTiltingTiles			\SFX\Platforms\Play_SFXTiltingTiles	
 	355266998	Play_SFXMinotaurDeath			\SFX\Enemies\Minotaur\Play_SFXMinotaurDeath	
 	457896984	Play_SFXEnemySlide			\SFX\Enemies\Play_SFXEnemySlide	
-	503721771	Play_SFXCyclopsSpawn			\SFX\Enemies\Cyclops\Play_SFXCyclopsSpawn	
+	772780039	Play_SFXSpawnCyclops			\SFX\Enemies\Cyclops\Play_SFXSpawnCyclops	
+	1488573387	Play_SFXCyclopsEnterTower			\SFX\Enemies\Cyclops\Play_SFXCyclopsEnterTower	
+	1519321238	Play_Attack			\SFX\Tower\Play_Attack	
+	1519962459	Play_SFXSpawnMinotaur			\SFX\Enemies\Minotaur\Play_SFXSpawnMinotaur	
 	1624231291	Play_SFXPlaceRock			\SFX\SFXEvents_Otter\Rock\Play_SFXPlaceRock	
-	1693188748	Play_SFXGorgonSpawn			\SFX\Enemies\Gorgon\Play_SFXGorgonSpawn	
-	1738512528	Play_SFXDamaged			\SFX\MainSpire\Play_SFXDamaged	
-	1804201887	Play_SFXGroundTileSpawn			\SFX\Platforms\Play_SFXGroundTileSpawn	
+	1804201887	Play_SFXGroundTileSpawn			\SFX\SFXEvents_Otter\Tiles\Play_SFXGroundTileSpawn	
+	1886723530	Play_SFXTowerUpgrade			\SFX\SFXEvents_Otter\Tower\Play_SFXTowerUpgrade	
 	2094922267	Play_SFXTowerPlace			\SFX\SFXEvents_Otter\Tower\Play_SFXTowerPlace	
-	2186760998	Play_SFXSpawnerTileSpawn			\SFX\Platforms\Play_SFXSpawnerTileSpawn	
+	2186760998	Play_SFXSpawnerTileSpawn			\SFX\SFXEvents_Otter\Tiles\Play_SFXSpawnerTileSpawn	
 	2225251985	Play_SFXTowerSlide			\SFX\SFXEvents_Otter\Tower\Play_SFXTowerSlide	
 	2237095779	Stop_SFXTowerSlide			\SFX\SFXEvents_Otter\Tower\Stop_SFXTowerSlide	
 	2528304328	Play_SFXCyclopsDeath			\SFX\Enemies\Cyclops\Play_SFXCyclopsDeath	
-	3453436408	Play_SFXDestroyed			\SFX\MainSpire\Play_SFXDestroyed	
-	3616277950	Play_SFXTowerAttack			\SFX\Tower\Play_SFXTowerAttack	
-	3648291989	Play_SFXMinotaurSpawn			\SFX\Enemies\Minotaur\Play_SFXMinotaurSpawn	
+	2712047697	Play_Fall			\SFX\Play_Fall	
+	3454470586	Play_SFXGorgonEnterTower			\SFX\Enemies\Gorgon\Play_SFXGorgonEnterTower	
+	3923810864	Play_SFXSpawnGorgon			\SFX\Enemies\Gorgon\Play_SFXSpawnGorgon	
 	3932998018	Play_SFXTowerSell			\SFX\SFXEvents_Otter\Tower\Play_SFXTowerSell	
-	4103541689	Play_SFXTowerAttackHit			\SFX\Tower\Play_SFXTowerAttackHit	
+	4233038817	Play_SFXMinotaurEnterTower			\SFX\Enemies\Minotaur\Play_SFXMinotaurEnterTower	
+
+Effect plug-ins	ID	Name	Type				Notes
+	696289122	Gain (Custom)	Wwise Gain			
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
-	103139025	GMTK2024_SFX_towerSell02_-7dB_v01	Z:\Volumes\LaCie SSD\Old Projects\2024\GMTK_2024\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Mac\SFX\GMTK2024_SFX_towerSell02_-7dB_v01_14E21738.wem		\Actor-Mixer Hierarchy\SFX\SFX\SFX_Otter\Tower\towerSell\GMTK2024_SFX_towerSell02_-7dB_v01		0
-	139776857	GMTK2024_SFX_placeRock01_-7dB_v01	Z:\Volumes\LaCie SSD\Old Projects\2024\GMTK_2024\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Mac\SFX\GMTK2024_SFX_placeRock01_-7dB_v01_14E21738.wem		\Actor-Mixer Hierarchy\SFX\SFX\SFX_Otter\Rock\placeRock\GMTK2024_SFX_placeRock01_-7dB_v01		0
-	251441061	GMTK2024_SFX_towerSell01_-7dB_v01	Z:\Volumes\LaCie SSD\Old Projects\2024\GMTK_2024\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Mac\SFX\GMTK2024_SFX_towerSell01_-7dB_v01_14E21738.wem		\Actor-Mixer Hierarchy\SFX\SFX\SFX_Otter\Tower\towerSell\GMTK2024_SFX_towerSell01_-7dB_v01		0
-	393633432	GMTK2024_SFX_placeRock03_-7dB_v01	Z:\Volumes\LaCie SSD\Old Projects\2024\GMTK_2024\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Mac\SFX\GMTK2024_SFX_placeRock03_-7dB_v01_14E21738.wem		\Actor-Mixer Hierarchy\SFX\SFX\SFX_Otter\Rock\placeRock\GMTK2024_SFX_placeRock03_-7dB_v01		0
-	397978699	GMTK2024_SFX_placeRock02_-7dB_v01	Z:\Volumes\LaCie SSD\Old Projects\2024\GMTK_2024\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Mac\SFX\GMTK2024_SFX_placeRock02_-7dB_v01_14E21738.wem		\Actor-Mixer Hierarchy\SFX\SFX\SFX_Otter\Rock\placeRock\GMTK2024_SFX_placeRock02_-7dB_v01		0
-	402597209	GMTK2024_towerPlace04_-7dB_v01	Z:\Volumes\LaCie SSD\Old Projects\2024\GMTK_2024\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Mac\SFX\GMTK2024_towerPlace04_-7dB_v01_14E21738.wem		\Actor-Mixer Hierarchy\SFX\SFX\SFX_Otter\Tower\towerPlace\GMTK2024_towerPlace04_-7dB_v01		0
-	652416591	GMTK2024_SFX_towerSell04_-7dB_v01	Z:\Volumes\LaCie SSD\Old Projects\2024\GMTK_2024\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Mac\SFX\GMTK2024_SFX_towerSell04_-7dB_v01_14E21738.wem		\Actor-Mixer Hierarchy\SFX\SFX\SFX_Otter\Tower\towerSell\GMTK2024_SFX_towerSell04_-7dB_v01		0
-	835854000	GMTK2024_SFX_towerSlide02_v01	Z:\Volumes\LaCie SSD\Old Projects\2024\GMTK_2024\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Mac\SFX\GMTK2024_SFX_towerSlide02_v01_AA6A26FA.wem		\Actor-Mixer Hierarchy\SFX\SFX\SFX_Otter\Tower\towerSlide\GMTK2024_SFX_towerSlide02_v01		0
-	879976025	GMTK2024_towerPlace02_-7dB_v01	Z:\Volumes\LaCie SSD\Old Projects\2024\GMTK_2024\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Mac\SFX\GMTK2024_towerPlace02_-7dB_v01_14E21738.wem		\Actor-Mixer Hierarchy\SFX\SFX\SFX_Otter\Tower\towerPlace\GMTK2024_towerPlace02_-7dB_v01		0
-	882246771	GMTK2024_SFX_towerSell03_-7dB_v01	Z:\Volumes\LaCie SSD\Old Projects\2024\GMTK_2024\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Mac\SFX\GMTK2024_SFX_towerSell03_-7dB_v01_14E21738.wem		\Actor-Mixer Hierarchy\SFX\SFX\SFX_Otter\Tower\towerSell\GMTK2024_SFX_towerSell03_-7dB_v01		0
-	904288813	GMTK2024_SFX_towerSlide01_v01	Z:\Volumes\LaCie SSD\Old Projects\2024\GMTK_2024\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Mac\SFX\GMTK2024_SFX_towerSlide01_v01_95EFA936.wem		\Actor-Mixer Hierarchy\SFX\SFX\SFX_Otter\Tower\towerSlide\GMTK2024_SFX_towerSlide01_v01		0
-	934825369	GMTK2024_towerPlace01_-7dB_v01	Z:\Volumes\LaCie SSD\Old Projects\2024\GMTK_2024\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Mac\SFX\GMTK2024_towerPlace01_-7dB_v01_14E21738.wem		\Actor-Mixer Hierarchy\SFX\SFX\SFX_Otter\Tower\towerPlace\GMTK2024_towerPlace01_-7dB_v01		0
-	945879634	GMTK2024_SFX_towerSlide03_v01	Z:\Volumes\LaCie SSD\Old Projects\2024\GMTK_2024\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Mac\SFX\GMTK2024_SFX_towerSlide03_v01_F9432CDB.wem		\Actor-Mixer Hierarchy\SFX\SFX\SFX_Otter\Tower\towerSlide\GMTK2024_SFX_towerSlide03_v01		0
-	946140780	GMTK2024_towerPlace03_-7dB_v01	Z:\Volumes\LaCie SSD\Old Projects\2024\GMTK_2024\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Mac\SFX\GMTK2024_towerPlace03_-7dB_v01_14E21738.wem		\Actor-Mixer Hierarchy\SFX\SFX\SFX_Otter\Tower\towerPlace\GMTK2024_towerPlace03_-7dB_v01		0
+	80564012	GMTK2024_SFX_newLandTile03_-8dB_v01	D:\UnityProjects\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Mac\SFX\GMTK2024_SFX_newLandTile03_-8dB_v01_14E21738.wem		\Actor-Mixer Hierarchy\SFX\SFX\SFX_Otter\Tiles\GroundTileSpawn\GMTK2024_SFX_newLandTile03_-8dB_v01		6226
+	103139025	GMTK2024_SFX_towerSell02_-7dB_v01	D:\UnityProjects\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Mac\SFX\GMTK2024_SFX_towerSell02_-7dB_v01_14E21738.wem		\Actor-Mixer Hierarchy\SFX\SFX\SFX_Otter\Tower\towerSell\GMTK2024_SFX_towerSell02_-7dB_v01		7302
+	115551789	GMTK2024_SFX_newLandTile02_-8dB_v01	D:\UnityProjects\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Mac\SFX\GMTK2024_SFX_newLandTile02_-8dB_v01_14E21738.wem		\Actor-Mixer Hierarchy\SFX\SFX\SFX_Otter\Tiles\GroundTileSpawn\GMTK2024_SFX_newLandTile02_-8dB_v01		7252
+	117618669	GMTK2024_SFX_towerAttack03_mid_-11_v1	D:\UnityProjects\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Mac\SFX\GMTK2024_SFX_towerAttack03_mid_-11_v1_7EB59DBC.wem		\Actor-Mixer Hierarchy\SFX\SFX\Towers\Attack\Mid\GMTK2024_SFX_towerAttack03_mid_-11_v1		4047
+	139776857	GMTK2024_SFX_placeRock01_-7dB_v01	D:\UnityProjects\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Mac\SFX\GMTK2024_SFX_placeRock01_-7dB_v01_14E21738.wem		\Actor-Mixer Hierarchy\SFX\SFX\SFX_Otter\Rock\placeRock\GMTK2024_SFX_placeRock01_-7dB_v01		6292
+	160864451	GMTK2024_SFX_enemyEntersTower_gorgon_-10_v1	D:\UnityProjects\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Mac\SFX\GMTK2024_SFX_enemyEntersTower_gorgon_-10_v1_14E21738.wem		\Actor-Mixer Hierarchy\SFX\SFX\Enemy\Gorgon\EnterTower\GMTK2024_SFX_enemyEntersTower_gorgon_-10_v1		19672
+	161617009	GMTK2024_SFX_enemyDies_cyclops_-3_v3	D:\UnityProjects\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Mac\SFX\GMTK2024_SFX_enemyDies_cyclops_-3_v3_14E21738.wem		\Actor-Mixer Hierarchy\SFX\SFX\Enemy\Cyclops\Death\GMTK2024_SFX_enemyDies_cyclops_-3_v3		10192
+	179106015	GMTK2024_SFX_enemySpawn_cyclops_-4_v1	D:\UnityProjects\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Mac\SFX\GMTK2024_SFX_enemySpawn_cyclops_-4_v1_14E21738.wem		\Actor-Mixer Hierarchy\SFX\SFX\Enemy\Cyclops\Spawn\GMTK2024_SFX_enemySpawn_cyclops_-4_v1		14873
+	194560774	GMTK2024_SFX_newSpawnerTile03_-8dB_v01	D:\UnityProjects\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Mac\SFX\GMTK2024_SFX_newSpawnerTile03_-8dB_v01_14E21738.wem		\Actor-Mixer Hierarchy\SFX\SFX\SFX_Otter\Tiles\SpawnerTileSpawn\GMTK2024_SFX_newSpawnerTile03_-8dB_v01		10721
+	196280731	GMTK2024_SFX_enemyDies_gorgon_-11_v2	D:\UnityProjects\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Mac\SFX\GMTK2024_SFX_enemyDies_gorgon_-11_v2_14E21738.wem		\Actor-Mixer Hierarchy\SFX\SFX\Enemy\Gorgon\Death\GMTK2024_SFX_enemyDies_gorgon_-11_v2		14137
+	206161987	GMTK2024_SFX_enemySpawn_minotaur_-6_v1	D:\UnityProjects\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Mac\SFX\GMTK2024_SFX_enemySpawn_minotaur_-6_v1_14E21738.wem		\Actor-Mixer Hierarchy\SFX\SFX\Enemy\Minotaur\Spawn\GMTK2024_SFX_enemySpawn_minotaur_-6_v1		8829
+	225128032	GMTK2024_SFX_enemySpawn_gorgon_-7_v1	D:\UnityProjects\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Mac\SFX\GMTK2024_SFX_enemySpawn_gorgon_-7_v1_14E21738.wem		\Actor-Mixer Hierarchy\SFX\SFX\Enemy\Gorgon\Spawn\GMTK2024_SFX_enemySpawn_gorgon_-7_v1		12967
+	232753778	GMTK2024_SFX_towerAttack01_high_-11_v1	D:\UnityProjects\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Mac\SFX\GMTK2024_SFX_towerAttack01_high_-11_v1_B93EE9A2.wem		\Actor-Mixer Hierarchy\SFX\SFX\Towers\Attack\High\GMTK2024_SFX_towerAttack01_high_-11_v1		14039
+	251441061	GMTK2024_SFX_towerSell01_-7dB_v01	D:\UnityProjects\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Mac\SFX\GMTK2024_SFX_towerSell01_-7dB_v01_14E21738.wem		\Actor-Mixer Hierarchy\SFX\SFX\SFX_Otter\Tower\towerSell\GMTK2024_SFX_towerSell01_-7dB_v01		8320
+	265388241	GMTK2024_SFX_enemyEntersTower_minotaur_-10_v1	D:\UnityProjects\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Mac\SFX\GMTK2024_SFX_enemyEntersTower_minotaur_-10_v1_14E21738.wem		\Actor-Mixer Hierarchy\SFX\SFX\Enemy\Minotaur\EnterTower\GMTK2024_SFX_enemyEntersTower_minotaur_-10_v1		17811
+	266236380	GMTK2024_SFX_enemySpawn_minotaur_-6_v2	D:\UnityProjects\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Mac\SFX\GMTK2024_SFX_enemySpawn_minotaur_-6_v2_14E21738.wem		\Actor-Mixer Hierarchy\SFX\SFX\Enemy\Minotaur\Spawn\GMTK2024_SFX_enemySpawn_minotaur_-6_v2		6717
+	285911206	GMTK2024_SFX_enemySpawn_minotaur_-6_v3	D:\UnityProjects\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Mac\SFX\GMTK2024_SFX_enemySpawn_minotaur_-6_v3_14E21738.wem		\Actor-Mixer Hierarchy\SFX\SFX\Enemy\Minotaur\Spawn\GMTK2024_SFX_enemySpawn_minotaur_-6_v3		8710
+	315686258	Wilhelm	D:\UnityProjects\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Mac\SFX\VOXScrm_Wilhelm scream (ID 0477)_BSB_14E21738.wem		\Actor-Mixer Hierarchy\SFX\SFX\Fall\Wilhelm		6939
+	322104273	GMTK2024_SFX_enemyEntersTower_cyclops_-5_v1	D:\UnityProjects\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Mac\SFX\GMTK2024_SFX_enemyEntersTower_cyclops_-5_v1_14E21738.wem		\Actor-Mixer Hierarchy\SFX\SFX\Enemy\Cyclops\EnterTower\GMTK2024_SFX_enemyEntersTower_cyclops_-5_v1		36905
+	371977938	GMTK2024_SFX_enemyDies_minotaur_-14_v3	D:\UnityProjects\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Mac\SFX\GMTK2024_SFX_enemyDies_minotaur_-14_v3_14E21738.wem		\Actor-Mixer Hierarchy\SFX\SFX\Enemy\Minotaur\Death\GMTK2024_SFX_enemyDies_minotaur_-14_v3		14760
+	387002697	GMTK2024_SFX_enemySpawn_gorgon_-7_v2	D:\UnityProjects\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Mac\SFX\GMTK2024_SFX_enemySpawn_gorgon_-7_v2_14E21738.wem		\Actor-Mixer Hierarchy\SFX\SFX\Enemy\Gorgon\Spawn\GMTK2024_SFX_enemySpawn_gorgon_-7_v2		13562
+	393633432	GMTK2024_SFX_placeRock03_-7dB_v01	D:\UnityProjects\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Mac\SFX\GMTK2024_SFX_placeRock03_-7dB_v01_14E21738.wem		\Actor-Mixer Hierarchy\SFX\SFX\SFX_Otter\Rock\placeRock\GMTK2024_SFX_placeRock03_-7dB_v01		5494
+	397978699	GMTK2024_SFX_placeRock02_-7dB_v01	D:\UnityProjects\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Mac\SFX\GMTK2024_SFX_placeRock02_-7dB_v01_14E21738.wem		\Actor-Mixer Hierarchy\SFX\SFX\SFX_Otter\Rock\placeRock\GMTK2024_SFX_placeRock02_-7dB_v01		6704
+	402597209	GMTK2024_towerPlace04_-7dB_v01	D:\UnityProjects\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Mac\SFX\GMTK2024_towerPlace04_-7dB_v01_14E21738.wem		\Actor-Mixer Hierarchy\SFX\SFX\SFX_Otter\Tower\towerPlace\GMTK2024_towerPlace04_-7dB_v01		6136
+	403240930	GMTK2024_SFX_towerUpgrade02_-7dB_v01	D:\UnityProjects\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Mac\SFX\GMTK2024_SFX_towerUpgrade02_-7dB_v01_14E21738.wem		\Actor-Mixer Hierarchy\SFX\SFX\SFX_Otter\Tower\towerUpgrade\GMTK2024_SFX_towerUpgrade02_-7dB_v01		10649
+	418416713	GMTK2024_SFX_enemySpawn_cyclops_-4_v2	D:\UnityProjects\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Mac\SFX\GMTK2024_SFX_enemySpawn_cyclops_-4_v2_14E21738.wem		\Actor-Mixer Hierarchy\SFX\SFX\Enemy\Cyclops\Spawn\GMTK2024_SFX_enemySpawn_cyclops_-4_v2		16488
+	506364536	GMTK2024_SFX_towerAttack03_low_-11_v1	D:\UnityProjects\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Mac\SFX\GMTK2024_SFX_towerAttack03_low_-11_v1_E0997E4E.wem		\Actor-Mixer Hierarchy\SFX\SFX\Towers\Attack\Low\GMTK2024_SFX_towerAttack03_low_-11_v1		2667
+	567128080	GMTK2024_SFX_enemyDies_gorgon_-7_v1	D:\UnityProjects\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Mac\SFX\GMTK2024_SFX_enemyDies_gorgon_-7_v1_14E21738.wem		\Actor-Mixer Hierarchy\SFX\SFX\Enemy\Gorgon\Death\GMTK2024_SFX_enemyDies_gorgon_-7_v1		19136
+	596698888	GMTK2024_SFX_enemyDies_minotaur_-14_v2	D:\UnityProjects\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Mac\SFX\GMTK2024_SFX_enemyDies_minotaur_-14_v2_14E21738.wem		\Actor-Mixer Hierarchy\SFX\SFX\Enemy\Minotaur\Death\GMTK2024_SFX_enemyDies_minotaur_-14_v2		14854
+	617634723	GMTK2024_SFX_towerUpgrade03_-7dB_v01	D:\UnityProjects\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Mac\SFX\GMTK2024_SFX_towerUpgrade03_-7dB_v01_14E21738.wem		\Actor-Mixer Hierarchy\SFX\SFX\SFX_Otter\Tower\towerUpgrade\GMTK2024_SFX_towerUpgrade03_-7dB_v01		10598
+	648606365	GMTK2024_SFX_newSpawnerTile02_-8dB_v01	D:\UnityProjects\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Mac\SFX\GMTK2024_SFX_newSpawnerTile02_-8dB_v01_14E21738.wem		\Actor-Mixer Hierarchy\SFX\SFX\SFX_Otter\Tiles\SpawnerTileSpawn\GMTK2024_SFX_newSpawnerTile02_-8dB_v01		10946
+	652416591	GMTK2024_SFX_towerSell04_-7dB_v01	D:\UnityProjects\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Mac\SFX\GMTK2024_SFX_towerSell04_-7dB_v01_14E21738.wem		\Actor-Mixer Hierarchy\SFX\SFX\SFX_Otter\Tower\towerSell\GMTK2024_SFX_towerSell04_-7dB_v01		6817
+	684628303	GMTK2024_SFX_towerAttack02_mid_-11_v1	D:\UnityProjects\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Mac\SFX\GMTK2024_SFX_towerAttack02_mid_-11_v1_E4E87C43.wem		\Actor-Mixer Hierarchy\SFX\SFX\Towers\Attack\Mid\GMTK2024_SFX_towerAttack02_mid_-11_v1		3914
+	723944443	GMTK2024_SFX_towerAttack01_low_-11_v1	D:\UnityProjects\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Mac\SFX\GMTK2024_SFX_towerAttack01_low_-11_v1_8DFDF74C.wem		\Actor-Mixer Hierarchy\SFX\SFX\Towers\Attack\Low\GMTK2024_SFX_towerAttack01_low_-11_v1		2592
+	752152111	GMTK2024_SFX_newSpawnerTile01_-8dB_v01	D:\UnityProjects\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Mac\SFX\GMTK2024_SFX_newSpawnerTile01_-8dB_v01_14E21738.wem		\Actor-Mixer Hierarchy\SFX\SFX\SFX_Otter\Tiles\SpawnerTileSpawn\GMTK2024_SFX_newSpawnerTile01_-8dB_v01		10920
+	835854000	GMTK2024_SFX_towerSlide02_v01	D:\UnityProjects\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Mac\SFX\GMTK2024_SFX_towerSlide02_v01_143AC765.wem		\Actor-Mixer Hierarchy\SFX\SFX\SFX_Otter\Tower\towerSlide\GMTK2024_SFX_towerSlide02_v01		103235
+	839132535	GMTK2024_SFX_enemyDies_cyclops_-3_v1	D:\UnityProjects\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Mac\SFX\GMTK2024_SFX_enemyDies_cyclops_-3_v1_14E21738.wem		\Actor-Mixer Hierarchy\SFX\SFX\Enemy\Cyclops\Death\GMTK2024_SFX_enemyDies_cyclops_-3_v1		10735
+	847879273	GMTK2024_SFX_towerAttack02_high_-11_v1	D:\UnityProjects\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Mac\SFX\GMTK2024_SFX_towerAttack02_high_-11_v1_22BC59AC.wem		\Actor-Mixer Hierarchy\SFX\SFX\Towers\Attack\High\GMTK2024_SFX_towerAttack02_high_-11_v1		14961
+	854013730	GMTK2024_SFX_newLandTile01_-8dB_v01	D:\UnityProjects\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Mac\SFX\GMTK2024_SFX_newLandTile01_-8dB_v01_14E21738.wem		\Actor-Mixer Hierarchy\SFX\SFX\SFX_Otter\Tiles\GroundTileSpawn\GMTK2024_SFX_newLandTile01_-8dB_v01		6621
+	868790198	GMTK2024_SFX_enemySpawn_gorgon_-7_v3	D:\UnityProjects\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Mac\SFX\GMTK2024_SFX_enemySpawn_gorgon_-7_v3_14E21738.wem		\Actor-Mixer Hierarchy\SFX\SFX\Enemy\Gorgon\Spawn\GMTK2024_SFX_enemySpawn_gorgon_-7_v3		11579
+	877437290	GMTK2024_SFX_towerAttack03_high_-11_v1	D:\UnityProjects\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Mac\SFX\GMTK2024_SFX_towerAttack03_high_-11_v1_B93EE9A2.wem		\Actor-Mixer Hierarchy\SFX\SFX\Towers\Attack\High\GMTK2024_SFX_towerAttack03_high_-11_v1		15976
+	879976025	GMTK2024_towerPlace02_-7dB_v01	D:\UnityProjects\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Mac\SFX\GMTK2024_towerPlace02_-7dB_v01_14E21738.wem		\Actor-Mixer Hierarchy\SFX\SFX\SFX_Otter\Tower\towerPlace\GMTK2024_towerPlace02_-7dB_v01		5945
+	882246771	GMTK2024_SFX_towerSell03_-7dB_v01	D:\UnityProjects\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Mac\SFX\GMTK2024_SFX_towerSell03_-7dB_v01_14E21738.wem		\Actor-Mixer Hierarchy\SFX\SFX\SFX_Otter\Tower\towerSell\GMTK2024_SFX_towerSell03_-7dB_v01		7671
+	888382889	GMTK2024_SFX_towerAttack01_mid_-11_v1	D:\UnityProjects\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Mac\SFX\GMTK2024_SFX_towerAttack01_mid_-11_v1_9938A83B.wem		\Actor-Mixer Hierarchy\SFX\SFX\Towers\Attack\Mid\GMTK2024_SFX_towerAttack01_mid_-11_v1		4001
+	891598265	GMTK2024_SFX_towerUpgrade01_-7dB_v01	D:\UnityProjects\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Mac\SFX\GMTK2024_SFX_towerUpgrade01_-7dB_v01_14E21738.wem		\Actor-Mixer Hierarchy\SFX\SFX\SFX_Otter\Tower\towerUpgrade\GMTK2024_SFX_towerUpgrade01_-7dB_v01		10512
+	904288813	GMTK2024_SFX_towerSlide01_v01	D:\UnityProjects\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Mac\SFX\GMTK2024_SFX_towerSlide01_v01_02C1248E.wem		\Actor-Mixer Hierarchy\SFX\SFX\SFX_Otter\Tower\towerSlide\GMTK2024_SFX_towerSlide01_v01		69380
+	934633238	GMTK2024_SFX_towerAttack02_low_-11_v1	D:\UnityProjects\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Mac\SFX\GMTK2024_SFX_towerAttack02_low_-11_v1_0F60026A.wem		\Actor-Mixer Hierarchy\SFX\SFX\Towers\Attack\Low\GMTK2024_SFX_towerAttack02_low_-11_v1		2662
+	934825369	GMTK2024_towerPlace01_-7dB_v01	D:\UnityProjects\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Mac\SFX\GMTK2024_towerPlace01_-7dB_v01_14E21738.wem		\Actor-Mixer Hierarchy\SFX\SFX\SFX_Otter\Tower\towerPlace\GMTK2024_towerPlace01_-7dB_v01		5683
+	945879634	GMTK2024_SFX_towerSlide03_v01	D:\UnityProjects\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Mac\SFX\GMTK2024_SFX_towerSlide03_v01_3ABE3E98.wem		\Actor-Mixer Hierarchy\SFX\SFX\SFX_Otter\Tower\towerSlide\GMTK2024_SFX_towerSlide03_v01		125042
+	946140780	GMTK2024_towerPlace03_-7dB_v01	D:\UnityProjects\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Mac\SFX\GMTK2024_towerPlace03_-7dB_v01_14E21738.wem		\Actor-Mixer Hierarchy\SFX\SFX\SFX_Otter\Tower\towerPlace\GMTK2024_towerPlace03_-7dB_v01		5773
+	957881645	GMTK2024_SFX_enemyDies_gorgon_-11_v3	D:\UnityProjects\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Mac\SFX\GMTK2024_SFX_enemyDies_gorgon_-11_v3_14E21738.wem		\Actor-Mixer Hierarchy\SFX\SFX\Enemy\Gorgon\Death\GMTK2024_SFX_enemyDies_gorgon_-11_v3		12857
+	973307517	GMTK2024_SFX_enemyDies_minotaur_-13_v1	D:\UnityProjects\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Mac\SFX\GMTK2024_SFX_enemyDies_minotaur_-13_v1_14E21738.wem		\Actor-Mixer Hierarchy\SFX\SFX\Enemy\Minotaur\Death\GMTK2024_SFX_enemyDies_minotaur_-13_v1		13836
+	985081344	GMTK2024_SFX_enemyDies_cyclops_-3_v2	D:\UnityProjects\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Mac\SFX\GMTK2024_SFX_enemyDies_cyclops_-3_v2_14E21738.wem		\Actor-Mixer Hierarchy\SFX\SFX\Enemy\Cyclops\Death\GMTK2024_SFX_enemyDies_cyclops_-3_v2		16791
+	988960913	WHISTLE Down Long	D:\UnityProjects\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Mac\SFX\WHISTLE Down Long_FC2AF5AB.wem		\Actor-Mixer Hierarchy\SFX\SFX\Fall\WHISTLE Down Long		24928
+	1054400563	GMTK2024_SFX_enemySpawn_cyclops_-4_v3	D:\UnityProjects\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Mac\SFX\GMTK2024_SFX_enemySpawn_cyclops_-4_v3_14E21738.wem		\Actor-Mixer Hierarchy\SFX\SFX\Enemy\Cyclops\Spawn\GMTK2024_SFX_enemySpawn_cyclops_-4_v3		13375
 

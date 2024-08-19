@@ -9,13 +9,21 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="393239870" Type="User" Language="SFX" Hash="{121BF851-BFA9-4103-DFC9-5A124FF6E116}">
+		<SoundBank Id="393239870" Type="User" Language="SFX" Hash="{198B3A34-08D0-C4C5-683E-B0C00D5694ED}">
 			<ShortName>SFX</ShortName>
 			<Path>SFX.bnk</Path>
 			<Media>
+				<File Id="80564012" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GMTK2024_SFX_newLandTile03_-8dB_v01.wav</ShortName>
+					<CachePath>SFX/GMTK2024_SFX_newLandTile03_-8dB_v01_14E21738.wem</CachePath>
+				</File>
 				<File Id="103139025" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>GMTK2024_SFX_towerSell02_-7dB_v01.wav</ShortName>
 					<CachePath>SFX/GMTK2024_SFX_towerSell02_-7dB_v01_14E21738.wem</CachePath>
+				</File>
+				<File Id="115551789" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GMTK2024_SFX_newLandTile02_-8dB_v01.wav</ShortName>
+					<CachePath>SFX/GMTK2024_SFX_newLandTile02_-8dB_v01_14E21738.wem</CachePath>
 				</File>
 				<File Id="117618669" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>GMTK2024_SFX_towerAttack03_mid_-11_v1.wav</ShortName>
@@ -33,9 +41,25 @@
 					<ShortName>GMTK2024_SFX_enemyDies_cyclops_-3_v3.wav</ShortName>
 					<CachePath>SFX/GMTK2024_SFX_enemyDies_cyclops_-3_v3_14E21738.wem</CachePath>
 				</File>
+				<File Id="179106015" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GMTK2024_SFX_enemySpawn_cyclops_-4_v1.wav</ShortName>
+					<CachePath>SFX/GMTK2024_SFX_enemySpawn_cyclops_-4_v1_14E21738.wem</CachePath>
+				</File>
+				<File Id="194560774" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GMTK2024_SFX_newSpawnerTile03_-8dB_v01.wav</ShortName>
+					<CachePath>SFX/GMTK2024_SFX_newSpawnerTile03_-8dB_v01_14E21738.wem</CachePath>
+				</File>
 				<File Id="196280731" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>GMTK2024_SFX_enemyDies_gorgon_-11_v2.wav</ShortName>
 					<CachePath>SFX/GMTK2024_SFX_enemyDies_gorgon_-11_v2_14E21738.wem</CachePath>
+				</File>
+				<File Id="206161987" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GMTK2024_SFX_enemySpawn_minotaur_-6_v1.wav</ShortName>
+					<CachePath>SFX/GMTK2024_SFX_enemySpawn_minotaur_-6_v1_14E21738.wem</CachePath>
+				</File>
+				<File Id="225128032" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GMTK2024_SFX_enemySpawn_gorgon_-7_v1.wav</ShortName>
+					<CachePath>SFX/GMTK2024_SFX_enemySpawn_gorgon_-7_v1_14E21738.wem</CachePath>
 				</File>
 				<File Id="232753778" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>GMTK2024_SFX_towerAttack01_high_-11_v1.wav</ShortName>
@@ -49,6 +73,14 @@
 					<ShortName>GMTK2024_SFX_enemyEntersTower_minotaur_-10_v1.wav</ShortName>
 					<CachePath>SFX/GMTK2024_SFX_enemyEntersTower_minotaur_-10_v1_14E21738.wem</CachePath>
 				</File>
+				<File Id="266236380" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GMTK2024_SFX_enemySpawn_minotaur_-6_v2.wav</ShortName>
+					<CachePath>SFX/GMTK2024_SFX_enemySpawn_minotaur_-6_v2_14E21738.wem</CachePath>
+				</File>
+				<File Id="285911206" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GMTK2024_SFX_enemySpawn_minotaur_-6_v3.wav</ShortName>
+					<CachePath>SFX/GMTK2024_SFX_enemySpawn_minotaur_-6_v3_14E21738.wem</CachePath>
+				</File>
 				<File Id="315686258" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>VOXScrm_Wilhelm scream (ID 0477)_BSB.wav</ShortName>
 					<CachePath>SFX/VOXScrm_Wilhelm scream (ID 0477)_BSB_14E21738.wem</CachePath>
@@ -60,6 +92,10 @@
 				<File Id="371977938" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>GMTK2024_SFX_enemyDies_minotaur_-14_v3.wav</ShortName>
 					<CachePath>SFX/GMTK2024_SFX_enemyDies_minotaur_-14_v3_14E21738.wem</CachePath>
+				</File>
+				<File Id="387002697" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GMTK2024_SFX_enemySpawn_gorgon_-7_v2.wav</ShortName>
+					<CachePath>SFX/GMTK2024_SFX_enemySpawn_gorgon_-7_v2_14E21738.wem</CachePath>
 				</File>
 				<File Id="393633432" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>GMTK2024_SFX_placeRock03_-7dB_v01.wav</ShortName>
@@ -73,6 +109,14 @@
 					<ShortName>GMTK2024_towerPlace04_-7dB_v01.wav</ShortName>
 					<CachePath>SFX/GMTK2024_towerPlace04_-7dB_v01_14E21738.wem</CachePath>
 				</File>
+				<File Id="403240930" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GMTK2024_SFX_towerUpgrade02_-7dB_v01.wav</ShortName>
+					<CachePath>SFX/GMTK2024_SFX_towerUpgrade02_-7dB_v01_14E21738.wem</CachePath>
+				</File>
+				<File Id="418416713" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GMTK2024_SFX_enemySpawn_cyclops_-4_v2.wav</ShortName>
+					<CachePath>SFX/GMTK2024_SFX_enemySpawn_cyclops_-4_v2_14E21738.wem</CachePath>
+				</File>
 				<File Id="506364536" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>GMTK2024_SFX_towerAttack03_low_-11_v1.wav</ShortName>
 					<CachePath>SFX/GMTK2024_SFX_towerAttack03_low_-11_v1_E0997E4E.wem</CachePath>
@@ -84,6 +128,14 @@
 				<File Id="596698888" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>GMTK2024_SFX_enemyDies_minotaur_-14_v2.wav</ShortName>
 					<CachePath>SFX/GMTK2024_SFX_enemyDies_minotaur_-14_v2_14E21738.wem</CachePath>
+				</File>
+				<File Id="617634723" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GMTK2024_SFX_towerUpgrade03_-7dB_v01.wav</ShortName>
+					<CachePath>SFX/GMTK2024_SFX_towerUpgrade03_-7dB_v01_14E21738.wem</CachePath>
+				</File>
+				<File Id="648606365" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GMTK2024_SFX_newSpawnerTile02_-8dB_v01.wav</ShortName>
+					<CachePath>SFX/GMTK2024_SFX_newSpawnerTile02_-8dB_v01_14E21738.wem</CachePath>
 				</File>
 				<File Id="652416591" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>GMTK2024_SFX_towerSell04_-7dB_v01.wav</ShortName>
@@ -97,6 +149,10 @@
 					<ShortName>GMTK2024_SFX_towerAttack01_low_-11_v1.wav</ShortName>
 					<CachePath>SFX/GMTK2024_SFX_towerAttack01_low_-11_v1_8DFDF74C.wem</CachePath>
 				</File>
+				<File Id="752152111" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GMTK2024_SFX_newSpawnerTile01_-8dB_v01.wav</ShortName>
+					<CachePath>SFX/GMTK2024_SFX_newSpawnerTile01_-8dB_v01_14E21738.wem</CachePath>
+				</File>
 				<File Id="835854000" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>GMTK2024_SFX_towerSlide02_v01.wav</ShortName>
 					<CachePath>SFX/GMTK2024_SFX_towerSlide02_v01_143AC765.wem</CachePath>
@@ -108,6 +164,14 @@
 				<File Id="847879273" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>GMTK2024_SFX_towerAttack02_high_-11_v1.wav</ShortName>
 					<CachePath>SFX/GMTK2024_SFX_towerAttack02_high_-11_v1_22BC59AC.wem</CachePath>
+				</File>
+				<File Id="854013730" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GMTK2024_SFX_newLandTile01_-8dB_v01.wav</ShortName>
+					<CachePath>SFX/GMTK2024_SFX_newLandTile01_-8dB_v01_14E21738.wem</CachePath>
+				</File>
+				<File Id="868790198" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GMTK2024_SFX_enemySpawn_gorgon_-7_v3.wav</ShortName>
+					<CachePath>SFX/GMTK2024_SFX_enemySpawn_gorgon_-7_v3_14E21738.wem</CachePath>
 				</File>
 				<File Id="877437290" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>GMTK2024_SFX_towerAttack03_high_-11_v1.wav</ShortName>
@@ -124,6 +188,10 @@
 				<File Id="888382889" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>GMTK2024_SFX_towerAttack01_mid_-11_v1.wav</ShortName>
 					<CachePath>SFX/GMTK2024_SFX_towerAttack01_mid_-11_v1_9938A83B.wem</CachePath>
+				</File>
+				<File Id="891598265" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GMTK2024_SFX_towerUpgrade01_-7dB_v01.wav</ShortName>
+					<CachePath>SFX/GMTK2024_SFX_towerUpgrade01_-7dB_v01_14E21738.wem</CachePath>
 				</File>
 				<File Id="904288813" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>GMTK2024_SFX_towerSlide01_v01.wav</ShortName>
@@ -159,7 +227,11 @@
 				</File>
 				<File Id="988960913" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>WHISTLE Down Long.wav</ShortName>
-					<CachePath>SFX/WHISTLE Down Long_14E21738.wem</CachePath>
+					<CachePath>SFX/WHISTLE Down Long_FC2AF5AB.wem</CachePath>
+				</File>
+				<File Id="1054400563" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GMTK2024_SFX_enemySpawn_cyclops_-4_v3.wav</ShortName>
+					<CachePath>SFX/GMTK2024_SFX_enemySpawn_cyclops_-4_v3_14E21738.wem</CachePath>
 				</File>
 			</Media>
 			<Plugins>
@@ -181,7 +253,7 @@
 						<MediaRef Id="934633238"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="2712047697" Name="Play_Fall" DurationType="OneShot" DurationMin="1.1168481" DurationMax="2.99575">
+				<Event Id="2712047697" Name="Play_Fall" DurationType="OneShot" DurationMin="1.1168481" DurationMax="1.5584253">
 					<MediaRefs>
 						<MediaRef Id="315686258"/>
 						<MediaRef Id="988960913"/>
@@ -232,7 +304,13 @@
 						</Custom>
 					</PluginRefs>
 				</Event>
-				<Event Id="1804201887" Name="Play_SFXGroundTileSpawn" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="1804201887" Name="Play_SFXGroundTileSpawn" DurationType="OneShot" DurationMin="0.47645152" DurationMax="0.5127385">
+					<MediaRefs>
+						<MediaRef Id="80564012"/>
+						<MediaRef Id="115551789"/>
+						<MediaRef Id="854013730"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="355266998" Name="Play_SFXMinotaurDeath" DurationType="OneShot" DurationMin="1.375" DurationMax="2.25">
 					<MediaRefs>
 						<MediaRef Id="371977938"/>
@@ -262,9 +340,49 @@
 						<MediaRef Id="397978699"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="2186760998" Name="Play_SFXSpawnerTileSpawn" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
-				<Event Id="86987433" Name="Play_SFXTiltingTiles" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
-				<Event Id="4103541689" Name="Play_SFXTowerAttackHit" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="772780039" Name="Play_SFXSpawnCyclops" DurationType="OneShot" DurationMin="0.9375" DurationMax="1.4375">
+					<MediaRefs>
+						<MediaRef Id="179106015"/>
+						<MediaRef Id="418416713"/>
+						<MediaRef Id="1054400563"/>
+					</MediaRefs>
+					<PluginRefs>
+						<Custom>
+							<PluginRef Id="696289122"/>
+						</Custom>
+					</PluginRefs>
+				</Event>
+				<Event Id="2186760998" Name="Play_SFXSpawnerTileSpawn" DurationType="OneShot" DurationMin="0.89125305" DurationMax="0.97304183">
+					<MediaRefs>
+						<MediaRef Id="194560774"/>
+						<MediaRef Id="648606365"/>
+						<MediaRef Id="752152111"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3923810864" Name="Play_SFXSpawnGorgon" DurationType="OneShot" DurationMin="1" DurationMax="1.1875">
+					<MediaRefs>
+						<MediaRef Id="225128032"/>
+						<MediaRef Id="387002697"/>
+						<MediaRef Id="868790198"/>
+					</MediaRefs>
+					<PluginRefs>
+						<Custom>
+							<PluginRef Id="696289122"/>
+						</Custom>
+					</PluginRefs>
+				</Event>
+				<Event Id="1519962459" Name="Play_SFXSpawnMinotaur" DurationType="OneShot" DurationMin="0.5625" DurationMax="0.75">
+					<MediaRefs>
+						<MediaRef Id="206161987"/>
+						<MediaRef Id="266236380"/>
+						<MediaRef Id="285911206"/>
+					</MediaRefs>
+					<PluginRefs>
+						<Custom>
+							<PluginRef Id="696289122"/>
+						</Custom>
+					</PluginRefs>
+				</Event>
 				<Event Id="2094922267" Name="Play_SFXTowerPlace" DurationType="OneShot" DurationMin="0.65797204" DurationMax="0.71835303">
 					<MediaRefs>
 						<MediaRef Id="402597209"/>
@@ -288,28 +406,34 @@
 						<MediaRef Id="945879634"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="2684592797" Name="Play_SFXTowerSlide_01" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="1886723530" Name="Play_SFXTowerUpgrade" DurationType="OneShot" DurationMin="0.9018742" DurationMax="0.9350726">
+					<MediaRefs>
+						<MediaRef Id="403240930"/>
+						<MediaRef Id="617634723"/>
+						<MediaRef Id="891598265"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="2237095779" Name="Stop_SFXTowerSlide" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="1117531639" Type="User" Language="SFX" Hash="{495E6DCA-063D-6C7E-251B-2C95986C6312}">
+		<SoundBank Id="1117531639" Type="User" Language="SFX" Hash="{7C3974AA-E52B-0765-878A-A100D273912B}">
 			<ShortName>AMB</ShortName>
 			<Path>AMB.bnk</Path>
 			<Media>
-				<File Id="56926738" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>GMTK2024_SFX_AMB_-20dB_v01.wav</ShortName>
-					<CachePath>SFX/GMTK2024_SFX_AMB_-20dB_v01_475869E0.wem</CachePath>
+				<File Id="88759647" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GMTK2024_SFX_AMB_-20dB_v02.wav</ShortName>
+					<CachePath>SFX/GMTK2024_SFX_AMB_-20dB_v02_F4E969E3.wem</CachePath>
 				</File>
 			</Media>
 			<Events>
 				<Event Id="1020223172" Name="Play_Wind" DurationType="Infinite">
 					<MediaRefs>
-						<MediaRef Id="56926738"/>
+						<MediaRef Id="88759647"/>
 					</MediaRefs>
 				</Event>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{F8057567-F6CB-C0B4-D1C3-8407FDEB7AD4}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{6AB9455F-A1E8-C12C-BEA3-7F18E5CD73A9}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -507,10 +631,14 @@
 			<ShortName>VO</ShortName>
 			<Path>VO.bnk</Path>
 		</SoundBank>
-		<SoundBank Id="1551306167" Type="User" Language="SFX" Hash="{3B454D9F-A18C-7D03-2CCB-586A257A735A}">
+		<SoundBank Id="1551306167" Type="User" Language="SFX" Hash="{DB75B1F3-2A45-C12E-D31F-8DDD4B838027}">
 			<ShortName>UI</ShortName>
 			<Path>UI.bnk</Path>
 			<Media>
+				<File Id="55515463" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GMTK2024_SFX_UIClick_-3_v2.wav</ShortName>
+					<CachePath>SFX/GMTK2024_SFX_UIClick_-3_v2_14E21738.wem</CachePath>
+				</File>
 				<File Id="70575173" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>GMTK2024_SFX_goldGain_-7_v1.wav</ShortName>
 					<CachePath>SFX/GMTK2024_SFX_goldGain_-7_v1_14E21738.wem</CachePath>
@@ -519,9 +647,21 @@
 					<ShortName>GMTK2024_SFX_goldGain_-7_v2.wav</ShortName>
 					<CachePath>SFX/GMTK2024_SFX_goldGain_-7_v2_14E21738.wem</CachePath>
 				</File>
+				<File Id="598116187" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GMTK2024_SFX_UIClick_-3_v1.wav</ShortName>
+					<CachePath>SFX/GMTK2024_SFX_UIClick_-3_v1_14E21738.wem</CachePath>
+				</File>
+				<File Id="631211157" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GMTK2024_SFX_UIHover_-3_v2.wav</ShortName>
+					<CachePath>SFX/GMTK2024_SFX_UIHover_-3_v2_14E21738.wem</CachePath>
+				</File>
 				<File Id="659071609" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>GMTK2024_SFX_goldGain_-5_v3.wav</ShortName>
 					<CachePath>SFX/GMTK2024_SFX_goldGain_-5_v3_14E21738.wem</CachePath>
+				</File>
+				<File Id="682760559" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GMTK2024_SFX_UIClick_-3_v3.wav</ShortName>
+					<CachePath>SFX/GMTK2024_SFX_UIClick_-3_v3_14E21738.wem</CachePath>
 				</File>
 				<File Id="925787453" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>GMTK2024_SFX_goldLose_-6_v2.wav</ShortName>
@@ -531,13 +671,27 @@
 					<ShortName>GMTK2024_SFX_goldLose_-8_v1.wav</ShortName>
 					<CachePath>SFX/GMTK2024_SFX_goldLose_-8_v1_14E21738.wem</CachePath>
 				</File>
+				<File Id="943130628" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GMTK2024_SFX_UIHover_-3_v1.wav</ShortName>
+					<CachePath>SFX/GMTK2024_SFX_UIHover_-3_v1_14E21738.wem</CachePath>
+				</File>
 				<File Id="1022782546" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>GMTK2024_SFX_goldLose_-5_v3.wav</ShortName>
 					<CachePath>SFX/GMTK2024_SFX_goldLose_-5_v3_14E21738.wem</CachePath>
 				</File>
+				<File Id="1069707363" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GMTK2024_SFX_UIHover_-3_v3.wav</ShortName>
+					<CachePath>SFX/GMTK2024_SFX_UIHover_-3_v3_14E21738.wem</CachePath>
+				</File>
 			</Media>
 			<Events>
-				<Event Id="1615720664" Name="Play_UIClick" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="1615720664" Name="Play_UIClick" DurationType="OneShot" DurationMin="0.25" DurationMax="0.25">
+					<MediaRefs>
+						<MediaRef Id="55515463"/>
+						<MediaRef Id="598116187"/>
+						<MediaRef Id="682760559"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="3581364067" Name="Play_UIGoldGain" DurationType="OneShot" DurationMin="0.5" DurationMax="1.25">
 					<MediaRefs>
 						<MediaRef Id="70575173"/>
@@ -552,35 +706,50 @@
 						<MediaRef Id="1022782546"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="2502251926" Name="Play_UIHover" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="2502251926" Name="Play_UIHover" DurationType="OneShot" DurationMin="0.125" DurationMax="0.12502083">
+					<MediaRefs>
+						<MediaRef Id="631211157"/>
+						<MediaRef Id="943130628"/>
+						<MediaRef Id="1069707363"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="2754069948" Name="Play_UIWaveCountdown" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="2290267373" Name="Play_UIWaveEnded" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="3869623766" Name="Play_UIWaveStarted" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="1685527054" Type="User" Language="SFX" Hash="{2BDD23DB-6442-FE6D-8A6E-24AC8CBBA8C0}">
+		<SoundBank Id="1685527054" Type="User" Language="SFX" Hash="{228EF07F-E2A0-66CA-5567-E611540D5D1A}">
 			<ShortName>MX</ShortName>
 			<Path>MX.bnk</Path>
 			<Media>
-				<File Id="153486832" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Scales of Olympus Transition out of loop -starts beat 4- v1.wav</ShortName>
-					<CachePath>SFX/Scales of Olympus Transition out of loop -starts beat 4- v1_05A4D402.wem</CachePath>
+				<File Id="88759647" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GMTK2024_SFX_AMB_-20dB_v02.wav</ShortName>
+					<CachePath>SFX/GMTK2024_SFX_AMB_-20dB_v02_F4E969E3.wem</CachePath>
 				</File>
-				<File Id="495404542" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Scales of Olympus Intro v1.wav</ShortName>
-					<CachePath>SFX/Scales of Olympus Intro v1_05A4D402.wem</CachePath>
+				<File Id="340045983" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Scales of Olympus Game Loop v2.wav</ShortName>
+					<CachePath>SFX/Scales of Olympus Game Loop v2_05A4D402.wem</CachePath>
+				</File>
+				<File Id="464818347" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Scales of Olympus Intro v2.wav</ShortName>
+					<CachePath>SFX/Scales of Olympus Intro v2_05A4D402.wem</CachePath>
 				</File>
 				<File Id="624318979" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Scales of Olympus Layer 2 v1.wav</ShortName>
 					<CachePath>SFX/Scales of Olympus Layer 2 v1_05A4D402.wem</CachePath>
 				</File>
-				<File Id="902048449" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Scales of Olympus Game Loop v1.wav</ShortName>
-					<CachePath>SFX/Scales of Olympus Game Loop v1_05A4D402.wem</CachePath>
+				<File Id="795776314" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Scales of Olympus Transition Out v2.wav</ShortName>
+					<CachePath>SFX/Scales of Olympus Transition Out v2_05A4D402.wem</CachePath>
 				</File>
 			</Media>
 			<Events>
 				<Event Id="1258886508" Name="Play_MXTitleTheme" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="1020223172" Name="Play_Wind" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="88759647"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="3038968348" Name="SetState_ActiveWave" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0">
 					<ActionSetState>
 						<ActionSetStateEntry GroupId="832974869" Id="2447589688" Name="ActiveWave"/>
@@ -593,14 +762,14 @@
 				</Event>
 				<Event Id="1521187885" Name="StartGame" DurationType="Infinite">
 					<MediaRefs>
-						<MediaRef Id="153486832"/>
-						<MediaRef Id="495404542"/>
+						<MediaRef Id="464818347"/>
+						<MediaRef Id="795776314"/>
 					</MediaRefs>
 					<SwitchContainers>
 						<SwitchContainer>
 							<SwitchValue GroupType="State" GroupId="832974869" Id="2447589688"/>
 							<MediaRefs>
-								<MediaRef Id="902048449"/>
+								<MediaRef Id="340045983"/>
 							</MediaRefs>
 						</SwitchContainer>
 						<SwitchContainer>
@@ -610,6 +779,12 @@
 							</MediaRefs>
 						</SwitchContainer>
 					</SwitchContainers>
+					<ActionPostEvent>
+						<ActionPostEventEntry Id="1020223172" Name="Play_Wind"/>
+					</ActionPostEvent>
+					<ActionSetState>
+						<ActionSetStateEntry GroupId="832974869" Id="748895195" Name="None"/>
+					</ActionSetState>
 				</Event>
 			</Events>
 			<StateGroups>
@@ -623,5 +798,5 @@
 			</StateGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{6306323F-9497-7130-AFF0-1E8F6BB9403D}</FileHash>
+	<FileHash>{8615210F-CE95-25C2-9CE0-CEAB30DE0FE7}</FileHash>
 </SoundBanksInfo>

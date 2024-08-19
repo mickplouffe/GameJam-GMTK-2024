@@ -62,7 +62,7 @@
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="Play_AMBWind" ID="{96C6EE84-923E-41FD-8FD2-52F025B6EA11}" WorkUnitID="{5B7760E9-4ED5-4FFF-B405-DA13419EEECE}"/>
+									<ObjectRef Name="Play_Wind" ID="{FEC89844-829D-4954-AAEB-9FC5355CDFD0}" WorkUnitID="{5B7760E9-4ED5-4FFF-B405-DA13419EEECE}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
