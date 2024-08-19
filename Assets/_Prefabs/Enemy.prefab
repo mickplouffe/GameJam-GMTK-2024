@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 1845301357021593953}
   - component: {fileID: 1128090306548463987}
   - component: {fileID: 663233923925511598}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -129,6 +129,7 @@ MonoBehaviour:
   coinsEventChannel: {fileID: 11400000, guid: bd788a866bdd906438a624d0a722e871, type: 2}
   enemyWeight: 8
   enemyKillCost: 5
+  startHealth: 0
 --- !u!54 &663233923925511598
 Rigidbody:
   m_ObjectHideFlags: 0

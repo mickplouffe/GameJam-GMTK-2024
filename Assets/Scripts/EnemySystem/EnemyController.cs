@@ -23,6 +23,10 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private int startHealth;
     
     private int _currentHealth;
+
+    private Bounds _colliderBounds;
+
+    public GameObject Prefab { get; set; }
     
     private void OnEnable()
     {
@@ -38,6 +42,7 @@ public class EnemyController : MonoBehaviour
     private void Awake()
     {
         _currentHealth = startHealth;
+        _colliderBounds = GetComponent<Collider>().bounds;
     }
 
     public void SetupEnemy(HexTile sourceTile)
@@ -52,14 +57,13 @@ public class EnemyController : MonoBehaviour
         weightEventChannel.RaiseWeightAdded(enemyWeight, _currentSourceTile);
 
         transform.position = _currentSourceTile.TileObject.transform.position +
-                                  transform.up * GetComponent<Collider>().bounds.size.y * 0.5f;
+                                  transform.up * _colliderBounds.size.y * 0.5f;
         
         _finishedSetup = true;
     }
 
     private void Update()
     {
-        return;
         if (!_finishedSetup)
             return;
 
@@ -75,7 +79,7 @@ public class EnemyController : MonoBehaviour
         _percentBetweenTiles = Mathf.Clamp01(_percentBetweenTiles);
 
         Vector3 newPos = Vector3.Lerp(_currentSourceTile.TileObject.transform.position, _currentTargetTile.TileObject.transform.position, _percentBetweenTiles);
-
+        
         if (_percentBetweenTiles >= 1.0f)
         {
             weightEventChannel.RaiseWeightRemoved(enemyWeight, _currentSourceTile);
@@ -95,8 +99,10 @@ public class EnemyController : MonoBehaviour
                 return;
             }
         }
-
-        transform.position = new Vector3(newPos.x, transform.position.y, newPos.z);
+        
+        
+        transform.position = newPos;
+        transform.position += transform.parent.up * _colliderBounds.size.y * 0.5f;
     }
 
     private HexTile GetNextTargetPosition()
@@ -140,6 +146,6 @@ public class EnemyController : MonoBehaviour
             weightEventChannel.RaiseWeightRemoved(enemyWeight, _currentSourceTile);
         coinsEventChannel.RaiseModifyCoins(enemyKillCost);
         enemyEventChannel.RaiseEnemyKilled(gameObject);
-        EnemyObjectPool.Instance.ReturnEnemyObject(gameObject);
+        EnemyObjectPool.Instance.ReturnEnemyObject(Prefab, gameObject);
     }
 }

@@ -86,7 +86,7 @@ public class TowerController : MonoBehaviour
 private void Update()
 {
     
-    if (TowerManager.Instance.selectedTower == gameObject)
+    if (TowerManager.Instance.selectedTower == gameObject || towerData.isStatic)
         return;
     
     if (_currentTarget == null || !IsTargetInRange(_currentTarget))
@@ -196,7 +196,7 @@ public void GetNextTarget()
 
 private bool IsTargetInRange(Transform target)
 {
-    return Vector3.Distance(transform.position, target.position) <= instanceData.range + enemyWidthOffset;
+    return Vector3.Distance(transform.position, target.position) <= instanceData.range + enemyWidthOffset && target.gameObject.activeInHierarchy;
 }
 
 private void HandleTiltChanged(float tiltAngle, Vector3 direction)
