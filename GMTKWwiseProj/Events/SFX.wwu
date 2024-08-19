@@ -33,6 +33,17 @@
 										</Action>
 									</ChildrenList>
 								</Event>
+								<Event Name="Play_SFXSpawnGorgon" ID="{39DE17FB-1F8A-4EC6-B8B4-63673F9E43BD}">
+									<ChildrenList>
+										<Action Name="" ID="{B49600EC-46BB-4607-8C9B-22C06B475C1D}" ShortID="847599217">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Spawn" ID="{FD1C793F-C844-4453-9B9F-98978A4B9AF4}" WorkUnitID="{B5461995-40B4-48D8-B88A-3E895957C2F0}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 							</ChildrenList>
 						</Folder>
 						<Folder Name="Minotaur" ID="{1860BFB4-3589-43CB-9AAF-97BAE7415BD1}" ShortID="635753912">
@@ -59,6 +70,17 @@
 										</Action>
 									</ChildrenList>
 								</Event>
+								<Event Name="Play_SFXSpawnMinotaur" ID="{2B97CE45-4546-46B5-8A62-D0E22E6396BB}">
+									<ChildrenList>
+										<Action Name="" ID="{8220C56E-7111-4821-8F34-D2A383E99397}" ShortID="564336665">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Spawn" ID="{7CC9CF32-9709-4B90-A6FC-99B9BA193F14}" WorkUnitID="{B5461995-40B4-48D8-B88A-3E895957C2F0}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 							</ChildrenList>
 						</Folder>
 						<Folder Name="Cyclops" ID="{FDA86AF2-80DA-4DFD-BE57-1DA616372549}" ShortID="511805668">
@@ -80,6 +102,17 @@
 											<ReferenceList>
 												<Reference Name="Target">
 													<ObjectRef Name="Death" ID="{5757E17A-F516-49B4-87F5-72EE65D859C5}" WorkUnitID="{B5461995-40B4-48D8-B88A-3E895957C2F0}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_SFXSpawnCyclops" ID="{223FCFA0-59D2-4F2F-96E2-94373C4978BE}">
+									<ChildrenList>
+										<Action Name="" ID="{8B8971F6-5346-4C8B-8817-4678923E8840}" ShortID="157770625">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Spawn" ID="{9E3D0D8A-50B9-4EC0-BF03-BC61C0588207}" WorkUnitID="{B5461995-40B4-48D8-B88A-3E895957C2F0}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
