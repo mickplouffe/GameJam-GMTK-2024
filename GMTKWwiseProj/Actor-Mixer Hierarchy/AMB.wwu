@@ -16,46 +16,6 @@
 							<ObjectRef Name="AMB" ID="{8544FF81-9BAF-41B7-A07D-0D9543AA5D04}" WorkUnitID="{7F62BABC-0C6C-4DAD-ACF1-E77615B460FB}"/>
 						</Reference>
 					</ReferenceList>
-					<ChildrenList>
-						<Sound Name="AMBIENT - Beer Garden Large Crowd Talk On Benches Exterior - 02" ID="{F5F08EE2-F3F4-412D-8B80-5F4B9C6D16D6}" ShortID="716528880">
-							<PropertyList>
-								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{7F62BABC-0C6C-4DAD-ACF1-E77615B460FB}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<AudioFileSource Name="AMBIENT - Beer Garden Large Crowd Talk On Benches Exterior - 02" ID="{17DF8BE6-8C1A-4B32-8568-42F98DD97EF8}">
-									<Language>SFX</Language>
-									<AudioFile>AMBIENT - Beer Garden Large Crowd Talk On Benches Exterior - 02.wav</AudioFile>
-									<MediaIDList>
-										<MediaID ID="1052969118"/>
-									</MediaIDList>
-								</AudioFileSource>
-							</ChildrenList>
-							<ActiveSourceList>
-								<ActiveSource Name="AMBIENT - Beer Garden Large Crowd Talk On Benches Exterior - 02" ID="{17DF8BE6-8C1A-4B32-8568-42F98DD97EF8}" Platform="Linked"/>
-							</ActiveSourceList>
-						</Sound>
-						<Sound Name="Wind" ID="{5C5697E5-ED6E-4BE9-BE59-FB2C20CF64BB}" ShortID="1010120137">
-							<PropertyList>
-								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{7F62BABC-0C6C-4DAD-ACF1-E77615B460FB}"/>
-								</Reference>
-							</ReferenceList>
-						</Sound>
-					</ChildrenList>
 				</ActorMixer>
 			</ChildrenList>
 		</WorkUnit>
