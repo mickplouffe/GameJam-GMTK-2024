@@ -113,7 +113,7 @@
 								</Action>
 							</ChildrenList>
 						</Event>
-						<Event Name="Play_SFXTowerSlide" ID="{01DDC3A1-414C-4E8A-AED7-15A2D84D2ABF}">
+						<Event Name="Play_SFXTowerSlide_01" ID="{01DDC3A1-414C-4E8A-AED7-15A2D84D2ABF}">
 							<ChildrenList>
 								<Action Name="" ID="{90A7223D-A416-4173-8DED-C9D0987988B6}" ShortID="35327237">
 									<ReferenceList>

@@ -6,6 +6,19 @@
 				<Property Name="Color" Type="int16" Value="8"/>
 				<Property Name="OverrideColor" Type="bool" Value="True"/>
 			</PropertyList>
+			<ChildrenList>
+				<Event Name="Play_Wind" ID="{FEC89844-829D-4954-AAEB-9FC5355CDFD0}">
+					<ChildrenList>
+						<Action Name="" ID="{3E517200-BB7B-480A-9E31-0429B6CC1B70}" ShortID="688402476">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Wind" ID="{5C5697E5-ED6E-4BE9-BE59-FB2C20CF64BB}" WorkUnitID="{D8F591D3-77D3-47F8-8A8B-3A5E4A41F2F7}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
 		</WorkUnit>
 	</Events>
 </WwiseDocument>
