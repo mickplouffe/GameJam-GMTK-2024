@@ -9,10 +9,14 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="393239870" Type="User" Language="SFX" Hash="{69C67446-7CF2-E26E-0C09-622FFE1BDB9A}">
+		<SoundBank Id="393239870" Type="User" Language="SFX" Hash="{121BF851-BFA9-4103-DFC9-5A124FF6E116}">
 			<ShortName>SFX</ShortName>
 			<Path>SFX.bnk</Path>
 			<Media>
+				<File Id="103139025" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GMTK2024_SFX_towerSell02_-7dB_v01.wav</ShortName>
+					<CachePath>SFX/GMTK2024_SFX_towerSell02_-7dB_v01_14E21738.wem</CachePath>
+				</File>
 				<File Id="117618669" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>GMTK2024_SFX_towerAttack03_mid_-11_v1.wav</ShortName>
 					<CachePath>SFX/GMTK2024_SFX_towerAttack03_mid_-11_v1_7EB59DBC.wem</CachePath>
@@ -36,6 +40,10 @@
 				<File Id="232753778" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>GMTK2024_SFX_towerAttack01_high_-11_v1.wav</ShortName>
 					<CachePath>SFX/GMTK2024_SFX_towerAttack01_high_-11_v1_B93EE9A2.wem</CachePath>
+				</File>
+				<File Id="251441061" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GMTK2024_SFX_towerSell01_-7dB_v01.wav</ShortName>
+					<CachePath>SFX/GMTK2024_SFX_towerSell01_-7dB_v01_14E21738.wem</CachePath>
 				</File>
 				<File Id="265388241" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>GMTK2024_SFX_enemyEntersTower_minotaur_-10_v1.wav</ShortName>
@@ -77,6 +85,10 @@
 					<ShortName>GMTK2024_SFX_enemyDies_minotaur_-14_v2.wav</ShortName>
 					<CachePath>SFX/GMTK2024_SFX_enemyDies_minotaur_-14_v2_14E21738.wem</CachePath>
 				</File>
+				<File Id="652416591" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GMTK2024_SFX_towerSell04_-7dB_v01.wav</ShortName>
+					<CachePath>SFX/GMTK2024_SFX_towerSell04_-7dB_v01_14E21738.wem</CachePath>
+				</File>
 				<File Id="684628303" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>GMTK2024_SFX_towerAttack02_mid_-11_v1.wav</ShortName>
 					<CachePath>SFX/GMTK2024_SFX_towerAttack02_mid_-11_v1_E4E87C43.wem</CachePath>
@@ -84,6 +96,10 @@
 				<File Id="723944443" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>GMTK2024_SFX_towerAttack01_low_-11_v1.wav</ShortName>
 					<CachePath>SFX/GMTK2024_SFX_towerAttack01_low_-11_v1_8DFDF74C.wem</CachePath>
+				</File>
+				<File Id="835854000" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GMTK2024_SFX_towerSlide02_v01.wav</ShortName>
+					<CachePath>SFX/GMTK2024_SFX_towerSlide02_v01_143AC765.wem</CachePath>
 				</File>
 				<File Id="839132535" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>GMTK2024_SFX_enemyDies_cyclops_-3_v1.wav</ShortName>
@@ -101,9 +117,17 @@
 					<ShortName>GMTK2024_towerPlace02_-7dB_v01.wav</ShortName>
 					<CachePath>SFX/GMTK2024_towerPlace02_-7dB_v01_14E21738.wem</CachePath>
 				</File>
+				<File Id="882246771" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GMTK2024_SFX_towerSell03_-7dB_v01.wav</ShortName>
+					<CachePath>SFX/GMTK2024_SFX_towerSell03_-7dB_v01_14E21738.wem</CachePath>
+				</File>
 				<File Id="888382889" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>GMTK2024_SFX_towerAttack01_mid_-11_v1.wav</ShortName>
 					<CachePath>SFX/GMTK2024_SFX_towerAttack01_mid_-11_v1_9938A83B.wem</CachePath>
+				</File>
+				<File Id="904288813" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GMTK2024_SFX_towerSlide01_v01.wav</ShortName>
+					<CachePath>SFX/GMTK2024_SFX_towerSlide01_v01_02C1248E.wem</CachePath>
 				</File>
 				<File Id="934633238" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>GMTK2024_SFX_towerAttack02_low_-11_v1.wav</ShortName>
@@ -112,6 +136,10 @@
 				<File Id="934825369" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>GMTK2024_towerPlace01_-7dB_v01.wav</ShortName>
 					<CachePath>SFX/GMTK2024_towerPlace01_-7dB_v01_14E21738.wem</CachePath>
+				</File>
+				<File Id="945879634" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GMTK2024_SFX_towerSlide03_v01.wav</ShortName>
+					<CachePath>SFX/GMTK2024_SFX_towerSlide03_v01_3ABE3E98.wem</CachePath>
 				</File>
 				<File Id="946140780" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>GMTK2024_towerPlace03_-7dB_v01.wav</ShortName>
@@ -245,7 +273,23 @@
 						<MediaRef Id="946140780"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="2225251985" Name="Play_SFXTowerSlide" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="3932998018" Name="Play_SFXTowerSell" DurationType="OneShot" DurationMin="0.5094299" DurationMax="0.57341665">
+					<MediaRefs>
+						<MediaRef Id="103139025"/>
+						<MediaRef Id="251441061"/>
+						<MediaRef Id="652416591"/>
+						<MediaRef Id="882246771"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2225251985" Name="Play_SFXTowerSlide" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="835854000"/>
+						<MediaRef Id="904288813"/>
+						<MediaRef Id="945879634"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2684592797" Name="Play_SFXTowerSlide_01" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="2237095779" Name="Stop_SFXTowerSlide" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 			</Events>
 		</SoundBank>
 		<SoundBank Id="1117531639" Type="User" Language="SFX" Hash="{51CDA230-BAA0-389C-7F26-AB6926A73F67}">
@@ -566,5 +610,5 @@
 			</StateGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{66C72C37-4741-38E9-1E42-23F62DB7DBC4}</FileHash>
+	<FileHash>{B689EBDD-F6B7-359D-7C44-223BBB29E9C4}</FileHash>
 </SoundBanksInfo>
