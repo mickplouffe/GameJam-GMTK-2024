@@ -314,6 +314,289 @@
 								</Sound>
 							</ChildrenList>
 						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="towerSell" ID="{DCF81620-06E4-4FCA-A7CF-8B84F3A1F91D}" ShortID="62519448">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{7F62BABC-0C6C-4DAD-ACF1-E77615B460FB}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="GMTK2024_SFX_towerSell01_-7dB_v01" ID="{3D3D08FF-5C33-4285-9F65-802CE3D4A890}" ShortID="748343852">
+									<PropertyList>
+										<Property Name="Pitch" Type="int32">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{C46B3414-8170-4EDF-953F-6A0F2F527790}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Max" Type="Real64" Value="76"/>
+															<Property Name="Min" Type="Real64" Value="-51"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{7F62BABC-0C6C-4DAD-ACF1-E77615B460FB}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="GMTK2024_SFX_towerSell01_-7dB_v01" ID="{052903D3-F4AC-4042-A216-B583C5F652B2}">
+											<Language>SFX</Language>
+											<AudioFile>GMTK2024_SFX_towerSell01_-7dB_v01.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="251441061"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="GMTK2024_SFX_towerSell01_-7dB_v01" ID="{052903D3-F4AC-4042-A216-B583C5F652B2}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="GMTK2024_SFX_towerSell02_-7dB_v01" ID="{FBB47CA3-DD3B-47C6-B4FB-5951AE935AAA}" ShortID="895574990">
+									<PropertyList>
+										<Property Name="Pitch" Type="int32">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{B8609C94-095A-4DE2-B427-48A31393A110}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Max" Type="Real64" Value="51"/>
+															<Property Name="Min" Type="Real64" Value="-51"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{7F62BABC-0C6C-4DAD-ACF1-E77615B460FB}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="GMTK2024_SFX_towerSell02_-7dB_v01" ID="{CD23A00A-6A70-4192-A1A7-32945BFBAFD4}">
+											<Language>SFX</Language>
+											<AudioFile>GMTK2024_SFX_towerSell02_-7dB_v01.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="103139025"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="GMTK2024_SFX_towerSell02_-7dB_v01" ID="{CD23A00A-6A70-4192-A1A7-32945BFBAFD4}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="GMTK2024_SFX_towerSell03_-7dB_v01" ID="{0AFA70E5-AE42-4F4C-813D-2BB345728B13}" ShortID="790450621">
+									<PropertyList>
+										<Property Name="Pitch" Type="int32">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{C9043EB5-1DC7-4348-A48B-40ADB8F9A63A}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Max" Type="Real64" Value="51"/>
+															<Property Name="Min" Type="Real64" Value="-51"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{7F62BABC-0C6C-4DAD-ACF1-E77615B460FB}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="GMTK2024_SFX_towerSell03_-7dB_v01" ID="{362B9742-F8E0-40AA-A885-E1569D826977}">
+											<Language>SFX</Language>
+											<AudioFile>GMTK2024_SFX_towerSell03_-7dB_v01.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="882246771"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="GMTK2024_SFX_towerSell03_-7dB_v01" ID="{362B9742-F8E0-40AA-A885-E1569D826977}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="GMTK2024_SFX_towerSell04_-7dB_v01" ID="{70893ADF-E8F4-4319-99B2-EF5DC1C30386}" ShortID="712040095">
+									<PropertyList>
+										<Property Name="Pitch" Type="int32">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{9995206D-C8FB-437B-9E1B-7563155C76ED}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Max" Type="Real64" Value="76"/>
+															<Property Name="Min" Type="Real64" Value="-51"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{7F62BABC-0C6C-4DAD-ACF1-E77615B460FB}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="GMTK2024_SFX_towerSell04_-7dB_v01" ID="{3CE68F2B-21DB-4B3A-96A6-52DF07CB1945}">
+											<Language>SFX</Language>
+											<AudioFile>GMTK2024_SFX_towerSell04_-7dB_v01.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="652416591"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="GMTK2024_SFX_towerSell04_-7dB_v01" ID="{3CE68F2B-21DB-4B3A-96A6-52DF07CB1945}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</RandomSequenceContainer>
+						<BlendContainer Name="towerSlide" ID="{110D8DD8-08F5-4C85-A4D3-D7A466215043}" ShortID="701752668">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>2</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{7F62BABC-0C6C-4DAD-ACF1-E77615B460FB}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="GMTK2024_SFX_towerSlide01_v01" ID="{D08BC017-91F2-4A14-A984-79F3D97BD90A}" ShortID="276619946">
+									<PropertyList>
+										<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{7F62BABC-0C6C-4DAD-ACF1-E77615B460FB}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="GMTK2024_SFX_towerSlide01_v01" ID="{3E0B3DE4-E5AB-4857-8BE9-5971ECCCC4B1}">
+											<PropertyList>
+												<Property Name="CrossfadeDuration" Type="Real64" Value="333.333"/>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.2"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.2"/>
+												<Property Name="LoopBegin" Type="Real64" Value="0.289855072463768"/>
+												<Property Name="LoopEnd" Type="Real64" Value="6.47342995169082"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>GMTK2024_SFX_towerSlide01_v01.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="904288813"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="GMTK2024_SFX_towerSlide01_v01" ID="{3E0B3DE4-E5AB-4857-8BE9-5971ECCCC4B1}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="GMTK2024_SFX_towerSlide02_v01" ID="{0DE6BC9B-AAB8-4417-B479-41BF796C241A}" ShortID="227347950">
+									<PropertyList>
+										<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{7F62BABC-0C6C-4DAD-ACF1-E77615B460FB}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="GMTK2024_SFX_towerSlide02_v01" ID="{3ED29064-D122-429C-A6BC-1526FAEE2E88}">
+											<PropertyList>
+												<Property Name="CrossfadeDuration" Type="Real64" Value="720.888"/>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.2"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.2"/>
+												<Property Name="LoopBegin" Type="Real64" Value="0.389921271135266"/>
+												<Property Name="LoopEnd" Type="Real64" Value="9.32266311896135"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>GMTK2024_SFX_towerSlide02_v01.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="835854000"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="GMTK2024_SFX_towerSlide02_v01" ID="{3ED29064-D122-429C-A6BC-1526FAEE2E88}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="GMTK2024_SFX_towerSlide03_v01" ID="{0A095A57-4F7E-4D55-9C82-33901B008C0D}" ShortID="130536598">
+									<PropertyList>
+										<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-2</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{7F62BABC-0C6C-4DAD-ACF1-E77615B460FB}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="GMTK2024_SFX_towerSlide03_v01" ID="{71CA46E9-0E03-40F8-9053-B9C2E0ACBF05}">
+											<PropertyList>
+												<Property Name="CrossfadeDuration" Type="Real64" Value="451.25"/>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.2"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.2"/>
+												<Property Name="LoopBegin" Type="Real64" Value="0.261594202898551"/>
+												<Property Name="LoopEnd" Type="Real64" Value="8.76340579710145"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>GMTK2024_SFX_towerSlide03_v01.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="945879634"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="GMTK2024_SFX_towerSlide03_v01" ID="{71CA46E9-0E03-40F8-9053-B9C2E0ACBF05}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</BlendContainer>
 					</ChildrenList>
 				</ActorMixer>
 			</ChildrenList>

@@ -29,6 +29,7 @@ namespace AK
         static const AkUniqueID PLAY_SFXTILTINGTILES = 86987433U;
         static const AkUniqueID PLAY_SFXTOWERATTACKHIT = 4103541689U;
         static const AkUniqueID PLAY_SFXTOWERPLACE = 2094922267U;
+        static const AkUniqueID PLAY_SFXTOWERSELL = 3932998018U;
         static const AkUniqueID PLAY_SFXTOWERSLIDE = 2225251985U;
         static const AkUniqueID PLAY_UICLICK = 1615720664U;
         static const AkUniqueID PLAY_UIGOLDGAIN = 3581364067U;
@@ -40,6 +41,7 @@ namespace AK
         static const AkUniqueID SETSTATE_ACTIVEWAVE = 3038968348U;
         static const AkUniqueID SETSTATE_BETWEENWAVES = 2339243207U;
         static const AkUniqueID STARTGAME = 1521187885U;
+        static const AkUniqueID STOP_SFXTOWERSLIDE = 2237095779U;
     } // namespace EVENTS
 
     namespace STATES

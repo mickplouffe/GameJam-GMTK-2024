@@ -10,6 +10,21 @@
 				<SoundBank Name="SFX" ID="{F7F0A189-6FB4-4FB4-B112-784E34501122}">
 					<ObjectInclusionList>
 						<ObjectRef Name="SFX" ID="{44EF5028-F23C-448C-BEC5-271E73A1269C}" WorkUnitID="{44EF5028-F23C-448C-BEC5-271E73A1269C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_SFXSpawnerTileSpawn" ID="{CC3C517E-D109-44C5-8243-67F08A28976D}" WorkUnitID="{44EF5028-F23C-448C-BEC5-271E73A1269C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="SFXEvents_Otter" ID="{0A7A0CEB-234F-4544-9DAA-DD6728515385}" WorkUnitID="{0A7A0CEB-234F-4544-9DAA-DD6728515385}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_SFXCyclopsSpawn" ID="{11CD0FCB-868F-4583-81B3-9754CF23CB39}" WorkUnitID="{44EF5028-F23C-448C-BEC5-271E73A1269C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_SFXTowerSell" ID="{D656D3F4-3ECF-4658-AB6C-9DAFE7B7718F}" WorkUnitID="{0A7A0CEB-234F-4544-9DAA-DD6728515385}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_SFXGorgonDeath" ID="{6A1DEDFA-FF80-476F-A541-A1EE98E7E539}" WorkUnitID="{44EF5028-F23C-448C-BEC5-271E73A1269C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_SFXTowerPlace" ID="{F6BBF08E-2F33-4870-9A49-A02B42EC8F12}" WorkUnitID="{0A7A0CEB-234F-4544-9DAA-DD6728515385}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_SFXGorgonSpawn" ID="{C1F50FB4-DA34-4AC9-8F75-81C12F78B3C9}" WorkUnitID="{44EF5028-F23C-448C-BEC5-271E73A1269C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_SFXDestroyed" ID="{718999EE-04B2-4B00-A550-4232D3722287}" WorkUnitID="{44EF5028-F23C-448C-BEC5-271E73A1269C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_SFXMinotaurSpawn" ID="{7E69CAA6-B774-4BC7-9228-375F7EB7727B}" WorkUnitID="{44EF5028-F23C-448C-BEC5-271E73A1269C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_SFXEnemySlide" ID="{6207066F-9359-4E10-9874-4AC98C406D17}" WorkUnitID="{44EF5028-F23C-448C-BEC5-271E73A1269C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_SFXTowerAttack" ID="{775C1543-7B8D-4E56-8933-F1E696F9BD4E}" WorkUnitID="{44EF5028-F23C-448C-BEC5-271E73A1269C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Stop_SFXTowerSlide" ID="{BAAA6E50-4D1A-4E70-98D9-B0371F5F49BA}" WorkUnitID="{0A7A0CEB-234F-4544-9DAA-DD6728515385}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_SFXTowerSlide" ID="{01DDC3A1-414C-4E8A-AED7-15A2D84D2ABF}" WorkUnitID="{0A7A0CEB-234F-4544-9DAA-DD6728515385}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_SFXGroundTileSpawn" ID="{E869B14E-1621-4ED1-89AC-65DE7A7EC898}" WorkUnitID="{44EF5028-F23C-448C-BEC5-271E73A1269C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_SFXCyclopsDeath" ID="{753A1E7C-C50C-4FFA-BA3C-567D1C5DFA47}" WorkUnitID="{44EF5028-F23C-448C-BEC5-271E73A1269C}" Origin="Manual" Filter="7"/>
 					</ObjectInclusionList>
 					<ObjectExclusionList/>
 					<GameSyncExclusionList/>
