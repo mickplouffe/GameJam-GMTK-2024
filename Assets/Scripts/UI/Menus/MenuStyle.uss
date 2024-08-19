@@ -1,6 +1,4 @@
 .menuTitle {
-    padding-bottom: 0;
-    margin-bottom: 70px;
     font-size: 120px;
     -unity-font-style: bold;
 }
@@ -17,19 +15,17 @@
     position: relative;
     font-size: 32px;
     -unity-font-style: bold;
-    max-height: 140px;
-    width: 500px;
-    height: 130px;
+    width: 50%;
+    height: 20%;
 }
 
 .buttonsPanel {
-    justify-content: space-between;
+    justify-content: space-around;
     align-self: auto;
     align-items: center;
-    min-width: 200px;
-    min-height: 400px;
-    width: 600px;
-    height: 600px;
+    width: 60%;
+    height: 80%;
+    margin-bottom: 4%;
 }
 
 .menuContainer {
@@ -38,4 +34,13 @@
     justify-content: center;
     flex-basis: 100%;
     background-color: rgba(140, 140, 140, 0.9);
+}
+
+.titleContainer {
+    align-items: center;
+    justify-content: center;
+    width: 60%;
+    height: 20%;
+    margin-top: 4%;
+    margin-bottom: 2%;
 }

@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 556f64a68728da44e9d4b0dbdcb4b107
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 264134
+  packageName: 'Artistic: Oil Paint'
+  packageVersion: 1.2.0
+  assetPath: Assets/FronkonGames/Artistic/OilPaint/Editor/Internal/Inspector.GUI.cs
+  uploadId: 678134

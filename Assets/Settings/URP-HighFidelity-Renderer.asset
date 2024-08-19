@@ -1,5 +1,82 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-2298970354230566582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4473ca3f180686849980f1ab4439aff1, type: 3}
+  m_Name: OilPaint
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  settings:
+    intensity: 0
+    kuwahara: 4
+    passes: 1
+    radius: 7
+    blur: 2
+    sharpness: 8
+    hardness: 8
+    alpha: 1
+    zeroCrossing: 0.58
+    detail: 0
+    detailStrength: 0.101
+    embossStrength: 13.49
+    embossAngle: 72
+    waterColor: 0.971
+    processDepth: 1
+    depthCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.75
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0.25
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    depthPower: 0.348
+    sampleSky: 1
+    viewDepthCurve: 0
+    renderSize: 1
+    brightness: 0
+    contrast: 1
+    gamma: 1
+    hue: 0
+    saturation: 1
+    affectSceneView: 0
+    filterMode: 1
+    whenToInsert: 550
+    ignoreDeltaTimeScale: 0
+    enableProfiling: 0
+    forceCurveTextureUpdate: 1
 --- !u!114 &-1878332245247344467
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -68,7 +145,8 @@ MonoBehaviour:
       type: 3}
   m_RendererFeatures:
   - {fileID: -1878332245247344467}
-  m_RendererFeatureMap: adc0de57c6d2eee5
+  - {fileID: -2298970354230566582}
+  m_RendererFeatureMap: adc0de57c6d2eee54ae1eeaea46a18e0
   m_UseNativeRenderPass: 0
   postProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}
   xrSystemData: {fileID: 11400000, guid: 60e1133243b97e347b653163a8c01b64, type: 2}

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: bbbdd4e833c1137448362d2a2c71401f
+ShaderIncludeImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 264134
+  packageName: 'Artistic: Oil Paint'
+  packageVersion: 1.2.0
+  assetPath: Assets/FronkonGames/Artistic/OilPaint/Resources/Shaders/Artistic.hlsl
+  uploadId: 678134

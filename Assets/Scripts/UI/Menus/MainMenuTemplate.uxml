@@ -1,8 +1,10 @@
 <engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <Style src="project://database/Assets/MenuUI/MenuStyle.uss?fileID=7433441132597879392&amp;guid=772ae586c66164644b27dab80cfe5f2d&amp;type=3#MenuStyle" />
-    <engine:VisualElement name="MainMenuContainer" class="menuContainer">
-        <engine:Label text="MAIN MENU" name="MainMenuTitle" emoji-fallback-support="false" class="menuTitle" />
-        <engine:VisualElement name="ButtonsPanel" class="buttonsPanel">
+    <Style src="project://database/Assets/Scripts/UI/Menus/MenuStyle.uss?fileID=7433441132597879392&amp;guid=772ae586c66164644b27dab80cfe5f2d&amp;type=3#MenuStyle" />
+    <engine:VisualElement name="MainMenuContainer" class="menuContainer" style="background-color: rgb(128, 128, 128);">
+        <engine:VisualElement name="TitleContainer" class="titleContainer">
+            <engine:Label text="MAIN MENU" name="MainMenuTitle" emoji-fallback-support="false" class="menuTitle" />
+        </engine:VisualElement>
+        <engine:VisualElement name="ButtonsPanel" class="buttonsPanel" style="justify-content: space-around;">
             <engine:Button text="PLAY" name="PlayButton" class="menuButton" />
             <engine:Button text="OPTIONS" name="OptionsButton" class="menuButton" />
             <engine:Button text="CREDITS" name="CreditsButton" enable-rich-text="true" class="menuButton" />

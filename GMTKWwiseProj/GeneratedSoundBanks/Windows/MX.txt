@@ -13,8 +13,8 @@ State	ID	Name	State Group			Notes
 	2447589688	ActiveWave	MX_Waves			
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
-	153486832	Scales of Olympus Transition out of loop -starts beat 4- v1	Z:\Volumes\LaCie SSD\Old Projects\2024\GMTK_2024\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Windows\SFX\Scales of Olympus Transition out of loop -starts beat 4- v1_05A4D402.wem		\Interactive Music Hierarchy\MX\MX_Otter\Transitions\Scales of Olympus Transition out of loop -starts beat 4- v1\Scales of Olympus Transition out of loop -starts beat 4- v1		0
-	495404542	Scales of Olympus Intro v1	Z:\Volumes\LaCie SSD\Old Projects\2024\GMTK_2024\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Windows\SFX\Scales of Olympus Intro v1_05A4D402.wem		\Interactive Music Hierarchy\MX\MX_Otter\Transitions\Scales of Olympus Intro v1\Scales of Olympus Intro v1		0
-	624318979	lowIntensity	Z:\Volumes\LaCie SSD\Old Projects\2024\GMTK_2024\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Windows\SFX\Scales of Olympus Layer 2 v1_05A4D402.wem		\Interactive Music Hierarchy\MX\MX_Otter\MX\BetweenWaves\BetweenWaves_segment\lowIntensity		0
-	902048449	highIntensity	Z:\Volumes\LaCie SSD\Old Projects\2024\GMTK_2024\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Windows\SFX\Scales of Olympus Game Loop v1_05A4D402.wem		\Interactive Music Hierarchy\MX\MX_Otter\MX\GameplayLoop\GameplayLoop_segment\highIntensity		0
+	153486832	Scales of Olympus Transition out of loop -starts beat 4- v1	D:\UnityProjects\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Windows\SFX\Scales of Olympus Transition out of loop -starts beat 4- v1_05A4D402.wem		\Interactive Music Hierarchy\MX\MX_Otter\Transitions\Scales of Olympus Transition out of loop -starts beat 4- v1\Scales of Olympus Transition out of loop -starts beat 4- v1		57397
+	495404542	Scales of Olympus Intro v1	D:\UnityProjects\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Windows\SFX\Scales of Olympus Intro v1_05A4D402.wem		\Interactive Music Hierarchy\MX\MX_Otter\Transitions\Scales of Olympus Intro v1\Scales of Olympus Intro v1		112349
+	624318979	lowIntensity	D:\UnityProjects\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Windows\SFX\Scales of Olympus Layer 2 v1_05A4D402.wem		\Interactive Music Hierarchy\MX\MX_Otter\MX\BetweenWaves\BetweenWaves_segment\lowIntensity		1367267
+	902048449	highIntensity	D:\UnityProjects\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Windows\SFX\Scales of Olympus Game Loop v1_05A4D402.wem		\Interactive Music Hierarchy\MX\MX_Otter\MX\GameplayLoop\GameplayLoop_segment\highIntensity		1234896
 

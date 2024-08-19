@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f48fd98e49f540048a06e6ebc9e45b7a, type: 3}
+  m_Name: DefaultTower
+  m_EditorClassIdentifier: 
+  name: Default Tower
+  maxWeight: 10
+  weight: 5
+  maxDamage: 10
+  damage: 2
+  maxRange: 10
+  range: 5
+  cost: 10
+  selectedMaterial: {fileID: 2100000, guid: 5abb3d18170c7cc4b8ce3577ef8b5ed8, type: 2}
+  defaultMaterial: {fileID: 2100000, guid: 6615f1708a4932646adcdc55932feefa, type: 2}
+  isUpgradable: 1
+  isStatic: 0

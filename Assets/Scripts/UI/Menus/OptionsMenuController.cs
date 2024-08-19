@@ -7,7 +7,7 @@ using UnityEngine.Serialization;
 using UnityEngine.UIElements;
 
 [RequireComponent(typeof(UIDocument))]
-public class OptionsMenuController : MonoBehaviour
+public class OptionsMenuController : BaseMenu
 {
     [SerializeField] private MenuEventChannel _menuEventChannel; 
     
@@ -18,6 +18,7 @@ public class OptionsMenuController : MonoBehaviour
     private VisualElement _optionsMenuContainer;
     private Button _backButton;
     private Resolution[] _allowResolutions;
+    private VisualElement _prevContainer;
     
     private void OnEnable()
     {
@@ -46,7 +47,7 @@ public class OptionsMenuController : MonoBehaviour
 
         _menuEventChannel.OnOptionsButtonPressed += HandleOptionsButtonPressed;
         
-        _optionsMenuContainer.visible = false;
+        _optionsMenuContainer.visible = _isVisible;
     }
     
     private void OnDisable()
@@ -60,15 +61,16 @@ public class OptionsMenuController : MonoBehaviour
         _menuEventChannel.OnOptionsButtonPressed -= HandleOptionsButtonPressed;
     }
 
-    private void HandleOptionsButtonPressed()
+    private void HandleOptionsButtonPressed(VisualElement prevContainer)
     {
+        _prevContainer = prevContainer;
         _optionsMenuContainer.visible = true;
     }
     
     private void HandleBackButtonPressed()
     {
         _optionsMenuContainer.visible = false;
-        _menuEventChannel.RaiseBackButtonPressed();
+        _menuEventChannel.RaiseBackButtonPressed(_prevContainer);
     }
     
     private void InitDisplayResolution()

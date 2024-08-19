@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: d14368da782477b498368f08acd03a27
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 264134
+  packageName: 'Artistic: Oil Paint'
+  packageVersion: 1.2.0
+  assetPath: Assets/FronkonGames/Artistic/OilPaint/Demo/Textures/Orange.mat
+  uploadId: 678134

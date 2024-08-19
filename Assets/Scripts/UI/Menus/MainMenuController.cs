@@ -7,7 +7,7 @@ using UnityEngine.Events;
 using UnityEngine.UIElements;
 
 [RequireComponent(typeof(UIDocument))]
-public class MainMenuController : MonoBehaviour
+public class MainMenuController : BaseMenu
 {
     [SerializeField] private MenuEventChannel _menuEventChannel; 
         
@@ -30,7 +30,6 @@ public class MainMenuController : MonoBehaviour
         _exitButton = _ui.rootVisualElement.Q<Button>("ExitButton");
 
         _mainMenuContainer = _ui.rootVisualElement.Q<VisualElement>("MainMenuContainer");
-        _mainMenuContainer.visible = true;
         
         _playButton.clicked += HandlePlayButtonPressed;
         _optionsButton.clicked += HandleOptionsButtonPressed;
@@ -38,6 +37,8 @@ public class MainMenuController : MonoBehaviour
         _exitButton.clicked += HandleExitButtonPressed;
 
         _menuEventChannel.OnBackButtonPressed += HandleBackButtonPressed;
+        
+        _mainMenuContainer.visible = _isVisible;
     }
 
     private void OnDisable()
@@ -58,18 +59,21 @@ public class MainMenuController : MonoBehaviour
     private void HandleOptionsButtonPressed()
     {
         _mainMenuContainer.visible = false;
-        _menuEventChannel.RaiseOptionsButtonPressedEvent();
+        _menuEventChannel.RaiseOptionsButtonPressedEvent(_mainMenuContainer);
     }
 
-    private void HandleBackButtonPressed()
+    private void HandleBackButtonPressed(VisualElement prevContainer)
     {
+        if (_mainMenuContainer != prevContainer)
+            return;
+        
         _mainMenuContainer.visible = true;
     }
     
     private void HandleCreditsButtonPressed()
     {
         _mainMenuContainer.visible = false;
-        _menuEventChannel.RaiseCreditsButtonPressed();
+        _menuEventChannel.RaiseCreditsButtonPressed(_mainMenuContainer);
     }
     
     

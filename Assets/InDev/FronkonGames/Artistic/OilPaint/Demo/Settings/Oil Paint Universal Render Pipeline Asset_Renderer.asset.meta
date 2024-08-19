@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 97fe6a71bb3e02a43a9776452463d5f4
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 264134
+  packageName: 'Artistic: Oil Paint'
+  packageVersion: 1.2.0
+  assetPath: Assets/FronkonGames/Artistic/OilPaint/Demo/Settings/Oil Paint Universal
+    Render Pipeline Asset_Renderer.asset
+  uploadId: 678134

@@ -9,9 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c60d89c1b8b696a4eafdcea041f57274, type: 3}
-  m_Name: E323B49E-BB5D-415B-8D03-1D1E41440B09
+  m_Script: {fileID: 11500000, guid: 7861aa62dd24507458c47dcd7d72af3d, type: 3}
+  m_Name: EnemyEventChannel
   m_EditorClassIdentifier: 
-  objectName: Play_AMBIENT___Beer_Garden_Large_Crowd_Talk_On_Benches_Exterior___02
-  id: 2172329993
-  guid: E323B49E-BB5D-415B-8D03-1D1E41440B09

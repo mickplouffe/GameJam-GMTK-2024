@@ -1,0 +1,6 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <engine:VisualElement name="PlayerUIContainer" style="height: auto; padding-top: 20px; padding-bottom: 10px; padding-right: 150px; padding-left: 0; margin-right: 20px; flex-direction: row; justify-content: space-around; -unity-text-align: upper-center; -unity-font-style: bold; font-size: 32px;">
+        <engine:Label text="Next Wave In: 00:00" name="WaveDelayLabel" />
+        <engine:Label text="Coins: 0" name="CoinsLabel" enable-rich-text="true" />
+    </engine:VisualElement>
+</engine:UXML>

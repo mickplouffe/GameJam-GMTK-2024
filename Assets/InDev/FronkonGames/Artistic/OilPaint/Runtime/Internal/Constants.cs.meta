@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 423e2ff155888e241a7733e9bf8da71b
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 264134
+  packageName: 'Artistic: Oil Paint'
+  packageVersion: 1.2.0
+  assetPath: Assets/FronkonGames/Artistic/OilPaint/Runtime/Internal/Constants.cs
+  uploadId: 678134

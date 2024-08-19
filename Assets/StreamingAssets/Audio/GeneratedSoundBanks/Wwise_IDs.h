@@ -33,6 +33,7 @@ namespace AK
         static const AkUniqueID PLAY_SFXTOWERPLACE = 2094922267U;
         static const AkUniqueID PLAY_SFXTOWERSELL = 3932998018U;
         static const AkUniqueID PLAY_SFXTOWERSLIDE = 2225251985U;
+        static const AkUniqueID PLAY_SFXTOWERSLIDE_01 = 2684592797U;
         static const AkUniqueID PLAY_UICLICK = 1615720664U;
         static const AkUniqueID PLAY_UIGOLDGAIN = 3581364067U;
         static const AkUniqueID PLAY_UIGOLDLOSS = 2262228835U;
@@ -102,6 +103,11 @@ namespace AK
         static const AkUniqueID UI = 1551306167U;
         static const AkUniqueID VO = 1534528548U;
     } // namespace BUSSES
+
+    namespace AUX_BUSSES
+    {
+        static const AkUniqueID VERB = 3657263530U;
+    } // namespace AUX_BUSSES
 
     namespace AUDIO_DEVICES
     {

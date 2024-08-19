@@ -62,4 +62,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eeae8fb3483507b409c5d71b2fd3d43c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isVisible: 1
   _menuEventChannel: {fileID: 11400000, guid: 8add3fae60bdfd540a41853d8b64ac69, type: 2}
