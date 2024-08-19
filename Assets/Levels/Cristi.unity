@@ -5034,8 +5034,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minCoins: 0
-  maxCoins: 100
-  startCoins: 1000
+  maxCoins: 100000
+  startCoins: 150
   coinsEventChannel: {fileID: 11400000, guid: bd788a866bdd906438a624d0a722e871, type: 2}
   uiEventChannel: {fileID: 11400000, guid: b6146f624481a48429195dc223974ca7, type: 2}
 --- !u!4 &506280816
@@ -12402,6 +12402,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waves:
   - {fileID: 11400000, guid: 7eb0c521f78f1da40bfbafb259af28ad, type: 2}
+  - {fileID: 11400000, guid: ef9fa77cf51491643b49c3784bc5cf0d, type: 2}
+  - {fileID: 11400000, guid: ef9fa77cf51491643b49c3784bc5cf0d, type: 2}
+  - {fileID: 11400000, guid: ef9fa77cf51491643b49c3784bc5cf0d, type: 2}
+  - {fileID: 11400000, guid: ef9fa77cf51491643b49c3784bc5cf0d, type: 2}
+  - {fileID: 11400000, guid: ef9fa77cf51491643b49c3784bc5cf0d, type: 2}
+  - {fileID: 11400000, guid: ef9fa77cf51491643b49c3784bc5cf0d, type: 2}
+  - {fileID: 11400000, guid: ef9fa77cf51491643b49c3784bc5cf0d, type: 2}
+  - {fileID: 11400000, guid: ef9fa77cf51491643b49c3784bc5cf0d, type: 2}
+  - {fileID: 11400000, guid: ef9fa77cf51491643b49c3784bc5cf0d, type: 2}
+  - {fileID: 11400000, guid: ef9fa77cf51491643b49c3784bc5cf0d, type: 2}
+  - {fileID: 11400000, guid: ef9fa77cf51491643b49c3784bc5cf0d, type: 2}
+  - {fileID: 11400000, guid: ef9fa77cf51491643b49c3784bc5cf0d, type: 2}
+  - {fileID: 11400000, guid: ef9fa77cf51491643b49c3784bc5cf0d, type: 2}
+  - {fileID: 11400000, guid: ef9fa77cf51491643b49c3784bc5cf0d, type: 2}
+  - {fileID: 11400000, guid: ef9fa77cf51491643b49c3784bc5cf0d, type: 2}
+  - {fileID: 11400000, guid: ef9fa77cf51491643b49c3784bc5cf0d, type: 2}
+  - {fileID: 11400000, guid: ef9fa77cf51491643b49c3784bc5cf0d, type: 2}
+  - {fileID: 11400000, guid: ef9fa77cf51491643b49c3784bc5cf0d, type: 2}
   - {fileID: 11400000, guid: ef9fa77cf51491643b49c3784bc5cf0d, type: 2}
   enemyEventChannel: {fileID: 11400000, guid: 58c4683592b42784c91a64e98e2ccbc1, type: 2}
 --- !u!4 &1807678569
