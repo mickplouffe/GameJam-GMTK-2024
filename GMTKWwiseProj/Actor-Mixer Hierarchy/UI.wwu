@@ -222,6 +222,74 @@
 											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{7F62BABC-0C6C-4DAD-ACF1-E77615B460FB}"/>
 										</Reference>
 									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="GMTK2024_SFX_UIHover_-3_v1" ID="{5E168D15-2F56-4A33-90DD-77C94EA38104}" ShortID="954232774">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{7F62BABC-0C6C-4DAD-ACF1-E77615B460FB}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="GMTK2024_SFX_UIHover_-3_v1" ID="{F4EEFE2C-1E3E-43A9-9FDB-4E36207065EE}">
+													<Language>SFX</Language>
+													<AudioFile>GMTK2024_SFX_UIHover_-3_v1.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="943130628"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="GMTK2024_SFX_UIHover_-3_v1" ID="{F4EEFE2C-1E3E-43A9-9FDB-4E36207065EE}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="GMTK2024_SFX_UIHover_-3_v2" ID="{5DDDF193-2964-446B-A7BB-279C8128E869}" ShortID="97852711">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{7F62BABC-0C6C-4DAD-ACF1-E77615B460FB}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="GMTK2024_SFX_UIHover_-3_v2" ID="{F7B94725-D390-4ECA-8D9E-839115348B7F}">
+													<Language>SFX</Language>
+													<AudioFile>GMTK2024_SFX_UIHover_-3_v2.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="631211157"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="GMTK2024_SFX_UIHover_-3_v2" ID="{F7B94725-D390-4ECA-8D9E-839115348B7F}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="GMTK2024_SFX_UIHover_-3_v3" ID="{58591CEF-C260-4361-B1D8-D2C1FBE80302}" ShortID="268119867">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{7F62BABC-0C6C-4DAD-ACF1-E77615B460FB}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="GMTK2024_SFX_UIHover_-3_v3" ID="{6B07D0C6-F9E3-4523-987F-4A66E302CF41}">
+													<Language>SFX</Language>
+													<AudioFile>GMTK2024_SFX_UIHover_-3_v3.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="1069707363"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="GMTK2024_SFX_UIHover_-3_v3" ID="{6B07D0C6-F9E3-4523-987F-4A66E302CF41}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
 								</RandomSequenceContainer>
 								<RandomSequenceContainer Name="Click" ID="{F9364A9C-1AD8-475C-9DB2-644643570077}" ShortID="132835570">
 									<ReferenceList>
