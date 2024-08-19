@@ -50,13 +50,13 @@ public class DialogueManager : MonoBehaviour
             {
                 NameText.text = "Alexiares";
                 ProfilePicture1.SetActive(true);
-                ProfilePicture2.SetActive(false);
+              //  ProfilePicture2.SetActive(false);
             }
             else
             {
                 NameText.text = "Anicetus";
                 ProfilePicture2.SetActive(true);
-                ProfilePicture1.SetActive(false);
+             //   ProfilePicture1.SetActive(false);
             }
         }
         else
