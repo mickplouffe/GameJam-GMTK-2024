@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 72633fb3317f6b849b6e5ff5cb82570e, type: 3}
-  m_Name: F7F0A189-6FB4-4FB4-B112-784E34501122
+  m_Name: D70BBE13-7566-4995-B523-46822B62A1A6
   m_EditorClassIdentifier: 
-  objectName: SFX
-  id: 393239870
-  guid: F7F0A189-6FB4-4FB4-B112-784E34501122
+  objectName: UI
+  id: 1551306167
+  guid: D70BBE13-7566-4995-B523-46822B62A1A6

@@ -62,8 +62,6 @@ public class TowerManager : MonoBehaviourSingletonPersistent<TowerManager>
         {
             if (!FindTransformBasedOnLayer(tilesLayerMask, out var hit) || !SnapTowerToTile(hit.point, true))
                 selectedTower.transform.position = Vector3.up * 100.0f;
-                
-            }
         }
 
         if (Input.GetMouseButtonDown(0) && !_placementMode)

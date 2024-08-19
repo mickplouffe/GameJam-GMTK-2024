@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72633fb3317f6b849b6e5ff5cb82570e, type: 3}
-  m_Name: F7F0A189-6FB4-4FB4-B112-784E34501122
+  m_Script: {fileID: 11500000, guid: f6fac16ea6c69a04b9f91c0c3f9b66c3, type: 3}
+  m_Name: C1F50FB4-DA34-4AC9-8F75-81C12F78B3C9
   m_EditorClassIdentifier: 
-  objectName: SFX
-  id: 393239870
-  guid: F7F0A189-6FB4-4FB4-B112-784E34501122
+  objectName: Play_SFXGorgonEnterTower
+  id: 3454470586
+  guid: C1F50FB4-DA34-4AC9-8F75-81C12F78B3C9

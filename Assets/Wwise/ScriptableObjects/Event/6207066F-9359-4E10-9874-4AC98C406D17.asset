@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72633fb3317f6b849b6e5ff5cb82570e, type: 3}
-  m_Name: F7F0A189-6FB4-4FB4-B112-784E34501122
+  m_Script: {fileID: 11500000, guid: f6fac16ea6c69a04b9f91c0c3f9b66c3, type: 3}
+  m_Name: 6207066F-9359-4E10-9874-4AC98C406D17
   m_EditorClassIdentifier: 
-  objectName: SFX
-  id: 393239870
-  guid: F7F0A189-6FB4-4FB4-B112-784E34501122
+  objectName: Play_SFXEnemySlide
+  id: 457896984
+  guid: 6207066F-9359-4E10-9874-4AC98C406D17
