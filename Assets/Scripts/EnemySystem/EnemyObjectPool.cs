@@ -39,6 +39,7 @@ public class EnemyObjectPool : MonoBehaviourSingletonPersistent<EnemyObjectPool>
     public void ReturnEnemyObject(GameObject obj)
     {
         obj.SetActive(false);
+        obj.transform.position = Vector3.up * 100.0f;
         poolQueue.Enqueue(obj);
     }
 }

@@ -81,6 +81,5 @@ public class EnemySpawner : MonoBehaviour
     private void HandleEnemyDestroyed(GameObject enemy)
     {
         _activeEnemies.Remove(enemy);
-        EnemyObjectPool.Instance.ReturnEnemyObject(enemy);
     }
 }

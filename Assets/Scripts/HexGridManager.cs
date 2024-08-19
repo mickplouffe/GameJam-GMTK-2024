@@ -47,6 +47,8 @@ public class HexGridManager : MonoBehaviourSingletonPersistent<HexGridManager>
     
     [SerializeField] private TiltObject tiltObject;
 
+    public Transform mainUnit;
+
     [Button]
     void Start()
     {
