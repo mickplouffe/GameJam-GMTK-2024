@@ -1132,8 +1132,7 @@
 									</ActiveSourceList>
 								</Sound>
 							</ChildrenList>
-						</ActorMixer>
-						<WorkUnit Name="SFX_Otter" ID="{A57A593A-B9DE-4277-A3EF-672CA80E8992}" PersistMode="Reference"/>
+						</RandomSequenceContainer>
 					</ChildrenList>
 					<PositioningInfo>
 						<Panner Name="" ID="{F92F5DCE-C603-4757-89C2-3561298016FD}"/>
