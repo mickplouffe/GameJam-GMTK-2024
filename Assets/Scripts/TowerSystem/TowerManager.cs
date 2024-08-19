@@ -28,7 +28,7 @@ public class TowerManager : MonoBehaviourSingletonPersistent<TowerManager>
     [SerializeField] private float waitTimeBeforeCanSelect = 0.2f;
     private List<Transform> _activeTowers;
 
-    private bool _placementMode;
+    [SerializeField] private bool _placementMode;
 
     public override void Awake()
     {
@@ -108,6 +108,9 @@ public class TowerManager : MonoBehaviourSingletonPersistent<TowerManager>
                 SnapTowerToTile(hit.point) && 
                 CoinsManager.Instance.CanBuy(selectedTower.GetComponent<TowerController>().instanceData.currentCost))
             {
+                weightEventChannel.RaiseWeightAdded( selectedTower.GetComponent<TowerController>().instanceData.weight, 
+                    selectedTower.GetComponent<TowerController>().Tile);
+                
                 RegisterTower(selectedTower.transform);
                 selectedTower = null;
             }
@@ -180,6 +183,9 @@ public class TowerManager : MonoBehaviourSingletonPersistent<TowerManager>
         uiEventChannel.RaiseActivateBuildMenu();
         
         // Unregister selected tower
+        weightEventChannel.RaiseWeightRemoved(activeTowerSelected.transform.GetComponent<TowerController>().instanceData.weight, 
+            activeTowerSelected.transform.GetComponent<TowerController>().Tile);
+        
         UnregisterTower(activeTowerSelected.transform);
         // Destroy selected tower
         Destroy(activeTowerSelected.gameObject);
@@ -226,17 +232,19 @@ public class TowerManager : MonoBehaviourSingletonPersistent<TowerManager>
     
     private void ForceSnapTowerToTile(Transform tower, HexTile tile)
     {
-        Bounds towerBounds = selectedTower.GetComponent<Collider>().bounds;
+        Bounds towerBounds = tower.GetComponent<Collider>().bounds;
 
-        selectedTower.transform.position =
-            selectedTower.GetComponent<TowerController>().Tile.TileObject.transform.position +
-            selectedTower.GetComponent<TowerController>().Tile.TileObject.transform.up *
+        tower.position =
+            tower.GetComponent<TowerController>().Tile.TileObject.transform.position +
+            tower.GetComponent<TowerController>().Tile.TileObject.transform.up *
             (towerBounds.size.y + yOffset) * 0.5f;
         
-        selectedTower.transform.rotation =
-            selectedTower.GetComponent<TowerController>().Tile.TileObject.transform.rotation;
+        tower.GetComponent<TowerController>().Tile.TowerObject = tower.gameObject;
         
-        selectedTower.transform.parent = HexGridManager.Instance.transform;
+        tower.rotation =
+            tower.GetComponent<TowerController>().Tile.TileObject.transform.rotation;
+        
+        tower.parent = HexGridManager.Instance.transform;
     }
 
     private void RegisterTower(Transform tower)
@@ -244,7 +252,6 @@ public class TowerManager : MonoBehaviourSingletonPersistent<TowerManager>
         // Register new tower
         _activeTowers.Add(tower);
         
-        weightEventChannel.RaiseWeightAdded( tower.GetComponent<TowerController>().instanceData.weight, tower.GetComponent<TowerController>().Tile);
         coinsEventChannel.RaiseModifyCoins(-tower.GetComponent<TowerController>().instanceData.currentCost);
         // TODO: Send event to let tiles now a new tower was added
         // RaiseTowerAddedToTileEvent(Transform tower)
@@ -253,7 +260,6 @@ public class TowerManager : MonoBehaviourSingletonPersistent<TowerManager>
     {
         // Register new tower
         _activeTowers.Remove(tower);
-        weightEventChannel.RaiseWeightRemoved(tower.GetComponent<TowerController>().instanceData.weight, tower.GetComponent<TowerController>().Tile);
         
         if (tower.GetComponent<TowerController>().Tile != null)
         {
@@ -261,8 +267,6 @@ public class TowerManager : MonoBehaviourSingletonPersistent<TowerManager>
             tower.GetComponent<TowerController>().Tile = null;
         }
 
-        
-        Destroy(tower.gameObject, 1.0f);
         // TODO: Send event to let tiles now a new tower was removed
         // RaiseTowerAddedToTileEvent(Transform tower)
     }

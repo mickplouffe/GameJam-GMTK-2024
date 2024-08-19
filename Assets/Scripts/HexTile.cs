@@ -24,4 +24,6 @@ public class HexTile
     {
         TowerObject = null;
     }
+    
+
 }
