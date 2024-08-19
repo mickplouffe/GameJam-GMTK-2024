@@ -6,7 +6,7 @@ public class HexGridManager : MonoBehaviourSingletonPersistent<HexGridManager>
 {
     public GameObject hexPrefab;
     private HexGrid hexGrid;
-    private readonly float _hexTileSize = 1;
+    public readonly float _hexTileSize = 1;
 
     /* [OnValueChanged("GenerateHexGrid")] */ public GridShape gridShape;
     [OnValueChanged("GenerateHexGrid"), Label("Width/Diameter"), Range(0, 40)] public int width = 10;
@@ -170,7 +170,11 @@ public class HexGridManager : MonoBehaviourSingletonPersistent<HexGridManager>
     {
         return hexGrid.GetTileAtPosition(worldPosition);
     }
-
+    
+    public HexTile GetTileAtPoint(Vector3 position)
+    {
+        return GetTile(Mathf.RoundToInt(position.x), Mathf.RoundToInt(position.z));
+    }
 
     // List of all the Manager API methods
     // AddTile(int q, int r) - Adds a tile at the specified coordinates
@@ -294,6 +298,50 @@ public class HexGridManager : MonoBehaviourSingletonPersistent<HexGridManager>
         float height = pixelColor.grayscale;
 
         return height * heightVariation;
+    }
+    
+    private (int q, int r) WorldToHex(Vector3 worldPosition)
+    {
+        Vector3 localPosition = Instance.transform.InverseTransformPoint(worldPosition);
+        float q = (localPosition.x * Mathf.Sqrt(3f) / 3f - localPosition.z / 3f) / Instance._hexTileSize;
+        float r = localPosition.z * 2f / 3f / _hexTileSize;
+        return HexRound(q, r);
+    }
+
+    private (int q, int r) HexRound(float q, float r)
+    {
+        float s = -q - r;
+        int q_round = Mathf.RoundToInt(q);
+        int r_round = Mathf.RoundToInt(r);
+        int s_round = Mathf.RoundToInt(s);
+
+        float q_diff = Mathf.Abs(q_round - q);
+        float r_diff = Mathf.Abs(r_round - r);
+        float s_diff = Mathf.Abs(s_round - s);
+
+        if (q_diff > r_diff && q_diff > s_diff)
+        {
+            q_round = -r_round - s_round;
+        }
+        else if (r_diff > s_diff)
+        {
+            r_round = -q_round - s_round;
+        }
+
+        return (q_round, r_round);
+    }
+
+    public HexTile GetTileAtWorldPosition(Vector3 worldPosition)
+    {
+        var (q, r) = WorldToHex(worldPosition);
+    
+        // Check if the tile is within the circular boundary and exists in the grid
+        HexTile tile = GetTile(q, r);
+    
+        if (tile != null && tile.TileObject.activeInHierarchy)
+            return tile;
+
+        return null;
     }
 }
 

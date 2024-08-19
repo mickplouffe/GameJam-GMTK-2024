@@ -38,6 +38,7 @@ public class TowerController : MonoBehaviour
     [SerializeField] private TiltEventChannel tiltEventChannel;
     
     private bool isSliding; // Track whether the object is currently sliding
+    private bool _prevIsSliding;
     private Vector3 tiltDirection; // Store the current tilt direction
     private float slipMagnitude; // Store the current sliding speed
 
@@ -47,13 +48,6 @@ public class TowerController : MonoBehaviour
         instanceData = new TowerInstanceData(towerData);
     }
 
-    private void Update()
-    {
-        // If the object is sliding, move it every frame
-        if (isSliding)
-            transform.position += tiltDirection * slipMagnitude * Time.deltaTime;
-    }
-    
     private void OnEnable()
     {
         tiltEventChannel.OnTiltChanged += HandleTiltChanged;
@@ -64,69 +58,98 @@ public class TowerController : MonoBehaviour
         tiltEventChannel.OnTiltChanged -= HandleTiltChanged;
     }
     
-    private void HandleTiltChanged(float tiltAngle, Vector3 direction)
-    {
-        // // Check if the tilt angle exceeds the object's tolerance
-        // if (tiltAngle > tiltAllowanceThreshold)
-        // {
-        //     // Start sliding if the threshold is exceeded
-        //     if (!isSliding)
-        //     {
-        //         isSliding = true;
-        //     }
-        //     if (Tile != null)
-        //         weightEventChannel.RaiseWeightRemoved(instanceData.weight, Tile);
-        //
-        //     Vector3 offset = transform.position - HexGridManager.Instance.transform.position;
-        //     tiltDirection = direction;
-        //     // Calculate sliding speed based on distance from the center
-        //     float distanceFromCenter = offset.magnitude;
-        //     slipMagnitude = slipSpeedMultiplier * distanceFromCenter;
-        //
-        //     if (HasAvailableTileWhileSliding())
-        //         weightEventChannel.RaiseWeightAdded(instanceData.weight, Tile);
-        //     
-        // }
-        // else
-        // {
-        //     // Stop sliding if the angle stabilizes below the threshold
-        //     if (HasAvailableTileAfterSliding() && isSliding)
-        //     {
-        //         towerEventChannel.RaiseSnapToNewTile(gameObject.transform, Tile);
-        //         return;
-        //     }
-        //     
-        //     if(isSliding && Tile != null)
-        //         towerEventChannel.RaiseTowerDestroyed(gameObject.transform);
-        //     
-        //     isSliding = false;
-        // }
-    }
+    
+private void Update()
+{
+    if (!isSliding) 
+        return;
+    // Calculate new position based on tilt direction and slip magnitude
+    Vector3 newPosition = transform.position + tiltDirection * slipMagnitude * Time.deltaTime;
 
-    private bool HasAvailableTileWhileSliding()
+    // Get the tile at the new position
+    HexTile newTile = HexGridManager.Instance.GetTileAtWorldPosition(newPosition);
+
+    // If the object has moved to a new tile
+    if (newTile != null && newTile != Tile)
     {
-        Tile = HexGridManager.Instance.GetTileAtPosition(new Vector3(transform.localPosition.x, 0.0f, transform.localPosition.z));
-        return Tile != null;
+        // Remove weight from the previous tile
+        if (Tile != null)
+            weightEventChannel.RaiseWeightRemoved(instanceData.weight, Tile);
+
+        // Update the current tile to the new tile
+        Tile = newTile;
+
+        // Add weight to the new tile
+        weightEventChannel.RaiseWeightAdded(instanceData.weight, Tile);
+        // Move the object to the new position
+    }
+    else if(newTile == null)
+    {
+        StopSliding();
     }
     
-    private bool HasAvailableTileAfterSliding()
-    {
-        Tile = HexGridManager.Instance.GetTileAtPosition(new Vector3(transform.localPosition.x, 0.0f, transform.localPosition.z));
-        if (Tile == null)
-            return false;
-        
-        if (!Tile.HasTower())
-            return true;
-        
-        List<HexTile> neighbours = HexGridManager.Instance.GetNeighbors(Tile.Q, Tile.R);
-        foreach (var neighbour in neighbours.Where(neighbour => !neighbour.HasTower()))
-        {
-            Tile = neighbour;
-            return true;
-        }
+    transform.position = newPosition;
 
-        return false;
+}
+
+private void HandleTiltChanged(float tiltAngle, Vector3 direction)
+{
+    if (tiltAngle > tiltAllowanceThreshold)
+    {
+        if(Tile != null)
+            Tile.DetachTower();
+        StartSliding(direction);
     }
+    else if (isSliding)
+    {
+        StopSliding();
+    }
+}
+
+private void StartSliding(Vector3 direction)
+{
+    isSliding = true;
+    tiltDirection = direction;
+    slipMagnitude = slipSpeedMultiplier * (transform.position - HexGridManager.Instance.transform.position).magnitude;
+}
+
+private void StopSliding()
+{
+    isSliding = false;
+    slipMagnitude = 0f;
+    tiltDirection = Vector3.zero;
+
+    // Ensure the object is properly snapped to the current tile
+    HexTile finalTile = HexGridManager.Instance.GetTileAtWorldPosition(transform.position);
+    if (finalTile != null)
+    {
+        // Remove weight from the previous tile
+        if (Tile != null)
+            weightEventChannel.RaiseWeightRemoved(instanceData.weight, Tile);
+
+        // Update the current tile to the final tile
+        Tile = finalTile;
+
+        // Add weight to the final tile
+        weightEventChannel.RaiseWeightAdded(instanceData.weight, Tile);
+        towerEventChannel.RaiseSnapToNewTile(gameObject.transform, Tile);
+    } else
+    {
+        if (Tile != null)
+            weightEventChannel.RaiseWeightRemoved(instanceData.weight, Tile);
+
+            
+        // If no valid tile is found or object is off the grid, destroy it
+        towerEventChannel.RaiseTowerDestroyed(gameObject.transform);
+        Destroy(gameObject);
+    }
+}
+
+private bool ShouldStopSliding()
+{
+    // Stop sliding if the tilt is below the threshold and the object is relatively stable
+    return tiltDirection.magnitude < 0.1f && slipMagnitude < 0.1f;
+}
 
     public bool CanUpgrade(UpgradeTowerAction upgradeTowerAction)
     {
