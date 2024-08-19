@@ -61,6 +61,9 @@ public class TowerController : MonoBehaviour
     
 private void Update()
 {
+    if (TowerManager.Instance.selectedTower == gameObject)
+        return;
+    
     if (!isSliding) 
         return;
     // Calculate new position based on tilt direction and slip magnitude
@@ -94,6 +97,8 @@ private void Update()
 
 private void HandleTiltChanged(float tiltAngle, Vector3 direction)
 {
+    if (TowerManager.Instance.selectedTower == gameObject)
+        return;
     if (tiltAngle > tiltAllowanceThreshold)
     {
         if(Tile != null)

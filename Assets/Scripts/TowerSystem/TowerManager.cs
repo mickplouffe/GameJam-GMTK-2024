@@ -13,7 +13,7 @@ public class TowerManager : MonoBehaviourSingletonPersistent<TowerManager>
     [SerializeField] private UpgradeTowerAction upgradeRangeAction;
     [SerializeField] private UpgradeTowerAction upgradeWeightAction;
 
-    [SerializeField] private GameObject selectedTower;
+    public GameObject selectedTower;
     [SerializeField] private TowerController activeTowerSelected;
     [SerializeField] private LayerMask tilesLayerMask;
     [SerializeField] private LayerMask towersLayerMask;
@@ -60,7 +60,7 @@ public class TowerManager : MonoBehaviourSingletonPersistent<TowerManager>
 
         if (_placementMode)
         {
-            if ((!FindTransformBasedOnLayer(tilesLayerMask, out var hit) || !SnapTowerToTile(hit.point, true)) && selectedTower)
+            if (!FindTransformBasedOnLayer(tilesLayerMask, out var hit) || !SnapTowerToTile(hit.point, true))
                 selectedTower.transform.position = Vector3.up * 100.0f;
         }
 
@@ -196,7 +196,7 @@ public class TowerManager : MonoBehaviourSingletonPersistent<TowerManager>
     {
         Bounds towerBounds = selectedTower.GetComponent<Collider>().bounds;
 
-        selectedTower.GetComponent<TowerController>().Tile = HexGridManager.Instance.GetTileAtPosition(hitPoint);
+        selectedTower.GetComponent<TowerController>().Tile = HexGridManager.Instance.GetTileAtWorldPosition(hitPoint);
 
         if (selectedTower.GetComponent<TowerController>().Tile == null)
             return false;

@@ -303,7 +303,7 @@ public class HexGridManager : MonoBehaviourSingletonPersistent<HexGridManager>
     private (int q, int r) WorldToHex(Vector3 worldPosition)
     {
         Vector3 localPosition = Instance.transform.InverseTransformPoint(worldPosition);
-        float q = (localPosition.x * Mathf.Sqrt(3f) / 3f - localPosition.z / 3f) / Instance._hexTileSize;
+        float q = (localPosition.x * Mathf.Sqrt(3f) / 3f - localPosition.z / 3f) / _hexTileSize;
         float r = localPosition.z * 2f / 3f / _hexTileSize;
         return HexRound(q, r);
     }
