@@ -59,11 +59,20 @@ public class HexGridManager : MonoBehaviour
     private void OnEnable()
     {
         enemyEventChannel.OnEnemyAttack += HandleEnemyAttack;
+        enemyEventChannel.OnWaveCompleted += HandleWaveCompleted;
     }
+
 
     private void OnDisable()
     {
         enemyEventChannel.OnEnemyAttack -= HandleEnemyAttack;
+        enemyEventChannel.OnWaveCompleted += HandleWaveCompleted;
+
+    }
+    private void HandleWaveCompleted()
+    {
+        HexTile tile = GetRandomEdgeTiles(1)[0];
+        AddCircularBlob(tile.Q, tile.R, amountBlobToAdd);
     }
 
     [Button]
