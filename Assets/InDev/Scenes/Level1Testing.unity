@@ -497,12 +497,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1636718870}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &1509153060 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4174472227154444186, guid: b24182428c20fdc479f88d5a0139b7d7,
-    type: 3}
-  m_PrefabInstance: {fileID: 1976865141887417141}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1636718870
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1113,16 +1107,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: HexGridParent
       objectReference: {fileID: 0}
-    - target: {fileID: 7620361188336502332, guid: b24182428c20fdc479f88d5a0139b7d7,
-        type: 3}
-      propertyPath: width
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7620361188336502332, guid: b24182428c20fdc479f88d5a0139b7d7,
-        type: 3}
-      propertyPath: hexTileParent
-      value: 
-      objectReference: {fileID: 1509153060}
     - target: {fileID: 8504252987917431918, guid: b24182428c20fdc479f88d5a0139b7d7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1173,18 +1157,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8636991752575247954, guid: b24182428c20fdc479f88d5a0139b7d7,
-        type: 3}
-      propertyPath: m_Name
-      value: HexGrid and Tilt
-      objectReference: {fileID: 0}
-    - target: {fileID: 9133941349068278744, guid: b24182428c20fdc479f88d5a0139b7d7,
-        type: 3}
-      propertyPath: tiltMultiplier
-      value: 5
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 7620361188336502332, guid: b24182428c20fdc479f88d5a0139b7d7, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
