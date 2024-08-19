@@ -240,8 +240,7 @@
 									</ReferenceList>
 								</RandomSequenceContainer>
 							</ChildrenList>
-						</ActorMixer>
-						<WorkUnit Name="SFX_Otter" ID="{A57A593A-B9DE-4277-A3EF-672CA80E8992}" PersistMode="Reference"/>
+						</RandomSequenceContainer>
 					</ChildrenList>
 				</ActorMixer>
 			</ChildrenList>
