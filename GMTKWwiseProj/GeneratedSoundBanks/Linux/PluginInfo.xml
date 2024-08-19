@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PluginInfo Platform="Linux" BasePlatform="Linux">
 	<PluginLibs>
+		<PluginLib LibName="Wwise RoomVerb" LibId="7733251" Type="Effect" DLL="AkRoomVerb" StaticLib="AkRoomVerbFX"/>
+		<PluginLib LibName="Wwise Gain" LibId="9109507" Type="Effect" DLL="AkGain" StaticLib="AkGainFX"/>
 		<PluginLib LibName="System" LibId="11403271" Type="AudioDevice"/>
 		<PluginLib LibName="No Output" LibId="11862023" Type="AudioDevice"/>
 	</PluginLibs>
-	<FileHash>{AFC8C5A5-D363-5920-6F75-DABE9A71FEBE}</FileHash>
+	<FileHash>{A71F8F2A-C78A-19B1-17A3-2064818CA227}</FileHash>
 </PluginInfo>
