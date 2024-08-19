@@ -13,6 +13,8 @@ public class TiltManager : MonoBehaviourSingletonPersistent<TiltManager>
     [SerializeField] private float tiltAmount;
     [SerializeField] private float rotationSpeed;
 
+    [SerializeField] private float currentTiltAngle;
+
     private Dictionary<HexTile, float> weightAtlas;
     
     public Vector3 CenterOfMass { get; set; }
@@ -102,10 +104,12 @@ public class TiltManager : MonoBehaviourSingletonPersistent<TiltManager>
         // Rotate the disk around the calculated axis
         Quaternion targetRotation = Quaternion.AngleAxis(-tiltAngle, tiltAxis);
         HexGridManager.Instance.transform.rotation = Quaternion.Slerp( HexGridManager.Instance.transform.transform.rotation, targetRotation, Time.deltaTime * rotationSpeed);
+
+        currentTiltAngle = Mathf.Lerp(currentTiltAngle, tiltAngle, Time.deltaTime * rotationSpeed);
         
         // Calculate tilt direction based on Center of Mass
         Vector3 tiltDirection = Vector3.Cross(Torque.normalized, -HexGridManager.Instance.transform.up).normalized;
-        tiltEventChannel.RaiseTiltChanged(Mathf.Abs(tiltAngle), tiltDirection);
+        tiltEventChannel.RaiseTiltChanged(Mathf.Abs(currentTiltAngle), tiltDirection);
     }
     
     private void HandleWeightAdded(float weight, HexTile hexTile)
