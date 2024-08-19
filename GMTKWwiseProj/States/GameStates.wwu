@@ -8,6 +8,8 @@
 						<State Name="None" ID="{0778EDAC-60DA-4D97-92E7-C81B509D6EFC}"/>
 						<State Name="ActiveWave" ID="{5F8E6FC5-07CA-486A-9592-5DD2E231C2E2}"/>
 						<State Name="BetweenWaves" ID="{9360CF56-12BF-46CC-9831-C467DEBF627D}"/>
+						<State Name="TitleScreen" ID="{EACF423B-AA19-41EF-B90C-563EF16BE6DE}"/>
+						<State Name="IntroTutorial" ID="{621C89F3-0A8C-4343-96BF-63E52B76C5A3}"/>
 					</ChildrenList>
 				</StateGroup>
 			</ChildrenList>
