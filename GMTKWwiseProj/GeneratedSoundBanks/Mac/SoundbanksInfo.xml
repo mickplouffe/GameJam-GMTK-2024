@@ -1,0 +1,614 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Mac" BasePlatform="Mac" SchemaVersion="16" SoundBankVersion="150">
+	<RootPaths>
+		<ProjectRoot>../..</ProjectRoot>
+		<SourceFilesRoot>../../.cache/Mac</SourceFilesRoot>
+		<SoundBanksRoot>.</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>.</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<DialogueEvents/>
+	<SoundBanks>
+		<SoundBank Id="393239870" Type="User" Language="SFX" Hash="{121BF851-BFA9-4103-DFC9-5A124FF6E116}">
+			<ShortName>SFX</ShortName>
+			<Path>SFX.bnk</Path>
+			<Media>
+				<File Id="103139025" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GMTK2024_SFX_towerSell02_-7dB_v01.wav</ShortName>
+					<CachePath>SFX/GMTK2024_SFX_towerSell02_-7dB_v01_14E21738.wem</CachePath>
+				</File>
+				<File Id="117618669" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GMTK2024_SFX_towerAttack03_mid_-11_v1.wav</ShortName>
+					<CachePath>SFX/GMTK2024_SFX_towerAttack03_mid_-11_v1_7EB59DBC.wem</CachePath>
+				</File>
+				<File Id="139776857" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GMTK2024_SFX_placeRock01_-7dB_v01.wav</ShortName>
+					<CachePath>SFX/GMTK2024_SFX_placeRock01_-7dB_v01_14E21738.wem</CachePath>
+				</File>
+				<File Id="160864451" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GMTK2024_SFX_enemyEntersTower_gorgon_-10_v1.wav</ShortName>
+					<CachePath>SFX/GMTK2024_SFX_enemyEntersTower_gorgon_-10_v1_14E21738.wem</CachePath>
+				</File>
+				<File Id="161617009" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GMTK2024_SFX_enemyDies_cyclops_-3_v3.wav</ShortName>
+					<CachePath>SFX/GMTK2024_SFX_enemyDies_cyclops_-3_v3_14E21738.wem</CachePath>
+				</File>
+				<File Id="196280731" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GMTK2024_SFX_enemyDies_gorgon_-11_v2.wav</ShortName>
+					<CachePath>SFX/GMTK2024_SFX_enemyDies_gorgon_-11_v2_14E21738.wem</CachePath>
+				</File>
+				<File Id="232753778" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GMTK2024_SFX_towerAttack01_high_-11_v1.wav</ShortName>
+					<CachePath>SFX/GMTK2024_SFX_towerAttack01_high_-11_v1_B93EE9A2.wem</CachePath>
+				</File>
+				<File Id="251441061" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GMTK2024_SFX_towerSell01_-7dB_v01.wav</ShortName>
+					<CachePath>SFX/GMTK2024_SFX_towerSell01_-7dB_v01_14E21738.wem</CachePath>
+				</File>
+				<File Id="265388241" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GMTK2024_SFX_enemyEntersTower_minotaur_-10_v1.wav</ShortName>
+					<CachePath>SFX/GMTK2024_SFX_enemyEntersTower_minotaur_-10_v1_14E21738.wem</CachePath>
+				</File>
+				<File Id="315686258" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>VOXScrm_Wilhelm scream (ID 0477)_BSB.wav</ShortName>
+					<CachePath>SFX/VOXScrm_Wilhelm scream (ID 0477)_BSB_14E21738.wem</CachePath>
+				</File>
+				<File Id="322104273" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GMTK2024_SFX_enemyEntersTower_cyclops_-5_v1.wav</ShortName>
+					<CachePath>SFX/GMTK2024_SFX_enemyEntersTower_cyclops_-5_v1_14E21738.wem</CachePath>
+				</File>
+				<File Id="371977938" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GMTK2024_SFX_enemyDies_minotaur_-14_v3.wav</ShortName>
+					<CachePath>SFX/GMTK2024_SFX_enemyDies_minotaur_-14_v3_14E21738.wem</CachePath>
+				</File>
+				<File Id="393633432" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GMTK2024_SFX_placeRock03_-7dB_v01.wav</ShortName>
+					<CachePath>SFX/GMTK2024_SFX_placeRock03_-7dB_v01_14E21738.wem</CachePath>
+				</File>
+				<File Id="397978699" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GMTK2024_SFX_placeRock02_-7dB_v01.wav</ShortName>
+					<CachePath>SFX/GMTK2024_SFX_placeRock02_-7dB_v01_14E21738.wem</CachePath>
+				</File>
+				<File Id="402597209" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GMTK2024_towerPlace04_-7dB_v01.wav</ShortName>
+					<CachePath>SFX/GMTK2024_towerPlace04_-7dB_v01_14E21738.wem</CachePath>
+				</File>
+				<File Id="506364536" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GMTK2024_SFX_towerAttack03_low_-11_v1.wav</ShortName>
+					<CachePath>SFX/GMTK2024_SFX_towerAttack03_low_-11_v1_E0997E4E.wem</CachePath>
+				</File>
+				<File Id="567128080" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GMTK2024_SFX_enemyDies_gorgon_-7_v1.wav</ShortName>
+					<CachePath>SFX/GMTK2024_SFX_enemyDies_gorgon_-7_v1_14E21738.wem</CachePath>
+				</File>
+				<File Id="596698888" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GMTK2024_SFX_enemyDies_minotaur_-14_v2.wav</ShortName>
+					<CachePath>SFX/GMTK2024_SFX_enemyDies_minotaur_-14_v2_14E21738.wem</CachePath>
+				</File>
+				<File Id="652416591" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GMTK2024_SFX_towerSell04_-7dB_v01.wav</ShortName>
+					<CachePath>SFX/GMTK2024_SFX_towerSell04_-7dB_v01_14E21738.wem</CachePath>
+				</File>
+				<File Id="684628303" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GMTK2024_SFX_towerAttack02_mid_-11_v1.wav</ShortName>
+					<CachePath>SFX/GMTK2024_SFX_towerAttack02_mid_-11_v1_E4E87C43.wem</CachePath>
+				</File>
+				<File Id="723944443" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GMTK2024_SFX_towerAttack01_low_-11_v1.wav</ShortName>
+					<CachePath>SFX/GMTK2024_SFX_towerAttack01_low_-11_v1_8DFDF74C.wem</CachePath>
+				</File>
+				<File Id="835854000" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GMTK2024_SFX_towerSlide02_v01.wav</ShortName>
+					<CachePath>SFX/GMTK2024_SFX_towerSlide02_v01_143AC765.wem</CachePath>
+				</File>
+				<File Id="839132535" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GMTK2024_SFX_enemyDies_cyclops_-3_v1.wav</ShortName>
+					<CachePath>SFX/GMTK2024_SFX_enemyDies_cyclops_-3_v1_14E21738.wem</CachePath>
+				</File>
+				<File Id="847879273" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GMTK2024_SFX_towerAttack02_high_-11_v1.wav</ShortName>
+					<CachePath>SFX/GMTK2024_SFX_towerAttack02_high_-11_v1_22BC59AC.wem</CachePath>
+				</File>
+				<File Id="877437290" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GMTK2024_SFX_towerAttack03_high_-11_v1.wav</ShortName>
+					<CachePath>SFX/GMTK2024_SFX_towerAttack03_high_-11_v1_B93EE9A2.wem</CachePath>
+				</File>
+				<File Id="879976025" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GMTK2024_towerPlace02_-7dB_v01.wav</ShortName>
+					<CachePath>SFX/GMTK2024_towerPlace02_-7dB_v01_14E21738.wem</CachePath>
+				</File>
+				<File Id="882246771" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GMTK2024_SFX_towerSell03_-7dB_v01.wav</ShortName>
+					<CachePath>SFX/GMTK2024_SFX_towerSell03_-7dB_v01_14E21738.wem</CachePath>
+				</File>
+				<File Id="888382889" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GMTK2024_SFX_towerAttack01_mid_-11_v1.wav</ShortName>
+					<CachePath>SFX/GMTK2024_SFX_towerAttack01_mid_-11_v1_9938A83B.wem</CachePath>
+				</File>
+				<File Id="904288813" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GMTK2024_SFX_towerSlide01_v01.wav</ShortName>
+					<CachePath>SFX/GMTK2024_SFX_towerSlide01_v01_02C1248E.wem</CachePath>
+				</File>
+				<File Id="934633238" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GMTK2024_SFX_towerAttack02_low_-11_v1.wav</ShortName>
+					<CachePath>SFX/GMTK2024_SFX_towerAttack02_low_-11_v1_0F60026A.wem</CachePath>
+				</File>
+				<File Id="934825369" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GMTK2024_towerPlace01_-7dB_v01.wav</ShortName>
+					<CachePath>SFX/GMTK2024_towerPlace01_-7dB_v01_14E21738.wem</CachePath>
+				</File>
+				<File Id="945879634" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GMTK2024_SFX_towerSlide03_v01.wav</ShortName>
+					<CachePath>SFX/GMTK2024_SFX_towerSlide03_v01_3ABE3E98.wem</CachePath>
+				</File>
+				<File Id="946140780" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GMTK2024_towerPlace03_-7dB_v01.wav</ShortName>
+					<CachePath>SFX/GMTK2024_towerPlace03_-7dB_v01_14E21738.wem</CachePath>
+				</File>
+				<File Id="957881645" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GMTK2024_SFX_enemyDies_gorgon_-11_v3.wav</ShortName>
+					<CachePath>SFX/GMTK2024_SFX_enemyDies_gorgon_-11_v3_14E21738.wem</CachePath>
+				</File>
+				<File Id="973307517" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GMTK2024_SFX_enemyDies_minotaur_-13_v1.wav</ShortName>
+					<CachePath>SFX/GMTK2024_SFX_enemyDies_minotaur_-13_v1_14E21738.wem</CachePath>
+				</File>
+				<File Id="985081344" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GMTK2024_SFX_enemyDies_cyclops_-3_v2.wav</ShortName>
+					<CachePath>SFX/GMTK2024_SFX_enemyDies_cyclops_-3_v2_14E21738.wem</CachePath>
+				</File>
+				<File Id="988960913" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>WHISTLE Down Long.wav</ShortName>
+					<CachePath>SFX/WHISTLE Down Long_14E21738.wem</CachePath>
+				</File>
+			</Media>
+			<Plugins>
+				<Custom>
+					<Plugin Id="696289122" Name="Gain (Custom)" LibName="Wwise Gain" LibId="9109507"/>
+				</Custom>
+			</Plugins>
+			<Events>
+				<Event Id="1519321238" Name="Play_Attack" DurationType="OneShot" DurationMin="1.3496852" DurationMax="1.3525845">
+					<MediaRefs>
+						<MediaRef Id="117618669"/>
+						<MediaRef Id="232753778"/>
+						<MediaRef Id="506364536"/>
+						<MediaRef Id="684628303"/>
+						<MediaRef Id="723944443"/>
+						<MediaRef Id="847879273"/>
+						<MediaRef Id="877437290"/>
+						<MediaRef Id="888382889"/>
+						<MediaRef Id="934633238"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2712047697" Name="Play_Fall" DurationType="OneShot" DurationMin="1.1168481" DurationMax="2.99575">
+					<MediaRefs>
+						<MediaRef Id="315686258"/>
+						<MediaRef Id="988960913"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2528304328" Name="Play_SFXCyclopsDeath" DurationType="OneShot" DurationMin="1.375" DurationMax="1.5">
+					<MediaRefs>
+						<MediaRef Id="161617009"/>
+						<MediaRef Id="839132535"/>
+						<MediaRef Id="985081344"/>
+					</MediaRefs>
+					<PluginRefs>
+						<Custom>
+							<PluginRef Id="696289122"/>
+						</Custom>
+					</PluginRefs>
+				</Event>
+				<Event Id="1488573387" Name="Play_SFXCyclopsEnterTower" DurationType="OneShot" DurationMin="3" DurationMax="3">
+					<MediaRefs>
+						<MediaRef Id="322104273"/>
+					</MediaRefs>
+					<PluginRefs>
+						<Custom>
+							<PluginRef Id="696289122"/>
+						</Custom>
+					</PluginRefs>
+				</Event>
+				<Event Id="457896984" Name="Play_SFXEnemySlide" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="2127355" Name="Play_SFXGorgonDeath" DurationType="OneShot" DurationMin="1.078125" DurationMax="1.6875">
+					<MediaRefs>
+						<MediaRef Id="196280731"/>
+						<MediaRef Id="567128080"/>
+						<MediaRef Id="957881645"/>
+					</MediaRefs>
+					<PluginRefs>
+						<Custom>
+							<PluginRef Id="696289122"/>
+						</Custom>
+					</PluginRefs>
+				</Event>
+				<Event Id="3454470586" Name="Play_SFXGorgonEnterTower" DurationType="OneShot" DurationMin="1.75" DurationMax="1.75">
+					<MediaRefs>
+						<MediaRef Id="160864451"/>
+					</MediaRefs>
+					<PluginRefs>
+						<Custom>
+							<PluginRef Id="696289122"/>
+						</Custom>
+					</PluginRefs>
+				</Event>
+				<Event Id="1804201887" Name="Play_SFXGroundTileSpawn" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="355266998" Name="Play_SFXMinotaurDeath" DurationType="OneShot" DurationMin="1.375" DurationMax="2.25">
+					<MediaRefs>
+						<MediaRef Id="371977938"/>
+						<MediaRef Id="596698888"/>
+						<MediaRef Id="973307517"/>
+					</MediaRefs>
+					<PluginRefs>
+						<Custom>
+							<PluginRef Id="696289122"/>
+						</Custom>
+					</PluginRefs>
+				</Event>
+				<Event Id="4233038817" Name="Play_SFXMinotaurEnterTower" DurationType="OneShot" DurationMin="1.53125" DurationMax="1.53125">
+					<MediaRefs>
+						<MediaRef Id="265388241"/>
+					</MediaRefs>
+					<PluginRefs>
+						<Custom>
+							<PluginRef Id="696289122"/>
+						</Custom>
+					</PluginRefs>
+				</Event>
+				<Event Id="1624231291" Name="Play_SFXPlaceRock" DurationType="OneShot" DurationMin="0.6711115" DurationMax="0.7322752">
+					<MediaRefs>
+						<MediaRef Id="139776857"/>
+						<MediaRef Id="393633432"/>
+						<MediaRef Id="397978699"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2186760998" Name="Play_SFXSpawnerTileSpawn" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="86987433" Name="Play_SFXTiltingTiles" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="4103541689" Name="Play_SFXTowerAttackHit" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="2094922267" Name="Play_SFXTowerPlace" DurationType="OneShot" DurationMin="0.65797204" DurationMax="0.71835303">
+					<MediaRefs>
+						<MediaRef Id="402597209"/>
+						<MediaRef Id="879976025"/>
+						<MediaRef Id="934825369"/>
+						<MediaRef Id="946140780"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3932998018" Name="Play_SFXTowerSell" DurationType="OneShot" DurationMin="0.5094299" DurationMax="0.57341665">
+					<MediaRefs>
+						<MediaRef Id="103139025"/>
+						<MediaRef Id="251441061"/>
+						<MediaRef Id="652416591"/>
+						<MediaRef Id="882246771"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2225251985" Name="Play_SFXTowerSlide" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="835854000"/>
+						<MediaRef Id="904288813"/>
+						<MediaRef Id="945879634"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2684592797" Name="Play_SFXTowerSlide_01" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="2237095779" Name="Stop_SFXTowerSlide" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+			</Events>
+		</SoundBank>
+		<SoundBank Id="1117531639" Type="User" Language="SFX" Hash="{51CDA230-BAA0-389C-7F26-AB6926A73F67}">
+			<ShortName>AMB</ShortName>
+			<Path>AMB.bnk</Path>
+		</SoundBank>
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{7C720851-03F1-2830-2144-3ECA630C6C6A}">
+			<ShortName>Init</ShortName>
+			<Path>Init.bnk</Path>
+			<Plugins>
+				<ShareSets>
+					<Plugin Id="48620415" Name="Have_U_Ever_Been_Outside" LibName="Wwise RoomVerb" LibId="7733251"/>
+				</ShareSets>
+				<AudioDevices>
+					<Plugin Id="2317455096" Name="No_Output" LibName="No Output" LibId="11862023"/>
+					<Plugin Id="3859886410" Name="System" LibName="System" LibId="11403271"/>
+				</AudioDevices>
+			</Plugins>
+			<Busses>
+				<Bus Id="393239870" Name="SFX">
+					<AuxBusRefs>
+						<AuxBusRef Id="3657263530" Name="Verb"/>
+					</AuxBusRefs>
+				</Bus>
+				<Bus Id="1117531639" Name="AMB">
+					<AuxBusRefs>
+						<AuxBusRef Id="3657263530" Name="Verb"/>
+					</AuxBusRefs>
+				</Bus>
+				<Bus Id="1534528548" Name="VO"/>
+				<Bus Id="1551306167" Name="UI"/>
+				<Bus Id="1685527054" Name="MX"/>
+				<Bus Id="3803692087" Name="Master Audio Bus"/>
+			</Busses>
+			<AuxBusses>
+				<AuxBus Id="3657263530" Name="Verb">
+					<PluginRefs>
+						<ShareSets>
+							<PluginRef Id="48620415"/>
+						</ShareSets>
+					</PluginRefs>
+				</AuxBus>
+			</AuxBusses>
+			<GameParameters>
+				<GameParameter Id="393239870" Name="SFX"/>
+				<GameParameter Id="822163944" Name="SS_Air_RPM"/>
+				<GameParameter Id="1029930033" Name="SS_Air_Fury"/>
+				<GameParameter Id="1117531639" Name="AMB"/>
+				<GameParameter Id="1351367891" Name="SS_Air_Fear"/>
+				<GameParameter Id="1534528548" Name="VO"/>
+				<GameParameter Id="1551306167" Name="UI"/>
+				<GameParameter Id="1571361561" Name="Tension"/>
+				<GameParameter Id="1685527054" Name="MX"/>
+				<GameParameter Id="2648548617" Name="SS_Air_Month"/>
+				<GameParameter Id="3002758120" Name="SS_Air_Freefall"/>
+				<GameParameter Id="3074696722" Name="SS_Air_Size"/>
+				<GameParameter Id="3203397129" Name="SS_Air_TimeOfDay"/>
+				<GameParameter Id="3715662592" Name="SS_Air_Storm"/>
+				<GameParameter Id="3847924954" Name="SS_Air_Presence"/>
+				<GameParameter Id="4056684167" Name="MASTER"/>
+				<GameParameter Id="4160247818" Name="SS_Air_Turbulence"/>
+			</GameParameters>
+			<StateGroups>
+				<StateGroup Id="832974869" Name="MX_Waves">
+					<States>
+						<State Id="748895195" Name="None"/>
+						<State Id="2071144875" Name="BetweenWaves"/>
+						<State Id="2447589688" Name="ActiveWave"/>
+					</States>
+				</StateGroup>
+			</StateGroups>
+			<AcousticTextures>
+				<AcousticTexture Id="504532776" Name="Brick">
+					<Properties>
+						<Property Name="AbsorptionLow" Type="Real32" Value="12"/>
+						<Property Name="AbsorptionMidLow" Type="Real32" Value="18"/>
+						<Property Name="AbsorptionMidHigh" Type="Real32" Value="23"/>
+						<Property Name="AbsorptionHigh" Type="Real32" Value="35"/>
+						<Property Name="Scattering" Type="Real32" Value="0"/>
+					</Properties>
+				</AcousticTexture>
+				<AcousticTexture Id="513139656" Name="Mountain">
+					<Properties>
+						<Property Name="AbsorptionLow" Type="Real32" Value="0"/>
+						<Property Name="AbsorptionMidLow" Type="Real32" Value="0"/>
+						<Property Name="AbsorptionMidHigh" Type="Real32" Value="0"/>
+						<Property Name="AbsorptionHigh" Type="Real32" Value="0"/>
+						<Property Name="Scattering" Type="Real32" Value="0"/>
+					</Properties>
+				</AcousticTexture>
+				<AcousticTexture Id="841620460" Name="Concrete">
+					<Properties>
+						<Property Name="AbsorptionLow" Type="Real32" Value="6"/>
+						<Property Name="AbsorptionMidLow" Type="Real32" Value="6"/>
+						<Property Name="AbsorptionMidHigh" Type="Real32" Value="6"/>
+						<Property Name="AbsorptionHigh" Type="Real32" Value="14"/>
+						<Property Name="Scattering" Type="Real32" Value="0"/>
+					</Properties>
+				</AcousticTexture>
+				<AcousticTexture Id="1755085759" Name="Wood_Deep">
+					<Properties>
+						<Property Name="AbsorptionLow" Type="Real32" Value="1"/>
+						<Property Name="AbsorptionMidLow" Type="Real32" Value="8"/>
+						<Property Name="AbsorptionMidHigh" Type="Real32" Value="20"/>
+						<Property Name="AbsorptionHigh" Type="Real32" Value="35"/>
+						<Property Name="Scattering" Type="Real32" Value="0"/>
+					</Properties>
+				</AcousticTexture>
+				<AcousticTexture Id="1873957695" Name="Anechoic">
+					<Properties>
+						<Property Name="AbsorptionLow" Type="Real32" Value="100"/>
+						<Property Name="AbsorptionMidLow" Type="Real32" Value="100"/>
+						<Property Name="AbsorptionMidHigh" Type="Real32" Value="100"/>
+						<Property Name="AbsorptionHigh" Type="Real32" Value="100"/>
+						<Property Name="Scattering" Type="Real32" Value="0"/>
+					</Properties>
+				</AcousticTexture>
+				<AcousticTexture Id="1970351858" Name="Fabric">
+					<Properties>
+						<Property Name="AbsorptionLow" Type="Real32" Value="3"/>
+						<Property Name="AbsorptionMidLow" Type="Real32" Value="13"/>
+						<Property Name="AbsorptionMidHigh" Type="Real32" Value="48"/>
+						<Property Name="AbsorptionHigh" Type="Real32" Value="72"/>
+						<Property Name="Scattering" Type="Real32" Value="0"/>
+					</Properties>
+				</AcousticTexture>
+				<AcousticTexture Id="2058049674" Name="Wood">
+					<Properties>
+						<Property Name="AbsorptionLow" Type="Real32" Value="32"/>
+						<Property Name="AbsorptionMidLow" Type="Real32" Value="25"/>
+						<Property Name="AbsorptionMidHigh" Type="Real32" Value="20"/>
+						<Property Name="AbsorptionHigh" Type="Real32" Value="35"/>
+						<Property Name="Scattering" Type="Real32" Value="0"/>
+					</Properties>
+				</AcousticTexture>
+				<AcousticTexture Id="2412606308" Name="Carpet">
+					<Properties>
+						<Property Name="AbsorptionLow" Type="Real32" Value="46"/>
+						<Property Name="AbsorptionMidLow" Type="Real32" Value="45"/>
+						<Property Name="AbsorptionMidHigh" Type="Real32" Value="76"/>
+						<Property Name="AbsorptionHigh" Type="Real32" Value="100"/>
+						<Property Name="Scattering" Type="Real32" Value="0"/>
+					</Properties>
+				</AcousticTexture>
+				<AcousticTexture Id="2637588553" Name="Tile">
+					<Properties>
+						<Property Name="AbsorptionLow" Type="Real32" Value="67"/>
+						<Property Name="AbsorptionMidLow" Type="Real32" Value="41"/>
+						<Property Name="AbsorptionMidHigh" Type="Real32" Value="12"/>
+						<Property Name="AbsorptionHigh" Type="Real32" Value="0"/>
+						<Property Name="Scattering" Type="Real32" Value="0"/>
+					</Properties>
+				</AcousticTexture>
+				<AcousticTexture Id="2928161104" Name="Curtains">
+					<Properties>
+						<Property Name="AbsorptionLow" Type="Real32" Value="7"/>
+						<Property Name="AbsorptionMidLow" Type="Real32" Value="60"/>
+						<Property Name="AbsorptionMidHigh" Type="Real32" Value="0"/>
+						<Property Name="AbsorptionHigh" Type="Real32" Value="84"/>
+						<Property Name="Scattering" Type="Real32" Value="0"/>
+					</Properties>
+				</AcousticTexture>
+				<AcousticTexture Id="3195498748" Name="Cork_Tiles">
+					<Properties>
+						<Property Name="AbsorptionLow" Type="Real32" Value="14"/>
+						<Property Name="AbsorptionMidLow" Type="Real32" Value="30"/>
+						<Property Name="AbsorptionMidHigh" Type="Real32" Value="73"/>
+						<Property Name="AbsorptionHigh" Type="Real32" Value="100"/>
+						<Property Name="Scattering" Type="Real32" Value="0"/>
+					</Properties>
+				</AcousticTexture>
+				<AcousticTexture Id="3670307564" Name="Drywall">
+					<Properties>
+						<Property Name="AbsorptionLow" Type="Real32" Value="2"/>
+						<Property Name="AbsorptionMidLow" Type="Real32" Value="2"/>
+						<Property Name="AbsorptionMidHigh" Type="Real32" Value="2"/>
+						<Property Name="AbsorptionHigh" Type="Real32" Value="2"/>
+						<Property Name="Scattering" Type="Real32" Value="0"/>
+					</Properties>
+				</AcousticTexture>
+				<AcousticTexture Id="4168643977" Name="Acoustic_Banner">
+					<Properties>
+						<Property Name="AbsorptionLow" Type="Real32" Value="37"/>
+						<Property Name="AbsorptionMidLow" Type="Real32" Value="100"/>
+						<Property Name="AbsorptionMidHigh" Type="Real32" Value="100"/>
+						<Property Name="AbsorptionHigh" Type="Real32" Value="100"/>
+						<Property Name="Scattering" Type="Real32" Value="0"/>
+					</Properties>
+				</AcousticTexture>
+				<AcousticTexture Id="4262522749" Name="Wood_Bright">
+					<Properties>
+						<Property Name="AbsorptionLow" Type="Real32" Value="32"/>
+						<Property Name="AbsorptionMidLow" Type="Real32" Value="25"/>
+						<Property Name="AbsorptionMidHigh" Type="Real32" Value="10"/>
+						<Property Name="AbsorptionHigh" Type="Real32" Value="9"/>
+						<Property Name="Scattering" Type="Real32" Value="0"/>
+					</Properties>
+				</AcousticTexture>
+			</AcousticTextures>
+		</SoundBank>
+		<SoundBank Id="1534528548" Type="User" Language="SFX" Hash="{6E66C04E-5B7D-D356-14F7-DA92E22821AA}">
+			<ShortName>VO</ShortName>
+			<Path>VO.bnk</Path>
+		</SoundBank>
+		<SoundBank Id="1551306167" Type="User" Language="SFX" Hash="{3B454D9F-A18C-7D03-2CCB-586A257A735A}">
+			<ShortName>UI</ShortName>
+			<Path>UI.bnk</Path>
+			<Media>
+				<File Id="70575173" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GMTK2024_SFX_goldGain_-7_v1.wav</ShortName>
+					<CachePath>SFX/GMTK2024_SFX_goldGain_-7_v1_14E21738.wem</CachePath>
+				</File>
+				<File Id="110314636" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GMTK2024_SFX_goldGain_-7_v2.wav</ShortName>
+					<CachePath>SFX/GMTK2024_SFX_goldGain_-7_v2_14E21738.wem</CachePath>
+				</File>
+				<File Id="659071609" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GMTK2024_SFX_goldGain_-5_v3.wav</ShortName>
+					<CachePath>SFX/GMTK2024_SFX_goldGain_-5_v3_14E21738.wem</CachePath>
+				</File>
+				<File Id="925787453" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GMTK2024_SFX_goldLose_-6_v2.wav</ShortName>
+					<CachePath>SFX/GMTK2024_SFX_goldLose_-6_v2_14E21738.wem</CachePath>
+				</File>
+				<File Id="929219650" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GMTK2024_SFX_goldLose_-8_v1.wav</ShortName>
+					<CachePath>SFX/GMTK2024_SFX_goldLose_-8_v1_14E21738.wem</CachePath>
+				</File>
+				<File Id="1022782546" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GMTK2024_SFX_goldLose_-5_v3.wav</ShortName>
+					<CachePath>SFX/GMTK2024_SFX_goldLose_-5_v3_14E21738.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="1615720664" Name="Play_UIClick" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="3581364067" Name="Play_UIGoldGain" DurationType="OneShot" DurationMin="0.5" DurationMax="1.25">
+					<MediaRefs>
+						<MediaRef Id="70575173"/>
+						<MediaRef Id="110314636"/>
+						<MediaRef Id="659071609"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2262228835" Name="Play_UIGoldLoss" DurationType="OneShot" DurationMin="1" DurationMax="1">
+					<MediaRefs>
+						<MediaRef Id="925787453"/>
+						<MediaRef Id="929219650"/>
+						<MediaRef Id="1022782546"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2502251926" Name="Play_UIHover" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="2754069948" Name="Play_UIWaveCountdown" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="2290267373" Name="Play_UIWaveEnded" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="3869623766" Name="Play_UIWaveStarted" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+			</Events>
+		</SoundBank>
+		<SoundBank Id="1685527054" Type="User" Language="SFX" Hash="{2BDD23DB-6442-FE6D-8A6E-24AC8CBBA8C0}">
+			<ShortName>MX</ShortName>
+			<Path>MX.bnk</Path>
+			<Media>
+				<File Id="153486832" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Scales of Olympus Transition out of loop -starts beat 4- v1.wav</ShortName>
+					<CachePath>SFX/Scales of Olympus Transition out of loop -starts beat 4- v1_05A4D402.wem</CachePath>
+				</File>
+				<File Id="495404542" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Scales of Olympus Intro v1.wav</ShortName>
+					<CachePath>SFX/Scales of Olympus Intro v1_05A4D402.wem</CachePath>
+				</File>
+				<File Id="624318979" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Scales of Olympus Layer 2 v1.wav</ShortName>
+					<CachePath>SFX/Scales of Olympus Layer 2 v1_05A4D402.wem</CachePath>
+				</File>
+				<File Id="902048449" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Scales of Olympus Game Loop v1.wav</ShortName>
+					<CachePath>SFX/Scales of Olympus Game Loop v1_05A4D402.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="1258886508" Name="Play_MXTitleTheme" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="3038968348" Name="SetState_ActiveWave" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0">
+					<ActionSetState>
+						<ActionSetStateEntry GroupId="832974869" Id="2447589688" Name="ActiveWave"/>
+					</ActionSetState>
+				</Event>
+				<Event Id="2339243207" Name="SetState_BetweenWaves" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0">
+					<ActionSetState>
+						<ActionSetStateEntry GroupId="832974869" Id="2071144875" Name="BetweenWaves"/>
+					</ActionSetState>
+				</Event>
+				<Event Id="1521187885" Name="StartGame" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="153486832"/>
+						<MediaRef Id="495404542"/>
+					</MediaRefs>
+					<SwitchContainers>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="832974869" Id="2447589688"/>
+							<MediaRefs>
+								<MediaRef Id="902048449"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="832974869" Id="2071144875"/>
+							<MediaRefs>
+								<MediaRef Id="624318979"/>
+							</MediaRefs>
+						</SwitchContainer>
+					</SwitchContainers>
+				</Event>
+			</Events>
+			<StateGroups>
+				<StateGroup Id="832974869" Name="MX_Waves">
+					<States>
+						<State Id="748895195" Name="None"/>
+						<State Id="2071144875" Name="BetweenWaves"/>
+						<State Id="2447589688" Name="ActiveWave"/>
+					</States>
+				</StateGroup>
+			</StateGroups>
+		</SoundBank>
+	</SoundBanks>
+	<FileHash>{B689EBDD-F6B7-359D-7C44-223BBB29E9C4}</FileHash>
+</SoundBanksInfo>
