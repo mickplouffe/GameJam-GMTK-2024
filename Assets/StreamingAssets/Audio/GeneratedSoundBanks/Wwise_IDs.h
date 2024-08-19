@@ -13,22 +13,20 @@ namespace AK
 {
     namespace EVENTS
     {
-        static const AkUniqueID PLAY_AMBWIND = 1215763740U;
+        static const AkUniqueID PLAY_ATTACK = 1519321238U;
+        static const AkUniqueID PLAY_FALL = 2712047697U;
         static const AkUniqueID PLAY_MXTITLETHEME = 1258886508U;
         static const AkUniqueID PLAY_SFXCYCLOPSDEATH = 2528304328U;
-        static const AkUniqueID PLAY_SFXCYCLOPSSPAWN = 503721771U;
-        static const AkUniqueID PLAY_SFXDAMAGED = 1738512528U;
-        static const AkUniqueID PLAY_SFXDESTROYED = 3453436408U;
+        static const AkUniqueID PLAY_SFXCYCLOPSENTERTOWER = 1488573387U;
         static const AkUniqueID PLAY_SFXENEMYSLIDE = 457896984U;
         static const AkUniqueID PLAY_SFXGORGONDEATH = 2127355U;
-        static const AkUniqueID PLAY_SFXGORGONSPAWN = 1693188748U;
+        static const AkUniqueID PLAY_SFXGORGONENTERTOWER = 3454470586U;
         static const AkUniqueID PLAY_SFXGROUNDTILESPAWN = 1804201887U;
         static const AkUniqueID PLAY_SFXMINOTAURDEATH = 355266998U;
-        static const AkUniqueID PLAY_SFXMINOTAURSPAWN = 3648291989U;
+        static const AkUniqueID PLAY_SFXMINOTAURENTERTOWER = 4233038817U;
         static const AkUniqueID PLAY_SFXPLACEROCK = 1624231291U;
         static const AkUniqueID PLAY_SFXSPAWNERTILESPAWN = 2186760998U;
         static const AkUniqueID PLAY_SFXTILTINGTILES = 86987433U;
-        static const AkUniqueID PLAY_SFXTOWERATTACK = 3616277950U;
         static const AkUniqueID PLAY_SFXTOWERATTACKHIT = 4103541689U;
         static const AkUniqueID PLAY_SFXTOWERPLACE = 2094922267U;
         static const AkUniqueID PLAY_SFXTOWERSELL = 3932998018U;
@@ -102,6 +100,11 @@ namespace AK
         static const AkUniqueID UI = 1551306167U;
         static const AkUniqueID VO = 1534528548U;
     } // namespace BUSSES
+
+    namespace AUX_BUSSES
+    {
+        static const AkUniqueID VERB = 3657263530U;
+    } // namespace AUX_BUSSES
 
     namespace AUDIO_DEVICES
     {

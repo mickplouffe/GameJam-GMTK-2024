@@ -64,7 +64,17 @@
 							<PropertyList>
 								<Property Name="Color" Type="int16" Value="4"/>
 								<Property Name="OverrideColor" Type="bool" Value="True"/>
+								<Property Name="UserAuxSendVolume0" Type="Real64">
+									<ValueList>
+										<Value>3</Value>
+									</ValueList>
+								</Property>
 							</PropertyList>
+							<ReferenceList>
+								<Reference Name="UserAuxSend0">
+									<ObjectRef Name="Verb" ID="{3AA227EE-F1DF-4BB3-8F67-EAF7F014CACC}" WorkUnitID="{7F62BABC-0C6C-4DAD-ACF1-E77615B460FB}"/>
+								</Reference>
+							</ReferenceList>
 							<ObjectLists>
 								<ObjectList Name="RTPC">
 									<Reference>
@@ -111,6 +121,11 @@
 								<Property Name="Color" Type="int16" Value="8"/>
 								<Property Name="OverrideColor" Type="bool" Value="True"/>
 							</PropertyList>
+							<ReferenceList>
+								<Reference Name="UserAuxSend0">
+									<ObjectRef Name="Verb" ID="{3AA227EE-F1DF-4BB3-8F67-EAF7F014CACC}" WorkUnitID="{7F62BABC-0C6C-4DAD-ACF1-E77615B460FB}"/>
+								</Reference>
+							</ReferenceList>
 							<ObjectLists>
 								<ObjectList Name="RTPC">
 									<Reference>
@@ -244,6 +259,23 @@
 								</ObjectList>
 							</ObjectLists>
 						</Bus>
+						<AuxBus Name="Verb" ID="{3AA227EE-F1DF-4BB3-8F67-EAF7F014CACC}">
+							<ObjectLists>
+								<ObjectList Name="Effects">
+									<Reference>
+										<Local>
+											<EffectSlot Name="" ID="{51AA06EE-B76B-4DDC-8109-56A480C54E44}" ShortID="591988507">
+												<ReferenceList>
+													<Reference Name="Effect" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+														<ObjectRef Name="Have_U_Ever_Been_Outside" ID="{FE29AE8D-FD86-4652-A95D-68D32F5760EC}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+													</Reference>
+												</ReferenceList>
+											</EffectSlot>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+						</AuxBus>
 					</ChildrenList>
 					<ObjectLists>
 						<ObjectList Name="RTPC">
