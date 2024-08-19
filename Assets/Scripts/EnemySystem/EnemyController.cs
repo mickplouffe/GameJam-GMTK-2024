@@ -8,9 +8,10 @@ public class EnemyController : MonoBehaviour
     public HexTile SourceTile { get; set; }
 
     [SerializeField] private float tilesPerSecond = 1.0f; // Movement speed in tiles per second
-    [SerializeField] private EnemyEventChennl enemyEventChannel;
+    [SerializeField] private EnemyEventChannel enemyEventChannel;
     [SerializeField] private WeightEventChannel weightEventChannel;
     [SerializeField] private CoinsEventChannel coinsEventChannel;
+    [SerializeField] private GameManagerEventChannel gameManagerEventChannel;
 
     private HexTile _currentTargetTile;
     private HexTile _currentSourceTile;
@@ -32,17 +33,27 @@ public class EnemyController : MonoBehaviour
     {
         _finishedSetup = false;
         _currentHealth = startHealth;
+        gameManagerEventChannel.OnGameRestart += HandleGameRestart;
     }
 
     private void OnDisable()
     {
         _finishedSetup = false;
+        //gameManagerEventChannel.OnGameRestart -= HandleGameRestart;
+
     }
 
     private void Awake()
     {
         _currentHealth = startHealth;
         _colliderBounds = GetComponent<Collider>().bounds;
+    }
+
+    private void HandleGameRestart()
+    {
+        EnemyObjectPool.Instance.ReturnEnemyObject(Prefab, gameObject);
+        _currentHealth = startHealth;
+        _finishedSetup = false;
     }
 
     public void SetupEnemy(HexTile sourceTile)
@@ -146,6 +157,7 @@ public class EnemyController : MonoBehaviour
             weightEventChannel.RaiseWeightRemoved(enemyWeight, _currentSourceTile);
         coinsEventChannel.RaiseModifyCoins(enemyKillCost);
         enemyEventChannel.RaiseEnemyKilled(gameObject);
+        
         EnemyObjectPool.Instance.ReturnEnemyObject(Prefab, gameObject);
     }
 }

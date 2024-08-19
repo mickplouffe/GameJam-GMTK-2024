@@ -31,6 +31,7 @@ public class TowerController : MonoBehaviour
 
     [SerializeField] private WeightEventChannel weightEventChannel;
     [SerializeField] private TowerEventChannel towerEventChannel;
+    [SerializeField] private GameManagerEventChannel gameManagerEventChannel;
     
     public HexTile Tile { get; set; }
     
@@ -75,15 +76,25 @@ public class TowerController : MonoBehaviour
     private void OnEnable()
     {
         tiltEventChannel.OnTiltChanged += HandleTiltChanged;
+        gameManagerEventChannel.OnGameRestart += HandleGameRestart;
     }
 
     private void OnDisable()
     {
         tiltEventChannel.OnTiltChanged -= HandleTiltChanged;
+        //gameManagerEventChannel.OnGameRestart -= HandleGameRestart;
+
     }
-    
-    
-private void Update()
+
+    private void HandleGameRestart()
+    {
+        // Tile?.DetachTower();
+        // isSliding = false;
+        // Destroy(gameObject);
+    }
+
+
+    private void Update()
 {
     
     if (TowerManager.Instance.selectedTower == gameObject || towerData.isStatic)
@@ -219,7 +230,7 @@ private void StartSliding(Vector3 direction)
 {
     isSliding = true;
     tiltDirection = direction;
-    slipMagnitude = slipSpeedMultiplier * (transform.position - HexGridManager.Instance.transform.position).magnitude;
+    slipMagnitude = slipSpeedMultiplier * (transform.position - HexGridManager.Instance.mainUnit.position).magnitude;
 }
 
 private void StopSliding()

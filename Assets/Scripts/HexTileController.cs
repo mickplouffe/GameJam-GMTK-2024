@@ -7,7 +7,7 @@ public class HexTileController : MonoBehaviour
 {
     public Vector2Int GridPosition { get; set; }
 
-    [SerializeField] private EnemyEventChennl enemyEventChennl;
+    [SerializeField] private EnemyEventChannel enemyEventChannel;
     [SerializeField] private Color flashColor;
     [SerializeField] private float flashSpeed;
 
@@ -20,12 +20,12 @@ public class HexTileController : MonoBehaviour
     private float _flashDuration;
     private void OnEnable()
     {
-        enemyEventChennl.OnWaveStart += HandleTileFlashing;
+        enemyEventChannel.OnWaveStart += HandleTileFlashing;
     }
 
     private void OnDisable()
     {
-        enemyEventChennl.OnWaveStart -= HandleTileFlashing;
+        enemyEventChannel.OnWaveStart -= HandleTileFlashing;
     }
 
     private void Start()

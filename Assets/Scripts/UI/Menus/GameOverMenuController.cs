@@ -6,8 +6,9 @@ using UnityEngine.UIElements;
 
 public class GameOverMenuController : BaseMenu
 {
-    [SerializeField] private MenuEventChannel _menuEventChannel; 
-        
+    [SerializeField] private MenuEventChannel _menuEventChannel;
+    [SerializeField] private GameManagerEventChannel gameManagerEventChannel;
+ 
     private UIDocument _ui;
     
     private Button _restartButton;
@@ -32,6 +33,9 @@ public class GameOverMenuController : BaseMenu
 
         _menuEventChannel.OnBackButtonPressed += HandleBackButtonPressed;
         
+        gameManagerEventChannel.OnGameOver += HandleGameOver;
+        gameManagerEventChannel.OnGameRestart += HandleGameRestart;
+        
         _gameOverMenuContainer.visible = _isVisible;
     }
 
@@ -42,12 +46,25 @@ public class GameOverMenuController : BaseMenu
         _exitButton.clicked -= HandleExitButtonPressed;
 
         _menuEventChannel.OnBackButtonPressed -= HandleBackButtonPressed;
+
+        gameManagerEventChannel.OnGameOver -= HandleGameOver;
+        gameManagerEventChannel.OnGameRestart -= HandleGameRestart;
+    }
+    
+    public void HandleGameOver()
+    {
+        _gameOverMenuContainer.visible = true;
+    }
+
+    public void HandleGameRestart()
+    {
+        _gameOverMenuContainer.visible = false;
     }
     
     private void HandleRestartButtonPressed()
     {
+        gameManagerEventChannel.RaiseGameRestart();
         _gameOverMenuContainer.visible = false;
-        _menuEventChannel.RaiseRestartButtonPressed();
     }
 
     private void HandleOptionsButtonPressed()

@@ -9,7 +9,8 @@ using UnityEngine.UIElements;
 [RequireComponent(typeof(UIDocument))]
 public class OptionsMenuController : BaseMenu
 {
-    [SerializeField] private MenuEventChannel _menuEventChannel; 
+    [SerializeField] private MenuEventChannel _menuEventChannel;
+    [SerializeField] private GameManagerEventChannel gameManagerEventChannel;
     
     private UIDocument _ui;
     private DropdownField _displayResolution;
@@ -46,10 +47,14 @@ public class OptionsMenuController : BaseMenu
         _fullscreenToggle.value = true;
 
         _menuEventChannel.OnOptionsButtonPressed += HandleOptionsButtonPressed;
+        _menuEventChannel.OnPauseGame += HandlePauseGame;
+
+        gameManagerEventChannel.OnGameOver += HandleGameOver;
         
         _optionsMenuContainer.visible = _isVisible;
     }
-    
+
+
     private void OnDisable()
     {
         _displayResolution.UnregisterValueChangedCallback(_ => OnApplyResolution());
@@ -59,8 +64,22 @@ public class OptionsMenuController : BaseMenu
         _backButton.clicked -= HandleBackButtonPressed;
         
         _menuEventChannel.OnOptionsButtonPressed -= HandleOptionsButtonPressed;
+        
+        _menuEventChannel.OnPauseGame -= HandlePauseGame;
+        
+        gameManagerEventChannel.OnGameOver -= HandleGameOver;
     }
 
+    private void HandleGameOver()
+    {
+        _optionsMenuContainer.visible = false;
+    }
+
+    private void HandlePauseGame(bool pause)
+    {
+        if (_optionsMenuContainer.visible)
+            _optionsMenuContainer.visible = pause;
+    }
     private void HandleOptionsButtonPressed(VisualElement prevContainer)
     {
         _prevContainer = prevContainer;

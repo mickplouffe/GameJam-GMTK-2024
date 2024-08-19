@@ -1,15 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
 [CreateAssetMenu(menuName = "EventChannels/Enemy Event Channel")]
-public class EnemyEventChennl : ScriptableObject
+public class EnemyEventChannel: ScriptableObject
 {
     public UnityAction<GameObject> OnEnemyKilled;
     public UnityAction OnWaveCompleted;
     public UnityAction OnAllWaveCompleted;
     public UnityAction<HexTileController, float> OnWaveStart;
+    public UnityAction OnStartNextWave;
+    public UnityAction<int> OnEnemyAttack;
 
     public void RaiseEnemyKilled(GameObject enemy)
     {
@@ -29,5 +29,15 @@ public class EnemyEventChennl : ScriptableObject
     public void RaiseWaveStart(HexTileController tile, float waveDelay)
     {
         OnWaveStart?.Invoke(tile, waveDelay);
+    }
+
+    public void RaiseStartNextWave()
+    {
+        OnStartNextWave?.Invoke();
+    }
+
+    public void RaiseEnemyAttack(int damage)
+    {
+        OnEnemyAttack?.Invoke(damage);
     }
 }

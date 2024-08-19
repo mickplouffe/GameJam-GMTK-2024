@@ -127,9 +127,11 @@ MonoBehaviour:
   enemyEventChannel: {fileID: 11400000, guid: 58c4683592b42784c91a64e98e2ccbc1, type: 2}
   weightEventChannel: {fileID: 11400000, guid: 1c11f8eaadf261d449e9f3f048895711, type: 2}
   coinsEventChannel: {fileID: 11400000, guid: bd788a866bdd906438a624d0a722e871, type: 2}
-  enemyWeight: 2
-  enemyKillCost: 20
-  startHealth: 3
+  gameManagerEventChannel: {fileID: 11400000, guid: 6509d5e4e0033de4bbfb99b33ecd3255,
+    type: 2}
+  enemyWeight: 8
+  enemyKillCost: 5
+  startHealth: 0
 --- !u!54 &663233923925511598
 Rigidbody:
   m_ObjectHideFlags: 0

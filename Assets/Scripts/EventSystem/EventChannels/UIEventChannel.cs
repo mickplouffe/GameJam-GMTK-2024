@@ -6,19 +6,19 @@ using UnityEngine.Events;
 [CreateAssetMenu(menuName = "EventChannels/UI Event Channel")]
 public class UIEventChannel : ScriptableObject
 {
-    public UnityAction OnActivateBuildMenu;
-    public UnityAction OnActivateActionsMenu;
+    public UnityAction<bool> OnActivateBuildMenu;
+    public UnityAction<bool> OnActivateActionsMenu;
     public UnityAction<int> OnCoinsValueChanged;
     public UnityAction OnCantBuy;
 
-    public void RaiseActivateBuildMenu()
+    public void RaiseActivateBuildMenu(bool value)
     {
-        OnActivateBuildMenu?.Invoke();
+        OnActivateBuildMenu?.Invoke(value);
     }
     
-    public void RaiseActivateActionsMenu()
+    public void RaiseActivateActionsMenu(bool value)
     {
-        OnActivateActionsMenu?.Invoke();
+        OnActivateActionsMenu?.Invoke(value);
     }
 
     public void RaiseCoinsValueChanged(int value)

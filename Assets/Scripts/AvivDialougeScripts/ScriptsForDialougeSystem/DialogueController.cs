@@ -1,20 +1,18 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class DialogueManager : MonoBehaviour
+public class DialogueController : MonoBehaviour
 {
     public TMP_Text textBox;
     public AudioClip typingClip;
     public AudioSourceGroup audioSourceGroup;
 
-
-
-
     ///Aviv's Addition/Changes
     public bool DialougeIsActive;
-    [SerializeField] int CurrentTextActive = 0;
+    [SerializeField] int CurrentTextActive;
     [TextArea]
     public string[] dialogue1;
     public bool[] WhichCharacter;
@@ -25,19 +23,34 @@ public class DialogueManager : MonoBehaviour
     public Animator Anim;
     public Animator ProfileOneAnim;
     public Animator ProfileTwoAnim;
-    void Awake() {
-        dialogueVertexAnimator = new DialogueVertexAnimator(textBox, audioSourceGroup);
-        GoToNextText();
-        Anim.SetBool("Active", true);
+
+    [SerializeField] private GameManagerEventChannel gameManagerEventChannel;
+    
+    public bool IsPlaying { get; set; }
+
+    private void Awake()
+    {
+        transform.parent.gameObject.SetActive(false);
     }
+
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && IsPlaying)
         {
             CurrentTextActive++;
             GoToNextText();
         }
     }
+
+    public void StartDialogue()
+    {
+        IsPlaying = true;
+        CurrentTextActive = 0;
+        dialogueVertexAnimator = new DialogueVertexAnimator(textBox, audioSourceGroup);
+        GoToNextText();
+        Anim.SetBool("Active", true);
+    }
+    
     void GoToNextText()
     {
         if (CurrentTextActive <= dialogue1.Length - 1)
@@ -50,28 +63,30 @@ public class DialogueManager : MonoBehaviour
             {
                 NameText.text = "Alexiares";
                 ProfilePicture1.SetActive(true);
-              //  ProfilePicture2.SetActive(false);
+                // ProfilePicture2.SetActive(false);
             }
             else
             {
                 NameText.text = "Anicetus";
                 ProfilePicture2.SetActive(true);
-             //   ProfilePicture1.SetActive(false);
+                // ProfilePicture1.SetActive(false);
             }
         }
         else
         {
+            IsPlaying = false;
+            CurrentTextActive = 0;
             ProfileOneAnim.SetTrigger("Out");
             ProfileTwoAnim.SetTrigger("Out");
             Anim.SetBool("Active", false);
-            print("Start timer");
-            //Start the round Timer
+            transform.parent.gameObject.SetActive(false);
+            gameManagerEventChannel.RaiseDialogueEnd();
         }
 
     }
 
 
-    private Coroutine typeRoutine = null;
+    private Coroutine typeRoutine;
     void PlayDialogue(string message) {
         this.EnsureCoroutineStopped(ref typeRoutine);
         dialogueVertexAnimator.textAnimating = false;

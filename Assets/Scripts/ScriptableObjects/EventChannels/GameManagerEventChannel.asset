@@ -9,6 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76c9d8bdc4a91aa42af4a44ec6dfaf9d, type: 3}
-  m_Name: EnemyEventChannel
+  m_Script: {fileID: 11500000, guid: e4e1a8756815fc14aaa5334ca2dde7bf, type: 3}
+  m_Name: GameManagerEventChannel
   m_EditorClassIdentifier: 

@@ -1,8 +1,10 @@
+using System;
 using System.Collections.Generic;
 using NaughtyAttributes;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
-public class HexGridManager : MonoBehaviourSingletonPersistent<HexGridManager>
+public class HexGridManager : MonoBehaviour
 {
     
     public static HexGridManager Instance { get; private set; }
@@ -12,7 +14,7 @@ public class HexGridManager : MonoBehaviourSingletonPersistent<HexGridManager>
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject); // Optional: if you want the Singleton to persist across scenes
+            //DontDestroyOnLoad(gameObject); // Optional: if you want the Singleton to persist across scenes
         }
         else
         {
@@ -24,8 +26,6 @@ public class HexGridManager : MonoBehaviourSingletonPersistent<HexGridManager>
             // Create new GameObject to hold the hex tiles that is a child of the HexGridManager
             hexTileParent = new GameObject("HexTiles").transform;
             hexTileParent.SetParent(transform);
-            
-            
         }
     }
     
@@ -49,6 +49,23 @@ public class HexGridManager : MonoBehaviourSingletonPersistent<HexGridManager>
 
     public Transform mainUnit;
 
+    [SerializeField] private int mainUnityStartHealth;
+    private int _currentMainUnitHealth = 100;
+
+    [SerializeField] private EnemyEventChannel enemyEventChannel;
+    [SerializeField] private GameManagerEventChannel gameManagerEventChannel;
+
+
+    private void OnEnable()
+    {
+        enemyEventChannel.OnEnemyAttack += HandleEnemyAttack;
+    }
+
+    private void OnDisable()
+    {
+        enemyEventChannel.OnEnemyAttack -= HandleEnemyAttack;
+    }
+
     [Button]
     void Start()
     {
@@ -57,6 +74,24 @@ public class HexGridManager : MonoBehaviourSingletonPersistent<HexGridManager>
         List<HexTile> edgeTiles = hexGrid.GetTrueEdgeTiles();
         HexTile selectedTile = edgeTiles[Random.Range(0, edgeTiles.Count)];
         //hexGrid.AddCircularBlob(selectedTile.Q, selectedTile.R, amountBlobToAdd, hexPrefab);
+        mainUnit = GameObject.FindGameObjectWithTag("MainUnit").transform;
+    }
+
+    [Button]
+    private void NukeTower()
+    {
+        HandleEnemyAttack(_currentMainUnitHealth);
+    }
+    private void HandleEnemyAttack(int damage)
+    {
+        _currentMainUnitHealth -= damage;
+        if(_currentMainUnitHealth > 0)
+            return;
+
+        _currentMainUnitHealth = mainUnityStartHealth;
+        // TODO: Play tower animation
+        
+        gameManagerEventChannel.RaiseGameOver();
     }
 
     void GenerateInitialGrid()
@@ -295,10 +330,6 @@ public class HexGridManager : MonoBehaviourSingletonPersistent<HexGridManager>
                 gridSpan = distance;
             }
         }
-        
-        
-
-        
     }
 
     //[Button("Disable")]

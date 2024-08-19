@@ -15,7 +15,7 @@ public class MenuEventChannel: ScriptableObject
     public UnityAction OnExitButtonPressed;
     
     // Pause Menu Events
-    public UnityAction OnPauseGame;
+    public UnityAction<bool> OnPauseGame;
     public UnityAction OnResumeButtonPressed;
 
     public UnityAction OnRestartButtonPressed;
@@ -47,9 +47,9 @@ public class MenuEventChannel: ScriptableObject
         OnExitButtonPressed?.Invoke();
     }
 
-    public void RaisePauseGame()
+    public void RaisePauseGame(bool pause)
     {
-        OnPauseGame?.Invoke();
+        OnPauseGame?.Invoke(pause);
     }
 
     public void RaiseResumeButtonPressed()

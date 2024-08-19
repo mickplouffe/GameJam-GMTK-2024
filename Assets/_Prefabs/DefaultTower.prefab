@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 4711356743005891950}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -2.56, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -66,7 +66,9 @@ MonoBehaviour:
     currentCost: 0
   weightEventChannel: {fileID: 11400000, guid: 1c11f8eaadf261d449e9f3f048895711, type: 2}
   towerEventChannel: {fileID: 11400000, guid: ff6c5cff4a2a17d45b58cbd1fcdb1a0a, type: 2}
-  tiltAllowanceThreshold: 15
+  gameManagerEventChannel: {fileID: 11400000, guid: 6509d5e4e0033de4bbfb99b33ecd3255,
+    type: 2}
+  tiltAllowanceThreshold: 25
   slipSpeedMultiplier: 0.5
   enemyWidthOffset: 0.5
   _shootingRay: {fileID: 0}
@@ -162,7 +164,7 @@ SphereCollider:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 4
+    m_Bits: 0
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
