@@ -8,10 +8,16 @@ Event	ID	Name			Wwise Object Path	Notes
 	3869623766	Play_UIWaveStarted			\UI\GameAlerts\Play_UIWaveStarted	
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	55515463	GMTK2024_SFX_UIClick_-3_v2	D:\UnityProjects\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Windows\SFX\GMTK2024_SFX_UIClick_-3_v2_14E21738.wem		\Actor-Mixer Hierarchy\UI\UI\Menu\Click\GMTK2024_SFX_UIClick_-3_v2		3658
 	70575173	GMTK2024_SFX_goldGain_-7_v1	D:\UnityProjects\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Windows\SFX\GMTK2024_SFX_goldGain_-7_v1_14E21738.wem		\Actor-Mixer Hierarchy\UI\UI\Gold\GoldGain\GMTK2024_SFX_goldGain_-7_v1		16006
 	110314636	GMTK2024_SFX_goldGain_-7_v2	D:\UnityProjects\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Windows\SFX\GMTK2024_SFX_goldGain_-7_v2_14E21738.wem		\Actor-Mixer Hierarchy\UI\UI\Gold\GoldGain\GMTK2024_SFX_goldGain_-7_v2		13378
+	598116187	GMTK2024_SFX_UIClick_-3_v1	D:\UnityProjects\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Windows\SFX\GMTK2024_SFX_UIClick_-3_v1_14E21738.wem		\Actor-Mixer Hierarchy\UI\UI\Menu\Click\GMTK2024_SFX_UIClick_-3_v1		3766
+	631211157	GMTK2024_SFX_UIHover_-3_v2	D:\UnityProjects\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Windows\SFX\GMTK2024_SFX_UIHover_-3_v2_14E21738.wem		\Actor-Mixer Hierarchy\UI\UI\Menu\Hover\GMTK2024_SFX_UIHover_-3_v2		2092
 	659071609	GMTK2024_SFX_goldGain_-5_v3	D:\UnityProjects\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Windows\SFX\GMTK2024_SFX_goldGain_-5_v3_14E21738.wem		\Actor-Mixer Hierarchy\UI\UI\Gold\GoldGain\GMTK2024_SFX_goldGain_-5_v3		21962
+	682760559	GMTK2024_SFX_UIClick_-3_v3	D:\UnityProjects\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Windows\SFX\GMTK2024_SFX_UIClick_-3_v3_14E21738.wem		\Actor-Mixer Hierarchy\UI\UI\Menu\Click\GMTK2024_SFX_UIClick_-3_v3		3937
 	925787453	GMTK2024_SFX_goldLose_-6_v2	D:\UnityProjects\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Windows\SFX\GMTK2024_SFX_goldLose_-6_v2_14E21738.wem		\Actor-Mixer Hierarchy\UI\UI\Gold\GoldLoss\GMTK2024_SFX_goldLose_-6_v2		19644
 	929219650	GMTK2024_SFX_goldLose_-8_v1	D:\UnityProjects\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Windows\SFX\GMTK2024_SFX_goldLose_-8_v1_14E21738.wem		\Actor-Mixer Hierarchy\UI\UI\Gold\GoldLoss\GMTK2024_SFX_goldLose_-8_v1		22756
+	943130628	GMTK2024_SFX_UIHover_-3_v1	D:\UnityProjects\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Windows\SFX\GMTK2024_SFX_UIHover_-3_v1_14E21738.wem		\Actor-Mixer Hierarchy\UI\UI\Menu\Hover\GMTK2024_SFX_UIHover_-3_v1		1917
 	1022782546	GMTK2024_SFX_goldLose_-5_v3	D:\UnityProjects\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Windows\SFX\GMTK2024_SFX_goldLose_-5_v3_14E21738.wem		\Actor-Mixer Hierarchy\UI\UI\Gold\GoldLoss\GMTK2024_SFX_goldLose_-5_v3		23877
+	1069707363	GMTK2024_SFX_UIHover_-3_v3	D:\UnityProjects\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Windows\SFX\GMTK2024_SFX_UIHover_-3_v3_14E21738.wem		\Actor-Mixer Hierarchy\UI\UI\Menu\Hover\GMTK2024_SFX_UIHover_-3_v3		2125
 
