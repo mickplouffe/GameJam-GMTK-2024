@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{0A7A0CEB-234F-4544-9DAA-DD6728515385}" SchemaVersion="119" RootDocumentID="{44EF5028-F23C-448C-BEC5-271E73A1269C}" ParentDocumentID="{44EF5028-F23C-448C-BEC5-271E73A1269C}">
+	<Events>
+		<WorkUnit Name="SFXEvents_Otter" ID="{0A7A0CEB-234F-4544-9DAA-DD6728515385}" OwnerID="{44EF5028-F23C-448C-BEC5-271E73A1269C}" PersistMode="Nested">
+			<ChildrenList>
+				<Folder Name="Rock" ID="{A790DDB9-E3AA-4C5D-89FF-DBEEE295B850}" ShortID="751535717">
+					<ChildrenList>
+						<Event Name="Play_SFXPlaceRock" ID="{D199897C-3D6D-4076-BB8C-3F368D7C3417}">
+							<ChildrenList>
+								<Action Name="" ID="{7AB26CBB-A66F-49F5-815A-7F2FDBFE8D78}" ShortID="871143229">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="placeRock" ID="{90B37B99-4C09-4021-AA67-A7B95AAEEFF2}" WorkUnitID="{A57A593A-B9DE-4277-A3EF-672CA80E8992}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="Tower" ID="{FAA4D5F0-E5C5-475F-9E69-7F36C1B7628A}" ShortID="604499222">
+					<ChildrenList>
+						<Event Name="Play_SFXTowerPlace" ID="{F6BBF08E-2F33-4870-9A49-A02B42EC8F12}">
+							<ChildrenList>
+								<Action Name="" ID="{C9000AAD-99DF-4B25-AE08-7A820B5B4B20}" ShortID="686956731">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="towerPlace" ID="{10FEFE4D-10D8-4D89-8BEB-C4A9741D49D7}" WorkUnitID="{A57A593A-B9DE-4277-A3EF-672CA80E8992}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_SFXTowerSell" ID="{D656D3F4-3ECF-4658-AB6C-9DAFE7B7718F}">
+							<ChildrenList>
+								<Action Name="" ID="{87CE63E2-07FB-44E1-BA7F-99A3A0021A15}" ShortID="443075208">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="towerSell" ID="{DCF81620-06E4-4FCA-A7CF-8B84F3A1F91D}" WorkUnitID="{A57A593A-B9DE-4277-A3EF-672CA80E8992}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_SFXTowerSlide" ID="{21517C71-1641-4442-9EA1-C24713BCB5D7}">
+							<ChildrenList>
+								<Action Name="" ID="{5DDA0DA4-9140-400D-A28C-8CA0C1ABFF86}" ShortID="35327238">
+									<PropertyList>
+										<Property Name="FadeTime" Type="Real64" Value="0.5"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="towerSlide" ID="{110D8DD8-08F5-4C85-A4D3-D7A466215043}" WorkUnitID="{A57A593A-B9DE-4277-A3EF-672CA80E8992}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Stop_SFXTowerSlide" ID="{BAAA6E50-4D1A-4E70-98D9-B0371F5F49BA}">
+							<ChildrenList>
+								<Action Name="" ID="{57F66A70-4079-4441-8D1F-83BF5A779240}" ShortID="256601903">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+										<Property Name="FadeOutCurve" Type="int16" Value="6"/>
+										<Property Name="FadeTime" Type="Real64" Value="0.25"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="towerSlide" ID="{110D8DD8-08F5-4C85-A4D3-D7A466215043}" WorkUnitID="{A57A593A-B9DE-4277-A3EF-672CA80E8992}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

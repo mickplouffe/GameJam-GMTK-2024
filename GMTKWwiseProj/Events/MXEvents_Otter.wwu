@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{0BD70790-4A2A-42B0-81A1-0D3B3BF71E15}" SchemaVersion="119" RootDocumentID="{77FDA983-7133-480C-9FE7-A80469AEB806}" ParentDocumentID="{77FDA983-7133-480C-9FE7-A80469AEB806}">
+	<Events>
+		<WorkUnit Name="MXEvents_Otter" ID="{0BD70790-4A2A-42B0-81A1-0D3B3BF71E15}" OwnerID="{77FDA983-7133-480C-9FE7-A80469AEB806}" PersistMode="Nested">
+			<ChildrenList>
+				<Event Name="Play_MXTitleTheme" ID="{BC8A9745-2AB8-452D-B805-15E760D59A15}"/>
+				<Event Name="SetState_BetweenWaves" ID="{566FB362-ECF2-4416-933B-0FE84D1386B2}">
+					<ChildrenList>
+						<Action Name="" ID="{36FFAB49-9436-40E7-9A54-1F60C78A1A3C}" ShortID="122118073">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="22"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="BetweenWaves" ID="{9360CF56-12BF-46CC-9831-C467DEBF627D}" WorkUnitID="{A8C0A2BE-0965-4AC0-9566-86D7B39A75B2}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="StartGame" ID="{70783A5B-9D9B-4725-A1FA-E906A89AF09D}">
+					<ChildrenList>
+						<Action Name="" ID="{8AFE2264-736D-4075-B1AE-C7122193A4ED}" ShortID="1019696705">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="MX" ID="{36E46A61-56C8-4D08-9A58-DE8F1607464E}" WorkUnitID="{FCCA7E9F-D0AC-482C-A731-FDE3D338A535}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="SetState_ActiveWave" ID="{3B91EA0B-15E1-43CA-8747-01B17B6E2808}">
+					<ChildrenList>
+						<Action Name="" ID="{A90AF3D3-793C-4E2D-8EEF-792529E3B4C3}" ShortID="623043853">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="22"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="ActiveWave" ID="{5F8E6FC5-07CA-486A-9592-5DD2E231C2E2}" WorkUnitID="{A8C0A2BE-0965-4AC0-9566-86D7B39A75B2}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

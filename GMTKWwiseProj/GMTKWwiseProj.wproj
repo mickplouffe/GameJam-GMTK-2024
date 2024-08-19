@@ -3,6 +3,8 @@
 	<ProjectInfo>
 		<Project Name="GMTKWwiseProj" ID="{EA51926B-2DD9-4DDF-8B6F-B18E7FDB1268}">
 			<Platforms>
+				<Platform Name="Linux" ReferencePlatform="Linux" ID="{133A5BC7-5FC8-4673-99B0-68286A2D3412}"/>
+				<Platform Name="Mac" ReferencePlatform="Mac" ID="{FD17FF1A-C15C-4D57-8D30-ECFE6856487F}"/>
 				<Platform Name="Windows" ReferencePlatform="Windows" ID="{72826E47-FCD0-4A25-8917-F8D6C4383C2D}"/>
 			</Platforms>
 			<LanguageList>
@@ -14,12 +16,23 @@
 			<PropertyList>
 				<Property Name="ExternalSourcesInputPath" Type="string">
 					<ValueList>
+						<Value Platform="Linux"></Value>
 						<Value Platform="Windows"></Value>
+						<Value Platform="Mac"></Value>
 					</ValueList>
 				</Property>
 				<Property Name="ExternalSourcesOutputPath" Type="string">
 					<ValueList>
+						<Value Platform="Linux">GeneratedSoundBanks\Linux</Value>
 						<Value Platform="Windows">GeneratedSoundBanks\Windows</Value>
+						<Value Platform="Mac">GeneratedSoundBanks\Mac</Value>
+					</ValueList>
+				</Property>
+				<Property Name="GlobalVoiceInstancesLimit" Type="int16">
+					<ValueList>
+						<Value Platform="Linux">256</Value>
+						<Value Platform="Windows">256</Value>
+						<Value Platform="Mac">256</Value>
 					</ValueList>
 				</Property>
 				<Property Name="MediaAutoBankSubFolders" Type="bool" Value="True"/>
@@ -29,30 +42,47 @@
 				<Property Name="SoundBankHeaderFilePath" Type="string" Value="../Assets/StreamingAssets/Audio/GeneratedSoundBanks"/>
 				<Property Name="SoundBankPaths" Type="string">
 					<ValueList>
+						<Value Platform="Linux">GeneratedSoundBanks\Linux\</Value>
 						<Value Platform="Windows">GeneratedSoundBanks\Windows\</Value>
+						<Value Platform="Mac">GeneratedSoundBanks\Mac\</Value>
 					</ValueList>
 				</Property>
 				<Property Name="SoundBankPostGenerateCustomCmdDescription" Type="string">
 					<ValueList>
+						<Value Platform="Linux"></Value>
 						<Value Platform="Windows"></Value>
+						<Value Platform="Mac"></Value>
 					</ValueList>
 				</Property>
 				<Property Name="SoundBankPostGenerateCustomCmdLines" Type="string">
 					<ValueList>
+						<Value Platform="Linux"></Value>
 						<Value Platform="Windows"></Value>
+						<Value Platform="Mac"></Value>
 					</ValueList>
 				</Property>
 				<Property Name="SoundBankPreGenerateCustomCmdDescription" Type="string">
 					<ValueList>
+						<Value Platform="Linux"></Value>
 						<Value Platform="Windows"></Value>
+						<Value Platform="Mac"></Value>
 					</ValueList>
 				</Property>
 				<Property Name="SoundBankPreGenerateCustomCmdLines" Type="string">
 					<ValueList>
+						<Value Platform="Linux"></Value>
 						<Value Platform="Windows"></Value>
+						<Value Platform="Mac"></Value>
 					</ValueList>
 				</Property>
 				<Property Name="SourceControlGeneratedFiles" Type="bool" Value="True"/>
+				<Property Name="VolumeThreshold" Type="Real64">
+					<ValueList>
+						<Value Platform="Linux">-80</Value>
+						<Value Platform="Windows">-80</Value>
+						<Value Platform="Mac">-80</Value>
+					</ValueList>
+				</Property>
 				<Property Name="WwiseVersionWhenCreated" Type="string" Value="Branch=wwise_v2023.1.6|Build=8555|VersionName=v2023.1.6|Config=Release"/>
 			</PropertyList>
 			<MiscSettings>
