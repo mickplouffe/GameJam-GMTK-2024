@@ -169,28 +169,6 @@
 				</Folder>
 				<Folder Name="Platforms" ID="{242CC404-9006-4213-A428-78ED25FDB4BC}" ShortID="153968962">
 					<ChildrenList>
-						<Event Name="Play_SFXSpawnerTileSpawn" ID="{CC3C517E-D109-44C5-8243-67F08A28976D}">
-							<ChildrenList>
-								<Action Name="" ID="{B3138884-F1C5-4B4B-9508-5AD0B32773E0}" ShortID="461310055">
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="SpawnerTileSpawn" ID="{E450D19A-89EE-4D57-9633-18348DD61275}" WorkUnitID="{B5461995-40B4-48D8-B88A-3E895957C2F0}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-							</ChildrenList>
-						</Event>
-						<Event Name="Play_SFXGroundTileSpawn" ID="{E869B14E-1621-4ED1-89AC-65DE7A7EC898}">
-							<ChildrenList>
-								<Action Name="" ID="{6AA45C5C-D9A6-4C87-A3C6-FC28D86A314F}" ShortID="535537531">
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="GroundTileSpawn" ID="{CB386ECA-6FA7-44D2-9A11-F07BF9BEF7DD}" WorkUnitID="{B5461995-40B4-48D8-B88A-3E895957C2F0}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-							</ChildrenList>
-						</Event>
 						<Event Name="Play_SFXTiltingTiles" ID="{8BA29D0A-B136-41AC-88E6-391682C7D488}">
 							<ChildrenList>
 								<Action Name="" ID="{DF2C319F-47F6-4E63-9D46-D51D4A07D37D}" ShortID="190664015">

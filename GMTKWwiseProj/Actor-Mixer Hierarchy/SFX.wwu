@@ -500,12 +500,6 @@
 											<BlendTrackAssocList>
 												<BlendTrackAssoc>
 													<ItemRef Name="High" ID="{3408384D-790B-4AB0-BE38-EFF242E8BA89}"/>
-													<CrossfadingInfo>
-														<LeftEdgePos>0</LeftEdgePos>
-														<LeftFadingMode>Automatic</LeftFadingMode>
-														<RightEdgePos>0</RightEdgePos>
-														<RightFadingMode>Automatic</RightFadingMode>
-													</CrossfadingInfo>
 												</BlendTrackAssoc>
 											</BlendTrackAssocList>
 										</BlendTrack>
@@ -1016,26 +1010,6 @@
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
-								<RandomSequenceContainer Name="GroundTileSpawn" ID="{CB386ECA-6FA7-44D2-9A11-F07BF9BEF7DD}" ShortID="701827125">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{7F62BABC-0C6C-4DAD-ACF1-E77615B460FB}"/>
-										</Reference>
-									</ReferenceList>
-								</RandomSequenceContainer>
-								<RandomSequenceContainer Name="SpawnerTileSpawn" ID="{E450D19A-89EE-4D57-9633-18348DD61275}" ShortID="432193967">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{7F62BABC-0C6C-4DAD-ACF1-E77615B460FB}"/>
-										</Reference>
-									</ReferenceList>
-								</RandomSequenceContainer>
 								<RandomSequenceContainer Name="TiltingTiles" ID="{F97BAB51-8403-4F25-81C3-B9541E5BE579}" ShortID="805191324">
 									<ReferenceList>
 										<Reference Name="Conversion">
@@ -1120,6 +1094,9 @@
 									</ReferenceList>
 									<ChildrenList>
 										<AudioFileSource Name="WHISTLE Down Long" ID="{EA15EC63-B439-45AA-B68F-886B5A96B082}">
+											<PropertyList>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+											</PropertyList>
 											<Language>SFX</Language>
 											<AudioFile>WHISTLE Down Long.wav</AudioFile>
 											<MediaIDList>
