@@ -46,7 +46,7 @@ public class EnemyController : MonoBehaviour
     private void Awake()
     {
         _currentHealth = startHealth;
-        _colliderBounds = GetComponent<Collider>().bounds;
+        _colliderBounds = GetComponent<Collider2D>().bounds;
     }
 
     private void HandleGameRestart()
@@ -58,7 +58,7 @@ public class EnemyController : MonoBehaviour
 
     public void SetupEnemy(HexTile sourceTile)
     {
-        TargetTile = HexGridManager.Instance.GetTile(0,0);
+        TargetTile = HexGridManager.Instance.GetTileAtWorldPosition(HexGridManager.Instance.mainUnit.position);
         SourceTile = sourceTile;
 
         _currentSourceTile = SourceTile;
@@ -68,7 +68,7 @@ public class EnemyController : MonoBehaviour
         weightEventChannel.RaiseWeightAdded(enemyWeight, _currentSourceTile);
 
         transform.position = _currentSourceTile.TileObject.transform.position +
-                                  transform.up * _colliderBounds.size.y * 0.5f;
+                                  transform.up * _colliderBounds.size.y * 0.35f;
         
         _finishedSetup = true;
     }
@@ -81,6 +81,7 @@ public class EnemyController : MonoBehaviour
         MoveTowardsTarget();
 
         transform.rotation = HexGridManager.Instance.transform.rotation;
+        transform.forward = Camera.main.transform.forward;
     }
 
     private void MoveTowardsTarget()
@@ -90,6 +91,7 @@ public class EnemyController : MonoBehaviour
         _percentBetweenTiles = Mathf.Clamp01(_percentBetweenTiles);
 
         Vector3 newPos = Vector3.Lerp(_currentSourceTile.TileObject.transform.position, _currentTargetTile.TileObject.transform.position, _percentBetweenTiles);
+        
         
         if (_percentBetweenTiles >= 1.0f)
         {
@@ -113,7 +115,7 @@ public class EnemyController : MonoBehaviour
         
         
         transform.position = newPos;
-        transform.position += transform.parent.up * _colliderBounds.size.y * 0.5f;
+        transform.position += transform.parent.up * _colliderBounds.size.y * 0.35f;
     }
 
     private HexTile GetNextTargetPosition()

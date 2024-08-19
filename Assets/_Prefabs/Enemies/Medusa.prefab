@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 4483572339153971011}
   - component: {fileID: 2845067558631948617}
   - component: {fileID: 1347913115866342140}
-  m_Layer: 0
+  - component: {fileID: 2306121386646218278}
+  m_Layer: 7
   m_Name: Medusa
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1155,3 +1156,24 @@ MonoBehaviour:
   CardboardFaceMaterial: {fileID: -9204558795622816267, guid: 5c3c04f7cb690274dbca715c19927b95,
     type: 3}
   FaceFillColor: {r: 0, g: 0, b: 0, a: 1}
+--- !u!114 &2306121386646218278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3054519051460902192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc98c07a8bb464b43b98d27d4e04bcd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tilesPerSecond: 1
+  enemyEventChannel: {fileID: 11400000, guid: 58c4683592b42784c91a64e98e2ccbc1, type: 2}
+  weightEventChannel: {fileID: 11400000, guid: 1c11f8eaadf261d449e9f3f048895711, type: 2}
+  coinsEventChannel: {fileID: 11400000, guid: bd788a866bdd906438a624d0a722e871, type: 2}
+  gameManagerEventChannel: {fileID: 11400000, guid: 6509d5e4e0033de4bbfb99b33ecd3255,
+    type: 2}
+  enemyWeight: 2
+  enemyKillCost: 5
+  startHealth: 100
