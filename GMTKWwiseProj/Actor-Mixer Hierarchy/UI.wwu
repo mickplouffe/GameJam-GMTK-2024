@@ -36,6 +36,13 @@
 					</ReferenceList>
 					<ChildrenList>
 						<ActorMixer Name="Gold" ID="{E7334AB0-01A2-477E-AC49-0118B6B399B5}" ShortID="254019728">
+							<PropertyList>
+								<Property Name="MakeUpGain" Type="Real64">
+									<ValueList>
+										<Value>5</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
@@ -204,6 +211,13 @@
 							</ChildrenList>
 						</ActorMixer>
 						<ActorMixer Name="Menu" ID="{2CF76DCE-2EF8-482D-8008-0FFF38A8DE7E}" ShortID="575191773">
+							<PropertyList>
+								<Property Name="MakeUpGain" Type="Real64">
+									<ValueList>
+										<Value>3</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
@@ -214,6 +228,9 @@
 							</ReferenceList>
 							<ChildrenList>
 								<RandomSequenceContainer Name="Hover" ID="{BAC9EAB7-1301-4C87-8BBE-5A81B7E84966}" ShortID="535643151">
+									<PropertyList>
+										<Property Name="RandomAvoidRepeating" Type="bool" Value="False"/>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
@@ -300,6 +317,74 @@
 											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{7F62BABC-0C6C-4DAD-ACF1-E77615B460FB}"/>
 										</Reference>
 									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="GMTK2024_SFX_UIClick_-3_v1" ID="{363088E5-0256-4967-927F-FF75B39AE44E}" ShortID="585254654">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{7F62BABC-0C6C-4DAD-ACF1-E77615B460FB}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="GMTK2024_SFX_UIClick_-3_v1" ID="{DF18E8CB-D7CA-400F-B1F6-C3C1EA4F06E8}">
+													<Language>SFX</Language>
+													<AudioFile>GMTK2024_SFX_UIClick_-3_v1.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="598116187"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="GMTK2024_SFX_UIClick_-3_v1" ID="{DF18E8CB-D7CA-400F-B1F6-C3C1EA4F06E8}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="GMTK2024_SFX_UIClick_-3_v2" ID="{82971892-BDBB-4176-824E-13E86D16AA53}" ShortID="339202350">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{7F62BABC-0C6C-4DAD-ACF1-E77615B460FB}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="GMTK2024_SFX_UIClick_-3_v2" ID="{662FB1F1-A36E-461E-A318-C15EAF374A04}">
+													<Language>SFX</Language>
+													<AudioFile>GMTK2024_SFX_UIClick_-3_v2.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="55515463"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="GMTK2024_SFX_UIClick_-3_v2" ID="{662FB1F1-A36E-461E-A318-C15EAF374A04}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="GMTK2024_SFX_UIClick_-3_v3" ID="{9F15D59A-A982-4183-A323-D457CB7C3614}" ShortID="149330934">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{7F62BABC-0C6C-4DAD-ACF1-E77615B460FB}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="GMTK2024_SFX_UIClick_-3_v3" ID="{64E37C89-F653-434C-9097-D5A66C47048C}">
+													<Language>SFX</Language>
+													<AudioFile>GMTK2024_SFX_UIClick_-3_v3.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="682760559"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="GMTK2024_SFX_UIClick_-3_v3" ID="{64E37C89-F653-434C-9097-D5A66C47048C}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
 								</RandomSequenceContainer>
 							</ChildrenList>
 						</ActorMixer>

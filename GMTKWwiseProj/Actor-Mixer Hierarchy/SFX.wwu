@@ -12,6 +12,11 @@
 						<Property Name="3DSpatialization" Type="int16" Value="2"/>
 						<Property Name="EnableAttenuation" Type="bool" Value="False"/>
 						<Property Name="IsGlobalLimit" Type="int16" Value="1"/>
+						<Property Name="MakeUpGain" Type="Real64">
+							<ValueList>
+								<Value>3</Value>
+							</ValueList>
+						</Property>
 						<Property Name="MaxSoundPerInstance" Type="int16">
 							<ValueList>
 								<Value>9</Value>
@@ -526,6 +531,11 @@
 							<ChildrenList>
 								<ActorMixer Name="Gorgon" ID="{F549251C-5E8A-437D-9D21-939B0940A841}" ShortID="433114276">
 									<PropertyList>
+										<Property Name="MakeUpGain" Type="Real64">
+											<ValueList>
+												<Value>-2</Value>
+											</ValueList>
+										</Property>
 										<Property Name="OverridePriority" Type="bool" Value="True"/>
 										<Property Name="Priority" Type="int16">
 											<ValueList>
@@ -544,6 +554,11 @@
 									<ChildrenList>
 										<RandomSequenceContainer Name="Death" ID="{764C81F6-807A-4054-9C4C-365487B75398}" ShortID="717782096">
 											<PropertyList>
+												<Property Name="MakeUpGain" Type="Real64">
+													<ValueList>
+														<Value>5</Value>
+													</ValueList>
+												</Property>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
 														<Value>-5</Value>
@@ -629,6 +644,11 @@
 										</RandomSequenceContainer>
 										<RandomSequenceContainer Name="EnterTower" ID="{18E46E49-6C37-4B8B-8500-2A78D82D0387}" ShortID="1060820732">
 											<PropertyList>
+												<Property Name="MakeUpGain" Type="Real64">
+													<ValueList>
+														<Value>7</Value>
+													</ValueList>
+												</Property>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
 														<Value>-5</Value>
@@ -669,6 +689,13 @@
 											</ChildrenList>
 										</RandomSequenceContainer>
 										<RandomSequenceContainer Name="Spawn" ID="{FD1C793F-C844-4453-9B9F-98978A4B9AF4}" ShortID="711824603">
+											<PropertyList>
+												<Property Name="MakeUpGain" Type="Real64">
+													<ValueList>
+														<Value>-1</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
@@ -750,6 +777,11 @@
 								</ActorMixer>
 								<ActorMixer Name="Minotaur" ID="{1FE1D831-F155-4797-93DD-94BEC3A99C03}" ShortID="969830765">
 									<PropertyList>
+										<Property Name="MakeUpGain" Type="Real64">
+											<ValueList>
+												<Value>-5</Value>
+											</ValueList>
+										</Property>
 										<Property Name="OverridePriority" Type="bool" Value="True"/>
 										<Property Name="Priority" Type="int16">
 											<ValueList>
@@ -767,6 +799,13 @@
 									</ReferenceList>
 									<ChildrenList>
 										<RandomSequenceContainer Name="Death" ID="{80C88B50-11B9-46AF-9399-2EAB73465DC4}" ShortID="902261660">
+											<PropertyList>
+												<Property Name="MakeUpGain" Type="Real64">
+													<ValueList>
+														<Value>8</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
@@ -821,6 +860,13 @@
 													</ActiveSourceList>
 												</Sound>
 												<Sound Name="GMTK2024_SFX_enemyDies_minotaur_-14_v3" ID="{94D8732B-66BB-425E-92C0-E5FB1AC897C0}" ShortID="705814077">
+													<PropertyList>
+														<Property Name="MakeUpGain" Type="Real64">
+															<ValueList>
+																<Value>-2</Value>
+															</ValueList>
+														</Property>
+													</PropertyList>
 													<ReferenceList>
 														<Reference Name="Conversion">
 															<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
@@ -845,6 +891,13 @@
 											</ChildrenList>
 										</RandomSequenceContainer>
 										<RandomSequenceContainer Name="EnterTower" ID="{963D36A2-5F03-4343-A18F-7F89637DF173}" ShortID="686866408">
+											<PropertyList>
+												<Property Name="MakeUpGain" Type="Real64">
+													<ValueList>
+														<Value>5</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
@@ -960,6 +1013,11 @@
 								</ActorMixer>
 								<ActorMixer Name="Cyclops" ID="{1EBE0033-4FFF-47DA-8324-B7AB582F8528}" ShortID="71298483">
 									<PropertyList>
+										<Property Name="MakeUpGain" Type="Real64">
+											<ValueList>
+												<Value>-7</Value>
+											</ValueList>
+										</Property>
 										<Property Name="OverridePriority" Type="bool" Value="True"/>
 									</PropertyList>
 									<ReferenceList>
@@ -973,6 +1031,11 @@
 									<ChildrenList>
 										<RandomSequenceContainer Name="EnterTower" ID="{579547F2-D7F4-4395-8CC5-8D57B9A2253E}" ShortID="698290452">
 											<PropertyList>
+												<Property Name="MakeUpGain" Type="Real64">
+													<ValueList>
+														<Value>10</Value>
+													</ValueList>
+												</Property>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
 														<Value>-9</Value>
@@ -1014,6 +1077,11 @@
 										</RandomSequenceContainer>
 										<RandomSequenceContainer Name="Death" ID="{5757E17A-F516-49B4-87F5-72EE65D859C5}" ShortID="462832415">
 											<PropertyList>
+												<Property Name="MakeUpGain" Type="Real64">
+													<ValueList>
+														<Value>7</Value>
+													</ValueList>
+												</Property>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
 														<Value>-9</Value>
