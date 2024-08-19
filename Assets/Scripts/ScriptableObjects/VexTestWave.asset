@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c6e6ab9ec9481f40964bb04acf0310a, type: 3}
+  m_Name: VexTestWave
+  m_EditorClassIdentifier: 
+  enemyPrefabs:
+  - {fileID: 5608714359507493409, guid: 0952227645c20ae439fa3ad93602821c, type: 3}
+  - {fileID: 3132445629592796125, guid: c1a1686f01a40c24182f7aff4649571a, type: 3}
+  - {fileID: 6296840570076659664, guid: 1184e6daba366c6489b33add40484bce, type: 3}
+  enemyCounts: 0a0000000500000002000000
+  spawnInterval: 2
+  waveDelay: 5
+  numberOfSpawnPoints: 1
