@@ -9,10 +9,8 @@
 			<ChildrenList>
 				<SoundBank Name="SFX" ID="{F7F0A189-6FB4-4FB4-B112-784E34501122}">
 					<ObjectInclusionList>
-						<ObjectRef Name="Play_SFXPortalsForm" ID="{F4801C66-34A1-4013-9455-676370BE719D}" WorkUnitID="{0A7A0CEB-234F-4544-9DAA-DD6728515385}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_SFXMinotaurDeath" ID="{E977C255-21AC-4039-B34D-7720A024D8D8}" WorkUnitID="{44EF5028-F23C-448C-BEC5-271E73A1269C}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_SFXPlaceRock" ID="{D199897C-3D6D-4076-BB8C-3F368D7C3417}" WorkUnitID="{0A7A0CEB-234F-4544-9DAA-DD6728515385}" Origin="Manual" Filter="7"/>
-						<ObjectRef Name="Play_SFXDamaged" ID="{48C3A254-D7E8-40B4-AD34-7A5D67A1397A}" WorkUnitID="{44EF5028-F23C-448C-BEC5-271E73A1269C}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_SFXTiltingTiles" ID="{8BA29D0A-B136-41AC-88E6-391682C7D488}" WorkUnitID="{44EF5028-F23C-448C-BEC5-271E73A1269C}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_SFXTowerAttackHit" ID="{3FD2FD50-D4A9-4452-BB55-24AAC8E2A0AA}" WorkUnitID="{44EF5028-F23C-448C-BEC5-271E73A1269C}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="SFX" ID="{44EF5028-F23C-448C-BEC5-271E73A1269C}" WorkUnitID="{44EF5028-F23C-448C-BEC5-271E73A1269C}" Origin="Manual" Filter="7"/>
