@@ -42,9 +42,9 @@
 								</Action>
 							</ChildrenList>
 						</Event>
-						<Event Name="Play_SFXTowerSlide" ID="{21517C71-1641-4442-9EA1-C24713BCB5D7}">
+						<Event Name="Play_SFXTowerSlide" ID="{173A8F5F-6F65-4B07-B66B-693D99C18196}">
 							<ChildrenList>
-								<Action Name="" ID="{5DDA0DA4-9140-400D-A28C-8CA0C1ABFF86}" ShortID="35327238">
+								<Action Name="" ID="{CB25F36E-1415-4797-BF1C-5C81037E4E83}" ShortID="35327238">
 									<PropertyList>
 										<Property Name="FadeTime" Type="Real64" Value="0.5"/>
 									</PropertyList>
