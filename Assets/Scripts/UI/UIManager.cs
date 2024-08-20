@@ -97,7 +97,7 @@ public class UIManager : MonoBehaviourSingleton<UIManager>
     }
 
     // ReSharper disable Unity.PerformanceAnalysis
-    private void HandleWaveStart(HexTileController tileController, float waveDelay)
+    private void HandleWaveStart(HexTile tileController, float waveDelay)
     {
         // Start a new countdown timer
         if (_timerCoroutine != null)

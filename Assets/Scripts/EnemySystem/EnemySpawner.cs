@@ -61,7 +61,7 @@ public class EnemySpawner : MonoBehaviourSingleton<EnemySpawner>
         _allPossibleSpawnPoints = HexGridManager.Instance.GetRandomEdgeTiles(currentWave.numberOfSpawnPoints);
 
         foreach (var spawnPoint in _allPossibleSpawnPoints)
-            enemyEventChannel.RaiseWaveStart(spawnPoint.TileObject.GetComponent<HexTileController>(), currentWave.waveDelay);
+            enemyEventChannel.RaiseWaveStart(spawnPoint, currentWave.waveDelay);
         
         yield return new WaitForSeconds(currentWave.waveDelay);
 

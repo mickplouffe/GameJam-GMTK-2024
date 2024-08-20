@@ -133,7 +133,7 @@ public class HexGrid
             hex.transform.rotation = gridOrigin.rotation;
             hex.name = "HexTile " + q + "x" + r;
             hex.SetActive(true);
-            
+            hex.GetComponent<HexTileController>().GridPosition = new Vector2Int(q, r);
         }
         else
         {
@@ -145,7 +145,7 @@ public class HexGrid
                 hex.transform.rotation = gridOrigin.rotation;
                 hex.name = "HexTile " + q + "x" + r;
                 hex.SetActive(true);
-                
+                hex.GetComponent<HexTileController>().GridPosition = new Vector2Int(q, r);
             }
         }
     }

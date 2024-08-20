@@ -63,14 +63,15 @@ public class HexGridManager : MonoBehaviour
     {
         enemyEventChannel.OnEnemyAttack += HandleEnemyAttack;
         enemyEventChannel.OnWaveCompleted += HandleWaveCompleted;
+        gameManagerEventChannel.OnGameRestart += GenerateHexGrid;
     }
 
 
     private void OnDisable()
     {
         enemyEventChannel.OnEnemyAttack -= HandleEnemyAttack;
-        enemyEventChannel.OnWaveCompleted += HandleWaveCompleted;
-
+        enemyEventChannel.OnWaveCompleted -= HandleWaveCompleted;
+        gameManagerEventChannel.OnGameRestart -= GenerateHexGrid;
     }
     private void HandleWaveCompleted()
     {
