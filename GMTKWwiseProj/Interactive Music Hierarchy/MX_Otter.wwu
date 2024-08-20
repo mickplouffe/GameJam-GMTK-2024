@@ -455,7 +455,7 @@
 							<ChildrenList>
 								<MusicSegment Name="BetweenWaves_segment" ID="{34F95F84-01A8-4FCD-A434-9834F8790086}" ShortID="607972799">
 									<PropertyList>
-										<Property Name="EndPosition" Type="Real64" Value="86893.0092692161"/>
+										<Property Name="EndPosition" Type="Real64" Value="89427.6606151874"/>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
@@ -486,11 +486,11 @@
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<AudioFileSource Name="Scales of Olympus Layer 2 v1" ID="{A80D1320-B540-4642-9BF2-9FA74145CAF6}">
+												<AudioFileSource Name="Scales of Olympus Game Loop low intensity v2" ID="{FEC2F00D-8126-49E5-A445-2FB622BD8C71}">
 													<Language>SFX</Language>
-													<AudioFile>Scales of Olympus Layer 2 v1.wav</AudioFile>
+													<AudioFile>Scales of Olympus Game Loop low intensity v2.wav</AudioFile>
 													<MediaIDList>
-														<MediaID ID="624318979"/>
+														<MediaID ID="862001170"/>
 													</MediaIDList>
 												</AudioFileSource>
 											</ChildrenList>
@@ -528,12 +528,13 @@
 																	<ObjectList Name="Clips">
 																		<Reference>
 																			<Local>
-																				<MusicClip Name="Scales of Olympus Layer 2 v1" ID="{DE418A5A-448E-4875-90AE-3251C0822772}">
+																				<MusicClip Name="Scales of Olympus Game Loop low intensity v2" ID="{5770D450-BBC5-42BC-9677-78DF46068A05}">
 																					<PropertyList>
-																						<Property Name="EndTrimOffset" Type="Real64" Value="86000"/>
+																						<Property Name="EndTrimOffset" Type="Real64" Value="87500"/>
+																						<Property Name="FadeInMode" Type="int16" Value="0"/>
 																						<Property Name="FadeOutMode" Type="int16" Value="0"/>
 																					</PropertyList>
-																					<AudioSourceRef Name="Scales of Olympus Layer 2 v1" ID="{A80D1320-B540-4642-9BF2-9FA74145CAF6}"/>
+																					<AudioSourceRef Name="Scales of Olympus Game Loop low intensity v2" ID="{FEC2F00D-8126-49E5-A445-2FB622BD8C71}"/>
 																				</MusicClip>
 																			</Local>
 																		</Reference>
@@ -702,7 +703,7 @@
 													<MusicCue Name="Exit Cue" ID="{17B451B7-AA95-48F3-AC13-5855E9682A47}">
 														<PropertyList>
 															<Property Name="CueType" Type="int16" Value="1"/>
-															<Property Name="TimeMs" Type="Real64" Value="14852.0013103364"/>
+															<Property Name="TimeMs" Type="Real64" Value="15000"/>
 														</PropertyList>
 													</MusicCue>
 												</Local>
@@ -712,7 +713,7 @@
 								</MusicSegment>
 								<MusicSegment Name="Title Screen 2 loop v1" ID="{82156925-0AAB-4D54-A56D-52B652AD3761}" ShortID="441099427">
 									<PropertyList>
-										<Property Name="EndPosition" Type="Real64" Value="46363.6458333333"/>
+										<Property Name="EndPosition" Type="Real64" Value="48163.36658239"/>
 										<Property Name="OverrideClockSettings" Type="bool" Value="True"/>
 										<Property Name="Tempo" Type="Real64" Value="88"/>
 									</PropertyList>
@@ -742,11 +743,11 @@
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<AudioFileSource Name="Title Screen 2 loop v1" ID="{6CCACE22-D469-4326-991F-7A5134E8F3DF}">
+												<AudioFileSource Name="Title Screen 2 loop v2" ID="{B965D842-6ADE-4271-B12B-5FB6A6D12331}">
 													<Language>SFX</Language>
-													<AudioFile>Title Screen 2 loop v1.wav</AudioFile>
+													<AudioFile>Title Screen 2 loop v2.wav</AudioFile>
 													<MediaIDList>
-														<MediaID ID="695835364"/>
+														<MediaID ID="960456663"/>
 													</MediaIDList>
 												</AudioFileSource>
 											</ChildrenList>
@@ -759,13 +760,13 @@
 																	<ObjectList Name="Clips">
 																		<Reference>
 																			<Local>
-																				<MusicClip Name="Title Screen 2 loop v1" ID="{321E03AD-FF70-40F4-ABFB-94A2DDAE28F4}">
+																				<MusicClip Name="Title Screen 2 loop v2" ID="{717003A5-0C66-44D0-B3FA-38885C7FBA68}">
 																					<PropertyList>
 																						<Property Name="EndTrimOffset" Type="Real64" Value="46363.6458333333"/>
 																						<Property Name="FadeInMode" Type="int16" Value="0"/>
 																						<Property Name="FadeOutMode" Type="int16" Value="0"/>
 																					</PropertyList>
-																					<AudioSourceRef Name="Title Screen 2 loop v1" ID="{6CCACE22-D469-4326-991F-7A5134E8F3DF}"/>
+																					<AudioSourceRef Name="Title Screen 2 loop v2" ID="{B965D842-6ADE-4271-B12B-5FB6A6D12331}"/>
 																				</MusicClip>
 																			</Local>
 																		</Reference>
@@ -799,6 +800,66 @@
 									</ObjectLists>
 								</MusicSegment>
 							</ChildrenList>
+						</MusicPlaylistContainer>
+						<MusicPlaylistContainer Name="VictoryStinger" ID="{65443EF2-D87E-43E9-BCA2-EC1D1AB979EC}" ShortID="345514898">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{7F62BABC-0C6C-4DAD-ACF1-E77615B460FB}"/>
+								</Reference>
+								<Reference Name="PlaylistRoot">
+									<Custom>
+										<MusicPlaylistItem Name="" ID="{59E27483-9A11-4573-958A-1C4C42C0D978}" ShortID="362525352"/>
+									</Custom>
+								</Reference>
+								<Reference Name="TransitionRoot">
+									<Custom>
+										<MusicTransition Name="Root" ID="{0A295F84-EE94-4AAC-A236-C61162F6BA67}">
+											<PropertyList>
+												<Property Name="IsFolder" Type="bool" Value="True"/>
+											</PropertyList>
+											<ChildrenList>
+												<MusicTransition Name="Transition" ID="{1B0DBF28-451E-4D42-AE3F-10432CEB76B7}">
+													<TransitionInfo/>
+												</MusicTransition>
+											</ChildrenList>
+											<TransitionInfo/>
+										</MusicTransition>
+									</Custom>
+								</Reference>
+							</ReferenceList>
+						</MusicPlaylistContainer>
+						<MusicPlaylistContainer Name="GameOverStinger" ID="{91559954-2AF2-46FA-B74B-E0FDD4133B10}" ShortID="389300157">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{7F62BABC-0C6C-4DAD-ACF1-E77615B460FB}"/>
+								</Reference>
+								<Reference Name="PlaylistRoot">
+									<Custom>
+										<MusicPlaylistItem Name="" ID="{819EFBEF-237C-4066-95A2-2A4419B37823}" ShortID="731036720"/>
+									</Custom>
+								</Reference>
+								<Reference Name="TransitionRoot">
+									<Custom>
+										<MusicTransition Name="Root" ID="{324784F2-05B1-4222-8C32-EA8AC5C59DA2}">
+											<PropertyList>
+												<Property Name="IsFolder" Type="bool" Value="True"/>
+											</PropertyList>
+											<ChildrenList>
+												<MusicTransition Name="Transition" ID="{07DFBE1D-F0DE-4318-9FDE-FF569DCBF8BA}">
+													<TransitionInfo/>
+												</MusicTransition>
+											</ChildrenList>
+											<TransitionInfo/>
+										</MusicTransition>
+									</Custom>
+								</Reference>
+							</ReferenceList>
 						</MusicPlaylistContainer>
 					</ChildrenList>
 					<ObjectLists>
