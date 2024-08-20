@@ -19,6 +19,7 @@ public class HexGridManager : MonoBehaviour
         else
         {
             Destroy(gameObject); // Ensure there's only one instance
+            return;
         }
         
         if (!hexTileParent)
@@ -27,6 +28,8 @@ public class HexGridManager : MonoBehaviour
             hexTileParent = new GameObject("HexTiles").transform;
             hexTileParent.SetParent(transform);
         }
+
+        GenerateGrid();
     }
     
     [HideInInspector] public float gridSpan = 5; // Getting the furthest distance from the center of the grid
@@ -79,8 +82,8 @@ public class HexGridManager : MonoBehaviour
         AddCircularBlob(tile.Q, tile.R, amountBlobToAdd);
     }
 
-    [Button]
-    void Start()
+    // [Button]
+    void GenerateGrid()
     {
         hexGrid = new HexGrid(_hexTileSize, hexTileParent);
         GenerateInitialGrid();

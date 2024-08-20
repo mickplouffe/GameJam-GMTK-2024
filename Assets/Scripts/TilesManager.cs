@@ -18,7 +18,7 @@ public class TileManager : MonoBehaviourSingletonPersistent<TileManager>
     private GameObject tilesParent;
     private HexTileController _targetTile;
 
-    private void Start()
+    private void Awake()
     {
         GenerateGrid();
     }
