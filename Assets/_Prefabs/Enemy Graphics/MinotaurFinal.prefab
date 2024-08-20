@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8864436890817440311}
   - component: {fileID: 8728589296653629820}
   - component: {fileID: 2274796696128143630}
+  - component: {fileID: 2010664868434947912}
   m_Layer: 7
   m_Name: MinotaurFinal
   m_TagString: Enemy
@@ -88,10 +89,32 @@ MonoBehaviour:
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 4254589c7df93854d8f3ffd762f718da,
       type: 2}
-  enemyWeight: 5
+  enemyWeight: 7
   enemyKillCost: 5
-  startHealth: 50
-  enemyDamage: 5
+  startHealth: 18
+  enemyDamage: 4
+--- !u!95 &2010664868434947912
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6104858332284479873}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6f022cda19310164cbc6fdb33849300a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &508706424213974534
 PrefabInstance:
   m_ObjectHideFlags: 0

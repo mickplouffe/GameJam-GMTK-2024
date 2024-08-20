@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3906755619933334253}
   - component: {fileID: 42195566347355633}
   - component: {fileID: 6172843281266848856}
+  - component: {fileID: 1253510890741535170}
   m_Layer: 7
   m_Name: MedusaFinal
   m_TagString: Enemy
@@ -88,10 +89,32 @@ MonoBehaviour:
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 3297d0bff4911fa42a31239251c5283b,
       type: 2}
-  enemyWeight: 4
+  enemyWeight: 3
   enemyKillCost: 5
-  startHealth: 2
-  enemyDamage: 1
+  startHealth: 4
+  enemyDamage: 2
+--- !u!95 &1253510890741535170
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4189922934805189707}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 369fc7672b98cb4459ad5e72c2bff294, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &1193009924443280026
 PrefabInstance:
   m_ObjectHideFlags: 0
