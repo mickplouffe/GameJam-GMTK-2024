@@ -5,50 +5,88 @@ using System.Linq;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class EnemySpawner : MonoBehaviour
+public class EnemySpawner : MonoBehaviourSingleton<EnemySpawner>
 {
-    [SerializeField] private WaveConfig[] waves;
-    [SerializeField] private List<HexTile> allPossibleSpawnPoints;
+    [SerializeField] public WaveConfig[] waves;
+    private List<HexTile> _allPossibleSpawnPoints;
 
-    [SerializeField] private EnemyEventChennl enemyEventChannel;
+    [SerializeField] private EnemyEventChannel enemyEventChannel;
+    [SerializeField] private GameManagerEventChannel gameManagerEventChannel;
     
-    private int _currentWaveIndex;
+    [SerializeField] private AK.Wwise.Event waveStartedSFX;
+    [SerializeField] private AK.Wwise.Event waveEndedSFX;
+
+    [SerializeField] private AK.Wwise.Event waveStartEvent;
+    [SerializeField] private AK.Wwise.Event betweenWavesEvent;
+
+    public int CurrentWaveIndex { get; set; }
     private List<GameObject> _activeEnemies = new();
 
     private void OnEnable()
     {
         enemyEventChannel.OnEnemyKilled += HandleEnemyDestroyed;
+        enemyEventChannel.OnStartNextWave += () => StartCoroutine(StartNextWave());
+        gameManagerEventChannel.OnGameRestart += HandleGameRestart;
+    }
+
+    private void HandleGameRestart()
+    {
+        // Stop all coroutines currently running on this MonoBehaviour
+        StopAllCoroutines();
+        
+        CurrentWaveIndex = 0;
+        _activeEnemies.Clear();
     }
 
     private void OnDisable()
     {
         enemyEventChannel.OnEnemyKilled -= HandleEnemyDestroyed;
+        enemyEventChannel.OnStartNextWave -= () => StartCoroutine(StartNextWave());
+        //gameManagerEventChannel.OnGameRestart -= HandleGameRestart;
     }
 
-    private void Start()
+    private void Awake()
     {
-        StartCoroutine(SpawnWaves());
+        _allPossibleSpawnPoints = new List<HexTile>();
+    }
+
+    public IEnumerator StartNextWave()
+    {
+        waveStartEvent.Post(gameObject);
+        waveStartedSFX.Post(gameObject);
+        yield return StartCoroutine(SpawnWaves());
     }
 
     private IEnumerator SpawnWaves()
     {
-        while (_currentWaveIndex < waves.Length)
-        {
-            var currentWave = waves[_currentWaveIndex];
-            allPossibleSpawnPoints = HexGridManager.Instance.GetRandomEdgeTiles(currentWave.numberOfSpawnPoints);
-            foreach (var spawnPoint in allPossibleSpawnPoints)
-            {
-                enemyEventChannel.RaiseWaveStart(spawnPoint.TileObject.GetComponent<HexTileController>(), currentWave.waveDelay);
-            }
-            yield return new WaitForSeconds(currentWave.waveDelay);
-            
-            yield return StartCoroutine(SpawnEnemiesInWave(currentWave));
+        if (CurrentWaveIndex >= waves.Length) 
+            yield break;
+        
+        var currentWave = waves[CurrentWaveIndex];
+        
+        foreach(HexTile spawnPoint in _allPossibleSpawnPoints)
+            spawnPoint.TileObject.GetComponent<HexTileController>().IsSpawnerTile = false;
+        
+        _allPossibleSpawnPoints = HexGridManager.Instance.GetRandomEdgeTiles(currentWave.numberOfSpawnPoints);
+        
+        foreach(HexTile spawnPoint in _allPossibleSpawnPoints)
+            spawnPoint.TileObject.GetComponent<HexTileController>().IsSpawnerTile = true;
+        
+        foreach (var spawnPoint in _allPossibleSpawnPoints)
+            spawnPoint.TileObject.GetComponent<HexTileController>().HandleTileFlashing(spawnPoint, currentWave.waveDelay);
+        
+        yield return new WaitForSeconds(currentWave.waveDelay);
 
-            // Wait until all enemies from the current wave are destroyed
-            yield return new WaitUntil(() => _activeEnemies.Count == 0);
+        yield return StartCoroutine(SpawnEnemiesInWave(currentWave));
 
-            _currentWaveIndex++;
-        }
+        // Wait until all enemies from the current wave are destroyed
+        yield return new WaitUntil(() => _activeEnemies.Count == 0);
+        
+        CurrentWaveIndex++;
+
+        waveEndedSFX.Post(gameObject);
+        betweenWavesEvent.Post(gameObject);
+        enemyEventChannel.RaiseWaveCompleted();
     }
 
     private IEnumerator SpawnEnemiesInWave(WaveConfig waveConfig)
@@ -57,7 +95,7 @@ public class EnemySpawner : MonoBehaviour
         {
             for (int j = 0; j < waveConfig.enemyCounts[i]; j++)
             {
-                HexTile spawnPoint = allPossibleSpawnPoints[Random.Range(0, allPossibleSpawnPoints.Count)];
+                HexTile spawnPoint = _allPossibleSpawnPoints[Random.Range(0, _allPossibleSpawnPoints.Count)];
                 GameObject enemy = SpawnEnemy(spawnPoint, waveConfig.enemyPrefabs[i]);
 
                 _activeEnemies.Add(enemy); // Track the spawned enemy
@@ -94,5 +132,10 @@ public class EnemySpawner : MonoBehaviour
         }
 
         _activeEnemies.Remove(enemy);
+    }
+
+    public WaveConfig GetCurrentWaveConfig()
+    {
+        return waves.Length > 0 && waves[CurrentWaveIndex] != null ? waves[CurrentWaveIndex] : null;
     }
 }

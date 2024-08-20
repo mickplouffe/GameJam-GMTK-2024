@@ -1,0 +1,64 @@
+.menuContainer {
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+.titleStyle {
+    font-size: 128px;
+    -unity-font-style: bold;
+    margin-bottom: 70px;
+}
+
+.buttonStyle {
+    font-size: 64px;
+    -unity-font-style: bold;
+    margin-bottom: 62px;
+    width: 345px;
+    height: 112px;
+}
+
+.buttonContainer {
+}
+
+.titleContainer {
+}
+
+.buttonStyle {
+    background-image: none;
+}
+
+.buttonStyle {
+    font-size: 64px;
+    -unity-font-style: bold;
+    margin-bottom: 62px;
+    width: 345px;
+    height: 112px;
+    background-image: url("project://database/Assets/Art/UI/Button%20-%20Inactive.png?fileID=2800000&guid=62bc8fb7bca6747418b8c0e3267c632f&type=3#Button - Inactive");
+    -unity-background-scale-mode: stretch-to-fill;
+    -unity-font-definition: url("project://database/Assets/Scripts/AvivDialougeScripts/Dialouge%20Assets/EBGaramond-VariableFont_wght.ttf?fileID=12800000&guid=e3cb9bd06d46b934e87062f7c40ffdc1&type=3#EBGaramond-VariableFont_wght");
+}
+
+.buttonStyle {
+    background-image: none;
+}
+
+.button {
+    background-image: url("project://database/Assets/Scripts/MainMenuUi/Assets/Button%20-%20Inactive.png?fileID=2800000&guid=ba950aa4111cb3149be9c1d475cfb044&type=3#Button - Inactive");
+    background-color: rgba(0, 0, 0, 0);
+    right: 0;
+    top: auto;
+    left: auto;
+    width: 100%;
+    height: auto;
+    -unity-font-definition: url("project://database/Assets/Scripts/AvivDialougeScripts/Dialouge%20Assets/EBGaramond-VariableFont_wght.ttf?fileID=12800000&guid=e3cb9bd06d46b934e87062f7c40ffdc1&type=3#EBGaramond-VariableFont_wght");
+    font-size: 46px;
+    border-top-width: 0;
+    border-right-width: 0;
+    border-bottom-width: 0;
+    border-left-width: 0;
+}
+
+.button:hover {
+    background-image: url("project://database/Assets/Art/UI/Button%20-%20Active.png?fileID=2800000&guid=90bcd0aa32f379647bf1556fe0141609&type=3#Button - Active");
+}

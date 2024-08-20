@@ -6,6 +6,8 @@ TagManager:
   tags:
   - HexTile
   - Enemy
+  - MainUnit
+  - HealthBar
   layers:
   - Default
   - TransparentFX
@@ -23,7 +25,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - ExcludePostProcessing
   - 
   - 
   - 

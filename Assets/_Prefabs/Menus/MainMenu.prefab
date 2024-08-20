@@ -63,4 +63,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isVisible: 1
+  uiHoverAudioEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 4d05373a62557de46b2a1b5d6001a875,
+      type: 2}
+  uiClickAudioEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: f2a1468c3a6039a4097345854be8107f,
+      type: 2}
   _menuEventChannel: {fileID: 11400000, guid: 8add3fae60bdfd540a41853d8b64ac69, type: 2}
+  mainThemeEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 16592bb2007f24746a4227b5e28eb387,
+      type: 2}
+  startLevelEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 25acac786869eb4458fdd162fb3fb030,
+      type: 2}

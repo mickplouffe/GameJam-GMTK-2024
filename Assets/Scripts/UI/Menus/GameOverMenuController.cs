@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
 public class GameOverMenuController : BaseMenu
 {
-    [SerializeField] private MenuEventChannel _menuEventChannel; 
-        
+    [SerializeField] private MenuEventChannel _menuEventChannel;
+    [SerializeField] private GameManagerEventChannel gameManagerEventChannel;
+ 
     private UIDocument _ui;
     
     private Button _restartButton;
@@ -32,6 +34,9 @@ public class GameOverMenuController : BaseMenu
 
         _menuEventChannel.OnBackButtonPressed += HandleBackButtonPressed;
         
+        gameManagerEventChannel.OnGameOver += HandleGameOver;
+        gameManagerEventChannel.OnGameRestart += HandleGameRestart;
+        
         _gameOverMenuContainer.visible = _isVisible;
     }
 
@@ -42,22 +47,39 @@ public class GameOverMenuController : BaseMenu
         _exitButton.clicked -= HandleExitButtonPressed;
 
         _menuEventChannel.OnBackButtonPressed -= HandleBackButtonPressed;
+
+        gameManagerEventChannel.OnGameOver -= HandleGameOver;
+        gameManagerEventChannel.OnGameRestart -= HandleGameRestart;
+    }
+    
+    public void HandleGameOver()
+    {
+        _gameOverMenuContainer.visible = true;
+    }
+
+    public void HandleGameRestart()
+    {
+        _gameOverMenuContainer.visible = false;
     }
     
     private void HandleRestartButtonPressed()
     {
+        uiClickAudioEvent.Post(gameObject);
+        gameManagerEventChannel.RaiseGameRestart();
         _gameOverMenuContainer.visible = false;
-        _menuEventChannel.RaiseRestartButtonPressed();
+        // SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     private void HandleOptionsButtonPressed()
     {
+        uiClickAudioEvent.Post(gameObject);
         _gameOverMenuContainer.visible = false;
         _menuEventChannel.RaiseOptionsButtonPressedEvent(_gameOverMenuContainer);
     }
 
     private void HandleBackButtonPressed(VisualElement prevContainer)
     {
+        uiClickAudioEvent.Post(gameObject);
         if (_gameOverMenuContainer != prevContainer)
             return;
         _gameOverMenuContainer.visible = true;
@@ -65,6 +87,7 @@ public class GameOverMenuController : BaseMenu
     
     private void HandleExitButtonPressed()
     {
+        uiClickAudioEvent.Post(gameObject);
         // TODO: For not this exits the game but it should transition to the Main Menu UI in some way
 #if UNITY_EDITOR
         // Exit play mode in the editor

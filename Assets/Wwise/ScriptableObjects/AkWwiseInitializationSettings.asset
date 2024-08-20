@@ -13,10 +13,13 @@ MonoBehaviour:
   m_Name: AkWwiseInitializationSettings
   m_EditorClassIdentifier: 
   PlatformSettingsNameList:
+  - Mac
   - Windows
   PlatformSettingsList:
+  - {fileID: 11400000, guid: 776e0139888ff7f4fb1db7f69c03258b, type: 2}
   - {fileID: 11400000, guid: 385d04881dbddaf4bb073b35a75c563d, type: 2}
-  InvalidReferencePlatforms: []
+  InvalidReferencePlatforms:
+  - Linux
   UserSettings:
     m_BasePath: Audio\GeneratedSoundBanks
     m_StartupLanguage: English(US)

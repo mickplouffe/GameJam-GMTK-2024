@@ -5,7 +5,8 @@ using UnityEngine.UIElements;
 [RequireComponent(typeof(UIDocument))]
 public class PauseMenuController : BaseMenu
 {
-    [SerializeField] private MenuEventChannel _menuEventChannel; 
+    [SerializeField] private MenuEventChannel _menuEventChannel;
+    [SerializeField] private GameManagerEventChannel gameManagerEventChannel;
         
     private UIDocument _ui;
     
@@ -30,6 +31,9 @@ public class PauseMenuController : BaseMenu
         _exitButton.clicked += HandleExitButtonPressed;
 
         _menuEventChannel.OnBackButtonPressed += HandleBackButtonPressed;
+        _menuEventChannel.OnPauseGame += HandlePauseGame;
+
+        gameManagerEventChannel.OnGameOver += HandleGameOver;
         
         _pauseMenuContainer.visible = _isVisible;
     }
@@ -41,22 +45,38 @@ public class PauseMenuController : BaseMenu
         _exitButton.clicked -= HandleExitButtonPressed;
 
         _menuEventChannel.OnBackButtonPressed -= HandleBackButtonPressed;
+        _menuEventChannel.OnPauseGame -= HandlePauseGame;
+
+        gameManagerEventChannel.OnGameOver -= HandleGameOver;
+    }
+
+    private void HandlePauseGame(bool pause)
+    {
+        _pauseMenuContainer.visible = pause;
+    }
+
+    private void HandleGameOver()
+    {
+        _pauseMenuContainer.visible = false;
     }
     
     private void HandleResumeButtonPressed()
     {
+        uiClickAudioEvent.Post(gameObject);
         _pauseMenuContainer.visible = false;
         _menuEventChannel.RaiseResumeButtonPressed();
     }
 
     private void HandleOptionsButtonPressed()
     {
+        uiClickAudioEvent.Post(gameObject);
         _pauseMenuContainer.visible = false;
         _menuEventChannel.RaiseOptionsButtonPressedEvent(_pauseMenuContainer);
     }
 
     private void HandleBackButtonPressed(VisualElement prevContainer)
     {
+        uiClickAudioEvent.Post(gameObject);
         if (_pauseMenuContainer != prevContainer)
             return;
         _pauseMenuContainer.visible = true;
@@ -64,6 +84,7 @@ public class PauseMenuController : BaseMenu
     
     private void HandleExitButtonPressed()
     {
+        uiClickAudioEvent.Post(gameObject);
         // TODO: For not this exits the game but it should transition to the Main Menu UI in some way
 #if UNITY_EDITOR
         // Exit play mode in the editor

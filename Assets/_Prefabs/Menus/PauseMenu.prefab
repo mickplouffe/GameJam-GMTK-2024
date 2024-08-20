@@ -62,4 +62,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ad5e1cb6e0cb544aadb416d806735c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isVisible: 0
+  uiHoverAudioEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 4d05373a62557de46b2a1b5d6001a875,
+      type: 2}
+  uiClickAudioEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: f2a1468c3a6039a4097345854be8107f,
+      type: 2}
   _menuEventChannel: {fileID: 11400000, guid: 8add3fae60bdfd540a41853d8b64ac69, type: 2}
+  gameManagerEventChannel: {fileID: 11400000, guid: 6509d5e4e0033de4bbfb99b33ecd3255,
+    type: 2}

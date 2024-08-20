@@ -4,16 +4,18 @@ using System.Collections.Generic;
 using NaughtyAttributes;
 using UnityEngine;
 
-public class TiltManager : MonoBehaviourSingletonPersistent<TiltManager>
+public class TiltManager : MonoBehaviourSingleton<TiltManager>
 {
     [SerializeField] private WeightEventChannel weightEventChannel;
     [SerializeField] private TiltEventChannel tiltEventChannel;
+    [SerializeField] private GameManagerEventChannel gameManagerEventChannel;
     
     [Range(0.0f, 5.0f)]
     [SerializeField] private float tiltAmount;
     [SerializeField] private float rotationSpeed;
 
     [SerializeField] private float currentTiltAngle;
+    [SerializeField] private float tileWeight = 0.1f;
 
     private Dictionary<HexTile, float> weightAtlas;
     
@@ -23,15 +25,14 @@ public class TiltManager : MonoBehaviourSingletonPersistent<TiltManager>
     
     public float SlideDirection { get; set; }
 
-    public override void Awake()
+    public void Awake()
     {
-        base.Awake();
         weightAtlas = new Dictionary<HexTile, float>();
     }
 
     private void Start()
     {
-        CenterOfMass = HexGridManager.Instance.transform.position;
+        CenterOfMass = Vector3.zero;
         UpdateCenterOfMass();
     }
 
@@ -39,14 +40,30 @@ public class TiltManager : MonoBehaviourSingletonPersistent<TiltManager>
     {
         weightEventChannel.OnWeightAdded += HandleWeightAdded;
         weightEventChannel.OnWeightRemoved += HandleWeightRemoved;
+        gameManagerEventChannel.OnGameRestart += HandleGameRestart;
     }
 
     private void OnDisable()
     {
         weightEventChannel.OnWeightAdded -= HandleWeightAdded;
         weightEventChannel.OnWeightRemoved -= HandleWeightRemoved;
+        gameManagerEventChannel.OnGameRestart -= HandleGameRestart;
+
+    }
+    
+    private void Update()
+    {
+        TiltPlaneWithTorque();
     }
 
+    private void HandleGameRestart()
+    {
+        weightAtlas.Clear();
+        currentTiltAngle = 0.0f;
+        Torque = Vector3.zero;
+        CenterOfMass = Vector3.zero;
+        HexGridManager.Instance.transform.rotation = Quaternion.identity;
+    }
     private void UpdateCenterOfMass()
     {
         Vector3 totalWeightedPosition = Vector3.zero;
@@ -54,16 +71,18 @@ public class TiltManager : MonoBehaviourSingletonPersistent<TiltManager>
         
         Vector3 netTorque = Vector3.zero;
         
-        foreach (HexTile tile in weightAtlas.Keys)
+        foreach (var key in HexGridManager.Instance.GetAllTiles().Keys)
         {
-            totalWeightedPosition += tile.TileObject.transform.localPosition * weightAtlas[tile];
-            totalWeight += weightAtlas[tile];
+            HexTile tile = HexGridManager.Instance.GetTile(key.q, key.r);
+            float weight = weightAtlas.TryGetValue(tile, out var objectWeight) ? objectWeight + tileWeight : tileWeight;
+            totalWeightedPosition += tile.TileObject.transform.position * weight;
+            totalWeight += weight;
             
-            Vector3 offset = tile.TileObject.transform.localPosition - HexGridManager.Instance.transform.position;
+            Vector3 offset = tile.TileObject.transform.position - HexGridManager.Instance.mainUnit.position;
             float distance = offset.magnitude;
             
             // Torque is perpendicular to the lever arm, so it's along the Y axis in this case
-            Vector3 torque = Vector3.Cross(offset, Vector3.up) * (weightAtlas[tile] * distance);
+            Vector3 torque = Vector3.Cross(offset, Vector3.up) * (weight * distance);
             netTorque += torque;
         }
 
@@ -73,11 +92,6 @@ public class TiltManager : MonoBehaviourSingletonPersistent<TiltManager>
             CenterOfMass = Vector3.zero;
 
         Torque = netTorque;
-    }
-
-    private void Update()
-    {
-        TiltPlaneWithTorque();
     }
 
     [Button]
@@ -103,12 +117,12 @@ public class TiltManager : MonoBehaviourSingletonPersistent<TiltManager>
 
         // Rotate the disk around the calculated axis
         Quaternion targetRotation = Quaternion.AngleAxis(-tiltAngle, tiltAxis);
-        HexGridManager.Instance.transform.rotation = Quaternion.Slerp( HexGridManager.Instance.transform.transform.rotation, targetRotation, Time.deltaTime * rotationSpeed);
+        HexGridManager.Instance.hexGridTilt.transform.rotation = Quaternion.Slerp( HexGridManager.Instance.hexGridTilt.transform.transform.rotation, targetRotation, Time.deltaTime * rotationSpeed);
 
         currentTiltAngle = Mathf.Lerp(currentTiltAngle, tiltAngle, Time.deltaTime * rotationSpeed);
         
         // Calculate tilt direction based on Center of Mass
-        Vector3 tiltDirection = Vector3.Cross(Torque.normalized, -HexGridManager.Instance.transform.up).normalized;
+        Vector3 tiltDirection = Vector3.Cross(Torque.normalized, -HexGridManager.Instance.hexGridTilt.transform.up).normalized;
         tiltEventChannel.RaiseTiltChanged(Mathf.Abs(currentTiltAngle), tiltDirection);
     }
     
