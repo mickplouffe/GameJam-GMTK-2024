@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 
-[RequireComponent(typeof(PolygonCollider2D))]
+[RequireComponent(typeof(Collider))]
 public class Cardboarder : MonoBehaviour {
 
 	public float TextureTileScale = 1f;

@@ -1,7 +1,7 @@
 <engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <Style src="project://database/Assets/Scripts/UI/OptionsStyle.uss?fileID=7433441132597879392&amp;guid=5f3ecb82e12cf384b88e192e3910da3d&amp;type=3#OptionsStyle" />
-    <Style src="project://database/Assets/Scripts/UI/MenuStyle.uss?fileID=7433441132597879392&amp;guid=772ae586c66164644b27dab80cfe5f2d&amp;type=3#MenuStyle" />
-    <engine:VisualElement name="OptionsMenuContainer" class="menuContainer" style="flex-grow: 1; -unity-font-style: bold; color: rgb(255, 255, 255); -unity-text-align: middle-left; padding-top: 10px;">
+    <Style src="project://database/Assets/Scripts/UI/Menus/OptionsStyle.uss?fileID=7433441132597879392&amp;guid=5f3ecb82e12cf384b88e192e3910da3d&amp;type=3#OptionsStyle" />
+    <Style src="project://database/Assets/Scripts/UI/Menus/MenuStyle.uss?fileID=7433441132597879392&amp;guid=772ae586c66164644b27dab80cfe5f2d&amp;type=3#MenuStyle" />
+    <engine:VisualElement name="OptionsMenuContainer" class="menuContainer" style="flex-grow: 1; -unity-font-style: bold; color: rgb(255, 255, 255); -unity-text-align: middle-left; padding-top: 10px; background-color: rgba(29, 28, 28, 0.75);">
         <engine:VisualElement name="OptionsPanel" style="background-color: rgba(0, 0, 0, 0.6); align-items: center; justify-content: center; width: auto; min-width: 620px;">
             <engine:Label text="SETTINGS" name="OptionsTitle" style="color: rgb(255, 255, 255); font-size: 64px; margin-top: 60px; bottom: auto; margin-bottom: 50px;" />
             <engine:VisualElement name="ResolutionPanel" style="align-items: center; flex-direction: row; font-size: 32px;">
@@ -12,7 +12,7 @@
                 <engine:DropdownField label="GRAPHICS" name="GraphicsDropdown" style="font-size: 32px; width: 492px; height: 55px;" />
             </engine:VisualElement>
             <engine:Slider label="VOLUME" value="42" high-value="100" show-input-field="false" direction="Horizontal" inverted="false" page-size="0" style="width: 560px; font-size: 42px; margin-top: 40px; margin-bottom: 40px;" />
-            <engine:Button text="Back" name="BackButton" class="menuButton" style="height: 76px; width: 245px; margin-bottom: 50px;" />
+            <engine:Button text="Back" name="BackButton" class="menuButton" style="height: 76px; width: 245px; margin-bottom: 50px; -unity-text-align: upper-center; background-color: rgba(0, 0, 0, 0.83);" />
         </engine:VisualElement>
     </engine:VisualElement>
 </engine:UXML>

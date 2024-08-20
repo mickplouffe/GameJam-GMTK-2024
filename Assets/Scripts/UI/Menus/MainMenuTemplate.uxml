@@ -1,14 +1,11 @@
 <engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/Scripts/UI/Menus/MenuStyle.uss?fileID=7433441132597879392&amp;guid=772ae586c66164644b27dab80cfe5f2d&amp;type=3#MenuStyle" />
-    <engine:VisualElement name="MainMenuContainer" class="menuContainer" style="background-color: rgba(128, 128, 128, 0); opacity: 1;">
-        <engine:VisualElement name="TitleContainer" class="titleContainer">
-            <engine:Label text="MAIN MENU" name="MainMenuTitle" emoji-fallback-support="false" class="menuTitle" style="opacity: 0;" />
-        </engine:VisualElement>
-        <engine:VisualElement name="ButtonsPanel" class="buttonsPanel" style="justify-content: space-around; align-items: flex-end; align-self: flex-end; opacity: 1; width: 25%; margin-bottom: 16%; margin-right: 36px; border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0;">
-            <engine:Button text="PLAY" name="PlayButton" class="menuButton" style="border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; height: 15%;" />
-            <engine:Button text="OPTIONS" name="OptionsButton" class="menuButton" style="height: 15%; border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px;" />
-            <engine:Button text="CREDITS" name="CreditsButton" enable-rich-text="true" class="menuButton" style="height: 15%; border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px;" />
-            <engine:Button text="EXIT" name="ExitButton" class="menuButton" style="height: 15%; border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px;" />
+    <engine:VisualElement name="MainMenuContainer" class="menuContainer" style="background-color: rgba(128, 128, 128, 0); opacity: 1; -unity-text-align: upper-center;">
+        <engine:VisualElement name="ButtonsPanel" class="buttonsPanel" style="-unity-text-align: upper-center; margin-bottom: 0; margin-top: 445px;">
+            <engine:Button text="PLAY" name="PlayButton" enable-rich-text="true" emoji-fallback-support="true" parse-escape-sequences="false" display-tooltip-when-elided="false" class="menuButton" />
+            <engine:Button text="OPTIONS" name="OptionsButton" class="menuButton" style="height: 15%;" />
+            <engine:Button text="CREDITS" name="CreditsButton" enable-rich-text="true" class="menuButton" style="height: 15%;" />
+            <engine:Button text="EXIT" name="ExitButton" focusable="true" enable-rich-text="true" class="menuButton" style="height: 15%;" />
         </engine:VisualElement>
     </engine:VisualElement>
 </engine:UXML>

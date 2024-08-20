@@ -4,13 +4,14 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
 [RequireComponent(typeof(UIDocument))]
 public class MainMenuController : BaseMenu
 {
-    [SerializeField] private MenuEventChannel _menuEventChannel; 
-        
+    [SerializeField] private MenuEventChannel _menuEventChannel;
+    [SerializeField] private bool isOldSystem;
     private UIDocument _ui;
     
     private Button _playButton;
@@ -53,7 +54,7 @@ public class MainMenuController : BaseMenu
     
     private void HandlePlayButtonPressed()
     {
-        throw new NotImplementedException();
+        SceneManager.LoadScene("Cristi");
     }
 
     private void HandleOptionsButtonPressed()
