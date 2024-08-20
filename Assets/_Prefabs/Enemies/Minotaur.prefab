@@ -10,11 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 919226520346911708}
   - component: {fileID: 5868927744033722351}
-  - component: {fileID: 1137749248407280122}
-  - component: {fileID: 6917272943106629359}
-  m_Layer: 0
+  - component: {fileID: 3651639419726251198}
+  - component: {fileID: 4132706333042560432}
+  m_Layer: 7
   m_Name: Minotaur
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

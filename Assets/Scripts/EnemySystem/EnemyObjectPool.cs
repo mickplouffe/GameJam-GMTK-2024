@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyObjectPool : MonoBehaviourSingletonPersistent<EnemyObjectPool>
+public class EnemyObjectPool : MonoBehaviourSingleton<EnemyObjectPool>
 {
     [System.Serializable]
     public struct EnemyPool

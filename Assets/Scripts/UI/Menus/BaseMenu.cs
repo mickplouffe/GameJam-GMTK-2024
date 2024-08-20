@@ -5,4 +5,6 @@ using UnityEngine;
 public abstract class BaseMenu : MonoBehaviour
 {
     [SerializeField] protected bool _isVisible;
+    public AK.Wwise.Event uiHoverAudioEvent;
+    public AK.Wwise.Event uiClickAudioEvent;
 }

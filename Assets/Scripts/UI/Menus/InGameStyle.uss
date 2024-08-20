@@ -1,0 +1,36 @@
+.menuContainer {
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+.titleStyle {
+    font-size: 128px;
+    -unity-font-style: bold;
+    margin-bottom: 70px;
+}
+
+.buttonStyle {
+    font-size: 64px;
+    -unity-font-style: bold;
+    margin-bottom: 62px;
+    width: 345px;
+    height: 112px;
+}
+
+.buttonContainer {
+}
+
+.titleContainer {
+}
+
+.buttonStyle {
+}
+
+.buttonStyle {
+    font-size: 64px;
+    -unity-font-style: bold;
+    margin-bottom: 62px;
+    width: 345px;
+    height: 112px;
+}

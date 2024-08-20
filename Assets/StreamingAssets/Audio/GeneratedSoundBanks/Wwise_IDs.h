@@ -13,7 +13,6 @@ namespace AK
 {
     namespace EVENTS
     {
-        static const AkUniqueID PLAY_AMBWIND = 1215763740U;
         static const AkUniqueID PLAY_ATTACK = 1519321238U;
         static const AkUniqueID PLAY_FALL = 2712047697U;
         static const AkUniqueID PLAY_MXTITLETHEME = 1258886508U;
@@ -26,13 +25,14 @@ namespace AK
         static const AkUniqueID PLAY_SFXMINOTAURDEATH = 355266998U;
         static const AkUniqueID PLAY_SFXMINOTAURENTERTOWER = 4233038817U;
         static const AkUniqueID PLAY_SFXPLACEROCK = 1624231291U;
+        static const AkUniqueID PLAY_SFXSPAWNCYCLOPS = 772780039U;
         static const AkUniqueID PLAY_SFXSPAWNERTILESPAWN = 2186760998U;
-        static const AkUniqueID PLAY_SFXTILTINGTILES = 86987433U;
-        static const AkUniqueID PLAY_SFXTOWERATTACKHIT = 4103541689U;
+        static const AkUniqueID PLAY_SFXSPAWNGORGON = 3923810864U;
+        static const AkUniqueID PLAY_SFXSPAWNMINOTAUR = 1519962459U;
         static const AkUniqueID PLAY_SFXTOWERPLACE = 2094922267U;
         static const AkUniqueID PLAY_SFXTOWERSELL = 3932998018U;
         static const AkUniqueID PLAY_SFXTOWERSLIDE = 2225251985U;
-        static const AkUniqueID PLAY_SFXTOWERSLIDE_01 = 2684592797U;
+        static const AkUniqueID PLAY_SFXTOWERUPGRADE = 1886723530U;
         static const AkUniqueID PLAY_UICLICK = 1615720664U;
         static const AkUniqueID PLAY_UIGOLDGAIN = 3581364067U;
         static const AkUniqueID PLAY_UIGOLDLOSS = 2262228835U;
@@ -40,6 +40,7 @@ namespace AK
         static const AkUniqueID PLAY_UIWAVECOUNTDOWN = 2754069948U;
         static const AkUniqueID PLAY_UIWAVEENDED = 2290267373U;
         static const AkUniqueID PLAY_UIWAVESTARTED = 3869623766U;
+        static const AkUniqueID PLAY_WIND = 1020223172U;
         static const AkUniqueID SETSTATE_ACTIVEWAVE = 3038968348U;
         static const AkUniqueID SETSTATE_BETWEENWAVES = 2339243207U;
         static const AkUniqueID STARTGAME = 1521187885U;

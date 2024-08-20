@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class TowerManager : MonoBehaviourSingletonPersistent<TowerManager>
+public class TowerManager : MonoBehaviourSingleton<TowerManager>
 {
     [SerializeField] private GameObject defaultTowerPrefab;
     [SerializeField] private GameObject rockTowerPrefab;
@@ -24,15 +24,15 @@ public class TowerManager : MonoBehaviourSingletonPersistent<TowerManager>
     [SerializeField] private WeightEventChannel weightEventChannel;
     [SerializeField] private CoinsEventChannel coinsEventChannel;
     [SerializeField] private TowerEventChannel towerEventChannel;
+    [SerializeField] private GameManagerEventChannel gameManagerEventChannel;
     
     [SerializeField] private float waitTimeBeforeCanSelect = 0.2f;
     private List<Transform> _activeTowers;
 
     [SerializeField] private bool _placementMode;
 
-    public override void Awake()
+    public void Awake()
     {
-        base.Awake();
         _activeTowers = new List<Transform>();
     }
 
@@ -40,19 +40,22 @@ public class TowerManager : MonoBehaviourSingletonPersistent<TowerManager>
     {
         towerEventChannel.OnTowerDestroyed += UnregisterTower;
         towerEventChannel.OnSnapToNewTile += ForceSnapTowerToTile;
+        gameManagerEventChannel.OnGameRestart += HandleGameRestart;
     }
 
     private void OnDisable()
     {
-        towerEventChannel.OnTowerDestroyed += UnregisterTower;
+        towerEventChannel.OnTowerDestroyed -= UnregisterTower;
         towerEventChannel.OnSnapToNewTile -= ForceSnapTowerToTile;
+        gameManagerEventChannel.OnGameRestart -= HandleGameRestart;
+
     }
 
     // Update is called once per frame
     void Update()
     {
         
-        if ((Input.GetKeyDown(KeyCode.Escape) || Input.GetMouseButtonDown(1)) && _placementMode)
+        if (Input.GetMouseButtonDown(1) && _placementMode)
         {
             _placementMode = false;
             Destroy(selectedTower.gameObject);
@@ -77,7 +80,7 @@ public class TowerManager : MonoBehaviourSingletonPersistent<TowerManager>
                 activeTowerSelected.GetComponentInChildren<Renderer>().materials[0] = activeTowerSelected.towerData.selectedMaterial;
                 
                 // TODO: RaiseActivateBuildMenu
-                uiEventChannel.RaiseActivateActionsMenu();
+                uiEventChannel.RaiseActivateActionsMenu(true);
             }
             else
             {
@@ -91,7 +94,7 @@ public class TowerManager : MonoBehaviourSingletonPersistent<TowerManager>
                 activeTowerSelected = null;
                 
                 // TODO: RaiseActivateActionsMenu
-                uiEventChannel.RaiseActivateBuildMenu();
+                uiEventChannel.RaiseActivateBuildMenu(true);
             }
             // TODO: maybe deselect when user presses e.g. escape. If we de-select based on hit or no hit then there is 
             // the problem that when pressing one of the buttons it will first deselect the item and then do the action associated to the button which will not do anything in the end
@@ -103,6 +106,8 @@ public class TowerManager : MonoBehaviourSingletonPersistent<TowerManager>
                 SnapTowerToTile(hit.point) && 
                 CoinsManager.Instance.CanBuy(selectedTower.GetComponent<TowerController>().instanceData.currentCost))
             {
+                selectedTower.GetComponent<TowerController>().towerPlaceSFX.Post(selectedTower.gameObject);
+                
                 weightEventChannel.RaiseWeightAdded( selectedTower.GetComponent<TowerController>().instanceData.weight, 
                     selectedTower.GetComponent<TowerController>().Tile);
                 
@@ -119,6 +124,23 @@ public class TowerManager : MonoBehaviourSingletonPersistent<TowerManager>
             _placementMode = false;
         }
 
+    }
+
+    public void HandleGameRestart()
+    {
+        if(selectedTower != null)
+            Destroy(selectedTower.gameObject);
+        if(activeTowerSelected != null)
+            Destroy(activeTowerSelected);
+
+        _placementMode = false;
+        foreach (var tower in _activeTowers)
+        {
+            tower.GetComponent<TowerController>().Tile.DetachTower();
+            Destroy(tower.gameObject);
+        }
+
+        _activeTowers.Clear();
     }
 
     public void HandleBuildTower(int towerType)
@@ -143,7 +165,7 @@ public class TowerManager : MonoBehaviourSingletonPersistent<TowerManager>
     public void HandleUpgrade(int upgradeType)
     {
         UpgradeTowerAction upgradeAction = null;
-
+    
         switch (upgradeType)
         {
             case 0: // Upgrade Damage
@@ -173,9 +195,11 @@ public class TowerManager : MonoBehaviourSingletonPersistent<TowerManager>
     {
         if (!activeTowerSelected)
             return;
+
+        activeTowerSelected.towerSellSFX.Post(activeTowerSelected.gameObject);
         
         coinsEventChannel.RaiseModifyCoins(Mathf.CeilToInt(activeTowerSelected.instanceData.currentCost * sellCostPercentage));
-        uiEventChannel.RaiseActivateBuildMenu();
+        uiEventChannel.RaiseActivateBuildMenu(true);
         
         // Unregister selected tower
         weightEventChannel.RaiseWeightRemoved(activeTowerSelected.transform.GetComponent<TowerController>().instanceData.weight, 

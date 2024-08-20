@@ -5,16 +5,20 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class UIManager : MonoBehaviourSingletonPersistent<UIManager>
+public class UIManager : MonoBehaviourSingleton<UIManager>
 {
     [SerializeField] private GameObject buildMenu;
     [SerializeField] private GameObject actionsMenu;
 
     [SerializeField] private UIEventChannel uitEventChannel;
-    [SerializeField] private EnemyEventChennl enemyEventChannel;
+    [SerializeField] private EnemyEventChannel enemyEventChannel;
+    [SerializeField] private GameManagerEventChannel gameManagerEventChannel;
+    
     [SerializeField] private Color textFlashColor = Color.red;
     [SerializeField] private float textFlashSpeed = 1.0f;
     [SerializeField] private float _flashDuration = 2.0f;
+    
+    [SerializeField] private AK.Wwise.Event waveCountdown;
     
     private bool _isFlashing;
     private Coroutine _flashCoroutine; // To manage the coroutine
@@ -37,6 +41,9 @@ public class UIManager : MonoBehaviourSingletonPersistent<UIManager>
         uitEventChannel.OnCantBuy += HandleCantBuy;
 
         enemyEventChannel.OnWaveStart += HandleWaveStart;
+
+        gameManagerEventChannel.OnGameOver += HandleGameOver;
+        gameManagerEventChannel.OnGameRestart += HandleGameRestart;
     }
 
     private void OnDisable()
@@ -47,17 +54,31 @@ public class UIManager : MonoBehaviourSingletonPersistent<UIManager>
         uitEventChannel.OnCantBuy -= HandleCantBuy;
         
         enemyEventChannel.OnWaveStart -= HandleWaveStart;
+        
+        gameManagerEventChannel.OnGameOver -= HandleGameOver;
+        gameManagerEventChannel.OnGameRestart -= HandleGameRestart;
+
+    }
+
+    private void HandleGameRestart()
+    {
+        StopAllCoroutines();
+        _waveTimerLabel.visible = false;
     }
 
 
-    public override void Awake()
+    public void Awake()
     {
-        base.Awake();
         _ui = GetComponent<UIDocument>();
         _waveTimerLabel = _ui.rootVisualElement.Q<Label>("WaveDelayLabel");
         _coinsLabel = _ui.rootVisualElement.Q<Label>("CoinsLabel");
+        _waveTimerLabel.visible = false;
     }
 
+    private void HandleGameOver()
+    {
+        HandleActivateBuildMenu(false);
+    }
     private void HandleCantBuy()
     {
         // If a flash is already ongoing, stop it
@@ -80,9 +101,8 @@ public class UIManager : MonoBehaviourSingletonPersistent<UIManager>
     {
         // Start a new countdown timer
         if (_timerCoroutine != null)
-        {
             StopCoroutine(_timerCoroutine);
-        }
+        
         _timerCoroutine = StartCoroutine(StartCountdown(waveDelay));
     }
     
@@ -120,6 +140,7 @@ public class UIManager : MonoBehaviourSingletonPersistent<UIManager>
         float remainingTime = duration;
         while (remainingTime > 0.0f)
         {
+            waveCountdown.Post(gameObject);
             UpdateTimerLabel(remainingTime);
             yield return new WaitForSeconds(1.0f/duration);
             remainingTime -= 1.0f/duration;
@@ -136,15 +157,15 @@ public class UIManager : MonoBehaviourSingletonPersistent<UIManager>
         _waveTimerLabel.text = $"Next Wave In: {time:mm\\:ss}";
     }
     
-    private void HandleActivateActionsMenu()
+    private void HandleActivateActionsMenu(bool value)
     {
+        actionsMenu.SetActive(value);
         buildMenu.SetActive(false);
-        actionsMenu.SetActive(true);
     }
 
-    private void HandleActivateBuildMenu()
+    private void HandleActivateBuildMenu(bool value)
     {
-        buildMenu.SetActive(true);
+        buildMenu.SetActive(value);
         actionsMenu.SetActive(false);
     }
 }

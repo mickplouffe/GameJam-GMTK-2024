@@ -4514,13 +4514,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2d9d58709f850d4082dcaa59675388b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gridSpan: 5
   hexPrefab: {fileID: 5533128708796113739, guid: 5783fe2a8dc95c34dba7b74adf8bd1ff,
     type: 3}
+  hexTileParent: {fileID: 0}
   gridShape: 2
   width: 14
   height: 10
   amountBlobToAdd: 3
   tiltObject: {fileID: 5644426472411794517}
+  mainUnit: {fileID: 0}
+  mainUnityStartHealth: 0
+  enemyEventChannel: {fileID: 11400000, guid: 58c4683592b42784c91a64e98e2ccbc1, type: 2}
+  gameManagerEventChannel: {fileID: 11400000, guid: 6509d5e4e0033de4bbfb99b33ecd3255,
+    type: 2}
 --- !u!114 &5644426472411794517
 MonoBehaviour:
   m_ObjectHideFlags: 0

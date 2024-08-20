@@ -31,6 +31,7 @@ public class TowerController : MonoBehaviour
 
     [SerializeField] private WeightEventChannel weightEventChannel;
     [SerializeField] private TowerEventChannel towerEventChannel;
+    [SerializeField] private GameManagerEventChannel gameManagerEventChannel;
     
     public HexTile Tile { get; set; }
     
@@ -57,6 +58,13 @@ public class TowerController : MonoBehaviour
     private bool _prevIsSliding;
     private Vector3 tiltDirection; // Store the current tilt direction
     private float slipMagnitude; // Store the current sliding speed
+
+    [SerializeField] public AK.Wwise.Event towerPlaceSFX;
+    [SerializeField] public AK.Wwise.Event towerSellSFX;
+    [SerializeField] public AK.Wwise.Event towerUpgradeSFX;
+    [SerializeField] public AK.Wwise.Event towerSlideSFX;
+    [SerializeField] public AK.Wwise.Event towerSlideStopSFX;
+    [SerializeField] public AK.Wwise.Event towerFallSFX;
     
     void Awake()
     {
@@ -75,17 +83,26 @@ public class TowerController : MonoBehaviour
     private void OnEnable()
     {
         tiltEventChannel.OnTiltChanged += HandleTiltChanged;
+        gameManagerEventChannel.OnGameRestart += HandleGameRestart;
     }
 
     private void OnDisable()
     {
         tiltEventChannel.OnTiltChanged -= HandleTiltChanged;
+        //gameManagerEventChannel.OnGameRestart -= HandleGameRestart;
+
     }
-    
-    
-private void Update()
-{
-    
+
+    private void HandleGameRestart()
+    {
+        // Tile?.DetachTower();
+        // isSliding = false;
+        // Destroy(gameObject);
+    }
+
+
+    private void Update()
+    {
     if (TowerManager.Instance.selectedTower == gameObject || towerData.isStatic)
         return;
     
@@ -205,6 +222,8 @@ private void HandleTiltChanged(float tiltAngle, Vector3 direction)
         return;
     if (tiltAngle > tiltAllowanceThreshold)
     {
+        towerSlideSFX.Post(gameObject);
+        
         if(Tile != null)
             Tile.DetachTower();
         StartSliding(direction);
@@ -219,7 +238,7 @@ private void StartSliding(Vector3 direction)
 {
     isSliding = true;
     tiltDirection = direction;
-    slipMagnitude = slipSpeedMultiplier * (transform.position - HexGridManager.Instance.transform.position).magnitude;
+    slipMagnitude = slipSpeedMultiplier * (transform.position - HexGridManager.Instance.mainUnit.position).magnitude;
 }
 
 private void StopSliding()
@@ -227,7 +246,8 @@ private void StopSliding()
     isSliding = false;
     slipMagnitude = 0f;
     tiltDirection = Vector3.zero;
-
+    towerSlideStopSFX.Post(gameObject);
+    
     // Ensure the object is properly snapped to the current tile
     HexTile finalTile = HexGridManager.Instance.GetTileAtWorldPosition(transform.position);
     if (finalTile != null)
@@ -244,10 +264,11 @@ private void StopSliding()
         towerEventChannel.RaiseSnapToNewTile(gameObject.transform, Tile);
     } else
     {
+        towerFallSFX.Post(gameObject);
+        
         if (Tile != null)
             weightEventChannel.RaiseWeightRemoved(instanceData.weight, Tile);
-
-            
+        
         // If no valid tile is found or object is off the grid, destroy it
         towerEventChannel.RaiseTowerDestroyed(gameObject.transform);
         Destroy(gameObject);
@@ -272,6 +293,8 @@ private bool ShouldStopSliding()
     }
     public void UpgradeTower(UpgradeTowerAction upgradeTowerAction)
     {
+        towerUpgradeSFX.Post(gameObject);
+        
         instanceData.damage += upgradeTowerAction.damageModifier;
         instanceData.range += upgradeTowerAction.rangeModifier;
         instanceData.weight += upgradeTowerAction.weightModifier;

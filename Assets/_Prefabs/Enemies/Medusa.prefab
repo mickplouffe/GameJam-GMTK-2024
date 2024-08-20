@@ -10,11 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 2158446135583762448}
   - component: {fileID: 4483572339153971011}
-  - component: {fileID: 734937766322194431}
-  - component: {fileID: 9162152548946616567}
-  m_Layer: 0
+  - component: {fileID: 2845067558631948617}
+  - component: {fileID: 1347913115866342140}
+  m_Layer: 7
   m_Name: Medusa
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

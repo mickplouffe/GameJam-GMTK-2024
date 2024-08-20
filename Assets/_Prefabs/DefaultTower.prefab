@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4529294783331625914}
   - component: {fileID: -4537756784346555598}
   - component: {fileID: 6410887134671940331}
+  - component: {fileID: 5908940734818897851}
   m_Layer: 6
   m_Name: DefaultTower
   m_TagString: Untagged
@@ -66,7 +67,9 @@ MonoBehaviour:
     currentCost: 0
   weightEventChannel: {fileID: 11400000, guid: 1c11f8eaadf261d449e9f3f048895711, type: 2}
   towerEventChannel: {fileID: 11400000, guid: ff6c5cff4a2a17d45b58cbd1fcdb1a0a, type: 2}
-  tiltAllowanceThreshold: 5
+  gameManagerEventChannel: {fileID: 11400000, guid: 6509d5e4e0033de4bbfb99b33ecd3255,
+    type: 2}
+  tiltAllowanceThreshold: 25
   slipSpeedMultiplier: 0.5
   enemyWidthOffset: 0.5
   _shootingRay: {fileID: 0}
@@ -128,6 +131,36 @@ MonoBehaviour:
     m_NumColorKeys: 3
     m_NumAlphaKeys: 2
   tiltEventChannel: {fileID: 11400000, guid: c5f3187fb688eeb4e8c0f8e60b04cca8, type: 2}
+  towerPlaceSFX:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 319bd117ff8de1c4e8aff053acd81a9d,
+      type: 2}
+  towerSellSFX:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: a18e3d6a0ff44a640b48cd75cbc5d921,
+      type: 2}
+  towerUpgradeSFX:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 06ec8d0d1de5f534185e68723f3d9ee8,
+      type: 2}
+  towerSlideSFX:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: fe37468643f613b4c8cdf69de64d7cdc,
+      type: 2}
+  towerSlideStopSFX:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 1c256fdc310b03449939e7a0d9ebae4d,
+      type: 2}
+  towerFallSFX:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: ea598f45ce3942142b1a3af368818ff4,
+      type: 2}
 --- !u!65 &4529294783331625914
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -285,6 +318,33 @@ LineRenderer:
   m_UseWorldSpace: 1
   m_Loop: 0
   m_ApplyActiveColorSpace: 1
+--- !u!54 &5908940734818897851
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4711356743005891950}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &6494799761051565011
 GameObject:
   m_ObjectHideFlags: 0

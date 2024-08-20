@@ -8,9 +8,14 @@ public class EnemyController : MonoBehaviour
     public HexTile SourceTile { get; set; }
 
     [SerializeField] private float tilesPerSecond = 1.0f; // Movement speed in tiles per second
-    [SerializeField] private EnemyEventChennl enemyEventChannel;
+    [SerializeField] private EnemyEventChannel enemyEventChannel;
     [SerializeField] private WeightEventChannel weightEventChannel;
     [SerializeField] private CoinsEventChannel coinsEventChannel;
+    [SerializeField] private GameManagerEventChannel gameManagerEventChannel;
+
+    [SerializeField] private AK.Wwise.Event enemyDeathSFX;
+    [SerializeField] private AK.Wwise.Event enemyEnterTowerSFX;
+    [SerializeField] private AK.Wwise.Event enemySpawnSFX;
 
     private HexTile _currentTargetTile;
     private HexTile _currentSourceTile;
@@ -32,11 +37,14 @@ public class EnemyController : MonoBehaviour
     {
         _finishedSetup = false;
         _currentHealth = startHealth;
+        gameManagerEventChannel.OnGameRestart += HandleGameRestart;
     }
 
     private void OnDisable()
     {
         _finishedSetup = false;
+        //gameManagerEventChannel.OnGameRestart -= HandleGameRestart;
+
     }
 
     private void Awake()
@@ -45,9 +53,16 @@ public class EnemyController : MonoBehaviour
         _colliderBounds = GetComponent<Collider>().bounds;
     }
 
+    private void HandleGameRestart()
+    {
+        EnemyObjectPool.Instance.ReturnEnemyObject(Prefab, gameObject);
+        _currentHealth = startHealth;
+        _finishedSetup = false;
+    }
+
     public void SetupEnemy(HexTile sourceTile)
     {
-        TargetTile = HexGridManager.Instance.GetTile(0,0);
+        TargetTile = HexGridManager.Instance.GetTileAtWorldPosition(HexGridManager.Instance.mainUnit.position);
         SourceTile = sourceTile;
 
         _currentSourceTile = SourceTile;
@@ -57,9 +72,10 @@ public class EnemyController : MonoBehaviour
         weightEventChannel.RaiseWeightAdded(enemyWeight, _currentSourceTile);
 
         transform.position = _currentSourceTile.TileObject.transform.position +
-                                  transform.up * _colliderBounds.size.y * 0.5f;
+                                  transform.up * _colliderBounds.size.y * 0.35f;
         
         _finishedSetup = true;
+        enemySpawnSFX.Post(gameObject);
     }
 
     private void Update()
@@ -70,6 +86,7 @@ public class EnemyController : MonoBehaviour
         MoveTowardsTarget();
 
         transform.rotation = HexGridManager.Instance.transform.rotation;
+        transform.forward = Camera.main.transform.forward;
     }
 
     private void MoveTowardsTarget()
@@ -79,6 +96,7 @@ public class EnemyController : MonoBehaviour
         _percentBetweenTiles = Mathf.Clamp01(_percentBetweenTiles);
 
         Vector3 newPos = Vector3.Lerp(_currentSourceTile.TileObject.transform.position, _currentTargetTile.TileObject.transform.position, _percentBetweenTiles);
+        
         
         if (_percentBetweenTiles >= 1.0f)
         {
@@ -93,7 +111,8 @@ public class EnemyController : MonoBehaviour
             if (_currentTargetTile == TargetTile)
             {
                 transform.position = new Vector3(TargetTile.TileObject.transform.position.x, transform.position.y, TargetTile.TileObject.transform.position.z);
-                
+
+                enemyEnterTowerSFX.Post(gameObject);
                 KillEnemy();
                 
                 return;
@@ -102,7 +121,7 @@ public class EnemyController : MonoBehaviour
         
         
         transform.position = newPos;
-        transform.position += transform.parent.up * _colliderBounds.size.y * 0.5f;
+        transform.position += transform.parent.up * _colliderBounds.size.y * 0.35f;
     }
 
     private HexTile GetNextTargetPosition()
@@ -133,9 +152,12 @@ public class EnemyController : MonoBehaviour
     public void TakeDamage(int damage)
     {
         _currentHealth -= damage;
-        if(_currentHealth <= 0)
+        if (_currentHealth <= 0)
+        {
+            enemyDeathSFX.Post(gameObject);
             KillEnemy();
-        
+        }
+
         Debug.Log($"Enemy {gameObject.name} has been wounded, currentHealth: {_currentHealth}");
     }
 
@@ -146,6 +168,7 @@ public class EnemyController : MonoBehaviour
             weightEventChannel.RaiseWeightRemoved(enemyWeight, _currentSourceTile);
         coinsEventChannel.RaiseModifyCoins(enemyKillCost);
         enemyEventChannel.RaiseEnemyKilled(gameObject);
+        
         EnemyObjectPool.Instance.ReturnEnemyObject(Prefab, gameObject);
     }
 }

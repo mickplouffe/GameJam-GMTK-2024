@@ -57,6 +57,10 @@
 							</ChildrenList>
 						</Event>
 						<Event Name="Stop_SFXTowerSlide" ID="{BAAA6E50-4D1A-4E70-98D9-B0371F5F49BA}">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="10"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
 							<ChildrenList>
 								<Action Name="" ID="{57F66A70-4079-4441-8D1F-83BF5A779240}" ShortID="256601903">
 									<PropertyList>
