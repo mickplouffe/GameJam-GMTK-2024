@@ -73,7 +73,7 @@ public class GameManager : MonoBehaviourSingleton<GameManager>
     
     private void HandleGameOver()
     {
-        Time.timeScale = 0.0f;
+        //Time.timeScale = 0.0f;
         IsGameOver = true;
     }
 

@@ -55,6 +55,8 @@ public class HexGridManager : MonoBehaviour
 
     [SerializeField] private EnemyEventChannel enemyEventChannel;
     [SerializeField] private GameManagerEventChannel gameManagerEventChannel;
+    [SerializeField] private RectTransform healthBar;
+    private Animator _animator;
 
 
     private void OnEnable()
@@ -86,6 +88,17 @@ public class HexGridManager : MonoBehaviour
         //hexGrid.AddCircularBlob(selectedTile.Q, selectedTile.R, amountBlobToAdd, hexPrefab);
         mainUnit = GameObject.FindGameObjectWithTag("MainUnit").transform;
         _currentMainUnitHealth = mainUnityStartHealth;
+
+        if (!_animator)
+        {
+            _animator = mainUnit.GetComponent<Animator>();
+        }
+
+        if (!healthBar)
+        {
+            healthBar = GameObject.FindGameObjectWithTag("HealthBar").GetComponent<RectTransform>();
+        }
+
     }
 
     [Button]
@@ -102,6 +115,7 @@ public class HexGridManager : MonoBehaviour
     private void HandleEnemyAttack(int damage)
     {
         _currentMainUnitHealth -= damage;
+        healthBar.localScale = new Vector3((float)_currentMainUnitHealth / mainUnityStartHealth, 1, 1);
         if (_currentMainUnitHealth > 0)
         {
             return;
@@ -109,8 +123,10 @@ public class HexGridManager : MonoBehaviour
 
         _currentMainUnitHealth = mainUnityStartHealth;
         // TODO: Play tower animation
+        _animator.SetTrigger("Die");
         
         gameManagerEventChannel.RaiseGameOver();
+        
     }
 
     void GenerateInitialGrid()
@@ -286,7 +302,10 @@ public class HexGridManager : MonoBehaviour
     
     
     
-    
+    /// <summary>
+    ///  DISABLE ME!
+    /// TODO: DISABLE ME!
+    /// </summary>
     void Update()
     {
         // Add 1 random tile where there is none
