@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="393239870" Type="User" Language="SFX" Hash="{198B3A34-08D0-C4C5-683E-B0C00D5694ED}">
+		<SoundBank Id="393239870" Type="User" Language="SFX" Hash="{47691AE3-052D-4B71-47EC-9A7F99AFB5D0}">
 			<ShortName>SFX</ShortName>
 			<Path>SFX.bnk</Path>
 			<Media>
@@ -87,7 +87,7 @@
 				</File>
 				<File Id="322104273" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>GMTK2024_SFX_enemyEntersTower_cyclops_-5_v1.wav</ShortName>
-					<CachePath>SFX/GMTK2024_SFX_enemyEntersTower_cyclops_-5_v1_14E21738.wem</CachePath>
+					<CachePath>SFX/GMTK2024_SFX_enemyEntersTower_cyclops_-5_v1_805AE145.wem</CachePath>
 				</File>
 				<File Id="371977938" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>GMTK2024_SFX_enemyDies_minotaur_-14_v3.wav</ShortName>
@@ -271,7 +271,7 @@
 						</Custom>
 					</PluginRefs>
 				</Event>
-				<Event Id="1488573387" Name="Play_SFXCyclopsEnterTower" DurationType="OneShot" DurationMin="3" DurationMax="3">
+				<Event Id="1488573387" Name="Play_SFXCyclopsEnterTower" DurationType="OneShot" DurationMin="2.4353876" DurationMax="2.4353876">
 					<MediaRefs>
 						<MediaRef Id="322104273"/>
 					</MediaRefs>
@@ -416,7 +416,7 @@
 				<Event Id="2237095779" Name="Stop_SFXTowerSlide" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="1117531639" Type="User" Language="SFX" Hash="{7C3974AA-E52B-0765-878A-A100D273912B}">
+		<SoundBank Id="1117531639" Type="User" Language="SFX" Hash="{ED2A8A9C-9637-24DF-BFBE-0472D508BF93}">
 			<ShortName>AMB</ShortName>
 			<Path>AMB.bnk</Path>
 			<Media>
@@ -426,7 +426,7 @@
 				</File>
 			</Media>
 			<Events>
-				<Event Id="1020223172" Name="Play_Wind" DurationType="Infinite">
+				<Event Id="1215763740" Name="Play_AMBWind" DurationType="Infinite">
 					<MediaRefs>
 						<MediaRef Id="88759647"/>
 					</MediaRefs>
@@ -492,9 +492,13 @@
 			<StateGroups>
 				<StateGroup Id="832974869" Name="MX_Waves">
 					<States>
+						<State Id="152105657" Name="TitleScreen"/>
 						<State Id="748895195" Name="None"/>
 						<State Id="2071144875" Name="BetweenWaves"/>
 						<State Id="2447589688" Name="ActiveWave"/>
+						<State Id="2716678721" Name="Victory"/>
+						<State Id="3820816959" Name="IntroTutorial"/>
+						<State Id="4158285989" Name="GameOver"/>
 					</States>
 				</StateGroup>
 			</StateGroups>
@@ -767,13 +771,17 @@
 				<Event Id="3869623766" Name="Play_UIWaveStarted" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="1685527054" Type="User" Language="SFX" Hash="{228EF07F-E2A0-66CA-5567-E611540D5D1A}">
+		<SoundBank Id="1685527054" Type="User" Language="SFX" Hash="{C38114BD-433E-003B-F686-E856E0D71BBB}">
 			<ShortName>MX</ShortName>
 			<Path>MX.bnk</Path>
 			<Media>
 				<File Id="88759647" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>GMTK2024_SFX_AMB_-20dB_v02.wav</ShortName>
 					<CachePath>SFX/GMTK2024_SFX_AMB_-20dB_v02_F4E969E3.wem</CachePath>
+				</File>
+				<File Id="290065866" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Scales of Olympus Game over v1.wav</ShortName>
+					<CachePath>SFX/Scales of Olympus Game over v1_05A4D402.wem</CachePath>
 				</File>
 				<File Id="340045983" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Scales of Olympus Game Loop v2.wav</ShortName>
@@ -783,18 +791,29 @@
 					<ShortName>Scales of Olympus Intro v2.wav</ShortName>
 					<CachePath>SFX/Scales of Olympus Intro v2_05A4D402.wem</CachePath>
 				</File>
-				<File Id="624318979" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Scales of Olympus Layer 2 v1.wav</ShortName>
-					<CachePath>SFX/Scales of Olympus Layer 2 v1_05A4D402.wem</CachePath>
-				</File>
 				<File Id="795776314" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Scales of Olympus Transition Out v2.wav</ShortName>
 					<CachePath>SFX/Scales of Olympus Transition Out v2_05A4D402.wem</CachePath>
 				</File>
+				<File Id="837853152" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Scales of Olympus Victory v1.wav</ShortName>
+					<CachePath>SFX/Scales of Olympus Victory v1_05A4D402.wem</CachePath>
+				</File>
+				<File Id="862001170" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Scales of Olympus Game Loop low intensity v2.wav</ShortName>
+					<CachePath>SFX/Scales of Olympus Game Loop low intensity v2_05A4D402.wem</CachePath>
+				</File>
+				<File Id="935891503" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Title Screen 2 intro v1.wav</ShortName>
+					<CachePath>SFX/Title Screen 2 intro v1_05A4D402.wem</CachePath>
+				</File>
+				<File Id="960456663" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Title Screen 2 loop v2.wav</ShortName>
+					<CachePath>SFX/Title Screen 2 loop v2_05A4D402.wem</CachePath>
+				</File>
 			</Media>
 			<Events>
-				<Event Id="1258886508" Name="Play_MXTitleTheme" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
-				<Event Id="1020223172" Name="Play_Wind" DurationType="Infinite">
+				<Event Id="1215763740" Name="Play_AMBWind" DurationType="Infinite">
 					<MediaRefs>
 						<MediaRef Id="88759647"/>
 					</MediaRefs>
@@ -807,6 +826,21 @@
 				<Event Id="2339243207" Name="SetState_BetweenWaves" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0">
 					<ActionSetState>
 						<ActionSetStateEntry GroupId="832974869" Id="2071144875" Name="BetweenWaves"/>
+					</ActionSetState>
+				</Event>
+				<Event Id="651661977" Name="SetState_GameOver" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0">
+					<ActionSetState>
+						<ActionSetStateEntry GroupId="832974869" Id="4158285989" Name="GameOver"/>
+					</ActionSetState>
+				</Event>
+				<Event Id="2698129709" Name="SetState_TitleScreen" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0">
+					<ActionSetState>
+						<ActionSetStateEntry GroupId="832974869" Id="152105657" Name="TitleScreen"/>
+					</ActionSetState>
+				</Event>
+				<Event Id="2318400676" Name="SetState_YouWin" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0">
+					<ActionSetState>
+						<ActionSetStateEntry GroupId="832974869" Id="2716678721" Name="Victory"/>
 					</ActionSetState>
 				</Event>
 				<Event Id="1521187885" Name="StartGame" DurationType="Infinite">
@@ -824,12 +858,63 @@
 						<SwitchContainer>
 							<SwitchValue GroupType="State" GroupId="832974869" Id="2071144875"/>
 							<MediaRefs>
-								<MediaRef Id="624318979"/>
+								<MediaRef Id="862001170"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="832974869" Id="152105657"/>
+							<MediaRefs>
+								<MediaRef Id="935891503"/>
+								<MediaRef Id="960456663"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="832974869" Id="4158285989"/>
+							<MediaRefs>
+								<MediaRef Id="290065866"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="832974869" Id="2716678721"/>
+							<MediaRefs>
+								<MediaRef Id="837853152"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="832974869" Id="2447589688"/>
+							<MediaRefs>
+								<MediaRef Id="340045983"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="832974869" Id="2071144875"/>
+							<MediaRefs>
+								<MediaRef Id="862001170"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="832974869" Id="152105657"/>
+							<MediaRefs>
+								<MediaRef Id="935891503"/>
+								<MediaRef Id="960456663"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="832974869" Id="4158285989"/>
+							<MediaRefs>
+								<MediaRef Id="290065866"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="832974869" Id="2716678721"/>
+							<MediaRefs>
+								<MediaRef Id="837853152"/>
 							</MediaRefs>
 						</SwitchContainer>
 					</SwitchContainers>
 					<ActionPostEvent>
-						<ActionPostEventEntry Id="1020223172" Name="Play_Wind"/>
+						<ActionPostEventEntry Id="1215763740" Name="Play_AMBWind"/>
+						<ActionPostEventEntry Id="2698129709" Name="SetState_TitleScreen"/>
 					</ActionPostEvent>
 					<ActionSetState>
 						<ActionSetStateEntry GroupId="832974869" Id="748895195" Name="None"/>
@@ -839,13 +924,17 @@
 			<StateGroups>
 				<StateGroup Id="832974869" Name="MX_Waves">
 					<States>
+						<State Id="152105657" Name="TitleScreen"/>
 						<State Id="748895195" Name="None"/>
 						<State Id="2071144875" Name="BetweenWaves"/>
 						<State Id="2447589688" Name="ActiveWave"/>
+						<State Id="2716678721" Name="Victory"/>
+						<State Id="3820816959" Name="IntroTutorial"/>
+						<State Id="4158285989" Name="GameOver"/>
 					</States>
 				</StateGroup>
 			</StateGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{C587A74D-F6FB-1CBB-4674-2662F7ECA99D}</FileHash>
+	<FileHash>{823DAB64-0940-7462-0952-1E63361C7C96}</FileHash>
 </SoundBanksInfo>
