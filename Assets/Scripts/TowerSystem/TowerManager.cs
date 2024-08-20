@@ -145,6 +145,8 @@ public class TowerManager : MonoBehaviourSingleton<TowerManager>
 
     public void HandleBuildTower(int towerType)
     {
+        Debug.Log("TEST");
+
         if(selectedTower)
             Destroy(selectedTower.gameObject);
 

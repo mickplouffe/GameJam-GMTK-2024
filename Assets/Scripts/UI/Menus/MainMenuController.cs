@@ -64,7 +64,7 @@ public class MainMenuController : BaseMenu
     {
         startLevelEvent.Post(gameObject);
         uiClickAudioEvent.Post(gameObject);
-        SceneManager.LoadScene("Cristi");
+        SceneManager.LoadScene("GameScene");
     }
 
     private void HandleOptionsButtonPressed()

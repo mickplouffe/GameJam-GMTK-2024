@@ -1,13 +1,13 @@
 <engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/Scripts/UI/Menus/InGameStyle.uss?fileID=7433441132597879392&amp;guid=59136cd82dd4a14459143fda52d8ef5e&amp;type=3#InGameStyle" />
     <engine:VisualElement name="GameOverMenuContainer" class="menuContainer">
-        <engine:VisualElement name="TitleContainer" class="titleContainer">
-            <engine:Label text="Game Over" name="PauseMenuTitle" class="menuTitle titleStyle" />
+        <engine:VisualElement name="TitleContainer" class="titleContainer" style="background-image: url(&quot;project://database/Assets/Art/UI/Game%20Over.png?fileID=2800000&amp;guid=4efc5cf9cf1971e42898e9b436e1749c&amp;type=3#Game Over&quot;);">
+            <engine:Label text="Game Over" name="PauseMenuTitle" class="menuTitle titleStyle" style="display: flex; visibility: hidden;" />
         </engine:VisualElement>
-        <engine:VisualElement name="ButtonsPanel" class="buttonsPanel menuButton buttonContainer">
-            <engine:Button text="Restart" name="RestartButton" class="menuButton buttonStyle" />
-            <engine:Button text="Options" name="OptionsButton" class="menuButton buttonStyle" />
-            <engine:Button text="Exit" name="ExitButton" class="menuButton buttonStyle" />
+        <engine:VisualElement name="ButtonsPanel" class="buttonsPanel menuButton buttonContainer" style="width: 443px; height: 262px;">
+            <engine:Button text="Restart" name="RestartButton" class="menuButton button" />
+            <engine:Button text="Options" name="OptionsButton" class="menuButton button" />
+            <engine:Button text="Exit" name="ExitButton" class="menuButton button" />
         </engine:VisualElement>
     </engine:VisualElement>
 </engine:UXML>
