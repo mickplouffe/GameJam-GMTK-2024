@@ -129,8 +129,10 @@ GameObject:
   m_Component:
   - component: {fileID: 86487980}
   - component: {fileID: 86487979}
+  - component: {fileID: 86487982}
   - component: {fileID: 86487978}
   - component: {fileID: 86487977}
+  - component: {fileID: 86487981}
   m_Layer: 0
   m_Name: TestSoundObject
   m_TagString: Untagged
@@ -145,7 +147,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 86487976}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4b406b1d381661641aa835efb26e3e19, type: 3}
   m_Name: 
@@ -158,7 +160,7 @@ MonoBehaviour:
   data:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: ea598f45ce3942142b1a3af368818ff4,
+    WwiseObjectReference: {fileID: 11400000, guid: 426ffd93896ca774d913b69045ed64e5,
       type: 2}
   useCallbacks: 0
   Callbacks: []
@@ -236,6 +238,49 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &86487981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 86487976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0564e2d89330bcb48a02c5a44cdd676d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scribbleEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 426ffd93896ca774d913b69045ed64e5,
+      type: 2}
+--- !u!114 &86487982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 86487976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e49f4032c2a5d684ca97b5f623d340e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerList: ae8d9d44
+  useOtherObject: 0
+  data:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: c77c7334fc591454c96d54454877d384,
+      type: 2}
+  decodeBank: 0
+  overrideLoadSetting: 0
+  loadAsynchronous: 0
+  saveDecodedBank: 0
+  unloadTriggerList: 958ca0ea
+  bankNameInternal: 
+  valueGuidInternal: 
 --- !u!1 &411736152
 GameObject:
   m_ObjectHideFlags: 0

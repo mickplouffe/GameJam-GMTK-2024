@@ -631,13 +631,21 @@
 			<ShortName>VO</ShortName>
 			<Path>VO.bnk</Path>
 		</SoundBank>
-		<SoundBank Id="1551306167" Type="User" Language="SFX" Hash="{DB75B1F3-2A45-C12E-D31F-8DDD4B838027}">
+		<SoundBank Id="1551306167" Type="User" Language="SFX" Hash="{62DFE5C9-6917-9AE1-E15D-59F38DC5A765}">
 			<ShortName>UI</ShortName>
 			<Path>UI.bnk</Path>
 			<Media>
+				<File Id="16739379" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GMTK2024_SFX_UIScribble_-5_v15.wav</ShortName>
+					<CachePath>SFX/GMTK2024_SFX_UIScribble_-5_v15_14E21738.wem</CachePath>
+				</File>
 				<File Id="55515463" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>GMTK2024_SFX_UIClick_-3_v2.wav</ShortName>
 					<CachePath>SFX/GMTK2024_SFX_UIClick_-3_v2_14E21738.wem</CachePath>
+				</File>
+				<File Id="68863451" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GMTK2024_SFX_UIScribble_-5_v12.wav</ShortName>
+					<CachePath>SFX/GMTK2024_SFX_UIScribble_-5_v12_14E21738.wem</CachePath>
 				</File>
 				<File Id="70575173" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>GMTK2024_SFX_goldGain_-7_v1.wav</ShortName>
@@ -647,6 +655,26 @@
 					<ShortName>GMTK2024_SFX_goldGain_-7_v2.wav</ShortName>
 					<CachePath>SFX/GMTK2024_SFX_goldGain_-7_v2_14E21738.wem</CachePath>
 				</File>
+				<File Id="147117229" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GMTK2024_SFX_UIScribble_-5_v14.wav</ShortName>
+					<CachePath>SFX/GMTK2024_SFX_UIScribble_-5_v14_14E21738.wem</CachePath>
+				</File>
+				<File Id="192610350" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GMTK2024_SFX_UIScribble_-5_v2.wav</ShortName>
+					<CachePath>SFX/GMTK2024_SFX_UIScribble_-5_v2_14E21738.wem</CachePath>
+				</File>
+				<File Id="310001545" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GMTK2024_SFX_UIScribble_-5_v4.wav</ShortName>
+					<CachePath>SFX/GMTK2024_SFX_UIScribble_-5_v4_14E21738.wem</CachePath>
+				</File>
+				<File Id="537515449" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GMTK2024_SFX_UIScribble_-5_v1.wav</ShortName>
+					<CachePath>SFX/GMTK2024_SFX_UIScribble_-5_v1_14E21738.wem</CachePath>
+				</File>
+				<File Id="574957040" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GMTK2024_SFX_UIScribble_-5_v10.wav</ShortName>
+					<CachePath>SFX/GMTK2024_SFX_UIScribble_-5_v10_14E21738.wem</CachePath>
+				</File>
 				<File Id="598116187" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>GMTK2024_SFX_UIClick_-3_v1.wav</ShortName>
 					<CachePath>SFX/GMTK2024_SFX_UIClick_-3_v1_14E21738.wem</CachePath>
@@ -655,6 +683,10 @@
 					<ShortName>GMTK2024_SFX_UIHover_-3_v2.wav</ShortName>
 					<CachePath>SFX/GMTK2024_SFX_UIHover_-3_v2_14E21738.wem</CachePath>
 				</File>
+				<File Id="642855659" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GMTK2024_SFX_UIScribble_-5_v16.wav</ShortName>
+					<CachePath>SFX/GMTK2024_SFX_UIScribble_-5_v16_14E21738.wem</CachePath>
+				</File>
 				<File Id="659071609" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>GMTK2024_SFX_goldGain_-5_v3.wav</ShortName>
 					<CachePath>SFX/GMTK2024_SFX_goldGain_-5_v3_14E21738.wem</CachePath>
@@ -662,6 +694,10 @@
 				<File Id="682760559" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>GMTK2024_SFX_UIClick_-3_v3.wav</ShortName>
 					<CachePath>SFX/GMTK2024_SFX_UIClick_-3_v3_14E21738.wem</CachePath>
+				</File>
+				<File Id="833550424" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GMTK2024_SFX_UIScribble_-5_v8.wav</ShortName>
+					<CachePath>SFX/GMTK2024_SFX_UIScribble_-5_v8_14E21738.wem</CachePath>
 				</File>
 				<File Id="925787453" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>GMTK2024_SFX_goldLose_-6_v2.wav</ShortName>
@@ -685,6 +721,19 @@
 				</File>
 			</Media>
 			<Events>
+				<Event Id="806548754" Name="Play_Scribble" DurationType="OneShot" DurationMin="0.2265625" DurationMax="0.5555417">
+					<MediaRefs>
+						<MediaRef Id="16739379"/>
+						<MediaRef Id="68863451"/>
+						<MediaRef Id="147117229"/>
+						<MediaRef Id="192610350"/>
+						<MediaRef Id="310001545"/>
+						<MediaRef Id="537515449"/>
+						<MediaRef Id="574957040"/>
+						<MediaRef Id="642855659"/>
+						<MediaRef Id="833550424"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="1615720664" Name="Play_UIClick" DurationType="OneShot" DurationMin="0.25" DurationMax="0.25">
 					<MediaRefs>
 						<MediaRef Id="55515463"/>
@@ -798,5 +847,5 @@
 			</StateGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{FEF6637F-CBE7-D1FB-4F78-C454F0AF9BF1}</FileHash>
+	<FileHash>{0E7C19C0-6EF9-988B-24CE-9AE5FBAFE2B2}</FileHash>
 </SoundBanksInfo>
