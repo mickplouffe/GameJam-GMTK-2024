@@ -259,6 +259,84 @@
 												</SourceFadeOut>
 											</TransitionInfo>
 										</MusicTransition>
+										<MusicTransition Name="Transition" ID="{1EBAAC7E-22B2-4B49-B731-9D3F67B99A6F}">
+											<PropertyList>
+												<Property Name="DestinationContextType" Type="int16" Value="2"/>
+												<Property Name="EnableSourceFadeOut" Type="bool" Value="True"/>
+												<Property Name="ExitSourceAt" Type="int16" Value="0"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="DestinationContextObject">
+													<ObjectRef Name="VictoryStinger" ID="{65443EF2-D87E-43E9-BCA2-EC1D1AB979EC}" WorkUnitID="{FCCA7E9F-D0AC-482C-A731-FDE3D338A535}"/>
+												</Reference>
+											</ReferenceList>
+											<TransitionInfo>
+												<SourceFadeOut>
+													<MusicFade Name="Source Fade-out" ID="{6829BA5B-50A7-4A63-AC57-9B861492A3AD}">
+														<PropertyList>
+															<Property Name="FadeCurve" Type="int16" Value="7"/>
+															<Property Name="FadeOffset" Type="Real64" Value="0.75"/>
+															<Property Name="FadeTime" Type="Real64" Value="1.25"/>
+															<Property Name="FadeType" Type="int16" Value="1"/>
+														</PropertyList>
+													</MusicFade>
+												</SourceFadeOut>
+											</TransitionInfo>
+										</MusicTransition>
+										<MusicTransition Name="Transition" ID="{C3119EB7-5E0B-4571-9E64-0312B0B3D440}">
+											<PropertyList>
+												<Property Name="DestinationContextType" Type="int16" Value="2"/>
+												<Property Name="EnableSourceFadeOut" Type="bool" Value="True"/>
+												<Property Name="ExitSourceAt" Type="int16" Value="0"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="DestinationContextObject">
+													<ObjectRef Name="GameOverStinger" ID="{91559954-2AF2-46FA-B74B-E0FDD4133B10}" WorkUnitID="{FCCA7E9F-D0AC-482C-A731-FDE3D338A535}"/>
+												</Reference>
+											</ReferenceList>
+											<TransitionInfo>
+												<SourceFadeOut>
+													<MusicFade Name="Source Fade-out" ID="{4E85B3FA-9D0D-4410-9444-87D18B2D795D}">
+														<PropertyList>
+															<Property Name="FadeCurve" Type="int16" Value="7"/>
+															<Property Name="FadeOffset" Type="Real64" Value="0.75"/>
+															<Property Name="FadeTime" Type="Real64" Value="1.25"/>
+															<Property Name="FadeType" Type="int16" Value="1"/>
+														</PropertyList>
+													</MusicFade>
+												</SourceFadeOut>
+											</TransitionInfo>
+										</MusicTransition>
+										<MusicTransition Name="Transition" ID="{913CA27D-9185-4277-B999-6636CFAE9C20}">
+											<PropertyList>
+												<Property Name="DestinationContextType" Type="int16" Value="2"/>
+												<Property Name="SourceContextType" Type="int16" Value="2"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="DestinationContextObject">
+													<ObjectRef Name="TitleTheme" ID="{7D770E6A-BA44-42DB-A4FA-3F02A2C55BB5}" WorkUnitID="{FCCA7E9F-D0AC-482C-A731-FDE3D338A535}"/>
+												</Reference>
+												<Reference Name="SourceContextObject">
+													<ObjectRef Name="GameOverStinger" ID="{91559954-2AF2-46FA-B74B-E0FDD4133B10}" WorkUnitID="{FCCA7E9F-D0AC-482C-A731-FDE3D338A535}"/>
+												</Reference>
+											</ReferenceList>
+											<TransitionInfo/>
+										</MusicTransition>
+										<MusicTransition Name="Transition" ID="{C757EC1F-DA72-41F2-B854-9B050C743F8A}">
+											<PropertyList>
+												<Property Name="DestinationContextType" Type="int16" Value="2"/>
+												<Property Name="SourceContextType" Type="int16" Value="2"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="DestinationContextObject">
+													<ObjectRef Name="TitleTheme" ID="{7D770E6A-BA44-42DB-A4FA-3F02A2C55BB5}" WorkUnitID="{FCCA7E9F-D0AC-482C-A731-FDE3D338A535}"/>
+												</Reference>
+												<Reference Name="SourceContextObject">
+													<ObjectRef Name="VictoryStinger" ID="{65443EF2-D87E-43E9-BCA2-EC1D1AB979EC}" WorkUnitID="{FCCA7E9F-D0AC-482C-A731-FDE3D338A535}"/>
+												</Reference>
+											</ReferenceList>
+											<TransitionInfo/>
+										</MusicTransition>
 									</ChildrenList>
 									<TransitionInfo/>
 								</MusicTransition>
@@ -506,12 +584,20 @@
 														<CustomState Name="" ID="{B1BBCBA5-A4B0-4BD0-9EE0-AA32A36D7CAD}" ShortID="803719850"/>
 													</CustomState>
 													<CustomState>
+														<StateRef Name="GameOver" ID="{5DB0CA83-D754-42CC-9473-A75EC2C87D82}"/>
+														<CustomState Name="" ID="{980E7427-1D0E-44AE-8AAC-A6CE70AD070F}" ShortID="388610498"/>
+													</CustomState>
+													<CustomState>
 														<StateRef Name="IntroTutorial" ID="{621C89F3-0A8C-4343-96BF-63E52B76C5A3}"/>
 														<CustomState Name="" ID="{0921EA1E-8E79-467A-9CC0-EB56987C45CE}" ShortID="615786013"/>
 													</CustomState>
 													<CustomState>
 														<StateRef Name="BetweenWaves" ID="{9360CF56-12BF-46CC-9831-C467DEBF627D}"/>
 														<CustomState Name="" ID="{957C19CA-129E-4981-B42F-E658D43A4530}" ShortID="152031423"/>
+													</CustomState>
+													<CustomState>
+														<StateRef Name="Victory" ID="{7304F478-0363-46DA-AEB9-A93F5CD05C99}"/>
+														<CustomState Name="" ID="{5D790570-B5B9-43C7-B4D4-EBEBC626D089}" ShortID="873312049"/>
 													</CustomState>
 													<CustomState>
 														<StateRef Name="ActiveWave" ID="{5F8E6FC5-07CA-486A-9592-5DD2E231C2E2}"/>
@@ -811,7 +897,20 @@
 								</Reference>
 								<Reference Name="PlaylistRoot">
 									<Custom>
-										<MusicPlaylistItem Name="" ID="{59E27483-9A11-4573-958A-1C4C42C0D978}" ShortID="362525352"/>
+										<MusicPlaylistItem Name="" ID="{59E27483-9A11-4573-958A-1C4C42C0D978}" ShortID="362525352">
+											<ChildrenList>
+												<MusicPlaylistItem Name="" ID="{FE216E04-97A8-4323-AE32-3DD954AFB081}" ShortID="1040003245">
+													<PropertyList>
+														<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Segment">
+															<ObjectRef Name="Scales of Olympus Victory v1" ID="{D17FC34E-5066-4E0A-B254-ADBB7967EA3E}" WorkUnitID="{FCCA7E9F-D0AC-482C-A731-FDE3D338A535}"/>
+														</Reference>
+													</ReferenceList>
+												</MusicPlaylistItem>
+											</ChildrenList>
+										</MusicPlaylistItem>
 									</Custom>
 								</Reference>
 								<Reference Name="TransitionRoot">
@@ -830,6 +929,95 @@
 									</Custom>
 								</Reference>
 							</ReferenceList>
+							<ChildrenList>
+								<MusicSegment Name="Scales of Olympus Victory v1" ID="{D17FC34E-5066-4E0A-B254-ADBB7967EA3E}" ShortID="258271341">
+									<PropertyList>
+										<Property Name="EndPosition" Type="Real64" Value="5007.875"/>
+										<Property Name="OverrideClockSettings" Type="bool" Value="True"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{7F62BABC-0C6C-4DAD-ACF1-E77615B460FB}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<MusicTrack Name="Scales of Olympus Victory v1" ID="{41E20226-3EA8-4252-93A8-DE106CA4CCBB}" ShortID="359083641">
+											<ReferenceList>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{7F62BABC-0C6C-4DAD-ACF1-E77615B460FB}"/>
+												</Reference>
+												<Reference Name="TransitionRoot">
+													<Custom>
+														<MusicTransition Name="Root" ID="{1B3D4102-E41D-4A92-A8F2-265911801442}">
+															<PropertyList>
+																<Property Name="IsFolder" Type="bool" Value="True"/>
+															</PropertyList>
+															<TransitionInfo/>
+														</MusicTransition>
+													</Custom>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Scales of Olympus Victory v1" ID="{DBAE473D-EC17-4925-B575-092686374F5E}">
+													<Language>SFX</Language>
+													<AudioFile>Scales of Olympus Victory v1.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="837853152"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists>
+												<ObjectList Name="Sequences">
+													<Reference>
+														<Local>
+															<MusicTrackSequence Name="" ID="{EB7B83BE-6D68-4E40-A586-EE1E8264BE91}">
+																<ObjectLists>
+																	<ObjectList Name="Clips">
+																		<Reference>
+																			<Local>
+																				<MusicClip Name="Scales of Olympus Victory v1" ID="{BD9448B1-FF52-43B8-886C-16EC3ECE7828}">
+																					<PropertyList>
+																						<Property Name="EndTrimOffset" Type="Real64" Value="5007.875"/>
+																						<Property Name="FadeInMode" Type="int16" Value="0"/>
+																						<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																					</PropertyList>
+																					<AudioSourceRef Name="Scales of Olympus Victory v1" ID="{DBAE473D-EC17-4925-B575-092686374F5E}"/>
+																				</MusicClip>
+																			</Local>
+																		</Reference>
+																	</ObjectList>
+																</ObjectLists>
+															</MusicTrackSequence>
+														</Local>
+													</Reference>
+												</ObjectList>
+											</ObjectLists>
+										</MusicTrack>
+									</ChildrenList>
+									<ObjectLists>
+										<ObjectList Name="Cues">
+											<Reference>
+												<Local>
+													<MusicCue Name="Entry Cue" ID="{62063E63-AEE7-4646-85A1-F077B317E578}"/>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<MusicCue Name="Exit Cue" ID="{2703A008-628F-48A4-8E4A-228A6D974F53}">
+														<PropertyList>
+															<Property Name="CueType" Type="int16" Value="1"/>
+															<Property Name="TimeMs" Type="Real64" Value="4000"/>
+														</PropertyList>
+													</MusicCue>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</MusicSegment>
+							</ChildrenList>
 						</MusicPlaylistContainer>
 						<MusicPlaylistContainer Name="GameOverStinger" ID="{91559954-2AF2-46FA-B74B-E0FDD4133B10}" ShortID="389300157">
 							<ReferenceList>
@@ -841,7 +1029,20 @@
 								</Reference>
 								<Reference Name="PlaylistRoot">
 									<Custom>
-										<MusicPlaylistItem Name="" ID="{819EFBEF-237C-4066-95A2-2A4419B37823}" ShortID="731036720"/>
+										<MusicPlaylistItem Name="" ID="{819EFBEF-237C-4066-95A2-2A4419B37823}" ShortID="731036720">
+											<ChildrenList>
+												<MusicPlaylistItem Name="" ID="{1EE49BEA-B0EC-4B37-9DD8-3E47AA8E820F}" ShortID="509176518">
+													<PropertyList>
+														<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Segment">
+															<ObjectRef Name="Scales of Olympus Game over v1" ID="{E7E96F04-E07B-4EF3-B214-7F0B2A69E4AF}" WorkUnitID="{FCCA7E9F-D0AC-482C-A731-FDE3D338A535}"/>
+														</Reference>
+													</ReferenceList>
+												</MusicPlaylistItem>
+											</ChildrenList>
+										</MusicPlaylistItem>
 									</Custom>
 								</Reference>
 								<Reference Name="TransitionRoot">
@@ -860,6 +1061,91 @@
 									</Custom>
 								</Reference>
 							</ReferenceList>
+							<ChildrenList>
+								<MusicSegment Name="Scales of Olympus Game over v1" ID="{E7E96F04-E07B-4EF3-B214-7F0B2A69E4AF}" ShortID="549591166">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="MX" ID="{C36DB62C-024D-4CDC-B6F1-C1209F8AF167}" WorkUnitID="{7F62BABC-0C6C-4DAD-ACF1-E77615B460FB}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<MusicTrack Name="Scales of Olympus Game over v1" ID="{6768494C-0924-4578-87F8-FFD8E91F0ADC}" ShortID="388524404">
+											<ReferenceList>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{7F62BABC-0C6C-4DAD-ACF1-E77615B460FB}"/>
+												</Reference>
+												<Reference Name="TransitionRoot">
+													<Custom>
+														<MusicTransition Name="Root" ID="{A07D7C40-EFF2-4995-B905-7C79CDCCDE8B}">
+															<PropertyList>
+																<Property Name="IsFolder" Type="bool" Value="True"/>
+															</PropertyList>
+															<TransitionInfo/>
+														</MusicTransition>
+													</Custom>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Scales of Olympus Game over v1" ID="{267905FA-94E7-4CF0-9EB7-94300D700BFD}">
+													<Language>SFX</Language>
+													<AudioFile>Scales of Olympus Game over v1.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="290065866"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists>
+												<ObjectList Name="Sequences">
+													<Reference>
+														<Local>
+															<MusicTrackSequence Name="" ID="{C115ABA7-2459-4B62-B1B0-3CACA5DE5F34}">
+																<ObjectLists>
+																	<ObjectList Name="Clips">
+																		<Reference>
+																			<Local>
+																				<MusicClip Name="Scales of Olympus Game over v1" ID="{B704097F-FA53-4A6F-93F2-B697CA40071C}">
+																					<PropertyList>
+																						<Property Name="EndTrimOffset" Type="Real64" Value="4000"/>
+																						<Property Name="FadeInMode" Type="int16" Value="0"/>
+																						<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																					</PropertyList>
+																					<AudioSourceRef Name="Scales of Olympus Game over v1" ID="{267905FA-94E7-4CF0-9EB7-94300D700BFD}"/>
+																				</MusicClip>
+																			</Local>
+																		</Reference>
+																	</ObjectList>
+																</ObjectLists>
+															</MusicTrackSequence>
+														</Local>
+													</Reference>
+												</ObjectList>
+											</ObjectLists>
+										</MusicTrack>
+									</ChildrenList>
+									<ObjectLists>
+										<ObjectList Name="Cues">
+											<Reference>
+												<Local>
+													<MusicCue Name="Entry Cue" ID="{88176244-FFFD-4AE2-9B45-870F998831A2}"/>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<MusicCue Name="Exit Cue" ID="{4411E85A-D923-43CC-859F-031221324BBA}">
+														<PropertyList>
+															<Property Name="CueType" Type="int16" Value="1"/>
+															<Property Name="TimeMs" Type="Real64" Value="3500"/>
+														</PropertyList>
+													</MusicCue>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</MusicSegment>
+							</ChildrenList>
 						</MusicPlaylistContainer>
 					</ChildrenList>
 					<ObjectLists>
@@ -917,6 +1203,42 @@
 											<ObjectList Name="EntryPath">
 												<Reference>
 													<ObjectRef Name="TitleScreen" ID="{EACF423B-AA19-41EF-B90C-563EF16BE6DE}" WorkUnitID="{A8C0A2BE-0965-4AC0-9566-86D7B39A75B2}"/>
+												</Reference>
+											</ObjectList>
+										</ObjectLists>
+									</MultiSwitchEntry>
+								</Local>
+							</Reference>
+							<Reference>
+								<Local>
+									<MultiSwitchEntry Name="" ID="{55A346CF-0606-43AF-8266-7DB987E87C8A}">
+										<ReferenceList>
+											<Reference Name="AudioNode">
+												<ObjectRef Name="GameOverStinger" ID="{91559954-2AF2-46FA-B74B-E0FDD4133B10}" WorkUnitID="{FCCA7E9F-D0AC-482C-A731-FDE3D338A535}"/>
+											</Reference>
+										</ReferenceList>
+										<ObjectLists>
+											<ObjectList Name="EntryPath">
+												<Reference>
+													<ObjectRef Name="GameOver" ID="{5DB0CA83-D754-42CC-9473-A75EC2C87D82}" WorkUnitID="{A8C0A2BE-0965-4AC0-9566-86D7B39A75B2}"/>
+												</Reference>
+											</ObjectList>
+										</ObjectLists>
+									</MultiSwitchEntry>
+								</Local>
+							</Reference>
+							<Reference>
+								<Local>
+									<MultiSwitchEntry Name="" ID="{4E12CF2B-2DC8-46E4-8E3C-E93954AB3DC7}">
+										<ReferenceList>
+											<Reference Name="AudioNode">
+												<ObjectRef Name="VictoryStinger" ID="{65443EF2-D87E-43E9-BCA2-EC1D1AB979EC}" WorkUnitID="{FCCA7E9F-D0AC-482C-A731-FDE3D338A535}"/>
+											</Reference>
+										</ReferenceList>
+										<ObjectLists>
+											<ObjectList Name="EntryPath">
+												<Reference>
+													<ObjectRef Name="Victory" ID="{7304F478-0363-46DA-AEB9-A93F5CD05C99}" WorkUnitID="{A8C0A2BE-0965-4AC0-9566-86D7B39A75B2}"/>
 												</Reference>
 											</ObjectList>
 										</ObjectLists>
