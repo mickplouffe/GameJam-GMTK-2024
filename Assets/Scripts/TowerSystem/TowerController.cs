@@ -152,7 +152,7 @@ private IEnumerator DrawShootingRay()
 {
     // Set up the LineRenderer positions
     _shootingRay.SetPosition(0, towerShootingSpot.position);
-    _shootingRay.SetPosition(1, _currentTarget.position);
+    _shootingRay.SetPosition(1, _currentTarget.position + _currentTarget.up * 2.0f);
     _shootingRay.widthCurve = beamWidthCurve;
     _shootingRay.colorGradient = beamColorGradient;
     _shootingRay.enabled = true;
@@ -225,7 +225,6 @@ private void HandleTiltChanged(float tiltAngle, Vector3 direction)
     if (tiltAngle > tiltAllowanceThreshold)
     {
         towerSlideSFX.Post(gameObject);
-        
         if(Tile != null)
             Tile.DetachTower();
         StartSliding(direction);
@@ -245,10 +244,10 @@ private void StartSliding(Vector3 direction)
 
 private void StopSliding()
 {
+    towerSlideStopSFX.Post(gameObject);
     isSliding = false;
     slipMagnitude = 0f;
     tiltDirection = Vector3.zero;
-    towerSlideStopSFX.Post(gameObject);
     
     // Ensure the object is properly snapped to the current tile
     HexTile finalTile = HexGridManager.Instance.GetTileAtWorldPosition(transform.position);
@@ -285,6 +284,9 @@ private bool ShouldStopSliding()
 
     public bool CanUpgrade(UpgradeTowerAction upgradeTowerAction)
     {
+        if (_hasUpgrade)
+            return false;
+        
         bool canUpgrade = false;
 
         canUpgrade |= (instanceData.range + upgradeTowerAction.weightModifier <= towerData.maxWeight);
@@ -295,6 +297,8 @@ private bool ShouldStopSliding()
     }
     public void UpgradeTower(UpgradeTowerAction upgradeTowerAction)
     {
+        _hasUpgrade = true;
+        
         towerUpgradeSFX.Post(gameObject);
         
         instanceData.damage += upgradeTowerAction.damageModifier;

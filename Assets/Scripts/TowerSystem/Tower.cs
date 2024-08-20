@@ -24,4 +24,9 @@ public class Tower : ScriptableObject
     
     public bool isUpgradable;
     public bool isStatic;
+
+    public float yOffset;
+    public float enemyYOffset;
+
+    public GameObject[] upgradePrefabs;
 }
