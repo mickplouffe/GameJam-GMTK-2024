@@ -67,7 +67,7 @@ public class GameOverMenuController : BaseMenu
         uiClickAudioEvent.Post(gameObject);
         gameManagerEventChannel.RaiseGameRestart();
         _gameOverMenuContainer.visible = false;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        // SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     private void HandleOptionsButtonPressed()
