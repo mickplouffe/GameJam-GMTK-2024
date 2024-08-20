@@ -54,6 +54,8 @@ public class TowerManager : MonoBehaviourSingleton<TowerManager>
     // Update is called once per frame
     void Update()
     {
+        if (GameManager.Instance.IsInDialogue)
+            return;
         
         if (Input.GetMouseButtonDown(1) && _placementMode)
         {

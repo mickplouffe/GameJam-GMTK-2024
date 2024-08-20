@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviourSingleton<GameManager>
 
     public bool IsGamePaused { get; set; }
     public bool IsGameOver { get; set; }
+    public bool IsInDialogue { get; set; }
     
     private void OnEnable()
     {
@@ -50,12 +51,20 @@ public class GameManager : MonoBehaviourSingleton<GameManager>
 
     private void StartNextCycle()
     {
+        if(IsGameOver)
+            return; 
+        
         uiEventChannel.RaiseActivateBuildMenu(false);
         gameManagerEventChannel.RaiseDialogueStart();
+        IsInDialogue = true;
     }
 
     private void HandleStartWave()
     {
+        if(IsGameOver)
+           return; 
+        
+        IsInDialogue = false;
         uiEventChannel.RaiseActivateBuildMenu(true);
         enemyEventChannel.RaiseStartNextWave();
     }
