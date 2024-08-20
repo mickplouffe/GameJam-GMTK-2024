@@ -1311,17 +1311,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 620687501}
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0.002007169, y: 0, z: 0, w: 0.99999803}
   m_LocalPosition: {x: 0, y: 0, z: 0.03}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1234768212}
   m_Father: {fileID: 1870026462}
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0.23, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 2.9}
+  m_AnchoredPosition: {x: 0, y: 3}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!212 &620687503
@@ -1487,7 +1487,6 @@ MonoBehaviour:
   towersLayerMask:
     serializedVersion: 2
     m_Bits: 64
-  yOffset: 0.1
   sellCostPercentage: 0.1
   uiEventChannel: {fileID: 11400000, guid: b6146f624481a48429195dc223974ca7, type: 2}
   weightEventChannel: {fileID: 11400000, guid: 1c11f8eaadf261d449e9f3f048895711, type: 2}
@@ -3784,6 +3783,7 @@ SceneRoots:
   - {fileID: 44942776}
   - {fileID: 259599518}
   - {fileID: 1807678569}
+  - {fileID: 80113098}
   - {fileID: 1326483778}
   - {fileID: 736632074}
   - {fileID: 1774028157}
@@ -3797,4 +3797,3 @@ SceneRoots:
   - {fileID: 433651673}
   - {fileID: 1772207892}
   - {fileID: 808831422}
-  - {fileID: 80113098}

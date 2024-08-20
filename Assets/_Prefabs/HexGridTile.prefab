@@ -207,6 +207,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: HexTile_Spawner
       objectReference: {fileID: 0}
+    - target: {fileID: 4680818904635596815, guid: a895fa9f1c4bbc849b0089306e5f7e1a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7217875558333963551, guid: a895fa9f1c4bbc849b0089306e5f7e1a,
         type: 3}
       propertyPath: m_LocalScale.x

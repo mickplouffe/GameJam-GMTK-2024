@@ -76,7 +76,7 @@ public class EnemyController : MonoBehaviour
         weightEventChannel.RaiseWeightAdded(enemyWeight, _currentSourceTile);
 
         transform.position = _currentSourceTile.TileObject.transform.position +
-                                  transform.up * _colliderBounds.size.y * 0.35f;
+                                  transform.up * _colliderBounds.size.y * 0.1f;
         
         _finishedSetup = true;
         enemySpawnSFX.Post(gameObject);
@@ -126,7 +126,7 @@ public class EnemyController : MonoBehaviour
         
         
         transform.position = newPos;
-        transform.position += transform.parent.up * _colliderBounds.size.y * 0.35f;
+        transform.position += transform.parent.up * _colliderBounds.size.y * 0.1f;
     }
 
     private HexTile GetNextTargetPosition()

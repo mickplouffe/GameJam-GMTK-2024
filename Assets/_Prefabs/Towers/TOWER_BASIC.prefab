@@ -81,9 +81,9 @@ MonoBehaviour:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0.32547164
-      inSlope: -0.32547164
-      outSlope: -0.32547164
+      value: 0.19958282
+      inSlope: -0.19958282
+      outSlope: -0.19958282
       tangentMode: 34
       weightedMode: 0
       inWeight: 0
@@ -91,8 +91,8 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 1
       value: 0
-      inSlope: -0.32547164
-      outSlope: -0.32547164
+      inSlope: -0.19958282
+      outSlope: -0.19958282
       tangentMode: 34
       weightedMode: 0
       inWeight: 0.33333334
@@ -161,6 +161,11 @@ MonoBehaviour:
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: ea598f45ce3942142b1a3af368818ff4,
       type: 2}
+  towerAttackSFX:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 59b65737629e9b24caa50ac95ecb7e17,
+      type: 2}
 --- !u!65 &4529294783331625914
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -202,7 +207,7 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!120 &6410887134671940331
 LineRenderer:
   serializedVersion: 2

@@ -80,10 +80,10 @@ MonoBehaviour:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0
-      value: 0.32547164
-      inSlope: -0.32547164
-      outSlope: -0.32547164
+      time: 0.020832062
+      value: 0.19804549
+      inSlope: -0.20225896
+      outSlope: -0.20225896
       tangentMode: 34
       weightedMode: 0
       inWeight: 0
@@ -91,8 +91,8 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 1
       value: 0
-      inSlope: -0.32547164
-      outSlope: -0.32547164
+      inSlope: -0.20225896
+      outSlope: -0.20225896
       tangentMode: 34
       weightedMode: 0
       inWeight: 0.33333334
@@ -103,7 +103,7 @@ MonoBehaviour:
   beamColorGradient:
     serializedVersion: 2
     key0: {r: 0.9622642, g: 0.3578124, b: 0.25872195, a: 1}
-    key1: {r: 1, g: 0.47286376, b: 0.16509432, a: 0.6901961}
+    key1: {r: 1, g: 0.47286376, b: 0.16509432, a: 1}
     key2: {r: 0.305, g: 0.9811321, b: 0.74012685, a: 1}
     key3: {r: 0, g: 0, b: 0, a: 0}
     key4: {r: 0, g: 0, b: 0, a: 0}
@@ -161,6 +161,11 @@ MonoBehaviour:
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: ea598f45ce3942142b1a3af368818ff4,
       type: 2}
+  towerAttackSFX:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 59b65737629e9b24caa50ac95ecb7e17,
+      type: 2}
 --- !u!65 &4529294783331625914
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -202,7 +207,7 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 1.01, z: 0}
 --- !u!120 &6410887134671940331
 LineRenderer:
   serializedVersion: 2
@@ -370,7 +375,7 @@ Transform:
   m_GameObject: {fileID: 6494799761051565011}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.749, z: 0}
+  m_LocalPosition: {x: 0, y: 2.45, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

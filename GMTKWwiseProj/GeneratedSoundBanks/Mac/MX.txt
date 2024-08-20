@@ -1,22 +1,32 @@
 Event	ID	Name			Wwise Object Path	Notes
-	1020223172	Play_Wind			\AMB\Play_Wind	
-	1258886508	Play_MXTitleTheme			\MX\MXEvents_Otter\Play_MXTitleTheme	
+	651661977	SetState_GameOver			\MX\MXEvents_Otter\SetState_GameOver	
+	1215763740	Play_AMBWind			\AMB\Play_AMBWind	
 	1521187885	StartGame			\MX\MXEvents_Otter\StartGame	
+	2318400676	SetState_YouWin			\MX\MXEvents_Otter\SetState_YouWin	
 	2339243207	SetState_BetweenWaves			\MX\MXEvents_Otter\SetState_BetweenWaves	
+	2698129709	SetState_TitleScreen			\MX\MXEvents_Otter\SetState_TitleScreen	
 	3038968348	SetState_ActiveWave			\MX\MXEvents_Otter\SetState_ActiveWave	
 
 State Group	ID	Name			Wwise Object Path	Notes
 	832974869	MX_Waves			\GameStates\MX_Waves	
 
 State	ID	Name	State Group			Notes
+	152105657	TitleScreen	MX_Waves			
 	748895195	None	MX_Waves			
 	2071144875	BetweenWaves	MX_Waves			
 	2447589688	ActiveWave	MX_Waves			
+	2716678721	Victory	MX_Waves			
+	3820816959	IntroTutorial	MX_Waves			
+	4158285989	GameOver	MX_Waves			
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	88759647	Wind	D:\UnityProjects\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Mac\SFX\GMTK2024_SFX_AMB_-20dB_v02_F4E969E3.wem		\Actor-Mixer Hierarchy\AMB\AMB\Wind		401784
+	290065866	Scales of Olympus Game over v1	D:\UnityProjects\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Mac\SFX\Scales of Olympus Game over v1_05A4D402.wem		\Interactive Music Hierarchy\MX\MX_Otter\MX\GameOverStinger\Scales of Olympus Game over v1\Scales of Olympus Game over v1		57209
 	340045983	highIntensity	D:\UnityProjects\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Mac\SFX\Scales of Olympus Game Loop v2_05A4D402.wem		\Interactive Music Hierarchy\MX\MX_Otter\MX\GameplayLoop\GameplayLoop_segment\highIntensity		1481832
 	464818347	Scales of Olympus Intro v1	D:\UnityProjects\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Mac\SFX\Scales of Olympus Intro v2_05A4D402.wem		\Interactive Music Hierarchy\MX\MX_Otter\Transitions\Scales of Olympus Intro v1\Scales of Olympus Intro v1		121799
-	624318979	lowIntensity	D:\UnityProjects\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Mac\SFX\Scales of Olympus Layer 2 v1_05A4D402.wem		\Interactive Music Hierarchy\MX\MX_Otter\MX\BetweenWaves\BetweenWaves_segment\lowIntensity		1367267
 	795776314	Scales of Olympus Transition out of loop -starts beat 4- v1	D:\UnityProjects\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Mac\SFX\Scales of Olympus Transition Out v2_05A4D402.wem		\Interactive Music Hierarchy\MX\MX_Otter\Transitions\Scales of Olympus Transition out of loop -starts beat 4- v1\Scales of Olympus Transition out of loop -starts beat 4- v1		68349
+	837853152	Scales of Olympus Victory v1	D:\UnityProjects\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Mac\SFX\Scales of Olympus Victory v1_05A4D402.wem		\Interactive Music Hierarchy\MX\MX_Otter\MX\VictoryStinger\Scales of Olympus Victory v1\Scales of Olympus Victory v1		78888
+	862001170	lowIntensity	D:\UnityProjects\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Mac\SFX\Scales of Olympus Game Loop low intensity v2_05A4D402.wem		\Interactive Music Hierarchy\MX\MX_Otter\MX\BetweenWaves\BetweenWaves_segment\lowIntensity		1293532
+	935891503	Title Screen 2 intro v1	D:\UnityProjects\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Mac\SFX\Title Screen 2 intro v1_05A4D402.wem		\Interactive Music Hierarchy\MX\MX_Otter\MX\TitleTheme\Title Screen 2 intro v1\Title Screen 2 intro v1		213426
+	960456663	Title Screen 2 loop v2	D:\UnityProjects\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Mac\SFX\Title Screen 2 loop v2_05A4D402.wem		\Interactive Music Hierarchy\MX\MX_Otter\MX\TitleTheme\Title Screen 2 loop v2\Title Screen 2 loop v2		717758
 

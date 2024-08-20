@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -17,7 +18,6 @@ public class TowerManager : MonoBehaviourSingleton<TowerManager>
     [SerializeField] private TowerController activeTowerSelected;
     [SerializeField] private LayerMask tilesLayerMask;
     [SerializeField] private LayerMask towersLayerMask;
-    [SerializeField] private float yOffset = 0.5f;
     [SerializeField] private float sellCostPercentage = 0.1f;
 
     [SerializeField] private UIEventChannel uiEventChannel;
@@ -190,8 +190,20 @@ public class TowerManager : MonoBehaviourSingleton<TowerManager>
             !activeTowerSelected.CanUpgrade(upgradeAction))
             return;
 
-        activeTowerSelected.UpgradeTower(upgradeAction);
+        if (activeTowerSelected.GetComponent<TowerController>().towerData.upgradePrefabs.Length < 0 || 
+            upgradeType >= activeTowerSelected.GetComponent<TowerController>().towerData.upgradePrefabs.Length)
+            return;
+        
+        GameObject upgradePrefab = activeTowerSelected.GetComponent<TowerController>().towerData.upgradePrefabs[upgradeType];
+        GameObject upgradePrefabInstance = Instantiate(upgradePrefab, activeTowerSelected.transform.position,
+            activeTowerSelected.transform.rotation, activeTowerSelected.transform.parent);
 
+        upgradePrefabInstance.GetComponent<TowerController>().instanceData = activeTowerSelected.instanceData;
+
+        DestroyActiveTower();
+
+        activeTowerSelected = upgradePrefabInstance.GetComponent<TowerController>();
+        activeTowerSelected.UpgradeTower(upgradeAction);
         coinsEventChannel.RaiseModifyCoins(-upgradeAction.costModifier);
     }
 
@@ -204,12 +216,23 @@ public class TowerManager : MonoBehaviourSingleton<TowerManager>
         
         coinsEventChannel.RaiseModifyCoins(Mathf.CeilToInt(activeTowerSelected.instanceData.currentCost * sellCostPercentage));
         uiEventChannel.RaiseActivateBuildMenu(true);
+
+        DestroyActiveTower();
+    }
+
+    private void DestroyActiveTower()
+    {
+        if (!activeTowerSelected)
+            return;
+        
+        activeTowerSelected.Tile.DetachTower();
         
         // Unregister selected tower
         weightEventChannel.RaiseWeightRemoved(activeTowerSelected.transform.GetComponent<TowerController>().instanceData.weight, 
             activeTowerSelected.transform.GetComponent<TowerController>().Tile);
         
         UnregisterTower(activeTowerSelected.transform);
+        
         // Destroy selected tower
         Destroy(activeTowerSelected.gameObject);
     }
@@ -244,7 +267,7 @@ public class TowerManager : MonoBehaviourSingleton<TowerManager>
         selectedTower.transform.position =
             selectedTower.GetComponent<TowerController>().Tile.TileObject.transform.position +
             selectedTower.GetComponent<TowerController>().Tile.TileObject.transform.up *
-            (towerBounds.size.y + yOffset) * 0.5f;
+            selectedTower.GetComponent<TowerController>().towerData.yOffset;
         
         selectedTower.transform.rotation =
             selectedTower.GetComponent<TowerController>().Tile.TileObject.transform.rotation;
@@ -261,7 +284,7 @@ public class TowerManager : MonoBehaviourSingleton<TowerManager>
         tower.position =
             tower.GetComponent<TowerController>().Tile.TileObject.transform.position +
             tower.GetComponent<TowerController>().Tile.TileObject.transform.up *
-            (towerBounds.size.y + yOffset) * 0.5f;
+            tower.GetComponent<TowerController>().towerData.yOffset;
         
         tower.GetComponent<TowerController>().Tile.TowerObject = tower.gameObject;
         

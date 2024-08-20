@@ -50,6 +50,10 @@
 							<Position X="2" Y="2"/>
 						</Module>
 						<Module>
+							<ObjectRef Name="Play_Scribble" ID="{99A5843D-2946-4197-90BA-38D980065A75}" WorkUnitID="{0161E5E5-78F8-4E54-949B-0AC218A10565}"/>
+							<Position X="2" Y="3"/>
+						</Module>
+						<Module>
 							<ObjectRef Name="Stop_All" ID="{7CD7C746-2107-4F8E-9FCE-C51C4DBEE417}" WorkUnitID="{287E4018-43D8-4442-BFA5-31398B8E3AD6}"/>
 							<Position X="3" Y="0"/>
 						</Module>
@@ -85,7 +89,7 @@
 						</RTPCValue>
 					</RTPCValueList>
 					<CurrentStateList ShowAll="true">
-						<CurrentStateRef Name="ActiveWave" ID="{5F8E6FC5-07CA-486A-9592-5DD2E231C2E2}"/>
+						<CurrentStateRef Name="GameOver" ID="{5DB0CA83-D754-42CC-9473-A75EC2C87D82}"/>
 					</CurrentStateList>
 					<CurrentSwitchList ShowAll="true"/>
 				</SoundcasterSession>
@@ -148,11 +152,11 @@
 				<SoundcasterSession Name="AudioBranchTest" ID="{39ACD286-0855-413D-B8F7-3835FB158466}">
 					<ModuleList>
 						<Module>
-							<ObjectRef Name="Play_MXTitleTheme" ID="{BC8A9745-2AB8-452D-B805-15E760D59A15}" WorkUnitID="{0BD70790-4A2A-42B0-81A1-0D3B3BF71E15}"/>
+							<ObjectRef Name="StartGame" ID="{70783A5B-9D9B-4725-A1FA-E906A89AF09D}" WorkUnitID="{0BD70790-4A2A-42B0-81A1-0D3B3BF71E15}"/>
 							<Position X="0" Y="0"/>
 						</Module>
 						<Module>
-							<ObjectRef Name="StartGame" ID="{70783A5B-9D9B-4725-A1FA-E906A89AF09D}" WorkUnitID="{0BD70790-4A2A-42B0-81A1-0D3B3BF71E15}"/>
+							<ObjectRef Name="SetState_TitleScreen" ID="{BC8A9745-2AB8-452D-B805-15E760D59A15}" WorkUnitID="{0BD70790-4A2A-42B0-81A1-0D3B3BF71E15}"/>
 							<Position X="0" Y="1"/>
 						</Module>
 						<Module>
@@ -164,11 +168,11 @@
 							<Position X="0" Y="3"/>
 						</Module>
 						<Module>
-							<ObjectRef Name="Stop_All" ID="{7CD7C746-2107-4F8E-9FCE-C51C4DBEE417}" WorkUnitID="{287E4018-43D8-4442-BFA5-31398B8E3AD6}"/>
+							<ObjectRef Name="SetState_YouWin" ID="{8B27E28D-7203-4BD4-BEFB-28BA3E0BF88D}" WorkUnitID="{0BD70790-4A2A-42B0-81A1-0D3B3BF71E15}"/>
 							<Position X="0" Y="4"/>
 						</Module>
 						<Module>
-							<ObjectRef Name="Play_Wind" ID="{FEC89844-829D-4954-AAEB-9FC5355CDFD0}" WorkUnitID="{5B7760E9-4ED5-4FFF-B405-DA13419EEECE}"/>
+							<ObjectRef Name="SetState_GameOver" ID="{F57E0CDC-E460-4625-A4C4-462CF6C2B0F1}" WorkUnitID="{0BD70790-4A2A-42B0-81A1-0D3B3BF71E15}"/>
 							<Position X="0" Y="5"/>
 						</Module>
 						<Module>
@@ -196,10 +200,6 @@
 							<Position X="1" Y="5"/>
 						</Module>
 						<Module>
-							<ObjectRef Name="Play_SFXGroundTileSpawn" ID="{E869B14E-1621-4ED1-89AC-65DE7A7EC898}" WorkUnitID="{0A7A0CEB-234F-4544-9DAA-DD6728515385}"/>
-							<Position X="1" Y="6"/>
-						</Module>
-						<Module>
 							<ObjectRef Name="Play_SFXTowerPlace" ID="{F6BBF08E-2F33-4870-9A49-A02B42EC8F12}" WorkUnitID="{0A7A0CEB-234F-4544-9DAA-DD6728515385}"/>
 							<Position X="2" Y="0"/>
 						</Module>
@@ -222,10 +222,6 @@
 						<Module>
 							<ObjectRef Name="Play_SFXMinotaurEnterTower" ID="{7E69CAA6-B774-4BC7-9228-375F7EB7727B}" WorkUnitID="{44EF5028-F23C-448C-BEC5-271E73A1269C}"/>
 							<Position X="2" Y="5"/>
-						</Module>
-						<Module>
-							<ObjectRef Name="Play_SFXSpawnerTileSpawn" ID="{CC3C517E-D109-44C5-8243-67F08A28976D}" WorkUnitID="{0A7A0CEB-234F-4544-9DAA-DD6728515385}"/>
-							<Position X="2" Y="6"/>
 						</Module>
 						<Module>
 							<ObjectRef Name="Play_SFXTowerSell" ID="{D656D3F4-3ECF-4658-AB6C-9DAFE7B7718F}" WorkUnitID="{0A7A0CEB-234F-4544-9DAA-DD6728515385}"/>
@@ -263,6 +259,26 @@
 							<ObjectRef Name="Play_UIHover" ID="{7F000FFE-DBB8-42CC-AA34-BFE19AA5F797}" WorkUnitID="{0161E5E5-78F8-4E54-949B-0AC218A10565}"/>
 							<Position X="4" Y="2"/>
 						</Module>
+						<Module>
+							<ObjectRef Name="Play_Scribble" ID="{99A5843D-2946-4197-90BA-38D980065A75}" WorkUnitID="{0161E5E5-78F8-4E54-949B-0AC218A10565}"/>
+							<Position X="4" Y="3"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Stop_All" ID="{7CD7C746-2107-4F8E-9FCE-C51C4DBEE417}" WorkUnitID="{287E4018-43D8-4442-BFA5-31398B8E3AD6}"/>
+							<Position X="4" Y="4"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_SFXGroundTileSpawn" ID="{E869B14E-1621-4ED1-89AC-65DE7A7EC898}" WorkUnitID="{0A7A0CEB-234F-4544-9DAA-DD6728515385}"/>
+							<Position X="5" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_SFXSpawnerTileSpawn" ID="{CC3C517E-D109-44C5-8243-67F08A28976D}" WorkUnitID="{0A7A0CEB-234F-4544-9DAA-DD6728515385}"/>
+							<Position X="5" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_centralTowerDestroyed" ID="{4DAD05BF-98D9-431C-81D1-E491E656DE6C}" WorkUnitID="{0A7A0CEB-234F-4544-9DAA-DD6728515385}"/>
+							<Position X="5" Y="2"/>
+						</Module>
 					</ModuleList>
 					<RTPCValueList ShowAll="true">
 						<RTPCValue>
@@ -271,7 +287,7 @@
 						</RTPCValue>
 					</RTPCValueList>
 					<CurrentStateList ShowAll="true">
-						<CurrentStateRef Name="ActiveWave" ID="{5F8E6FC5-07CA-486A-9592-5DD2E231C2E2}"/>
+						<CurrentStateRef Name="GameOver" ID="{5DB0CA83-D754-42CC-9473-A75EC2C87D82}"/>
 					</CurrentStateList>
 					<CurrentSwitchList ShowAll="true"/>
 				</SoundcasterSession>

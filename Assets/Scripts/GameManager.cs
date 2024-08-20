@@ -88,13 +88,7 @@ public class GameManager : MonoBehaviourSingleton<GameManager>
 
     private void HandleGameRestart()
     {
-        uiEventChannel.RaiseActivateBuildMenu(false);
-        IsGamePaused = false;
-        HandleGamePause();
-        IsGameOver = false;
-        //
-        // Scene scene = SceneManager.GetActiveScene();
-        // SceneManager.LoadScene(scene.name);
-        StartNextCycle();
+        Scene scene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(scene.name);
     }
 }
