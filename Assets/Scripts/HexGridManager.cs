@@ -124,7 +124,7 @@ public class HexGridManager : MonoBehaviour
 
         _currentMainUnitHealth = mainUnityStartHealth;
         // TODO: Play tower animation
-        _animator.SetTrigger("Die");
+        _animator.SetBool("IsDead", true);
         
         gameManagerEventChannel.RaiseGameOver();
         
@@ -155,7 +155,8 @@ public class HexGridManager : MonoBehaviour
         ClearHexGrid();
         Vector2 size = new Vector2(width, height);
         hexGrid.GenerateGrid(size, hexPrefab, 0, gridShape);
-        
+        _animator.SetBool("IsDead", false);
+
         HighlightTrueEdgeTiles();
         
         

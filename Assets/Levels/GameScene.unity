@@ -1538,7 +1538,7 @@ PrefabInstance:
     - target: {fileID: 1431414738907584462, guid: 6a019b031b1ccf14ab8b24dac5607d54,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.279094
+      value: 0.27909416
       objectReference: {fileID: 0}
     - target: {fileID: 1632954996195060762, guid: 6a019b031b1ccf14ab8b24dac5607d54,
         type: 3}
@@ -1558,22 +1558,22 @@ PrefabInstance:
     - target: {fileID: 1770206361884767173, guid: 6a019b031b1ccf14ab8b24dac5607d54,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9602638
+      value: 0.9602637
       objectReference: {fileID: 0}
     - target: {fileID: 1770206361884767173, guid: 6a019b031b1ccf14ab8b24dac5607d54,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.279094
+      value: 0.27909425
       objectReference: {fileID: 0}
     - target: {fileID: 1770206361884767173, guid: 6a019b031b1ccf14ab8b24dac5607d54,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.000000028618095
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1770206361884767173, guid: 6a019b031b1ccf14ab8b24dac5607d54,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.000000008317651
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2625652590461642762, guid: 6a019b031b1ccf14ab8b24dac5607d54,
         type: 3}
@@ -1633,7 +1633,7 @@ PrefabInstance:
     - target: {fileID: 3532848280349110813, guid: 6a019b031b1ccf14ab8b24dac5607d54,
         type: 3}
       propertyPath: m_FollowOffset.z
-      value: -7.875008
+      value: -7.875
       objectReference: {fileID: 0}
     - target: {fileID: 3679491878746442894, guid: 6a019b031b1ccf14ab8b24dac5607d54,
         type: 3}
@@ -1663,17 +1663,17 @@ PrefabInstance:
     - target: {fileID: 5788171520894406117, guid: 6a019b031b1ccf14ab8b24dac5607d54,
         type: 3}
       propertyPath: m_Orbits.Array.data[0].m_Radius
-      value: 2.250004
+      value: 2.25
       objectReference: {fileID: 0}
     - target: {fileID: 5788171520894406117, guid: 6a019b031b1ccf14ab8b24dac5607d54,
         type: 3}
       propertyPath: m_Orbits.Array.data[1].m_Radius
-      value: 7.875008
+      value: 7.875
       objectReference: {fileID: 0}
     - target: {fileID: 5788171520894406117, guid: 6a019b031b1ccf14ab8b24dac5607d54,
         type: 3}
       propertyPath: m_Orbits.Array.data[2].m_Radius
-      value: 5.625008
+      value: 5.625
       objectReference: {fileID: 0}
     - target: {fileID: 5884198831717486311, guid: 6a019b031b1ccf14ab8b24dac5607d54,
         type: 3}
@@ -1688,17 +1688,17 @@ PrefabInstance:
     - target: {fileID: 5884198831717486311, guid: 6a019b031b1ccf14ab8b24dac5607d54,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.22346705
+      value: 0.2234672
       objectReference: {fileID: 0}
     - target: {fileID: 5884198831717486311, guid: 6a019b031b1ccf14ab8b24dac5607d54,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.00000001795306
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5884198831717486311, guid: 6a019b031b1ccf14ab8b24dac5607d54,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.000000004116004
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6585237110143336194, guid: 6a019b031b1ccf14ab8b24dac5607d54,
         type: 3}
@@ -1708,7 +1708,7 @@ PrefabInstance:
     - target: {fileID: 6585237110143336194, guid: 6a019b031b1ccf14ab8b24dac5607d54,
         type: 3}
       propertyPath: m_FollowOffset.z
-      value: -7.875008
+      value: -7.875
       objectReference: {fileID: 0}
     - target: {fileID: 6869998269358113434, guid: 6a019b031b1ccf14ab8b24dac5607d54,
         type: 3}
@@ -1718,7 +1718,7 @@ PrefabInstance:
     - target: {fileID: 6869998269358113434, guid: 6a019b031b1ccf14ab8b24dac5607d54,
         type: 3}
       propertyPath: m_FollowOffset.z
-      value: -7.875008
+      value: -7.875
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
