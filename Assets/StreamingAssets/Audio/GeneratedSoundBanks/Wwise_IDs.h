@@ -13,9 +13,10 @@ namespace AK
 {
     namespace EVENTS
     {
+        static const AkUniqueID PLAY_AMBWIND = 1215763740U;
         static const AkUniqueID PLAY_ATTACK = 1519321238U;
         static const AkUniqueID PLAY_FALL = 2712047697U;
-        static const AkUniqueID PLAY_MXTITLETHEME = 1258886508U;
+        static const AkUniqueID PLAY_SCRIBBLE = 806548754U;
         static const AkUniqueID PLAY_SFXCYCLOPSDEATH = 2528304328U;
         static const AkUniqueID PLAY_SFXCYCLOPSENTERTOWER = 1488573387U;
         static const AkUniqueID PLAY_SFXENEMYSLIDE = 457896984U;
@@ -29,6 +30,7 @@ namespace AK
         static const AkUniqueID PLAY_SFXSPAWNERTILESPAWN = 2186760998U;
         static const AkUniqueID PLAY_SFXSPAWNGORGON = 3923810864U;
         static const AkUniqueID PLAY_SFXSPAWNMINOTAUR = 1519962459U;
+        static const AkUniqueID PLAY_SFXTILTINGTILES = 86987433U;
         static const AkUniqueID PLAY_SFXTOWERPLACE = 2094922267U;
         static const AkUniqueID PLAY_SFXTOWERSELL = 3932998018U;
         static const AkUniqueID PLAY_SFXTOWERSLIDE = 2225251985U;
@@ -40,9 +42,11 @@ namespace AK
         static const AkUniqueID PLAY_UIWAVECOUNTDOWN = 2754069948U;
         static const AkUniqueID PLAY_UIWAVEENDED = 2290267373U;
         static const AkUniqueID PLAY_UIWAVESTARTED = 3869623766U;
-        static const AkUniqueID PLAY_WIND = 1020223172U;
         static const AkUniqueID SETSTATE_ACTIVEWAVE = 3038968348U;
         static const AkUniqueID SETSTATE_BETWEENWAVES = 2339243207U;
+        static const AkUniqueID SETSTATE_GAMEOVER = 651661977U;
+        static const AkUniqueID SETSTATE_TITLESCREEN = 2698129709U;
+        static const AkUniqueID SETSTATE_YOUWIN = 2318400676U;
         static const AkUniqueID STARTGAME = 1521187885U;
         static const AkUniqueID STOP_SFXTOWERSLIDE = 2237095779U;
     } // namespace EVENTS
@@ -57,7 +61,11 @@ namespace AK
             {
                 static const AkUniqueID ACTIVEWAVE = 2447589688U;
                 static const AkUniqueID BETWEENWAVES = 2071144875U;
+                static const AkUniqueID GAMEOVER = 4158285989U;
+                static const AkUniqueID INTROTUTORIAL = 3820816959U;
                 static const AkUniqueID NONE = 748895195U;
+                static const AkUniqueID TITLESCREEN = 152105657U;
+                static const AkUniqueID VICTORY = 2716678721U;
             } // namespace STATE
         } // namespace MX_WAVES
 

@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="393239870" Type="User" Language="SFX" Hash="{47691AE3-052D-4B71-47EC-9A7F99AFB5D0}">
+		<SoundBank Id="393239870" Type="User" Language="SFX" Hash="{CA3E1255-5BAF-7F6F-BA5A-1927F7B6AD12}">
 			<ShortName>SFX</ShortName>
 			<Path>SFX.bnk</Path>
 			<Media>
@@ -87,7 +87,7 @@
 				</File>
 				<File Id="322104273" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>GMTK2024_SFX_enemyEntersTower_cyclops_-5_v1.wav</ShortName>
-					<CachePath>SFX/GMTK2024_SFX_enemyEntersTower_cyclops_-5_v1_805AE145.wem</CachePath>
+					<CachePath>SFX/GMTK2024_SFX_enemyEntersTower_cyclops_-5_v1_72264779.wem</CachePath>
 				</File>
 				<File Id="371977938" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>GMTK2024_SFX_enemyDies_minotaur_-14_v3.wav</ShortName>
@@ -383,6 +383,7 @@
 						</Custom>
 					</PluginRefs>
 				</Event>
+				<Event Id="86987433" Name="Play_SFXTiltingTiles" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="2094922267" Name="Play_SFXTowerPlace" DurationType="OneShot" DurationMin="0.65797204" DurationMax="0.71835303">
 					<MediaRefs>
 						<MediaRef Id="402597209"/>
@@ -936,5 +937,5 @@
 			</StateGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{FA7612D3-9FF8-D140-31F0-AB8B57E46BB7}</FileHash>
+	<FileHash>{3C5FDE6C-E187-9789-1D8B-B1CA3C7B00BE}</FileHash>
 </SoundBanksInfo>
