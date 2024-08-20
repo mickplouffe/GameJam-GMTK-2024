@@ -27,14 +27,14 @@ public class HexTileController : MonoBehaviour
     {
         enemyEventChannel.OnWaveStart += HandleTileFlashing;
         enemyEventChannel.OnWaveCompleted += HandleWaveCompleted;
-        gameManagerEventChannel.OnGameRestart += HandleWaveCompleted;
+        //gameManagerEventChannel.OnGameRestart += HandleWaveCompleted;
     }
 
     private void OnDisable()
     {
         enemyEventChannel.OnWaveStart -= HandleTileFlashing;
         enemyEventChannel.OnWaveCompleted -= HandleWaveCompleted;
-        gameManagerEventChannel.OnGameRestart -= HandleWaveCompleted;
+        //gameManagerEventChannel.OnGameRestart -= HandleWaveCompleted;
     }
 
     private void Start()

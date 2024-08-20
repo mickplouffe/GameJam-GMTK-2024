@@ -526,6 +526,11 @@ MonoBehaviour:
   enemyEventChannel: {fileID: 11400000, guid: 58c4683592b42784c91a64e98e2ccbc1, type: 2}
   uiEventChannel: {fileID: 11400000, guid: b6146f624481a48429195dc223974ca7, type: 2}
   menuEventChannel: {fileID: 11400000, guid: 8add3fae60bdfd540a41853d8b64ac69, type: 2}
+  scribbleSFX:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 426ffd93896ca774d913b69045ed64e5,
+      type: 2}
 --- !u!1 &259691092
 GameObject:
   m_ObjectHideFlags: 0
@@ -3172,9 +3177,8 @@ MonoBehaviour:
   waves:
   - {fileID: 11400000, guid: 9eeec4f7f3691e541b2dca6438223817, type: 2}
   - {fileID: 11400000, guid: b87bdd3b4026f9c42a69c2b9300bb364, type: 2}
+  - {fileID: 11400000, guid: 22a2c163478c53446b13d809c841cd6d, type: 2}
   - {fileID: 11400000, guid: 4c0336977c4b90649b6ab17e1707b90a, type: 2}
-  - {fileID: 11400000, guid: 4282ac3e590d73c488256347290fedc3, type: 2}
-  - {fileID: 11400000, guid: 8b863e34a7ec36f40823e8cbd1ebebd5, type: 2}
   - {fileID: 11400000, guid: 832582c9a67059144a2407227a8fdc75, type: 2}
   - {fileID: 11400000, guid: f66fec3812c786641ac42956d6248dca, type: 2}
   - {fileID: 11400000, guid: 1411fcfdf90f92e40a1313ffb648f9cd, type: 2}
@@ -3191,6 +3195,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 1336546ae3dc5824b9f8189e6498cf6e, type: 2}
   - {fileID: 11400000, guid: 831c6e2933ebc8f499a661d7318f1ded, type: 2}
   - {fileID: 11400000, guid: 78b34d78cc7b983478be2dda9fab5c39, type: 2}
+  - {fileID: 11400000, guid: 9e881cc5eedd13b42a4c3eebd3175dd2, type: 2}
+  - {fileID: 11400000, guid: 4f2920360e202b44ab82e662a9838eeb, type: 2}
   enemyEventChannel: {fileID: 11400000, guid: 58c4683592b42784c91a64e98e2ccbc1, type: 2}
   gameManagerEventChannel: {fileID: 11400000, guid: 6509d5e4e0033de4bbfb99b33ecd3255,
     type: 2}

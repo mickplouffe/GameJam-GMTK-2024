@@ -45,7 +45,7 @@ public class EnemyController : MonoBehaviour
     private void OnDisable()
     {
         _finishedSetup = false;
-        //gameManagerEventChannel.OnGameRestart -= HandleGameRestart;
+        gameManagerEventChannel.OnGameRestart -= HandleGameRestart;
 
     }
 

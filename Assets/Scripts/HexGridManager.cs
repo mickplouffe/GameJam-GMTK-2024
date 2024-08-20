@@ -8,6 +8,7 @@ public class HexGridManager : MonoBehaviour
 {
     
     public static HexGridManager Instance { get; private set; }
+    public bool IsDead { get; set; }
 
     private void Awake()
     {
@@ -121,16 +122,22 @@ public class HexGridManager : MonoBehaviour
         _currentMainUnitHealth -= damage;
         healthBar.localScale = new Vector3((float)_currentMainUnitHealth / mainUnityStartHealth, 1, 1);
         if (_currentMainUnitHealth > 0)
-        {
             return;
-        }
 
-        _currentMainUnitHealth = mainUnityStartHealth;
+        if(IsDead)
+            return;
+        
+        IsDead = true;
         // TODO: Play tower animation
         _animator.SetBool("IsDead", true);
         
+        Invoke("SetIsDeadTrue", 3.5f);
+                
+    }
+
+    private void SetIsDeadTrue()
+    {
         gameManagerEventChannel.RaiseGameOver();
-        
     }
 
     void GenerateInitialGrid()
@@ -161,8 +168,9 @@ public class HexGridManager : MonoBehaviour
         _animator.SetBool("IsDead", false);
 
         HighlightTrueEdgeTiles();
-        
-        
+        _currentMainUnitHealth = mainUnityStartHealth;
+
+
     }
     
     public void GenerateHexGrid(int width, int height, GridShape gridShape)

@@ -42,7 +42,7 @@ public class EnemySpawner : MonoBehaviourSingleton<EnemySpawner>
     {
         enemyEventChannel.OnEnemyKilled -= HandleEnemyDestroyed;
         enemyEventChannel.OnStartNextWave -= () => StartCoroutine(StartNextWave());
-        //gameManagerEventChannel.OnGameRestart -= HandleGameRestart;
+        gameManagerEventChannel.OnGameRestart -= HandleGameRestart;
     }
 
     private void Awake()
