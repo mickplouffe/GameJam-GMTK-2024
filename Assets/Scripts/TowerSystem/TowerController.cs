@@ -224,7 +224,7 @@ private void HandleTiltChanged(float tiltAngle, Vector3 direction)
         return;
     if (tiltAngle > tiltAllowanceThreshold)
     {
-        towerSlideSFX.Post(gameObject);
+        // towerSlideSFX.Post(gameObject);
         if(Tile != null)
             Tile.DetachTower();
         StartSliding(direction);
@@ -244,7 +244,7 @@ private void StartSliding(Vector3 direction)
 
 private void StopSliding()
 {
-    towerSlideStopSFX.Post(gameObject);
+    // towerSlideStopSFX.Post(gameObject);
     isSliding = false;
     slipMagnitude = 0f;
     tiltDirection = Vector3.zero;
