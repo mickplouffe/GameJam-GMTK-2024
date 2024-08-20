@@ -15,6 +15,7 @@ namespace AK
     {
         static const AkUniqueID PLAY_AMBWIND = 1215763740U;
         static const AkUniqueID PLAY_ATTACK = 1519321238U;
+        static const AkUniqueID PLAY_CENTRALTOWERDESTROYED = 1695342125U;
         static const AkUniqueID PLAY_FALL = 2712047697U;
         static const AkUniqueID PLAY_SCRIBBLE = 806548754U;
         static const AkUniqueID PLAY_SFXCYCLOPSDEATH = 2528304328U;

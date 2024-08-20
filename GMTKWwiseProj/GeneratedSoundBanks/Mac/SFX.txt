@@ -8,6 +8,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	1519321238	Play_Attack			\SFX\Tower\Play_Attack	
 	1519962459	Play_SFXSpawnMinotaur			\SFX\Enemies\Minotaur\Play_SFXSpawnMinotaur	
 	1624231291	Play_SFXPlaceRock			\SFX\SFXEvents_Otter\Rock\Play_SFXPlaceRock	
+	1695342125	Play_centralTowerDestroyed			\SFX\SFXEvents_Otter\Tower\Play_centralTowerDestroyed	
 	1804201887	Play_SFXGroundTileSpawn			\SFX\SFXEvents_Otter\Tiles\Play_SFXGroundTileSpawn	
 	1886723530	Play_SFXTowerUpgrade			\SFX\SFXEvents_Otter\Tower\Play_SFXTowerUpgrade	
 	2094922267	Play_SFXTowerPlace			\SFX\SFXEvents_Otter\Tower\Play_SFXTowerPlace	
@@ -44,6 +45,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	285911206	GMTK2024_SFX_enemySpawn_minotaur_-6_v3	D:\UnityProjects\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Mac\SFX\GMTK2024_SFX_enemySpawn_minotaur_-6_v3_14E21738.wem		\Actor-Mixer Hierarchy\SFX\SFX\Enemy\Minotaur\Spawn\GMTK2024_SFX_enemySpawn_minotaur_-6_v3		8710
 	315686258	Wilhelm	D:\UnityProjects\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Mac\SFX\VOXScrm_Wilhelm scream (ID 0477)_BSB_14E21738.wem		\Actor-Mixer Hierarchy\SFX\SFX\Fall\Wilhelm		6939
 	322104273	GMTK2024_SFX_enemyEntersTower_cyclops_-5_v1	D:\UnityProjects\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Mac\SFX\GMTK2024_SFX_enemyEntersTower_cyclops_-5_v1_72264779.wem		\Actor-Mixer Hierarchy\SFX\SFX\Enemy\Cyclops\EnterTower\GMTK2024_SFX_enemyEntersTower_cyclops_-5_v1		28648
+	332364384	centralTowerDestroyed	D:\UnityProjects\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Mac\SFX\GMTK2024_SFX_centralTowerDestroyed_-4dB_v02_14E21738.wem		\Actor-Mixer Hierarchy\SFX\SFX\SFX_Otter\Tower\centralTowerDestroyed		51737
 	371977938	GMTK2024_SFX_enemyDies_minotaur_-14_v3	D:\UnityProjects\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Mac\SFX\GMTK2024_SFX_enemyDies_minotaur_-14_v3_14E21738.wem		\Actor-Mixer Hierarchy\SFX\SFX\Enemy\Minotaur\Death\GMTK2024_SFX_enemyDies_minotaur_-14_v3		14760
 	387002697	GMTK2024_SFX_enemySpawn_gorgon_-7_v2	D:\UnityProjects\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Mac\SFX\GMTK2024_SFX_enemySpawn_gorgon_-7_v2_14E21738.wem		\Actor-Mixer Hierarchy\SFX\SFX\Enemy\Gorgon\Spawn\GMTK2024_SFX_enemySpawn_gorgon_-7_v2		13562
 	393633432	GMTK2024_SFX_placeRock03_-7dB_v01	D:\UnityProjects\GameJam-GMTK-2024\GMTKWwiseProj\.cache\Mac\SFX\GMTK2024_SFX_placeRock03_-7dB_v01_14E21738.wem		\Actor-Mixer Hierarchy\SFX\SFX\SFX_Otter\Rock\placeRock\GMTK2024_SFX_placeRock03_-7dB_v01		5494

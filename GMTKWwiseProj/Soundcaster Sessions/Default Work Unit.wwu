@@ -89,7 +89,7 @@
 						</RTPCValue>
 					</RTPCValueList>
 					<CurrentStateList ShowAll="true">
-						<CurrentStateRef Name="BetweenWaves" ID="{9360CF56-12BF-46CC-9831-C467DEBF627D}"/>
+						<CurrentStateRef Name="GameOver" ID="{5DB0CA83-D754-42CC-9473-A75EC2C87D82}"/>
 					</CurrentStateList>
 					<CurrentSwitchList ShowAll="true"/>
 				</SoundcasterSession>
@@ -287,7 +287,7 @@
 						</RTPCValue>
 					</RTPCValueList>
 					<CurrentStateList ShowAll="true">
-						<CurrentStateRef Name="BetweenWaves" ID="{9360CF56-12BF-46CC-9831-C467DEBF627D}"/>
+						<CurrentStateRef Name="GameOver" ID="{5DB0CA83-D754-42CC-9473-A75EC2C87D82}"/>
 					</CurrentStateList>
 					<CurrentSwitchList ShowAll="true"/>
 				</SoundcasterSession>

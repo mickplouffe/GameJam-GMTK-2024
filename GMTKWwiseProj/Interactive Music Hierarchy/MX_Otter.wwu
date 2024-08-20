@@ -684,7 +684,7 @@
 													</PropertyList>
 													<ReferenceList>
 														<Reference Name="Segment">
-															<ObjectRef Name="Title Screen 2 loop v1" ID="{82156925-0AAB-4D54-A56D-52B652AD3761}" WorkUnitID="{FCCA7E9F-D0AC-482C-A731-FDE3D338A535}"/>
+															<ObjectRef Name="Title Screen 2 loop v2" ID="{82156925-0AAB-4D54-A56D-52B652AD3761}" WorkUnitID="{FCCA7E9F-D0AC-482C-A731-FDE3D338A535}"/>
 														</Reference>
 													</ReferenceList>
 												</MusicPlaylistItem>
@@ -797,7 +797,7 @@
 										</ObjectList>
 									</ObjectLists>
 								</MusicSegment>
-								<MusicSegment Name="Title Screen 2 loop v1" ID="{82156925-0AAB-4D54-A56D-52B652AD3761}" ShortID="441099427">
+								<MusicSegment Name="Title Screen 2 loop v2" ID="{82156925-0AAB-4D54-A56D-52B652AD3761}" ShortID="441099427">
 									<PropertyList>
 										<Property Name="EndPosition" Type="Real64" Value="48163.36658239"/>
 										<Property Name="OverrideClockSettings" Type="bool" Value="True"/>
