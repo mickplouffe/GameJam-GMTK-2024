@@ -148,21 +148,15 @@ MonoBehaviour:
   DialougeIsActive: 1
   CurrentTextActive: 0
   dialogue1:
-  - '<sp:20>We got new arrivals. <p:long>Seems like some Cyclops are trying to join
-    the party. '
-  - "<sp:20>We\u2019re going to need more damage to deal with those. <p:short>Balancing
-    their extra weight is going to be tricky too.\r\n"
-  - '<sp:20>You meant Cyclopes. <p:long>Cyclops is singular, the plural form is Cyclopes.
-
-'
-  - "<sp:20>I\u2026 <p:long>Sure. <p:short>Let\u2019s just hurry up and turn those
-    Cyclopes to Cyclops."
-  - "<sp:20>So you\u2019re saying we should kill all but one Cyclop?"
-  - '<sp:10><anim:shake>JUST MAKE THE ONE EYED THINGS DISAPPEAR! </size=150%>MORE
-    BOOM BOOM, MORE BALANCE! OK?!</size></anim>
-
-'
-  WhichCharacter: 000001000100
+  - "<sp:20>We got new arrivals. <p:long>Looks like\u2026 Gorgons?"
+  - "<sp:10> Ugh\u2026 <sp:20><p:long>I hate Gorgons! <p:long>They\u2019re so quick
+    and slithery and they always maintain eye contact way too long. <p:long>It\u2019s
+    super <anim:wave>creepy</anim>."
+  - <sp:20>Well, if it makes you feel better, <p:short>they seem to just be the heads
+    of Gorgons.
+  - "<sp:20>That\u2019s the <size=150%><anim:shake>worst part</anim></size> of the
+    Gorgon!"
+  WhichCharacter: 00010001
   ProfilePicture1: {fileID: 8724840762183645437}
   ProfilePicture2: {fileID: 3329998685100159166}
   NameText: {fileID: 174238079920764126}

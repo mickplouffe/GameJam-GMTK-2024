@@ -864,20 +864,17 @@ MonoBehaviour:
   DialougeIsActive: 1
   CurrentTextActive: 0
   dialogue1:
-  - '<sp:20>So I was thinking. <p:long>The next monster will probably be blind, <p:short>right?
+  - '<sp:20>So I was thinking. <p:long>The next monster will probably be super tiny,
+    <p:short>right?
 
 '
   - <sp:20>How do you figure?
-  - '<sp:20>Well, <p:short>first we had gorgons- <p:short>two human eyes and like
-    a million snake eyes. <p:long>Next were the Cyclopes- <p:short>one single human
-    eye.
-
-'
-  - "<sp:20>So I\u2019m thinking the next monster will have no eyes. <p:short>So\u2026
-    <p:long>blind. <p:long>right? <p:long>Should be super easy. Barely an inconvenience.
-    \r\n"
+  - <sp:20>Well, <p:short>first we had Cyclops- <p:short>big heavy giants. <p:long>Next
+    were the Gorgons- <p:short>Small, light heads.
+  - "<sp:20>So I\u2019m thinking the next monster will be even smaller. <p:short>So\u2026
+    <p:long>super tiny. <p:long>right? <p:long>Should be super easy. Barely an inconvenience."
   - "<sp:20>I\u2019m seeing incoming- <p:long>super big, <p:short>super strong, <p:short>super
-    heavy minotaurs. \r\n"
+    heavy minotaur."
   - '<sp:20><anim:shake><size=150%>Arh#%ea.</size></anim>
 
 '
