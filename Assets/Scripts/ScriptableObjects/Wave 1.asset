@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Wave 1
   m_EditorClassIdentifier: 
   enemyPrefabs:
-  - {fileID: 289255520839145120, guid: 72655ed27965dce42b37bdcb009fa1d6, type: 3}
-  - {fileID: 3054519051460902192, guid: 31e95c061f2188d4ab3899d362aca032, type: 3}
-  - {fileID: 772299794459384698, guid: 4044269c387760b4a8eb65feb0d30535, type: 3}
+  - {fileID: 5732001267249408293, guid: 38f0607eaadd7174e90100bcf8ab96c0, type: 3}
+  - {fileID: 4189922934805189707, guid: 328070ef90857fe42887b72ba385ded3, type: 3}
+  - {fileID: 6104858332284479873, guid: 166329cf8e72afb448ebfe5b97ac2b2f, type: 3}
   enemyCounts: 050000000500000005000000
   spawnInterval: 2
   waveDelay: 20

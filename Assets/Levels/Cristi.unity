@@ -2487,12 +2487,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPools:
-  - prefab: {fileID: 3054519051460902192, guid: 31e95c061f2188d4ab3899d362aca032,
+  - prefab: {fileID: 4189922934805189707, guid: 328070ef90857fe42887b72ba385ded3,
       type: 3}
     initialPoolSize: 10
-  - prefab: {fileID: 289255520839145120, guid: 72655ed27965dce42b37bdcb009fa1d6, type: 3}
+  - prefab: {fileID: 5732001267249408293, guid: 38f0607eaadd7174e90100bcf8ab96c0,
+      type: 3}
     initialPoolSize: 10
-  - prefab: {fileID: 772299794459384698, guid: 4044269c387760b4a8eb65feb0d30535, type: 3}
+  - prefab: {fileID: 6104858332284479873, guid: 166329cf8e72afb448ebfe5b97ac2b2f,
+      type: 3}
     initialPoolSize: 10
 --- !u!4 &320261903
 Transform:
@@ -8498,6 +8500,10 @@ MonoBehaviour:
   textFlashColor: {r: 1, g: 0.19339621, b: 0.19339621, a: 1}
   textFlashSpeed: 0.2
   _flashDuration: 1
+  waveCountdown:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
 --- !u!114 &1233445886
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12366,6 +12372,26 @@ MonoBehaviour:
   enemyEventChannel: {fileID: 11400000, guid: 58c4683592b42784c91a64e98e2ccbc1, type: 2}
   gameManagerEventChannel: {fileID: 11400000, guid: 6509d5e4e0033de4bbfb99b33ecd3255,
     type: 2}
+  waveStartedSFX:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 9c84357d30f9b5e478107b502c1c6c69,
+      type: 2}
+  waveEndedSFX:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 5b852fb29d1f6734fb387e49dbfd7877,
+      type: 2}
+  waveStartEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 6696dee50682b8f429087f0a3c6b2303,
+      type: 2}
+  betweenWavesEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 25acac786869eb4458fdd162fb3fb030,
+      type: 2}
 --- !u!4 &1807678569
 Transform:
   m_ObjectHideFlags: 0

@@ -50,7 +50,7 @@ public class EnemyController : MonoBehaviour
     private void Awake()
     {
         _currentHealth = startHealth;
-        _colliderBounds = GetComponent<Collider2D>().bounds;
+        _colliderBounds = GetComponent<Collider>().bounds;
     }
 
     private void HandleGameRestart()
