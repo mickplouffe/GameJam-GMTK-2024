@@ -260,6 +260,14 @@
 							<Position X="4" Y="2"/>
 						</Module>
 						<Module>
+							<ObjectRef Name="Play_Scribble" ID="{99A5843D-2946-4197-90BA-38D980065A75}" WorkUnitID="{0161E5E5-78F8-4E54-949B-0AC218A10565}"/>
+							<Position X="4" Y="3"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Stop_All" ID="{7CD7C746-2107-4F8E-9FCE-C51C4DBEE417}" WorkUnitID="{287E4018-43D8-4442-BFA5-31398B8E3AD6}"/>
+							<Position X="4" Y="4"/>
+						</Module>
+						<Module>
 							<ObjectRef Name="Play_SFXGroundTileSpawn" ID="{E869B14E-1621-4ED1-89AC-65DE7A7EC898}" WorkUnitID="{0A7A0CEB-234F-4544-9DAA-DD6728515385}"/>
 							<Position X="5" Y="0"/>
 						</Module>
@@ -268,7 +276,7 @@
 							<Position X="5" Y="1"/>
 						</Module>
 						<Module>
-							<ObjectRef Name="Stop_All" ID="{7CD7C746-2107-4F8E-9FCE-C51C4DBEE417}" WorkUnitID="{287E4018-43D8-4442-BFA5-31398B8E3AD6}"/>
+							<ObjectRef Name="Play_centralTowerDestroyed" ID="{4DAD05BF-98D9-431C-81D1-E491E656DE6C}" WorkUnitID="{0A7A0CEB-234F-4544-9DAA-DD6728515385}"/>
 							<Position X="5" Y="2"/>
 						</Module>
 					</ModuleList>

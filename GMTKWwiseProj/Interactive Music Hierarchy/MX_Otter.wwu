@@ -812,14 +812,14 @@
 										</Reference>
 									</ReferenceList>
 									<ChildrenList>
-										<MusicTrack Name="Title Screen 2 loop v1" ID="{DBCAB913-F776-4CC0-8544-F3ED3B25AD39}" ShortID="842048721">
+										<MusicTrack Name="Title Screen 2 loop v2" ID="{DF851310-F8C2-4F6D-AC61-A5FD85AB85A6}" ShortID="765794555">
 											<ReferenceList>
 												<Reference Name="OutputBus">
 													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{7F62BABC-0C6C-4DAD-ACF1-E77615B460FB}"/>
 												</Reference>
 												<Reference Name="TransitionRoot">
 													<Custom>
-														<MusicTransition Name="Root" ID="{5819984F-BBE2-48C0-98EE-ED6E78C49CF9}">
+														<MusicTransition Name="Root" ID="{CE935A68-1053-41E8-90E3-F768A9A1FE6C}">
 															<PropertyList>
 																<Property Name="IsFolder" Type="bool" Value="True"/>
 															</PropertyList>
@@ -829,7 +829,7 @@
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<AudioFileSource Name="Title Screen 2 loop v2" ID="{B965D842-6ADE-4271-B12B-5FB6A6D12331}">
+												<AudioFileSource Name="Title Screen 2 loop v2" ID="{ED67FC8C-F791-4BB3-BE57-5A05AFDCB1B0}">
 													<Language>SFX</Language>
 													<AudioFile>Title Screen 2 loop v2.wav</AudioFile>
 													<MediaIDList>
@@ -841,18 +841,18 @@
 												<ObjectList Name="Sequences">
 													<Reference>
 														<Local>
-															<MusicTrackSequence Name="" ID="{C2B038AB-1A23-4EDF-8097-162B2888FD2B}">
+															<MusicTrackSequence Name="" ID="{F33F1675-6F0E-4149-A83F-79197828A90D}">
 																<ObjectLists>
 																	<ObjectList Name="Clips">
 																		<Reference>
 																			<Local>
-																				<MusicClip Name="Title Screen 2 loop v2" ID="{717003A5-0C66-44D0-B3FA-38885C7FBA68}">
+																				<MusicClip Name="Title Screen 2 loop v2" ID="{5A360817-F517-4B0B-B677-1FD3D35BDF5D}">
 																					<PropertyList>
 																						<Property Name="EndTrimOffset" Type="Real64" Value="46363.6458333333"/>
 																						<Property Name="FadeInMode" Type="int16" Value="0"/>
 																						<Property Name="FadeOutMode" Type="int16" Value="0"/>
 																					</PropertyList>
-																					<AudioSourceRef Name="Title Screen 2 loop v2" ID="{B965D842-6ADE-4271-B12B-5FB6A6D12331}"/>
+																					<AudioSourceRef Name="Title Screen 2 loop v2" ID="{ED67FC8C-F791-4BB3-BE57-5A05AFDCB1B0}"/>
 																				</MusicClip>
 																			</Local>
 																		</Reference>

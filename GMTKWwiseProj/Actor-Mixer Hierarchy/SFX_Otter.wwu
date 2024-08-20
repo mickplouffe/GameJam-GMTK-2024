@@ -753,6 +753,35 @@
 								</Sound>
 							</ChildrenList>
 						</RandomSequenceContainer>
+						<Sound Name="centralTowerDestroyed" ID="{D767AB52-CCA5-45F9-A17D-6D151C90BD05}" ShortID="634192622">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{7F62BABC-0C6C-4DAD-ACF1-E77615B460FB}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="GMTK2024_SFX_centralTowerDestroyed_-4dB_v01" ID="{3E88A613-0987-4BF0-BD41-42F9CE0A7B7D}">
+									<Language>SFX</Language>
+									<AudioFile>GMTK2024_SFX_centralTowerDestroyed_-4dB_v01.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="206350956"/>
+									</MediaIDList>
+								</AudioFileSource>
+								<AudioFileSource Name="GMTK2024_SFX_centralTowerDestroyed_-4dB_v02" ID="{F157A126-D077-4547-AAD2-CC66489B4908}">
+									<Language>SFX</Language>
+									<AudioFile>GMTK2024_SFX_centralTowerDestroyed_-4dB_v02.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="332364384"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="GMTK2024_SFX_centralTowerDestroyed_-4dB_v02" ID="{F157A126-D077-4547-AAD2-CC66489B4908}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
 					</ChildrenList>
 				</ActorMixer>
 				<ActorMixer Name="Tiles" ID="{1A49BA65-1E2B-43D4-AE16-22F3540E8FD7}" ShortID="576874576">
