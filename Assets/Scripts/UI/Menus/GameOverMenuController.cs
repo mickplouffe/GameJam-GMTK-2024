@@ -49,7 +49,7 @@ public class GameOverMenuController : BaseMenu
         _menuEventChannel.OnBackButtonPressed -= HandleBackButtonPressed;
 
         gameManagerEventChannel.OnGameOver -= HandleGameOver;
-        gameManagerEventChannel.OnGameRestart -= HandleGameRestart;
+        //gameManagerEventChannel.OnGameRestart -= HandleGameRestart;
     }
     
     public void HandleGameOver()

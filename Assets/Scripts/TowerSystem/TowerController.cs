@@ -90,7 +90,7 @@ public class TowerController : MonoBehaviour
     private void OnDisable()
     {
         tiltEventChannel.OnTiltChanged -= HandleTiltChanged;
-        //gameManagerEventChannel.OnGameRestart -= HandleGameRestart;
+        gameManagerEventChannel.OnGameRestart -= HandleGameRestart;
 
     }
 

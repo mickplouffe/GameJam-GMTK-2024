@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviourSingleton<GameManager>
     [SerializeField] private UIEventChannel uiEventChannel;
     [SerializeField] private MenuEventChannel menuEventChannel;
 
+    public AK.Wwise.Event scribbleSFX;
+
     public bool IsGamePaused { get; set; }
     public bool IsGameOver { get; set; }
     public bool IsInDialogue { get; set; }
@@ -82,13 +84,20 @@ public class GameManager : MonoBehaviourSingleton<GameManager>
     
     private void HandleGameOver()
     {
-        //Time.timeScale = 0.0f;
+        Time.timeScale = 0.0f;
         IsGameOver = true;
+      
     }
 
     private void HandleGameRestart()
     {
-        Scene scene = SceneManager.GetActiveScene();
-        SceneManager.LoadScene(scene.name);
+        uiEventChannel.RaiseActivateBuildMenu(false);
+        IsGamePaused = false;
+        HandleGamePause();
+        IsGameOver = false;
+        //
+        // Scene scene = SceneManager.GetActiveScene();
+        // SceneManager.LoadScene(scene.name);
+        StartNextCycle();
     }
 }
