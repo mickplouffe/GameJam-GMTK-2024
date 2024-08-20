@@ -10,6 +10,8 @@
 						<State Name="BetweenWaves" ID="{9360CF56-12BF-46CC-9831-C467DEBF627D}"/>
 						<State Name="TitleScreen" ID="{EACF423B-AA19-41EF-B90C-563EF16BE6DE}"/>
 						<State Name="IntroTutorial" ID="{621C89F3-0A8C-4343-96BF-63E52B76C5A3}"/>
+						<State Name="Victory" ID="{7304F478-0363-46DA-AEB9-A93F5CD05C99}"/>
+						<State Name="GameOver" ID="{5DB0CA83-D754-42CC-9473-A75EC2C87D82}"/>
 					</ChildrenList>
 				</StateGroup>
 			</ChildrenList>

@@ -61,6 +61,14 @@
 							<ObjectRef Name="Play_AMBWind" ID="{96C6EE84-923E-41FD-8FD2-52F025B6EA11}" WorkUnitID="{5B7760E9-4ED5-4FFF-B405-DA13419EEECE}"/>
 							<Position X="3" Y="1"/>
 						</Module>
+						<Module>
+							<ObjectRef Name="SetState_YouWin" ID="{8B27E28D-7203-4BD4-BEFB-28BA3E0BF88D}" WorkUnitID="{0BD70790-4A2A-42B0-81A1-0D3B3BF71E15}"/>
+							<Position X="3" Y="2"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="SetState_GameOver" ID="{F57E0CDC-E460-4625-A4C4-462CF6C2B0F1}" WorkUnitID="{0BD70790-4A2A-42B0-81A1-0D3B3BF71E15}"/>
+							<Position X="3" Y="3"/>
+						</Module>
 					</ModuleList>
 					<RTPCValueList ShowAll="true">
 						<RTPCValue>
@@ -93,7 +101,7 @@
 						</RTPCValue>
 					</RTPCValueList>
 					<CurrentStateList ShowAll="true">
-						<CurrentStateRef Name="ActiveWave" ID="{5F8E6FC5-07CA-486A-9592-5DD2E231C2E2}"/>
+						<CurrentStateRef Name="TitleScreen" ID="{EACF423B-AA19-41EF-B90C-563EF16BE6DE}"/>
 					</CurrentStateList>
 					<CurrentSwitchList ShowAll="true"/>
 				</SoundcasterSession>
