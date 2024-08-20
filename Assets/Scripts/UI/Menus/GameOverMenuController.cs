@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
 public class GameOverMenuController : BaseMenu
@@ -66,6 +67,7 @@ public class GameOverMenuController : BaseMenu
         uiClickAudioEvent.Post(gameObject);
         gameManagerEventChannel.RaiseGameRestart();
         _gameOverMenuContainer.visible = false;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     private void HandleOptionsButtonPressed()
