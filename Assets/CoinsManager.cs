@@ -21,13 +21,13 @@ public class CoinsManager : MonoBehaviourSingleton<CoinsManager>
     private void OnEnable()
     {
         coinsEventChannel.OnModifyCoins += HandleModifyCoins;
-        gameManagerEventChannel.OnGameRestart += () => HandleModifyCoins(startCoins);
+        //gameManagerEventChannel.OnGameRestart += () => HandleModifyCoins(startCoins);
     }
 
     private void OnDisable()
     {
         coinsEventChannel.OnModifyCoins -= HandleModifyCoins;
-        gameManagerEventChannel.OnGameRestart -= () => HandleModifyCoins(startCoins);
+        //gameManagerEventChannel.OnGameRestart -= () => HandleModifyCoins(startCoins);
     }
 
     public void Start()

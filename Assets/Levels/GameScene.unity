@@ -526,6 +526,11 @@ MonoBehaviour:
   enemyEventChannel: {fileID: 11400000, guid: 58c4683592b42784c91a64e98e2ccbc1, type: 2}
   uiEventChannel: {fileID: 11400000, guid: b6146f624481a48429195dc223974ca7, type: 2}
   menuEventChannel: {fileID: 11400000, guid: 8add3fae60bdfd540a41853d8b64ac69, type: 2}
+  scribbleSFX:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 426ffd93896ca774d913b69045ed64e5,
+      type: 2}
 --- !u!1 &259691092
 GameObject:
   m_ObjectHideFlags: 0

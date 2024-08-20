@@ -11,11 +11,20 @@ public class DialogueVertexAnimator {
     private readonly TMP_Text textBox;
     private readonly float textAnimationScale;
     private readonly AudioSourceGroup audioSourceGroup;
+
+    private bool isScribbling;
     public DialogueVertexAnimator(TMP_Text _textBox, AudioSourceGroup _audioSourceGroup) {
         textBox = _textBox;
         audioSourceGroup = _audioSourceGroup;
         textAnimationScale = textBox.fontSize;
     }
+    
+    void ScribbleCallback(object in_cookie, AkCallbackType in_type, object in_info)
+    {
+        if(isScribbling)
+            GameManager.Instance.scribbleSFX.Post(GameManager.Instance.gameObject, (uint)AkCallbackType.AK_EndOfEvent, ScribbleCallback);
+    }
+
 
     private static readonly Color32 clear = new Color32(0, 0, 0, 0);
     private const float CHAR_ANIM_TIME = 0.07f;
@@ -59,6 +68,7 @@ public class DialogueVertexAnimator {
                     charAnimStartTimes[i] = Time.unscaledTime;
                 }
                 visableCharacterIndex = charCount;
+                isScribbling = false;
                 FinishAnimating(onFinish);
             }
             if (ShouldShowNextCharacter(secondsPerCharacter, timeOfLastCharacter)) {
@@ -176,6 +186,7 @@ public class DialogueVertexAnimator {
             timeUntilNextDialogueSound = UnityEngine.Random.Range(0.02f, 0.08f);
             lastDialogueSound = Time.unscaledTime;
             audioSourceGroup.PlayFromNextSource(voice_sound); //Use Multiple Audio Sources to allow playing multiple sounds at once
+            GameManager.Instance.scribbleSFX.Post(GameManager.Instance.gameObject);
         }
     }
 
