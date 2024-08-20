@@ -659,8 +659,8 @@ MonoBehaviour:
   dialogue1:
   - "<sp:20>That\u2019s the last of those. <p:long>Not too bad, Ani. <p:short>And
     we even got some more funds! "
-  - "Ani: <sp:20>Is it just me or did the island suddenly stop tilting? <p:short>Wait-
-    <p:long>\xC9la!! <p:short>An island expansion?! <p:long><size=150%>Now?!</size> "
+  - "<sp:20>Is it just me or did the island suddenly tilt more? <p:short>Wait- <p:long>\xC9la!!
+    <p:short>An island expansion?! <p:long><size=150%>Now?!</size>"
   - <sp:20>I guess Gaia has been <anim:wave>hitting the kykeon a bit too much</anim>.
     <p:short>Oh, and look- <p:long>More visitors.
   - "<sp:20>We\u2019re going to need to add some more <size=150%><anim:shake>firepower</anim></size>
