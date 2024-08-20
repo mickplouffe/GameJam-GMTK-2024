@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -17,7 +18,6 @@ public class TowerManager : MonoBehaviourSingleton<TowerManager>
     [SerializeField] private TowerController activeTowerSelected;
     [SerializeField] private LayerMask tilesLayerMask;
     [SerializeField] private LayerMask towersLayerMask;
-    [SerializeField] private float yOffset = 0.5f;
     [SerializeField] private float sellCostPercentage = 0.1f;
 
     [SerializeField] private UIEventChannel uiEventChannel;
@@ -54,6 +54,8 @@ public class TowerManager : MonoBehaviourSingleton<TowerManager>
     // Update is called once per frame
     void Update()
     {
+        if (GameManager.Instance.IsInDialogue)
+            return;
         
         if (Input.GetMouseButtonDown(1) && _placementMode)
         {
@@ -106,6 +108,8 @@ public class TowerManager : MonoBehaviourSingleton<TowerManager>
                 SnapTowerToTile(hit.point) && 
                 CoinsManager.Instance.CanBuy(selectedTower.GetComponent<TowerController>().instanceData.currentCost))
             {
+                selectedTower.GetComponent<TowerController>().towerPlaceSFX.Post(selectedTower.gameObject);
+                
                 weightEventChannel.RaiseWeightAdded( selectedTower.GetComponent<TowerController>().instanceData.weight, 
                     selectedTower.GetComponent<TowerController>().Tile);
                 
@@ -143,6 +147,8 @@ public class TowerManager : MonoBehaviourSingleton<TowerManager>
 
     public void HandleBuildTower(int towerType)
     {
+        Debug.Log("TEST");
+
         if(selectedTower)
             Destroy(selectedTower.gameObject);
 
@@ -163,7 +169,7 @@ public class TowerManager : MonoBehaviourSingleton<TowerManager>
     public void HandleUpgrade(int upgradeType)
     {
         UpgradeTowerAction upgradeAction = null;
-
+    
         switch (upgradeType)
         {
             case 0: // Upgrade Damage
@@ -184,8 +190,20 @@ public class TowerManager : MonoBehaviourSingleton<TowerManager>
             !activeTowerSelected.CanUpgrade(upgradeAction))
             return;
 
-        activeTowerSelected.UpgradeTower(upgradeAction);
+        if (activeTowerSelected.GetComponent<TowerController>().towerData.upgradePrefabs.Length < 0 || 
+            upgradeType >= activeTowerSelected.GetComponent<TowerController>().towerData.upgradePrefabs.Length)
+            return;
+        
+        GameObject upgradePrefab = activeTowerSelected.GetComponent<TowerController>().towerData.upgradePrefabs[upgradeType];
+        GameObject upgradePrefabInstance = Instantiate(upgradePrefab, activeTowerSelected.transform.position,
+            activeTowerSelected.transform.rotation, activeTowerSelected.transform.parent);
 
+        upgradePrefabInstance.GetComponent<TowerController>().instanceData = activeTowerSelected.instanceData;
+
+        DestroyActiveTower();
+
+        activeTowerSelected = upgradePrefabInstance.GetComponent<TowerController>();
+        activeTowerSelected.UpgradeTower(upgradeAction);
         coinsEventChannel.RaiseModifyCoins(-upgradeAction.costModifier);
     }
 
@@ -193,15 +211,28 @@ public class TowerManager : MonoBehaviourSingleton<TowerManager>
     {
         if (!activeTowerSelected)
             return;
+
+        activeTowerSelected.towerSellSFX.Post(activeTowerSelected.gameObject);
         
         coinsEventChannel.RaiseModifyCoins(Mathf.CeilToInt(activeTowerSelected.instanceData.currentCost * sellCostPercentage));
         uiEventChannel.RaiseActivateBuildMenu(true);
+
+        DestroyActiveTower();
+    }
+
+    private void DestroyActiveTower()
+    {
+        if (!activeTowerSelected)
+            return;
+        
+        activeTowerSelected.Tile.DetachTower();
         
         // Unregister selected tower
         weightEventChannel.RaiseWeightRemoved(activeTowerSelected.transform.GetComponent<TowerController>().instanceData.weight, 
             activeTowerSelected.transform.GetComponent<TowerController>().Tile);
         
         UnregisterTower(activeTowerSelected.transform);
+        
         // Destroy selected tower
         Destroy(activeTowerSelected.gameObject);
     }
@@ -220,11 +251,12 @@ public class TowerManager : MonoBehaviourSingleton<TowerManager>
 
         if (selectedTower.GetComponent<TowerController>().Tile == null)
             return false;
-
+        
         if (!preview)
         {
             // Check if a tower already on the tile
-            if (!selectedTower.GetComponent<TowerController>().Tile.HasTower())
+            if (!selectedTower.GetComponent<TowerController>().Tile.HasTower() && 
+                !selectedTower.GetComponent<TowerController>().Tile.TileObject.GetComponent<HexTileController>().IsSpawnerTile)
                 selectedTower.GetComponent<TowerController>().Tile.TowerObject = selectedTower.gameObject;
             else
             {
@@ -235,12 +267,12 @@ public class TowerManager : MonoBehaviourSingleton<TowerManager>
         selectedTower.transform.position =
             selectedTower.GetComponent<TowerController>().Tile.TileObject.transform.position +
             selectedTower.GetComponent<TowerController>().Tile.TileObject.transform.up *
-            (towerBounds.size.y + yOffset) * 0.5f;
+            selectedTower.GetComponent<TowerController>().towerData.yOffset;
         
         selectedTower.transform.rotation =
             selectedTower.GetComponent<TowerController>().Tile.TileObject.transform.rotation;
         
-        selectedTower.transform.parent = HexGridManager.Instance.transform;
+        selectedTower.transform.parent = HexGridManager.Instance.hexGridTilt.transform;
 
         return true;
     }
@@ -252,14 +284,14 @@ public class TowerManager : MonoBehaviourSingleton<TowerManager>
         tower.position =
             tower.GetComponent<TowerController>().Tile.TileObject.transform.position +
             tower.GetComponent<TowerController>().Tile.TileObject.transform.up *
-            (towerBounds.size.y + yOffset) * 0.5f;
+            selectedTower.GetComponent<TowerController>().towerData.yOffset;
         
         tower.GetComponent<TowerController>().Tile.TowerObject = tower.gameObject;
         
         tower.rotation =
             tower.GetComponent<TowerController>().Tile.TileObject.transform.rotation;
         
-        tower.parent = HexGridManager.Instance.transform;
+        tower.parent = HexGridManager.Instance.hexGridTilt.transform;
     }
 
     private void RegisterTower(Transform tower)

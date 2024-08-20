@@ -13,6 +13,12 @@ public class EnemySpawner : MonoBehaviourSingleton<EnemySpawner>
     [SerializeField] private EnemyEventChannel enemyEventChannel;
     [SerializeField] private GameManagerEventChannel gameManagerEventChannel;
     
+    [SerializeField] private AK.Wwise.Event waveStartedSFX;
+    [SerializeField] private AK.Wwise.Event waveEndedSFX;
+
+    [SerializeField] private AK.Wwise.Event waveStartEvent;
+    [SerializeField] private AK.Wwise.Event betweenWavesEvent;
+
     public int CurrentWaveIndex { get; set; }
     private List<GameObject> _activeEnemies = new();
 
@@ -39,8 +45,15 @@ public class EnemySpawner : MonoBehaviourSingleton<EnemySpawner>
         //gameManagerEventChannel.OnGameRestart -= HandleGameRestart;
     }
 
+    private void Awake()
+    {
+        _allPossibleSpawnPoints = new List<HexTile>();
+    }
+
     public IEnumerator StartNextWave()
     {
+        waveStartEvent.Post(gameObject);
+        waveStartedSFX.Post(gameObject);
         yield return StartCoroutine(SpawnWaves());
     }
 
@@ -50,10 +63,17 @@ public class EnemySpawner : MonoBehaviourSingleton<EnemySpawner>
             yield break;
         
         var currentWave = waves[CurrentWaveIndex];
+        
+        foreach(HexTile spawnPoint in _allPossibleSpawnPoints)
+            spawnPoint.TileObject.GetComponent<HexTileController>().IsSpawnerTile = false;
+        
         _allPossibleSpawnPoints = HexGridManager.Instance.GetRandomEdgeTiles(currentWave.numberOfSpawnPoints);
-
+        
+        foreach(HexTile spawnPoint in _allPossibleSpawnPoints)
+            spawnPoint.TileObject.GetComponent<HexTileController>().IsSpawnerTile = true;
+        
         foreach (var spawnPoint in _allPossibleSpawnPoints)
-            enemyEventChannel.RaiseWaveStart(spawnPoint.TileObject.GetComponent<HexTileController>(), currentWave.waveDelay);
+            spawnPoint.TileObject.GetComponent<HexTileController>().HandleTileFlashing(spawnPoint, currentWave.waveDelay);
         
         yield return new WaitForSeconds(currentWave.waveDelay);
 
@@ -63,7 +83,9 @@ public class EnemySpawner : MonoBehaviourSingleton<EnemySpawner>
         yield return new WaitUntil(() => _activeEnemies.Count == 0);
         
         CurrentWaveIndex++;
-        
+
+        waveEndedSFX.Post(gameObject);
+        betweenWavesEvent.Post(gameObject);
         enemyEventChannel.RaiseWaveCompleted();
     }
 
@@ -110,5 +132,10 @@ public class EnemySpawner : MonoBehaviourSingleton<EnemySpawner>
         }
 
         _activeEnemies.Remove(enemy);
+    }
+
+    public WaveConfig GetCurrentWaveConfig()
+    {
+        return waves.Length > 0 && waves[CurrentWaveIndex] != null ? waves[CurrentWaveIndex] : null;
     }
 }

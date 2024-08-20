@@ -6,10 +6,13 @@ using UnityEngine;
 public class HexTileController : MonoBehaviour
 {
     public Vector2Int GridPosition { get; set; }
-
+    public bool IsSpawnerTile { get; set; }
     [SerializeField] private EnemyEventChannel enemyEventChannel;
+    [SerializeField] private GameManagerEventChannel gameManagerEventChannel;
+
     [SerializeField] private Color flashColor;
-    [SerializeField] private float flashSpeed;
+    [SerializeField] private float flashSpeed = 1.0f;
+    [SerializeField] private Animator tileAnimator;
 
     private Color _originalTileColor;
 
@@ -18,20 +21,29 @@ public class HexTileController : MonoBehaviour
     private bool _isFlashing;
     private float _flashTimeElapsed;
     private float _flashDuration;
+    private static readonly int Spawner = Animator.StringToHash("Spawner");
+
     private void OnEnable()
     {
         enemyEventChannel.OnWaveStart += HandleTileFlashing;
+        enemyEventChannel.OnWaveCompleted += HandleWaveCompleted;
+        gameManagerEventChannel.OnGameRestart += HandleWaveCompleted;
     }
 
     private void OnDisable()
     {
         enemyEventChannel.OnWaveStart -= HandleTileFlashing;
+        enemyEventChannel.OnWaveCompleted -= HandleWaveCompleted;
+        gameManagerEventChannel.OnGameRestart -= HandleWaveCompleted;
     }
 
     private void Start()
     {
         _tileRenderer = GetComponentInChildren<Renderer>();
         _originalTileColor = _tileRenderer.materials[0].color;
+
+        if (!tileAnimator)
+            tileAnimator = GetComponentInChildren<Animator>();
     }
 
     private void Update()
@@ -53,14 +65,23 @@ public class HexTileController : MonoBehaviour
         _tileRenderer.materials[0].color = _originalTileColor;
     }
 
-    private void HandleTileFlashing(HexTileController tile, float flashDuration)
+    public void HandleTileFlashing(HexTile tile, float flashDuration)
     {
-        if (!Equals(tile))
+        if (tile.Q != GridPosition.x || tile.R != GridPosition.y)
             return;
 
         _isFlashing = true;
         _flashTimeElapsed = 0.0f;
         _flashDuration = flashDuration;
+        
+        tileAnimator.SetBool(Spawner, true);
+        IsSpawnerTile = true;
+        Debug.Log($"{tile.TileObject.name} Became a spawner tile");
+    }
+    
+    private void HandleWaveCompleted()
+    {
+        tileAnimator.SetBool(Spawner, false);
     }
     
 }

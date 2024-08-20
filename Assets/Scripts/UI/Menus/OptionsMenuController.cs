@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using AK.Wwise;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UIElements;
@@ -11,6 +12,8 @@ public class OptionsMenuController : BaseMenu
 {
     [SerializeField] private MenuEventChannel _menuEventChannel;
     [SerializeField] private GameManagerEventChannel gameManagerEventChannel;
+
+    [SerializeField] private RTPC volumeSliderRTPC;
     
     private UIDocument _ui;
     private DropdownField _displayResolution;
@@ -20,6 +23,7 @@ public class OptionsMenuController : BaseMenu
     private Button _backButton;
     private Resolution[] _allowResolutions;
     private VisualElement _prevContainer;
+    private Slider _volumeSlider;
     
     private void OnEnable()
     {
@@ -35,6 +39,10 @@ public class OptionsMenuController : BaseMenu
         _fullscreenToggle = _ui.rootVisualElement.Q<Toggle>("FullscreenToggle");
         _optionsMenuContainer = _ui.rootVisualElement.Q<VisualElement>("OptionsMenuContainer");
         _backButton = _ui.rootVisualElement.Q<Button>("BackButton");
+        _volumeSlider = _ui.rootVisualElement.Q<Slider>("VolumeSlider");
+        
+        volumeSliderRTPC.SetGlobalValue(_volumeSlider.value);
+        _volumeSlider.RegisterValueChangedCallback(v => volumeSliderRTPC.SetGlobalValue(v.newValue));
         
         _backButton.clicked += HandleBackButtonPressed;
 
@@ -68,6 +76,10 @@ public class OptionsMenuController : BaseMenu
         _menuEventChannel.OnPauseGame -= HandlePauseGame;
         
         gameManagerEventChannel.OnGameOver -= HandleGameOver;
+
+
+        _volumeSlider.UnregisterValueChangedCallback(v => volumeSliderRTPC.SetGlobalValue(v.newValue));
+
     }
 
     private void HandleGameOver()

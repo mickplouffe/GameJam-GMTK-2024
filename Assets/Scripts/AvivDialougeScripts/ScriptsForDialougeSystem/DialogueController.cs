@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using NaughtyAttributes;
 
 public class DialogueController : MonoBehaviour
 {
@@ -28,9 +29,17 @@ public class DialogueController : MonoBehaviour
     
     public bool IsPlaying { get; set; }
 
-    private void Awake()
+    private void OnEnable()
     {
-        transform.parent.gameObject.SetActive(false);
+        transform.parent.gameObject.SetActive(true);
+        transform.gameObject.SetActive(true);
+    }
+
+    private void Awake()
+    { 
+        transform.parent.gameObject.SetActive(true);
+        transform.gameObject.SetActive(true);
+
     }
 
     private void Update()
@@ -41,7 +50,7 @@ public class DialogueController : MonoBehaviour
             GoToNextText();
         }
     }
-
+    [Button]
     public void StartDialogue()
     {
         IsPlaying = true;
@@ -50,26 +59,29 @@ public class DialogueController : MonoBehaviour
         GoToNextText();
         Anim.SetBool("Active", true);
     }
-    
+
     void GoToNextText()
     {
         if (CurrentTextActive <= dialogue1.Length - 1)
         {
-  
             PlayDialogue(dialogue1[CurrentTextActive]);
-   
+
 
             if (WhichCharacter[CurrentTextActive] == true)
             {
                 NameText.text = "Alexiares";
                 ProfilePicture1.SetActive(true);
                 // ProfilePicture2.SetActive(false);
+                ProfileOneAnim.SetBool("IsTalking", true);
+                ProfileTwoAnim.SetBool("IsTalking", false);
             }
             else
             {
                 NameText.text = "Anicetus";
                 ProfilePicture2.SetActive(true);
                 // ProfilePicture1.SetActive(false);
+                ProfileOneAnim.SetBool("IsTalking", false);
+                ProfileTwoAnim.SetBool("IsTalking", true);
             }
         }
         else
@@ -79,10 +91,15 @@ public class DialogueController : MonoBehaviour
             ProfileOneAnim.SetTrigger("Out");
             ProfileTwoAnim.SetTrigger("Out");
             Anim.SetBool("Active", false);
-            transform.parent.gameObject.SetActive(false);
+            Invoke("DisableUI", 3);
             gameManagerEventChannel.RaiseDialogueEnd();
         }
 
+    }
+    void DisableUI()
+    {
+        transform.parent.gameObject.SetActive(false);
+        Destroy(transform.parent.gameObject);
     }
 
 

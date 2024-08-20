@@ -19,6 +19,7 @@ public class HexGridManager : MonoBehaviour
         else
         {
             Destroy(gameObject); // Ensure there's only one instance
+            return;
         }
         
         if (!hexTileParent)
@@ -27,6 +28,8 @@ public class HexGridManager : MonoBehaviour
             hexTileParent = new GameObject("HexTiles").transform;
             hexTileParent.SetParent(transform);
         }
+
+        GenerateGrid();
     }
     
     [HideInInspector] public float gridSpan = 5; // Getting the furthest distance from the center of the grid
@@ -37,6 +40,7 @@ public class HexGridManager : MonoBehaviour
 
     /* [OnValueChanged("GenerateHexGrid")] */ public GridShape gridShape;
     [OnValueChanged("GenerateHexGrid"), Label("Width/Diameter"), Range(0, 40)] public int width = 10;
+    [SerializeField] public Transform hexGridTilt;
     [OnValueChanged("GenerateHexGrid"), ShowIf("gridShape", GridShape.Rectangle), Range(0, 40)] public int height = 10;
     /* [OnValueChanged("GenerateHexGrid")] */ private float heightVariation = 0.1f; // Extra
 
@@ -54,20 +58,23 @@ public class HexGridManager : MonoBehaviour
 
     [SerializeField] private EnemyEventChannel enemyEventChannel;
     [SerializeField] private GameManagerEventChannel gameManagerEventChannel;
+    [SerializeField] private RectTransform healthBar;
+    private Animator _animator;
 
 
     private void OnEnable()
     {
         enemyEventChannel.OnEnemyAttack += HandleEnemyAttack;
         enemyEventChannel.OnWaveCompleted += HandleWaveCompleted;
+        gameManagerEventChannel.OnGameRestart += GenerateHexGrid;
     }
 
 
     private void OnDisable()
     {
         enemyEventChannel.OnEnemyAttack -= HandleEnemyAttack;
-        enemyEventChannel.OnWaveCompleted += HandleWaveCompleted;
-
+        enemyEventChannel.OnWaveCompleted -= HandleWaveCompleted;
+        gameManagerEventChannel.OnGameRestart -= GenerateHexGrid;
     }
     private void HandleWaveCompleted()
     {
@@ -75,8 +82,8 @@ public class HexGridManager : MonoBehaviour
         AddCircularBlob(tile.Q, tile.R, amountBlobToAdd);
     }
 
-    [Button]
-    void Start()
+    // [Button]
+    void GenerateGrid()
     {
         hexGrid = new HexGrid(_hexTileSize, hexTileParent);
         GenerateInitialGrid();
@@ -84,6 +91,18 @@ public class HexGridManager : MonoBehaviour
         HexTile selectedTile = edgeTiles[Random.Range(0, edgeTiles.Count)];
         //hexGrid.AddCircularBlob(selectedTile.Q, selectedTile.R, amountBlobToAdd, hexPrefab);
         mainUnit = GameObject.FindGameObjectWithTag("MainUnit").transform;
+        _currentMainUnitHealth = mainUnityStartHealth;
+
+        if (!_animator)
+        {
+            _animator = mainUnit.GetComponent<Animator>();
+        }
+
+        if (!healthBar)
+        {
+            healthBar = GameObject.FindGameObjectWithTag("HealthBar").GetComponent<RectTransform>();
+        }
+
     }
 
     [Button]
@@ -91,16 +110,27 @@ public class HexGridManager : MonoBehaviour
     {
         HandleEnemyAttack(_currentMainUnitHealth);
     }
+    
+    public void TakeDamage(int damage)
+    {
+        HandleEnemyAttack(damage);
+    }
+
     private void HandleEnemyAttack(int damage)
     {
         _currentMainUnitHealth -= damage;
-        if(_currentMainUnitHealth > 0)
+        healthBar.localScale = new Vector3((float)_currentMainUnitHealth / mainUnityStartHealth, 1, 1);
+        if (_currentMainUnitHealth > 0)
+        {
             return;
+        }
 
         _currentMainUnitHealth = mainUnityStartHealth;
         // TODO: Play tower animation
+        _animator.SetBool("IsDead", true);
         
         gameManagerEventChannel.RaiseGameOver();
+        
     }
 
     void GenerateInitialGrid()
@@ -128,7 +158,8 @@ public class HexGridManager : MonoBehaviour
         ClearHexGrid();
         Vector2 size = new Vector2(width, height);
         hexGrid.GenerateGrid(size, hexPrefab, 0, gridShape);
-        
+        _animator.SetBool("IsDead", false);
+
         HighlightTrueEdgeTiles();
         
         
@@ -276,7 +307,10 @@ public class HexGridManager : MonoBehaviour
     
     
     
-    
+    /// <summary>
+    ///  DISABLE ME!
+    /// TODO: DISABLE ME!
+    /// </summary>
     void Update()
     {
         // Add 1 random tile where there is none
@@ -437,6 +471,11 @@ public class HexGridManager : MonoBehaviour
             return tile;
 
         return null;
+    }
+
+    public Dictionary<(int q, int r), HexTile> GetAllTiles()
+    {
+        return hexGrid.GetAllTiles();
     }
 }
 

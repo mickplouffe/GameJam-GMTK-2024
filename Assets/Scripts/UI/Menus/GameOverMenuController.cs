@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
 public class GameOverMenuController : BaseMenu
@@ -63,18 +64,22 @@ public class GameOverMenuController : BaseMenu
     
     private void HandleRestartButtonPressed()
     {
+        uiClickAudioEvent.Post(gameObject);
         gameManagerEventChannel.RaiseGameRestart();
         _gameOverMenuContainer.visible = false;
+        // SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     private void HandleOptionsButtonPressed()
     {
+        uiClickAudioEvent.Post(gameObject);
         _gameOverMenuContainer.visible = false;
         _menuEventChannel.RaiseOptionsButtonPressedEvent(_gameOverMenuContainer);
     }
 
     private void HandleBackButtonPressed(VisualElement prevContainer)
     {
+        uiClickAudioEvent.Post(gameObject);
         if (_gameOverMenuContainer != prevContainer)
             return;
         _gameOverMenuContainer.visible = true;
@@ -82,6 +87,7 @@ public class GameOverMenuController : BaseMenu
     
     private void HandleExitButtonPressed()
     {
+        uiClickAudioEvent.Post(gameObject);
         // TODO: For not this exits the game but it should transition to the Main Menu UI in some way
 #if UNITY_EDITOR
         // Exit play mode in the editor

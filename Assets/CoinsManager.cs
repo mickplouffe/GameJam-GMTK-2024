@@ -12,6 +12,10 @@ public class CoinsManager : MonoBehaviourSingleton<CoinsManager>
     [SerializeField] private CoinsEventChannel coinsEventChannel;
     [SerializeField] private UIEventChannel uiEventChannel;
     [SerializeField] private GameManagerEventChannel gameManagerEventChannel;
+
+    [SerializeField] private AK.Wwise.Event goldGainSFX;
+    [SerializeField] private AK.Wwise.Event goldLossSFX;
+
     public int Coins { get; set; }
 
     private void OnEnable()
@@ -33,6 +37,16 @@ public class CoinsManager : MonoBehaviourSingleton<CoinsManager>
 
     private void HandleModifyCoins(int cost)
     {
+        switch (Mathf.Sign(cost))
+        {
+            case < 0:
+                goldLossSFX.Post(gameObject);
+                break;
+            case > 0:
+                goldGainSFX.Post(gameObject);
+                break;
+        }
+        
         Coins = Math.Clamp(Coins + cost, minCoins, maxCoins);
         uiEventChannel.RaiseCoinsValueChanged(Coins);
     }

@@ -18,6 +18,8 @@ public class UIManager : MonoBehaviourSingleton<UIManager>
     [SerializeField] private float textFlashSpeed = 1.0f;
     [SerializeField] private float _flashDuration = 2.0f;
     
+    [SerializeField] private AK.Wwise.Event waveCountdown;
+    
     private bool _isFlashing;
     private Coroutine _flashCoroutine; // To manage the coroutine
     
@@ -95,7 +97,7 @@ public class UIManager : MonoBehaviourSingleton<UIManager>
     }
 
     // ReSharper disable Unity.PerformanceAnalysis
-    private void HandleWaveStart(HexTileController tileController, float waveDelay)
+    private void HandleWaveStart(HexTile tileController, float waveDelay)
     {
         // Start a new countdown timer
         if (_timerCoroutine != null)
@@ -138,6 +140,7 @@ public class UIManager : MonoBehaviourSingleton<UIManager>
         float remainingTime = duration;
         while (remainingTime > 0.0f)
         {
+            waveCountdown.Post(gameObject);
             UpdateTimerLabel(remainingTime);
             yield return new WaitForSeconds(1.0f/duration);
             remainingTime -= 1.0f/duration;

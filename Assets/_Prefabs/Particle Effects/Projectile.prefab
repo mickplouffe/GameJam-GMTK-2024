@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 373451650520948555}
   - component: {fileID: 4122652267924518120}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Trail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -151,7 +151,7 @@ GameObject:
   - component: {fileID: 5365022662381706106}
   - component: {fileID: 8273865949220209193}
   - component: {fileID: 2303870839030436764}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Projectile (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -258,7 +258,7 @@ GameObject:
   - component: {fileID: 3754156777480030059}
   - component: {fileID: 8580496141477309431}
   - component: {fileID: 195362391941916653}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Projectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -365,7 +365,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7126859365076182613}
   - component: {fileID: 7803466710702574632}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Trail (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

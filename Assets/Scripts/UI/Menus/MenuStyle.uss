@@ -1,6 +1,7 @@
 .menuTitle {
     font-size: 120px;
     -unity-font-style: bold;
+    -unity-font-definition: url("project://database/Assets/Scripts/AvivDialougeScripts/Dialouge%20Assets/EBGaramond-VariableFont_wght.ttf?fileID=12800000&guid=e3cb9bd06d46b934e87062f7c40ffdc1&type=3#EBGaramond-VariableFont_wght");
 }
 
 .buttonsPanel {
@@ -9,6 +10,7 @@
     align-items: center;
     min-width: 200px;
     min-height: 400px;
+    cursor: initial;
 }
 
 .menuButton {
@@ -22,14 +24,11 @@
     color: rgb(255, 255, 255);
     -unity-background-image-tint-color: rgba(255, 255, 255, 0);
     -unity-slice-scale: 1px;
+    cursor: initial;
 }
 
 .buttonsPanel {
-    align-self: flex-end;
-    width: 480px;
-    justify-content: flex-end;
-    margin-right: 13px;
-    margin-bottom: -424px;
+    -unity-font-definition: url("project://database/Assets/Scripts/AvivDialougeScripts/Dialouge%20Assets/EBGaramond-VariableFont_wght.ttf?fileID=12800000&guid=e3cb9bd06d46b934e87062f7c40ffdc1&type=3#EBGaramond-VariableFont_wght");
 }
 
 .menuContainer {
@@ -47,4 +46,24 @@
     height: 20%;
     margin-top: 4%;
     margin-bottom: 2%;
+}
+
+.button {
+    background-image: url("project://database/Assets/Scripts/MainMenuUi/Assets/Button%20-%20Inactive.png?fileID=2800000&guid=ba950aa4111cb3149be9c1d475cfb044&type=3#Button - Inactive");
+    background-color: rgba(0, 0, 0, 0);
+    right: 0;
+    top: auto;
+    left: auto;
+    width: 100%;
+    height: auto;
+    -unity-font-definition: url("project://database/Assets/Scripts/AvivDialougeScripts/Dialouge%20Assets/EBGaramond-VariableFont_wght.ttf?fileID=12800000&guid=e3cb9bd06d46b934e87062f7c40ffdc1&type=3#EBGaramond-VariableFont_wght");
+    font-size: 46px;
+    border-top-width: 0;
+    border-right-width: 0;
+    border-bottom-width: 0;
+    border-left-width: 0;
+}
+
+.button:hover {
+    background-image: url("project://database/Assets/Art/UI/Button%20-%20Active.png?fileID=2800000&guid=90bcd0aa32f379647bf1556fe0141609&type=3#Button - Active");
 }
