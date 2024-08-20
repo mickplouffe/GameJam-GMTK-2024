@@ -121,4 +121,9 @@ public class EnemySpawner : MonoBehaviourSingleton<EnemySpawner>
 
         _activeEnemies.Remove(enemy);
     }
+
+    public WaveConfig GetCurrentWaveConfig()
+    {
+        return waves.Length > 0 && waves[CurrentWaveIndex] != null ? waves[CurrentWaveIndex] : null;
+    }
 }

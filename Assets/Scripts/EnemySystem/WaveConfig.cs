@@ -8,4 +8,5 @@ public class WaveConfig : ScriptableObject
     public float spawnInterval;
     public float waveDelay;
     public int numberOfSpawnPoints;
+    public GameObject dialogue;
 }
