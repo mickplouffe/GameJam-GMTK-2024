@@ -62,6 +62,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25501875336f1094caa52707d2b4f788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isVisible: 0
   _menuEventChannel: {fileID: 11400000, guid: 8add3fae60bdfd540a41853d8b64ac69, type: 2}
   roleTemplate: {fileID: 9197481963319205126, guid: 8b4c785c0b3e7cd40abf37298950a0a6,
     type: 3}
@@ -84,3 +85,4 @@ MonoBehaviour:
     names:
     - Mick
     - Cristi
+    - Evan

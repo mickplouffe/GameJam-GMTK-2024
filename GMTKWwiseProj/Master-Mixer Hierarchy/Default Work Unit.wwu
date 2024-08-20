@@ -115,6 +115,26 @@
 									</Reference>
 								</ObjectList>
 							</ObjectLists>
+							<DuckingList>
+								<DuckItem>
+									<BusRef Name="MX" ID="{C36DB62C-024D-4CDC-B6F1-C1209F8AF167}"/>
+									<DuckingParam>
+										<Volume>-1</Volume>
+										<FadeInTime>0.100000001490116</FadeInTime>
+										<FadeOutTime>0.100000001490116</FadeOutTime>
+										<FadeCurve>FadeSCurve</FadeCurve>
+									</DuckingParam>
+								</DuckItem>
+								<DuckItem>
+									<BusRef Name="AMB" ID="{8544FF81-9BAF-41B7-A07D-0D9543AA5D04}"/>
+									<DuckingParam>
+										<Volume>-1</Volume>
+										<FadeInTime>0.100000001490116</FadeInTime>
+										<FadeOutTime>0.100000001490116</FadeOutTime>
+										<FadeCurve>FadeSCurve</FadeCurve>
+									</DuckingParam>
+								</DuckItem>
+							</DuckingList>
 						</Bus>
 						<Bus Name="AMB" ID="{8544FF81-9BAF-41B7-A07D-0D9543AA5D04}">
 							<PropertyList>
@@ -258,6 +278,35 @@
 									</Reference>
 								</ObjectList>
 							</ObjectLists>
+							<DuckingList>
+								<DuckItem>
+									<BusRef Name="AMB" ID="{8544FF81-9BAF-41B7-A07D-0D9543AA5D04}"/>
+									<DuckingParam>
+										<Volume>-1</Volume>
+										<FadeInTime>0</FadeInTime>
+										<FadeOutTime>0.100000001490116</FadeOutTime>
+										<FadeCurve>FadeSCurve</FadeCurve>
+									</DuckingParam>
+								</DuckItem>
+								<DuckItem>
+									<BusRef Name="MX" ID="{C36DB62C-024D-4CDC-B6F1-C1209F8AF167}"/>
+									<DuckingParam>
+										<Volume>-1</Volume>
+										<FadeInTime>0</FadeInTime>
+										<FadeOutTime>0.100000001490116</FadeOutTime>
+										<FadeCurve>FadeSCurve</FadeCurve>
+									</DuckingParam>
+								</DuckItem>
+								<DuckItem>
+									<BusRef Name="SFX" ID="{B2321CDD-8250-446B-9608-2183E25145B9}"/>
+									<DuckingParam>
+										<Volume>-1</Volume>
+										<FadeInTime>0</FadeInTime>
+										<FadeOutTime>0.100000001490116</FadeOutTime>
+										<FadeCurve>FadeSCurve</FadeCurve>
+									</DuckingParam>
+								</DuckItem>
+							</DuckingList>
 						</Bus>
 						<AuxBus Name="Verb" ID="{3AA227EE-F1DF-4BB3-8F67-EAF7F014CACC}">
 							<ObjectLists>

@@ -12,20 +12,24 @@
 }
 
 .menuButton {
-    position: relative;
     font-size: 32px;
     -unity-font-style: bold;
     width: 50%;
-    height: 20%;
+    height: auto;
+    -unity-font-definition: url("project://database/Assets/Scripts/MainMenuUi/Assets/EBGaramond-VariableFont_wght.ttf?fileID=12800000&guid=0f395c4f9c5d5994c8139703a7ab44bc&type=3#EBGaramond-VariableFont_wght");
+    -unity-text-align: upper-right;
+    background-color: rgba(0, 27, 87, 0.4);
+    color: rgb(255, 255, 255);
+    -unity-background-image-tint-color: rgba(255, 255, 255, 0);
+    -unity-slice-scale: 1px;
 }
 
 .buttonsPanel {
-    justify-content: space-around;
-    align-self: auto;
-    align-items: center;
-    width: 60%;
-    height: 80%;
-    margin-bottom: 4%;
+    align-self: flex-end;
+    width: 480px;
+    justify-content: flex-end;
+    margin-right: 13px;
+    margin-bottom: -424px;
 }
 
 .menuContainer {

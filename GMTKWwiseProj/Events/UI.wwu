@@ -96,6 +96,17 @@
 						</Event>
 					</ChildrenList>
 				</Folder>
+				<Event Name="Play_Scribble" ID="{99A5843D-2946-4197-90BA-38D980065A75}">
+					<ChildrenList>
+						<Action Name="" ID="{6EC666D3-C165-4C12-A75A-2D2D9986B9DF}" ShortID="1041133885">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Scribble" ID="{C6A37DCD-33AA-408C-ABC5-68AE0FCEB294}" WorkUnitID="{BA9CF1CD-975F-4A67-9444-5CFB7BA6A64A}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

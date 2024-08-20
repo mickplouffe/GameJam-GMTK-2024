@@ -1,12 +1,39 @@
+using System;
 using System.Collections.Generic;
 using NaughtyAttributes;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
-public class HexGridManager : MonoBehaviourSingletonPersistent<HexGridManager>
+public class HexGridManager : MonoBehaviour
 {
+    
+    public static HexGridManager Instance { get; private set; }
+
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            //DontDestroyOnLoad(gameObject); // Optional: if you want the Singleton to persist across scenes
+        }
+        else
+        {
+            Destroy(gameObject); // Ensure there's only one instance
+        }
+        
+        if (!hexTileParent)
+        {
+            // Create new GameObject to hold the hex tiles that is a child of the HexGridManager
+            hexTileParent = new GameObject("HexTiles").transform;
+            hexTileParent.SetParent(transform);
+        }
+    }
+    
+    [HideInInspector] public float gridSpan = 5; // Getting the furthest distance from the center of the grid
     public GameObject hexPrefab;
     private HexGrid hexGrid;
     public readonly float _hexTileSize = 1;
+    [SerializeField] private Transform hexTileParent;
 
     /* [OnValueChanged("GenerateHexGrid")] */ public GridShape gridShape;
     [OnValueChanged("GenerateHexGrid"), Label("Width/Diameter"), Range(0, 40)] public int width = 10;
@@ -20,14 +47,60 @@ public class HexGridManager : MonoBehaviourSingletonPersistent<HexGridManager>
     
     [SerializeField] private TiltObject tiltObject;
 
+    public Transform mainUnit;
+
+    [SerializeField] private int mainUnityStartHealth;
+    private int _currentMainUnitHealth = 100;
+
+    [SerializeField] private EnemyEventChannel enemyEventChannel;
+    [SerializeField] private GameManagerEventChannel gameManagerEventChannel;
+
+
+    private void OnEnable()
+    {
+        enemyEventChannel.OnEnemyAttack += HandleEnemyAttack;
+        enemyEventChannel.OnWaveCompleted += HandleWaveCompleted;
+    }
+
+
+    private void OnDisable()
+    {
+        enemyEventChannel.OnEnemyAttack -= HandleEnemyAttack;
+        enemyEventChannel.OnWaveCompleted += HandleWaveCompleted;
+
+    }
+    private void HandleWaveCompleted()
+    {
+        HexTile tile = GetRandomEdgeTiles(1)[0];
+        AddCircularBlob(tile.Q, tile.R, amountBlobToAdd);
+    }
+
     [Button]
     void Start()
     {
-        hexGrid = new HexGrid(_hexTileSize, this.transform);
+        hexGrid = new HexGrid(_hexTileSize, hexTileParent);
         GenerateInitialGrid();
         List<HexTile> edgeTiles = hexGrid.GetTrueEdgeTiles();
         HexTile selectedTile = edgeTiles[Random.Range(0, edgeTiles.Count)];
         //hexGrid.AddCircularBlob(selectedTile.Q, selectedTile.R, amountBlobToAdd, hexPrefab);
+        mainUnit = GameObject.FindGameObjectWithTag("MainUnit").transform;
+    }
+
+    [Button]
+    private void NukeTower()
+    {
+        HandleEnemyAttack(_currentMainUnitHealth);
+    }
+    private void HandleEnemyAttack(int damage)
+    {
+        _currentMainUnitHealth -= damage;
+        if(_currentMainUnitHealth > 0)
+            return;
+
+        _currentMainUnitHealth = mainUnityStartHealth;
+        // TODO: Play tower animation
+        
+        gameManagerEventChannel.RaiseGameOver();
     }
 
     void GenerateInitialGrid()
@@ -41,12 +114,13 @@ public class HexGridManager : MonoBehaviourSingletonPersistent<HexGridManager>
         //     int r2 = Mathf.Min(gridRadius, -q + gridRadius);
         //     for (int r = r1; r <= r2; r++)
         //     {
-        //         hexGrid.AddTile(q, r, hexPrefab, this.transform, GetHeightFromNoiseTexture(new Vector2(q, r)), gridShape);
+        //         hexGrid.AddTile(q, r, hexPrefab, hexTileParent, GetHeightFromNoiseTexture(new Vector2(q, r)), gridShape);
         //     }
         // }
         HighlightTrueEdgeTiles();
     }
-
+    
+    
     [Button("Generate")]
     private void GenerateHexGrid()
     {
@@ -143,12 +217,12 @@ public class HexGridManager : MonoBehaviourSingletonPersistent<HexGridManager>
     
     public void AddTile(int q, int r)
     {
-        hexGrid.AddTile(q, r, hexPrefab, this.transform);
+        hexGrid.AddTile(q, r, hexPrefab, hexTileParent);
     }
     
     public void AddTile(int q, int r, GameObject hexPrefabToUse)
     {
-        hexGrid.AddTile(q, r, hexPrefabToUse, this.transform);
+        hexGrid.AddTile(q, r, hexPrefabToUse, hexTileParent);
     }
     
     public void RemoveTile(int q, int r)
@@ -208,7 +282,7 @@ public class HexGridManager : MonoBehaviourSingletonPersistent<HexGridManager>
         // Add 1 random tile where there is none
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            hexGrid.AddTile(Random.Range(hexGrid.MinQ(), hexGrid.MaxQ()), Random.Range(hexGrid.MinQ(), hexGrid.MaxQ()), hexPrefab, this.transform);
+            hexGrid.AddTile(Random.Range(hexGrid.MinQ(), hexGrid.MaxQ()), Random.Range(hexGrid.MinQ(), hexGrid.MaxQ()), hexPrefab, hexTileParent);
             HighlightTrueEdgeTiles();
     
         }
@@ -243,7 +317,28 @@ public class HexGridManager : MonoBehaviourSingletonPersistent<HexGridManager>
         }
 
         tiltObject.tiles = hexGrid.GetTilesObjects();
+        CalculateGridSpan();
 
+    }
+    
+    private void CalculateGridSpan()
+    {
+        // Get the center point then find the hex tile that is the furthest away from the center
+        Vector3 center = Vector3.zero;
+        foreach (var tile in hexGrid.GetTiles())
+        {
+            center += tile.TileObject.transform.position;
+        }
+        center /= hexGrid.GetTiles().Count;
+        
+        foreach (var tile in hexGrid.GetTiles())
+        {
+            float distance = Vector3.Distance(center, tile.TileObject.transform.position);
+            if (distance > gridSpan)
+            {
+                gridSpan = distance;
+            }
+        }
     }
 
     //[Button("Disable")]
@@ -269,7 +364,7 @@ public class HexGridManager : MonoBehaviourSingletonPersistent<HexGridManager>
     //         }
     //     }
     //
-    //     GameObject hexTile = Instantiate(hexPrefab, this.transform, true);
+    //     GameObject hexTile = Instantiate(hexPrefab, hexTileParent, true);
     //     hexTiles.Add(hexTile);
     //
     //     return hexTile;

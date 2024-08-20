@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using NaughtyAttributes;
 using UnityEngine;
 
 [System.Serializable]
@@ -20,6 +21,7 @@ public class TowerInstanceData
     }
 }
 
+[RequireComponent(typeof(LineRenderer))]
 public class TowerController : MonoBehaviour
 {
     public Tower towerData; // ScriptableObject reference
@@ -29,40 +31,85 @@ public class TowerController : MonoBehaviour
 
     [SerializeField] private WeightEventChannel weightEventChannel;
     [SerializeField] private TowerEventChannel towerEventChannel;
+    [SerializeField] private GameManagerEventChannel gameManagerEventChannel;
     
     public HexTile Tile { get; set; }
     
     [SerializeField] private float tiltAllowanceThreshold = 45.0f; // Angle at which the object starts sliding
     [SerializeField] private float slipSpeedMultiplier = 1f; // Speed at which the object slips
+    [SerializeField] private float enemyWidthOffset= 0.5f;
 
+    [SerializeField] private LineRenderer _shootingRay;
+    [SerializeField] private Transform towerShootingSpot;
+
+    // LineRenderer animation settings
+    [SerializeField] private float beamDuration = 0.2f;
+    [SerializeField] private float beamWidthAnimationSpeed = 3.0f;
+    [SerializeField] private AnimationCurve beamWidthCurve;
+    [SerializeField] private Gradient beamColorGradient;
+    private float _nextFireTime; // Time at which the tower can fire again
+    
     [SerializeField] private TiltEventChannel tiltEventChannel;
+    
+    private PriorityQueue<Transform> _targets = new(); // Priority queue to store enemies by distance to central unit
+    private Transform _currentTarget;
     
     private bool isSliding; // Track whether the object is currently sliding
     private bool _prevIsSliding;
     private Vector3 tiltDirection; // Store the current tilt direction
     private float slipMagnitude; // Store the current sliding speed
-
+    
     void Awake()
     {
         // Create a new instance-specific data object using the shared tower data
         instanceData = new TowerInstanceData(towerData);
+        _shootingRay = GetComponent<LineRenderer>();
+        UpdateColliderRange();
+    }
+
+    [Button]
+    public void UpdateColliderRange()
+    {
+        GetComponent<SphereCollider>().radius = instanceData.range * 2.0f;
     }
 
     private void OnEnable()
     {
         tiltEventChannel.OnTiltChanged += HandleTiltChanged;
+        gameManagerEventChannel.OnGameRestart += HandleGameRestart;
     }
 
     private void OnDisable()
     {
         tiltEventChannel.OnTiltChanged -= HandleTiltChanged;
+        //gameManagerEventChannel.OnGameRestart -= HandleGameRestart;
+
     }
-    
-    
-private void Update()
+
+    private void HandleGameRestart()
+    {
+        // Tile?.DetachTower();
+        // isSliding = false;
+        // Destroy(gameObject);
+    }
+
+
+    private void Update()
 {
-    if (TowerManager.Instance.selectedTower == gameObject)
+    
+    if (TowerManager.Instance.selectedTower == gameObject || towerData.isStatic)
         return;
+    
+    if (_currentTarget == null || !IsTargetInRange(_currentTarget))
+    {
+        GetNextTarget();
+    }
+
+    if (_currentTarget != null && Time.time >= _nextFireTime)
+    {
+        FireAtTarget();
+        _nextFireTime = Time.time + 1.0f / towerData.fireRate;
+    }
     
     if (!isSliding) 
         return;
@@ -92,7 +139,75 @@ private void Update()
     }
     
     transform.position = newPosition;
+}
 
+private IEnumerator DrawShootingRay()
+{
+    // Set up the LineRenderer positions
+    _shootingRay.SetPosition(0, towerShootingSpot.position);
+    _shootingRay.SetPosition(1, _currentTarget.position);
+    _shootingRay.widthCurve = beamWidthCurve;
+    _shootingRay.colorGradient = beamColorGradient;
+    _shootingRay.enabled = true;
+
+    float elapsedTime = 0f;
+
+    // Animate the line renderer over time
+    while (elapsedTime < beamDuration)
+    {
+        elapsedTime += Time.deltaTime;
+       _shootingRay.startWidth = Mathf.Lerp(_shootingRay.startWidth, 0.0f, Time.deltaTime * beamWidthAnimationSpeed);
+        if(_currentTarget != null)
+            _shootingRay.SetPosition(1, _currentTarget.position);
+        // Optionally, animate positions or other properties here
+        // Example: Flickering effect
+        _shootingRay.startColor = beamColorGradient.Evaluate(elapsedTime / beamDuration);
+        _shootingRay.endColor = beamColorGradient.Evaluate(elapsedTime / beamDuration);
+
+        yield return null;
+    }
+
+    // Disable the LineRenderer after the duration
+    _shootingRay.enabled = false;
+}
+private void FireAtTarget()
+{
+
+    StartCoroutine(DrawShootingRay());
+    // Example: If using projectiles
+    // GameObject projectile = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
+    // projectile.GetComponent<Projectile>().SetTarget(_currentTarget);
+    
+    EnemyController enemy = _currentTarget.GetComponent<EnemyController>();
+    if (enemy != null)
+        enemy.TakeDamage(instanceData.damage);
+}
+
+private void OnTriggerEnter(Collider other)
+{
+    if (!other.CompareTag("Enemy")) 
+        return;
+    float distanceToCentralUnit = Vector3.Distance(other.transform.position, HexGridManager.Instance.mainUnit.position);
+    _targets.Enqueue(other.transform, distanceToCentralUnit);
+}
+
+private void OnTriggerExit(Collider other)
+{
+    if (other.CompareTag("Enemy"))
+    {
+        // Removing the enemy from the priority queue is not straightforward
+        // Instead, we re-evaluate the closest target when necessary.
+    }
+}
+
+public void GetNextTarget()
+{
+    _currentTarget = _targets.Count > 0 ? _targets.Dequeue() : null; // Get the closest enemy to the central unit
+}
+
+private bool IsTargetInRange(Transform target)
+{
+    return Vector3.Distance(transform.position, target.position) <= instanceData.range + enemyWidthOffset && target.gameObject.activeInHierarchy;
 }
 
 private void HandleTiltChanged(float tiltAngle, Vector3 direction)
@@ -115,7 +230,7 @@ private void StartSliding(Vector3 direction)
 {
     isSliding = true;
     tiltDirection = direction;
-    slipMagnitude = slipSpeedMultiplier * (transform.position - HexGridManager.Instance.transform.position).magnitude;
+    slipMagnitude = slipSpeedMultiplier * (transform.position - HexGridManager.Instance.mainUnit.position).magnitude;
 }
 
 private void StopSliding()
@@ -175,5 +290,16 @@ private bool ShouldStopSliding()
         
         if(upgradeTowerAction.weightModifier != 0.0f)
             weightEventChannel.RaiseWeightAdded(upgradeTowerAction.weightModifier, Tile);
+        
+        UpdateColliderRange();
+    }
+    
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.white;
+        Gizmos.DrawWireSphere(transform.position, instanceData.range);
+        
+        if(_currentTarget)
+            Gizmos.DrawLine(transform.position, _currentTarget.transform.position);
     }
 }

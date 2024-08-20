@@ -8,6 +8,10 @@
 			</PropertyList>
 			<ChildrenList>
 				<Folder Name="Enemies" ID="{B73D3C5C-FBFD-4A1E-8DBB-9B3B5BBDC1B6}" ShortID="318958538">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="3"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+					</PropertyList>
 					<ChildrenList>
 						<Folder Name="Gorgon" ID="{BFCD07CC-9AE2-4DA4-9E99-2963E77C644F}" ShortID="253534211">
 							<ChildrenList>
@@ -28,6 +32,17 @@
 											<ReferenceList>
 												<Reference Name="Target">
 													<ObjectRef Name="EnterTower" ID="{18E46E49-6C37-4B8B-8500-2A78D82D0387}" WorkUnitID="{B5461995-40B4-48D8-B88A-3E895957C2F0}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_SFXSpawnGorgon" ID="{39DE17FB-1F8A-4EC6-B8B4-63673F9E43BD}">
+									<ChildrenList>
+										<Action Name="" ID="{B49600EC-46BB-4607-8C9B-22C06B475C1D}" ShortID="847599217">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Spawn" ID="{FD1C793F-C844-4453-9B9F-98978A4B9AF4}" WorkUnitID="{B5461995-40B4-48D8-B88A-3E895957C2F0}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -59,6 +74,17 @@
 										</Action>
 									</ChildrenList>
 								</Event>
+								<Event Name="Play_SFXSpawnMinotaur" ID="{2B97CE45-4546-46B5-8A62-D0E22E6396BB}">
+									<ChildrenList>
+										<Action Name="" ID="{8220C56E-7111-4821-8F34-D2A383E99397}" ShortID="564336665">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Spawn" ID="{7CC9CF32-9709-4B90-A6FC-99B9BA193F14}" WorkUnitID="{B5461995-40B4-48D8-B88A-3E895957C2F0}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 							</ChildrenList>
 						</Folder>
 						<Folder Name="Cyclops" ID="{FDA86AF2-80DA-4DFD-BE57-1DA616372549}" ShortID="511805668">
@@ -85,6 +111,17 @@
 										</Action>
 									</ChildrenList>
 								</Event>
+								<Event Name="Play_SFXSpawnCyclops" ID="{223FCFA0-59D2-4F2F-96E2-94373C4978BE}">
+									<ChildrenList>
+										<Action Name="" ID="{8B8971F6-5346-4C8B-8817-4678923E8840}" ShortID="157770625">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Spawn" ID="{9E3D0D8A-50B9-4EC0-BF03-BC61C0588207}" WorkUnitID="{B5461995-40B4-48D8-B88A-3E895957C2F0}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 							</ChildrenList>
 						</Folder>
 						<Event Name="Play_SFXEnemySlide" ID="{6207066F-9359-4E10-9874-4AC98C406D17}">
@@ -102,28 +139,6 @@
 				</Folder>
 				<Folder Name="Tower" ID="{8C595FEA-CF0B-4E69-AB2B-0B3A5A054CC9}" ShortID="696093352">
 					<ChildrenList>
-						<Event Name="Play_SFXTowerAttackHit" ID="{3FD2FD50-D4A9-4452-BB55-24AAC8E2A0AA}">
-							<ChildrenList>
-								<Action Name="" ID="{0D8E5044-65E8-4FFA-84BD-A52A66BB62D9}" ShortID="1013243181">
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="AttackHit" ID="{934DC960-68B0-4E18-8953-501E5A734856}" WorkUnitID="{B5461995-40B4-48D8-B88A-3E895957C2F0}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-							</ChildrenList>
-						</Event>
-						<Event Name="Play_SFXTowerSlide_01" ID="{01DDC3A1-414C-4E8A-AED7-15A2D84D2ABF}">
-							<ChildrenList>
-								<Action Name="" ID="{90A7223D-A416-4173-8DED-C9D0987988B6}" ShortID="35327237">
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="Slide" ID="{DCAF870A-3EE8-48B7-A7D3-CAD099CF905B}" WorkUnitID="{B5461995-40B4-48D8-B88A-3E895957C2F0}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-							</ChildrenList>
-						</Event>
 						<Event Name="Play_Attack" ID="{F31137F4-909F-49DE-B7E1-00AB32F9417D}">
 							<ChildrenList>
 								<Action Name="" ID="{247E2EAA-DABF-476C-B0BA-41C2DC14092C}" ShortID="1052813016">

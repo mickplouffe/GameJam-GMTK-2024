@@ -5,7 +5,8 @@ using UnityEngine.UIElements;
 [RequireComponent(typeof(UIDocument))]
 public class PauseMenuController : BaseMenu
 {
-    [SerializeField] private MenuEventChannel _menuEventChannel; 
+    [SerializeField] private MenuEventChannel _menuEventChannel;
+    [SerializeField] private GameManagerEventChannel gameManagerEventChannel;
         
     private UIDocument _ui;
     
@@ -30,6 +31,9 @@ public class PauseMenuController : BaseMenu
         _exitButton.clicked += HandleExitButtonPressed;
 
         _menuEventChannel.OnBackButtonPressed += HandleBackButtonPressed;
+        _menuEventChannel.OnPauseGame += HandlePauseGame;
+
+        gameManagerEventChannel.OnGameOver += HandleGameOver;
         
         _pauseMenuContainer.visible = _isVisible;
     }
@@ -41,6 +45,19 @@ public class PauseMenuController : BaseMenu
         _exitButton.clicked -= HandleExitButtonPressed;
 
         _menuEventChannel.OnBackButtonPressed -= HandleBackButtonPressed;
+        _menuEventChannel.OnPauseGame -= HandlePauseGame;
+
+        gameManagerEventChannel.OnGameOver -= HandleGameOver;
+    }
+
+    private void HandlePauseGame(bool pause)
+    {
+        _pauseMenuContainer.visible = pause;
+    }
+
+    private void HandleGameOver()
+    {
+        _pauseMenuContainer.visible = false;
     }
     
     private void HandleResumeButtonPressed()
