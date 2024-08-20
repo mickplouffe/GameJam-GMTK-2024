@@ -26,7 +26,9 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private float enemyWeight = 8.0f;
     [SerializeField] private int enemyKillCost = 5;
     [SerializeField] private int startHealth;
+    [SerializeField] private int enemyDamage = 1;
     
+    private Camera _mainCamera;
     private int _currentHealth;
 
     private Bounds _colliderBounds;
@@ -51,6 +53,7 @@ public class EnemyController : MonoBehaviour
     {
         _currentHealth = startHealth;
         _colliderBounds = GetComponent<Collider>().bounds;
+        _mainCamera = Camera.main;
     }
 
     private void HandleGameRestart()
@@ -86,7 +89,7 @@ public class EnemyController : MonoBehaviour
         MoveTowardsTarget();
 
         transform.rotation = HexGridManager.Instance.transform.rotation;
-        transform.forward = Camera.main.transform.forward;
+        transform.forward = new Vector3(_mainCamera.transform.forward.x, 0, _mainCamera.transform.forward.z);
     }
 
     private void MoveTowardsTarget()
@@ -113,6 +116,7 @@ public class EnemyController : MonoBehaviour
                 transform.position = new Vector3(TargetTile.TileObject.transform.position.x, transform.position.y, TargetTile.TileObject.transform.position.z);
 
                 enemyEnterTowerSFX.Post(gameObject);
+                HexGridManager.Instance.TakeDamage(enemyDamage);
                 KillEnemy();
                 
                 return;

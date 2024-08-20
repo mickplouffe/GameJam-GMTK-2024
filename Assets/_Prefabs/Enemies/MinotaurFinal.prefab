@@ -54,7 +54,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 1.74, y: 1.45, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.7, z: 0}
 --- !u!114 &2274796696128143630
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -90,7 +90,8 @@ MonoBehaviour:
       type: 2}
   enemyWeight: 5
   enemyKillCost: 5
-  startHealth: 100
+  startHealth: 50
+  enemyDamage: 5
 --- !u!1001 &508706424213974534
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -122,7 +123,7 @@ PrefabInstance:
     - target: {fileID: 919226520346911708, guid: 4044269c387760b4a8eb65feb0d30535,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.697
       objectReference: {fileID: 0}
     - target: {fileID: 919226520346911708, guid: 4044269c387760b4a8eb65feb0d30535,
         type: 3}
@@ -168,6 +169,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsTrigger
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6917272943106629359, guid: 4044269c387760b4a8eb65feb0d30535,
+        type: 3}
+      propertyPath: CardboardTickness
+      value: 0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

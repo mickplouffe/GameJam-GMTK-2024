@@ -54,7 +54,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.4859254, y: 1.5332279, z: 1.2550566}
+  m_Size: {x: 1.36, y: 1.46, z: 1.2550566}
   m_Center: {x: 0.002150178, y: 0.73963857, z: -0.0009534359}
 --- !u!114 &3348254841917489166
 MonoBehaviour:
@@ -68,7 +68,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc98c07a8bb464b43b98d27d4e04bcd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tilesPerSecond: 1
+  tilesPerSecond: 0.3
   enemyEventChannel: {fileID: 11400000, guid: 58c4683592b42784c91a64e98e2ccbc1, type: 2}
   weightEventChannel: {fileID: 11400000, guid: 1c11f8eaadf261d449e9f3f048895711, type: 2}
   coinsEventChannel: {fileID: 11400000, guid: bd788a866bdd906438a624d0a722e871, type: 2}
@@ -92,6 +92,7 @@ MonoBehaviour:
   enemyWeight: 4
   enemyKillCost: 5
   startHealth: 100
+  enemyDamage: 2
 --- !u!95 &1405544692131056179
 Animator:
   serializedVersion: 7
@@ -186,6 +187,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656325949714561769, guid: 72655ed27965dce42b37bdcb009fa1d6,
+        type: 3}
+      propertyPath: CardboardTickness
+      value: 0.15
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2444675189447905918, guid: 72655ed27965dce42b37bdcb009fa1d6, type: 3}

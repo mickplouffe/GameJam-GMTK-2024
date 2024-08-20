@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: -4537756784346555598}
   - component: {fileID: 6410887134671940331}
   - component: {fileID: 5908940734818897851}
-  - component: {fileID: 6549215451201739819}
   m_Layer: 6
   m_Name: TOWER_RANGE
   m_TagString: Untagged
@@ -181,8 +180,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.8401103, y: 3.4099956, z: 2.9225035}
-  m_Center: {x: -0.37763453, y: 0.6831753, z: 0.30897373}
+  m_Size: {x: 1, y: 2.25, z: 1}
+  m_Center: {x: 0, y: 1.12, z: 0}
 --- !u!135 &-4537756784346555598
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -346,27 +345,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!135 &6549215451201739819
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4711356743005891950}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6494799761051565011
 GameObject:
   m_ObjectHideFlags: 0
@@ -392,7 +370,7 @@ Transform:
   m_GameObject: {fileID: 6494799761051565011}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.749, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -419,12 +397,12 @@ PrefabInstance:
     - target: {fileID: 6345143341618665956, guid: 001fdb2b0076eec44948fab64693ed9d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.25
+      value: 0.351
       objectReference: {fileID: 0}
     - target: {fileID: 6345143341618665956, guid: 001fdb2b0076eec44948fab64693ed9d,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6345143341618665956, guid: 001fdb2b0076eec44948fab64693ed9d,
         type: 3}

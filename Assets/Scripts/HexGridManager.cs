@@ -85,6 +85,7 @@ public class HexGridManager : MonoBehaviour
         HexTile selectedTile = edgeTiles[Random.Range(0, edgeTiles.Count)];
         //hexGrid.AddCircularBlob(selectedTile.Q, selectedTile.R, amountBlobToAdd, hexPrefab);
         mainUnit = GameObject.FindGameObjectWithTag("MainUnit").transform;
+        _currentMainUnitHealth = mainUnityStartHealth;
     }
 
     [Button]
@@ -92,11 +93,19 @@ public class HexGridManager : MonoBehaviour
     {
         HandleEnemyAttack(_currentMainUnitHealth);
     }
+    
+    public void TakeDamage(int damage)
+    {
+        HandleEnemyAttack(damage);
+    }
+
     private void HandleEnemyAttack(int damage)
     {
         _currentMainUnitHealth -= damage;
-        if(_currentMainUnitHealth > 0)
+        if (_currentMainUnitHealth > 0)
+        {
             return;
+        }
 
         _currentMainUnitHealth = mainUnityStartHealth;
         // TODO: Play tower animation

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7798876830825294198}
   - component: {fileID: 7146499494373632199}
   m_Layer: 0
-  m_Name: SpawnerTileParticles
+  m_Name: EnemyTileParticles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
