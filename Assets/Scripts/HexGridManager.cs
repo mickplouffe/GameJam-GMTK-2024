@@ -37,6 +37,7 @@ public class HexGridManager : MonoBehaviour
 
     /* [OnValueChanged("GenerateHexGrid")] */ public GridShape gridShape;
     [OnValueChanged("GenerateHexGrid"), Label("Width/Diameter"), Range(0, 40)] public int width = 10;
+    [SerializeField] public Transform hexGridTilt;
     [OnValueChanged("GenerateHexGrid"), ShowIf("gridShape", GridShape.Rectangle), Range(0, 40)] public int height = 10;
     /* [OnValueChanged("GenerateHexGrid")] */ private float heightVariation = 0.1f; // Extra
 

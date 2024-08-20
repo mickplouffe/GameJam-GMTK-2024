@@ -114,12 +114,12 @@ public class TiltManager : MonoBehaviourSingleton<TiltManager>
 
         // Rotate the disk around the calculated axis
         Quaternion targetRotation = Quaternion.AngleAxis(-tiltAngle, tiltAxis);
-        HexGridManager.Instance.transform.rotation = Quaternion.Slerp( HexGridManager.Instance.transform.transform.rotation, targetRotation, Time.deltaTime * rotationSpeed);
+        HexGridManager.Instance.hexGridTilt.transform.rotation = Quaternion.Slerp( HexGridManager.Instance.hexGridTilt.transform.transform.rotation, targetRotation, Time.deltaTime * rotationSpeed);
 
         currentTiltAngle = Mathf.Lerp(currentTiltAngle, tiltAngle, Time.deltaTime * rotationSpeed);
         
         // Calculate tilt direction based on Center of Mass
-        Vector3 tiltDirection = Vector3.Cross(Torque.normalized, -HexGridManager.Instance.transform.up).normalized;
+        Vector3 tiltDirection = Vector3.Cross(Torque.normalized, -HexGridManager.Instance.hexGridTilt.transform.up).normalized;
         tiltEventChannel.RaiseTiltChanged(Mathf.Abs(currentTiltAngle), tiltDirection);
     }
     

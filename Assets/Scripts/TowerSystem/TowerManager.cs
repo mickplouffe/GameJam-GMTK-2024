@@ -244,7 +244,7 @@ public class TowerManager : MonoBehaviourSingleton<TowerManager>
         selectedTower.transform.rotation =
             selectedTower.GetComponent<TowerController>().Tile.TileObject.transform.rotation;
         
-        selectedTower.transform.parent = HexGridManager.Instance.transform;
+        selectedTower.transform.parent = HexGridManager.Instance.hexGridTilt.transform;
 
         return true;
     }
@@ -263,7 +263,7 @@ public class TowerManager : MonoBehaviourSingleton<TowerManager>
         tower.rotation =
             tower.GetComponent<TowerController>().Tile.TileObject.transform.rotation;
         
-        tower.parent = HexGridManager.Instance.transform;
+        tower.parent = HexGridManager.Instance.hexGridTilt.transform;
     }
 
     private void RegisterTower(Transform tower)

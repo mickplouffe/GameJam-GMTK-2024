@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4521084939054128317}
   - component: {fileID: 8166211311537049253}
   - component: {fileID: 3348254841917489166}
+  - component: {fileID: 1405544692131056179}
   m_Layer: 7
   m_Name: CyclopsFinal
   m_TagString: Enemy
@@ -91,6 +92,28 @@ MonoBehaviour:
   enemyWeight: 4
   enemyKillCost: 5
   startHealth: 100
+--- !u!95 &1405544692131056179
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5732001267249408293}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 24fcd44616b33f3429ef8da81d61a1fb, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &6766605517732086520
 PrefabInstance:
   m_ObjectHideFlags: 0
