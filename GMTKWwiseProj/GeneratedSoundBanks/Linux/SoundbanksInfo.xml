@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="393239870" Type="User" Language="SFX" Hash="{CA3E1255-5BAF-7F6F-BA5A-1927F7B6AD12}">
+		<SoundBank Id="393239870" Type="User" Language="SFX" Hash="{76797FFD-1F27-8CD1-38C9-3FEBF2A3962B}">
 			<ShortName>SFX</ShortName>
 			<Path>SFX.bnk</Path>
 			<Media>
@@ -88,6 +88,10 @@
 				<File Id="322104273" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>GMTK2024_SFX_enemyEntersTower_cyclops_-5_v1.wav</ShortName>
 					<CachePath>SFX/GMTK2024_SFX_enemyEntersTower_cyclops_-5_v1_72264779.wem</CachePath>
+				</File>
+				<File Id="332364384" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GMTK2024_SFX_centralTowerDestroyed_-4dB_v02.wav</ShortName>
+					<CachePath>SFX/GMTK2024_SFX_centralTowerDestroyed_-4dB_v02_14E21738.wem</CachePath>
 				</File>
 				<File Id="371977938" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>GMTK2024_SFX_enemyDies_minotaur_-14_v3.wav</ShortName>
@@ -251,6 +255,11 @@
 						<MediaRef Id="877437290"/>
 						<MediaRef Id="888382889"/>
 						<MediaRef Id="934633238"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1695342125" Name="Play_centralTowerDestroyed" DurationType="OneShot" DurationMin="2.0784166" DurationMax="2.0784166">
+					<MediaRefs>
+						<MediaRef Id="332364384"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="2712047697" Name="Play_Fall" DurationType="OneShot" DurationMin="1.1168481" DurationMax="1.5584253">
@@ -772,7 +781,7 @@
 				<Event Id="3869623766" Name="Play_UIWaveStarted" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="1685527054" Type="User" Language="SFX" Hash="{C38114BD-433E-003B-F686-E856E0D71BBB}">
+		<SoundBank Id="1685527054" Type="User" Language="SFX" Hash="{C5989DEF-4F96-1582-AE94-79417CA93D8D}">
 			<ShortName>MX</ShortName>
 			<Path>MX.bnk</Path>
 			<Media>
@@ -937,5 +946,5 @@
 			</StateGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{CDD13D90-3287-7494-988F-7768E3F37BF1}</FileHash>
+	<FileHash>{A3F0F142-82EB-5515-AB66-8B90740CB5AB}</FileHash>
 </SoundBanksInfo>
