@@ -9,6 +9,7 @@ public class EnemyEventChannel: ScriptableObject
     public UnityAction OnAllWaveCompleted;
     public UnityAction<HexTileController, float> OnWaveStart;
     public UnityAction OnStartNextWave;
+    
     public UnityAction<int> OnEnemyAttack;
 
     public void RaiseEnemyKilled(GameObject enemy)

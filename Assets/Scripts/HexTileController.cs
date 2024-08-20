@@ -10,6 +10,7 @@ public class HexTileController : MonoBehaviour
     [SerializeField] private EnemyEventChannel enemyEventChannel;
     [SerializeField] private Color flashColor;
     [SerializeField] private float flashSpeed;
+    [SerializeField] private Animator tileAnimator;
 
     private Color _originalTileColor;
 
@@ -18,20 +19,30 @@ public class HexTileController : MonoBehaviour
     private bool _isFlashing;
     private float _flashTimeElapsed;
     private float _flashDuration;
+    private static readonly int Spawner = Animator.StringToHash("Spawner");
+
     private void OnEnable()
     {
         enemyEventChannel.OnWaveStart += HandleTileFlashing;
+        enemyEventChannel.OnWaveCompleted += HandleWaveCompleted;
     }
 
     private void OnDisable()
     {
         enemyEventChannel.OnWaveStart -= HandleTileFlashing;
+        enemyEventChannel.OnWaveCompleted -= HandleWaveCompleted;
     }
 
     private void Start()
     {
         _tileRenderer = GetComponentInChildren<Renderer>();
         _originalTileColor = _tileRenderer.materials[0].color;
+
+        if (!tileAnimator)
+        {
+            tileAnimator = GetComponentInChildren<Animator>();
+            
+        }
     }
 
     private void Update()
@@ -61,6 +72,13 @@ public class HexTileController : MonoBehaviour
         _isFlashing = true;
         _flashTimeElapsed = 0.0f;
         _flashDuration = flashDuration;
+        
+        tileAnimator.SetBool(Spawner, true);
+    }
+    
+    private void HandleWaveCompleted()
+    {
+        tileAnimator.SetBool(Spawner, false);
     }
     
 }
