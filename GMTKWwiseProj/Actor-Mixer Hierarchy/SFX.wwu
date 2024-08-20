@@ -45,6 +45,17 @@
 							<ChildrenList>
 								<BlendContainer Name="Attack" ID="{85640160-D919-471F-A0D1-5023E83063D3}" ShortID="523896305">
 									<PropertyList>
+										<Property Name="IsGlobalLimit" Type="int16" Value="1"/>
+										<Property Name="MaxSoundPerInstance" Type="int16">
+											<ValueList>
+												<Value>5</Value>
+											</ValueList>
+										</Property>
+										<Property Name="UseMaxSoundPerInstance" Type="bool">
+											<ValueList>
+												<Value>True</Value>
+											</ValueList>
+										</Property>
 										<Property Name="Volume" Type="Real64">
 											<ModifierList>
 												<ModifierInfo>

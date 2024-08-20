@@ -87,6 +87,17 @@
 								</Action>
 							</ChildrenList>
 						</Event>
+						<Event Name="Play_centralTowerDestroyed" ID="{4DAD05BF-98D9-431C-81D1-E491E656DE6C}">
+							<ChildrenList>
+								<Action Name="" ID="{184DD2FF-01F9-49E6-800F-799E212118D5}" ShortID="130737130">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="centralTowerDestroyed" ID="{D767AB52-CCA5-45F9-A17D-6D151C90BD05}" WorkUnitID="{A57A593A-B9DE-4277-A3EF-672CA80E8992}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="Tiles" ID="{7E2C6B64-E6B2-4B97-B346-0860CCC522F2}" ShortID="536179011">

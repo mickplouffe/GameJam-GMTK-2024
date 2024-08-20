@@ -36,6 +36,7 @@
 						<Action Name="" ID="{DCCF5C72-1818-452F-9EEA-BF7205F1D3F8}" ShortID="777576719">
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="3"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
 							</PropertyList>
 							<ReferenceList/>
 						</Action>
