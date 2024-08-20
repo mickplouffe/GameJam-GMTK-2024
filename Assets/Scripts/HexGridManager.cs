@@ -469,6 +469,11 @@ public class HexGridManager : MonoBehaviour
 
         return null;
     }
+
+    public Dictionary<(int q, int r), HexTile> GetAllTiles()
+    {
+        return hexGrid.GetAllTiles();
+    }
 }
 
 

@@ -65,6 +65,7 @@ public class TowerController : MonoBehaviour
     [SerializeField] public AK.Wwise.Event towerSlideSFX;
     [SerializeField] public AK.Wwise.Event towerSlideStopSFX;
     [SerializeField] public AK.Wwise.Event towerFallSFX;
+    [SerializeField] public AK.Wwise.Event towerAttackSFX;
     
     void Awake()
     {
@@ -179,6 +180,7 @@ private IEnumerator DrawShootingRay()
 private void FireAtTarget()
 {
 
+    towerAttackSFX.Post(gameObject);
     StartCoroutine(DrawShootingRay());
     // Example: If using projectiles
     // GameObject projectile = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);

@@ -226,11 +226,12 @@ public class TowerManager : MonoBehaviourSingleton<TowerManager>
 
         if (selectedTower.GetComponent<TowerController>().Tile == null)
             return false;
-
+        
         if (!preview)
         {
             // Check if a tower already on the tile
-            if (!selectedTower.GetComponent<TowerController>().Tile.HasTower())
+            if (!selectedTower.GetComponent<TowerController>().Tile.HasTower() && 
+                !selectedTower.GetComponent<TowerController>().Tile.TileObject.GetComponent<HexTileController>().IsSpawnerTile)
                 selectedTower.GetComponent<TowerController>().Tile.TowerObject = selectedTower.gameObject;
             else
             {

@@ -162,6 +162,11 @@ MonoBehaviour:
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: ea598f45ce3942142b1a3af368818ff4,
       type: 2}
+  towerAttackSFX:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 59b65737629e9b24caa50ac95ecb7e17,
+      type: 2}
 --- !u!65 &4529294783331625914
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -45,6 +45,11 @@ public class EnemySpawner : MonoBehaviourSingleton<EnemySpawner>
         //gameManagerEventChannel.OnGameRestart -= HandleGameRestart;
     }
 
+    private void Awake()
+    {
+        _allPossibleSpawnPoints = new List<HexTile>();
+    }
+
     public IEnumerator StartNextWave()
     {
         waveStartEvent.Post(gameObject);
@@ -58,10 +63,17 @@ public class EnemySpawner : MonoBehaviourSingleton<EnemySpawner>
             yield break;
         
         var currentWave = waves[CurrentWaveIndex];
+        
+        foreach(HexTile spawnPoint in _allPossibleSpawnPoints)
+            spawnPoint.TileObject.GetComponent<HexTileController>().IsSpawnerTile = false;
+        
         _allPossibleSpawnPoints = HexGridManager.Instance.GetRandomEdgeTiles(currentWave.numberOfSpawnPoints);
-
+        
+        foreach(HexTile spawnPoint in _allPossibleSpawnPoints)
+            spawnPoint.TileObject.GetComponent<HexTileController>().IsSpawnerTile = true;
+        
         foreach (var spawnPoint in _allPossibleSpawnPoints)
-            enemyEventChannel.RaiseWaveStart(spawnPoint, currentWave.waveDelay);
+            spawnPoint.TileObject.GetComponent<HexTileController>().HandleTileFlashing(spawnPoint, currentWave.waveDelay);
         
         yield return new WaitForSeconds(currentWave.waveDelay);
 
