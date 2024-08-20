@@ -58,7 +58,8 @@ public class EnemyController : MonoBehaviour
 
     private void HandleGameRestart()
     {
-        EnemyObjectPool.Instance.ReturnEnemyObject(Prefab, gameObject);
+        if(gameObject.activeInHierarchy)
+            EnemyObjectPool.Instance.ReturnEnemyObject(Prefab, gameObject);
         _currentHealth = startHealth;
         _finishedSetup = false;
     }

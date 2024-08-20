@@ -8,8 +8,10 @@ public class HexTileController : MonoBehaviour
     public Vector2Int GridPosition { get; set; }
 
     [SerializeField] private EnemyEventChannel enemyEventChannel;
+    [SerializeField] private GameManagerEventChannel gameManagerEventChannel;
+
     [SerializeField] private Color flashColor;
-    [SerializeField] private float flashSpeed;
+    [SerializeField] private float flashSpeed = 1.0f;
     [SerializeField] private Animator tileAnimator;
 
     private Color _originalTileColor;
@@ -25,12 +27,14 @@ public class HexTileController : MonoBehaviour
     {
         enemyEventChannel.OnWaveStart += HandleTileFlashing;
         enemyEventChannel.OnWaveCompleted += HandleWaveCompleted;
+        gameManagerEventChannel.OnGameRestart += HandleWaveCompleted;
     }
 
     private void OnDisable()
     {
         enemyEventChannel.OnWaveStart -= HandleTileFlashing;
         enemyEventChannel.OnWaveCompleted -= HandleWaveCompleted;
+        gameManagerEventChannel.OnGameRestart -= HandleWaveCompleted;
     }
 
     private void Start()
@@ -39,10 +43,7 @@ public class HexTileController : MonoBehaviour
         _originalTileColor = _tileRenderer.materials[0].color;
 
         if (!tileAnimator)
-        {
             tileAnimator = GetComponentInChildren<Animator>();
-            
-        }
     }
 
     private void Update()
@@ -64,9 +65,9 @@ public class HexTileController : MonoBehaviour
         _tileRenderer.materials[0].color = _originalTileColor;
     }
 
-    private void HandleTileFlashing(HexTileController tile, float flashDuration)
+    private void HandleTileFlashing(HexTile tile, float flashDuration)
     {
-        if (!Equals(tile))
+        if (tile.Q != GridPosition.x || tile.R != GridPosition.y)
             return;
 
         _isFlashing = true;

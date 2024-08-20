@@ -179,6 +179,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyEventChannel: {fileID: 11400000, guid: 58c4683592b42784c91a64e98e2ccbc1, type: 2}
+  gameManagerEventChannel: {fileID: 11400000, guid: 6509d5e4e0033de4bbfb99b33ecd3255,
+    type: 2}
   flashColor: {r: 0.8962264, g: 0.33397114, b: 0.33397114, a: 1}
   flashSpeed: 10
   tileAnimator: {fileID: 8106389380479194866}

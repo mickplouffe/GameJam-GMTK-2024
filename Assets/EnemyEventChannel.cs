@@ -7,7 +7,7 @@ public class EnemyEventChannel: ScriptableObject
     public UnityAction<GameObject> OnEnemyKilled;
     public UnityAction OnWaveCompleted;
     public UnityAction OnAllWaveCompleted;
-    public UnityAction<HexTileController, float> OnWaveStart;
+    public UnityAction<HexTile, float> OnWaveStart;
     public UnityAction OnStartNextWave;
     
     public UnityAction<int> OnEnemyAttack;
@@ -27,7 +27,7 @@ public class EnemyEventChannel: ScriptableObject
         OnAllWaveCompleted?.Invoke();
     }
 
-    public void RaiseWaveStart(HexTileController tile, float waveDelay)
+    public void RaiseWaveStart(HexTile tile, float waveDelay)
     {
         OnWaveStart?.Invoke(tile, waveDelay);
     }
