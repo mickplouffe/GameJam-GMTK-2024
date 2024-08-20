@@ -13,12 +13,11 @@ MonoBehaviour:
   m_Name: Wave 16
   m_EditorClassIdentifier: 
   enemyPrefabs:
-  - {fileID: 4189922934805189707, guid: 328070ef90857fe42887b72ba385ded3, type: 3}
-  - {fileID: 4189922934805189707, guid: 328070ef90857fe42887b72ba385ded3, type: 3}
-  - {fileID: 4189922934805189707, guid: 328070ef90857fe42887b72ba385ded3, type: 3}
-  enemyCounts: 060000000600000006000000
-  spawnInterval: 0.4
+  - {fileID: 5732001267249408293, guid: 38f0607eaadd7174e90100bcf8ab96c0, type: 3}
+  - {fileID: 6104858332284479873, guid: 166329cf8e72afb448ebfe5b97ac2b2f, type: 3}
+  enemyCounts: 0300000002000000
+  spawnInterval: 2
   waveDelay: 10
-  numberOfSpawnPoints: 2
+  numberOfSpawnPoints: 1
   dialogue: {fileID: 8254384459576495593, guid: bb463f8761ef69748ba9efc852bc2516,
     type: 3}

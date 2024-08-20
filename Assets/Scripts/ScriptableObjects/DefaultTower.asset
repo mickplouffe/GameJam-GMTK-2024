@@ -18,9 +18,9 @@ MonoBehaviour:
   maxDamage: 10
   damage: 2
   maxRange: 10
-  range: 5
-  fireRate: 1
-  cost: 100
+  range: 3
+  fireRate: 2
+  cost: 10
   selectedMaterial: {fileID: 2100000, guid: 5abb3d18170c7cc4b8ce3577ef8b5ed8, type: 2}
   defaultMaterial: {fileID: 2100000, guid: 6615f1708a4932646adcdc55932feefa, type: 2}
   isUpgradable: 1

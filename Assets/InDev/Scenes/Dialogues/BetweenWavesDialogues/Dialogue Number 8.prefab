@@ -763,7 +763,7 @@ GameObject:
   - component: {fileID: 601863925428649979}
   - component: {fileID: 845190920644429755}
   m_Layer: 5
-  m_Name: Inbetween Dialouge Number 4
+  m_Name: Dialogue Number 8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
