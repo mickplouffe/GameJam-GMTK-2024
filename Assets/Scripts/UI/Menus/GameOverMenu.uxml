@@ -1,6 +1,6 @@
 <engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/Scripts/UI/Menus/InGameStyle.uss?fileID=7433441132597879392&amp;guid=59136cd82dd4a14459143fda52d8ef5e&amp;type=3#InGameStyle" />
-    <engine:VisualElement name="GameOverMenuContainer" class="menuContainer">
+    <engine:VisualElement name="GameOverMenuContainer" class="menuContainer" style="background-color: rgba(94, 47, 44, 0.34);">
         <engine:VisualElement name="TitleContainer" class="titleContainer" style="background-image: url(&quot;project://database/Assets/Art/UI/Game%20Over.png?fileID=2800000&amp;guid=4efc5cf9cf1971e42898e9b436e1749c&amp;type=3#Game Over&quot;);">
             <engine:Label text="Game Over" name="PauseMenuTitle" class="menuTitle titleStyle" style="display: flex; visibility: hidden;" />
         </engine:VisualElement>

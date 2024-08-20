@@ -284,7 +284,7 @@ public class TowerManager : MonoBehaviourSingleton<TowerManager>
         tower.position =
             tower.GetComponent<TowerController>().Tile.TileObject.transform.position +
             tower.GetComponent<TowerController>().Tile.TileObject.transform.up *
-            selectedTower.GetComponent<TowerController>().towerData.yOffset;
+            tower.GetComponent<TowerController>().towerData.yOffset;
         
         tower.GetComponent<TowerController>().Tile.TowerObject = tower.gameObject;
         
