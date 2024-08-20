@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class DialogueManager : MonoBehaviourSingleton<DialogueManager>
 {
-    [SerializeField] private List<DialogueController> dialogueControllers;
     [SerializeField] private GameManagerEventChannel gameManagerEventChannel;
     
     private void OnEnable()
@@ -20,16 +19,16 @@ public class DialogueManager : MonoBehaviourSingleton<DialogueManager>
 
     private void HandleDialogueStart()
     {
-        if (dialogueControllers.Count <= 0)
+        WaveConfig currentWaveConfig = EnemySpawner.Instance.GetCurrentWaveConfig();
+
+        if (currentWaveConfig == null || currentWaveConfig.dialogue == null)
         {
             gameManagerEventChannel.RaiseDialogueEnd();
             return;
         }
 
-        dialogueControllers[EnemySpawner.Instance.CurrentWaveIndex % dialogueControllers.Count]
-            .transform.parent
-            .gameObject.SetActive(true);
-        
-        dialogueControllers[EnemySpawner.Instance.CurrentWaveIndex % dialogueControllers.Count].StartDialogue();
+        GameObject dialogueObject = Instantiate(currentWaveConfig.dialogue);
+        dialogueObject.GetComponentInChildren<DialogueController>().IsPlaying = true;
+        dialogueObject.GetComponentInChildren<DialogueController>().StartDialogue();
     }
 }

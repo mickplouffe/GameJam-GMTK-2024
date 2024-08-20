@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8864436890817440311}
   - component: {fileID: 8728589296653629820}
+  - component: {fileID: 2274796696128143630}
   m_Layer: 7
   m_Name: MinotaurFinal
   m_TagString: Enemy
@@ -54,6 +55,42 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.74, y: 1.45, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2274796696128143630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6104858332284479873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc98c07a8bb464b43b98d27d4e04bcd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tilesPerSecond: 1
+  enemyEventChannel: {fileID: 11400000, guid: 58c4683592b42784c91a64e98e2ccbc1, type: 2}
+  weightEventChannel: {fileID: 11400000, guid: 1c11f8eaadf261d449e9f3f048895711, type: 2}
+  coinsEventChannel: {fileID: 11400000, guid: bd788a866bdd906438a624d0a722e871, type: 2}
+  gameManagerEventChannel: {fileID: 11400000, guid: 6509d5e4e0033de4bbfb99b33ecd3255,
+    type: 2}
+  enemyDeathSFX:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: db7d5f51449b3934c82d3c374cfab4d2,
+      type: 2}
+  enemyEnterTowerSFX:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: b5c445d9c39685442bb29eb3b99eda22,
+      type: 2}
+  enemySpawnSFX:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 4254589c7df93854d8f3ffd762f718da,
+      type: 2}
+  enemyWeight: 5
+  enemyKillCost: 5
+  startHealth: 100
 --- !u!1001 &508706424213974534
 PrefabInstance:
   m_ObjectHideFlags: 0

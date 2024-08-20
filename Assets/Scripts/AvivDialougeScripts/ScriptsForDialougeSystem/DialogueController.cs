@@ -29,9 +29,17 @@ public class DialogueController : MonoBehaviour
     
     public bool IsPlaying { get; set; }
 
-    private void Awake()
+    private void OnEnable()
     {
-        transform.parent.gameObject.SetActive(false);
+        transform.parent.gameObject.SetActive(true);
+        transform.gameObject.SetActive(true);
+    }
+
+    private void Awake()
+    { 
+        transform.parent.gameObject.SetActive(true);
+        transform.gameObject.SetActive(true);
+
     }
 
     private void Update()
@@ -56,7 +64,6 @@ public class DialogueController : MonoBehaviour
     {
         if (CurrentTextActive <= dialogue1.Length - 1)
         {
-
             PlayDialogue(dialogue1[CurrentTextActive]);
 
 
@@ -85,13 +92,15 @@ public class DialogueController : MonoBehaviour
             ProfileTwoAnim.SetTrigger("Out");
             Anim.SetBool("Active", false);
             Invoke("DisableUI", 3);
-            gameManagerEventChannel.RaiseDialogueEnd();
+
         }
 
     }
     void DisableUI()
     {
         transform.parent.gameObject.SetActive(false);
+        gameManagerEventChannel.RaiseDialogueEnd();
+        Destroy(transform.parent.gameObject);
     }
 
 
