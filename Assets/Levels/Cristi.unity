@@ -4104,6 +4104,16 @@ MonoBehaviour:
   uiEventChannel: {fileID: 11400000, guid: b6146f624481a48429195dc223974ca7, type: 2}
   gameManagerEventChannel: {fileID: 11400000, guid: 6509d5e4e0033de4bbfb99b33ecd3255,
     type: 2}
+  goldGainSFX:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 0225d6e74bc4af941b0eeb4e0de8110b,
+      type: 2}
+  goldLossSFX:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 31415b1fd8e3b9f43bc11ec16913331e,
+      type: 2}
 --- !u!4 &506280816
 Transform:
   m_ObjectHideFlags: 0

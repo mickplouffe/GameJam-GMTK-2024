@@ -106,6 +106,8 @@ public class TowerManager : MonoBehaviourSingleton<TowerManager>
                 SnapTowerToTile(hit.point) && 
                 CoinsManager.Instance.CanBuy(selectedTower.GetComponent<TowerController>().instanceData.currentCost))
             {
+                selectedTower.GetComponent<TowerController>().towerPlaceSFX.Post(selectedTower.gameObject);
+                
                 weightEventChannel.RaiseWeightAdded( selectedTower.GetComponent<TowerController>().instanceData.weight, 
                     selectedTower.GetComponent<TowerController>().Tile);
                 
@@ -163,7 +165,7 @@ public class TowerManager : MonoBehaviourSingleton<TowerManager>
     public void HandleUpgrade(int upgradeType)
     {
         UpgradeTowerAction upgradeAction = null;
-
+    
         switch (upgradeType)
         {
             case 0: // Upgrade Damage
@@ -193,6 +195,8 @@ public class TowerManager : MonoBehaviourSingleton<TowerManager>
     {
         if (!activeTowerSelected)
             return;
+
+        activeTowerSelected.towerSellSFX.Post(activeTowerSelected.gameObject);
         
         coinsEventChannel.RaiseModifyCoins(Mathf.CeilToInt(activeTowerSelected.instanceData.currentCost * sellCostPercentage));
         uiEventChannel.RaiseActivateBuildMenu(true);

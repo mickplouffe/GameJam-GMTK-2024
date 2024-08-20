@@ -883,6 +883,21 @@ MonoBehaviour:
   coinsEventChannel: {fileID: 11400000, guid: bd788a866bdd906438a624d0a722e871, type: 2}
   gameManagerEventChannel: {fileID: 11400000, guid: 6509d5e4e0033de4bbfb99b33ecd3255,
     type: 2}
+  enemyDeathSFX:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: db7d5f51449b3934c82d3c374cfab4d2,
+      type: 2}
+  enemyEnterTowerSFX:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: b5c445d9c39685442bb29eb3b99eda22,
+      type: 2}
+  enemySpawnSFX:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 4254589c7df93854d8f3ffd762f718da,
+      type: 2}
   enemyWeight: 2
   enemyKillCost: 5
   startHealth: 100

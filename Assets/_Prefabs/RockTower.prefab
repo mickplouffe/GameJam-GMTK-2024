@@ -176,6 +176,36 @@ MonoBehaviour:
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
   tiltEventChannel: {fileID: 11400000, guid: c5f3187fb688eeb4e8c0f8e60b04cca8, type: 2}
+  towerPlaceSFX:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: ff1a55563b27c0a4da6b6c12184f37b8,
+      type: 2}
+  towerSellSFX:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: a18e3d6a0ff44a640b48cd75cbc5d921,
+      type: 2}
+  towerUpgradeSFX:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 06ec8d0d1de5f534185e68723f3d9ee8,
+      type: 2}
+  towerSlideSFX:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: fe37468643f613b4c8cdf69de64d7cdc,
+      type: 2}
+  towerSlideStopSFX:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 1c256fdc310b03449939e7a0d9ebae4d,
+      type: 2}
+  towerFallSFX:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: ea598f45ce3942142b1a3af368818ff4,
+      type: 2}
 --- !u!135 &1682688747339359383
 SphereCollider:
   m_ObjectHideFlags: 0

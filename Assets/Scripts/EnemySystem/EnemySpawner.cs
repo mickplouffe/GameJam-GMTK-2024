@@ -13,6 +13,12 @@ public class EnemySpawner : MonoBehaviourSingleton<EnemySpawner>
     [SerializeField] private EnemyEventChannel enemyEventChannel;
     [SerializeField] private GameManagerEventChannel gameManagerEventChannel;
     
+    [SerializeField] private AK.Wwise.Event waveStartedSFX;
+    [SerializeField] private AK.Wwise.Event waveEndedSFX;
+
+    [SerializeField] private AK.Wwise.Event waveStartEvent;
+    [SerializeField] private AK.Wwise.Event betweenWavesEvent;
+
     public int CurrentWaveIndex { get; set; }
     private List<GameObject> _activeEnemies = new();
 
@@ -41,6 +47,8 @@ public class EnemySpawner : MonoBehaviourSingleton<EnemySpawner>
 
     public IEnumerator StartNextWave()
     {
+        waveStartEvent.Post(gameObject);
+        waveStartedSFX.Post(gameObject);
         yield return StartCoroutine(SpawnWaves());
     }
 
@@ -63,7 +71,9 @@ public class EnemySpawner : MonoBehaviourSingleton<EnemySpawner>
         yield return new WaitUntil(() => _activeEnemies.Count == 0);
         
         CurrentWaveIndex++;
-        
+
+        waveEndedSFX.Post(gameObject);
+        betweenWavesEvent.Post(gameObject);
         enemyEventChannel.RaiseWaveCompleted();
     }
 

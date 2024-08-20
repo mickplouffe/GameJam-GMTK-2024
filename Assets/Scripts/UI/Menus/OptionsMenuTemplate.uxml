@@ -11,7 +11,7 @@
             <engine:VisualElement name="GraphicsPanel" style="padding-top: 20px;">
                 <engine:DropdownField label="GRAPHICS" name="GraphicsDropdown" style="font-size: 32px; width: 492px; height: 55px;" />
             </engine:VisualElement>
-            <engine:Slider label="VOLUME" value="42" high-value="100" show-input-field="false" direction="Horizontal" inverted="false" page-size="0" style="width: 560px; font-size: 42px; margin-top: 40px; margin-bottom: 40px;" />
+            <engine:Slider label="VOLUME" value="50" high-value="100" show-input-field="false" direction="Horizontal" inverted="false" page-size="0" name="VolumeSlider" style="width: 560px; font-size: 42px; margin-top: 40px; margin-bottom: 40px;" />
             <engine:Button text="Back" name="BackButton" class="menuButton" style="height: 76px; width: 245px; margin-bottom: 50px; -unity-text-align: upper-center; background-color: rgba(0, 0, 0, 0.83);" />
         </engine:VisualElement>
     </engine:VisualElement>

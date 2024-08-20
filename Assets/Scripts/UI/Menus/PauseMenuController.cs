@@ -62,18 +62,21 @@ public class PauseMenuController : BaseMenu
     
     private void HandleResumeButtonPressed()
     {
+        uiClickAudioEvent.Post(gameObject);
         _pauseMenuContainer.visible = false;
         _menuEventChannel.RaiseResumeButtonPressed();
     }
 
     private void HandleOptionsButtonPressed()
     {
+        uiClickAudioEvent.Post(gameObject);
         _pauseMenuContainer.visible = false;
         _menuEventChannel.RaiseOptionsButtonPressedEvent(_pauseMenuContainer);
     }
 
     private void HandleBackButtonPressed(VisualElement prevContainer)
     {
+        uiClickAudioEvent.Post(gameObject);
         if (_pauseMenuContainer != prevContainer)
             return;
         _pauseMenuContainer.visible = true;
@@ -81,6 +84,7 @@ public class PauseMenuController : BaseMenu
     
     private void HandleExitButtonPressed()
     {
+        uiClickAudioEvent.Post(gameObject);
         // TODO: For not this exits the game but it should transition to the Main Menu UI in some way
 #if UNITY_EDITOR
         // Exit play mode in the editor

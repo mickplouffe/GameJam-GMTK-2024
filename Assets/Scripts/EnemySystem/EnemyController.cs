@@ -13,6 +13,10 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private CoinsEventChannel coinsEventChannel;
     [SerializeField] private GameManagerEventChannel gameManagerEventChannel;
 
+    [SerializeField] private AK.Wwise.Event enemyDeathSFX;
+    [SerializeField] private AK.Wwise.Event enemyEnterTowerSFX;
+    [SerializeField] private AK.Wwise.Event enemySpawnSFX;
+
     private HexTile _currentTargetTile;
     private HexTile _currentSourceTile;
     private float _percentBetweenTiles;
@@ -71,6 +75,7 @@ public class EnemyController : MonoBehaviour
                                   transform.up * _colliderBounds.size.y * 0.35f;
         
         _finishedSetup = true;
+        enemySpawnSFX.Post(gameObject);
     }
 
     private void Update()
@@ -106,7 +111,8 @@ public class EnemyController : MonoBehaviour
             if (_currentTargetTile == TargetTile)
             {
                 transform.position = new Vector3(TargetTile.TileObject.transform.position.x, transform.position.y, TargetTile.TileObject.transform.position.z);
-                
+
+                enemyEnterTowerSFX.Post(gameObject);
                 KillEnemy();
                 
                 return;
@@ -146,9 +152,12 @@ public class EnemyController : MonoBehaviour
     public void TakeDamage(int damage)
     {
         _currentHealth -= damage;
-        if(_currentHealth <= 0)
+        if (_currentHealth <= 0)
+        {
+            enemyDeathSFX.Post(gameObject);
             KillEnemy();
-        
+        }
+
         Debug.Log($"Enemy {gameObject.name} has been wounded, currentHealth: {_currentHealth}");
     }
 

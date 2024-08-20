@@ -40,12 +40,14 @@ public class CreditsMenuController : BaseMenu
     
     private void HandleCreditsButtonPressed(VisualElement prevContainer)
     {
+        uiClickAudioEvent.Post(gameObject);
         _prevContainer = prevContainer;
         _creditsMenuContainer.visible = true;
     }
     
     private void HandleBackButtonPressed()
     {
+        uiClickAudioEvent.Post(gameObject);
         _creditsMenuContainer.visible = false;
         _menuEventChannel.RaiseBackButtonPressed(_prevContainer);
     }

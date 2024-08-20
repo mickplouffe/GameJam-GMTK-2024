@@ -11,7 +11,10 @@ using UnityEngine.UIElements;
 public class MainMenuController : BaseMenu
 {
     [SerializeField] private MenuEventChannel _menuEventChannel;
-    [SerializeField] private bool isOldSystem;
+    
+    [SerializeField] private AK.Wwise.Event mainThemeEvent;
+    [SerializeField] private AK.Wwise.Event startLevelEvent;
+    
     private UIDocument _ui;
     
     private Button _playButton;
@@ -51,20 +54,29 @@ public class MainMenuController : BaseMenu
 
         _menuEventChannel.OnBackButtonPressed -= HandleBackButtonPressed;
     }
-    
+
+    private void Awake()
+    {
+        mainThemeEvent.Post(gameObject);
+    }
+
     private void HandlePlayButtonPressed()
     {
+        startLevelEvent.Post(gameObject);
+        uiClickAudioEvent.Post(gameObject);
         SceneManager.LoadScene("Cristi");
     }
 
     private void HandleOptionsButtonPressed()
     {
+        uiClickAudioEvent.Post(gameObject);
         _mainMenuContainer.visible = false;
         _menuEventChannel.RaiseOptionsButtonPressedEvent(_mainMenuContainer);
     }
 
     private void HandleBackButtonPressed(VisualElement prevContainer)
     {
+        uiClickAudioEvent.Post(gameObject);
         if (_mainMenuContainer != prevContainer)
             return;
         
@@ -73,6 +85,7 @@ public class MainMenuController : BaseMenu
     
     private void HandleCreditsButtonPressed()
     {
+        uiClickAudioEvent.Post(gameObject);
         _mainMenuContainer.visible = false;
         _menuEventChannel.RaiseCreditsButtonPressed(_mainMenuContainer);
     }
@@ -80,6 +93,7 @@ public class MainMenuController : BaseMenu
     
     private void HandleExitButtonPressed()
     {
+        uiClickAudioEvent.Post(gameObject);
 #if UNITY_EDITOR
         // Exit play mode in the editor
         EditorApplication.isPlaying = false;
