@@ -20,5 +20,4 @@ MonoBehaviour:
   spawnInterval: 0.4
   waveDelay: 10
   numberOfSpawnPoints: 2
-  dialogue: {fileID: 8254384459576495593, guid: bb463f8761ef69748ba9efc852bc2516,
-    type: 3}
+  dialogue: {fileID: 573032355086819758, guid: ed96f5b7763e54d4ebee605d317bdafc, type: 3}

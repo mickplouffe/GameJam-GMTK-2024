@@ -58,7 +58,7 @@ public class EnemyObjectPool : MonoBehaviourSingleton<EnemyObjectPool>
 
     public void ReturnEnemyObject(GameObject enemyPrefab, GameObject obj)
     {
-        if (poolDictionary.ContainsKey(enemyPrefab))
+        if (enemyPrefab != null && poolDictionary.ContainsKey(enemyPrefab))
         {
             obj.SetActive(false);
             // obj.transform.position = Vector3.up * 100.0f;

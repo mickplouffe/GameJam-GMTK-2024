@@ -20,12 +20,13 @@ MonoBehaviour:
   maxRange: 10
   range: 3
   fireRate: 2
-  cost: 10
+  cost: 100
   selectedMaterial: {fileID: 2100000, guid: 5abb3d18170c7cc4b8ce3577ef8b5ed8, type: 2}
   defaultMaterial: {fileID: 2100000, guid: 6615f1708a4932646adcdc55932feefa, type: 2}
   isUpgradable: 1
   isStatic: 0
   yOffset: 0
+  enemyYOffset: 0
   upgradePrefabs:
   - {fileID: 4711356743005891950, guid: 2f8b086afdd8b3e40900817cbf6fdb6d, type: 3}
   - {fileID: 4711356743005891950, guid: 3c15a2b3bd023a34daa09f58c91153d1, type: 3}

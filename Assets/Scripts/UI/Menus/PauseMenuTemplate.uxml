@@ -1,11 +1,11 @@
 <engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/Scripts/UI/Menus/InGameStyle.uss?fileID=7433441132597879392&amp;guid=59136cd82dd4a14459143fda52d8ef5e&amp;type=3#InGameStyle" />
-    <engine:VisualElement name="PauseMenuContainer" class="menuContainer" style="-unity-font-definition: url(&quot;project://database/Assets/TextMesh%20Pro/Fonts/LiberationSans.ttf?fileID=12800000&amp;guid=e3265ab4bf004d28a9537516768c1c75&amp;type=3#LiberationSans&quot;); -unity-text-align: upper-center; -unity-font-style: normal;">
+    <engine:VisualElement name="PauseMenuContainer" class="menuContainer" style="background-color: rgba(73, 77, 89, 0.54);">
         <engine:VisualElement name="TitleContainer" class="titleContainer">
-            <engine:Label text="Game Paused" name="PauseMenuTitle" class="menuTitle titleStyle" />
+            <engine:Label text="Game Paused" name="PauseMenuTitle" class="menuTitle titleStyle" style="height: 115px;" />
         </engine:VisualElement>
         <engine:VisualElement name="ButtonsPanel" class="buttonContainer" style="width: 399px;">
-            <engine:Button text="Resume" name="ResumeButton" class="button" />
+            <engine:Button text="Resume" name="ResumeButton" class="button" style="white-space: normal;" />
             <engine:Button text="Options" name="OptionsButton" class="button" />
             <engine:Button text="Exit" name="ExitButton" class="button" />
         </engine:VisualElement>

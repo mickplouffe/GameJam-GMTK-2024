@@ -67,8 +67,8 @@ public class TiltManager : MonoBehaviourSingleton<TiltManager>
     private void UpdateCenterOfMass()
     {
         Vector3 totalWeightedPosition = Vector3.zero;
-        float totalWeight = 0.0f;
         
+        float totalWeight = 0.0f;
         Vector3 netTorque = Vector3.zero;
         
         foreach (var key in HexGridManager.Instance.GetAllTiles().Keys)
@@ -128,6 +128,9 @@ public class TiltManager : MonoBehaviourSingleton<TiltManager>
     
     private void HandleWeightAdded(float weight, HexTile hexTile)
     {
+        if(hexTile == null)
+            return;
+        
         if(weightAtlas.TryGetValue(hexTile, out _))
             weightAtlas[hexTile] += weight;
         else

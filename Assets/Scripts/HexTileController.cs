@@ -25,16 +25,14 @@ public class HexTileController : MonoBehaviour
 
     private void OnEnable()
     {
-        enemyEventChannel.OnWaveStart += HandleTileFlashing;
         enemyEventChannel.OnWaveCompleted += HandleWaveCompleted;
-        //gameManagerEventChannel.OnGameRestart += HandleWaveCompleted;
+        gameManagerEventChannel.OnGameRestart += HandleWaveCompleted;
     }
 
     private void OnDisable()
     {
-        enemyEventChannel.OnWaveStart -= HandleTileFlashing;
         enemyEventChannel.OnWaveCompleted -= HandleWaveCompleted;
-        //gameManagerEventChannel.OnGameRestart -= HandleWaveCompleted;
+        gameManagerEventChannel.OnGameRestart -= HandleWaveCompleted;
     }
 
     private void Start()
@@ -81,7 +79,8 @@ public class HexTileController : MonoBehaviour
     
     private void HandleWaveCompleted()
     {
-        tileAnimator.SetBool(Spawner, false);
+        if(tileAnimator != null)
+            tileAnimator.SetBool(Spawner, false);
     }
     
 }
