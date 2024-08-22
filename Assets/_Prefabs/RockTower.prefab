@@ -133,7 +133,7 @@ MonoBehaviour:
   towerEventChannel: {fileID: 11400000, guid: ff6c5cff4a2a17d45b58cbd1fcdb1a0a, type: 2}
   gameManagerEventChannel: {fileID: 11400000, guid: 6509d5e4e0033de4bbfb99b33ecd3255,
     type: 2}
-  tiltAllowanceThreshold: 25
+  tiltAllowanceThreshold: 45
   slipSpeedMultiplier: 0.5
   enemyWidthOffset: 0.5
   _shootingRay: {fileID: 0}
@@ -207,6 +207,11 @@ MonoBehaviour:
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: ea598f45ce3942142b1a3af368818ff4,
       type: 2}
+  towerAttackSFX:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
+  canSlide: 0
 --- !u!135 &1682688747339359383
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -222,7 +227,7 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3

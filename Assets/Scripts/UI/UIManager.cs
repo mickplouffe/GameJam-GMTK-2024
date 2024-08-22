@@ -56,7 +56,7 @@ public class UIManager : MonoBehaviourSingleton<UIManager>
         enemyEventChannel.OnWaveStart -= HandleWaveStart;
         
         gameManagerEventChannel.OnGameOver -= HandleGameOver;
-        //gameManagerEventChannel.OnGameRestart -= HandleGameRestart;
+        gameManagerEventChannel.OnGameRestart -= HandleGameRestart;
 
     }
 
@@ -97,12 +97,13 @@ public class UIManager : MonoBehaviourSingleton<UIManager>
     }
 
     // ReSharper disable Unity.PerformanceAnalysis
-    private void HandleWaveStart(HexTile tileController, float waveDelay)
+    private void HandleWaveStart(float waveDelay)
     {
+        _waveTimerLabel.visible = true;
         // Start a new countdown timer
         if (_timerCoroutine != null)
             StopCoroutine(_timerCoroutine);
-        
+
         _timerCoroutine = StartCoroutine(StartCountdown(waveDelay));
     }
     

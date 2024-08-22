@@ -15,4 +15,4 @@ MonoBehaviour:
   damageModifier: 1
   rangeModifier: 2
   weightModifier: 1
-  costModifier: 5
+  costModifier: 50

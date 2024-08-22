@@ -69,7 +69,7 @@ MonoBehaviour:
   towerEventChannel: {fileID: 11400000, guid: ff6c5cff4a2a17d45b58cbd1fcdb1a0a, type: 2}
   gameManagerEventChannel: {fileID: 11400000, guid: 6509d5e4e0033de4bbfb99b33ecd3255,
     type: 2}
-  tiltAllowanceThreshold: 25
+  tiltAllowanceThreshold: 10
   slipSpeedMultiplier: 0.5
   enemyWidthOffset: 0.5
   _shootingRay: {fileID: 0}

@@ -20,7 +20,7 @@ public class EnemySpawner : MonoBehaviourSingleton<EnemySpawner>
     [SerializeField] private AK.Wwise.Event betweenWavesEvent;
 
     public int CurrentWaveIndex { get; set; }
-    private List<GameObject> _activeEnemies = new();
+    [SerializeField] private List<GameObject> _activeEnemies = new();
 
     private void OnEnable()
     {
@@ -75,12 +75,14 @@ public class EnemySpawner : MonoBehaviourSingleton<EnemySpawner>
         foreach (var spawnPoint in _allPossibleSpawnPoints)
             spawnPoint.TileObject.GetComponent<HexTileController>().HandleTileFlashing(spawnPoint, currentWave.waveDelay);
         
+        enemyEventChannel.RaiseWaveStart(currentWave.waveDelay);
+        
         yield return new WaitForSeconds(currentWave.waveDelay);
-
+        
         yield return StartCoroutine(SpawnEnemiesInWave(currentWave));
-
+        
         // Wait until all enemies from the current wave are destroyed
-        yield return new WaitUntil(() => _activeEnemies.Count == 0);
+        yield return new WaitUntil(() => _activeEnemies.Count == 0 || _activeEnemies.Where(enm => enm.gameObject.activeInHierarchy).Count() > 0);
         
         CurrentWaveIndex++;
 

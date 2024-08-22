@@ -66,7 +66,8 @@ public class TowerController : MonoBehaviour
     [SerializeField] public AK.Wwise.Event towerSlideStopSFX;
     [SerializeField] public AK.Wwise.Event towerFallSFX;
     [SerializeField] public AK.Wwise.Event towerAttackSFX;
-    
+
+    [SerializeField] private bool canSlide = true;
     void Awake()
     {
         // Create a new instance-specific data object using the shared tower data
@@ -78,7 +79,7 @@ public class TowerController : MonoBehaviour
     [Button]
     public void UpdateColliderRange()
     {
-        GetComponent<SphereCollider>().radius = instanceData.range * 2.0f;
+        GetComponent<SphereCollider>().radius = instanceData.range;
     }
 
     private void OnEnable()
@@ -96,30 +97,34 @@ public class TowerController : MonoBehaviour
 
     private void HandleGameRestart()
     {
-        // Tile?.DetachTower();
-        // isSliding = false;
-        // Destroy(gameObject);
+        Tile?.DetachTower();
+        isSliding = false;
+        Destroy(gameObject);
     }
 
 
     private void Update()
     {
-    if (TowerManager.Instance.selectedTower == gameObject || towerData.isStatic)
+    if (TowerManager.Instance.selectedTower == gameObject)
         return;
     
-    if (_currentTarget == null || !IsTargetInRange(_currentTarget))
+    if (_currentTarget == null || !IsTargetInRange(_currentTarget) && !towerData.isStatic)
     {
         GetNextTarget();
     }
 
-    if (_currentTarget != null && Time.time >= _nextFireTime)
+    if (_currentTarget != null && Time.time >= _nextFireTime && !towerData.isStatic)
     {
         FireAtTarget();
         _nextFireTime = Time.time + 1.0f / towerData.fireRate;
     }
     
+    if(canSlide)
+        return;
+    
     if (!isSliding) 
         return;
+    
     // Calculate new position based on tilt direction and slip magnitude
     Vector3 newPosition = transform.position + tiltDirection * slipMagnitude * Time.deltaTime;
 

@@ -85,14 +85,16 @@ MonoBehaviour:
   hexTileParent: {fileID: 4174472227154444186}
   gridShape: 2
   width: 9
+  hexGridTilt: {fileID: 8050594404393289261}
   height: 10
   amountBlobToAdd: 3
   tiltObject: {fileID: 9133941349068278744}
   mainUnit: {fileID: 7504906786360479726}
-  mainUnityStartHealth: 0
+  mainUnityStartHealth: 20
   enemyEventChannel: {fileID: 11400000, guid: 58c4683592b42784c91a64e98e2ccbc1, type: 2}
   gameManagerEventChannel: {fileID: 11400000, guid: 6509d5e4e0033de4bbfb99b33ecd3255,
     type: 2}
+  healthBar: {fileID: 0}
 --- !u!1 &5620014120097492410
 GameObject:
   m_ObjectHideFlags: 0

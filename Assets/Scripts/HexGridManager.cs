@@ -103,6 +103,8 @@ public class HexGridManager : MonoBehaviour
         {
             healthBar = GameObject.FindGameObjectWithTag("HealthBar").GetComponent<RectTransform>();
         }
+        
+        healthBar.localScale = new Vector3((float)_currentMainUnitHealth / mainUnityStartHealth, 1, 1);
 
     }
 
@@ -130,7 +132,7 @@ public class HexGridManager : MonoBehaviour
         IsDead = true;
         // TODO: Play tower animation
         _animator.SetBool("IsDead", true);
-        
+        GameManager.Instance.gameOverMusic.Post(gameObject);
         Invoke("SetIsDeadTrue", 3.5f);
                 
     }

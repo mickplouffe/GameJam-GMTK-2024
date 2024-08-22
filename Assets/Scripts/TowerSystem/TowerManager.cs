@@ -147,8 +147,6 @@ public class TowerManager : MonoBehaviourSingleton<TowerManager>
 
     public void HandleBuildTower(int towerType)
     {
-        Debug.Log("TEST");
-
         if(selectedTower)
             Destroy(selectedTower.gameObject);
 
@@ -225,7 +223,8 @@ public class TowerManager : MonoBehaviourSingleton<TowerManager>
         if (!activeTowerSelected)
             return;
         
-        activeTowerSelected.Tile.DetachTower();
+        if(activeTowerSelected.Tile != null)
+            activeTowerSelected.Tile.DetachTower();
         
         // Unregister selected tower
         weightEventChannel.RaiseWeightRemoved(activeTowerSelected.transform.GetComponent<TowerController>().instanceData.weight, 
