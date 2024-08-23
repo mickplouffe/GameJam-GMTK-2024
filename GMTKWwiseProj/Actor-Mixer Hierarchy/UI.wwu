@@ -430,6 +430,242 @@
 								</RandomSequenceContainer>
 							</ChildrenList>
 						</ActorMixer>
+						<ActorMixer Name="Scribble" ID="{FF09B102-A27E-4D3C-AFCA-E0DB481AB9A5}" ShortID="145196830">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{7F62BABC-0C6C-4DAD-ACF1-E77615B460FB}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<RandomSequenceContainer Name="Scribble" ID="{C6A37DCD-33AA-408C-ABC5-68AE0FCEB294}" ShortID="803286439">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{7F62BABC-0C6C-4DAD-ACF1-E77615B460FB}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="GMTK2024_SFX_UIScribble_-5_v1" ID="{24EE576A-A3FA-4131-B903-3FE804FE34B4}" ShortID="116726257">
+											<PropertyList>
+												<Property Name="Weight" Type="Real64">
+													<ValueList>
+														<Value>25</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{7F62BABC-0C6C-4DAD-ACF1-E77615B460FB}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="GMTK2024_SFX_UIScribble_-5_v1" ID="{3BEF56F6-2247-40F5-A426-325C157FCFB8}">
+													<Language>SFX</Language>
+													<AudioFile>GMTK2024_SFX_UIScribble_-5_v1.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="537515449"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="GMTK2024_SFX_UIScribble_-5_v1" ID="{3BEF56F6-2247-40F5-A426-325C157FCFB8}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="GMTK2024_SFX_UIScribble_-5_v2" ID="{A38DE309-C10E-4FAC-8165-2283EE7A36DB}" ShortID="105943102">
+											<PropertyList>
+												<Property Name="Weight" Type="Real64">
+													<ValueList>
+														<Value>25</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{7F62BABC-0C6C-4DAD-ACF1-E77615B460FB}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="GMTK2024_SFX_UIScribble_-5_v2" ID="{EF993DA1-EBD6-48ED-90AD-B7876A770855}">
+													<Language>SFX</Language>
+													<AudioFile>GMTK2024_SFX_UIScribble_-5_v2.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="192610350"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="GMTK2024_SFX_UIScribble_-5_v2" ID="{EF993DA1-EBD6-48ED-90AD-B7876A770855}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="GMTK2024_SFX_UIScribble_-5_v4" ID="{B527A773-6982-4035-BD44-61D1FE661802}" ShortID="196946759">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{7F62BABC-0C6C-4DAD-ACF1-E77615B460FB}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="GMTK2024_SFX_UIScribble_-5_v4" ID="{5DEF4C2F-B084-42A1-A670-ECD5EFA2A80E}">
+													<Language>SFX</Language>
+													<AudioFile>GMTK2024_SFX_UIScribble_-5_v4.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="310001545"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="GMTK2024_SFX_UIScribble_-5_v4" ID="{5DEF4C2F-B084-42A1-A670-ECD5EFA2A80E}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="GMTK2024_SFX_UIScribble_-5_v8" ID="{2BE353A5-B374-4685-A572-0C80B142D973}" ShortID="716953851">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{7F62BABC-0C6C-4DAD-ACF1-E77615B460FB}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="GMTK2024_SFX_UIScribble_-5_v8" ID="{C9E73161-914E-46E1-A5C2-A7AC9A81E39F}">
+													<Language>SFX</Language>
+													<AudioFile>GMTK2024_SFX_UIScribble_-5_v8.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="833550424"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="GMTK2024_SFX_UIScribble_-5_v8" ID="{C9E73161-914E-46E1-A5C2-A7AC9A81E39F}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="GMTK2024_SFX_UIScribble_-5_v10" ID="{65CA0CA1-B400-4756-B5A2-3C65DCD32B25}" ShortID="586764891">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{7F62BABC-0C6C-4DAD-ACF1-E77615B460FB}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="GMTK2024_SFX_UIScribble_-5_v10" ID="{694C10D4-B73B-49EF-BB78-7C5BEE60F96C}">
+													<Language>SFX</Language>
+													<AudioFile>GMTK2024_SFX_UIScribble_-5_v10.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="574957040"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="GMTK2024_SFX_UIScribble_-5_v10" ID="{694C10D4-B73B-49EF-BB78-7C5BEE60F96C}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="GMTK2024_SFX_UIScribble_-5_v12" ID="{BC9D963F-3CF9-4D14-84C4-AE6009E04AB5}" ShortID="445751833">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{7F62BABC-0C6C-4DAD-ACF1-E77615B460FB}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="GMTK2024_SFX_UIScribble_-5_v12" ID="{F59673D0-1C0A-4217-BA6D-EDC3502A117D}">
+													<Language>SFX</Language>
+													<AudioFile>GMTK2024_SFX_UIScribble_-5_v12.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="68863451"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="GMTK2024_SFX_UIScribble_-5_v12" ID="{F59673D0-1C0A-4217-BA6D-EDC3502A117D}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="GMTK2024_SFX_UIScribble_-5_v14" ID="{4B2B089C-9AD7-410A-85CC-9FCEC9A8EAD8}" ShortID="1046049568">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{7F62BABC-0C6C-4DAD-ACF1-E77615B460FB}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="GMTK2024_SFX_UIScribble_-5_v14" ID="{AFB5281C-8E79-4CBD-B389-6B07A9D2255F}">
+													<Language>SFX</Language>
+													<AudioFile>GMTK2024_SFX_UIScribble_-5_v14.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="147117229"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="GMTK2024_SFX_UIScribble_-5_v14" ID="{AFB5281C-8E79-4CBD-B389-6B07A9D2255F}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="GMTK2024_SFX_UIScribble_-5_v15" ID="{B56DDBAC-B485-4857-B319-10F6CE4F1123}" ShortID="164737653">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{7F62BABC-0C6C-4DAD-ACF1-E77615B460FB}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="GMTK2024_SFX_UIScribble_-5_v15" ID="{1C8CEAB0-9BF8-4BDD-8931-F91F512BB005}">
+													<Language>SFX</Language>
+													<AudioFile>GMTK2024_SFX_UIScribble_-5_v15.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="16739379"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="GMTK2024_SFX_UIScribble_-5_v15" ID="{1C8CEAB0-9BF8-4BDD-8931-F91F512BB005}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="GMTK2024_SFX_UIScribble_-5_v16" ID="{F8EB5B78-C9B7-43FD-8C24-7AF0462DAB17}" ShortID="115543182">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{7F62BABC-0C6C-4DAD-ACF1-E77615B460FB}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="GMTK2024_SFX_UIScribble_-5_v16" ID="{3AB7DCA2-A13D-47B6-872A-52B94B934D23}">
+													<Language>SFX</Language>
+													<AudioFile>GMTK2024_SFX_UIScribble_-5_v16.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="642855659"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="GMTK2024_SFX_UIScribble_-5_v16" ID="{3AB7DCA2-A13D-47B6-872A-52B94B934D23}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+								</RandomSequenceContainer>
+							</ChildrenList>
+						</ActorMixer>
 					</ChildrenList>
 				</ActorMixer>
 			</ChildrenList>

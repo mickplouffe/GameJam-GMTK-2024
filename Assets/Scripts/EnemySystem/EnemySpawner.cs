@@ -20,7 +20,7 @@ public class EnemySpawner : MonoBehaviourSingleton<EnemySpawner>
     [SerializeField] private AK.Wwise.Event betweenWavesEvent;
 
     public int CurrentWaveIndex { get; set; }
-    private List<GameObject> _activeEnemies = new();
+    [SerializeField] private List<GameObject> _activeEnemies = new();
 
     private void OnEnable()
     {
@@ -42,7 +42,12 @@ public class EnemySpawner : MonoBehaviourSingleton<EnemySpawner>
     {
         enemyEventChannel.OnEnemyKilled -= HandleEnemyDestroyed;
         enemyEventChannel.OnStartNextWave -= () => StartCoroutine(StartNextWave());
-        //gameManagerEventChannel.OnGameRestart -= HandleGameRestart;
+        gameManagerEventChannel.OnGameRestart -= HandleGameRestart;
+    }
+
+    private void Awake()
+    {
+        _allPossibleSpawnPoints = new List<HexTile>();
     }
 
     public IEnumerator StartNextWave()
@@ -58,17 +63,26 @@ public class EnemySpawner : MonoBehaviourSingleton<EnemySpawner>
             yield break;
         
         var currentWave = waves[CurrentWaveIndex];
+        
+        foreach(HexTile spawnPoint in _allPossibleSpawnPoints)
+            spawnPoint.TileObject.GetComponent<HexTileController>().IsSpawnerTile = false;
+        
         _allPossibleSpawnPoints = HexGridManager.Instance.GetRandomEdgeTiles(currentWave.numberOfSpawnPoints);
-
+        
+        foreach(HexTile spawnPoint in _allPossibleSpawnPoints)
+            spawnPoint.TileObject.GetComponent<HexTileController>().IsSpawnerTile = true;
+        
         foreach (var spawnPoint in _allPossibleSpawnPoints)
-            enemyEventChannel.RaiseWaveStart(spawnPoint, currentWave.waveDelay);
+            spawnPoint.TileObject.GetComponent<HexTileController>().HandleTileFlashing(spawnPoint, currentWave.waveDelay);
+        
+        enemyEventChannel.RaiseWaveStart(currentWave.waveDelay);
         
         yield return new WaitForSeconds(currentWave.waveDelay);
-
+        
         yield return StartCoroutine(SpawnEnemiesInWave(currentWave));
-
+        
         // Wait until all enemies from the current wave are destroyed
-        yield return new WaitUntil(() => _activeEnemies.Count == 0);
+        yield return new WaitUntil(() => _activeEnemies.Count == 0 || _activeEnemies.Where(enm => enm.gameObject.activeInHierarchy).Count() > 0);
         
         CurrentWaveIndex++;
 

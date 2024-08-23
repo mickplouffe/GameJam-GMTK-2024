@@ -6,7 +6,7 @@ using UnityEngine;
 public class HexTileController : MonoBehaviour
 {
     public Vector2Int GridPosition { get; set; }
-
+    public bool IsSpawnerTile { get; set; }
     [SerializeField] private EnemyEventChannel enemyEventChannel;
     [SerializeField] private GameManagerEventChannel gameManagerEventChannel;
 
@@ -25,14 +25,12 @@ public class HexTileController : MonoBehaviour
 
     private void OnEnable()
     {
-        enemyEventChannel.OnWaveStart += HandleTileFlashing;
         enemyEventChannel.OnWaveCompleted += HandleWaveCompleted;
         gameManagerEventChannel.OnGameRestart += HandleWaveCompleted;
     }
 
     private void OnDisable()
     {
-        enemyEventChannel.OnWaveStart -= HandleTileFlashing;
         enemyEventChannel.OnWaveCompleted -= HandleWaveCompleted;
         gameManagerEventChannel.OnGameRestart -= HandleWaveCompleted;
     }
@@ -65,7 +63,7 @@ public class HexTileController : MonoBehaviour
         _tileRenderer.materials[0].color = _originalTileColor;
     }
 
-    private void HandleTileFlashing(HexTile tile, float flashDuration)
+    public void HandleTileFlashing(HexTile tile, float flashDuration)
     {
         if (tile.Q != GridPosition.x || tile.R != GridPosition.y)
             return;
@@ -75,11 +73,14 @@ public class HexTileController : MonoBehaviour
         _flashDuration = flashDuration;
         
         tileAnimator.SetBool(Spawner, true);
+        IsSpawnerTile = true;
+        Debug.Log($"{tile.TileObject.name} Became a spawner tile");
     }
     
     private void HandleWaveCompleted()
     {
-        tileAnimator.SetBool(Spawner, false);
+        if(tileAnimator != null)
+            tileAnimator.SetBool(Spawner, false);
     }
     
 }

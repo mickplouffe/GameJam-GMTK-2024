@@ -65,7 +65,9 @@ public class TowerController : MonoBehaviour
     [SerializeField] public AK.Wwise.Event towerSlideSFX;
     [SerializeField] public AK.Wwise.Event towerSlideStopSFX;
     [SerializeField] public AK.Wwise.Event towerFallSFX;
-    
+    [SerializeField] public AK.Wwise.Event towerAttackSFX;
+
+    [SerializeField] private bool canSlide = true;
     void Awake()
     {
         // Create a new instance-specific data object using the shared tower data
@@ -77,7 +79,7 @@ public class TowerController : MonoBehaviour
     [Button]
     public void UpdateColliderRange()
     {
-        GetComponent<SphereCollider>().radius = instanceData.range * 2.0f;
+        GetComponent<SphereCollider>().radius = instanceData.range;
     }
 
     private void OnEnable()
@@ -89,36 +91,40 @@ public class TowerController : MonoBehaviour
     private void OnDisable()
     {
         tiltEventChannel.OnTiltChanged -= HandleTiltChanged;
-        //gameManagerEventChannel.OnGameRestart -= HandleGameRestart;
+        gameManagerEventChannel.OnGameRestart -= HandleGameRestart;
 
     }
 
     private void HandleGameRestart()
     {
-        // Tile?.DetachTower();
-        // isSliding = false;
-        // Destroy(gameObject);
+        Tile?.DetachTower();
+        isSliding = false;
+        Destroy(gameObject);
     }
 
 
     private void Update()
     {
-    if (TowerManager.Instance.selectedTower == gameObject || towerData.isStatic)
+    if (TowerManager.Instance.selectedTower == gameObject)
         return;
     
-    if (_currentTarget == null || !IsTargetInRange(_currentTarget))
+    if (_currentTarget == null || !IsTargetInRange(_currentTarget) && !towerData.isStatic)
     {
         GetNextTarget();
     }
 
-    if (_currentTarget != null && Time.time >= _nextFireTime)
+    if (_currentTarget != null && Time.time >= _nextFireTime && !towerData.isStatic)
     {
         FireAtTarget();
         _nextFireTime = Time.time + 1.0f / towerData.fireRate;
     }
     
+    if(canSlide)
+        return;
+    
     if (!isSliding) 
         return;
+    
     // Calculate new position based on tilt direction and slip magnitude
     Vector3 newPosition = transform.position + tiltDirection * slipMagnitude * Time.deltaTime;
 
@@ -151,7 +157,7 @@ private IEnumerator DrawShootingRay()
 {
     // Set up the LineRenderer positions
     _shootingRay.SetPosition(0, towerShootingSpot.position);
-    _shootingRay.SetPosition(1, _currentTarget.position);
+    _shootingRay.SetPosition(1, _currentTarget.position + _currentTarget.up * 2.0f);
     _shootingRay.widthCurve = beamWidthCurve;
     _shootingRay.colorGradient = beamColorGradient;
     _shootingRay.enabled = true;
@@ -179,6 +185,7 @@ private IEnumerator DrawShootingRay()
 private void FireAtTarget()
 {
 
+    towerAttackSFX.Post(gameObject);
     StartCoroutine(DrawShootingRay());
     // Example: If using projectiles
     // GameObject projectile = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
@@ -222,8 +229,7 @@ private void HandleTiltChanged(float tiltAngle, Vector3 direction)
         return;
     if (tiltAngle > tiltAllowanceThreshold)
     {
-        towerSlideSFX.Post(gameObject);
-        
+        // towerSlideSFX.Post(gameObject);
         if(Tile != null)
             Tile.DetachTower();
         StartSliding(direction);
@@ -243,10 +249,10 @@ private void StartSliding(Vector3 direction)
 
 private void StopSliding()
 {
+    // towerSlideStopSFX.Post(gameObject);
     isSliding = false;
     slipMagnitude = 0f;
     tiltDirection = Vector3.zero;
-    towerSlideStopSFX.Post(gameObject);
     
     // Ensure the object is properly snapped to the current tile
     HexTile finalTile = HexGridManager.Instance.GetTileAtWorldPosition(transform.position);
@@ -283,6 +289,9 @@ private bool ShouldStopSliding()
 
     public bool CanUpgrade(UpgradeTowerAction upgradeTowerAction)
     {
+        if (_hasUpgrade)
+            return false;
+        
         bool canUpgrade = false;
 
         canUpgrade |= (instanceData.range + upgradeTowerAction.weightModifier <= towerData.maxWeight);
@@ -293,6 +302,8 @@ private bool ShouldStopSliding()
     }
     public void UpgradeTower(UpgradeTowerAction upgradeTowerAction)
     {
+        _hasUpgrade = true;
+        
         towerUpgradeSFX.Post(gameObject);
         
         instanceData.damage += upgradeTowerAction.damageModifier;

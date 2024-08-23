@@ -3,7 +3,20 @@
 	<Events>
 		<WorkUnit Name="MXEvents_Otter" ID="{0BD70790-4A2A-42B0-81A1-0D3B3BF71E15}" OwnerID="{77FDA983-7133-480C-9FE7-A80469AEB806}" PersistMode="Nested">
 			<ChildrenList>
-				<Event Name="Play_MXTitleTheme" ID="{BC8A9745-2AB8-452D-B805-15E760D59A15}"/>
+				<Event Name="SetState_TitleScreen" ID="{BC8A9745-2AB8-452D-B805-15E760D59A15}">
+					<ChildrenList>
+						<Action Name="" ID="{9499D132-DDEA-4757-91C3-385B8B5015D6}" ShortID="413823398">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="22"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="TitleScreen" ID="{EACF423B-AA19-41EF-B90C-563EF16BE6DE}" WorkUnitID="{A8C0A2BE-0965-4AC0-9566-86D7B39A75B2}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 				<Event Name="SetState_BetweenWaves" ID="{566FB362-ECF2-4416-933B-0FE84D1386B2}">
 					<ChildrenList>
 						<Action Name="" ID="{36FFAB49-9436-40E7-9A54-1F60C78A1A3C}" ShortID="122118073">
@@ -23,6 +36,7 @@
 						<Action Name="" ID="{DCCF5C72-1818-452F-9EEA-BF7205F1D3F8}" ShortID="777576719">
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="3"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
 							</PropertyList>
 							<ReferenceList/>
 						</Action>
@@ -49,7 +63,18 @@
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="Play_Wind" ID="{FEC89844-829D-4954-AAEB-9FC5355CDFD0}" WorkUnitID="{5B7760E9-4ED5-4FFF-B405-DA13419EEECE}"/>
+									<ObjectRef Name="Play_AMBWind" ID="{96C6EE84-923E-41FD-8FD2-52F025B6EA11}" WorkUnitID="{5B7760E9-4ED5-4FFF-B405-DA13419EEECE}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{86FC0134-2E64-42ED-833F-8D75DC478219}" ShortID="643988421">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="41"/>
+								<Property Name="Delay" Type="Real64" Value="0.5"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="SetState_TitleScreen" ID="{BC8A9745-2AB8-452D-B805-15E760D59A15}" WorkUnitID="{0BD70790-4A2A-42B0-81A1-0D3B3BF71E15}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -64,6 +89,34 @@
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="ActiveWave" ID="{5F8E6FC5-07CA-486A-9592-5DD2E231C2E2}" WorkUnitID="{A8C0A2BE-0965-4AC0-9566-86D7B39A75B2}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="SetState_YouWin" ID="{8B27E28D-7203-4BD4-BEFB-28BA3E0BF88D}">
+					<ChildrenList>
+						<Action Name="" ID="{4E0958EA-A81B-4E42-A389-C93619F5531A}" ShortID="971751251">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="22"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Victory" ID="{7304F478-0363-46DA-AEB9-A93F5CD05C99}" WorkUnitID="{A8C0A2BE-0965-4AC0-9566-86D7B39A75B2}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="SetState_GameOver" ID="{F57E0CDC-E460-4625-A4C4-462CF6C2B0F1}">
+					<ChildrenList>
+						<Action Name="" ID="{56A5D216-76BA-4A6A-8142-2929176E7E05}" ShortID="511373556">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="22"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="GameOver" ID="{5DB0CA83-D754-42CC-9473-A75EC2C87D82}" WorkUnitID="{A8C0A2BE-0965-4AC0-9566-86D7B39A75B2}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>

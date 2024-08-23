@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using NUnit.Framework.Constraints;
 using UnityEngine;
 
 public class EnemyController : MonoBehaviour
@@ -45,7 +46,7 @@ public class EnemyController : MonoBehaviour
     private void OnDisable()
     {
         _finishedSetup = false;
-        //gameManagerEventChannel.OnGameRestart -= HandleGameRestart;
+        gameManagerEventChannel.OnGameRestart -= HandleGameRestart;
 
     }
 
@@ -76,7 +77,7 @@ public class EnemyController : MonoBehaviour
         weightEventChannel.RaiseWeightAdded(enemyWeight, _currentSourceTile);
 
         transform.position = _currentSourceTile.TileObject.transform.position +
-                                  transform.up * _colliderBounds.size.y * 0.35f;
+                                  transform.up * _colliderBounds.size.y * 0.1f;
         
         _finishedSetup = true;
         enemySpawnSFX.Post(gameObject);
@@ -100,8 +101,15 @@ public class EnemyController : MonoBehaviour
         _percentBetweenTiles = Mathf.Clamp01(_percentBetweenTiles);
 
         Vector3 newPos = Vector3.Lerp(_currentSourceTile.TileObject.transform.position, _currentTargetTile.TileObject.transform.position, _percentBetweenTiles);
-        
-        
+
+        // if (Vector3.Distance(HexGridManager.Instance.mainUnit.transform.position, transform.position) < 0.01f)
+        // {
+        //     enemyEnterTowerSFX.Post(gameObject);
+        //     HexGridManager.Instance.TakeDamage(enemyDamage);
+        //     KillEnemy();
+        //         
+        //     return;
+        // }
         if (_percentBetweenTiles >= 1.0f)
         {
             weightEventChannel.RaiseWeightRemoved(enemyWeight, _currentSourceTile);
@@ -114,8 +122,6 @@ public class EnemyController : MonoBehaviour
             
             if (_currentTargetTile == TargetTile)
             {
-                transform.position = new Vector3(TargetTile.TileObject.transform.position.x, transform.position.y, TargetTile.TileObject.transform.position.z);
-
                 enemyEnterTowerSFX.Post(gameObject);
                 HexGridManager.Instance.TakeDamage(enemyDamage);
                 KillEnemy();
@@ -126,7 +132,7 @@ public class EnemyController : MonoBehaviour
         
         
         transform.position = newPos;
-        transform.position += transform.parent.up * _colliderBounds.size.y * 0.35f;
+        transform.position += transform.parent.up * _colliderBounds.size.y * 0.1f;
     }
 
     private HexTile GetNextTargetPosition()
@@ -168,9 +174,13 @@ public class EnemyController : MonoBehaviour
 
     public void KillEnemy()
     {
+        if (!gameObject.activeInHierarchy || !gameObject.activeSelf)
+            return;
+        
         _currentHealth = startHealth;
         if(_currentSourceTile != null)
             weightEventChannel.RaiseWeightRemoved(enemyWeight, _currentSourceTile);
+        
         coinsEventChannel.RaiseModifyCoins(enemyKillCost);
         enemyEventChannel.RaiseEnemyKilled(gameObject);
         

@@ -69,7 +69,7 @@ MonoBehaviour:
   towerEventChannel: {fileID: 11400000, guid: ff6c5cff4a2a17d45b58cbd1fcdb1a0a, type: 2}
   gameManagerEventChannel: {fileID: 11400000, guid: 6509d5e4e0033de4bbfb99b33ecd3255,
     type: 2}
-  tiltAllowanceThreshold: 25
+  tiltAllowanceThreshold: 10
   slipSpeedMultiplier: 0.5
   enemyWidthOffset: 0.5
   _shootingRay: {fileID: 0}
@@ -80,10 +80,10 @@ MonoBehaviour:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0
-      value: 0.32547164
-      inSlope: -0.32547164
-      outSlope: -0.32547164
+      time: 0.0041656494
+      value: 0.20188308
+      inSlope: -0.20272757
+      outSlope: -0.20272757
       tangentMode: 34
       weightedMode: 0
       inWeight: 0
@@ -91,8 +91,8 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 1
       value: 0
-      inSlope: -0.32547164
-      outSlope: -0.32547164
+      inSlope: -0.20272757
+      outSlope: -0.20272757
       tangentMode: 34
       weightedMode: 0
       inWeight: 0.33333334
@@ -161,6 +161,11 @@ MonoBehaviour:
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: ea598f45ce3942142b1a3af368818ff4,
       type: 2}
+  towerAttackSFX:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 59b65737629e9b24caa50ac95ecb7e17,
+      type: 2}
 --- !u!65 &4529294783331625914
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -202,7 +207,7 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.82, z: 0}
 --- !u!120 &6410887134671940331
 LineRenderer:
   serializedVersion: 2
@@ -370,7 +375,7 @@ Transform:
   m_GameObject: {fileID: 6494799761051565011}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.179, z: 0}
+  m_LocalPosition: {x: 0, y: 1.763, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

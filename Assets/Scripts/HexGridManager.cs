@@ -8,6 +8,7 @@ public class HexGridManager : MonoBehaviour
 {
     
     public static HexGridManager Instance { get; private set; }
+    public bool IsDead { get; set; }
 
     private void Awake()
     {
@@ -19,6 +20,7 @@ public class HexGridManager : MonoBehaviour
         else
         {
             Destroy(gameObject); // Ensure there's only one instance
+            return;
         }
         
         if (!hexTileParent)
@@ -27,6 +29,8 @@ public class HexGridManager : MonoBehaviour
             hexTileParent = new GameObject("HexTiles").transform;
             hexTileParent.SetParent(transform);
         }
+
+        GenerateGrid();
     }
     
     [HideInInspector] public float gridSpan = 5; // Getting the furthest distance from the center of the grid
@@ -79,8 +83,8 @@ public class HexGridManager : MonoBehaviour
         AddCircularBlob(tile.Q, tile.R, amountBlobToAdd);
     }
 
-    [Button]
-    void Start()
+    // [Button]
+    void GenerateGrid()
     {
         hexGrid = new HexGrid(_hexTileSize, hexTileParent);
         GenerateInitialGrid();
@@ -99,6 +103,8 @@ public class HexGridManager : MonoBehaviour
         {
             healthBar = GameObject.FindGameObjectWithTag("HealthBar").GetComponent<RectTransform>();
         }
+        
+        healthBar.localScale = new Vector3((float)_currentMainUnitHealth / mainUnityStartHealth, 1, 1);
 
     }
 
@@ -118,16 +124,22 @@ public class HexGridManager : MonoBehaviour
         _currentMainUnitHealth -= damage;
         healthBar.localScale = new Vector3((float)_currentMainUnitHealth / mainUnityStartHealth, 1, 1);
         if (_currentMainUnitHealth > 0)
-        {
             return;
-        }
 
-        _currentMainUnitHealth = mainUnityStartHealth;
+        if(IsDead)
+            return;
+        
+        IsDead = true;
         // TODO: Play tower animation
         _animator.SetBool("IsDead", true);
-        
+        GameManager.Instance.gameOverMusic.Post(gameObject);
+        Invoke("SetIsDeadTrue", 3.5f);
+                
+    }
+
+    private void SetIsDeadTrue()
+    {
         gameManagerEventChannel.RaiseGameOver();
-        
     }
 
     void GenerateInitialGrid()
@@ -158,8 +170,9 @@ public class HexGridManager : MonoBehaviour
         _animator.SetBool("IsDead", false);
 
         HighlightTrueEdgeTiles();
-        
-        
+        _currentMainUnitHealth = mainUnityStartHealth;
+
+
     }
     
     public void GenerateHexGrid(int width, int height, GridShape gridShape)
@@ -468,6 +481,11 @@ public class HexGridManager : MonoBehaviour
             return tile;
 
         return null;
+    }
+
+    public Dictionary<(int q, int r), HexTile> GetAllTiles()
+    {
+        return hexGrid.GetAllTiles();
     }
 }
 

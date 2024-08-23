@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9aa3069af744b4ea0bb517dfeef944f, type: 3}
   m_Name: UpgradeDamageAction
   m_EditorClassIdentifier: 
-  damageModifier: 5
+  damageModifier: 1
   rangeModifier: 0
   weightModifier: 5
-  costModifier: 8
+  costModifier: 50

@@ -45,6 +45,17 @@
 							<ChildrenList>
 								<BlendContainer Name="Attack" ID="{85640160-D919-471F-A0D1-5023E83063D3}" ShortID="523896305">
 									<PropertyList>
+										<Property Name="IsGlobalLimit" Type="int16" Value="1"/>
+										<Property Name="MaxSoundPerInstance" Type="int16">
+											<ValueList>
+												<Value>5</Value>
+											</ValueList>
+										</Property>
+										<Property Name="UseMaxSoundPerInstance" Type="bool">
+											<ValueList>
+												<Value>True</Value>
+											</ValueList>
+										</Property>
 										<Property Name="Volume" Type="Real64">
 											<ModifierList>
 												<ModifierInfo>
@@ -1062,6 +1073,11 @@
 													</ReferenceList>
 													<ChildrenList>
 														<AudioFileSource Name="GMTK2024_SFX_enemyEntersTower_cyclops_-5_v1" ID="{F06DEA72-37AE-4BF0-BF8A-9B85C9CEC2F5}">
+															<PropertyList>
+																<Property Name="LoopBegin" Type="Real64" Value="0.564612326043738"/>
+																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																<Property Name="TrimBegin" Type="Real64" Value="0.564612326043738"/>
+															</PropertyList>
 															<Language>SFX</Language>
 															<AudioFile>GMTK2024_SFX_enemyEntersTower_cyclops_-5_v1.wav</AudioFile>
 															<MediaIDList>

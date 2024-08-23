@@ -345,6 +345,11 @@ public class HexGrid
         return tiles;
         
     }
+
+    public Dictionary<(int q, int r), HexTile> GetAllTiles()
+    {
+        return hexTiles;
+    }
     
     
 
