@@ -9,7 +9,7 @@ namespace TowerSystem
     {
         [SerializeField] private GameObject defaultTowerPrefab;
         [SerializeField] private GameObject rockTowerPrefab;
-    
+
         [SerializeField] private UpgradeTowerAction upgradeDamageAction;
         [SerializeField] private UpgradeTowerAction upgradeRangeAction;
         [SerializeField] private UpgradeTowerAction upgradeWeightAction;
@@ -25,7 +25,7 @@ namespace TowerSystem
         [SerializeField] private CoinsEventChannel coinsEventChannel;
         [SerializeField] private TowerEventChannel towerEventChannel;
         [SerializeField] private GameManagerEventChannel gameManagerEventChannel;
-    
+
         [SerializeField] private float waitTimeBeforeCanSelect = 0.2f;
         private List<Transform> _activeTowers;
 
@@ -68,16 +68,18 @@ namespace TowerSystem
 
             if (Input.GetMouseButtonDown(0) && !_placementMode)
             {
-                if ( FindTransformBasedOnLayer(towersLayerMask, out var hit))
+                if (FindTransformBasedOnLayer(towersLayerMask, out var hit))
                 {
                     // Change the previously selected object the material
-                    if(activeTowerSelected)
-                        activeTowerSelected.GetComponentInChildren<Renderer>().materials[0] = activeTowerSelected.towerData.defaultMaterial;
-                
+                    if (activeTowerSelected)
+                        activeTowerSelected.GetComponentInChildren<Renderer>().materials[0] =
+                            activeTowerSelected.towerData.defaultMaterial;
+
                     activeTowerSelected = hit.transform.GetComponent<TowerController>();
                     // TODO: Also add highlight material, for now just change the color
-                    activeTowerSelected.GetComponentInChildren<Renderer>().materials[0] = activeTowerSelected.towerData.selectedMaterial;
-                
+                    activeTowerSelected.GetComponentInChildren<Renderer>().materials[0] =
+                        activeTowerSelected.towerData.selectedMaterial;
+
                     // TODO: RaiseActivateBuildMenu
                     uiEventChannel.RaiseActivateActionsMenu(true);
                 }
@@ -85,41 +87,46 @@ namespace TowerSystem
                 {
                     if (EventSystem.current.IsPointerOverGameObject())
                         return;
-                
+
                     // Change the previously selected object the material
-                    if(activeTowerSelected)
-                        activeTowerSelected.GetComponentInChildren<Renderer>().materials[0] = activeTowerSelected.towerData.defaultMaterial;
+                    if (activeTowerSelected)
+                        activeTowerSelected.GetComponentInChildren<Renderer>().materials[0] =
+                            activeTowerSelected.towerData.defaultMaterial;
 
                     activeTowerSelected = null;
-                
+
                     // TODO: RaiseActivateActionsMenu
                     uiEventChannel.RaiseActivateBuildMenu(true);
                 }
                 // TODO: maybe deselect when user presses e.g. escape. If we de-select based on hit or no hit then there is 
                 // the problem that when pressing one of the buttons it will first deselect the item and then do the action associated to the button which will not do anything in the end
             }
-        
+
             if (Input.GetMouseButtonDown(0) && _placementMode)
             {
-                if (FindTransformBasedOnLayer(tilesLayerMask, out var hit) && 
-                    SnapTowerToTile(hit.point) && 
-                    CoinsManager.Instance.CanBuy(selectedTower.GetComponent<TowerController>().instanceData.currentCost))
+                if (FindTransformBasedOnLayer(tilesLayerMask, out var hit) &&
+                    SnapTowerToTile(hit.point) &&
+                    CoinsManager.Instance.CanBuy(selectedTower.GetComponent<TowerController>().instanceData
+                        .currentCost))
                 {
                     selectedTower.GetComponent<TowerController>().towerPlaceSFX.Post(selectedTower.gameObject);
-                
-                    weightEventChannel.RaiseWeightAdded( selectedTower.GetComponent<TowerController>().instanceData.weight, 
+
+                    weightEventChannel.RaiseWeightAdded(
+                        selectedTower.GetComponent<TowerController>().instanceData.weight,
                         selectedTower.GetComponent<TowerController>().Tile);
-                
+
                     RegisterTower(selectedTower.transform);
                     selectedTower = null;
                 }
                 else
                 {
-                    if(!CoinsManager.Instance.CanBuy(selectedTower.GetComponent<TowerController>().instanceData.currentCost))
+                    if (!CoinsManager.Instance.CanBuy(selectedTower.GetComponent<TowerController>().instanceData
+                            .currentCost))
                         uiEventChannel.RaiseCantBuy();
-                
+
                     Destroy(selectedTower);
                 }
+
                 _placementMode = false;
             }
 
@@ -127,9 +134,9 @@ namespace TowerSystem
 
         public void HandleGameRestart()
         {
-            if(selectedTower != null)
+            if (selectedTower != null)
                 Destroy(selectedTower.gameObject);
-            if(activeTowerSelected != null)
+            if (activeTowerSelected != null)
                 Destroy(activeTowerSelected);
 
             _placementMode = false;
@@ -144,7 +151,7 @@ namespace TowerSystem
 
         public void HandleBuildTower(int towerType)
         {
-            if(selectedTower)
+            if (selectedTower)
                 Destroy(selectedTower.gameObject);
 
             // Instantiate the tower
@@ -157,6 +164,7 @@ namespace TowerSystem
                     selectedTower = Instantiate(rockTowerPrefab, Vector3.up * 100.0f, Quaternion.identity);
                     break;
             }
+
             _placementMode = true;
             // maybe change material?
         }
@@ -164,7 +172,7 @@ namespace TowerSystem
         public void HandleUpgrade(int upgradeType)
         {
             UpgradeTowerAction upgradeAction = null;
-    
+
             switch (upgradeType)
             {
                 case 0: // Upgrade Damage
@@ -179,32 +187,13 @@ namespace TowerSystem
                 // Add more cases if needed
             }
 
-            if (upgradeAction == null || 
+            if (upgradeAction == null ||
                 !CoinsManager.Instance.CanBuy(upgradeAction.costModifier) ||
                 activeTowerSelected == null || !activeTowerSelected.towerData.isUpgradable ||
-                !activeTowerSelected.CanUpgrade(upgradeAction))
+                !activeTowerSelected.CanUpgrade(upgradeAction, upgradeType + 1))
                 return;
 
-            if (activeTowerSelected.towerData.upgradePrefabs.Length < 0 || 
-                upgradeType >= activeTowerSelected.GetComponent<TowerController>().towerData.upgradePrefabs.Length)
-                return;
-        
-            GameObject upgradePrefab = activeTowerSelected.towerData.upgradePrefabs[upgradeType];
-            GameObject upgradePrefabInstance = Instantiate(upgradePrefab, activeTowerSelected.transform.position,
-                activeTowerSelected.transform.rotation, activeTowerSelected.transform.parent);
-
-            upgradePrefabInstance.GetComponent<TowerController>().instanceData = activeTowerSelected.instanceData;
-            HexTile currentTile = activeTowerSelected.Tile;
-
-            DestroyActiveTower();
-
-            activeTowerSelected = upgradePrefabInstance.GetComponent<TowerController>();
-        
-            if(currentTile != null)
-                currentTile.TowerObject = activeTowerSelected.gameObject;
-        
-            activeTowerSelected.Tile = currentTile;
-            activeTowerSelected.UpgradeTower(upgradeAction);
+            activeTowerSelected.UpgradeTower(upgradeAction, upgradeType + 1);
             coinsEventChannel.RaiseModifyCoins(-upgradeAction.costModifier);
         }
 
@@ -214,7 +203,8 @@ namespace TowerSystem
                 return;
 
             activeTowerSelected.towerSellSFX.Post(activeTowerSelected.gameObject);
-            coinsEventChannel.RaiseModifyCoins(Mathf.CeilToInt(activeTowerSelected.instanceData.currentCost * sellCostPercentage));
+            coinsEventChannel.RaiseModifyCoins(
+                Mathf.CeilToInt(activeTowerSelected.instanceData.currentCost * sellCostPercentage));
             uiEventChannel.RaiseActivateBuildMenu(true);
 
             DestroyActiveTower();
@@ -224,97 +214,103 @@ namespace TowerSystem
         {
             if (!activeTowerSelected)
                 return;
-        
-            if(activeTowerSelected.Tile != null)
+
+            if (activeTowerSelected.Tile != null)
                 activeTowerSelected.Tile.DetachTower();
-        
+
             // Unregister selected tower
-            weightEventChannel.RaiseWeightRemoved(activeTowerSelected.transform.GetComponent<TowerController>().instanceData.weight, 
+            weightEventChannel.RaiseWeightRemoved(
+                activeTowerSelected.transform.GetComponent<TowerController>().instanceData.weight,
                 activeTowerSelected.transform.GetComponent<TowerController>().Tile);
-        
+
             UnregisterTower(activeTowerSelected.transform);
-        
+
             // Destroy selected tower
             Destroy(activeTowerSelected.gameObject);
         }
-    
+
         private bool FindTransformBasedOnLayer(LayerMask layerMask, out RaycastHit hit)
         {
-            Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
-            return Physics.Raycast(ray, out hit, Mathf.Infinity, layerMask,  QueryTriggerInteraction.Ignore) ? hit.transform : null;
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            return Physics.Raycast(ray, out hit, Mathf.Infinity, layerMask, QueryTriggerInteraction.Ignore)
+                ? hit.transform
+                : null;
         }
-
+    
         private bool SnapTowerToTile(Vector3 hitPoint, bool preview = false)
         {
             Bounds towerBounds = selectedTower.GetComponent<Collider>().bounds;
-
-            selectedTower.GetComponent<TowerController>().Tile = HexGridManager.Instance.GetTileAtWorldPosition(hitPoint);
-
+    
+            selectedTower.GetComponent<TowerController>().Tile =
+                HexGridManager.Instance.GetTileAtWorldPosition(hitPoint);
+    
             if (selectedTower.GetComponent<TowerController>().Tile == null)
                 return false;
-        
+    
             if (!preview)
             {
                 // Check if a tower already on the tile
-                if (!selectedTower.GetComponent<TowerController>().Tile.HasTower() && 
-                    !selectedTower.GetComponent<TowerController>().Tile.TileObject.GetComponent<HexTileController>().IsSpawnerTile)
+                if (!selectedTower.GetComponent<TowerController>().Tile.HasTower() &&
+                    !selectedTower.GetComponent<TowerController>().Tile.TileObject.GetComponent<HexTileController>()
+                        .IsSpawnerTile)
                     selectedTower.GetComponent<TowerController>().Tile.TowerObject = selectedTower.gameObject;
                 else
                 {
                     return false;
                 }
             }
-
+    
             selectedTower.transform.position =
                 selectedTower.GetComponent<TowerController>().Tile.TileObject.transform.position +
                 selectedTower.GetComponent<TowerController>().Tile.TileObject.transform.up *
                 selectedTower.GetComponent<TowerController>().towerData.yOffset;
-        
+    
             selectedTower.transform.rotation =
                 selectedTower.GetComponent<TowerController>().Tile.TileObject.transform.rotation;
-        
+    
             selectedTower.transform.parent = HexGridManager.Instance.hexGridTilt.transform;
-
+    
             return true;
         }
     
         private void ForceSnapTowerToTile(Transform tower, HexTile tile)
         {
             Bounds towerBounds = tower.GetComponent<Collider>().bounds;
-
+    
             tower.position =
                 tower.GetComponent<TowerController>().Tile.TileObject.transform.position +
                 tower.GetComponent<TowerController>().Tile.TileObject.transform.up *
                 tower.GetComponent<TowerController>().towerData.yOffset;
-        
+    
             tower.GetComponent<TowerController>().Tile.TowerObject = tower.gameObject;
-        
+    
             tower.rotation =
                 tower.GetComponent<TowerController>().Tile.TileObject.transform.rotation;
-        
+    
             tower.parent = HexGridManager.Instance.hexGridTilt.transform;
         }
-
+    
         private void RegisterTower(Transform tower)
         {
             // Register new tower
             _activeTowers.Add(tower);
-        
+    
             coinsEventChannel.RaiseModifyCoins(-tower.GetComponent<TowerController>().instanceData.currentCost);
             // TODO: Send event to let tiles now a new tower was added
             // RaiseTowerAddedToTileEvent(Transform tower)
         }
+    
         private void UnregisterTower(Transform tower)
         {
             // Register new tower
             _activeTowers.Remove(tower);
-        
+    
             if (tower.GetComponent<TowerController>().Tile != null)
             {
                 tower.GetComponent<TowerController>().Tile.DetachTower();
                 tower.GetComponent<TowerController>().Tile = null;
             }
-
+    
             // TODO: Send event to let tiles now a new tower was removed
             // RaiseTowerAddedToTileEvent(Transform tower)
         }

@@ -17,7 +17,8 @@ public class TiltManager : MonoBehaviourSingleton<TiltManager>
 
     [SerializeField] private float currentTiltAngle;
     [SerializeField] private float tileWeight = 0.1f;
-
+    [SerializeField] private float distanceWeightModifier = 1.0f;
+    
     private Dictionary<HexTile, float> weightAtlas;
     
     public Vector3 CenterOfMass { get; set; }
@@ -80,10 +81,10 @@ public class TiltManager : MonoBehaviourSingleton<TiltManager>
             totalWeight += weight;
             
             Vector3 offset = tile.TileObject.transform.position - HexGridManager.Instance.transform.position;
-            float distance = offset.magnitude;
+            float distance = offset.magnitude; // Add  this to torque calculation in case we want a more physically accurate system
             
             // Torque is perpendicular to the lever arm, so it's along the Y axis in this case
-            Vector3 torque = Vector3.Cross(offset, Vector3.up) * (weight * distance);
+            Vector3 torque = Vector3.Cross(offset, Vector3.up) * (weight * distanceWeightModifier);
             netTorque += torque;
         }
 

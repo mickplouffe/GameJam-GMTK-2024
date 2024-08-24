@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using CristiEventSystem.EventChannels;
 using UnityEngine;
+using UnityEngine.Assertions;
 using Random = UnityEngine.Random;
 
 public class EnemySpawner : MonoBehaviourSingleton<EnemySpawner>
@@ -127,12 +128,11 @@ public class EnemySpawner : MonoBehaviourSingleton<EnemySpawner>
 
     private void HandleEnemyDestroyed(GameObject enemy)
     {
+        Assert.IsTrue(enemy != null, "Enemy should not be null");
+        
         // Assuming EnemyController knows its prefab type, otherwise pass the prefab type to the event.
         EnemyController enemyController = enemy.GetComponent<EnemyController>();
-        if (enemyController != null)
-        {
-            EnemyObjectPool.Instance.ReturnEnemyObject(enemyController.Prefab, enemy);
-        }
+        EnemyObjectPool.Instance.ReturnEnemyObject(enemyController.Prefab, enemy);
 
         _activeEnemies.Remove(enemy);
     }

@@ -1770,6 +1770,7 @@ MonoBehaviour:
   rotationSpeed: 2
   currentTiltAngle: 0
   tileWeight: 0.1
+  distanceWeightModifier: 1
 --- !u!4 &869148797
 Transform:
   m_ObjectHideFlags: 0
