@@ -91,13 +91,13 @@ public class DialogueController : MonoBehaviour
             ProfileOneAnim.SetTrigger("Out");
             ProfileTwoAnim.SetTrigger("Out");
             Anim.SetBool("Active", false);
-            Invoke("DisableUI", 3);
-            gameManagerEventChannel.RaiseDialogueEnd();
+            Invoke("DisableUI", 1);
         }
 
     }
     void DisableUI()
     {
+        gameManagerEventChannel.RaiseDialogueEnd();
         transform.parent.gameObject.SetActive(false);
         Destroy(transform.parent.gameObject);
     }

@@ -82,7 +82,7 @@ public class EnemySpawner : MonoBehaviourSingleton<EnemySpawner>
         yield return StartCoroutine(SpawnEnemiesInWave(currentWave));
         
         // Wait until all enemies from the current wave are destroyed
-        yield return new WaitUntil(() => _activeEnemies.Count == 0 || _activeEnemies.Where(enm => enm.gameObject.activeInHierarchy).Count() > 0);
+        yield return new WaitUntil(() => _activeEnemies.Count == 0);
         
         CurrentWaveIndex++;
 
