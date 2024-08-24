@@ -67,7 +67,7 @@ public class EnemyController : MonoBehaviour
 
     public void SetupEnemy(HexTile sourceTile)
     {
-        TargetTile = HexGridManager.Instance.GetTileAtWorldPosition(HexGridManager.Instance.mainUnit.position);
+        TargetTile = HexGridManager.Instance.GetTileAtWorldPosition(HexGridManager.Instance.transform.position);
         SourceTile = sourceTile;
 
         _currentSourceTile = SourceTile;

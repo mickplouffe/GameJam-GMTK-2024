@@ -1,7 +1,7 @@
 .menuTitle {
     font-size: 120px;
     -unity-font-style: bold;
-    -unity-font-definition: url("project://database/Assets/Scripts/AvivDialougeScripts/Dialouge%20Assets/EBGaramond-VariableFont_wght.ttf?fileID=12800000&guid=e3cb9bd06d46b934e87062f7c40ffdc1&type=3#EBGaramond-VariableFont_wght");
+    -unity-font-definition: url("project://database/Assets/Scripts/AvivDialogueScripts/Dialogue%20Assets/EBGaramond-VariableFont_wght.ttf?fileID=12800000&guid=e3cb9bd06d46b934e87062f7c40ffdc1&type=3#EBGaramond-VariableFont_wght");
 }
 
 .buttonsPanel {
@@ -28,7 +28,7 @@
 }
 
 .buttonsPanel {
-    -unity-font-definition: url("project://database/Assets/Scripts/AvivDialougeScripts/Dialouge%20Assets/EBGaramond-VariableFont_wght.ttf?fileID=12800000&guid=e3cb9bd06d46b934e87062f7c40ffdc1&type=3#EBGaramond-VariableFont_wght");
+    -unity-font-definition: url("project://database/Assets/Scripts/AvivDialogueScripts/Dialogue%20Assets/EBGaramond-VariableFont_wght.ttf?fileID=12800000&guid=e3cb9bd06d46b934e87062f7c40ffdc1&type=3#EBGaramond-VariableFont_wght");
 }
 
 .menuContainer {

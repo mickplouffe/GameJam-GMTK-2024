@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using NaughtyAttributes;
+using UnityEngine.Serialization;
 
 public class DialogueController : MonoBehaviour
 {
@@ -12,7 +13,7 @@ public class DialogueController : MonoBehaviour
     public AudioSourceGroup audioSourceGroup;
 
     ///Aviv's Addition/Changes
-    public bool DialougeIsActive;
+    public bool DialogueIsActive;
     [SerializeField] int CurrentTextActive;
     [TextArea]
     public string[] dialogue1;

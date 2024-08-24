@@ -78,7 +78,7 @@ public class TiltManager : MonoBehaviourSingleton<TiltManager>
             totalWeightedPosition += tile.TileObject.transform.position * weight;
             totalWeight += weight;
             
-            Vector3 offset = tile.TileObject.transform.position - HexGridManager.Instance.mainUnit.position;
+            Vector3 offset = tile.TileObject.transform.position - HexGridManager.Instance.transform.position;
             float distance = offset.magnitude;
             
             // Torque is perpendicular to the lever arm, so it's along the Y axis in this case

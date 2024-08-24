@@ -2,32 +2,20 @@ using System;
 using System.Collections.Generic;
 using NaughtyAttributes;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
-public class HexGridManager : MonoBehaviour
+public class HexGridManager : MonoBehaviourSingleton<HexGridManager>
 {
     
-    public static HexGridManager Instance { get; private set; }
-    public bool IsDead { get; set; }
 
     private void Awake()
     {
-        if (Instance == null)
-        {
-            Instance = this;
-            //DontDestroyOnLoad(gameObject); // Optional: if you want the Singleton to persist across scenes
-        }
-        else
-        {
-            Destroy(gameObject); // Ensure there's only one instance
-            return;
-        }
-        
-        if (!hexTileParent)
+        if (!_hexTilesContainer)
         {
             // Create new GameObject to hold the hex tiles that is a child of the HexGridManager
-            hexTileParent = new GameObject("HexTiles").transform;
-            hexTileParent.SetParent(transform);
+            _hexTilesContainer = new GameObject("hexTilesContainer").transform;
+            _hexTilesContainer.SetParent(transform);
         }
 
         GenerateGrid();
@@ -35,32 +23,51 @@ public class HexGridManager : MonoBehaviour
     
     [HideInInspector] public float gridSpan = 5; // Getting the furthest distance from the center of the grid
     public GameObject hexPrefab;
-    private HexGrid hexGrid;
-    public readonly float _hexTileSize = 1;
-    [SerializeField] private Transform hexTileParent;
 
-    /* [OnValueChanged("GenerateHexGrid")] */ public GridShape gridShape;
     [OnValueChanged("GenerateHexGrid"), Label("Width/Diameter"), Range(0, 40)] public int width = 10;
     [SerializeField] public Transform hexGridTilt;
-    [OnValueChanged("GenerateHexGrid"), ShowIf("gridShape", GridShape.Rectangle), Range(0, 40)] public int height = 10;
-    /* [OnValueChanged("GenerateHexGrid")] */ private float heightVariation = 0.1f; // Extra
 
-    private Texture2D noiseTexture; // Extra
-    [OnValueChanged("GenerateHexGrid")] private float noiseScale = 1f; // Extra
     
-    public int amountBlobToAdd = 3;
     
     [SerializeField] private TiltObject tiltObject;
 
-    public Transform mainUnit;
+    //public Transform mainUnit;
 
-    [SerializeField] private int mainUnityStartHealth;
-    private int _currentMainUnitHealth = 100;
+    
+    
+    ///// SETTINGS /////
+    
+    // PUBLICS
+    
+    // PRIVATES
+    private HexGrid _hexGrid;
+    private Transform _hexTilesContainer;
+    private const float HexTileSize = 1;
 
+    private Animator _animator;
+
+    // Health Should be split into a separate class or Interface
+    [SerializeField] private int mainUnitStartHealth;
+    private int _currentMainUnitHealth = 1; 
     [SerializeField] private EnemyEventChannel enemyEventChannel;
     [SerializeField] private GameManagerEventChannel gameManagerEventChannel;
     [SerializeField] private RectTransform healthBar;
-    private Animator _animator;
+    private bool IsDead { get; set; }
+    
+
+
+    ///// DEBUGGING /////
+    
+    public int amountBlobToAdd = 3;
+
+    /* [OnValueChanged("GenerateHexGrid")] */ public GridShape gridShape = GridShape.Circle;
+
+    [OnValueChanged("GenerateHexGrid"), ShowIf("gridShape", GridShape.Rectangle), Range(0, 40)] public int height = 10;
+    /* [OnValueChanged("GenerateHexGrid")] */ private float heightVariation = 0.1f;
+
+    private Texture2D noiseTexture; // Extra
+    /*[OnValueChanged("GenerateHexGrid")]*/ private float noiseScale = 1f;
+    
 
 
     private void OnEnable()
@@ -86,25 +93,25 @@ public class HexGridManager : MonoBehaviour
     // [Button]
     void GenerateGrid()
     {
-        hexGrid = new HexGrid(_hexTileSize, hexTileParent);
+        _hexGrid = new HexGrid(HexTileSize, _hexTilesContainer);
         GenerateInitialGrid();
-        List<HexTile> edgeTiles = hexGrid.GetTrueEdgeTiles();
+        List<HexTile> edgeTiles = _hexGrid.GetTrueEdgeTiles();
         HexTile selectedTile = edgeTiles[Random.Range(0, edgeTiles.Count)];
         //hexGrid.AddCircularBlob(selectedTile.Q, selectedTile.R, amountBlobToAdd, hexPrefab);
-        mainUnit = GameObject.FindGameObjectWithTag("MainUnit").transform;
-        _currentMainUnitHealth = mainUnityStartHealth;
+        // mainUnit = GameObject.FindGameObjectWithTag("MainUnit").transform;
+        _currentMainUnitHealth = mainUnitStartHealth;
 
-        if (!_animator)
-        {
-            _animator = mainUnit.GetComponent<Animator>();
-        }
+        // if (!_animator)
+        // {
+        //     _animator = mainUnit.GetComponent<Animator>();
+        // }
 
         if (!healthBar)
         {
             healthBar = GameObject.FindGameObjectWithTag("HealthBar").GetComponent<RectTransform>();
         }
         
-        healthBar.localScale = new Vector3((float)_currentMainUnitHealth / mainUnityStartHealth, 1, 1);
+        healthBar.localScale = new Vector3((float)_currentMainUnitHealth / mainUnitStartHealth, 1, 1);
 
     }
 
@@ -122,7 +129,7 @@ public class HexGridManager : MonoBehaviour
     private void HandleEnemyAttack(int damage)
     {
         _currentMainUnitHealth -= damage;
-        healthBar.localScale = new Vector3((float)_currentMainUnitHealth / mainUnityStartHealth, 1, 1);
+        healthBar.localScale = new Vector3((float)_currentMainUnitHealth / mainUnitStartHealth, 1, 1);
         if (_currentMainUnitHealth > 0)
             return;
 
@@ -145,7 +152,7 @@ public class HexGridManager : MonoBehaviour
     void GenerateInitialGrid()
     {
         Vector2 size = new Vector2(width, height);
-        hexGrid.GenerateGrid(size, hexPrefab, 0, gridShape);
+        _hexGrid.GenerateGrid(size, hexPrefab, 0, gridShape);
 
         // for (int q = -gridRadius; q <= gridRadius; q++)
         // {
@@ -166,11 +173,11 @@ public class HexGridManager : MonoBehaviour
         DisableHexGrid();
         ClearHexGrid();
         Vector2 size = new Vector2(width, height);
-        hexGrid.GenerateGrid(size, hexPrefab, 0, gridShape);
+        _hexGrid.GenerateGrid(size, hexPrefab, 0, gridShape);
         _animator.SetBool("IsDead", false);
 
         HighlightTrueEdgeTiles();
-        _currentMainUnitHealth = mainUnityStartHealth;
+        _currentMainUnitHealth = mainUnitStartHealth;
 
 
     }
@@ -194,7 +201,7 @@ public class HexGridManager : MonoBehaviour
     //[Button]
     void HighlightTrueEdgeTiles()
     {
-        List<HexTile> edgeTiles = hexGrid.GetTrueEdgeTiles();
+        List<HexTile> edgeTiles = _hexGrid.GetTrueEdgeTiles();
 
         foreach (var tile in edgeTiles)
         {
@@ -204,24 +211,24 @@ public class HexGridManager : MonoBehaviour
     
     public HexTile GetRandomTrueEdgeTile()
     {
-        List<HexTile> edgeTiles = hexGrid.GetTrueEdgeTiles();
+        List<HexTile> edgeTiles = _hexGrid.GetTrueEdgeTiles();
         return edgeTiles[Random.Range(0, edgeTiles.Count)];
     }
     
     public List<HexTile> GetEdgeTiles()
     {
-        return hexGrid.GetTrueEdgeTiles();
+        return _hexGrid.GetTrueEdgeTiles();
     }
     
     public HexTile GetNextTile(HexTile currentTile, Vector3 direction)
     {
         Vector2Int nextGridPos = new Vector2Int(Mathf.RoundToInt(currentTile.Q + direction.x), Mathf.RoundToInt(currentTile.R + direction.z));
-        return hexGrid.GetTile(nextGridPos.x, nextGridPos.y);
+        return _hexGrid.GetTile(nextGridPos.x, nextGridPos.y);
     }
     
     public List<HexTile> GetRandomEdgeTiles(int numberOfTiles)
     {
-        List<HexTile> edgeTiles = hexGrid.GetTrueEdgeTiles();
+        List<HexTile> edgeTiles = _hexGrid.GetTrueEdgeTiles();
         // Shuffle the list to ensure randomness
         for (int i = 0; i < edgeTiles.Count; i++)
         {
@@ -238,12 +245,12 @@ public class HexGridManager : MonoBehaviour
     
     public HexTile GetTile(int q, int r)
     {
-        return hexGrid.GetTile(q, r);
+        return _hexGrid.GetTile(q, r);
     }
     
     public GameObject GetTileObject(int q, int r)
     {
-        return hexGrid.GetTile(q, r).TileObject;
+        return _hexGrid.GetTile(q, r).TileObject;
     }
     
     public GameObject GetTileObject(HexTile hexTile)
@@ -253,27 +260,27 @@ public class HexGridManager : MonoBehaviour
     
     public List<HexTile> GetNeighbors(int q, int r)
     {
-        return hexGrid.GetNeighbors(q, r);
+        return _hexGrid.GetNeighbors(q, r);
     }
     
     public void AddTile(int q, int r)
     {
-        hexGrid.AddTile(q, r, hexPrefab, hexTileParent);
+        _hexGrid.AddTile(q, r, hexPrefab, _hexTilesContainer);
     }
     
     public void AddTile(int q, int r, GameObject hexPrefabToUse)
     {
-        hexGrid.AddTile(q, r, hexPrefabToUse, hexTileParent);
+        _hexGrid.AddTile(q, r, hexPrefabToUse, _hexTilesContainer);
     }
     
     public void RemoveTile(int q, int r)
     {
-        hexGrid.RemoveTile(q, r);
+        _hexGrid.RemoveTile(q, r);
     }
     
     public void AddCircularBlob(int q, int r, int amount, GameObject hexPrefabToUse)
     {
-        hexGrid.AddCircularBlob(q, r, amount, hexPrefabToUse);
+        _hexGrid.AddCircularBlob(q, r, amount, hexPrefabToUse);
     }
     
     public void AddCircularBlob(int q, int r, int amount)
@@ -283,7 +290,7 @@ public class HexGridManager : MonoBehaviour
     
     public HexTile GetTileAtPosition(Vector3 worldPosition)
     {
-        return hexGrid.GetTileAtPosition(worldPosition);
+        return _hexGrid.GetTileAtPosition(worldPosition);
     }
     
     public HexTile GetTileAtPoint(Vector3 position)
@@ -326,7 +333,7 @@ public class HexGridManager : MonoBehaviour
         // Add 1 random tile where there is none
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            hexGrid.AddTile(Random.Range(hexGrid.MinQ(), hexGrid.MaxQ()), Random.Range(hexGrid.MinQ(), hexGrid.MaxQ()), hexPrefab, hexTileParent);
+            _hexGrid.AddTile(Random.Range(_hexGrid.MinQ(), _hexGrid.MaxQ()), Random.Range(_hexGrid.MinQ(), _hexGrid.MaxQ()), hexPrefab, _hexTilesContainer);
             HighlightTrueEdgeTiles();
     
         }
@@ -334,7 +341,7 @@ public class HexGridManager : MonoBehaviour
         // Remove 1 random tile
         if (Input.GetKeyDown(KeyCode.R))
         {
-            hexGrid.RemoveTile(Random.Range(hexGrid.MinQ(), hexGrid.MaxQ()), Random.Range(hexGrid.MinQ(), hexGrid.MaxQ()));
+            _hexGrid.RemoveTile(Random.Range(_hexGrid.MinQ(), _hexGrid.MaxQ()), Random.Range(_hexGrid.MinQ(), _hexGrid.MaxQ()));
             HighlightTrueEdgeTiles();
     
         }
@@ -342,9 +349,9 @@ public class HexGridManager : MonoBehaviour
         // Add group of X tiles to Selected true edge tile
         if (Input.GetKeyDown(KeyCode.G))
         {
-            List<HexTile> edgeTiles = hexGrid.GetTrueEdgeTiles();
+            List<HexTile> edgeTiles = _hexGrid.GetTrueEdgeTiles();
             HexTile selectedTile = edgeTiles[Random.Range(0, edgeTiles.Count)];
-            hexGrid.AddCircularBlob(selectedTile.Q, selectedTile.R, amountBlobToAdd, hexPrefab);
+            _hexGrid.AddCircularBlob(selectedTile.Q, selectedTile.R, amountBlobToAdd, hexPrefab);
     
             HighlightTrueEdgeTiles();
         }
@@ -352,15 +359,15 @@ public class HexGridManager : MonoBehaviour
         // Example of getting and printing neighbors of a tile
         if (Input.GetKeyDown(KeyCode.N))
         {
-            HexTile tile = hexGrid.GetTile(0, 0);
+            HexTile tile = _hexGrid.GetTile(0, 0);
             if (tile != null)
             {
-                List<HexTile> neighbors = hexGrid.GetNeighbors(tile.Q, tile.R);
+                List<HexTile> neighbors = _hexGrid.GetNeighbors(tile.Q, tile.R);
                 Debug.Log("Neighbors: " + neighbors.Count);
             }
         }
 
-        tiltObject.tiles = hexGrid.GetTilesObjects();
+        tiltObject.tiles = _hexGrid.GetTilesObjects();
         CalculateGridSpan();
 
     }
@@ -369,13 +376,13 @@ public class HexGridManager : MonoBehaviour
     {
         // Get the center point then find the hex tile that is the furthest away from the center
         Vector3 center = Vector3.zero;
-        foreach (var tile in hexGrid.GetTiles())
+        foreach (var tile in _hexGrid.GetTiles())
         {
             center += tile.TileObject.transform.position;
         }
-        center /= hexGrid.GetTiles().Count;
+        center /= _hexGrid.GetTiles().Count;
         
-        foreach (var tile in hexGrid.GetTiles())
+        foreach (var tile in _hexGrid.GetTiles())
         {
             float distance = Vector3.Distance(center, tile.TileObject.transform.position);
             if (distance > gridSpan)
@@ -388,14 +395,14 @@ public class HexGridManager : MonoBehaviour
     //[Button("Disable")]
     private void DisableHexGrid()
     {
-        hexGrid.Disable();
+        _hexGrid.Disable();
 
     }
 
     //[Button("Clear")]
     private void ClearHexGrid()
     {
-        hexGrid.Clear();
+        _hexGrid.Clear();
     }
 
     // private GameObject PoolGetTile()
@@ -442,8 +449,8 @@ public class HexGridManager : MonoBehaviour
     private (int q, int r) WorldToHex(Vector3 worldPosition)
     {
         Vector3 localPosition = Instance.transform.InverseTransformPoint(worldPosition);
-        float q = (localPosition.x * Mathf.Sqrt(3f) / 3f - localPosition.z / 3f) / _hexTileSize;
-        float r = localPosition.z * 2f / 3f / _hexTileSize;
+        float q = (localPosition.x * Mathf.Sqrt(3f) / 3f - localPosition.z / 3f) / HexTileSize;
+        float r = localPosition.z * 2f / 3f / HexTileSize;
         return HexRound(q, r);
     }
 
@@ -485,7 +492,7 @@ public class HexGridManager : MonoBehaviour
 
     public Dictionary<(int q, int r), HexTile> GetAllTiles()
     {
-        return hexGrid.GetAllTiles();
+        return _hexGrid.GetAllTiles();
     }
 }
 
