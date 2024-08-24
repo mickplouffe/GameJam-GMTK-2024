@@ -190,7 +190,7 @@ GameObject:
   - component: {fileID: 391633125085068983}
   - component: {fileID: 5377567234895023035}
   m_Layer: 5
-  m_Name: Lose Dialouge Number 1
+  m_Name: Lose Dialogue Number 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
