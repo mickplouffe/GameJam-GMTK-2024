@@ -1,13 +1,22 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using NaughtyAttributes;
 using UnityEngine.Events;
 
-public class GameManager : MonoBehaviourSingleton<GameManager>
+// Enum for game states
+public enum GameState
 {
+    Dialogue,
+    Wave,
+    Paused,
+    GameOver
+}
+
+public class GameManager : MonoBehaviourSingletonPersistent<GameManager>
+{
+    // Events for state changes
+    public UnityAction<GameState> OnGameStateChanged;
+
     [SerializeField] private GameManagerEventChannel gameManagerEventChannel;
     [SerializeField] private EnemyEventChannel enemyEventChannel;
     [SerializeField] private UIEventChannel uiEventChannel;
@@ -16,90 +25,125 @@ public class GameManager : MonoBehaviourSingleton<GameManager>
     public AK.Wwise.Event scribbleSFX;
     public AK.Wwise.Event gameOverMusic;
 
-    public bool IsGamePaused { get; set; }
-    public bool IsGameOver { get; set; }
-    public bool IsInDialogue { get; set; }
-    
+    private GameState _currentState;
+
     private void OnEnable()
     {
-        gameManagerEventChannel.OnDialogueEnd += HandleStartWave;
-        gameManagerEventChannel.OnGameOver += HandleGameOver;
-        enemyEventChannel.OnWaveCompleted += StartNextCycle;
-        menuEventChannel.OnResumeButtonPressed += HandleGameResume;
-        gameManagerEventChannel.OnGameRestart += HandleGameRestart;
+        gameManagerEventChannel.OnDialogueEnd += OnDialogueEnd;
+        gameManagerEventChannel.OnGameOver += OnGameOver;
+        enemyEventChannel.OnWaveCompleted += OnWaveCompleted;
+        menuEventChannel.OnResumeButtonPressed += OnResume;
+        gameManagerEventChannel.OnGameRestart += OnGameRestart;
     }
 
     private void OnDisable()
     {
-        gameManagerEventChannel.OnDialogueEnd -= HandleStartWave;
-        enemyEventChannel.OnWaveCompleted -= StartNextCycle;
-        gameManagerEventChannel.OnGameOver -= HandleGameOver;
-        menuEventChannel.OnResumeButtonPressed -= HandleGameResume;
-        gameManagerEventChannel.OnGameRestart -= HandleGameRestart;
+        gameManagerEventChannel.OnDialogueEnd -= OnDialogueEnd;
+        gameManagerEventChannel.OnGameOver -= OnGameOver;
+        enemyEventChannel.OnWaveCompleted -= OnWaveCompleted;
+        menuEventChannel.OnResumeButtonPressed -= OnResume;
+        gameManagerEventChannel.OnGameRestart -= OnGameRestart;
     }
-        
+
     private void Start()
     {
-        StartNextCycle();
+        ChangeState(GameState.Dialogue);
     }
 
+    private void ChangeState(GameState newState)
+    {
+        _currentState = newState;
+        OnGameStateChanged?.Invoke(newState);
+
+        switch (_currentState)
+        {
+            case GameState.Dialogue:
+                HandleDialogueState();
+                break;
+            case GameState.Wave:
+                HandleWaveState();
+                break;
+            case GameState.Paused:
+                HandlePausedState();
+                break;
+            case GameState.GameOver:
+                HandleGameOverState();
+                break;
+        }
+    }
     private void Update()
     {
-        if (!Input.GetKeyDown(KeyCode.Escape) || IsGameOver) 
+        if (!Input.GetKeyDown(KeyCode.Escape)) 
             return;
         
-        IsGamePaused = !IsGamePaused;
-        HandleGamePause();
-    }
-
-    private void StartNextCycle()
+        switch (_currentState)
+        {
+            case GameState.Paused:
+                ChangeState(GameState.Wave);
+                break;
+            case GameState.Wave:
+                ChangeState(GameState.Paused);
+                break;
+        }
+    } 
+    private void HandleDialogueState()
     {
-        if(IsGameOver)
-            return; 
-        
         uiEventChannel.RaiseActivateBuildMenu(false);
         gameManagerEventChannel.RaiseDialogueStart();
-        IsInDialogue = true;
+        Time.timeScale = 1.0f;
     }
-
-    private void HandleStartWave()
+    
+    private void HandleWaveState()
     {
-        if(IsGameOver)
-           return; 
-        
-        IsInDialogue = false;
+        // Activate build menu, deactivate upgrade menu
         uiEventChannel.RaiseActivateBuildMenu(true);
         enemyEventChannel.RaiseStartNextWave();
-    }
-    
-    private void HandleGameResume()
-    {
         Time.timeScale = 1.0f;
     }
-    
-    private void HandleGamePause()
-    {
-        Time.timeScale = IsGamePaused ? 0.0f : 1.0f;
-        menuEventChannel.RaisePauseGame(IsGamePaused);
-    }
-    
-    private void HandleGameOver()
-    {
 
-        Time.timeScale = 0.0f;
-        IsGameOver = true;
-      
-    }
-
-    private void HandleGameRestart()
+    private void HandlePausedState()
     {
-        Time.timeScale = 1.0f;
         uiEventChannel.RaiseActivateBuildMenu(false);
-        IsGamePaused = false;
-        HandleGamePause();
-        IsGameOver = false;
+        menuEventChannel.RaisePauseGame(true);
+        Time.timeScale = 0.0f;
+    }
+
+    private void HandleGameOverState()
+    {
+        uiEventChannel.RaiseActivateBuildMenu(false);
+        Time.timeScale = 0.0f;
+        // Trigger any additional game over logic here
+    }
+
+
+    private void OnWaveCompleted()
+    {
+        if (_currentState == GameState.GameOver)
+            return;
+
+        ChangeState(GameState.Dialogue);
+    }
+
+    private void OnDialogueEnd()
+    {
+        if (_currentState == GameState.Dialogue)
+            ChangeState(GameState.Wave);
+    }
+
+    private void OnGameOver()
+    {
+        ChangeState(GameState.GameOver);
+    }
+
+    private void OnResume()
+    {
+        ChangeState(GameState.Wave);
+    }
+
+    private void OnGameRestart()
+    {
         Scene scene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(scene.name);
-        StartNextCycle();
+        ChangeState(GameState.Dialogue);
     }
 }

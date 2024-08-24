@@ -54,9 +54,6 @@ public class TowerManager : MonoBehaviourSingleton<TowerManager>
     // Update is called once per frame
     void Update()
     {
-        if (GameManager.Instance.IsInDialogue)
-            return;
-        
         if (Input.GetMouseButtonDown(1) && _placementMode)
         {
             _placementMode = false;
@@ -188,19 +185,25 @@ public class TowerManager : MonoBehaviourSingleton<TowerManager>
             !activeTowerSelected.CanUpgrade(upgradeAction))
             return;
 
-        if (activeTowerSelected.GetComponent<TowerController>().towerData.upgradePrefabs.Length < 0 || 
+        if (activeTowerSelected.towerData.upgradePrefabs.Length < 0 || 
             upgradeType >= activeTowerSelected.GetComponent<TowerController>().towerData.upgradePrefabs.Length)
             return;
         
-        GameObject upgradePrefab = activeTowerSelected.GetComponent<TowerController>().towerData.upgradePrefabs[upgradeType];
+        GameObject upgradePrefab = activeTowerSelected.towerData.upgradePrefabs[upgradeType];
         GameObject upgradePrefabInstance = Instantiate(upgradePrefab, activeTowerSelected.transform.position,
             activeTowerSelected.transform.rotation, activeTowerSelected.transform.parent);
 
         upgradePrefabInstance.GetComponent<TowerController>().instanceData = activeTowerSelected.instanceData;
+        HexTile currentTile = activeTowerSelected.Tile;
 
         DestroyActiveTower();
 
         activeTowerSelected = upgradePrefabInstance.GetComponent<TowerController>();
+        
+        if(currentTile != null)
+            currentTile.TowerObject = activeTowerSelected.gameObject;
+        
+        activeTowerSelected.Tile = currentTile;
         activeTowerSelected.UpgradeTower(upgradeAction);
         coinsEventChannel.RaiseModifyCoins(-upgradeAction.costModifier);
     }
@@ -211,7 +214,6 @@ public class TowerManager : MonoBehaviourSingleton<TowerManager>
             return;
 
         activeTowerSelected.towerSellSFX.Post(activeTowerSelected.gameObject);
-        
         coinsEventChannel.RaiseModifyCoins(Mathf.CeilToInt(activeTowerSelected.instanceData.currentCost * sellCostPercentage));
         uiEventChannel.RaiseActivateBuildMenu(true);
 
