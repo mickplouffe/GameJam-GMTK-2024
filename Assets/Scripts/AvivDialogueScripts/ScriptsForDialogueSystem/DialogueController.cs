@@ -28,7 +28,8 @@ public class DialogueController : MonoBehaviour
     public Animator ProfileTwoAnim;
 
     [SerializeField] private GameManagerEventChannel gameManagerEventChannel;
-    
+
+    private bool _skipFirstTime;
     public bool IsPlaying { get; set; }
 
     private void OnEnable()
@@ -46,11 +47,20 @@ public class DialogueController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0) && IsPlaying)
+        if (!Input.GetMouseButtonDown(0) || !IsPlaying) 
+            return;
+        
+        if (!_skipFirstTime)
         {
-            CurrentTextActive++;
-            GoToNextText();
+            _skipFirstTime = true;
+            dialogueVertexAnimator.SkipToEndOfCurrentMessage();
+            return;
         }
+
+        _skipFirstTime = false;
+
+        CurrentTextActive++;
+        GoToNextText();
     }
     [Button]
     public void StartDialogue()
@@ -67,9 +77,8 @@ public class DialogueController : MonoBehaviour
         if (CurrentTextActive <= dialogue1.Length - 1)
         {
             PlayDialogue(dialogue1[CurrentTextActive]);
-
-
-            if (WhichCharacter[CurrentTextActive] == true)
+            
+            if (WhichCharacter[CurrentTextActive])
             {
                 NameText.text = "Alexiares";
                 ProfilePicture1.SetActive(true);
@@ -110,6 +119,7 @@ public class DialogueController : MonoBehaviour
         this.EnsureCoroutineStopped(ref typeRoutine);
         dialogueVertexAnimator.textAnimating = false;
         List<DialogueCommand> commands = DialogueUtility.ProcessInputString(message, out string totalTextMessage);
+        
         typeRoutine = StartCoroutine(dialogueVertexAnimator.AnimateTextIn(commands, totalTextMessage, typingClip, null));
     }
 }

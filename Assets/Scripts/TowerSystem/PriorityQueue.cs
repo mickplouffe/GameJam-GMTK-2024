@@ -44,4 +44,9 @@ public class PriorityQueue<T>
     {
         return elements[0].Item2;
     }
+
+    public void Clear()
+    {
+        elements.Clear();
+    }
 }

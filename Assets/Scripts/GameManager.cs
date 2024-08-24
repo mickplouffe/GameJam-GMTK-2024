@@ -51,6 +51,11 @@ public class GameManager : MonoBehaviourSingletonPersistent<GameManager>
         ChangeState(GameState.Dialogue);
     }
 
+    public bool IsInDialogue()
+    {
+        return _currentState == GameState.Dialogue;
+    }
+
     private void ChangeState(GameState newState)
     {
         _currentState = newState;

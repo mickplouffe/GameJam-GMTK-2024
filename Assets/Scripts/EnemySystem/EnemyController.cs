@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using CristiEventSystem.EventChannels;
 using NUnit.Framework.Constraints;
 using UnityEngine;
+using UnityEngine.Assertions;
 
 public class EnemyController : MonoBehaviour
 {
@@ -36,6 +37,8 @@ public class EnemyController : MonoBehaviour
     private Bounds _colliderBounds;
 
     public GameObject Prefab { get; set; }
+    
+    public WaveConfig CurrentWaveConfig { get; set; }
     
     private void OnEnable()
     {
@@ -102,33 +105,23 @@ public class EnemyController : MonoBehaviour
         _percentBetweenTiles = Mathf.Clamp01(_percentBetweenTiles);
 
         Vector3 newPos = Vector3.Lerp(_currentSourceTile.TileObject.transform.position, _currentTargetTile.TileObject.transform.position, _percentBetweenTiles);
-
-        // if (Vector3.Distance(HexGridManager.Instance.mainUnit.transform.position, transform.position) < 0.01f)
-        // {
-        //     enemyEnterTowerSFX.Post(gameObject);
-        //     HexGridManager.Instance.TakeDamage(enemyDamage);
-        //     KillEnemy();
-        //         
-        //     return;
-        // }
+        
         if (_percentBetweenTiles >= 1.0f)
         {
             weightEventChannel.RaiseWeightRemoved(enemyWeight, _currentSourceTile);
-            
             _percentBetweenTiles = 0.0f;
-            _currentSourceTile = _currentTargetTile;
-            _currentTargetTile = GetNextTargetPosition();
-            
-            weightEventChannel.RaiseWeightAdded(enemyWeight, _currentSourceTile);
             
             if (_currentTargetTile == TargetTile)
             {
                 enemyEnterTowerSFX.Post(gameObject);
-                HexGridManager.Instance.TakeDamage(enemyDamage);
                 KillEnemy();
-                
                 return;
             }
+            
+            _currentSourceTile = _currentTargetTile;
+            _currentTargetTile = GetNextTargetPosition();
+
+            weightEventChannel.RaiseWeightAdded(enemyWeight, _currentSourceTile);
         }
         
         
@@ -175,16 +168,13 @@ public class EnemyController : MonoBehaviour
 
     public void KillEnemy()
     {
-        if (!gameObject.activeInHierarchy || !gameObject.activeSelf)
-            return;
-        
+        _finishedSetup = false;
         _currentHealth = startHealth;
-        if(_currentSourceTile != null)
-            weightEventChannel.RaiseWeightRemoved(enemyWeight, _currentSourceTile);
+
+        Assert.IsTrue(_currentSourceTile != null, "Tile of enemy should never be null when is killed");
+        weightEventChannel.RaiseWeightRemoved(enemyWeight, _currentSourceTile);
         
         coinsEventChannel.RaiseModifyCoins(enemyKillCost);
         enemyEventChannel.RaiseEnemyKilled(gameObject);
-        
-        EnemyObjectPool.Instance.ReturnEnemyObject(Prefab, gameObject);
     }
 }

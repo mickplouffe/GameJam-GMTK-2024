@@ -208,7 +208,62 @@ namespace TowerSystem
             coinsEventChannel.RaiseModifyCoins(-upgradeAction.costModifier);
         }
 
-        public void HandleSellItem()
+        if (upgradeAction == null || 
+            !CoinsManager.Instance.CanBuy(upgradeAction.costModifier) ||
+            activeTowerSelected == null || !activeTowerSelected.towerData.isUpgradable ||
+            !activeTowerSelected.CanUpgrade(upgradeAction, upgradeType + 1))
+            return;
+        
+        activeTowerSelected.UpgradeTower(upgradeAction, upgradeType + 1);
+        coinsEventChannel.RaiseModifyCoins(-upgradeAction.costModifier);
+    }
+
+    public void HandleSellItem()
+    {
+        if (!activeTowerSelected)
+            return;
+
+        activeTowerSelected.towerSellSFX.Post(activeTowerSelected.gameObject);
+        coinsEventChannel.RaiseModifyCoins(Mathf.CeilToInt(activeTowerSelected.instanceData.currentCost * sellCostPercentage));
+        uiEventChannel.RaiseActivateBuildMenu(true);
+
+        DestroyActiveTower();
+    }
+
+    private void DestroyActiveTower()
+    {
+        if (!activeTowerSelected)
+            return;
+        
+        if(activeTowerSelected.Tile != null)
+            activeTowerSelected.Tile.DetachTower();
+        
+        // Unregister selected tower
+        weightEventChannel.RaiseWeightRemoved(activeTowerSelected.transform.GetComponent<TowerController>().instanceData.weight, 
+            activeTowerSelected.transform.GetComponent<TowerController>().Tile);
+        
+        UnregisterTower(activeTowerSelected.transform);
+        
+        // Destroy selected tower
+        Destroy(activeTowerSelected.gameObject);
+    }
+    
+    private bool FindTransformBasedOnLayer(LayerMask layerMask, out RaycastHit hit)
+    {
+        Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
+        return Physics.Raycast(ray, out hit, Mathf.Infinity, layerMask,  QueryTriggerInteraction.Ignore) ? hit.transform : null;
+    }
+
+    private bool SnapTowerToTile(Vector3 hitPoint, bool preview = false)
+    {
+        Bounds towerBounds = selectedTower.GetComponent<Collider>().bounds;
+
+        selectedTower.GetComponent<TowerController>().Tile = HexGridManager.Instance.GetTileAtWorldPosition(hitPoint);
+
+        if (selectedTower.GetComponent<TowerController>().Tile == null)
+            return false;
+        
+        if (!preview)
         {
             if (!activeTowerSelected)
                 return;

@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Assertions;
 
 public class EnemyObjectPool : MonoBehaviourSingleton<EnemyObjectPool>
 {
@@ -58,7 +59,10 @@ public class EnemyObjectPool : MonoBehaviourSingleton<EnemyObjectPool>
 
     public void ReturnEnemyObject(GameObject enemyPrefab, GameObject obj)
     {
-        if (enemyPrefab != null && poolDictionary.ContainsKey(enemyPrefab))
+        
+        Assert.IsTrue(obj != null, "Returned object should always be true");
+        
+        if (poolDictionary.ContainsKey(enemyPrefab))
         {
             obj.SetActive(false);
             // obj.transform.position = Vector3.up * 100.0f;
