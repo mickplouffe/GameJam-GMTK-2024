@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using CristiEventSystem.EventChannels;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -10,7 +11,7 @@ public class UIManager : MonoBehaviourSingleton<UIManager>
     [SerializeField] private GameObject buildMenu;
     [SerializeField] private GameObject actionsMenu;
 
-    [SerializeField] private UIEventChannel uitEventChannel;
+    [SerializeField] private UiEventChannel uitEventChannel;
     [SerializeField] private EnemyEventChannel enemyEventChannel;
     [SerializeField] private GameManagerEventChannel gameManagerEventChannel;
     

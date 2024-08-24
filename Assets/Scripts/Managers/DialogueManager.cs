@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using CristiEventSystem.EventChannels;
 using UnityEngine;
 
 public class DialogueManager : MonoBehaviourSingleton<DialogueManager>

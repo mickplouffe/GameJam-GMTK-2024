@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using AK.Wwise;
+using CristiEventSystem.EventChannels;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UIElements;
@@ -128,12 +129,16 @@ public class OptionsMenuController : BaseMenu
     {
         Resolution resolution = _allowResolutions[_displayResolution.index];
         Screen.SetResolution(resolution.width, resolution.height, _fullscreenToggle.value);
+#if UnmuteWwiseLogs
         Debug.Log("Applying new resolution settings.");
+#endif
     }
 
     private void OnApplyQualitySettings()
     {
         QualitySettings.SetQualityLevel(_quality.index, true);
+#if UnmuteWwiseLogs
         Debug.Log("Applying new quality settings.");
+#endif
     }
 }

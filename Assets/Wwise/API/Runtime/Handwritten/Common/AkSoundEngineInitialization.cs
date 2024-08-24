@@ -40,8 +40,9 @@ public class AkSoundEngineInitialization
 
 	public bool InitializeSoundEngine()
 	{
-
+#if UnmuteWwiseLogs
 		UnityEngine.Debug.LogFormat("WwiseUnity: Wwise(R) SDK Version {0}.", AkSoundEngine.WwiseVersion);
+#endif
 
 		var ActivePlatformSettings = AkWwiseInitializationSettings.ActivePlatformSettings;
 		var initResult = AkSoundEngine.Init(ActivePlatformSettings.AkInitializationSettings);
@@ -114,7 +115,9 @@ public class AkSoundEngineInitialization
 		AkSoundEngine.SetCurrentLanguage(ActivePlatformSettings.InitialLanguage);
 
 		AkCallbackManager.Init(ActivePlatformSettings.CallbackManagerInitializationSettings);
+#if UnmuteWwiseLogs
 		UnityEngine.Debug.Log("WwiseUnity: Sound engine initialized successfully.");
+#endif
 		LoadInitBank();
 		initializationDelegate?.Invoke();
 		return true;
@@ -221,6 +224,9 @@ public class AkSoundEngineInitialization
 
 		AkCallbackManager.Term();
 		ResetBanks();
+#if UnmuteWwiseLogs
 		UnityEngine.Debug.Log("WwiseUnity: Sound engine terminated successfully.");
+		
+#endif
 	}
 }

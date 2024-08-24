@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e78978bd3f1d88e48bd48ce2567e557f, type: 3}
+  m_Name: GameScene GridTileSet
+  m_EditorClassIdentifier: 
+  tiles:
+  - {fileID: 5533128708796113739, guid: 5783fe2a8dc95c34dba7b74adf8bd1ff, type: 3}
+  - {fileID: 4680818904635596815, guid: a895fa9f1c4bbc849b0089306e5f7e1a, type: 3}

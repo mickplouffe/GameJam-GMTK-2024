@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using CristiEventSystem.EventChannels;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;

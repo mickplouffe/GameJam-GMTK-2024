@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using CristiEventSystem.EventChannels;
+using GridSystem;
 using NaughtyAttributes;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -7,58 +9,40 @@ using Random = UnityEngine.Random;
 
 public class HexGridManager : MonoBehaviourSingleton<HexGridManager>
 {
-    
 
-    private void Awake()
-    {
-        if (!_hexTilesContainer)
-        {
-            // Create new GameObject to hold the hex tiles that is a child of the HexGridManager
-            _hexTilesContainer = new GameObject("hexTilesContainer").transform;
-            _hexTilesContainer.SetParent(transform);
-        }
-
-        GenerateGrid();
-    }
-    
-    [HideInInspector] public float gridSpan = 5; // Getting the furthest distance from the center of the grid
-    public GameObject hexPrefab;
-
-    [OnValueChanged("GenerateHexGrid"), Label("Width/Diameter"), Range(0, 40)] public int width = 10;
-    [SerializeField] public Transform hexGridTilt;
-
-    
-    
-    [SerializeField] private TiltObject tiltObject;
-
-    //public Transform mainUnit;
-
-    
-    
     ///// SETTINGS /////
     
     // PUBLICS
-    
+
+    [SerializeField] public Transform hexGridTilt;
+
     // PRIVATES
     private HexGrid _hexGrid;
     private Transform _hexTilesContainer;
     private const float HexTileSize = 1;
+    [HideInInspector] public float gridSpan = 5; // Getting the furthest distance from the center of the grid
+
+
+    [SerializeField, Expandable] private GridTileSet gridTileSet;
+
+    private GameObject _hexPrefab;
 
     private Animator _animator;
 
     // Health Should be split into a separate class or Interface
-    [SerializeField] private int mainUnitStartHealth;
+    private int mainUnitStartHealth = 100;
     private int _currentMainUnitHealth = 1; 
     [SerializeField] private EnemyEventChannel enemyEventChannel;
     [SerializeField] private GameManagerEventChannel gameManagerEventChannel;
-    [SerializeField] private RectTransform healthBar;
+    private RectTransform healthBar;
     private bool IsDead { get; set; }
     
 
 
     ///// DEBUGGING /////
-    
-    public int amountBlobToAdd = 3;
+    [OnValueChanged("GenerateHexGrid"), Label("Width/Diameter"), Range(0, 40)] public int width = 10;
+
+    private int amountBlobToAdd = 3;
 
     /* [OnValueChanged("GenerateHexGrid")] */ public GridShape gridShape = GridShape.Circle;
 
@@ -68,13 +52,25 @@ public class HexGridManager : MonoBehaviourSingleton<HexGridManager>
     private Texture2D noiseTexture; // Extra
     /*[OnValueChanged("GenerateHexGrid")]*/ private float noiseScale = 1f;
     
+    private void Awake()
+    {
+        if (!_hexTilesContainer)
+        {
+            // Create new GameObject to hold the hex tiles that is a child of the HexGridManager
+            _hexTilesContainer = new GameObject("hexTilesContainer").transform;
+            _hexTilesContainer.SetParent(transform);
+        }
+        _hexPrefab = gridTileSet.GetTile(0);
+        GenerateGrid();
+    }
 
-
+    
     private void OnEnable()
     {
         enemyEventChannel.OnEnemyAttack += HandleEnemyAttack;
         enemyEventChannel.OnWaveCompleted += HandleWaveCompleted;
         gameManagerEventChannel.OnGameRestart += GenerateHexGrid;
+        
     }
 
 
@@ -83,6 +79,8 @@ public class HexGridManager : MonoBehaviourSingleton<HexGridManager>
         enemyEventChannel.OnEnemyAttack -= HandleEnemyAttack;
         enemyEventChannel.OnWaveCompleted -= HandleWaveCompleted;
         gameManagerEventChannel.OnGameRestart -= GenerateHexGrid;
+
+        
     }
     private void HandleWaveCompleted()
     {
@@ -152,7 +150,7 @@ public class HexGridManager : MonoBehaviourSingleton<HexGridManager>
     void GenerateInitialGrid()
     {
         Vector2 size = new Vector2(width, height);
-        _hexGrid.GenerateGrid(size, hexPrefab, 0, gridShape);
+        _hexGrid.GenerateGrid(size, _hexPrefab, 0, gridShape);
 
         // for (int q = -gridRadius; q <= gridRadius; q++)
         // {
@@ -173,7 +171,7 @@ public class HexGridManager : MonoBehaviourSingleton<HexGridManager>
         DisableHexGrid();
         ClearHexGrid();
         Vector2 size = new Vector2(width, height);
-        _hexGrid.GenerateGrid(size, hexPrefab, 0, gridShape);
+        _hexGrid.GenerateGrid(size, _hexPrefab, 0, gridShape);
         _animator.SetBool("IsDead", false);
 
         HighlightTrueEdgeTiles();
@@ -265,7 +263,7 @@ public class HexGridManager : MonoBehaviourSingleton<HexGridManager>
     
     public void AddTile(int q, int r)
     {
-        _hexGrid.AddTile(q, r, hexPrefab, _hexTilesContainer);
+        _hexGrid.AddTile(q, r, _hexPrefab, _hexTilesContainer);
     }
     
     public void AddTile(int q, int r, GameObject hexPrefabToUse)
@@ -285,7 +283,7 @@ public class HexGridManager : MonoBehaviourSingleton<HexGridManager>
     
     public void AddCircularBlob(int q, int r, int amount)
     {
-        AddCircularBlob(q, r, amount, hexPrefab);
+        AddCircularBlob(q, r, amount, _hexPrefab);
     }
     
     public HexTile GetTileAtPosition(Vector3 worldPosition)
@@ -297,32 +295,6 @@ public class HexGridManager : MonoBehaviourSingleton<HexGridManager>
     {
         return GetTile(Mathf.RoundToInt(position.x), Mathf.RoundToInt(position.z));
     }
-
-    // List of all the Manager API methods
-    // AddTile(int q, int r) - Adds a tile at the specified coordinates
-    // AddTile(int q, int r, GameObject hexPrefabToUse) - Adds a tile at the specified coordinates using the specified prefab
-    // RemoveTile(int q, int r) - Removes the tile at the specified coordinates
-    // AddCircularBlob(int q, int r, int amount) - Adds a circular blob of tiles around the specified coordinates
-    // AddCircularBlob(int q, int r, int amount, GameObject hexPrefabToUse) - Adds a circular blob of tiles around the specified coordinates using the specified prefab
-    // GetTileAtPosition(Vector3 worldPosition) - Gets the tile at the specified world position
-    // GetTile(int q, int r) - Gets the tile at the specified coordinates
-    // GetNeighbors(int q, int r) - Gets the neighbors of the tile at the specified coordinates
-    // GetEdgeTiles() - Gets all the edge tiles
-    // GetRandomTrueEdgeTile() - Gets a random true edge tile (Currently not perfect)
-    // GenerateHexGrid(int width, int height, GridShape gridShape) - Generates the hex grid based on the specified parameters
-    // GenerateHexGrid() - Generates the hex grid based on the current parameters
-
-    // Grid Shapes are:
-    // Rectangle
-    // Hexagon
-    // Circle
-    
-    
-
-
-    
-    
-    
     
     /// <summary>
     ///  DISABLE ME!
@@ -333,7 +305,7 @@ public class HexGridManager : MonoBehaviourSingleton<HexGridManager>
         // Add 1 random tile where there is none
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            _hexGrid.AddTile(Random.Range(_hexGrid.MinQ(), _hexGrid.MaxQ()), Random.Range(_hexGrid.MinQ(), _hexGrid.MaxQ()), hexPrefab, _hexTilesContainer);
+            _hexGrid.AddTile(Random.Range(_hexGrid.MinQ(), _hexGrid.MaxQ()), Random.Range(_hexGrid.MinQ(), _hexGrid.MaxQ()), _hexPrefab, _hexTilesContainer);
             HighlightTrueEdgeTiles();
     
         }
@@ -351,7 +323,7 @@ public class HexGridManager : MonoBehaviourSingleton<HexGridManager>
         {
             List<HexTile> edgeTiles = _hexGrid.GetTrueEdgeTiles();
             HexTile selectedTile = edgeTiles[Random.Range(0, edgeTiles.Count)];
-            _hexGrid.AddCircularBlob(selectedTile.Q, selectedTile.R, amountBlobToAdd, hexPrefab);
+            _hexGrid.AddCircularBlob(selectedTile.Q, selectedTile.R, amountBlobToAdd, _hexPrefab);
     
             HighlightTrueEdgeTiles();
         }
@@ -366,8 +338,6 @@ public class HexGridManager : MonoBehaviourSingleton<HexGridManager>
                 Debug.Log("Neighbors: " + neighbors.Count);
             }
         }
-
-        tiltObject.tiles = _hexGrid.GetTilesObjects();
         CalculateGridSpan();
 
     }

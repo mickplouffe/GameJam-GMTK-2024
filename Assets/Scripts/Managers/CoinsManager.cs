@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using CristiEventSystem.EventChannels;
 using UnityEngine;
 
 public class CoinsManager : MonoBehaviourSingleton<CoinsManager>
@@ -10,7 +11,7 @@ public class CoinsManager : MonoBehaviourSingleton<CoinsManager>
     [SerializeField] private int startCoins = 10;
 
     [SerializeField] private CoinsEventChannel coinsEventChannel;
-    [SerializeField] private UIEventChannel uiEventChannel;
+    [SerializeField] private UiEventChannel uiEventChannel;
     [SerializeField] private GameManagerEventChannel gameManagerEventChannel;
 
     [SerializeField] private AK.Wwise.Event goldGainSFX;

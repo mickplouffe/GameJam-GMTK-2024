@@ -6,7 +6,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Towers/Default Tower")]
 public class Tower : ScriptableObject
 {
-    public String name;
+    public new string name;
 
     public float maxWeight;
     public float weight;

@@ -5,7 +5,7 @@ namespace Utilities
     public static class DefaultScene
     {
         private const string PersistentSceneName = "PersistentScene";
-        private static bool _isInitialized = false;
+        // private static bool _isInitialized = false;
 
         // [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
         // private static void Initialize()

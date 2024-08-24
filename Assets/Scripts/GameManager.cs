@@ -1,4 +1,5 @@
 using System;
+using CristiEventSystem.EventChannels;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Events;
@@ -19,7 +20,7 @@ public class GameManager : MonoBehaviourSingletonPersistent<GameManager>
 
     [SerializeField] private GameManagerEventChannel gameManagerEventChannel;
     [SerializeField] private EnemyEventChannel enemyEventChannel;
-    [SerializeField] private UIEventChannel uiEventChannel;
+    [SerializeField] private UiEventChannel uiEventChannel;
     [SerializeField] private MenuEventChannel menuEventChannel;
 
     public AK.Wwise.Event scribbleSFX;

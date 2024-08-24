@@ -306,7 +306,9 @@ public partial class AkCommonUserSettings
 		settings.uNumSamplesPerFrame = m_SamplesPerFrame;
 		m_MainOutputSettings.CopyTo(settings.settingsMainOutput);
 		settings.szPluginDLLPath = GetPluginPath();
+#if UnmuteWwiseLogs
 		UnityEngine.Debug.Log("WwiseUnity: Setting Plugin DLL path to: " + (settings.szPluginDLLPath == null ? "NULL" : settings.szPluginDLLPath));
+#endif
 	}
 
 	[UnityEngine.Tooltip("Multiplication factor for all streaming look-ahead heuristic values.")]

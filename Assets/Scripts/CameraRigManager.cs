@@ -7,17 +7,15 @@ using UnityEngine.Serialization;
 
 public class CameraRigManager : MonoBehaviourSingleton<CameraRigManager>
 {
-    CinemachineFreeLook _freeLook;
+    private CinemachineFreeLook _freeLook;
     [SerializeField] private float distance = 10f;
     [SerializeField] private float distanceOffset = 1f;
     [SerializeField] private float topRig;
     [SerializeField] private float middleRig;
     [SerializeField] private float bottomRig;
     
-    [SerializeField] private bool isMovingCamera = false;
-    
     // Start is called before the first frame update
-    void Awake()
+    private void Awake()
     {
         if (!_freeLook)
         {
@@ -31,12 +29,10 @@ public class CameraRigManager : MonoBehaviourSingleton<CameraRigManager>
         // If right mouse button is pressed, set isMovingCamera to true
         if (Input.GetMouseButton(1))
         {
-            isMovingCamera = true;
             _freeLook.m_XAxis.m_InputAxisValue = Input.GetAxis("Mouse X");
             _freeLook.m_YAxis.m_InputAxisValue = Input.GetAxis("Mouse Y");
         }else
         {
-            isMovingCamera = false;
             // Disable the Cinemachine FreeLook AxisControl script
             _freeLook.m_XAxis.m_InputAxisValue = 0;
             _freeLook.m_YAxis.m_InputAxisValue = 0;
@@ -51,7 +47,7 @@ public class CameraRigManager : MonoBehaviourSingleton<CameraRigManager>
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    private void FixedUpdate()
     {
         distance = HexGridManager.Instance.gridSpan * distanceOffset;
         

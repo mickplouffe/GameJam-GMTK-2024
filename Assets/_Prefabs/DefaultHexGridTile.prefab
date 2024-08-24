@@ -99,7 +99,7 @@ GameObject:
   - component: {fileID: 806753097699326633}
   - component: {fileID: 7954819331230258298}
   m_Layer: 3
-  m_Name: HexGridTile
+  m_Name: DefaultHexGridTile
   m_TagString: HexTile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

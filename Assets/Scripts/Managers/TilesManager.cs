@@ -14,11 +14,11 @@ public class TileManager : MonoBehaviourSingletonPersistent<TileManager>
     [SerializeField] private float tileSpacing = 1.0f; // Space between tiles
     [SerializeField] private float yOffsetNoiseTap = 0.2f;
     
-    private Dictionary<Vector2Int, HexTileController> grid = new();
-    private GameObject tilesParent;
+    private readonly Dictionary<Vector2Int, HexTileController> _grid = new();
+    private GameObject _tilesParent;
     private HexTileController _targetTile;
 
-    private void Awake()
+    private new void Awake()
     {
         GenerateGrid();
     }
@@ -26,25 +26,25 @@ public class TileManager : MonoBehaviourSingletonPersistent<TileManager>
     [Button]
     private void GenerateGrid()
     {
-        if(tilesParent)
-            DestroyImmediate(tilesParent.gameObject);
+        if(_tilesParent)
+            DestroyImmediate(_tilesParent.gameObject);
         
-        grid.Clear();
+        _grid.Clear();
 
-        tilesParent = new GameObject("TilesContainer");
+        _tilesParent = new GameObject("TilesContainer");
         for (int x = 0; x < gridWidth; x++)
         {
             for (int z = 0; z < gridHeight; z++)
             {
                 Vector3 position = new Vector3(x * tileSpacing - gridWidth*0.5f, Random.Range(-yOffsetNoiseTap, yOffsetNoiseTap), z * tileSpacing - gridHeight*0.5f);
-                GameObject tileObject = Instantiate(tilePrefab, position, Quaternion.identity, tilesParent.transform);
+                GameObject tileObject = Instantiate(tilePrefab, position, Quaternion.identity, _tilesParent.transform);
                 HexTileController tile = tileObject.GetComponent<HexTileController>();
                 tile.GridPosition = new Vector2Int(x, z);
-                grid[new Vector2Int(x, z)] = tile;
+                _grid[new Vector2Int(x, z)] = tile;
             }
         }
 
-        grid.TryGetValue(new Vector2Int((int)(gridWidth / 2.0f), (int)(gridHeight / 2.0f)), out _targetTile);
+        _grid.TryGetValue(new Vector2Int((int)(gridWidth / 2.0f), (int)(gridHeight / 2.0f)), out _targetTile);
     }
 
     public HexTileController GetTargetTile()
@@ -55,14 +55,14 @@ public class TileManager : MonoBehaviourSingletonPersistent<TileManager>
     public HexTileController GetTileAtPosition(Vector3 position)
     {
         Vector2Int gridPos = new Vector2Int(Mathf.RoundToInt(position.x / tileSpacing), Mathf.RoundToInt(position.z / tileSpacing));
-        grid.TryGetValue(gridPos, out HexTileController tile);
+        _grid.TryGetValue(gridPos, out HexTileController tile);
         return tile;
     }
 
     public HexTileController GetNextTile(HexTileController currentTile, Vector3 direction)
     {
         Vector2Int nextGridPos = currentTile.GridPosition + new Vector2Int(Mathf.RoundToInt(direction.x), Mathf.RoundToInt(direction.z));
-        grid.TryGetValue(nextGridPos, out HexTileController nextTile);
+        _grid.TryGetValue(nextGridPos, out HexTileController nextTile);
         return nextTile;
     }
     
@@ -74,19 +74,19 @@ public class TileManager : MonoBehaviourSingletonPersistent<TileManager>
         // Add left and right edges (x = 0 and x = gridWidth - 1)
         for (int z = 0; z < gridHeight; z++)
         {
-            grid.TryGetValue(new Vector2Int(0, z), out var leftEdgeTile);
+            _grid.TryGetValue(new Vector2Int(0, z), out var leftEdgeTile);
             edgeTiles.Add(leftEdgeTile); // Left edge
             
-            grid.TryGetValue(new Vector2Int(gridWidth - 1, z), out var rightEdgeTile);
+            _grid.TryGetValue(new Vector2Int(gridWidth - 1, z), out var rightEdgeTile);
             edgeTiles.Add(rightEdgeTile); // Right edge
         }
 
         // Add bottom and top edges (z = 0 and z = gridHeight - 1)
         for (int x = 0; x < gridWidth; x++)
         {
-            grid.TryGetValue(new Vector2Int(x, 0), out var bottomEdgeTile);
+            _grid.TryGetValue(new Vector2Int(x, 0), out var bottomEdgeTile);
             edgeTiles.Add(bottomEdgeTile); // Bottom edge
-            grid.TryGetValue(new Vector2Int(x, gridHeight - 1), out var topEdgeTile);
+            _grid.TryGetValue(new Vector2Int(x, gridHeight - 1), out var topEdgeTile);
             edgeTiles.Add(topEdgeTile); // Top edge
         }
 
