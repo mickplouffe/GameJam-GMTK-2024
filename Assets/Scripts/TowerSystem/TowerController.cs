@@ -213,7 +213,7 @@ public class TowerController : MonoBehaviour
         if (!other.CompareTag("Enemy")) 
             return;
         
-        float distanceToCentralUnit = Vector3.Distance(other.transform.position, HexGridManager.Instance.mainUnit.position);
+        float distanceToCentralUnit = Vector3.Distance(other.transform.position, HexGridManager.Instance.transform.position);
         _targets.Enqueue(other.transform, distanceToCentralUnit);
     }
     
@@ -270,7 +270,7 @@ public class TowerController : MonoBehaviour
     {
         isSliding = true;
         tiltDirection = direction;
-        slipMagnitude = slipSpeedMultiplier * (transform.position - HexGridManager.Instance.mainUnit.position).magnitude;
+        slipMagnitude = slipSpeedMultiplier * (transform.position - HexGridManager.Instance.transform.position).magnitude;
     }
     
     private void StopSliding()
