@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using EventTriggerSystem;
+using EventTriggerSystem.EventActions;
+using NaughtyAttributes;
 using UnityEngine;
 
 public class IHealth : MonoBehaviour
@@ -10,7 +12,7 @@ public class IHealth : MonoBehaviour
     public float currentHealth;
     public float maxHealth;
     public bool isDead;
-    public EventAction eventWhenDead;
+    public EventActionSettings eventWhenDead;
     public GameObject healthBarPrefab;
     private GameObject _healthBar;
     private RectTransform _healthBarTransform;
@@ -40,6 +42,12 @@ public class IHealth : MonoBehaviour
         {
             _healthBarTransform = _healthBar.GetComponent<RectTransform>();
         }
+    }
+    
+    [Button]
+    public void SendEventTest()
+    {
+        eventWhenDead.Trigger();
     }
     
     public void TakeDamage(float damage)

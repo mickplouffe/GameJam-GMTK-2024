@@ -34,7 +34,7 @@ public class PauseMenuController : BaseMenu
         _menuEventChannel.OnBackButtonPressed += HandleBackButtonPressed;
         _menuEventChannel.OnPauseGame += HandlePauseGame;
 
-        gameManagerEventChannel.OnGameOver += HandleGameOver;
+        GameManagerEventChannel.OnGameOver += HandleGameOver;
         
         _pauseMenuContainer.visible = _isVisible;
     }
@@ -48,7 +48,7 @@ public class PauseMenuController : BaseMenu
         _menuEventChannel.OnBackButtonPressed -= HandleBackButtonPressed;
         _menuEventChannel.OnPauseGame -= HandlePauseGame;
 
-        gameManagerEventChannel.OnGameOver -= HandleGameOver;
+        GameManagerEventChannel.OnGameOver -= HandleGameOver;
     }
 
     private void HandlePauseGame(bool pause)

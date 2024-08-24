@@ -30,7 +30,7 @@ public class HexGridManager : MonoBehaviourSingleton<HexGridManager>
     private Animator _animator;
 
     // Health Should be split into a separate class or Interface
-    private int mainUnitStartHealth = 100;
+    [SerializeField] int mainUnitStartHealth = 100;
     private int _currentMainUnitHealth = 1; 
     [SerializeField] private EnemyEventChannel enemyEventChannel;
     [SerializeField] private GameManagerEventChannel gameManagerEventChannel;
@@ -56,9 +56,14 @@ public class HexGridManager : MonoBehaviourSingleton<HexGridManager>
     {
         if (!_hexTilesContainer)
         {
-            // Create new GameObject to hold the hex tiles that is a child of the HexGridManager
-            _hexTilesContainer = new GameObject("hexTilesContainer").transform;
-            _hexTilesContainer.SetParent(transform);
+            hexGridTilt = GameObject.FindGameObjectWithTag("TiltPoint").transform;
+            _hexTilesContainer = hexGridTilt.Find("HexTilesContainer");
+            if (!_hexTilesContainer)
+            {
+                _hexTilesContainer = new GameObject("HexTilesContainer").transform;
+                _hexTilesContainer.SetParent(hexGridTilt);
+            }
+            
         }
         _hexPrefab = gridTileSet.GetTile(0);
         GenerateGrid();
@@ -136,7 +141,7 @@ public class HexGridManager : MonoBehaviourSingleton<HexGridManager>
         
         IsDead = true;
         // TODO: Play tower animation
-        _animator.SetBool("IsDead", true);
+        //_animator.SetBool("IsDead", true);
         GameManager.Instance.gameOverMusic.Post(gameObject);
         Invoke("SetIsDeadTrue", 3.5f);
                 

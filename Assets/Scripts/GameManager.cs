@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviourSingletonPersistent<GameManager>
     private void OnEnable()
     {
         gameManagerEventChannel.OnDialogueEnd += OnDialogueEnd;
-        gameManagerEventChannel.OnGameOver += OnGameOver;
+        GameManagerEventChannel.OnGameOver += OnGameOver;
         enemyEventChannel.OnWaveCompleted += OnWaveCompleted;
         menuEventChannel.OnResumeButtonPressed += OnResume;
         gameManagerEventChannel.OnGameRestart += OnGameRestart;
@@ -40,7 +40,7 @@ public class GameManager : MonoBehaviourSingletonPersistent<GameManager>
     private void OnDisable()
     {
         gameManagerEventChannel.OnDialogueEnd -= OnDialogueEnd;
-        gameManagerEventChannel.OnGameOver -= OnGameOver;
+        GameManagerEventChannel.OnGameOver -= OnGameOver;
         enemyEventChannel.OnWaveCompleted -= OnWaveCompleted;
         menuEventChannel.OnResumeButtonPressed -= OnResume;
         gameManagerEventChannel.OnGameRestart -= OnGameRestart;

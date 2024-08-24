@@ -35,7 +35,7 @@ public class GameOverMenuController : BaseMenu
 
         _menuEventChannel.OnBackButtonPressed += HandleBackButtonPressed;
         
-        gameManagerEventChannel.OnGameOver += HandleGameOver;
+        GameManagerEventChannel.OnGameOver += HandleGameOver;
         gameManagerEventChannel.OnGameRestart += HandleGameRestart;
         
         _gameOverMenuContainer.visible = _isVisible;
@@ -49,12 +49,13 @@ public class GameOverMenuController : BaseMenu
 
         _menuEventChannel.OnBackButtonPressed -= HandleBackButtonPressed;
 
-        gameManagerEventChannel.OnGameOver -= HandleGameOver;
+        GameManagerEventChannel.OnGameOver -= HandleGameOver;
         gameManagerEventChannel.OnGameRestart -= HandleGameRestart;
     }
     
     public void HandleGameOver()
     {
+        
         _gameOverMenuContainer.visible = true;
     }
 
