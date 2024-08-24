@@ -78,6 +78,17 @@
 								</Reference>
 							</ReferenceList>
 						</Action>
+						<Action Name="" ID="{86FC0134-2E64-42ED-833F-8D75DC478219}" ShortID="643988421">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="41"/>
+								<Property Name="Delay" Type="Real64" Value="0.5"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="SetState_TitleScreen" ID="{BC8A9745-2AB8-452D-B805-15E760D59A15}" WorkUnitID="{0BD70790-4A2A-42B0-81A1-0D3B3BF71E15}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
 					</ChildrenList>
 				</Event>
 				<Event Name="SetState_ActiveWave" ID="{3B91EA0B-15E1-43CA-8747-01B17B6E2808}">
