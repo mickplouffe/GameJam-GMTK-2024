@@ -131,7 +131,7 @@ public class TowerController : MonoBehaviour
             _nextFireTime = Time.time + 1.0f / towerData.fireRate;
         }
         
-        if(canSlide)
+        if(!canSlide)
             return;
         
         if (!isSliding) 
