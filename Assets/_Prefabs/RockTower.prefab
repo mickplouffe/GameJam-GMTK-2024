@@ -211,9 +211,15 @@ MonoBehaviour:
   towerAttackSFX:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: 59b65737629e9b24caa50ac95ecb7e17,
+      type: 2}
   canSlide: 0
-  towerUpgrades: []
+  towerUpgrades:
+  - visual: {fileID: 8001505367281729973}
+    shootingSpot: {fileID: 0}
+  outlineMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!135 &1682688747339359383
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -427,6 +433,12 @@ PrefabInstance:
 --- !u!4 &162220133751820608 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2276559526408223753, guid: f0e97574c3930794f85c6e3802e8ffe3,
+    type: 3}
+  m_PrefabInstance: {fileID: 2150368259674107209}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8001505367281729973 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8276677360398626044, guid: f0e97574c3930794f85c6e3802e8ffe3,
     type: 3}
   m_PrefabInstance: {fileID: 2150368259674107209}
   m_PrefabAsset: {fileID: 0}

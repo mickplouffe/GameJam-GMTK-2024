@@ -51,7 +51,8 @@ public class TowerController : MonoBehaviour
 
     [SerializeField] private LineRenderer _shootingRay;
     [SerializeField] private Transform towerShootingSpot;
-
+    [SerializeField] private Transform towerRangeVisual;
+    
     // LineRenderer animation settings
     [SerializeField] private float beamDuration = 0.2f;
     [SerializeField] private float beamWidthAnimationSpeed = 3.0f;
@@ -79,9 +80,15 @@ public class TowerController : MonoBehaviour
 
     [SerializeField] private bool canSlide = true;
 
+    private int _currentActiveVisual;
     [SerializeField] private List<TowerUpgrade> towerUpgrades;
 
     private const int TOWER_UOGRADE_REQUIRED_SIZE = 3;
+
+    [SerializeField] private LayerMask outlineMask;
+    private LayerMask _prevMaskBeforeSelection;
+    
+    public bool SetFromSelection { get; set; }
     
     void Awake()
     {
@@ -90,18 +97,16 @@ public class TowerController : MonoBehaviour
         _shootingRay = GetComponent<LineRenderer>();
         UpdateColliderRange();
 
-        if (towerUpgrades.Count > 0)
-        {
-            towerUpgrades[0].visual.SetActive(true);
-            towerShootingSpot = towerUpgrades[0].shootingSpot;
-        }
-        
+        _currentActiveVisual = 0;
+        towerUpgrades[_currentActiveVisual].visual.SetActive(true);
+        towerShootingSpot = towerUpgrades[_currentActiveVisual].shootingSpot;
     }
 
     [Button]
     public void UpdateColliderRange()
     {
         GetComponent<SphereCollider>().radius = instanceData.range;
+        towerRangeVisual.localScale = new Vector3(instanceData.range * 0.2f, 1, instanceData.range * 0.2f);
     }
 
     private void OnEnable()
@@ -171,7 +176,7 @@ public class TowerController : MonoBehaviour
         
         transform.position = newPosition;
     }
-
+    
     private IEnumerator DrawShootingRay()
     {
         // Set up the LineRenderer positions
@@ -335,14 +340,17 @@ public class TowerController : MonoBehaviour
     }
     public void UpgradeTower(UpgradeTowerAction upgradeTowerAction, int upgradeIndex)
     {
+        ActivateTowerRangeVisual(false);
+        
         if (upgradeIndex >= towerUpgrades.Count)
             return;
         
         _hasUpgrade = true;
 
-        towerUpgrades[0].visual.SetActive(false); // 0 is always the default starting tower visual
+        towerUpgrades[_currentActiveVisual].visual.SetActive(false); // 0 is always the default starting tower visual
         towerUpgrades[upgradeIndex].visual.SetActive(true);
         towerShootingSpot = towerUpgrades[upgradeIndex].shootingSpot;
+        _currentActiveVisual = upgradeIndex;
         
         towerUpgradeSFX.Post(gameObject);
         
@@ -356,7 +364,46 @@ public class TowerController : MonoBehaviour
         
         UpdateColliderRange();
     }
-    
+
+    public void SetOutlineMask(bool setFromSelection)
+    {
+        SetFromSelection = setFromSelection;
+        _prevMaskBeforeSelection = gameObject.layer;
+        towerUpgrades[_currentActiveVisual].visual.gameObject.layer = LayerMask.NameToLayer("Water");
+        foreach (Transform child in towerUpgrades[_currentActiveVisual].visual.transform)
+            child.gameObject.layer = LayerMask.NameToLayer("Water");
+    }
+
+    public void UnsetOutlineMask()
+    {
+        SetFromSelection = false;
+        towerUpgrades[_currentActiveVisual].visual.gameObject.layer = _prevMaskBeforeSelection;
+        foreach (Transform child in towerUpgrades[_currentActiveVisual].visual.transform)
+            child.gameObject.layer = _prevMaskBeforeSelection;
+    }
+
+    public void ActivateTowerRangeVisual(bool activate)
+    {
+        if (towerRangeVisual == null)
+            return;
+        towerRangeVisual.gameObject.SetActive(activate);
+    }
+
+    private void OnMouseEnter()
+    {
+        if (TowerManager.Instance.selectedTower == gameObject || SetFromSelection)
+            return;
+        
+        SetOutlineMask(false);
+    }
+
+    private void OnMouseExit()
+    {
+        if (TowerManager.Instance.selectedTower == gameObject || SetFromSelection)
+            return;
+        
+        UnsetOutlineMask();
+    }
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.white;
