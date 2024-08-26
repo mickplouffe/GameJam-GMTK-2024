@@ -315,6 +315,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: HexGridParent
       objectReference: {fileID: 0}
+    - target: {fileID: 4105032332537453633, guid: b24182428c20fdc479f88d5a0139b7d7,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5471134009578279179, guid: b24182428c20fdc479f88d5a0139b7d7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7094751306177476455, guid: b24182428c20fdc479f88d5a0139b7d7,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8504252987917431918, guid: b24182428c20fdc479f88d5a0139b7d7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1033,7 +1048,7 @@ PrefabInstance:
     - target: {fileID: 739596664115298996, guid: ccdb689b967ae4f4ca0f71b4d93041be,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8738606620060211871, guid: ccdb689b967ae4f4ca0f71b4d93041be,
         type: 3}
@@ -1300,7 +1315,7 @@ MonoBehaviour:
     m_Bits: 8
   towersLayerMask:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 80
   sellCostPercentage: 0.1
   uiEventChannel: {fileID: 11400000, guid: b6146f624481a48429195dc223974ca7, type: 2}
   weightEventChannel: {fileID: 11400000, guid: 1c11f8eaadf261d449e9f3f048895711, type: 2}
@@ -1609,7 +1624,7 @@ PrefabInstance:
     - target: {fileID: 6269214726194511137, guid: e34e8fa025d35364e935a6e9614dc339,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2337,7 +2352,7 @@ PrefabInstance:
     - target: {fileID: 3242347166354728523, guid: 6cd95ec17caf22046b71f1f5e436e4d5,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7093822620548634556, guid: 6cd95ec17caf22046b71f1f5e436e4d5,
         type: 3}

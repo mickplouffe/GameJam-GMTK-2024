@@ -27,6 +27,8 @@ namespace TowerSystem
         [SerializeField] private GameManagerEventChannel gameManagerEventChannel;
 
         [SerializeField] private float waitTimeBeforeCanSelect = 0.2f;
+        private float timeElapsedBeforeCanSelect;
+        
         private List<Transform> _activeTowers;
 
         [SerializeField] private bool _placementMode;
@@ -65,15 +67,17 @@ namespace TowerSystem
                 if (!FindTransformBasedOnLayer(tilesLayerMask, out var hit) || !SnapTowerToTile(hit.point, true))
                     selectedTower.transform.position = Vector3.up * 100.0f;
             }
-
+            
             if (Input.GetMouseButtonDown(0) && !_placementMode)
             {
                 if (FindTransformBasedOnLayer(towersLayerMask, out var hit))
                 {
                     // Change the previously selected object the material
                     if (activeTowerSelected)
-                        activeTowerSelected.GetComponentInChildren<Renderer>().materials[0] =
-                            activeTowerSelected.towerData.defaultMaterial;
+                    {
+                        activeTowerSelected.UnsetOutlineMask();
+                        activeTowerSelected.ActivateTowerRangeVisual(false);
+                    }
 
                     activeTowerSelected = hit.transform.GetComponent<TowerController>();
                     // TODO: Also add highlight material, for now just change the color
@@ -82,6 +86,9 @@ namespace TowerSystem
 
                     // TODO: RaiseActivateBuildMenu
                     uiEventChannel.RaiseActivateActionsMenu(true);
+                    
+                    activeTowerSelected.SetOutlineMask(true);
+                    activeTowerSelected.ActivateTowerRangeVisual(true);
                 }
                 else
                 {
@@ -90,13 +97,16 @@ namespace TowerSystem
 
                     // Change the previously selected object the material
                     if (activeTowerSelected)
-                        activeTowerSelected.GetComponentInChildren<Renderer>().materials[0] =
-                            activeTowerSelected.towerData.defaultMaterial;
+                    {
+                        activeTowerSelected.UnsetOutlineMask();
+                        activeTowerSelected.ActivateTowerRangeVisual(false);
+                    }
 
                     activeTowerSelected = null;
 
                     // TODO: RaiseActivateActionsMenu
                     uiEventChannel.RaiseActivateBuildMenu(true);
+                    
                 }
                 // TODO: maybe deselect when user presses e.g. escape. If we de-select based on hit or no hit then there is 
                 // the problem that when pressing one of the buttons it will first deselect the item and then do the action associated to the button which will not do anything in the end
@@ -129,7 +139,6 @@ namespace TowerSystem
 
                 _placementMode = false;
             }
-
         }
 
         public void HandleGameRestart()
@@ -171,6 +180,9 @@ namespace TowerSystem
 
         public void HandleUpgrade(int upgradeType)
         {
+            if(activeTowerSelected && activeTowerSelected.towerData.isStatic)
+                return;
+            
             UpgradeTowerAction upgradeAction = null;
 
             switch (upgradeType)
@@ -191,7 +203,10 @@ namespace TowerSystem
                 !CoinsManager.Instance.CanBuy(upgradeAction.costModifier) ||
                 activeTowerSelected == null || !activeTowerSelected.towerData.isUpgradable ||
                 !activeTowerSelected.CanUpgrade(upgradeAction, upgradeType + 1))
+            {
+                uiEventChannel.RaiseCantBuy();
                 return;
+            }
 
             activeTowerSelected.UpgradeTower(upgradeAction, upgradeType + 1);
             coinsEventChannel.RaiseModifyCoins(-upgradeAction.costModifier);
@@ -201,7 +216,7 @@ namespace TowerSystem
         {
             if (!activeTowerSelected)
                 return;
-
+        
             activeTowerSelected.towerSellSFX.Post(activeTowerSelected.gameObject);
             coinsEventChannel.RaiseModifyCoins(
                 Mathf.CeilToInt(activeTowerSelected.instanceData.currentCost * sellCostPercentage));

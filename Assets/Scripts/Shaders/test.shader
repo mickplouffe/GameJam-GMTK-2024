@@ -1,4 +1,4 @@
-Shader "Unlit/TestShader"
+Shader "Unlit/test"
 {
     Properties
     {
