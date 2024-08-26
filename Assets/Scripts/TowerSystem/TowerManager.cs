@@ -111,8 +111,7 @@ namespace TowerSystem
                 {
                     selectedTower.GetComponent<TowerController>().towerPlaceSFX.Post(selectedTower.gameObject);
 
-                    weightEventChannel.RaiseWeightAdded(
-                        selectedTower.GetComponent<TowerController>().instanceData.weight,
+                    weightEventChannel.RaiseWeightAdded(selectedTower.GetComponent<TowerController>().instanceData.weight,
                         selectedTower.GetComponent<TowerController>().Tile);
 
                     RegisterTower(selectedTower.transform);
@@ -239,21 +238,23 @@ namespace TowerSystem
     
         private bool SnapTowerToTile(Vector3 hitPoint, bool preview = false)
         {
-            Bounds towerBounds = selectedTower.GetComponent<Collider>().bounds;
+            // Bounds towerBounds = selectedTower.GetComponent<Collider>().bounds;
+
+            var towerController = selectedTower.GetComponent<TowerController>();
+            var tile = towerController.Tile;
+            
+            tile = HexGridManager.Instance.GetTileAtWorldPosition(hitPoint);
     
-            selectedTower.GetComponent<TowerController>().Tile =
-                HexGridManager.Instance.GetTileAtWorldPosition(hitPoint);
-    
-            if (selectedTower.GetComponent<TowerController>().Tile == null)
+            if (tile == null)
                 return false;
     
             if (!preview)
             {
                 // Check if a tower already on the tile
-                if (!selectedTower.GetComponent<TowerController>().Tile.HasTower() &&
-                    !selectedTower.GetComponent<TowerController>().Tile.TileObject.GetComponent<HexTileController>()
+                if (!tile.HasTower() &&
+                    !tile.TileObject.GetComponent<HexTileController>()
                         .IsSpawnerTile)
-                    selectedTower.GetComponent<TowerController>().Tile.TowerObject = selectedTower.gameObject;
+                    tile.TowerObject = selectedTower.gameObject;
                 else
                 {
                     return false;
@@ -261,12 +262,12 @@ namespace TowerSystem
             }
     
             selectedTower.transform.position =
-                selectedTower.GetComponent<TowerController>().Tile.TileObject.transform.position +
-                selectedTower.GetComponent<TowerController>().Tile.TileObject.transform.up *
-                selectedTower.GetComponent<TowerController>().towerData.yOffset;
+                tile.TileObject.transform.position +
+                tile.TileObject.transform.up *
+                towerController.towerData.yOffset;
     
             selectedTower.transform.rotation =
-                selectedTower.GetComponent<TowerController>().Tile.TileObject.transform.rotation;
+                tile.TileObject.transform.rotation;
     
             selectedTower.transform.parent = HexGridManager.Instance.hexGridTilt.transform;
     

@@ -28,19 +28,28 @@ public class GameManager : MonoBehaviourSingletonPersistent<GameManager>
 
     private GameState _currentState;
 
+    public UnityAction OnGameOverr;
+
     private void OnEnable()
     {
         gameManagerEventChannel.OnDialogueEnd += OnDialogueEnd;
-        GameManagerEventChannel.OnGameOver += OnGameOver;
+        gameManagerEventChannel.OnGameOver += OnGameOver;
         enemyEventChannel.OnWaveCompleted += OnWaveCompleted;
         menuEventChannel.OnResumeButtonPressed += OnResume;
         gameManagerEventChannel.OnGameRestart += OnGameRestart;
+
+        OnGameOverr += OnGamerOverr;
+    }
+    
+    void OnGamerOverr()
+    {
+        OnGameOver();
     }
 
     private void OnDisable()
     {
         gameManagerEventChannel.OnDialogueEnd -= OnDialogueEnd;
-        GameManagerEventChannel.OnGameOver -= OnGameOver;
+        gameManagerEventChannel.OnGameOver -= OnGameOver;
         enemyEventChannel.OnWaveCompleted -= OnWaveCompleted;
         menuEventChannel.OnResumeButtonPressed -= OnResume;
         gameManagerEventChannel.OnGameRestart -= OnGameRestart;
@@ -126,6 +135,8 @@ public class GameManager : MonoBehaviourSingletonPersistent<GameManager>
     {
         if (_currentState == GameState.GameOver)
             return;
+
+        HexGridManager.Instance.AddCircularBlobAtRandomEdgeTile(3);
 
         ChangeState(GameState.Dialogue);
     }

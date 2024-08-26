@@ -89,9 +89,13 @@ public class TowerController : MonoBehaviour
         instanceData = new TowerInstanceData(towerData);
         _shootingRay = GetComponent<LineRenderer>();
         UpdateColliderRange();
+
+        if (towerUpgrades.Count > 0)
+        {
+            towerUpgrades[0].visual.SetActive(true);
+            towerShootingSpot = towerUpgrades[0].shootingSpot;
+        }
         
-        towerUpgrades[0].visual.SetActive(true);
-        towerShootingSpot = towerUpgrades[0].shootingSpot;
     }
 
     [Button]
@@ -105,6 +109,7 @@ public class TowerController : MonoBehaviour
         enemyEventChannel.OnWaveCompleted += HandleWaveComplete;
         tiltEventChannel.OnTiltChanged += HandleTiltChanged;
         gameManagerEventChannel.OnGameRestart += HandleGameRestart;
+        
     }
 
     private void OnDisable()
@@ -117,6 +122,8 @@ public class TowerController : MonoBehaviour
 
     private void Update()
     {
+        Tile = HexGridManager.Instance.GetTileAtWorldPosition(transform.position);
+
         if (TowerManager.Instance.selectedTower == gameObject)
             return;
         

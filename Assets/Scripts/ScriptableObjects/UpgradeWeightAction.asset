@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9aa3069af744b4ea0bb517dfeef944f, type: 3}
   m_Name: UpgradeWeightAction
   m_EditorClassIdentifier: 
-  damageModifier: 0
+  damageModifier: 2
   rangeModifier: 0
-  weightModifier: 0
-  costModifier: 0
+  weightModifier: 2
+  costModifier: 50

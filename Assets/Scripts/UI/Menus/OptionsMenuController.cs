@@ -58,7 +58,7 @@ public class OptionsMenuController : BaseMenu
         _menuEventChannel.OnOptionsButtonPressed += HandleOptionsButtonPressed;
         _menuEventChannel.OnPauseGame += HandlePauseGame;
 
-        GameManagerEventChannel.OnGameOver += HandleGameOver;
+        gameManagerEventChannel.OnGameOver += HandleGameOver;
         
         _optionsMenuContainer.visible = _isVisible;
     }
@@ -76,7 +76,7 @@ public class OptionsMenuController : BaseMenu
         
         _menuEventChannel.OnPauseGame -= HandlePauseGame;
         
-        GameManagerEventChannel.OnGameOver -= HandleGameOver;
+        gameManagerEventChannel.OnGameOver -= HandleGameOver;
 
 
         _volumeSlider.UnregisterValueChangedCallback(v => volumeSliderRTPC.SetGlobalValue(v.newValue));

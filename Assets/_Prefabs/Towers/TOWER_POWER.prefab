@@ -63,12 +63,13 @@ MonoBehaviour:
   instanceData:
     damage: 0
     range: 0
-    weight: 0
+    weight: 50
     currentCost: 0
   weightEventChannel: {fileID: 11400000, guid: 1c11f8eaadf261d449e9f3f048895711, type: 2}
   towerEventChannel: {fileID: 11400000, guid: ff6c5cff4a2a17d45b58cbd1fcdb1a0a, type: 2}
   gameManagerEventChannel: {fileID: 11400000, guid: 6509d5e4e0033de4bbfb99b33ecd3255,
     type: 2}
+  enemyEventChannel: {fileID: 11400000, guid: 58c4683592b42784c91a64e98e2ccbc1, type: 2}
   tiltAllowanceThreshold: 10
   slipSpeedMultiplier: 0.5
   enemyWidthOffset: 0.5
@@ -166,6 +167,8 @@ MonoBehaviour:
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 59b65737629e9b24caa50ac95ecb7e17,
       type: 2}
+  canSlide: 1
+  towerUpgrades: []
 --- !u!65 &4529294783331625914
 BoxCollider:
   m_ObjectHideFlags: 0

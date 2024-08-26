@@ -8,7 +8,7 @@ namespace CristiEventSystem.EventChannels
     {
         private Dictionary<string, UnityAction> _unityActions;
         
-        private void Awake()
+        private void OnEnable()
         {
             _unityActions = new Dictionary<string, UnityAction>();
             
@@ -24,7 +24,7 @@ namespace CristiEventSystem.EventChannels
                     }
                 }
             }
-            Debug.Log("Unity Actions count: " + _unityActions.Count);
+            // Debug.Log("Unity Actions count: " + unityActions.Count);
         }
         
         public void RaiseEvent(string eventNameToRaise)

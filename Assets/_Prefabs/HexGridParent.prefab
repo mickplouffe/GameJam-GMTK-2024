@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4174472227154444186}
   m_Layer: 0
-  m_Name: hexTilesContainer
+  m_Name: HexTilesContainer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -41,8 +41,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8504252987917431918}
   - component: {fileID: 3101005884643881143}
-  - component: {fileID: 2283284321578245851}
-  - component: {fileID: 8521924068214886644}
   m_Layer: 0
   m_Name: HexGridParent
   m_TagString: Untagged
@@ -84,46 +82,9 @@ MonoBehaviour:
   hexGridTilt: {fileID: 8050594404393289261}
   gridSpan: 5
   gridTileSet: {fileID: 11400000, guid: 9f3f3ae60767f8d449cccd97f07b755e, type: 2}
-  mainUnitStartHealth: 1
-  enemyEventChannel: {fileID: 11400000, guid: 58c4683592b42784c91a64e98e2ccbc1, type: 2}
-  gameManagerEventChannel: {fileID: 11400000, guid: 6509d5e4e0033de4bbfb99b33ecd3255,
-    type: 2}
   width: 9
   gridShape: 2
   height: 10
---- !u!114 &2283284321578245851
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3536996868874204686}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d57f5263456c574fb8282abaec52e3a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  eventChannel: {fileID: 11400000, guid: 6509d5e4e0033de4bbfb99b33ecd3255, type: 2}
-  eventName: OnGameOver
---- !u!114 &8521924068214886644
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3536996868874204686}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6a6dfc4704fb2c42b199f1fcd83879e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startingHealth: 0
-  currentHealth: 0
-  maxHealth: 0
-  isDead: 0
-  eventWhenDead: {fileID: 2283284321578245851}
-  healthBarPrefab: {fileID: 3159329470324555048, guid: b74f7c82e862fcc419b9d669cd02b50b,
-    type: 3}
 --- !u!1 &5620014120097492410
 GameObject:
   m_ObjectHideFlags: 0
@@ -307,10 +268,9 @@ GameObject:
   - component: {fileID: 8050594404393289261}
   - component: {fileID: 9133941349068278744}
   - component: {fileID: 605734977035808407}
-  - component: {fileID: 8839188707418859146}
   m_Layer: 3
   m_Name: HexGrid and Tilt
-  m_TagString: Untagged
+  m_TagString: TiltPoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -379,21 +339,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 100, y: 1, z: 100}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &8839188707418859146
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8636991752575247954}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ff0f4de4c9c4364893e97dca5936299, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hexLayer:
-    serializedVersion: 2
-    m_Bits: 4294967295
 --- !u!1001 &4083229544173730985
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -43,7 +43,7 @@ public class UIManager : MonoBehaviourSingleton<UIManager>
 
         enemyEventChannel.OnWaveStart += HandleWaveStart;
 
-        GameManagerEventChannel.OnGameOver += HandleGameOver;
+        gameManagerEventChannel.OnGameOver += HandleGameOver;
         gameManagerEventChannel.OnGameRestart += HandleGameRestart;
     }
 
@@ -56,7 +56,7 @@ public class UIManager : MonoBehaviourSingleton<UIManager>
         
         enemyEventChannel.OnWaveStart -= HandleWaveStart;
         
-        GameManagerEventChannel.OnGameOver -= HandleGameOver;
+        gameManagerEventChannel.OnGameOver -= HandleGameOver;
         gameManagerEventChannel.OnGameRestart -= HandleGameRestart;
 
     }

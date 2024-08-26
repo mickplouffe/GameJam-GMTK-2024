@@ -68,6 +68,8 @@ public class TiltManager : MonoBehaviourSingleton<TiltManager>
     }
     private void UpdateCenterOfMass()
     {
+        Debug.Log("Updating center of mass");
+
         Vector3 totalWeightedPosition = Vector3.zero;
         
         float totalWeight = 0.0f;
@@ -130,9 +132,12 @@ public class TiltManager : MonoBehaviourSingleton<TiltManager>
     
     private void HandleWeightAdded(float weight, HexTile hexTile)
     {
+        Debug.Log("Weight...");
         if(hexTile == null)
             return;
         
+        Debug.Log("Weight added");
+
         if(weightAtlas.TryGetValue(hexTile, out _))
             weightAtlas[hexTile] += weight;
         else

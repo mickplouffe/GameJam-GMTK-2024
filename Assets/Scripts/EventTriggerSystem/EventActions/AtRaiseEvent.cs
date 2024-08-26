@@ -23,7 +23,6 @@ namespace EventTriggerSystem.EventActions
                 
                 eventChannel.RaiseEvent(eventName);
             }
-            
         }
 
         private void OnEnable()

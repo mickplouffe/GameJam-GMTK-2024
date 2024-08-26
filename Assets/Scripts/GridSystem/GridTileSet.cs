@@ -18,43 +18,43 @@ namespace GridSystem
             
         }
     
-        private void ValidateDefaultTile()
-        {
-            GameObject defaultHexGridTile = tiles.Find(tile => tile.name == "DefaultHexGridTile");
-        
-            if (defaultHexGridTile == null)
-            {
-                Debug.LogWarning("DefaultHexGridTile not found!");
-            
-                // Get the DefaultHexGridTile prefab that have the Tag HexTile
-                string[] hexTilesStrings = AssetDatabase.FindAssets("t:prefab", new[] {"Assets/_Prefabs/"});
-                
-                List<GameObject> hexTiles = new List<GameObject>();
-                foreach (string hexTileString in hexTilesStrings)
-                {
-                    GameObject hexTile = AssetDatabase.LoadAssetAtPath<GameObject>(AssetDatabase.GUIDToAssetPath(hexTileString));
-                    if (hexTile.CompareTag("HexTile"))
-                    {
-                        hexTiles.Add(hexTile);
-                    }
-                }
-                
-                foreach (GameObject hexTile in hexTiles)
-                {
-                    if (hexTile.name != "DefaultHexGridTile") continue;
-                
-                    tiles.Add(hexTile);
-                    break;
-
-                }
-                return;
-            }
-
-            if (tiles.Count <= 1) return;
-        
-            tiles.Remove(defaultHexGridTile);
-            tiles.Insert(0, defaultHexGridTile);
-        }
+        // private void ValidateDefaultTile()
+        // {
+        //     GameObject defaultHexGridTile = tiles.Find(tile => tile.name == "DefaultHexGridTile");
+        //
+        //     if (defaultHexGridTile == null)
+        //     {
+        //         Debug.LogWarning("DefaultHexGridTile not found!");
+        //     
+        //         // Get the DefaultHexGridTile prefab that have the Tag HexTile
+        //         // string[] hexTilesStrings = AssetDatabase.FindAssets("t:prefab", new[] {"Assets/_Prefabs/"});
+        //         
+        //         List<GameObject> hexTiles = new List<GameObject>();
+        //         // foreach (string hexTileString in hexTilesStrings)
+        //         // {
+        //         //     GameObject hexTile = AssetDatabase.LoadAssetAtPath<GameObject>(AssetDatabase.GUIDToAssetPath(hexTileString));
+        //         //     if (hexTile.CompareTag("HexTile"))
+        //         //     {
+        //         //         hexTiles.Add(hexTile);
+        //         //     }
+        //         // }
+        //         
+        //         foreach (GameObject hexTile in hexTiles)
+        //         {
+        //             if (hexTile.name != "DefaultHexGridTile") continue;
+        //         
+        //             tiles.Add(hexTile);
+        //             break;
+        //
+        //         }
+        //         return;
+        //     }
+        //
+        //     if (tiles.Count <= 1) return;
+        //
+        //     tiles.Remove(defaultHexGridTile);
+        //     tiles.Insert(0, defaultHexGridTile);
+        // }
     
         public GameObject GetRandomTile()
         {
@@ -95,7 +95,7 @@ namespace GridSystem
         public void ClearTiles()
         {
             tiles.Clear();
-            ValidateDefaultTile();
+            //ValidateDefaultTile();
         }
     
         public int GetTileCount()
@@ -150,7 +150,7 @@ namespace GridSystem
         
         private void OnValidate()
         {
-            ValidateDefaultTile();
+            //ValidateDefaultTile();
         }
     
     

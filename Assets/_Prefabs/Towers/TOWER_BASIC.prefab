@@ -421,7 +421,7 @@ MonoBehaviour:
   instanceData:
     damage: 0
     range: 0
-    weight: 0
+    weight: 50
     currentCost: 0
   weightEventChannel: {fileID: 11400000, guid: 1c11f8eaadf261d449e9f3f048895711, type: 2}
   towerEventChannel: {fileID: 11400000, guid: ff6c5cff4a2a17d45b58cbd1fcdb1a0a, type: 2}

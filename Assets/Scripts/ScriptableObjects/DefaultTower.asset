@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: DefaultTower
   m_EditorClassIdentifier: 
   name: Default Tower
-  maxWeight: 10
-  weight: 5
+  maxWeight: 25
+  weight: 15
   maxDamage: 10
   damage: 2
   maxRange: 10

@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - MainUnit
   - HealthBar
+  - TiltPoint
   layers:
   - Default
   - TransparentFX

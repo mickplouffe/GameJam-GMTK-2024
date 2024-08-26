@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using CristiEventSystem.EventChannels;
 using EventTriggerSystem;
 using EventTriggerSystem.EventActions;
 using NaughtyAttributes;
@@ -17,6 +18,8 @@ public class IHealth : MonoBehaviour
     private GameObject _healthBar;
     private RectTransform _healthBarTransform;
     
+    private EnemyEventChannel enemyEventChannel;
+    
     
     private void Awake()
     {
@@ -31,6 +34,16 @@ public class IHealth : MonoBehaviour
 
     }
 
+    private void OnEnable()
+    {
+        enemyEventChannel.OnEnemyAttack += (damage) => TakeDamage(damage);
+    }
+    
+    private void OnDisable()
+    {
+        enemyEventChannel.OnEnemyAttack -= (damage) => TakeDamage(damage);
+    }
+
     private void Start()
     {
         if (!_healthBar)
@@ -42,6 +55,7 @@ public class IHealth : MonoBehaviour
         {
             _healthBarTransform = _healthBar.GetComponent<RectTransform>();
         }
+        //_animator.SetBool("IsDead", false);
     }
     
     [Button]
@@ -49,6 +63,14 @@ public class IHealth : MonoBehaviour
     {
         eventWhenDead.Trigger();
     }
+    
+    [Button]
+    private void NukeTower()
+    {
+        // Not implemented exception
+        throw new NotImplementedException();
+    }
+
     
     public void TakeDamage(float damage)
     {
@@ -90,6 +112,12 @@ public class IHealth : MonoBehaviour
         isDead = true;
         Destroy(_healthBar);
         Destroy(gameObject);
+        
+        //_animator.SetBool("IsDead", true);
+        GameManager.Instance.gameOverMusic.Post(gameObject);
+        // Invoke("SetIsDeadTrue", 3.5f); // Delay the game over screen
+        //gameManagerEventChannel.RaiseGameOver();
+
     }
     
     
