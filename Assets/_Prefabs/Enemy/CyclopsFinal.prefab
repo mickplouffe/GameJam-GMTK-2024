@@ -89,7 +89,7 @@ MonoBehaviour:
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 64fd6adf66660d34283b3549d1846cc5,
       type: 2}
-  enemyWeight: 5
+  enemyWeight: 3
   enemyKillCost: 35
   startHealth: 8
   enemyDamage: 2

@@ -119,7 +119,7 @@ public class HexGridManager : MonoBehaviourSingleton<HexGridManager>
     
     public HexTile GetRandomTrueEdgeTile()
     {
-        List<HexTile> edgeTiles = _hexGrid.GetTrueEdgeTiles();
+        List<HexTile> edgeTiles = GetRandomEdgeTiles(_hexGrid.GetTiles().Count);
         return edgeTiles[Random.Range(0, edgeTiles.Count)];
     }
     

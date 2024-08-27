@@ -5,11 +5,15 @@ using CristiEventSystem.EventChannels;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
+using Image = UnityEngine.UI.Image;
 
 public class UIManager : MonoBehaviourSingleton<UIManager>
 {
     [SerializeField] private GameObject buildMenu;
     [SerializeField] private GameObject actionsMenu;
+
+    [SerializeField] private Image healthBarImage;
+    [SerializeField] private RectTransform healthBarCanvas;
 
     [SerializeField] private UiEventChannel uitEventChannel;
     [SerializeField] private EnemyEventChannel enemyEventChannel;
@@ -40,6 +44,7 @@ public class UIManager : MonoBehaviourSingleton<UIManager>
         uitEventChannel.OnActivateActionsMenu += HandleActivateActionsMenu;
         uitEventChannel.OnCoinsValueChanged += HandleCoinsValueChanged;
         uitEventChannel.OnCantBuy += HandleCantBuy;
+        uitEventChannel.OnHealthChanged += HandleHealthChanged;
 
         enemyEventChannel.OnWaveStart += HandleWaveStart;
 
@@ -53,6 +58,7 @@ public class UIManager : MonoBehaviourSingleton<UIManager>
         uitEventChannel.OnActivateActionsMenu -= HandleActivateActionsMenu;
         uitEventChannel.OnCoinsValueChanged -= HandleCoinsValueChanged;
         uitEventChannel.OnCantBuy -= HandleCantBuy;
+        uitEventChannel.OnHealthChanged -= HandleHealthChanged;
         
         enemyEventChannel.OnWaveStart -= HandleWaveStart;
         
@@ -74,6 +80,11 @@ public class UIManager : MonoBehaviourSingleton<UIManager>
         _waveTimerLabel = _ui.rootVisualElement.Q<Label>("WaveDelayLabel");
         _coinsLabel = _ui.rootVisualElement.Q<Label>("CoinsLabel");
         _waveTimerLabel.visible = false;
+    }
+
+    private void Update()
+    {
+        healthBarCanvas.transform.forward = Camera.main.transform.forward;
     }
 
     private void HandleGameOver()
@@ -169,5 +180,10 @@ public class UIManager : MonoBehaviourSingleton<UIManager>
     {
         buildMenu.SetActive(value);
         actionsMenu.SetActive(false);
+    }
+
+    private void HandleHealthChanged(float health, float maxHealth)
+    {
+        healthBarImage.fillAmount = health / maxHealth;
     }
 }

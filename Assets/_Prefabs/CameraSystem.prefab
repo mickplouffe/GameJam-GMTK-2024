@@ -345,7 +345,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distance: 13
-  distanceOffset: 2.25
+  distanceOffset: 3
   topRig: 2
   middleRig: 7
   bottomRig: 5

@@ -28,8 +28,7 @@ public class GameManager : MonoBehaviourSingletonPersistent<GameManager>
 
     private GameState _currentState;
 
-    public UnityAction OnGameOverr;
-
+    private bool waveActive;
     private void OnEnable()
     {
         gameManagerEventChannel.OnDialogueEnd += OnDialogueEnd;
@@ -38,14 +37,8 @@ public class GameManager : MonoBehaviourSingletonPersistent<GameManager>
         menuEventChannel.OnResumeButtonPressed += OnResume;
         gameManagerEventChannel.OnGameRestart += OnGameRestart;
 
-        OnGameOverr += OnGamerOverr;
     }
     
-    void OnGamerOverr()
-    {
-        OnGameOver();
-    }
-
     private void OnDisable()
     {
         gameManagerEventChannel.OnDialogueEnd -= OnDialogueEnd;
@@ -94,7 +87,7 @@ public class GameManager : MonoBehaviourSingletonPersistent<GameManager>
         switch (_currentState)
         {
             case GameState.Paused:
-                ChangeState(GameState.Wave);
+                OnResume();
                 break;
             case GameState.Wave:
                 ChangeState(GameState.Paused);
@@ -110,10 +103,16 @@ public class GameManager : MonoBehaviourSingletonPersistent<GameManager>
     
     private void HandleWaveState()
     {
+        Time.timeScale = 1.0f;
+        
+        if(waveActive)
+            return;
+
+        waveActive = true;
+        
         // Activate build menu, deactivate upgrade menu
         uiEventChannel.RaiseActivateBuildMenu(true);
         enemyEventChannel.RaiseStartNextWave();
-        Time.timeScale = 1.0f;
     }
 
     private void HandlePausedState()
@@ -133,6 +132,8 @@ public class GameManager : MonoBehaviourSingletonPersistent<GameManager>
 
     private void OnWaveCompleted()
     {
+        waveActive = false;
+        
         if (_currentState == GameState.GameOver)
             return;
 
@@ -154,6 +155,8 @@ public class GameManager : MonoBehaviourSingletonPersistent<GameManager>
 
     private void OnResume()
     {
+        uiEventChannel.RaiseActivateBuildMenu(true);
+        menuEventChannel.RaisePauseGame(false);
         ChangeState(GameState.Wave);
     }
 

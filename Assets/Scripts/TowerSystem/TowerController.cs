@@ -45,7 +45,6 @@ public class TowerController : MonoBehaviour
     
     public HexTile Tile { get; set; }
     
-    [SerializeField] private float tiltAllowanceThreshold = 45.0f; // Angle at which the object starts sliding
     [SerializeField] private float slipSpeedMultiplier = 1f; // Speed at which the object slips
     [SerializeField] private float enemyWidthOffset= 0.5f;
 
@@ -79,7 +78,8 @@ public class TowerController : MonoBehaviour
     [SerializeField] public AK.Wwise.Event towerAttackSFX;
 
     [SerializeField] private bool canSlide = true;
-
+    private HexTile prevTile;
+    
     private int _currentActiveVisual;
     [SerializeField] private List<TowerUpgrade> towerUpgrades;
 
@@ -157,11 +157,12 @@ public class TowerController : MonoBehaviour
     
         // If the object has moved to a new tile
         if (newTile != null && newTile != Tile)
-        {
+        { 
             // Remove weight from the previous tile
             if (Tile != null)
                 weightEventChannel.RaiseWeightRemoved(instanceData.weight, Tile);
-    
+
+            prevTile = Tile;
             // Update the current tile to the new tile
             Tile = newTile;
     
@@ -171,6 +172,14 @@ public class TowerController : MonoBehaviour
         }
         else if(newTile == null)
         {
+            if (Tile != null)
+            {
+                weightEventChannel.RaiseWeightRemoved(instanceData.weight, Tile);
+                Tile.DetachTower();
+            }
+
+            Tile = null;
+            
             StopSliding();
         }
         
@@ -208,7 +217,6 @@ public class TowerController : MonoBehaviour
     }
     private void FireAtTarget()
     {
-    
         towerAttackSFX.Post(gameObject);
         StartCoroutine(DrawShootingRay());
         // Example: If using projectiles
@@ -265,7 +273,7 @@ public class TowerController : MonoBehaviour
         if (TowerManager.Instance.selectedTower == gameObject)
             return;
         
-        if (tiltAngle > tiltAllowanceThreshold)
+        if (tiltAngle > towerData.tiltAngleThreshold)
         {
             // towerSlideSFX.Post(gameObject);
             if(Tile != null)
@@ -293,20 +301,26 @@ public class TowerController : MonoBehaviour
         tiltDirection = Vector3.zero;
         
         // Ensure the object is properly snapped to the current tile
-        HexTile finalTile = HexGridManager.Instance.GetTileAtWorldPosition(transform.position);
-        if (finalTile != null)
+        // HexTile finalTile = HexGridManager.Instance.GetTileAtWorldPosition(transform.position);
+        // if (finalTile != null && (finalTile.Q != Tile.Q || finalTile.R != Tile.R) && prevTile != finalTile)
+        // {
+        //     // Remove weight from the previous tile
+        //     if (Tile != null)
+        //         weightEventChannel.RaiseWeightRemoved(instanceData.weight, Tile);
+        //
+        //     prevTile = Tile;
+        //     // Update the current tile to the final tile
+        //     Tile = finalTile;
+        //
+        //     // Add weight to the final tile
+        //     weightEventChannel.RaiseWeightAdded(instanceData.weight, Tile);
+        //     towerEventChannel.RaiseSnapToNewTile(gameObject.transform, Tile);
+        // } else
+        // {
+        if (Tile != null)
         {
-            // Remove weight from the previous tile
-            if (Tile != null)
-                weightEventChannel.RaiseWeightRemoved(instanceData.weight, Tile);
-    
-            // Update the current tile to the final tile
-            Tile = finalTile;
-    
-            // Add weight to the final tile
-            weightEventChannel.RaiseWeightAdded(instanceData.weight, Tile);
             towerEventChannel.RaiseSnapToNewTile(gameObject.transform, Tile);
-        } else
+        }else
         {
             towerFallSFX.Post(gameObject);
             

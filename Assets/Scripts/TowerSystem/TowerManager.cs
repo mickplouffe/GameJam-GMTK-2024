@@ -275,7 +275,8 @@ namespace TowerSystem
                     return false;
                 }
             }
-    
+
+            selectedTower.GetComponent<TowerController>().Tile = tile;
             selectedTower.transform.position =
                 tile.TileObject.transform.position +
                 tile.TileObject.transform.up *

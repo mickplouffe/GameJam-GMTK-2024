@@ -43,16 +43,8 @@ public class CameraRigManager : MonoBehaviourSingleton<CameraRigManager>
         _freeLook.m_Orbits[0].m_Radius = Mathf.Lerp(_freeLook.m_Orbits[0].m_Radius, topRig * (distance/10), Time.deltaTime);
         _freeLook.m_Orbits[1].m_Radius = Mathf.Lerp(_freeLook.m_Orbits[1].m_Radius, middleRig * (distance/10), Time.deltaTime);
         _freeLook.m_Orbits[2].m_Radius = Mathf.Lerp(_freeLook.m_Orbits[2].m_Radius, bottomRig * (distance/10), Time.deltaTime);
-
-    }
-
-    // Update is called once per frame
-    private void FixedUpdate()
-    {
+       
         distance = HexGridManager.Instance.gridSpan * distanceOffset;
-        
-        
-        
-        
     }
+
 }

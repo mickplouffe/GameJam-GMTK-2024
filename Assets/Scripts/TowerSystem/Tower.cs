@@ -10,6 +10,7 @@ public class Tower : ScriptableObject
 
     public float maxWeight;
     public float weight;
+    public float tiltAngleThreshold;
 
     public int maxDamage;
     public int damage;

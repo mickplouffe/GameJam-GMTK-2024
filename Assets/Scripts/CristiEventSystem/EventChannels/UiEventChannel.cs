@@ -9,6 +9,7 @@ namespace CristiEventSystem.EventChannels
         public UnityAction<bool> OnActivateBuildMenu;
         public UnityAction<bool> OnActivateActionsMenu;
         public UnityAction<int> OnCoinsValueChanged;
+        public UnityAction<float, float> OnHealthChanged;
         public UnityAction OnCantBuy;
 
         public void RaiseActivateBuildMenu(bool value)
@@ -29,6 +30,11 @@ namespace CristiEventSystem.EventChannels
         public void RaiseCantBuy()
         {
             OnCantBuy?.Invoke();
+        }
+
+        public void RaiseHealthChanged(float health, float maxHealth)
+        {
+            OnHealthChanged?.Invoke(health, maxHealth);
         }
     }
 }

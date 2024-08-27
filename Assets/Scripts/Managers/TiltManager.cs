@@ -11,13 +11,9 @@ public class TiltManager : MonoBehaviourSingleton<TiltManager>
     [SerializeField] private TiltEventChannel tiltEventChannel;
     [SerializeField] private GameManagerEventChannel gameManagerEventChannel;
     
-    [Range(0.0f, 5.0f)]
-    [SerializeField] private float tiltAmount;
-    [SerializeField] private float rotationSpeed;
-
     [SerializeField] private float currentTiltAngle;
-    [SerializeField] private float tileWeight = 0.1f;
-    [SerializeField] private float distanceWeightModifier = 1.0f;
+
+    [SerializeReference] private TiltSettings tiltSettings;
     
     private Dictionary<HexTile, float> weightAtlas;
     
@@ -68,8 +64,6 @@ public class TiltManager : MonoBehaviourSingleton<TiltManager>
     }
     private void UpdateCenterOfMass()
     {
-        Debug.Log("Updating center of mass");
-
         Vector3 totalWeightedPosition = Vector3.zero;
         
         float totalWeight = 0.0f;
@@ -78,7 +72,7 @@ public class TiltManager : MonoBehaviourSingleton<TiltManager>
         foreach (var key in HexGridManager.Instance.GetAllTiles().Keys)
         {
             HexTile tile = HexGridManager.Instance.GetTile(key.q, key.r);
-            float weight = weightAtlas.TryGetValue(tile, out var objectWeight) ? objectWeight + tileWeight : tileWeight;
+            float weight = weightAtlas.TryGetValue(tile, out var objectWeight) ? objectWeight + tiltSettings.tileWeight : tiltSettings.tileWeight;
             totalWeightedPosition += tile.TileObject.transform.position * weight;
             totalWeight += weight;
             
@@ -86,7 +80,7 @@ public class TiltManager : MonoBehaviourSingleton<TiltManager>
             float distance = offset.magnitude; // Add  this to torque calculation in case we want a more physically accurate system
             
             // Torque is perpendicular to the lever arm, so it's along the Y axis in this case
-            Vector3 torque = Vector3.Cross(offset, Vector3.up) * (weight * distanceWeightModifier);
+            Vector3 torque = Vector3.Cross(offset, Vector3.up) * (weight * tiltSettings.distanceWeightModifier);
             netTorque += torque;
         }
 
@@ -102,14 +96,14 @@ public class TiltManager : MonoBehaviourSingleton<TiltManager>
     private void TiltPlane()
     {
         // Calculate tilt angles based on CoM
-        float tiltX = -tiltAmount * CenterOfMass.x;
-        float tiltZ = tiltAmount * CenterOfMass.z;
+        float tiltX = -tiltSettings.tiltAmount * CenterOfMass.x;
+        float tiltZ = tiltSettings.tiltAmount * CenterOfMass.z;
 
         // Apply tilt to the plane
         Quaternion tiltRotation = Quaternion.Euler(tiltX, 0, tiltZ);
 
         HexGridManager.Instance.transform.rotation = Quaternion.Slerp(HexGridManager.Instance.transform.rotation,
-            tiltRotation * Quaternion.Euler(0, transform.rotation.eulerAngles.y, 0), Time.deltaTime * rotationSpeed);
+            tiltRotation * Quaternion.Euler(0, transform.rotation.eulerAngles.y, 0), Time.deltaTime * tiltSettings.rotationSpeed);
         // HexGridManager.Instance.transform.rotation = t; 
     }
 
@@ -117,13 +111,14 @@ public class TiltManager : MonoBehaviourSingleton<TiltManager>
     {
         // Net torque gives us the rotation axis and magnitude
         Vector3 tiltAxis = new Vector3(Torque.x, 0.0f, Torque.z).normalized;
-        float tiltAngle = Torque.magnitude * tiltAmount;
+        float tiltAngle = Torque.magnitude * tiltSettings.tiltAmount;
+        tiltAngle = Mathf.Clamp(tiltAngle, -tiltSettings.maxAngleTilt, tiltSettings.maxAngleTilt);
 
         // Rotate the disk around the calculated axis
         Quaternion targetRotation = Quaternion.AngleAxis(-tiltAngle, tiltAxis);
-        HexGridManager.Instance.hexGridTilt.transform.rotation = Quaternion.Slerp( HexGridManager.Instance.hexGridTilt.transform.transform.rotation, targetRotation, Time.deltaTime * rotationSpeed);
+        HexGridManager.Instance.hexGridTilt.transform.rotation = Quaternion.Slerp( HexGridManager.Instance.hexGridTilt.transform.transform.rotation, targetRotation, Time.deltaTime * tiltSettings.rotationSpeed);
 
-        currentTiltAngle = Mathf.Lerp(currentTiltAngle, tiltAngle, Time.deltaTime * rotationSpeed);
+        currentTiltAngle = Mathf.Lerp(currentTiltAngle, tiltAngle, Time.deltaTime *  tiltSettings.rotationSpeed);
         
         // Calculate tilt direction based on Center of Mass
         Vector3 tiltDirection = Vector3.Cross(Torque.normalized, -HexGridManager.Instance.hexGridTilt.transform.up).normalized;
@@ -132,12 +127,9 @@ public class TiltManager : MonoBehaviourSingleton<TiltManager>
     
     private void HandleWeightAdded(float weight, HexTile hexTile)
     {
-        Debug.Log("Weight...");
         if(hexTile == null)
             return;
         
-        Debug.Log("Weight added");
-
         if(weightAtlas.TryGetValue(hexTile, out _))
             weightAtlas[hexTile] += weight;
         else
@@ -151,8 +143,8 @@ public class TiltManager : MonoBehaviourSingleton<TiltManager>
         if (!weightAtlas.TryGetValue(hexTile, out _)) 
             return;
         
-        weightAtlas[hexTile] = Mathf.Max(weightAtlas[hexTile] - weight, 0.0f);
-        if (weightAtlas[hexTile] == 0.0f)
+        weightAtlas[hexTile] = Mathf.Max(weightAtlas[hexTile] - weight, tiltSettings.tileWeight);
+        if (weightAtlas[hexTile] <= tiltSettings.tileWeight)
             weightAtlas.Remove(hexTile);
         UpdateCenterOfMass();
     }

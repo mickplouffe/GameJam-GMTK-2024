@@ -114,6 +114,7 @@ public class EnemyController : MonoBehaviour
             if (_currentTargetTile == TargetTile)
             {
                 enemyEnterTowerSFX.Post(gameObject);
+                enemyEventChannel.RaiseEnemyAttack(enemyDamage);
                 KillEnemy();
                 return;
             }
@@ -162,8 +163,6 @@ public class EnemyController : MonoBehaviour
             enemyDeathSFX.Post(gameObject);
             KillEnemy();
         }
-
-        Debug.Log($"Enemy {gameObject.name} has been wounded, currentHealth: {_currentHealth}");
     }
 
     public void KillEnemy()
